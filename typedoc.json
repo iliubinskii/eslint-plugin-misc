@@ -1,0 +1,9 @@
+{
+  "extends": "@skylib/config/typedoc/recommended",
+  "intentionallyNotExported": [
+    "global.configurable.LocaleName"
+  ],
+  "name": "Typescript functions",
+  "out": "docs",
+  "tsconfig": "tsconfig-typedoc.json"
+}

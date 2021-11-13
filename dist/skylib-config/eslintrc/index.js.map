@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/skylib-config/eslintrc/index.ts"],"names":[],"mappings":";;;AAAA,6CAAyC;AACzC,yCAAqC;AACrC,uCAAmC;AACnC,iDAAsC;AACtC,mDAA+C;AAElC,QAAA,QAAQ,GAAG,aAAC,CAAC,UAAU,CAClC;IACE,YAAY,EAAE,sBAAS;IACvB,UAAU,EAAE,kBAAO;IACnB,SAAS,EAAE,gBAAM;IACjB,eAAe,EAAE,4BAAY;CAC9B,EACD,WAAW,CACZ,CAAC"}

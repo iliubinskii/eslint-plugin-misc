@@ -1,0 +1,10 @@
+import { o } from "@skylib/functions";
+export declare const vue: o.PrefixKeys<{
+    "component-name": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../misc/core/match-filename").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../misc/core/match-filename").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "no-complex-declarator-type": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../typescript/core/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../typescript/core/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "no-complex-return-type": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../typescript/core/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../typescript/core/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "no-empty-lines": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../misc/core/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../misc/core/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "element-contents-spacing": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./core/element-contents-spacing").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<object, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "sort-v-bind": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./core/sort-v-bind").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<object, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+}, "vue/">;
+//# sourceMappingURL=index.d.ts.map

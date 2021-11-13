@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.typescript = void 0;
+const consistent_array_type_name_1 = require("./consistent-array-type-name");
+const core_1 = require("./core");
+const define_function_in_one_statement_1 = require("./define-function-in-one-statement");
+const no_boolean_literal_type_1 = require("./no-boolean-literal-type");
+const no_complex_declarator_type_1 = require("./no-complex-declarator-type");
+const no_complex_return_type_1 = require("./no-complex-return-type");
+const no_empty_interfaces_1 = require("./no-empty-interfaces");
+const no_never_1 = require("./no-never");
+const no_shadow_1 = require("./no-shadow");
+const no_this_void_1 = require("./no-this-void");
+const no_unsafe_object_assign_1 = require("./no-unsafe-object-assign");
+const functions_1 = require("@skylib/functions");
+const prefer_array_type_alias_1 = require("./prefer-array-type-alias");
+const prefer_enum_1 = require("./prefer-enum");
+const prefer_readonly_array_1 = require("./prefer-readonly-array");
+const prefer_ReadonlyMap_1 = require("./prefer-ReadonlyMap");
+const prefer_readonly_property_1 = require("./prefer-readonly-property");
+const prefer_ReadonlySet_1 = require("./prefer-ReadonlySet");
+const require_prop_type_annotation_1 = require("./require-prop-type-annotation");
+exports.typescript = functions_1.o.prefixKeys(Object.assign(Object.assign({}, core_1.core), { "consistent-array-type-name": consistent_array_type_name_1.consistentArrayTypeName, "define-function-in-one-statement": define_function_in_one_statement_1.defineFunctionInOneStatement, "no-boolean-literal-type": no_boolean_literal_type_1.noBooleanLiteralType, "no-complex-declarator-type": no_complex_declarator_type_1.noComplexDeclaratorType, "no-complex-return-type": no_complex_return_type_1.noComplexReturnType, "no-empty-interfaces": no_empty_interfaces_1.noEmptyInterfaces, "no-never": no_never_1.noNever, "no-shadow": no_shadow_1.noShadow, "no-this-void": no_this_void_1.noThisVoid, "no-unsafe-object-assign": no_unsafe_object_assign_1.noUnsafeObjectAssign, "prefer-ReadonlyMap": prefer_ReadonlyMap_1.preferReadonlyMap, "prefer-ReadonlySet": prefer_ReadonlySet_1.preferReadonlySet, "prefer-array-type-alias": prefer_array_type_alias_1.preferArrayTypeAlias, "prefer-enum": prefer_enum_1.preferEnum, "prefer-readonly-array": prefer_readonly_array_1.preferReadonlyArray, "prefer-readonly-property": prefer_readonly_property_1.preferReadonlyProperty, "require-prop-type-annotation": require_prop_type_annotation_1.requirePropTypeAnnotation }), "typescript/");
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,91 @@
+{
+  "name": "@skylib/eslint-plugin",
+  "version": "0.1.53",
+  "private": false,
+  "description": "ESLint plugin",
+  "keywords": [
+    "eslint",
+    "plugin"
+  ],
+  "homepage": "https://github.com/ilyub/eslint-plugin",
+  "bugs": {
+    "url": "https://github.com/ilyub/eslint-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ilyub/eslint-plugin.git"
+  },
+  "license": "ISC",
+  "author": "Ilia Liubinskii <admin.phpdev@gmail.com> (https://github.com/ilyub)",
+  "publisher": "ilyub",
+  "main": "dist/index.js",
+  "files": [
+    "/dist",
+    "!/dist/dev"
+  ],
+  "scripts": {
+    "add-tags": "php node_modules/@skylib/config/bin/add-tags.php",
+    "browserslist": "browserslist",
+    "build": "cf ./dist && tsc --project tsconfig-build.json",
+    "build-doc": "cf ./docs && node ./build-doc.js && cpy assets/docs/static/* docs",
+    "clear-cache": "cf cache node_modules/.cache",
+    "commitlint": "commitlint --edit",
+    "commitlint-all": "commitlint --config commitlint-all.config.js --from=",
+    "config-lint": "node node_modules/@skylib/config/bin/config-lint.js",
+    "delete-tags": "php node_modules/@skylib/config/bin/delete-tags.php",
+    "full-check": "php node_modules/@skylib/config/bin/full-check.php",
+    "git:unix": "git config --replace-all core.ignorecase false",
+    "git:windows": "git config --replace-all core.ignorecase true",
+    "husky:commit-msg": "npm run commitlint",
+    "husky:post-commit": "php node_modules/@skylib/config/bin/post-commit.php",
+    "husky:pre-commit": "php node_modules/@skylib/config/bin/pre-commit.php",
+    "husky:unset-hooks": "git config --unset core.hooksPath",
+    "lint": "eslint --fix --max-warnings 0 --no-error-on-unmatched-pattern **/*.{js,ts,vue}",
+    "lint-no-fix": "eslint --max-warnings 0 --no-error-on-unmatched-pattern **/*.{js,ts,vue}",
+    "lint-no-fix-profile": "set TIMING=1 && eslint --max-warnings 0 --no-error-on-unmatched-pattern **/*.{js,ts,vue}",
+    "npm:install": "npm install --no-audit --strict-peer-deps",
+    "npm:install-clean": "npm install-clean --no-audit --strict-peer-deps",
+    "npm:publish": "publish-if-not-exists",
+    "npm:regenerate-lock-file": "npm install --no-audit --package-lock-only --strict-peer-deps",
+    "npm:update": "npm update --no-audit --strict-peer-deps",
+    "package-json-lint": "npmPkgJsonLint ./package.json",
+    "prepare": "husky install",
+    "sonar": "sonar-scanner",
+    "test": "cf ./lcov-report && jest",
+    "test-fast": "cf ./lcov-report && jest --config=jest.config.fast.js",
+    "tsc": "tsc --noEmit",
+    "update-package-check": "ncu --dep dev,peer,prod",
+    "update-package-force": "ncu --dep dev,peer,prod --upgrade",
+    "upgrade": "npm run update-package-force && npm run npm:install"
+  },
+  "dependencies": {
+    "@skylib/functions": "^4.1.0",
+    "@skylib/lodash-commonjs-es": "^1.0.0",
+    "@skylib/typescript-types": "^1.0.0",
+    "@types/estree": "^1.0.0",
+    "@types/minimatch": "^5.1.2",
+    "@types/natural-compare": "^1.4.1",
+    "javascript-stringify": "^2.1.0",
+    "minimatch": "^5.1.0",
+    "natural-compare": "^1.4.0"
+  },
+  "devDependencies": {
+    "@skylib/config": "^3.40.2",
+    "@skylib/eslint-plugin": "^0.1.53",
+    "get-current-line": "^6.6.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/parser": ">=5",
+    "@typescript-eslint/utils": ">=5",
+    "tsutils": ">=3",
+    "typescript": ">=4",
+    "vue-eslint-parser": ">=9"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

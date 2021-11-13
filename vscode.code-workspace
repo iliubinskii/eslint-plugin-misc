@@ -1,0 +1,77 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[php]": {
+      "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.fixAll.eslint": true
+    },
+    "editor.detectIndentation": false,
+    "editor.foldingStrategy": "indentation",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+    "eslint.codeActionsOnSave.rules": [
+      "*"
+    ],
+    "eslint.format.enable": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "intelephense.files.exclude": [
+      "**/{.DS_Store,.git,.hg,.history,.svn,CVS,bower_components}/**",
+      "**/vendor/**/{Tests,tests,vendor}/**"
+    ],
+    "javascript.suggestionActions.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "php-cs-fixer.autoFixByBracket": true,
+    "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
+    "php-cs-fixer.executablePathWindows": "${workspaceFolder}/vendor/bin/php-cs-fixer.bat",
+    "php-cs-fixer.onsave": true,
+    "search.exclude": {
+      "dist": true,
+      "docs": true,
+      "es": true
+    },
+    "sort-json.settings.contextMenu": {
+      "sortJSON": false,
+      "sortJSONReverse": false,
+      "sortJSONDeepReverse": false,
+      "setSortType": false,
+      "toggleSortCaseSensitive": false
+    },
+    "sort-json.settings.isCaseSensitive": true,
+    "sortJSON.contextMenu": {
+      "sortJSONReverse": false,
+      "sortJSONKeyLength": false,
+      "sortJSONKeyLengthReverse": false,
+      "sortJSONAlphaNum": false,
+      "sortJSONAlphaNumReverse": false,
+      "sortJSONValues": false,
+      "sortJSONValuesReverse": false,
+      "sortJSONType": false,
+      "sortJSONTypeReverse": false
+    },
+    "typescript.suggestionActions.enabled": false,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "volar.codeLens.references": false,
+    "workbench.colorCustomizations": {
+      "editor.foldBackground": "#0000"
+    },
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 30
+  }
+}

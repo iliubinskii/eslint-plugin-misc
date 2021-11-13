@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/eslintrc/index.ts"],"names":[],"mappings":";;;AAAA,qDAAgD;AAChD,iEAA4D;AAC5D,iDAAsC;AACtC,6CAAyC;AACzC,uDAAmD;AAEtC,QAAA,QAAQ,GAAG,aAAC,CAAC,UAAU,CAClC;IACE,gBAAgB,EAAE,6BAAY;IAC9B,sBAAsB,EAAE,yCAAkB;IAC1C,YAAY,EAAE,sBAAS;IACvB,iBAAiB,EAAE,gCAAc;CAClC,EACD,WAAW,CACZ,CAAC"}

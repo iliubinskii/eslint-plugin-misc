@@ -1,0 +1,2 @@
+export declare const classOnlyExport: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./core/prefer-only-export").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("./core/prefer-only-export").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+//# sourceMappingURL=class-only-export.d.ts.map

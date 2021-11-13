@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@skylib/config/package-json-lint/recommended.json",
+    "@skylib/config/package-json-lint/public.json"
+  ]
+}
