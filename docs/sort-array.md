@@ -6,7 +6,7 @@ Sorts arrays.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/sort-array": [
       "error",

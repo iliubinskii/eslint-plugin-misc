@@ -1,8 +1,8 @@
 import * as utils from "../utils";
-import { misc } from "../misc";
+import { core } from "../core";
 
 export const noShadow = utils.wrapRule({
-  rule: misc.wrap,
+  rule: core.wrap,
   options: [
     {
       plugin: "@typescript-eslint/eslint-plugin",

@@ -9,7 +9,7 @@
 ## <a name="installation"></a>Installation
 
 ```
-npm install --save-dev @skylib/eslint-plugin
+npm install --save-dev eslint-plugin-misc
 ```
 
 ## <a name="rules"></a>Rules
@@ -22,7 +22,7 @@ npm install --save-dev @skylib/eslint-plugin
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/<rule-id>": [
       "error",

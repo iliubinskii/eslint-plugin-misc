@@ -1,8 +1,8 @@
-import { fn, is } from "@skylib/functions";
+import { fn, is } from "real-fns";
 import type { FilePattern, Matcher, RegexpPattern, RuleListeners, Selector } from "./types";
 import { Casing, TypeGroup } from "./types";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { unknowns } from "@skylib/functions";
+import type { unknowns } from "real-fns";
 import type { RuleListener, RuleModule } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { WrapRuleOptions } from "./misc.internal";
 import minimatch from "minimatch";

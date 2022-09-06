@@ -6,7 +6,7 @@ Requires script to contain syntax.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/require-syntax": [
       "error",

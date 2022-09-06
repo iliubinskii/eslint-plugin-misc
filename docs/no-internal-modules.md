@@ -6,7 +6,7 @@ Disallows importing of internal modules.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-internal-modules": "error"
   }

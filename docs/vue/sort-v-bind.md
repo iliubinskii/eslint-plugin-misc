@@ -6,7 +6,7 @@ Sorts "v-bind" directive.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/vue/sort-v-bind": "error"
   }

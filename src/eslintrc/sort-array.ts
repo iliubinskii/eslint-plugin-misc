@@ -1,8 +1,8 @@
 import * as utils from "../utils";
-import { misc } from "../misc";
+import { core } from "../core";
 
 export const sortArray = utils.wrapRule({
-  rule: misc["sort-array"],
+  rule: core["sort-array"],
   options: [
     {
       selector: [

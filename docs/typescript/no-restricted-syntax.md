@@ -26,7 +26,7 @@ type TypeGroup =
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-restricted-syntax": [
       "error",

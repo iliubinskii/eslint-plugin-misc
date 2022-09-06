@@ -6,7 +6,7 @@ Restricts identifier complexity.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/max-identifier-blocks": "error"
   }

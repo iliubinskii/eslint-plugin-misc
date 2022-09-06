@@ -6,7 +6,7 @@ Disallows empty lines inside expressions.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-expression-empty-lines": "error"
   }

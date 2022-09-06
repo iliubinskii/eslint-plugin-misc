@@ -6,7 +6,7 @@ Requires that AST element matches filename.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/match-filename": [
       "error",

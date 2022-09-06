@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.componentName = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../utils"));
-const misc_1 = require("../misc");
+const core_1 = require("../core");
 exports.componentName = utils.wrapRule({
-    rule: misc_1.misc["match-filename"],
+    rule: core_1.core["match-filename"],
     options: [
         {
             format: utils.Casing.kebabCase,

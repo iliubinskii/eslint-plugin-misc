@@ -6,7 +6,7 @@ Requires consistent padding in template literals.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/template-literal-format": "error"
   }

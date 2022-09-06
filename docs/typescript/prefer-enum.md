@@ -6,7 +6,7 @@ Requires using enums instead of string literals.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/prefer-enum": "error"
   }

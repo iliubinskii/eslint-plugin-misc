@@ -6,7 +6,7 @@ Requires call signature to be first child.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/sort-call-signature": "error"
   }

@@ -6,7 +6,7 @@ Requires use of arrow static methods.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/prefer-arrow-static-method": "error"
   }

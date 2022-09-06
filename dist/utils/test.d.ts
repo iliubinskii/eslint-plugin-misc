@@ -1,6 +1,6 @@
 import type { RuleModule } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { InvalidTestCases, ValidTestCases } from "./test.internal";
-import type { Rec, unknowns } from "@skylib/functions";
+import type { Rec, unknowns } from "real-fns";
 /**
  * Extracts MessageId from rule.
  *

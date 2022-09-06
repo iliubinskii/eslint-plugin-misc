@@ -1,0 +1,1 @@
+{"version":3,"file":"disallow-import.d.ts","sourceRoot":"","sources":["../../../src/core/base/disallow-import.ts"],"names":[],"mappings":"AAGA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,UAAU,CAAC;AAExC,MAAM,WAAW,OAAO;IAGtB,QAAQ,CAAC,KAAK,EAAE,OAAO,GAAG,MAAM,CAAC;IACjC,QAAQ,CAAC,QAAQ,EAAE,OAAO,GAAG,MAAM,CAAC;CACrC;AAED,oBAAY,SAAS;IACnB,gBAAgB,qBAAqB;CACtC;AAED,eAAO,MAAM,cAAc,2OAsDzB,CAAC"}

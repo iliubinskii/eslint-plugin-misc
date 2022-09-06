@@ -1,13 +1,13 @@
 import * as utils from "../utils";
-import { core } from "./core";
-import { evaluate } from "@skylib/functions";
+import { base } from "./base";
+import { evaluate } from "real-fns";
 
 export const noBooleanLiteralType = evaluate(() => {
   const prefix =
     "TSPropertySignature[optional=true] > TSTypeAnnotation > TSLiteralType.typeAnnotation";
 
   return utils.wrapRule({
-    rule: core["no-restricted-syntax"],
+    rule: base["no-restricted-syntax"],
     options: [
       {
         message: 'Use "boolean" type instead',

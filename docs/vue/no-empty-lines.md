@@ -6,7 +6,7 @@ Disallow empty lines inside <template> section.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/vue/no-empty-lines": "error"
   }

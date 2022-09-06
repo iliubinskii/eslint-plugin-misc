@@ -6,7 +6,7 @@ Disallows import given sources.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/disallow-import": [
       "error",

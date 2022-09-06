@@ -6,7 +6,7 @@ Requires "require()" to be assigned to variable.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/restrict-identifier-characters": "error"
   }

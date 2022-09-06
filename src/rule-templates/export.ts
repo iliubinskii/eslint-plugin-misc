@@ -1,9 +1,9 @@
-import * as _ from "@skylib/lodash-commonjs-es";
+import * as _ from "lodash-commonjs-es";
 import type { Callback } from "./export.internal";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "@skylib/functions";
-import { is } from "@skylib/functions";
+import type { Writable } from "real-fns";
+import { is } from "real-fns";
 import type { utils } from "..";
 
 /**

@@ -1,1 +1,0 @@
-{"version":3,"file":"no-q-btn.js","sourceRoot":"","sources":["../../../../src/skylib-quasar-extension/vue/template/no-q-btn.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,MAAM,GAAG,KAAK,CAAC,QAAQ,CAAC;IACnC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,kCAAkC;YAC3C,QAAQ,EAAE,sBAAsB;SACjC;KACF;CACF,CAAC,CAAC"}

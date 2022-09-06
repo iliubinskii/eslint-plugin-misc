@@ -1,4 +1,4 @@
-const { evaluate, is, o, s } = require("@skylib/functions");
+const { evaluate, is, o, s } = require("real-fns");
 
 const { stringify: baseStringify } = require("javascript-stringify");
 

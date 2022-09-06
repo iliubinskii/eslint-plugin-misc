@@ -9,7 +9,7 @@ import type {
   RuleListener,
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { classToInterface, is, o, s } from "@skylib/functions";
+import { classToInterface, is, o, s } from "real-fns";
 import { ESLintUtils } from "@typescript-eslint/utils";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { TypeCheck } from "./TypeCheck";

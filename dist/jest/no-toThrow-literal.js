@@ -16,12 +16,8 @@ exports.noToThrowLiteral = utils.wrapRule({
     ],
     docs: {
         description: 'Disallows string argument in "toThrow" matcher.',
-        failExamples: `
-      expect(f).toThrow("Error message");
-    `,
-        passExamples: `
-      expect(f).toThrow(new Error("Error message"));
-    `
+        failExamples: 'expect(f).toThrow("Error message");',
+        passExamples: 'expect(f).toThrow(new Error("Error message"));'
     }
 });
 //# sourceMappingURL=no-toThrow-literal.js.map

@@ -6,7 +6,7 @@ Reports inferrable types.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-inferrable-types": "error"
   }

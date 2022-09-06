@@ -6,7 +6,7 @@ Disallows mixing of chain and coalescence operators.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-chain-coalescence-mixture": "error"
   }

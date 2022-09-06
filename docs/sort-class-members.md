@@ -11,7 +11,7 @@ Sorts class members by type and alphabetically inside each type group. Type grou
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/sort-class-members": [
       "error",

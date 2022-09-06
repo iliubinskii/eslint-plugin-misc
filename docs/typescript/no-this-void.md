@@ -6,7 +6,7 @@ Disallows "this: void" syntax.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-this-void": "error"
   }

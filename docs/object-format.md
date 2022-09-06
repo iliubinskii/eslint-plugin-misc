@@ -6,7 +6,7 @@ Requires multiline or single-line object format.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/object-format": [
       "error",

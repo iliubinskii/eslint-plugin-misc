@@ -6,7 +6,7 @@ Requires that export matching filename is the only export.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/export-matching-filename-only": "error"
   }

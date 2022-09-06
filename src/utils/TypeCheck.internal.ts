@@ -1,5 +1,5 @@
 import type * as ts from "typescript";
-import type { NumStr } from "@skylib/functions";
+import type { NumStr } from "real-fns";
 
 export type Signatures = readonly ts.Signature[];
 

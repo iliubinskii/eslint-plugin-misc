@@ -1,6 +1,6 @@
-import * as _ from "@skylib/lodash-commonjs-es";
-import { assert } from "@skylib/functions";
-import type { strings } from "@skylib/functions";
+import * as _ from "lodash-commonjs-es";
+import { assert } from "real-fns";
+import type { strings } from "real-fns";
 
 export interface Options {
   readonly excludeSelectors: strings;

@@ -6,7 +6,7 @@ This rule wraps "@typescript-eslint/no-shadow" rule, but skips checking enum.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-shadow": "error"
   }

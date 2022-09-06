@@ -6,7 +6,7 @@ Requires consistent empty lines.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/consistent-empty-lines": [
       "error",

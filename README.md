@@ -9,13 +9,12 @@
 ## <a name="installation"></a>Installation
 
 ```
-npm install --save-dev @skylib/eslint-plugin
+npm install --save-dev eslint-plugin-misc
 ```
 
 ## <a name="rules"></a>Rules
 
 - [class-match-filename](https://ilyub.github.io/eslint-plugin/class-match-filename.html)
-- [class-only-export](https://ilyub.github.io/eslint-plugin/class-only-export.html)
 - [comment-spacing](https://ilyub.github.io/eslint-plugin/comment-spacing.html)
 - [consistent-empty-lines](https://ilyub.github.io/eslint-plugin/consistent-empty-lines.html)
 - [consistent-enum-members](https://ilyub.github.io/eslint-plugin/consistent-enum-members.html)
@@ -108,7 +107,7 @@ npm install --save-dev @skylib/eslint-plugin
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/<rule-id>": [
       "error",

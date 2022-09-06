@@ -6,7 +6,7 @@ Requires consistent key-value pairs inside enums (key should match value).
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/consistent-enum-members": "error"
   }

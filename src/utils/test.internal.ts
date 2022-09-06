@@ -3,7 +3,7 @@ import type {
   TestCaseError as BaseTestCaseError,
   ValidTestCase as BaseValidTestCase
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { unknowns } from "@skylib/functions";
+import type { unknowns } from "real-fns";
 
 // eslint-disable-next-line @skylib/typescript/prefer-enum -- Ok
 export type Filename =

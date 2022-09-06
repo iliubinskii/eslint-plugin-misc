@@ -6,7 +6,7 @@ Disallows unnecessary "as const".
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-unnecessary-as-const": "error"
   }

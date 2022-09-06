@@ -6,7 +6,7 @@ Disallows importing NodeJS modules.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-nodejs-modules": "error"
   }

@@ -1,16 +1,16 @@
+import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
-import { misc } from "./misc";
-import { skylibConfig } from "./skylib-config";
-import { skylibFacades } from "./skylib-facades";
-import { skylibFramework } from "./skylib-framework";
-import { skylibFunctions } from "./skylib-functions";
-import { skylibQuasarExtension } from "./skylib-quasar-extension";
+import { skylibConfig } from "./real-config";
+import { skylibFacades } from "./real-facades";
+import { skylibFramework } from "./real-framework";
+import { skylibFunctions } from "./real-fns";
+import { skylibQuasarExtension } from "./quasar-extension";
 import { typescript } from "./typescript";
 import { vue } from "./vue";
 
 export const rules = {
-  ...misc,
+  ...core,
   ...eslintrc,
   ...jest,
   ...typescript,
@@ -18,10 +18,10 @@ export const rules = {
   ...skylibConfig,
   ...skylibFacades,
   ...skylibFramework,
+  ...skylibFunctions.core,
   ...skylibFunctions.jest,
-  ...skylibFunctions.misc,
+  ...skylibQuasarExtension.core,
   ...skylibQuasarExtension.extras,
   ...skylibQuasarExtension.jest,
-  ...skylibQuasarExtension.misc,
   ...skylibQuasarExtension.vue
 } as const;

@@ -1,1 +1,0 @@
-{"version":3,"file":"no-temp.js","sourceRoot":"","sources":["../../../src/skylib-config/eslintrc/no-temp.ts"],"names":[],"mappings":";;;;AAAA,2DAAqC;AACrC,qCAAkC;AAErB,QAAA,MAAM,GAAG,KAAK,CAAC,QAAQ,CAAC;IACnC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,2BAA2B;YACpC,QAAQ,EAAE,8DAA8D;SACzE;KACF;CACF,CAAC,CAAC"}

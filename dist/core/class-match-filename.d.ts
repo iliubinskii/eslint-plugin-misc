@@ -1,0 +1,2 @@
+export declare const classMatchFilename: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./base/match-filename").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("./base/match-filename").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+//# sourceMappingURL=class-match-filename.d.ts.map

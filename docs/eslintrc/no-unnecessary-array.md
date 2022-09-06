@@ -6,7 +6,7 @@ Disallows unnessecary single-element arrays in eslint configuration files.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/eslintrc/no-unnecessary-array": "error"
   }

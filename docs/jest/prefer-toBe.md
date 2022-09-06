@@ -6,7 +6,7 @@ Requires "toBe" matcher instead of "toStrictEqual" for primitive argument types.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/jest/prefer-toBe": "error"
   }

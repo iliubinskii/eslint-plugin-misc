@@ -1,6 +1,6 @@
 import type { Context } from "./types";
 import type { KeyNode, SortingOrder } from "./sort.internal";
-import type { strings } from "@skylib/functions";
+import type { strings } from "real-fns";
 import { MessageId } from "./sort.internal";
 import type { TSESTree } from "@typescript-eslint/utils";
 export declare const sort: (<T extends TSESTree.Node = TSESTree.Node>(nodes: readonly T[], context: Context<MessageId, object, object>, options: sort.Options<T>) => void) & Readonly<{

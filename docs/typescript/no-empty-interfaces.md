@@ -6,7 +6,7 @@ Disallow empty interfaces.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-empty-interfaces": "error"
   }

@@ -1,5 +1,5 @@
-import type { Entry, IndexedRecord } from "@skylib/functions";
-import { assert, is, o } from "@skylib/functions";
+import type { Entry, IndexedRecord } from "real-fns";
+import { assert, is, o } from "real-fns";
 import fs from "node:fs";
 
 /**

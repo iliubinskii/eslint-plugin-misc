@@ -6,7 +6,7 @@ Requires consistent import/export source extension.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/consistent-source-extension": "error"
   }

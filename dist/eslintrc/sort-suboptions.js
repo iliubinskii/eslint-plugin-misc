@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortSuboptions = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../utils"));
-const misc_1 = require("../misc");
+const core_1 = require("../core");
 exports.sortSuboptions = utils.wrapRule({
-    rule: misc_1.misc["sort-array"],
+    rule: core_1.core["sort-array"],
     options: [
         {
             selector: "Property[key.value=/@skylib\\u002F/u] > ArrayExpression > ObjectExpression > Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression",

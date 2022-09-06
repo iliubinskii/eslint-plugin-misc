@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.noNever = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../utils"));
-const core_1 = require("./core");
+const base_1 = require("./base");
 exports.noNever = utils.wrapRule({
-    rule: core_1.core["no-restricted-syntax"],
+    rule: base_1.base["no-restricted-syntax"],
     options: [
         {
             message: 'Avoid "never" type',
@@ -15,12 +15,8 @@ exports.noNever = utils.wrapRule({
     ],
     docs: {
         description: 'Disallow "never" type.',
-        failExamples: `
-      function f(value: "a" & "b") {}
-    `,
-        passExamples: `
-      function f(value: "a" | "b") {}
-    `
+        failExamples: 'function f(value: "a" & "b") {}',
+        passExamples: 'function f(value: "a" | "b") {}'
     }
 });
 //# sourceMappingURL=no-never.js.map

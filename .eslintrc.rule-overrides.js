@@ -21,29 +21,38 @@ module.exports = {
       "warn",
       {
         sources: [
+          // eslint-disable-next-line no-warning-comments -- Wait for @skylib/config update
+          // fixme
+          {
+            _id: "lodash-commonjs-es",
+            autoImport: true,
+            localName: "_",
+            source: "lodash-commonjs-es",
+            wildcard: true
+          },
           {
             _id: "rule-templates",
             autoImport: true,
             autoImportSource: "@/rule-templates",
-            source: "@skylib/eslint-plugin/src/rule-templates",
+            source: "eslint-plugin-misc/src/rule-templates",
             wildcard: true
           },
           {
             _id: "utils",
             autoImport: true,
             autoImportSource: "@/utils",
-            source: "@skylib/eslint-plugin/src/utils",
+            source: "eslint-plugin-misc/src/utils",
             wildcard: true
           },
           {
             _id: "utils/configurable-selector",
-            source: "@skylib/eslint-plugin/src/utils/configurable-selector",
+            source: "eslint-plugin-misc/src/utils/configurable-selector",
             wildcard: true
           },
           {
             _id: "utils/types/TSESTree",
             localName: "TSESTree",
-            source: "@skylib/eslint-plugin/src/utils/types/TSESTree",
+            source: "eslint-plugin-misc/src/utils/types/TSESTree",
             wildcard: true
           },
           ...consistentImport.sources
@@ -245,15 +254,15 @@ module.exports = {
           "warn",
           {
             allow: [
-              "../../../misc",
+              "../../../core",
               "../../../rule-templates",
               "../../../typescript",
               "../../../utils",
-              "../../misc",
+              "../../core",
               "../../rule-templates",
               "../../typescript",
               "../../utils",
-              "../misc",
+              "../core",
               "../rule-templates",
               "../typescript",
               "../utils"
@@ -305,7 +314,7 @@ module.exports = {
       }
     },
     {
-      files: "./src/{misc,typescript,vue}/core/*",
+      files: "./src/{core,typescript,vue}/base/*",
       rules: {
         "@skylib/export-matching-filename-only": "off",
         "@skylib/sort-statements": [
@@ -336,7 +345,8 @@ module.exports = {
       }
     },
     {
-      files: "./src/skylib-*/**",
+      files:
+        "./src/{quasar-extension,real-config,real-facades,real-fns,real-framework}/**",
       rules: {
         "@skylib/no-restricted-syntax/no-unnecessary-docs": [
           "warn",
@@ -424,7 +434,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-config/**",
+      files: "./tests/real-config/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -437,7 +447,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-config/eslintrc/**",
+      files: "./tests/real-config/eslintrc/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -450,7 +460,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-facades/**",
+      files: "./tests/real-facades/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -463,7 +473,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/**",
+      files: "./tests/real-fns/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -476,7 +486,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/jest/**",
+      files: "./tests/real-fns/jest/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -489,7 +499,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/array/**",
+      files: "./tests/real-fns/core/array/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -502,7 +512,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/converters/**",
+      files: "./tests/real-fns/core/converters/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -515,7 +525,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/guards/**",
+      files: "./tests/real-fns/core/guards/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -528,7 +538,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/json/**",
+      files: "./tests/real-fns/core/json/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -541,7 +551,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/object/**",
+      files: "./tests/real-fns/core/object/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -554,7 +564,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/program-flow/**",
+      files: "./tests/real-fns/core/program-flow/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -567,7 +577,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/reflect/**",
+      files: "./tests/real-fns/core/reflect/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -580,7 +590,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-functions/misc/types/**",
+      files: "./tests/real-fns/core/types/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -593,7 +603,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-quasar-extension/extras/**",
+      files: "./tests/quasar-extension/extras/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -606,7 +616,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-quasar-extension/jest/**",
+      files: "./tests/quasar-extension/jest/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -619,7 +629,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-quasar-extension/misc/**",
+      files: "./tests/quasar-extension/core/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -632,7 +642,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-quasar-extension/vue/script/**",
+      files: "./tests/quasar-extension/vue/script/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",
@@ -645,7 +655,7 @@ module.exports = {
       }
     },
     {
-      files: "./tests/skylib-quasar-extension/vue/template/**",
+      files: "./tests/quasar-extension/vue/template/**",
       rules: {
         "@skylib/match-filename/testRule-rule": [
           "warn",

@@ -1,5 +1,5 @@
+import { base } from "./base";
 import { consistentArrayTypeName } from "./consistent-array-type-name";
-import { core } from "./core";
 import { defineFunctionInOneStatement } from "./define-function-in-one-statement";
 import { noBooleanLiteralType } from "./no-boolean-literal-type";
 import { noComplexDeclaratorType } from "./no-complex-declarator-type";
@@ -9,7 +9,7 @@ import { noNever } from "./no-never";
 import { noShadow } from "./no-shadow";
 import { noThisVoid } from "./no-this-void";
 import { noUnsafeObjectAssign } from "./no-unsafe-object-assign";
-import { o } from "@skylib/functions";
+import { o } from "real-fns";
 import { preferArrayTypeAlias } from "./prefer-array-type-alias";
 import { preferEnum } from "./prefer-enum";
 import { preferReadonlyArray } from "./prefer-readonly-array";
@@ -20,7 +20,7 @@ import { requirePropTypeAnnotation } from "./require-prop-type-annotation";
 
 export const typescript = o.prefixKeys(
   {
-    ...core,
+    ...base,
     "consistent-array-type-name": consistentArrayTypeName,
     "define-function-in-one-statement": defineFunctionInOneStatement,
     "no-boolean-literal-type": noBooleanLiteralType,

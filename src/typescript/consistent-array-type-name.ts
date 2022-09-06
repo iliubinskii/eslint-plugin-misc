@@ -1,8 +1,8 @@
 import * as utils from "../utils";
-import { core } from "./core";
+import { base } from "./base";
 
 export const consistentArrayTypeName = utils.wrapRule({
-  rule: core["no-restricted-syntax"],
+  rule: base["no-restricted-syntax"],
   options: [
     {
       message: 'Prefer array type name to end with "s" or "Array" suffix',

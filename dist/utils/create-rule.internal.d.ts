@@ -1,7 +1,7 @@
 import type { Context, Docs, SuboptionsArray } from "./types";
-import type { ClassToInterface, Rec, unknowns } from "@skylib/functions";
+import type { ClassToInterface, Rec, unknowns } from "real-fns";
 import type { RuleContext, RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import { is } from "@skylib/functions";
+import { is } from "real-fns";
 import type { TypeCheck } from "./TypeCheck";
 export declare const isProjectConfig: is.Guard<ProjectConfig>;
 export declare type ContextOptionsArray = readonly [object];

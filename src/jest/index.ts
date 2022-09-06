@@ -1,5 +1,5 @@
 import { noToThrowLiteral } from "./no-toThrow-literal";
-import { o } from "@skylib/functions";
+import { o } from "real-fns";
 import { preferToBe } from "./prefer-toBe";
 import { preferToStrictEqual } from "./prefer-toStrictEqual";
 

@@ -6,7 +6,7 @@ Disallows langauge mixing.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-language-mixing": "error"
   }

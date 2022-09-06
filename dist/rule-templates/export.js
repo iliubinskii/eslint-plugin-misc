@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = void 0;
 const tslib_1 = require("tslib");
-const _ = tslib_1.__importStar(require("@skylib/lodash-commonjs-es"));
-const functions_1 = require("@skylib/functions");
+const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
+const real_fns_1 = require("real-fns");
 /**
  * Creates rule listener.
  *
@@ -31,7 +31,7 @@ function create(callback) {
             identifiers.push(node);
         },
         "Program > ExportAllDeclaration": (node) => {
-            if (functions_1.is.empty(node.exported))
+            if (real_fns_1.is.empty(node.exported))
                 exportAllDeclarations.push(node);
         },
         "Program > ExportDefaultDeclaration": (node) => {

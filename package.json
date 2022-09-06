@@ -1,6 +1,6 @@
 {
-  "name": "@skylib/eslint-plugin",
-  "version": "0.1.53",
+  "name": "eslint-plugin-misc",
+  "version": "0.1.0",
   "private": false,
   "description": "ESLint plugin",
   "keywords": [
@@ -59,15 +59,15 @@
     "upgrade": "npm run update-package-force && npm run npm:install"
   },
   "dependencies": {
-    "@skylib/functions": "^4.1.0",
-    "@skylib/lodash-commonjs-es": "^1.0.0",
-    "@skylib/typescript-types": "^1.0.0",
     "@types/estree": "^1.0.0",
     "@types/minimatch": "^5.1.2",
     "@types/natural-compare": "^1.4.1",
     "javascript-stringify": "^2.1.0",
+    "lodash-commonjs-es": "^0.1.0",
     "minimatch": "^5.1.0",
-    "natural-compare": "^1.4.0"
+    "natural-compare": "^1.4.0",
+    "real-fns": "^0.1.0",
+    "typescript-types-any-to-unknown": "^0.1.0"
   },
   "devDependencies": {
     "@skylib/config": "^3.40.2",

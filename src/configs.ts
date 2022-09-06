@@ -1,47 +1,43 @@
-import { evaluate, o } from "@skylib/functions";
-import type { IndexedRecord } from "@skylib/functions";
+import { evaluate, o } from "real-fns";
+import type { IndexedRecord } from "real-fns";
+import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
-import { misc } from "./misc";
-import { skylibConfig } from "./skylib-config";
-import { skylibFacades } from "./skylib-facades";
-import { skylibFramework } from "./skylib-framework";
-import { skylibFunctions } from "./skylib-functions";
-import { skylibQuasarExtension } from "./skylib-quasar-extension";
+import { skylibConfig } from "./real-config";
+import { skylibFacades } from "./real-facades";
+import { skylibFramework } from "./real-framework";
+import { skylibFunctions } from "./real-fns";
+import { skylibQuasarExtension } from "./quasar-extension";
 import { typescript } from "./typescript";
 import { vue } from "./vue";
 
 export const configs = evaluate((): IndexedRecord => {
   const result = {
-    "eslintrc": { rules: rules(eslintrc) },
-    "jest": { rules: rules(jest) },
-    "misc": {
+    "core": {
       rules: {
-        ...rules(misc),
+        ...rules(core),
         "@skylib/match-filename": "off",
         "@skylib/no-restricted-syntax": "off",
         "@skylib/require-syntax": "off",
         "@skylib/wrap": "off"
       }
     },
-    "skylib-config": { rules: rules(skylibConfig) },
-    "skylib-facades": { rules: rules(skylibFacades) },
-    "skylib-framework": { rules: rules(skylibFramework) },
-    "skylib-functions.jest": { rules: rules(skylibFunctions.jest) },
-    "skylib-functions.misc": { rules: rules(skylibFunctions.misc) },
-    "skylib-quasar-extension.extras": {
+    "eslintrc": { rules: rules(eslintrc) },
+    "jest": { rules: rules(jest) },
+    "quasar-extension.core": { rules: rules(skylibQuasarExtension.core) },
+    "quasar-extension.extras": {
       rules: {
         ...rules(skylibQuasarExtension.extras),
         "@skylib/typescript/no-empty-interfaces": "off"
       }
     },
-    "skylib-quasar-extension.jest": {
-      rules: rules(skylibQuasarExtension.jest)
-    },
-    "skylib-quasar-extension.misc": {
-      rules: rules(skylibQuasarExtension.misc)
-    },
-    "skylib-quasar-extension.vue": { rules: rules(skylibQuasarExtension.vue) },
+    "quasar-extension.jest": { rules: rules(skylibQuasarExtension.jest) },
+    "quasar-extension.vue": { rules: rules(skylibQuasarExtension.vue) },
+    "real-config": { rules: rules(skylibConfig) },
+    "real-facades": { rules: rules(skylibFacades) },
+    "real-fns.core": { rules: rules(skylibFunctions.core) },
+    "real-fns.jest": { rules: rules(skylibFunctions.jest) },
+    "real-framework": { rules: rules(skylibFramework) },
     "typescript": {
       rules: {
         ...rules(typescript),
@@ -60,7 +56,7 @@ export const configs = evaluate((): IndexedRecord => {
   return {
     ...result,
     "all": {
-      ...result.misc,
+      ...result.core,
       overrides: [
         { files: "!*.js", ...result.typescript },
         { files: "*.vue", ...result.vue },
@@ -68,17 +64,17 @@ export const configs = evaluate((): IndexedRecord => {
         { files: ".eslintrc.js", ...result.eslintrc }
       ]
     },
-    "skylib-functions": {
-      ...result["skylib-functions.misc"],
-      overrides: [{ files: "./tests/**", ...result["skylib-functions.jest"] }]
-    },
-    "skylib-quasar-extension": {
-      ...result["skylib-quasar-extension.misc"],
+    "quasar-extension": {
+      ...result["quasar-extension.core"],
       overrides: [
-        { files: "*.extras", ...result["skylib-quasar-extension.extras"] },
-        { files: "*.vue", ...result["skylib-quasar-extension.vue"] },
-        { files: "./tests/**", ...result["skylib-quasar-extension.jest"] }
+        { files: "*.extras", ...result["quasar-extension.extras"] },
+        { files: "*.vue", ...result["quasar-extension.vue"] },
+        { files: "./tests/**", ...result["quasar-extension.jest"] }
       ]
+    },
+    "real-fns": {
+      ...result["real-fns.core"],
+      overrides: [{ files: "./tests/**", ...result["real-fns.jest"] }]
     }
   };
 });

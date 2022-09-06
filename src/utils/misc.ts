@@ -1,4 +1,4 @@
-import * as _ from "@skylib/lodash-commonjs-es";
+import * as _ from "lodash-commonjs-es";
 import {
   Accumulator,
   ProxyHandlerAction,
@@ -11,7 +11,7 @@ import {
   reflect,
   s,
   wrapProxyHandler
-} from "@skylib/functions";
+} from "real-fns";
 import type {
   AllowDisallowPatterns,
   FilePattern,
@@ -22,7 +22,7 @@ import type {
 } from "./types";
 import { Casing, TypeGroup } from "./types";
 import type { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import type { Entry, unknowns } from "@skylib/functions";
+import type { Entry, unknowns } from "real-fns";
 import type {
   RuleContext,
   RuleFunction,

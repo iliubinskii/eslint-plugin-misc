@@ -6,7 +6,7 @@ Requires only export if given AST element if found.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/prefer-only-export": [
       "error",

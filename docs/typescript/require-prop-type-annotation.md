@@ -6,7 +6,7 @@ Requires type annotation for class properties.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/require-prop-type-annotation": "error"
   }

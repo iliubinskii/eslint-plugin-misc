@@ -1,0 +1,1 @@
+{"version":3,"file":"prefer-clearTimeout.js","sourceRoot":"","sources":["../../../../src/real-fns/core/program-flow/prefer-clearTimeout.ts"],"names":[],"mappings":";AAAA,sDAAsD;;;;AAEtD,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,kBAAkB,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC/C,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,iDAAiD;YAC1D,QAAQ,EAAE,6CAA6C;SACxD;KACF;CACF,CAAC,CAAC"}

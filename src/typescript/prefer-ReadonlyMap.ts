@@ -2,10 +2,10 @@
 /* eslint-disable xss/no-mixed-html -- Ok */
 
 import * as utils from "../utils";
-import { core } from "./core";
+import { base } from "./base";
 
 export const preferReadonlyMap = utils.wrapRule({
-  rule: core["no-restricted-syntax"],
+  rule: base["no-restricted-syntax"],
   options: [
     {
       message: "Prefer readonly map",

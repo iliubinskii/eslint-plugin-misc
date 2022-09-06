@@ -6,7 +6,7 @@ Disallows restricted syntax.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-restricted-syntax": [
       "error",

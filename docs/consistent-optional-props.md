@@ -9,7 +9,7 @@ Ensures consistent optional property style:
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/consistent-optional-props": [
       "error",

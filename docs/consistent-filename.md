@@ -6,7 +6,7 @@ Enforces consistent file name format.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/consistent-filename": [
       "error",

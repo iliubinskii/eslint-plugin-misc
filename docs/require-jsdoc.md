@@ -6,7 +6,7 @@ Requires JSDoc documentation.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/require-jsdoc": [
       "error",

@@ -1,8 +1,8 @@
 import * as utils from "../utils";
-import { core } from "./core";
+import { base } from "./base";
 
 export const noNever = utils.wrapRule({
-  rule: core["no-restricted-syntax"],
+  rule: base["no-restricted-syntax"],
   options: [
     {
       message: 'Avoid "never" type',

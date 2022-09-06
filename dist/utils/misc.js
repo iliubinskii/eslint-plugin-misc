@@ -2,19 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrapRule = exports.setCasing = exports.selector = exports.nodeText = exports.mergeListeners = exports.createRegexpMatcher = exports.createFileMatcher = exports.projectRoot = exports.isTypeGroups = exports.isTypeGroup = exports.isSelector = exports.isRegexpPattern = exports.isFilePattern = exports.isStringOrStrings = exports.isCasing = void 0;
 const tslib_1 = require("tslib");
-const _ = tslib_1.__importStar(require("@skylib/lodash-commonjs-es"));
-const functions_1 = require("@skylib/functions");
+const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
+const real_fns_1 = require("real-fns");
 const types_1 = require("./types");
 const utils_1 = require("@typescript-eslint/utils");
 const minimatch_1 = tslib_1.__importDefault(require("minimatch"));
-exports.isCasing = functions_1.is.factory(functions_1.is.enumeration, types_1.Casing);
-exports.isStringOrStrings = functions_1.is.or.factory(functions_1.is.string, functions_1.is.strings);
-exports.isFilePattern = functions_1.is.or.factory(exports.isStringOrStrings, functions_1.is.object.factory({ allow: exports.isStringOrStrings, disallow: exports.isStringOrStrings }, {}));
+exports.isCasing = real_fns_1.is.factory(real_fns_1.is.enumeration, types_1.Casing);
+exports.isStringOrStrings = real_fns_1.is.or.factory(real_fns_1.is.string, real_fns_1.is.strings);
+exports.isFilePattern = real_fns_1.is.or.factory(exports.isStringOrStrings, real_fns_1.is.object.factory({ allow: exports.isStringOrStrings, disallow: exports.isStringOrStrings }, {}));
 exports.isRegexpPattern = exports.isStringOrStrings;
 exports.isSelector = exports.isStringOrStrings;
-exports.isTypeGroup = functions_1.is.factory(functions_1.is.enumeration, types_1.TypeGroup);
-exports.isTypeGroups = functions_1.is.factory(functions_1.is.array.of, exports.isTypeGroup);
-exports.projectRoot = functions_1.fn.pipe(process.cwd(), functions_1.s.path.canonicalize, functions_1.s.path.addTrailingSlash);
+exports.isTypeGroup = real_fns_1.is.factory(real_fns_1.is.enumeration, types_1.TypeGroup);
+exports.isTypeGroups = real_fns_1.is.factory(real_fns_1.is.array.of, exports.isTypeGroup);
+exports.projectRoot = real_fns_1.fn.pipe(process.cwd(), real_fns_1.s.path.canonicalize, real_fns_1.s.path.addTrailingSlash);
 /**
  * Creates file matcher.
  *
@@ -24,9 +24,9 @@ exports.projectRoot = functions_1.fn.pipe(process.cwd(), functions_1.s.path.cano
  * @returns Matcher.
  */
 function createFileMatcher(pattern, defVal, options) {
-    if (functions_1.is.string(pattern))
+    if (real_fns_1.is.string(pattern))
         return createFileMatcher([pattern], defVal, options);
-    if (functions_1.is.strings(pattern)) {
+    if (real_fns_1.is.strings(pattern)) {
         const matchers = pattern.map((p) => str => (0, minimatch_1.default)(str, p, options));
         return matchers.length
             ? str => matchers.some(matcher => matcher(str))
@@ -48,7 +48,7 @@ exports.createFileMatcher = createFileMatcher;
  * @returns Matcher.
  */
 function createRegexpMatcher(pattern, defVal) {
-    if (functions_1.is.string(pattern))
+    if (real_fns_1.is.string(pattern))
         return createRegexpMatcher([pattern], defVal);
     const matchers = pattern.map((p) => str => 
     // eslint-disable-next-line security/detect-non-literal-regexp -- Ok
@@ -65,12 +65,12 @@ exports.createRegexpMatcher = createRegexpMatcher;
  * @returns Merged listeners.
  */
 function mergeListeners(...listeners) {
-    const accumulator = new functions_1.Accumulator();
+    const accumulator = new real_fns_1.Accumulator();
     for (const listener of listeners)
-        for (const [name, visitor] of functions_1.o.entries(listener))
-            accumulator.push(name, functions_1.as.callable(visitor));
+        for (const [name, visitor] of real_fns_1.o.entries(listener))
+            accumulator.push(name, real_fns_1.as.callable(visitor));
     // eslint-disable-next-line @skylib/typescript/no-unsafe-object-assignment -- Ok
-    return functions_1.o.fromEntries(functions_1.a.fromIterable(accumulator).map(([name, visitors]) => [
+    return real_fns_1.o.fromEntries(real_fns_1.a.fromIterable(accumulator).map(([name, visitors]) => [
         name,
         node => {
             for (const visitor of visitors)
@@ -91,9 +91,9 @@ function nodeText(node, defVal) {
         case utils_1.AST_NODE_TYPES.Identifier:
             return node.name;
         case utils_1.AST_NODE_TYPES.Literal:
-            return functions_1.cast.string(node.value);
+            return real_fns_1.cast.string(node.value);
         default:
-            return functions_1.as.callable(defVal)();
+            return real_fns_1.as.callable(defVal)();
     }
 }
 exports.nodeText = nodeText;
@@ -104,7 +104,7 @@ exports.nodeText = nodeText;
  * @returns Selector.
  */
 function selector(raw) {
-    const result = functions_1.a.fromMixed(raw).join(", ");
+    const result = real_fns_1.a.fromMixed(raw).join(", ");
     return result === "" ? "Unknown" : result;
 }
 exports.selector = selector;
@@ -122,7 +122,7 @@ function setCasing(str, casing) {
         case types_1.Casing.kebabCase:
             return _.kebabCase(str);
         case types_1.Casing.pascalCase:
-            return functions_1.s.ucFirst(_.camelCase(str));
+            return real_fns_1.s.ucFirst(_.camelCase(str));
         case undefined:
             return str;
     }
@@ -136,21 +136,21 @@ exports.setCasing = setCasing;
  */
 function wrapRule(options) {
     const { docs: rawDocs, options: ruleOptions, rule } = options;
-    const docs = Object.assign({ recommended: false, requiresTypeChecking: true }, functions_1.o.removeUndefinedKeys(Object.assign(Object.assign({}, rawDocs), { description: rawDocs
-            ? functions_1.s.unpadMultiline(rawDocs.description)
+    const docs = Object.assign({ recommended: false, requiresTypeChecking: true }, real_fns_1.o.removeUndefinedKeys(Object.assign(Object.assign({}, rawDocs), { description: rawDocs
+            ? real_fns_1.s.unpadMultiline(rawDocs.description)
             : "No description.", failExamples: rawDocs
-            ? functions_1.s.unpadMultiline(rawDocs.failExamples)
-            : undefined, passExamples: rawDocs ? functions_1.s.unpadMultiline(rawDocs.passExamples) : undefined })));
+            ? real_fns_1.s.unpadMultiline(rawDocs.failExamples)
+            : undefined, passExamples: rawDocs ? real_fns_1.s.unpadMultiline(rawDocs.passExamples) : undefined })));
     return Object.assign(Object.assign({}, rule), { create: context => {
             const optionsOverridesArray = ruleOptions.map((opts, index) => {
                 const overrides = context.options[index];
-                return functions_1.is.object(opts) && functions_1.is.object(overrides)
+                return real_fns_1.is.object(opts) && real_fns_1.is.object(overrides)
                     ? Object.assign(Object.assign({}, opts), overrides) : opts;
             });
-            return rule.create(new Proxy({}, (0, functions_1.wrapProxyHandler)("wrap-rule", functions_1.ProxyHandlerAction.throw, {
+            return rule.create(new Proxy({}, (0, real_fns_1.wrapProxyHandler)("wrap-rule", real_fns_1.ProxyHandlerAction.throw, {
                 get: (_target, key) => key === "options"
                     ? optionsOverridesArray
-                    : functions_1.reflect.get(context, key)
+                    : real_fns_1.reflect.get(context, key)
             })));
         }, meta: Object.assign(Object.assign({}, rule.meta), { docs }) });
 }

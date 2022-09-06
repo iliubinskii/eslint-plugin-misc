@@ -6,7 +6,7 @@ Requires consistent empty lines around comments.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/comment-spacing": "error"
   }

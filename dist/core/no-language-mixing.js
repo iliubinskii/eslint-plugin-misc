@@ -1,0 +1,34 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.noLanguageMixing = void 0;
+const tslib_1 = require("tslib");
+const utils = tslib_1.__importStar(require("../utils"));
+const base_1 = require("./base");
+const real_fns_1 = require("real-fns");
+exports.noLanguageMixing = (0, real_fns_1.evaluate)(() => {
+    const br = "[\\d_]*";
+    const eng = "\\w";
+    const international = "[^\\u0000-\\u00FF]";
+    const re = `/${eng}${br}${international}|${international}${br}${eng}/u`;
+    return utils.wrapRule({
+        rule: base_1.base["no-restricted-syntax"],
+        options: [
+            {
+                message: "No language mixing",
+                selector: [`Literal[value=${re}]`, `TemplateLiteral[value.raw=${re}]`]
+            }
+        ],
+        docs: {
+            description: "Disallows langauge mixing.",
+            failExamples: 
+            // eslint-disable-next-line @skylib/no-language-mixing -- Ok
+            'const x = "xyz123абв";',
+            passExamples: `
+        const x = "xyz";
+        const y = "123";
+        const z = "абв";
+      `
+        }
+    });
+});
+//# sourceMappingURL=no-language-mixing.js.map

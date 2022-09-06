@@ -6,7 +6,7 @@ Ensures consistent empty lines between switch case statements.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/switch-case-spacing": "error"
   }

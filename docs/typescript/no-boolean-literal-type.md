@@ -6,7 +6,7 @@ Disallows boolean literal type.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-boolean-literal-type": "error"
   }

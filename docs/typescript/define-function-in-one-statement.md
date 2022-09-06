@@ -6,7 +6,7 @@ Requires that function is defined in one statement.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/define-function-in-one-statement": "error"
   }

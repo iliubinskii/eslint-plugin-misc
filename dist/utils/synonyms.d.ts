@@ -1,4 +1,4 @@
-import type { IndexedRecord } from "@skylib/functions";
+import type { IndexedRecord } from "real-fns";
 /**
  * Creates synonyms object.
  *

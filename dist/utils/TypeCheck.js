@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const ts = tslib_1.__importStar(require("typescript"));
 const tsutils = tslib_1.__importStar(require("tsutils"));
 const utils_1 = require("@typescript-eslint/utils");
-const functions_1 = require("@skylib/functions");
+const real_fns_1 = require("real-fns");
 const types_1 = require("./types");
 class TypeCheck {
     /**
@@ -78,9 +78,8 @@ class TypeCheck {
             value: void 0
         });
         const parser = utils_1.ESLintUtils.getParserServices(context);
-        // eslint-disable-next-line @skylib/max-identifier-blocks -- Wait for @skylib/eslint-plugin update
         const { esTreeNodeToTSNodeMap, program } = parser;
-        functions_1.assert.toBeTrue(tsutils.isStrictCompilerOptionEnabled(program.getCompilerOptions(), "strictNullChecks"), 'Expecting "strictNullChecks" compiler option to be enabled');
+        real_fns_1.assert.toBeTrue(tsutils.isStrictCompilerOptionEnabled(program.getCompilerOptions(), "strictNullChecks"), 'Expecting "strictNullChecks" compiler option to be enabled');
         this.checker = program.getTypeChecker();
         this.code = context.getSourceCode().getText();
         this.toTsNode = esTreeNodeToTSNodeMap.get.bind(esTreeNodeToTSNodeMap);
@@ -250,7 +249,7 @@ class TypeCheck {
                     if (this.checker.isArrayType(type) ||
                         this.checker.isTupleType(type)) {
                         const subtypes = type.typeArguments;
-                        functions_1.assert.not.empty(subtypes, "Missing type arguments");
+                        real_fns_1.assert.not.empty(subtypes, "Missing type arguments");
                         return subtypes.some(subtype => this.typeIs(subtype, types_1.TypeGroup.complex));
                     }
                     if (type.isUnionOrIntersection())
@@ -357,7 +356,7 @@ class TypeCheck {
                 return ["function"];
             if (type.isUnion())
                 return tsutils.unionTypeParts(type).flatMap(part => recurs(part));
-            switch (functions_1.as.byGuard(type.flags, isExpectedFlags)) {
+            switch (real_fns_1.as.byGuard(type.flags, isExpectedFlags)) {
                 case ts.TypeFlags.BigInt:
                 case ts.TypeFlags.BigIntLiteral:
                     return ["bigint"];
@@ -383,7 +382,7 @@ class TypeCheck {
     }
 }
 exports.TypeCheck = TypeCheck;
-const isExpectedFlags = functions_1.is.factory(functions_1.is.enumeration, {
+const isExpectedFlags = real_fns_1.is.factory(real_fns_1.is.enumeration, {
     [ts.TypeFlags.BigInt]: ts.TypeFlags.BigInt,
     [ts.TypeFlags.BigIntLiteral]: ts.TypeFlags.BigIntLiteral,
     [ts.TypeFlags.BooleanLiteral]: ts.TypeFlags.BooleanLiteral,
@@ -398,7 +397,7 @@ const isExpectedFlags = functions_1.is.factory(functions_1.is.enumeration, {
     [ts.TypeFlags.UniqueESSymbol]: ts.TypeFlags.UniqueESSymbol,
     [ts.TypeFlags.Void]: ts.TypeFlags.Void
 });
-const safeBoolean = new functions_1.ReadonlySet([
+const safeBoolean = new real_fns_1.ReadonlySet([
     ts.TypeFlags.BigInt,
     ts.TypeFlags.BigIntLiteral,
     ts.TypeFlags.Boolean,
@@ -408,7 +407,7 @@ const safeBoolean = new functions_1.ReadonlySet([
     ts.TypeFlags.String,
     ts.TypeFlags.StringLiteral
 ]);
-const safeBooleanWithUndefined = new functions_1.ReadonlySet([
+const safeBooleanWithUndefined = new real_fns_1.ReadonlySet([
     ts.TypeFlags.ESSymbol,
     ts.TypeFlags.Object,
     ts.TypeFlags.NonPrimitive,
@@ -421,7 +420,7 @@ const safeBooleanWithUndefined = new functions_1.ReadonlySet([
  * @param error - Error.
  */
 function assertExpression(tsNode, error) {
-    functions_1.assert.toBeTrue(tsutils.isExpression(tsNode), error);
+    real_fns_1.assert.toBeTrue(tsutils.isExpression(tsNode), error);
 }
 /**
  * Checks type flags.
@@ -433,7 +432,7 @@ function assertExpression(tsNode, error) {
 function checkTypeFlags(type, ...flags) {
     if (type.isTypeParameter()) {
         const constraint = type.getConstraint();
-        if (functions_1.is.not.empty(constraint))
+        if (real_fns_1.is.not.empty(constraint))
             type = constraint;
         else
             return flags.includes(ts.TypeFlags.Unknown);

@@ -6,7 +6,7 @@ Disallows "@" import.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-at-sign-import": "error"
   }

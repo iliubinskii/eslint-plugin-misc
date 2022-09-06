@@ -1,1 +1,0 @@
-{"version":3,"file":"prefer-string.js","sourceRoot":"","sources":["../../../../src/skylib-functions/misc/converters/prefer-string.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,YAAY,GAAG,KAAK,CAAC,QAAQ,CAAC;IACzC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,oCAAoC;YAC7C,QAAQ,EAAE,uCAAuC;SAClD;KACF;CACF,CAAC,CAAC"}

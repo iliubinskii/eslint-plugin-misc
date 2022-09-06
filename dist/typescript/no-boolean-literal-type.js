@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.noBooleanLiteralType = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../utils"));
-const core_1 = require("./core");
-const functions_1 = require("@skylib/functions");
-exports.noBooleanLiteralType = (0, functions_1.evaluate)(() => {
+const base_1 = require("./base");
+const real_fns_1 = require("real-fns");
+exports.noBooleanLiteralType = (0, real_fns_1.evaluate)(() => {
     const prefix = "TSPropertySignature[optional=true] > TSTypeAnnotation > TSLiteralType.typeAnnotation";
     return utils.wrapRule({
-        rule: core_1.core["no-restricted-syntax"],
+        rule: base_1.base["no-restricted-syntax"],
         options: [
             {
                 message: 'Use "boolean" type instead',

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.testRule = exports.getMessageId = void 0;
-const functions_1 = require("@skylib/functions");
+const real_fns_1 = require("real-fns");
 const utils_1 = require("@typescript-eslint/utils");
 const misc_1 = require("./misc");
 /**
@@ -11,7 +11,7 @@ const misc_1 = require("./misc");
  * @returns MessageId.
  */
 function getMessageId(rule) {
-    return functions_1.o.fromEntries.exhaustive(functions_1.o.keys(rule.meta.messages).map(key => [key, key]));
+    return real_fns_1.o.fromEntries.exhaustive(real_fns_1.o.keys(rule.meta.messages).map(key => [key, key]));
 }
 exports.getMessageId = getMessageId;
 /**
@@ -38,11 +38,11 @@ function testRule(name, rule, invalid, valid = []) {
     tester.run(name, rule, {
         invalid: invalid.map((test) => {
             var _a, _b;
-            return (Object.assign(Object.assign({}, test), { code: functions_1.s.unpadMultiline(test.code), errors: test.errors.map((error) => (Object.assign({ endLine: error.line }, error))), filename: `${misc_1.projectRoot}fixtures/${(_a = test.filename) !== null && _a !== void 0 ? _a : "file.ts"}`, output: functions_1.s.unpadMultiline((_b = test.output) !== null && _b !== void 0 ? _b : test.code) }));
+            return (Object.assign(Object.assign({}, test), { code: real_fns_1.s.unpadMultiline(test.code), errors: test.errors.map((error) => (Object.assign({ endLine: error.line }, error))), filename: `${misc_1.projectRoot}fixtures/${(_a = test.filename) !== null && _a !== void 0 ? _a : "file.ts"}`, output: real_fns_1.s.unpadMultiline((_b = test.output) !== null && _b !== void 0 ? _b : test.code) }));
         }),
         valid: valid.map((test) => {
             var _a;
-            return (Object.assign(Object.assign({}, test), { code: functions_1.s.unpadMultiline(test.code), filename: `${misc_1.projectRoot}fixtures/${(_a = test.filename) !== null && _a !== void 0 ? _a : "file.ts"}` }));
+            return (Object.assign(Object.assign({}, test), { code: real_fns_1.s.unpadMultiline(test.code), filename: `${misc_1.projectRoot}fixtures/${(_a = test.filename) !== null && _a !== void 0 ? _a : "file.ts"}` }));
         })
     });
 }

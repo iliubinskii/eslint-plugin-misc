@@ -6,7 +6,7 @@ Sorts safely sortable arrays in eslint configuration files.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/eslintrc/sort-suboptions": "error"
   }

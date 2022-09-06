@@ -1,0 +1,1 @@
+{"version":3,"file":"no-unfreeze.js","sourceRoot":"","sources":["../../../../src/real-fns/core/object/no-unfreeze.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,UAAU,GAAG,KAAK,CAAC,QAAQ,CAAC;IACvC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,8BAA8B;YACvC,QAAQ,EACN,iEAAiE;SACpE;KACF;CACF,CAAC,CAAC"}

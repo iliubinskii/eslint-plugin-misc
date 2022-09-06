@@ -6,7 +6,7 @@ Requires boolean return type in array callbacks.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/array-callback-return-type": "error"
   }

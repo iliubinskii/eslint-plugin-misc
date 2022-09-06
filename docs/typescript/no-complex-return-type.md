@@ -6,7 +6,7 @@ Disallow complex function return types.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-complex-return-type": "error"
   }

@@ -6,7 +6,7 @@ Requires use of arrow functions.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/prefer-arrow-function-property": "error"
   }

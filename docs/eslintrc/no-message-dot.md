@@ -6,7 +6,7 @@ Disallows dot at the end of message.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/eslintrc/no-message-dot": "error"
   }

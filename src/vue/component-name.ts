@@ -1,8 +1,8 @@
 import * as utils from "../utils";
-import { misc } from "../misc";
+import { core } from "../core";
 
 export const componentName = utils.wrapRule({
-  rule: misc["match-filename"],
+  rule: core["match-filename"],
   options: [
     {
       format: utils.Casing.kebabCase,

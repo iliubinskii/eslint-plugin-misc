@@ -6,7 +6,7 @@ Disallows string argument in "toThrow" matcher.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/jest/no-toThrow-literal": "error"
   }

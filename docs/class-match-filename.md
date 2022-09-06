@@ -6,7 +6,7 @@ Requires class name to match filename.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/class-match-filename": "error"
   }

@@ -8,8 +8,8 @@ import type {
   TestCaseError,
   ValidTestCases
 } from "./test.internal";
-import type { Rec, unknowns } from "@skylib/functions";
-import { o, s } from "@skylib/functions";
+import type { Rec, unknowns } from "real-fns";
+import { o, s } from "real-fns";
 import { TSESLint } from "@typescript-eslint/utils";
 import { projectRoot } from "./misc";
 

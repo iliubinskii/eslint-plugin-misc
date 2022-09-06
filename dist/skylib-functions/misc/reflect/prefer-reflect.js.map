@@ -1,1 +1,0 @@
-{"version":3,"file":"prefer-reflect.js","sourceRoot":"","sources":["../../../../src/skylib-functions/misc/reflect/prefer-reflect.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,aAAa,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC1C,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,8BAA8B;YACvC,QAAQ,EAAE,0BAA0B;SACrC;KACF;CACF,CAAC,CAAC"}

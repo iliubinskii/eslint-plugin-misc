@@ -8,7 +8,7 @@ Reports unsafe object assignments:
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/no-unsafe-object-assignment": "error"
   }

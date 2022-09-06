@@ -6,7 +6,7 @@ Disallows unnecessary initialization.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-unnecessary-initialization": "error"
   }

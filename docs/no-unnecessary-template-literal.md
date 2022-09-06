@@ -6,7 +6,7 @@ Disallows unnecessary template literals.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-unnecessary-template-literal": "error"
   }

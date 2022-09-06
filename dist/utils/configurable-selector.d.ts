@@ -1,4 +1,4 @@
-import type { strings } from "@skylib/functions";
+import type { strings } from "real-fns";
 export interface Options {
     readonly excludeSelectors: strings;
     readonly includeSelectors: strings;

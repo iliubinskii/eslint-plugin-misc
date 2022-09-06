@@ -1,4 +1,4 @@
-import * as _ from "@skylib/lodash-commonjs-es";
+import * as _ from "lodash-commonjs-es";
 import type * as estree from "estree";
 import type {
   Casing,
@@ -11,12 +11,12 @@ import type {
   esRange,
   esRanges
 } from "./types";
-import type { ClassToInterface, Rec, unknowns } from "@skylib/functions";
+import type { ClassToInterface, Rec, unknowns } from "real-fns";
 import type {
   RuleContext,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { a, assert, evaluate, is, json, o, s } from "@skylib/functions";
+import { a, assert, evaluate, is, json, o, s } from "real-fns";
 import { createFileMatcher, projectRoot, setCasing } from "./misc";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { TypeCheck } from "./TypeCheck";

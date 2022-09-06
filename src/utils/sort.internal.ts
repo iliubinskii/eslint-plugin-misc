@@ -1,5 +1,5 @@
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { stringU } from "@skylib/functions";
+import type { stringU } from "real-fns";
 
 export enum MessageId {
   incorrectSortingOrder = "incorrectSortingOrder",

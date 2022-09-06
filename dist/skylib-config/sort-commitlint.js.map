@@ -1,1 +1,0 @@
-{"version":3,"file":"sort-commitlint.js","sourceRoot":"","sources":["../../src/skylib-config/sort-commitlint.ts"],"names":[],"mappings":";;;;AAAA,wDAAkC;AAClC,kCAA+B;AAElB,QAAA,cAAc,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC3C,IAAI,EAAE,WAAI,CAAC,YAAY,CAAC;IACxB,OAAO,EAAE,CAAC,EAAE,gBAAgB,EAAE,KAAK,EAAE,CAAC;CACvC,CAAC,CAAC"}

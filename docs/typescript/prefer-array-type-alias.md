@@ -6,7 +6,7 @@ Disallows unsafe "Object.assign".
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/prefer-array-type-alias": "error"
   }

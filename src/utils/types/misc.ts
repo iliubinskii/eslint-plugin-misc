@@ -3,7 +3,7 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Rec, strings } from "@skylib/functions";
+import type { Rec, strings } from "real-fns";
 
 export enum Casing {
   camelCase = "camelCase",

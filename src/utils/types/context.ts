@@ -4,7 +4,7 @@ import type {
   ReportDescriptor,
   RuleContext
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { s, strings, unknowns } from "@skylib/functions";
+import type { s, strings, unknowns } from "real-fns";
 import type { TSESTree } from "@typescript-eslint/utils";
 
 // eslint-disable-next-line @skylib/only-export-name -- Ok

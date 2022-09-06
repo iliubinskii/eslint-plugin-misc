@@ -1,9 +1,9 @@
 import * as utils from "../utils";
-import { core } from "./core";
+import { base } from "./base";
 
 // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
 export const defineFunctionInOneStatement = utils.wrapRule({
-  rule: core["no-restricted-syntax"],
+  rule: base["no-restricted-syntax"],
   options: [
     {
       message:

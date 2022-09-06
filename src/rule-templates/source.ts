@@ -1,4 +1,4 @@
-import { defineFn, is } from "@skylib/functions";
+import { defineFn, is } from "real-fns";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { Callback } from "./source.internal";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";

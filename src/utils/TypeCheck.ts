@@ -2,7 +2,7 @@ import * as ts from "typescript";
 import * as tsutils from "tsutils";
 import { AST_NODE_TYPES, ESLintUtils } from "@typescript-eslint/utils";
 import type { ParserServices, TSESTree } from "@typescript-eslint/utils";
-import { ReadonlySet, as, assert, is } from "@skylib/functions";
+import { ReadonlySet, as, assert, is } from "real-fns";
 import type {
   Signatures,
   TypeFlagsArray,
@@ -11,7 +11,7 @@ import type {
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
 import type { TypeGroups } from "./types";
-import type { unknowns } from "@skylib/functions";
+import type { unknowns } from "real-fns";
 
 export class TypeCheck {
   public readonly checker: ts.TypeChecker;

@@ -6,7 +6,7 @@ Restricts importing siblings.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-sibling-import": [
       "error",

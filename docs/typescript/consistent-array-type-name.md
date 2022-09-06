@@ -6,7 +6,7 @@ Requires consistent array type name.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/consistent-array-type-name": "error"
   }

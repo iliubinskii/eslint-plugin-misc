@@ -6,7 +6,7 @@ Disallows writable maps.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/prefer-ReadonlyMap": "error"
   }

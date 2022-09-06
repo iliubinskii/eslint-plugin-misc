@@ -6,7 +6,7 @@ Sorts object keys.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/sort-keys": [
       "error",

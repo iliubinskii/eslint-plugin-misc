@@ -6,7 +6,7 @@ Requires consistent symbol description.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/consistent-symbol-description": "error"
   }

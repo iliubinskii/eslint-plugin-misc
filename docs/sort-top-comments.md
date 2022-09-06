@@ -6,7 +6,7 @@ Sorts top comments.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/sort-top-comments": "error"
   }

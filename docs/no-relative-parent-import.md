@@ -6,7 +6,7 @@ Disallows relative parent import.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/no-relative-parent-import": "error"
   }

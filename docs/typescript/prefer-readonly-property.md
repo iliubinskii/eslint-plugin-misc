@@ -6,7 +6,7 @@ Disallows writable properties.
 
 ```ts
 module.exports = {
-  plugins: ["@skylib/eslint-plugin"],
+  plugins: ["misc"],
   rules: {
     "@skylib/typescript/prefer-readonly-property": "error"
   }

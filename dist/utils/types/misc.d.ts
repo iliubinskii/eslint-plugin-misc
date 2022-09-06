@@ -1,5 +1,5 @@
 import type { ReportDescriptor as BaseReportDescriptor, RuleFix, RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Rec, strings } from "@skylib/functions";
+import type { Rec, strings } from "real-fns";
 export declare enum Casing {
     camelCase = "camelCase",
     kebabCase = "kebab-case",

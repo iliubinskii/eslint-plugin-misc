@@ -1,1 +1,0 @@
-{"version":3,"file":"no-get.js","sourceRoot":"","sources":["../../../../src/skylib-functions/misc/reflect/no-get.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,KAAK,GAAG,KAAK,CAAC,QAAQ,CAAC;IAClC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,cAAc,EAAE,gDAAgD;YAChE,OAAO,EAAE,8BAA8B;YACvC,QAAQ,EACN,kEAAkE;SACrE;KACF;CACF,CAAC,CAAC"}

@@ -1,8 +1,8 @@
 import * as utils from "../utils";
-import { misc } from "../misc";
+import { core } from "../core";
 
 export const noMessageDot = utils.wrapRule({
-  rule: misc["no-restricted-syntax"],
+  rule: core["no-restricted-syntax"],
   options: [
     {
       message: "Unnecessary array",
