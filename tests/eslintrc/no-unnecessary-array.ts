@@ -24,15 +24,26 @@ utils.testRule("no-unnecessary-array", rule, [
       module.exports = {
         rules: [
           {
-            "misc/rule": [
-              "warn",
-              { selector: ["a"] },
-              { selector: ["a", "b"] }
-            ]
+            "misc/rule1": ["warn", { selector: ["a"] }],
+            "misc/rule2": ["warn", { selector: ["a", "b"] }]
           }
         ]
       };
     `,
-    errors: [{ line: 6, messageId: MessageId.customMessage }]
+    errors: [{ line: 4, messageId: MessageId.customMessage }]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    code: `
+      module.exports = {
+        rules: [
+          {
+            "misc/rule": ["warn", { rules: [{ selector: ["a"] }] } ],
+            "misc/rule": ["warn", { rules: [{ selector: ["a", "b"] }] }]
+          }
+        ]
+      };
+    `,
+    errors: [{ line: 4, messageId: MessageId.customMessage }]
   }
 ]);

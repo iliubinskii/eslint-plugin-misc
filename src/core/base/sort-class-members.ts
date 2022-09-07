@@ -137,8 +137,6 @@ const functionExpressions = new ReadonlySet([
   AST_NODE_TYPES.FunctionExpression
 ]);
 
-type Types = readonly Type[];
-
 /**
  * Returns member accessibility.
  *
@@ -250,3 +248,5 @@ function getMemberTypes(node: TSESTree.ClassElement): Types {
       return [Type.block];
   }
 }
+
+type Types = readonly Type[];

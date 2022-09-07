@@ -147,11 +147,11 @@ const defaultOrder: StatementTypes = [
   StatementType.ExportDeclaration,
   StatementType.ExportDefaultDeclaration,
   StatementType.ExportUnknown,
-  StatementType.ExportTypeDeclaration,
   StatementType.ExportFunctionDeclaration,
+  StatementType.ExportTypeDeclaration,
   StatementType.Unknown,
-  StatementType.TypeDeclaration,
   StatementType.FunctionDeclaration,
+  StatementType.TypeDeclaration,
   StatementType.JestTest
 ];
 
@@ -190,18 +190,6 @@ const sortable: Rec<StatementType, boolean> = {
   [StatementType.TypeDeclaration]: true,
   [StatementType.Unknown]: false
 };
-
-interface PrepareForComparison {
-  /**
-   * Prepares string for comparison.
-   *
-   * @param str - String.
-   * @returns Prepared string.
-   */
-  (str: string): string;
-}
-
-type StatementTypes = readonly StatementType[];
 
 /**
  * Checks identifier name.
@@ -343,3 +331,15 @@ function sortingOrder(order: StatementTypes): (node: TSESTree.Node) => string {
     }
   };
 }
+
+interface PrepareForComparison {
+  /**
+   * Prepares string for comparison.
+   *
+   * @param str - String.
+   * @returns Prepared string.
+   */
+  (str: string): string;
+}
+
+type StatementTypes = readonly StatementType[];

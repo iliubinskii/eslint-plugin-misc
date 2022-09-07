@@ -14,7 +14,10 @@ utils.testRule("sort-suboptions", rule, [
           "misc/sort-keys": [
             "warn",
             {
-              overrides: [{ _id: "b" }, { _id: "a" }]
+              folders: [{ _id: "b" }, { _id: "a" }],
+              overrides: [{ _id: "b" }, { _id: "a" }],
+              rules: [{ _id: "b" }, { _id: "a" }],
+              sources: [{ _id: "b" }, { _id: "a" }]
             }
           ]
         }
@@ -26,12 +29,20 @@ utils.testRule("sort-suboptions", rule, [
           "misc/sort-keys": [
             "warn",
             {
-              overrides: [{ _id: "a" }, { _id: "b" }]
+              folders: [{ _id: "a" }, { _id: "b" }],
+              overrides: [{ _id: "a" }, { _id: "b" }],
+              rules: [{ _id: "a" }, { _id: "b" }],
+              sources: [{ _id: "a" }, { _id: "b" }]
             }
           ]
         }
       };
     `,
-    errors: [{ line: 6, messageId: MessageId.incorrectSortingOrder }]
+    errors: [
+      { line: 6, messageId: MessageId.incorrectSortingOrder },
+      { line: 7, messageId: MessageId.incorrectSortingOrder },
+      { line: 8, messageId: MessageId.incorrectSortingOrder },
+      { line: 9, messageId: MessageId.incorrectSortingOrder }
+    ]
   }
 ]);

@@ -202,14 +202,6 @@ export const consistentEmptyLines = evaluate(() => {
   });
 });
 
-interface Item {
-  readonly index: number;
-  readonly node: TSESTree.Node;
-  readonly rule: Suboptions;
-}
-
-type Items = readonly Item[];
-
 /**
  * Compares items.
  *
@@ -220,3 +212,11 @@ type Items = readonly Item[];
 function reverseCompare(item1: Item, item2: Item): number {
   return item2.index - item1.index;
 }
+
+interface Item {
+  readonly index: number;
+  readonly node: TSESTree.Node;
+  readonly rule: Suboptions;
+}
+
+type Items = readonly Item[];

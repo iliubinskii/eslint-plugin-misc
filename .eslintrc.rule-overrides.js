@@ -322,6 +322,7 @@ module.exports = {
           {
             programOrder: [
               "ImportDeclaration",
+              "DeclareGlobal",
               "ExportAllDeclaration",
               "ExportDeclaration",
               "ExportDefaultDeclaration",
@@ -329,8 +330,8 @@ module.exports = {
               "ExportFunctionDeclaration",
               "ExportUnknown",
               "Unknown",
-              "TypeDeclaration",
               "FunctionDeclaration",
+              "TypeDeclaration",
               "JestTest"
             ]
           }

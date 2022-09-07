@@ -3,11 +3,11 @@ import type { IndexedRecord } from "real-fns";
 import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
-import { skylibConfig } from "./real-config";
-import { skylibFacades } from "./real-facades";
-import { skylibFramework } from "./real-framework";
-import { skylibFunctions } from "./real-fns";
-import { skylibQuasarExtension } from "./quasar-extension";
+import { quasarExtension } from "./quasar-extension";
+import { realConfig } from "./real-config";
+import { realFacades } from "./real-facades";
+import { realFramework } from "./real-framework";
+import { realFunctions } from "./real-fns";
 import { typescript } from "./typescript";
 import { vue } from "./vue";
 
@@ -24,20 +24,20 @@ export const configs = evaluate((): IndexedRecord => {
     },
     "eslintrc": { rules: rules(eslintrc) },
     "jest": { rules: rules(jest) },
-    "quasar-extension.core": { rules: rules(skylibQuasarExtension.core) },
+    "quasar-extension.core": { rules: rules(quasarExtension.core) },
     "quasar-extension.extras": {
       rules: {
-        ...rules(skylibQuasarExtension.extras),
+        ...rules(quasarExtension.extras),
         "misc/typescript/no-empty-interfaces": "off"
       }
     },
-    "quasar-extension.jest": { rules: rules(skylibQuasarExtension.jest) },
-    "quasar-extension.vue": { rules: rules(skylibQuasarExtension.vue) },
-    "real-config": { rules: rules(skylibConfig) },
-    "real-facades": { rules: rules(skylibFacades) },
-    "real-fns.core": { rules: rules(skylibFunctions.core) },
-    "real-fns.jest": { rules: rules(skylibFunctions.jest) },
-    "real-framework": { rules: rules(skylibFramework) },
+    "quasar-extension.jest": { rules: rules(quasarExtension.jest) },
+    "quasar-extension.vue": { rules: rules(quasarExtension.vue) },
+    "real-config": { rules: rules(realConfig) },
+    "real-facades": { rules: rules(realFacades) },
+    "real-fns.core": { rules: rules(realFunctions.core) },
+    "real-fns.jest": { rules: rules(realFunctions.jest) },
+    "real-framework": { rules: rules(realFramework) },
     "typescript": {
       rules: {
         ...rules(typescript),

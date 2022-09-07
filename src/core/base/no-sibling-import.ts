@@ -120,23 +120,6 @@ export const noSiblingImport = utils.createRule({
   }
 });
 
-// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-// fixme
-interface Callback<T> {
-  /**
-   * Callback.
-   *
-   * @param value - Value.
-   * @param index - Index.
-   * @param arr - Array.
-   */
-  (value: T, index: number, arr: readonly T[]): boolean;
-}
-
-interface SuboptionsExtended extends Suboptions {
-  readonly matcher: utils.Matcher;
-}
-
 /**
  * Finds index.
  *
@@ -161,4 +144,21 @@ function findLastIndex2<T>(arr: readonly T[], callback: Callback<T>): number {
   const index = a.reverse(arr).findIndex(callback);
 
   return index === -1 ? -1 : arr.length - index - 1;
+}
+
+// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
+// fixme
+interface Callback<T> {
+  /**
+   * Callback.
+   *
+   * @param value - Value.
+   * @param index - Index.
+   * @param arr - Array.
+   */
+  (value: T, index: number, arr: readonly T[]): boolean;
+}
+
+interface SuboptionsExtended extends Suboptions {
+  readonly matcher: utils.Matcher;
 }

@@ -15,10 +15,10 @@ utils.testRule(
       name: `Test at line ${getCurrentLine().line}`,
       code: `
         import "source2";
-        function f4();
-        function f3() {}
         type T4 = 1;
         interface T3 {}
+        function f4();
+        function f3() {}
         const x1 = 1;
         const x2 = 2;
         namespace N1 {}
@@ -26,10 +26,10 @@ utils.testRule(
         export const x4 = 4;
         export namespace N2 {}
         export default 1;
-        export function f2();
-        export function f1() {}
         export type T2 = 1;
         export interface T1 {}
+        export function f2();
+        export function f1() {}
         export { e } from "source2";
         export type { E } from "source2";
         export { d } from "source1";
@@ -55,17 +55,17 @@ utils.testRule(
         export const x3 = 3;
         export const x4 = 4;
         export namespace N2 {}
-        export interface T1 {}
-        export type T2 = 1;
         export function f1() {}
         export function f2();
+        export interface T1 {}
+        export type T2 = 1;
         const x1 = 1;
         const x2 = 2;
         namespace N1 {}
-        interface T3 {}
-        type T4 = 1;
         function f3() {}
         function f4();
+        interface T3 {}
+        type T4 = 1;
       `,
       errors: [
         { line: 2, endLine: 25, messageId: MessageId.incorrectSortingOrder }

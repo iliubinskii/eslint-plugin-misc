@@ -1,1 +1,1 @@
-export const skylibFramework = {};
+export const realFramework = {};

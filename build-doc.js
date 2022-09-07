@@ -59,7 +59,7 @@ const documentedRules = o.sort(
       .keys(documentedRules)
       .map(
         name =>
-          `- [${name}](https://ilyub.github.io/eslint-plugin/${name}.html)`
+          `- [${name}](https://ilyub.github.io/eslint-plugin-misc/${name}.html)`
       )
       .join("\n")
   );
