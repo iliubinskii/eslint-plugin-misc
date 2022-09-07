@@ -7,9 +7,9 @@ import type { Rec, strings } from "real-fns";
 
 export enum Casing {
   camelCase = "camelCase",
-  // eslint-disable-next-line @skylib/consistent-enum-members -- Ok
+  // eslint-disable-next-line misc/consistent-enum-members -- Ok
   kebabCase = "kebab-case",
-  // eslint-disable-next-line @skylib/consistent-enum-members -- Ok
+  // eslint-disable-next-line misc/consistent-enum-members -- Ok
   pascalCase = "PascalCase"
 }
 
@@ -38,7 +38,7 @@ export enum TypeGroup {
 }
 
 export interface AllowDisallowPatterns {
-  // eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+  // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
   // fixme
   readonly allow: strings | string;
   readonly disallow: strings | string;
@@ -57,7 +57,7 @@ export interface Docs<
   readonly suboptionTypes?: Rec<S, string>;
 }
 
-// eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
 // fixme
 export type FilePattern = AllowDisallowPatterns | strings | string;
 
@@ -79,7 +79,7 @@ export type Options<
   K extends string = never
 > = O & { readonly [L in K]: SuboptionsArray<S> };
 
-// eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
 // fixme
 export type RegexpPattern = strings | string;
 
@@ -94,7 +94,7 @@ export type RuleFixes = readonly RuleFix[];
 
 export type RuleListeners = readonly RuleListener[];
 
-// eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
 // fixme
 export type Selector = strings | string;
 

@@ -1,4 +1,4 @@
-/* eslint-disable @skylib/consistent-filename -- Postponed */
+/* eslint-disable misc/consistent-filename -- Postponed */
 
 import * as utils from "../../../utils";
 import { typescript } from "../../../typescript";

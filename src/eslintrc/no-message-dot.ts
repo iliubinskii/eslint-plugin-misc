@@ -7,7 +7,7 @@ export const noMessageDot = utils.wrapRule({
     {
       message: "Unnecessary array",
       selector:
-        "Property[key.value=/@skylib\\u002F/u] > ArrayExpression > ObjectExpression > Property[key.name=message] > Literal.value[value=/\\.$/u]"
+        "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression > Property[key.name=message] > Literal.value[value=/\\.$/u]"
     }
   ],
   docs: {
@@ -15,7 +15,7 @@ export const noMessageDot = utils.wrapRule({
     failExamples: `
       module.exports = {
         rules: {
-          "@skylib/require-syntax": [
+          "misc/require-syntax": [
             "warn",
             {
               message: "Error message."
@@ -27,7 +27,7 @@ export const noMessageDot = utils.wrapRule({
     passExamples: `
       module.exports = {
         rules: {
-          "@skylib/require-syntax": [
+          "misc/require-syntax": [
             "warn",
             {
               message: "Error message"

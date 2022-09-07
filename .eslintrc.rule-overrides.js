@@ -1,8 +1,8 @@
-/* eslint-disable @skylib/config/eslintrc/no-disable -- Ok */
+/* eslint-disable misc/real-config/eslintrc/no-disable -- Ok */
 
-const { eslint } = require("@skylib/config/api");
+const { eslint } = require("real-config/api");
 
-const consistentImport = eslint.rules["@skylib/consistent-import"];
+const consistentImport = eslint.rules["misc/consistent-import"];
 
 const prefixes = {
   createRule:
@@ -17,11 +17,11 @@ const prefixes = {
 
 module.exports = {
   rules: {
-    "@skylib/consistent-import": [
+    "misc/consistent-import": [
       "warn",
       {
         sources: [
-          // eslint-disable-next-line no-warning-comments -- Wait for @skylib/config update
+          // eslint-disable-next-line no-warning-comments -- Wait for real-config update
           // fixme
           {
             _id: "lodash-commonjs-es",
@@ -59,13 +59,13 @@ module.exports = {
         ]
       }
     ],
-    "@skylib/disallow-import/natural-compare": [
+    "misc/disallow-import/natural-compare": [
       "warn",
       { disallow: "natural-compare" }
     ],
-    "@skylib/disallow-import/tsutils": ["warn", { disallow: "tsutils" }],
-    "@skylib/disallow-import/typescript": ["warn", { disallow: "typescript" }],
-    "@skylib/match-filename/createRule-id": [
+    "misc/disallow-import/tsutils": ["warn", { disallow: "tsutils" }],
+    "misc/disallow-import/typescript": ["warn", { disallow: "typescript" }],
+    "misc/match-filename/createRule-id": [
       "warn",
       {
         format: "camelCase",
@@ -73,18 +73,18 @@ module.exports = {
           "VariableDeclarator[init.callee.object.name=utils][init.callee.property.name=createRule] > Identifier.id"
       }
     ],
-    "@skylib/match-filename/createRule-name": [
+    "misc/match-filename/createRule-name": [
       "warn",
       {
         format: "kebab-case",
         selector: `${prefixes.createRule} > ObjectExpression > Property[key.name=name] > Literal.value`
       }
     ],
-    "@skylib/match-filename/testRule-name": [
+    "misc/match-filename/testRule-name": [
       "warn",
       { selector: `${prefixes.testRule} > Literal:first-child` }
     ],
-    "@skylib/match-filename/testRule-rule": [
+    "misc/match-filename/testRule-rule": [
       "warn",
       {
         format: "kebab-case",
@@ -92,7 +92,7 @@ module.exports = {
           "VariableDeclarator[id.name=rule] > MemberExpression > Literal.property"
       }
     ],
-    "@skylib/no-restricted-syntax/no-sentence-dot": [
+    "misc/no-restricted-syntax/no-sentence-dot": [
       "warn",
       {
         message: "Remove dot at the end of sentence",
@@ -102,21 +102,21 @@ module.exports = {
         ]
       }
     ],
-    "@skylib/no-restricted-syntax/no-skipped-tests": [
+    "misc/no-restricted-syntax/no-skipped-tests": [
       "warn",
       {
         message: "No skipped tests",
         selector: `${prefixes.testRule} > ArrayExpression > ObjectExpression > Property > Identifier.key[name=only]`
       }
     ],
-    "@skylib/no-restricted-syntax/require-sentence-dot": [
+    "misc/no-restricted-syntax/require-sentence-dot": [
       "warn",
       {
         message: "Add dot at the end of sentence",
         selector: `${prefixes.createRule} > ObjectExpression > Property[key.name=docs] > ObjectExpression > Property[key.name=description] > Literal.value[value=/[^.]$/u]`
       }
     ],
-    "@skylib/no-sibling-import": [
+    "misc/no-sibling-import": [
       "warn",
       {
         rules: [
@@ -138,7 +138,7 @@ module.exports = {
         ]
       }
     ],
-    "@skylib/require-syntax/no-unnecessary-typescript/no-restricted-syntax": [
+    "misc/require-syntax/no-unnecessary-typescript/no-restricted-syntax": [
       "warn",
       {
         message: 'Use "no-restricted-syntax" instead',
@@ -146,7 +146,7 @@ module.exports = {
         trigger: 'Literal[value="typescript/no-restricted-syntax"]'
       }
     ],
-    "@skylib/require-syntax/require-docs": [
+    "misc/require-syntax/require-docs": [
       "warn",
       {
         message: 'Add "docs" option',
@@ -154,7 +154,7 @@ module.exports = {
         trigger: prefixes.createWrapRule
       }
     ],
-    "@skylib/require-syntax/require-fix": [
+    "misc/require-syntax/require-fix": [
       "warn",
       {
         message: 'Add "fix" option or "utils.sort"',
@@ -163,7 +163,7 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property > Identifier[name=fixable]`
       }
     ],
-    "@skylib/require-syntax/require-isOptions": [
+    "misc/require-syntax/require-isOptions": [
       "warn",
       {
         message: 'Add "isOptions" option',
@@ -175,7 +175,7 @@ module.exports = {
         ]
       }
     ],
-    "@skylib/require-syntax/require-isSuboptions": [
+    "misc/require-syntax/require-isSuboptions": [
       "warn",
       {
         message: 'Add "isSuboptions" option',
@@ -188,7 +188,7 @@ module.exports = {
         ]
       }
     ],
-    "@skylib/require-syntax/require-optionDescriptions": [
+    "misc/require-syntax/require-optionDescriptions": [
       "warn",
       {
         message: 'Add "optionDescriptions" option',
@@ -196,7 +196,7 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=isOptions]`
       }
     ],
-    "@skylib/require-syntax/require-optionTypes": [
+    "misc/require-syntax/require-optionTypes": [
       "warn",
       {
         message: 'Add "optionTypes" option',
@@ -204,7 +204,7 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=isOptions]`
       }
     ],
-    "@skylib/require-syntax/require-suboptionDescriptions": [
+    "misc/require-syntax/require-suboptionDescriptions": [
       "warn",
       {
         message: 'Add "suboptionDescriptions" option',
@@ -212,7 +212,7 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=isSuboptions]`
       }
     ],
-    "@skylib/require-syntax/require-suboptionTypes": [
+    "misc/require-syntax/require-suboptionTypes": [
       "warn",
       {
         message: 'Add "suboptionTypes" option',
@@ -220,7 +220,7 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=isSuboptions]`
       }
     ],
-    "@skylib/require-syntax/require-suboptionsKey": [
+    "misc/require-syntax/require-suboptionsKey": [
       "warn",
       {
         message: 'Add "suboptionsKey" option',
@@ -228,7 +228,7 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=isSuboptions]`
       }
     ],
-    "@skylib/require-syntax/require-vue-false": [
+    "misc/require-syntax/require-vue-false": [
       "warn",
       {
         message: 'Prefer "vue: false" option',
@@ -236,7 +236,7 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=vue][value.value=true]`
       }
     ],
-    "@skylib/require-syntax/require-vue-true": [
+    "misc/require-syntax/require-vue-true": [
       "warn",
       {
         message: 'Prefer "vue: true" option',
@@ -246,11 +246,11 @@ module.exports = {
     ]
   },
   overrides: [
-    { files: "./fixtures/**", rules: { "@skylib/consistent-filename": "off" } },
+    { files: "./fixtures/**", rules: { "misc/consistent-filename": "off" } },
     {
       files: "./src/**",
       rules: {
-        "@skylib/no-relative-parent-import": [
+        "misc/no-relative-parent-import": [
           "warn",
           {
             allow: [
@@ -269,7 +269,7 @@ module.exports = {
             ]
           }
         ],
-        "@skylib/sort-keys": [
+        "misc/sort-keys": [
           "warn",
           {
             overrides: [
@@ -316,8 +316,8 @@ module.exports = {
     {
       files: "./src/{core,typescript,vue}/base/*",
       rules: {
-        "@skylib/export-matching-filename-only": "off",
-        "@skylib/sort-statements": [
+        "misc/export-matching-filename-only": "off",
+        "misc/sort-statements": [
           "warn",
           {
             programOrder: [
@@ -340,46 +340,46 @@ module.exports = {
     {
       files: "./src/dev/typescript.d.ts",
       rules: {
-        "@skylib/disallow-import/tsutils": "off",
-        "@skylib/disallow-import/typescript": "off"
+        "misc/disallow-import/tsutils": "off",
+        "misc/disallow-import/typescript": "off"
       }
     },
     {
       files:
         "./src/{quasar-extension,real-config,real-facades,real-fns,real-framework}/**",
       rules: {
-        "@skylib/no-restricted-syntax/no-unnecessary-docs": [
+        "misc/no-restricted-syntax/no-unnecessary-docs": [
           "warn",
           {
             message: 'Remove "docs" option',
             selector: `${prefixes.createWrapRule} > ObjectExpression > Property > Identifier[name=docs]`
           }
         ],
-        "@skylib/require-syntax/require-docs": "off"
+        "misc/require-syntax/require-docs": "off"
       }
     },
     {
       files: "./src/utils/TypeCheck.*",
       rules: {
-        "@skylib/disallow-import/tsutils": "off",
-        "@skylib/disallow-import/typescript": "off"
+        "misc/disallow-import/tsutils": "off",
+        "misc/disallow-import/typescript": "off"
       }
     },
     {
       files: "./src/utils/compare.ts",
-      rules: { "@skylib/disallow-import/natural-compare": "off" }
+      rules: { "misc/disallow-import/natural-compare": "off" }
     },
     {
       files: "./tests/**",
       rules: {
-        "@skylib/no-restricted-syntax/no-ast": [
+        "misc/no-restricted-syntax/no-ast": [
           "warn",
           {
             message: "Prefer string literal",
             selector: "Identifier[name=AST_NODE_TYPES]"
           }
         ],
-        "@skylib/sort-keys": [
+        "misc/sort-keys": [
           "warn",
           {
             overrides: [
@@ -410,7 +410,7 @@ module.exports = {
     {
       files: "./tests/eslintrc/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "eslintrc/",
@@ -423,7 +423,7 @@ module.exports = {
     {
       files: "./tests/jest/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "jest/",
@@ -436,7 +436,7 @@ module.exports = {
     {
       files: "./tests/real-config/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-config/",
@@ -449,7 +449,7 @@ module.exports = {
     {
       files: "./tests/real-config/eslintrc/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-config/eslintrc/",
@@ -462,7 +462,7 @@ module.exports = {
     {
       files: "./tests/real-facades/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-facades/",
@@ -475,7 +475,7 @@ module.exports = {
     {
       files: "./tests/real-fns/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/",
@@ -488,7 +488,7 @@ module.exports = {
     {
       files: "./tests/real-fns/jest/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/jest/",
@@ -501,7 +501,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/array/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/array/",
@@ -514,7 +514,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/converters/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/converters/",
@@ -527,7 +527,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/guards/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/guards/",
@@ -540,7 +540,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/json/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/json/",
@@ -553,7 +553,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/object/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/object/",
@@ -566,7 +566,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/program-flow/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/program-flow/",
@@ -579,7 +579,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/reflect/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/reflect/",
@@ -592,7 +592,7 @@ module.exports = {
     {
       files: "./tests/real-fns/core/types/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "real-fns/types/",
@@ -605,7 +605,7 @@ module.exports = {
     {
       files: "./tests/quasar-extension/extras/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "quasar-extension/extras/",
@@ -618,7 +618,7 @@ module.exports = {
     {
       files: "./tests/quasar-extension/jest/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "quasar-extension/jest/",
@@ -631,7 +631,7 @@ module.exports = {
     {
       files: "./tests/quasar-extension/core/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "quasar-extension/",
@@ -644,7 +644,7 @@ module.exports = {
     {
       files: "./tests/quasar-extension/vue/script/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "quasar-extension/vue/script/",
@@ -657,7 +657,7 @@ module.exports = {
     {
       files: "./tests/quasar-extension/vue/template/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "quasar-extension/vue/template/",
@@ -670,7 +670,7 @@ module.exports = {
     {
       files: "./tests/typescript/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "typescript/",
@@ -683,7 +683,7 @@ module.exports = {
     {
       files: "./tests/vue/**",
       rules: {
-        "@skylib/match-filename/testRule-rule": [
+        "misc/match-filename/testRule-rule": [
           "warn",
           {
             prefix: "vue/",

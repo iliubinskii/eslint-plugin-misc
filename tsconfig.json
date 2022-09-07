@@ -11,13 +11,13 @@
       ]
     },
     "typeRoots": [
-      "node_modules/@skylib",
-      "node_modules/@types"
+      "node_modules/@types",
+      "node_modules/types-fix"
     ],
     "types": [
       "jest",
       "node",
-      "typescript-types"
+      "typescript-any-to-unknown"
     ]
   },
   "exclude": [
@@ -28,7 +28,7 @@
     "lcov-report",
     "node_modules"
   ],
-  "extends": "@skylib/config/tsconfig/strict",
+  "extends": "real-config/tsconfig/strict",
   "include": [
     "*.js",
     "*.ts",

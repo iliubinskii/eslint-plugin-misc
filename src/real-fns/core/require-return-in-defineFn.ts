@@ -1,10 +1,10 @@
-/* eslint-disable @skylib/consistent-filename -- Ok */
+/* eslint-disable misc/consistent-filename -- Ok */
 
 import * as utils from "../../utils";
 import { core } from "../../core";
 import { evaluate } from "real-fns";
 
-// eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
+// eslint-disable-next-line misc/max-identifier-blocks -- Ok
 export const requireReturnInDefineFn = evaluate(() => {
   const prefix =
     ":matches(ExportNamedDeclaration, Program, TSModuleBlock) > VariableDeclaration > VariableDeclarator[id.typeAnnotation=undefined] > CallExpression[callee.name=defineFn]";

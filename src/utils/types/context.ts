@@ -7,7 +7,7 @@ import type {
 import type { s, strings, unknowns } from "real-fns";
 import type { TSESTree } from "@typescript-eslint/utils";
 
-// eslint-disable-next-line @skylib/only-export-name -- Ok
+// eslint-disable-next-line misc/only-export-name -- Ok
 export interface Context<
   M extends string,
   O extends object,

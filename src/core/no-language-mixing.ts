@@ -22,7 +22,7 @@ export const noLanguageMixing = evaluate(() => {
     docs: {
       description: "Disallows langauge mixing.",
       failExamples:
-        // eslint-disable-next-line @skylib/no-language-mixing -- Ok
+        // eslint-disable-next-line misc/no-language-mixing -- Ok
         'const x = "xyz123абв";',
       passExamples: `
         const x = "xyz";

@@ -1,4 +1,4 @@
-/* eslint-disable @skylib/require-syntax/require-fix -- Ok */
+/* eslint-disable misc/require-syntax/require-fix -- Ok */
 
 import * as utils from "../../utils";
 import {
@@ -58,7 +58,7 @@ export const wrap = utils.createRule({
     },
     failExamples: `
       /*
-      eslint @skylib/wrap: [
+      eslint misc/wrap: [
         error,
         {
           plugin: "@typescript-eslint/eslint-plugin",
@@ -71,7 +71,7 @@ export const wrap = utils.createRule({
     `,
     passExamples: `
       /*
-      eslint @skylib/wrap: [
+      eslint misc/wrap: [
         error,
         {
           skip: "TSEnumDeclaration *",

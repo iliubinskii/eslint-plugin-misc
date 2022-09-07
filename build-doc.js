@@ -26,11 +26,11 @@ const templates = {
 };
 
 const { rules } =
-  // eslint-disable-next-line @skylib/no-internal-modules -- Ok
+  // eslint-disable-next-line misc/no-internal-modules -- Ok
   require("./dist/rules.core.js");
 
 const documentedRules = o.sort(
-  // eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+  // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
   // fixme - Use o.pick
   o.filter(
     rules,
@@ -146,7 +146,7 @@ const documentedRules = o.sort(
 
     fs.writeFileSync(
       `./docs/${name}.md`,
-      // eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+      // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
       // fixme: Use s.strtr
       s.replaceAll(
         templates.rule

@@ -11,7 +11,7 @@ utils.testRule("sort-suboptions", rule, [
     code: `
       module.exports = {
         rules: {
-          "@skylib/sort-keys": [
+          "misc/sort-keys": [
             "warn",
             {
               overrides: [{ _id: "b" }, { _id: "a" }]
@@ -23,7 +23,7 @@ utils.testRule("sort-suboptions", rule, [
     output: `
       module.exports = {
         rules: {
-          "@skylib/sort-keys": [
+          "misc/sort-keys": [
             "warn",
             {
               overrides: [{ _id: "a" }, { _id: "b" }]

@@ -45,7 +45,7 @@ export const noRestrictedSyntax = utils.createRule({
     },
     failExamples: `
       /*
-      eslint @skylib/no-restricted-syntax: [
+      eslint misc/no-restricted-syntax: [
         error,
         {
           selector: "Identifier",
@@ -57,7 +57,7 @@ export const noRestrictedSyntax = utils.createRule({
     `,
     passExamples: `
       /*
-      eslint @skylib/no-restricted-syntax: [
+      eslint misc/no-restricted-syntax: [
         error,
         {
           selector: "Identifier",

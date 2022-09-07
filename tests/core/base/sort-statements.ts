@@ -1,5 +1,5 @@
 import { rules, utils } from "@";
-// eslint-disable-next-line @skylib/no-at-sign-internal-import, @skylib/no-internal-modules -- Ok
+// eslint-disable-next-line misc/no-at-sign-internal-import, misc/no-internal-modules -- Ok
 import { StatementType } from "@/core/base/sort-statements";
 import getCurrentLine from "get-current-line";
 

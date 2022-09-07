@@ -58,7 +58,7 @@ export const consistentFilename = utils.createRule({
     failExamples: `
       // filename: SampleClass.ts
       /*
-      eslint @skylib/consistent-filename: [
+      eslint misc/consistent-filename: [
         error,
         {
           overrides: [
@@ -78,7 +78,7 @@ export const consistentFilename = utils.createRule({
     passExamples: `
       // filename: SampleClass.ts
       /*
-      eslint @skylib/consistent-filename: [
+      eslint misc/consistent-filename: [
         error,
         {
           overrides: [

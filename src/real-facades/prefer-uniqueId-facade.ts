@@ -1,4 +1,4 @@
-/* eslint-disable @skylib/consistent-filename -- Ok */
+/* eslint-disable misc/consistent-filename -- Ok */
 
 import * as utils from "../utils";
 import { core } from "../core";

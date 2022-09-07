@@ -5,7 +5,7 @@ import type {
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { unknowns } from "real-fns";
 
-// eslint-disable-next-line @skylib/typescript/prefer-enum -- Ok
+// eslint-disable-next-line misc/typescript/prefer-enum -- Ok
 export type Filename =
   | "camelCase.camelCase.ts"
   | "camelCase.ts"

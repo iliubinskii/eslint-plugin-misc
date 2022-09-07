@@ -11,14 +11,14 @@ utils.testRule(
   [
     {
       name: `Test at line ${getCurrentLine().line}`,
-      code: 'import { lang } from "@skylib/facades";',
+      code: 'import { lang } from "real-facades";',
       errors: [{ line: 1, messageId: MessageId.customMessage }]
     }
   ],
   [
     {
       name: `Test at line ${getCurrentLine().line}`,
-      code: 'import type { lang } from "@skylib/facades";'
+      code: 'import type { lang } from "real-facades";'
     }
   ]
 );

@@ -560,7 +560,7 @@ utils.testRule(
             {
               _id: "id",
               source: "eslint-plugin-misc/fixtures",
-              sourcePattern: "@skylib/*/fixtures",
+              sourcePattern: "misc/*/fixtures",
               wildcard: true
             }
           ]

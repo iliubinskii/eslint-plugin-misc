@@ -24,7 +24,7 @@ utils.testRule("no-unnecessary-array", rule, [
       module.exports = {
         rules: [
           {
-            "@skylib/rule": [
+            "misc/rule": [
               "warn",
               { selector: ["a"] },
               { selector: ["a", "b"] }

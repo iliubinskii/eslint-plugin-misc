@@ -2,7 +2,7 @@
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/{{name}}": "error"
+    "misc/{{name}}": "error"
   }
 };
 ```

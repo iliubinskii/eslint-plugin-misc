@@ -7,7 +7,7 @@ export const noGlobalLang = utils.wrapRule({
     {
       message: "No global lang",
       selector:
-        "ImportDeclaration[importKind=value][source.value=@skylib/facades] > ImportSpecifier[imported.name=lang]"
+        "ImportDeclaration[importKind=value][source.value=real-facades] > ImportSpecifier[imported.name=lang]"
     }
   ]
 });

@@ -34,7 +34,7 @@ utils.testRule("sort-array", rule, [
       module.exports = {
         rules: [
           {
-            "@skylib/rule": [
+            "misc/rule": [
               "warn",
               {
                 selector: ["b", "a"]
@@ -48,7 +48,7 @@ utils.testRule("sort-array", rule, [
       module.exports = {
         rules: [
           {
-            "@skylib/rule": [
+            "misc/rule": [
               "warn",
               {
                 selector: ["a", "b"]

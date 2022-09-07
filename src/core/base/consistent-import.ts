@@ -82,7 +82,7 @@ export const consistentImport = utils.createRule({
     },
     failExamples: `
       /*
-      eslint @skylib/consistent-import: [
+      eslint misc/consistent-import: [
         error,
         {
           sources: [
@@ -105,7 +105,7 @@ export const consistentImport = utils.createRule({
     `,
     passExamples: `
       /*
-      eslint @skylib/consistent-import: [
+      eslint misc/consistent-import: [
         error,
         {
           sources: [
@@ -129,7 +129,7 @@ export const consistentImport = utils.createRule({
   create: (context): RuleListener => {
     const eol = context.eol;
 
-    // eslint-disable-next-line @skylib/functions/prefer-ReadonlySet -- Ok
+    // eslint-disable-next-line misc/real-fns/prefer-ReadonlySet -- Ok
     const identifiers = new Set<string>();
 
     const importDeclarations: Writable<utils.TSESTree.ImportDeclarations> = [];

@@ -6,7 +6,7 @@ export const sortSuboptions = utils.wrapRule({
   options: [
     {
       selector:
-        "Property[key.value=/@skylib\\u002F/u] > ArrayExpression > ObjectExpression > Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression",
+        "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression > Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression",
       sendToBottom: /^catch-all$/u.source,
       sortKey: "_id",
       triggerByComment: false
@@ -17,7 +17,7 @@ export const sortSuboptions = utils.wrapRule({
     failExamples: `
       module.exports = {
         rules: {
-          "@skylib/sort-keys": [
+          "misc/sort-keys": [
             "warn",
             {
               overrides: [{ _id: "b" }, { _id: "a" }]
@@ -29,7 +29,7 @@ export const sortSuboptions = utils.wrapRule({
     passExamples: `
       module.exports = {
         rules: {
-          "@skylib/sort-keys": [
+          "misc/sort-keys": [
             "warn",
             {
               overrides: [{ _id: "a" }, { _id: "b" }]

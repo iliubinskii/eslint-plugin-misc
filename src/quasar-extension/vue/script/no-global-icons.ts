@@ -7,7 +7,7 @@ export const noGlobalIcons = utils.wrapRule({
     {
       message: "No global icons",
       selector:
-        "ImportDeclaration[importKind=value][source.value=@skylib/facades] > ImportSpecifier[imported.name=icons]"
+        "ImportDeclaration[importKind=value][source.value=real-facades] > ImportSpecifier[imported.name=icons]"
     }
   ]
 });

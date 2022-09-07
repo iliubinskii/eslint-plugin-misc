@@ -1,9 +1,9 @@
-/* eslint-disable @skylib/consistent-filename -- Ok */
+/* eslint-disable misc/consistent-filename -- Ok */
 
 import * as utils from "../../../utils";
 import { typescript } from "../../../typescript";
 
-// eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
+// eslint-disable-next-line misc/max-identifier-blocks -- Ok
 export const mixedFromIncludeNonArray = utils.wrapRule({
   rule: typescript["typescript/no-restricted-syntax"],
   options: [

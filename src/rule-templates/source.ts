@@ -4,7 +4,7 @@ import type { Callback } from "./source.internal";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import { Type } from "./source.internal";
 
-// eslint-disable-next-line @skylib/only-export-name -- Ok
+// eslint-disable-next-line misc/only-export-name -- Ok
 export const create = defineFn(
   /**
    * Creates rule listener.

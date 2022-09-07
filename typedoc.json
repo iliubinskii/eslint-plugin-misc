@@ -1,5 +1,5 @@
 {
-  "extends": "@skylib/config/typedoc/recommended",
+  "extends": "real-config/typedoc/recommended",
   "intentionallyNotExported": [
     "global.configurable.LocaleName"
   ],

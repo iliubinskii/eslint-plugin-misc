@@ -1,1 +1,1 @@
-module.exports = { extends: ["@skylib/config/commitlint/next"] };
+module.exports = { extends: ["./node_modules/real-config/commitlint/next"] };

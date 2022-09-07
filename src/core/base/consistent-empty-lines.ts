@@ -67,7 +67,7 @@ export const consistentEmptyLines = evaluate(() => {
       },
       failExamples: `
         /*
-        eslint @skylib/consistent-empty-lines: [
+        eslint misc/consistent-empty-lines: [
           error,
           {
             rules: [
@@ -85,7 +85,7 @@ export const consistentEmptyLines = evaluate(() => {
       `,
       passExamples: `
         /*
-        eslint @skylib/consistent-empty-lines: [
+        eslint misc/consistent-empty-lines: [
           error,
           {
             rules: [
@@ -132,9 +132,9 @@ export const consistentEmptyLines = evaluate(() => {
         }),
         {
           "Program:exit": () => {
-            // eslint-disable-next-line @skylib/functions/array/prefer-sort -- Ok
+            // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
             prevItems.sort(reverseCompare);
-            // eslint-disable-next-line @skylib/functions/array/prefer-sort -- Ok
+            // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
             nextItems.sort(reverseCompare);
 
             const items = _.uniqBy(

@@ -4,7 +4,7 @@ import { is } from "real-fns";
 import type { strings } from "real-fns";
 
 export interface Options {
-  // eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+  // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
   // fixme
   readonly allow: strings | string;
   readonly disallow: strings | string;
@@ -34,7 +34,7 @@ export const disallowImport = utils.createRule({
     },
     failExamples: `
       /*
-      eslint @skylib/disallow-import: [
+      eslint misc/disallow-import: [
         error,
         {
           disallow: "source1"
@@ -45,7 +45,7 @@ export const disallowImport = utils.createRule({
     `,
     passExamples: `
       /*
-      eslint @skylib/disallow-import: [
+      eslint misc/disallow-import: [
         error,
         {
           disallow: "source1"

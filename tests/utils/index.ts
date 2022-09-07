@@ -1,4 +1,4 @@
-// eslint-disable-next-line @skylib/no-at-sign-internal-import, @skylib/no-internal-modules -- Ok
+// eslint-disable-next-line misc/no-at-sign-internal-import, misc/no-internal-modules -- Ok
 import { getProjectConfig } from "@/utils/create-rule.internal";
 
 test.each([

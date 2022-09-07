@@ -11,13 +11,13 @@ utils.testRule("no-message-dot", rule, [
     code: `
       module.exports = {
         rules: {
-          "@skylib/rule1": [
+          "misc/rule1": [
             "warn",
             {
               message: "Error message."
             }
           ],
-          "@skylib/rule2": [
+          "misc/rule2": [
             "warn",
             {
               message: "Error message"

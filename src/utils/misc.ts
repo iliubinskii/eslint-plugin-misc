@@ -135,7 +135,7 @@ export function mergeListeners(...listeners: RuleListeners): RuleListener {
     for (const [name, visitor] of o.entries(listener))
       accumulator.push(name, as.callable<Visitor>(visitor));
 
-  // eslint-disable-next-line @skylib/typescript/no-unsafe-object-assignment -- Ok
+  // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
   return o.fromEntries(
     a.fromIterable(accumulator).map(
       ([name, visitors]): Entry<string, Visitor> => [

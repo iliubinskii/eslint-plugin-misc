@@ -45,7 +45,7 @@ export const noSiblingImport = utils.createRule({
     passExamples: `
       // filename: file.ts
       /*
-      eslint @skylib/no-sibling-import: [
+      eslint misc/no-sibling-import: [
         error,
         {
           rules: [
@@ -120,7 +120,7 @@ export const noSiblingImport = utils.createRule({
   }
 });
 
-// eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
 // fixme
 interface Callback<T> {
   /**
@@ -155,7 +155,7 @@ function findLastIndex(str: string, matchers: utils.Matchers): number {
  * @param callback - Callback.
  * @returns Last matching index.
  */
-// eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
 // fixme
 function findLastIndex2<T>(arr: readonly T[], callback: Callback<T>): number {
   const index = a.reverse(arr).findIndex(callback);

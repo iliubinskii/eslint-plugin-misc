@@ -155,7 +155,7 @@ export class TypeCheck {
    * @param type - Type.
    * @returns _True_ if type is an array or a tuple, _false_ otherwise.
    */
-  // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
+  // eslint-disable-next-line misc/max-identifier-blocks -- Ok
   public isArrayOrTupleType(
     type: ts.Type
   ): type is ts.TupleTypeReference | ts.TypeReference {
@@ -272,7 +272,7 @@ export class TypeCheck {
    * @param expected - Expected type group.
    * @returns _True_ if type belongs to type group, _false_ otherwise.
    */
-  // eslint-disable-next-line complexity -- Wait for @skylib/config update
+  // eslint-disable-next-line complexity -- Wait for real-config update
   public typeIs(type: ts.Type, expected: TypeGroup | undefined): boolean {
     if (expected)
       switch (expected) {

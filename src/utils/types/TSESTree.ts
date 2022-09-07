@@ -1,4 +1,4 @@
-/* eslint-disable @skylib/consistent-filename -- Ok */
+/* eslint-disable misc/consistent-filename -- Ok */
 
 import type { TSESTree } from "@typescript-eslint/utils";
 

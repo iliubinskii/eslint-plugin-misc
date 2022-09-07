@@ -1,1 +1,1 @@
-module.exports = ["@skylib/aaa/bbb", "@skylib/ccc/ddd"];
+module.exports = ["misc/aaa/bbb", "misc/ccc/ddd"];

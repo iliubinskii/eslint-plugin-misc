@@ -12,7 +12,7 @@ import type { utils } from "..";
  * @param callback - Callback.
  * @returns Rule listener.
  */
-// eslint-disable-next-line @skylib/only-export-name -- Ok
+// eslint-disable-next-line misc/only-export-name -- Ok
 export function create(callback: Callback): RuleListener {
   const exportAllDeclarations: Writable<utils.TSESTree.ExportAllDeclarations> =
     [];

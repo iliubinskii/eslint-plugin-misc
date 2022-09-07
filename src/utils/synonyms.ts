@@ -9,7 +9,7 @@ import fs from "node:fs";
  * @param core - Core rules.
  * @returns Synonyms object.
  */
-// eslint-disable-next-line @skylib/only-export-name -- Ok
+// eslint-disable-next-line misc/only-export-name -- Ok
 export function getSynonyms(
   config: string,
   core: IndexedRecord
@@ -24,10 +24,10 @@ export function getSynonyms(
     const entries = synonyms
       .map((synonym): Entry<string, unknown> | undefined => {
         const item = items.find(({ name }) =>
-          synonym.startsWith(`@skylib/${name}/`)
+          synonym.startsWith(`misc/${name}/`)
         );
 
-        return item ? [synonym.slice(8), item.rule] : undefined;
+        return item ? [synonym.slice(5), item.rule] : undefined;
       })
       .filter(is.not.empty);
 

@@ -1,1 +1,1 @@
-module.exports = { preset: "@skylib/config/jest" };
+module.exports = { preset: "real-config/jest" };
