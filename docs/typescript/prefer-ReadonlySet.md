@@ -8,7 +8,7 @@ Disallows writable sets.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/prefer-ReadonlySet": "error"
+    "misc/typescript/prefer-ReadonlySet": "error"
   }
 };
 ```

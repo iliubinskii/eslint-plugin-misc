@@ -180,7 +180,7 @@ class TypeCheck {
      * @param type - Type.
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
-    // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
+    // eslint-disable-next-line misc/max-identifier-blocks -- Ok
     isArrayOrTupleType(type) {
         return this.checker.isArrayType(type) || this.checker.isTupleType(type);
     }
@@ -235,7 +235,7 @@ class TypeCheck {
      * @param expected - Expected type group.
      * @returns _True_ if type belongs to type group, _false_ otherwise.
      */
-    // eslint-disable-next-line complexity -- Wait for @skylib/config update
+    // eslint-disable-next-line complexity -- Wait for real-config update
     typeIs(type, expected) {
         if (expected)
             switch (expected) {

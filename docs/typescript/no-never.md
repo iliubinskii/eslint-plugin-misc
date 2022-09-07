@@ -8,7 +8,7 @@ Disallow "never" type.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-never": "error"
+    "misc/typescript/no-never": "error"
   }
 };
 ```

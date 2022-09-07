@@ -8,7 +8,7 @@ Disallows "this: void" syntax.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-this-void": "error"
+    "misc/typescript/no-this-void": "error"
   }
 };
 ```

@@ -8,7 +8,7 @@ Requires class name to match filename.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/class-match-filename": "error"
+    "misc/class-match-filename": "error"
   }
 };
 ```

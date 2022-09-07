@@ -8,7 +8,7 @@ Requires that export matching filename is the only export.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/export-matching-filename-only": "error"
+    "misc/export-matching-filename-only": "error"
   }
 };
 ```

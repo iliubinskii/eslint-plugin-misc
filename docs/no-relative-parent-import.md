@@ -8,7 +8,7 @@ Disallows relative parent import.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-relative-parent-import": "error"
+    "misc/no-relative-parent-import": "error"
   }
 };
 ```

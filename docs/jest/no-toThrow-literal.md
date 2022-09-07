@@ -8,7 +8,7 @@ Disallows string argument in "toThrow" matcher.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/jest/no-toThrow-literal": "error"
+    "misc/jest/no-toThrow-literal": "error"
   }
 };
 ```

@@ -8,7 +8,7 @@ Controls spaces around HTML element contents.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/vue/element-contents-spacing": "error"
+    "misc/vue/element-contents-spacing": "error"
   }
 };
 ```

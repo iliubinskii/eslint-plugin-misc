@@ -8,7 +8,7 @@ Reports inferrable types.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-inferrable-types": "error"
+    "misc/typescript/no-inferrable-types": "error"
   }
 };
 ```

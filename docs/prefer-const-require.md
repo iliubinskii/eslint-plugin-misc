@@ -8,7 +8,7 @@ Requires "require()" to be assigned to variable.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/prefer-const-require": "error"
+    "misc/prefer-const-require": "error"
   }
 };
 ```

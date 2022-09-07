@@ -8,7 +8,7 @@ Sorts safely sortable arrays in eslint configuration files.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/eslintrc/sort-array": "error"
+    "misc/eslintrc/sort-array": "error"
   }
 };
 ```

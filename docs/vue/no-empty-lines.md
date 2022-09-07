@@ -8,7 +8,7 @@ Disallow empty lines inside <template> section.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/vue/no-empty-lines": "error"
+    "misc/vue/no-empty-lines": "error"
   }
 };
 ```

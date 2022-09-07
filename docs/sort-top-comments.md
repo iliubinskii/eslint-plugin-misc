@@ -8,7 +8,7 @@ Sorts top comments.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/sort-top-comments": "error"
+    "misc/sort-top-comments": "error"
   }
 };
 ```

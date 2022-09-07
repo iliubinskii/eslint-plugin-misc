@@ -8,7 +8,7 @@ Sorts arrays.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/sort-array": [
+    "misc/sort-array": [
       "error",
       {
         customOrder: string[],

@@ -109,7 +109,7 @@ npm install --save-dev eslint-plugin-misc
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/<rule-id>": [
+    "misc/<rule-id>": [
       "error",
       {
         <sub-options-key>: [

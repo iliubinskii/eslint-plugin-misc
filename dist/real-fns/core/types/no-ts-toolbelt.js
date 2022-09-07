@@ -8,7 +8,7 @@ exports.noTsToolbelt = utils.wrapRule({
     rule: core_1.core["no-restricted-syntax"],
     options: [
         {
-            message: 'Use "@skylib/functions" type instead',
+            message: 'Use "real-fns" type instead',
             selector: [
                 "ImportDeclaration > Literal.source[value=ts-toolbelt/out/Object/FilterKeys]",
                 "ImportDeclaration > Literal.source[value=ts-toolbelt/out/Object/Optional]",

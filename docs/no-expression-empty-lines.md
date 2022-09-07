@@ -8,7 +8,7 @@ Disallows empty lines inside expressions.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-expression-empty-lines": "error"
+    "misc/no-expression-empty-lines": "error"
   }
 };
 ```

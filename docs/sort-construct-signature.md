@@ -8,7 +8,7 @@ Requires construct signature to be first child.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/sort-construct-signature": "error"
+    "misc/sort-construct-signature": "error"
   }
 };
 ```

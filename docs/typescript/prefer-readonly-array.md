@@ -8,7 +8,7 @@ Disallows writable arrays.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/prefer-readonly-array": "error"
+    "misc/typescript/prefer-readonly-array": "error"
   }
 };
 ```

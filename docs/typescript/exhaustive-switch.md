@@ -8,7 +8,7 @@ Checks exhaustiveness of switch statement.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/exhaustive-switch": "error"
+    "misc/typescript/exhaustive-switch": "error"
   }
 };
 ```

@@ -8,7 +8,7 @@ Ensures consistent empty lines between switch case statements.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/switch-case-spacing": "error"
+    "misc/switch-case-spacing": "error"
   }
 };
 ```

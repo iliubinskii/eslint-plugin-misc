@@ -8,7 +8,7 @@ Disallows boolean literal type.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-boolean-literal-type": "error"
+    "misc/typescript/no-boolean-literal-type": "error"
   }
 };
 ```

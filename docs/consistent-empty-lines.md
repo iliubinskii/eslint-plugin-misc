@@ -8,7 +8,7 @@ Requires consistent empty lines.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/consistent-empty-lines": [
+    "misc/consistent-empty-lines": [
       "error",
       {
         rules: [
@@ -39,7 +39,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/consistent-empty-lines: [
+eslint misc/consistent-empty-lines: [
   error,
   {
     rules: [
@@ -60,7 +60,7 @@ import y from "source2";
 
 ```ts
 /*
-eslint @skylib/consistent-empty-lines: [
+eslint misc/consistent-empty-lines: [
   error,
   {
     rules: [

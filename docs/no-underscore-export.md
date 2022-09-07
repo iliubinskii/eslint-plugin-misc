@@ -8,7 +8,7 @@ Disallows underscore export.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-underscore-export": "error"
+    "misc/no-underscore-export": "error"
   }
 };
 ```

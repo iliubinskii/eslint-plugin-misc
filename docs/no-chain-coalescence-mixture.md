@@ -8,7 +8,7 @@ Disallows mixing of chain and coalescence operators.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-chain-coalescence-mixture": "error"
+    "misc/no-chain-coalescence-mixture": "error"
   }
 };
 ```

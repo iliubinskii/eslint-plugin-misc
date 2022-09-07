@@ -8,7 +8,7 @@ Disallows unnecessary template literals.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-unnecessary-template-literal": "error"
+    "misc/no-unnecessary-template-literal": "error"
   }
 };
 ```

@@ -8,7 +8,7 @@ Requires consistent empty lines around comments.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/comment-spacing": "error"
+    "misc/comment-spacing": "error"
   }
 };
 ```

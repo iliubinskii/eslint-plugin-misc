@@ -8,7 +8,7 @@ Disallows unnessecary single-element arrays in eslint configuration files.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/eslintrc/no-unnecessary-array": "error"
+    "misc/eslintrc/no-unnecessary-array": "error"
   }
 };
 ```

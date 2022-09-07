@@ -8,7 +8,7 @@ Restricts identifier complexity.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/max-identifier-blocks": "error"
+    "misc/max-identifier-blocks": "error"
   }
 };
 ```

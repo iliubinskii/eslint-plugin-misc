@@ -8,7 +8,7 @@ Sorts safely sortable arrays in eslint configuration files.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/eslintrc/sort-suboptions": "error"
+    "misc/eslintrc/sort-suboptions": "error"
   }
 };
 ```
@@ -18,7 +18,7 @@ module.exports = {
 ```ts
 module.exports = {
   rules: {
-    "@skylib/sort-keys": [
+    "misc/sort-keys": [
       "warn",
       {
         overrides: [{ _id: "b" }, { _id: "a" }]
@@ -33,7 +33,7 @@ module.exports = {
 ```ts
 module.exports = {
   rules: {
-    "@skylib/sort-keys": [
+    "misc/sort-keys": [
       "warn",
       {
         overrides: [{ _id: "a" }, { _id: "b" }]

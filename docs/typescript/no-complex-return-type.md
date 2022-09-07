@@ -8,7 +8,7 @@ Disallow complex function return types.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-complex-return-type": "error"
+    "misc/typescript/no-complex-return-type": "error"
   }
 };
 ```

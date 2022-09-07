@@ -149,7 +149,7 @@ exports.requireJsdoc = utils.createRule({
                 else
                     context.report({ messageId: MessageId.undocumented, node });
         }
-        // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
+        // eslint-disable-next-line misc/max-identifier-blocks -- Ok
         function lintNodeByTypeSymbol(node) {
             const type = typeCheck.getType(node);
             const symbol = type.getSymbol();

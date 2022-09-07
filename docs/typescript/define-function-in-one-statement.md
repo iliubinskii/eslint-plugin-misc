@@ -8,7 +8,7 @@ Requires that function is defined in one statement.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/define-function-in-one-statement": "error"
+    "misc/typescript/define-function-in-one-statement": "error"
   }
 };
 ```

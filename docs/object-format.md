@@ -8,7 +8,7 @@ Requires multiline or single-line object format.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/object-format": [
+    "misc/object-format": [
       "error",
       {
         maxLineLength: number,

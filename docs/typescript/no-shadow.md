@@ -8,7 +8,7 @@ This rule wraps "@typescript-eslint/no-shadow" rule, but skips checking enum.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-shadow": "error"
+    "misc/typescript/no-shadow": "error"
   }
 };
 ```

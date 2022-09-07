@@ -30,7 +30,7 @@ exports.requireSyntax = utils.createRule({
         },
         failExamples: `
       /*
-      eslint @skylib/require-syntax: [
+      eslint misc/require-syntax: [
         error,
         {
           selector: "Identifier[name=x]",
@@ -42,7 +42,7 @@ exports.requireSyntax = utils.createRule({
     `,
         passExamples: `
       /*
-      eslint @skylib/require-syntax: [
+      eslint misc/require-syntax: [
         error,
         {
           selector: "Identifier[name=x]",

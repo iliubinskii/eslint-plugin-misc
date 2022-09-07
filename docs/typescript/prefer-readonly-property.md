@@ -8,7 +8,7 @@ Disallows writable properties.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/prefer-readonly-property": "error"
+    "misc/typescript/prefer-readonly-property": "error"
   }
 };
 ```

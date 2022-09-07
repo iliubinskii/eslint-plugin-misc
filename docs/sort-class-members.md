@@ -13,7 +13,7 @@ Sorts class members by type and alphabetically inside each type group. Type grou
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/sort-class-members": [
+    "misc/sort-class-members": [
       "error",
       {
         sortingOrder: string[]

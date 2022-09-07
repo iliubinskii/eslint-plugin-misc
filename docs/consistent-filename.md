@@ -8,7 +8,7 @@ Enforces consistent file name format.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/consistent-filename": [
+    "misc/consistent-filename": [
       "error",
       {
         format: "PascalCase" | "camelCase" | "kebab-case",
@@ -40,7 +40,7 @@ module.exports = {
 ```ts
 // filename: SampleClass.ts
 /*
-eslint @skylib/consistent-filename: [
+eslint misc/consistent-filename: [
   error,
   {
     overrides: [
@@ -63,7 +63,7 @@ class SampleClass {}
 ```ts
 // filename: SampleClass.ts
 /*
-eslint @skylib/consistent-filename: [
+eslint misc/consistent-filename: [
   error,
   {
     overrides: [

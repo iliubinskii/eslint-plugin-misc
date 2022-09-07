@@ -8,7 +8,7 @@ Disallows negated conditions.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-negated-conditions": "error"
+    "misc/no-negated-conditions": "error"
   }
 };
 ```

@@ -1,11 +1,11 @@
 "use strict";
-/* eslint-disable @skylib/consistent-filename -- Ok */
+/* eslint-disable misc/consistent-filename -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mixedFromIncludeNonArray = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../../utils"));
 const typescript_1 = require("../../../typescript");
-// eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
+// eslint-disable-next-line misc/max-identifier-blocks -- Ok
 exports.mixedFromIncludeNonArray = utils.wrapRule({
     rule: typescript_1.typescript["typescript/no-restricted-syntax"],
     options: [

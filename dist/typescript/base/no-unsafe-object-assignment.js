@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.noUnsafeObjectAssignment = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
-// eslint-disable-next-line @skylib/disallow-import/typescript -- Ok
+// eslint-disable-next-line misc/disallow-import/typescript -- Ok
 const ts = tslib_1.__importStar(require("typescript"));
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");

@@ -11,7 +11,7 @@ Ensures consistent optional property style:
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/consistent-optional-props": [
+    "misc/consistent-optional-props": [
       "error",
       {
         classes: "combined" | "optional" | "undefined",

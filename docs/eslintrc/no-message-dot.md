@@ -8,7 +8,7 @@ Disallows dot at the end of message.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/eslintrc/no-message-dot": "error"
+    "misc/eslintrc/no-message-dot": "error"
   }
 };
 ```
@@ -18,7 +18,7 @@ module.exports = {
 ```ts
 module.exports = {
   rules: {
-    "@skylib/require-syntax": [
+    "misc/require-syntax": [
       "warn",
       {
         message: "Error message."
@@ -33,7 +33,7 @@ module.exports = {
 ```ts
 module.exports = {
   rules: {
-    "@skylib/require-syntax": [
+    "misc/require-syntax": [
       "warn",
       {
         message: "Error message"

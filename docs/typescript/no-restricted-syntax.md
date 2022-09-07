@@ -28,7 +28,7 @@ type TypeGroup =
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-restricted-syntax": [
+    "misc/typescript/no-restricted-syntax": [
       "error",
       {
         checkArrayType: boolean,
@@ -70,7 +70,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/no-restricted-syntax: [
+eslint misc/no-restricted-syntax: [
   error,
   {
     selector: "Identifier",
@@ -85,7 +85,7 @@ const x = 1;
 
 ```ts
 /*
-eslint @skylib/no-restricted-syntax: [
+eslint misc/no-restricted-syntax: [
   error,
   {
     selector: "Identifier",

@@ -8,7 +8,7 @@ Requires use of arrow static methods.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/prefer-arrow-static-method": "error"
+    "misc/prefer-arrow-static-method": "error"
   }
 };
 ```

@@ -1,5 +1,5 @@
 "use strict";
-/* eslint-disable @skylib/consistent-filename -- Postponed */
+/* eslint-disable misc/consistent-filename -- Postponed */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.preferNumStr = void 0;
 const tslib_1 = require("tslib");

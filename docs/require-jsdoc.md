@@ -8,7 +8,7 @@ Requires JSDoc documentation.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/require-jsdoc": [
+    "misc/require-jsdoc": [
       "error",
       {
         excludeSelectors: string[],

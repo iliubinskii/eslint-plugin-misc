@@ -8,7 +8,7 @@ Requires consistent import.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/consistent-import": [
+    "misc/consistent-import": [
       "error",
       {
         sources: [
@@ -45,7 +45,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/consistent-import: [
+eslint misc/consistent-import: [
   error,
   {
     sources: [
@@ -71,7 +71,7 @@ import * as invalidLocalName from "source2"; // Invalid local name
 
 ```ts
 /*
-eslint @skylib/consistent-import: [
+eslint misc/consistent-import: [
   error,
   {
     sources: [

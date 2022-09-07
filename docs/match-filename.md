@@ -8,7 +8,7 @@ Requires that AST element matches filename.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/match-filename": [
+    "misc/match-filename": [
       "error",
       {
         format: "camelCase" | "kebab-case" | "PascalCase",
@@ -32,7 +32,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/match-filename: [
+eslint misc/match-filename: [
   error,
   {
     disallow: "source1"
@@ -46,7 +46,7 @@ import * as source1 from "source1";
 
 ```ts
 /*
-eslint @skylib/match-filename: [
+eslint misc/match-filename: [
   error,
   {
     disallow: "source1"

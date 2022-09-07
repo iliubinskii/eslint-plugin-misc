@@ -8,7 +8,7 @@ Sorts "v-bind" directive.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/vue/sort-v-bind": "error"
+    "misc/vue/sort-v-bind": "error"
   }
 };
 ```

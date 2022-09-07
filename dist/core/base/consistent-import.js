@@ -61,7 +61,7 @@ exports.consistentImport = utils.createRule({
         },
         failExamples: `
       /*
-      eslint @skylib/consistent-import: [
+      eslint misc/consistent-import: [
         error,
         {
           sources: [
@@ -84,7 +84,7 @@ exports.consistentImport = utils.createRule({
     `,
         passExamples: `
       /*
-      eslint @skylib/consistent-import: [
+      eslint misc/consistent-import: [
         error,
         {
           sources: [
@@ -107,7 +107,7 @@ exports.consistentImport = utils.createRule({
     },
     create: (context) => {
         const eol = context.eol;
-        // eslint-disable-next-line @skylib/functions/prefer-ReadonlySet -- Ok
+        // eslint-disable-next-line misc/real-fns/prefer-ReadonlySet -- Ok
         const identifiers = new Set();
         const importDeclarations = [];
         return {

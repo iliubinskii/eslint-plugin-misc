@@ -8,7 +8,7 @@ Disallow complex declarator types.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/vue/no-complex-declarator-type": "error"
+    "misc/vue/no-complex-declarator-type": "error"
   }
 };
 ```

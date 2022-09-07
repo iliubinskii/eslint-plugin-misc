@@ -8,7 +8,7 @@ Disallows unnecessary "as const".
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-unnecessary-as-const": "error"
+    "misc/no-unnecessary-as-const": "error"
   }
 };
 ```

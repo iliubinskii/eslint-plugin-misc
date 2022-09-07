@@ -1,5 +1,5 @@
 "use strict";
-/* eslint-disable @skylib/require-syntax/require-fix -- Ok */
+/* eslint-disable misc/require-syntax/require-fix -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrap = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
@@ -37,7 +37,7 @@ exports.wrap = utils.createRule({
         },
         failExamples: `
       /*
-      eslint @skylib/wrap: [
+      eslint misc/wrap: [
         error,
         {
           plugin: "@typescript-eslint/eslint-plugin",
@@ -50,7 +50,7 @@ exports.wrap = utils.createRule({
     `,
         passExamples: `
       /*
-      eslint @skylib/wrap: [
+      eslint misc/wrap: [
         error,
         {
           skip: "TSEnumDeclaration *",

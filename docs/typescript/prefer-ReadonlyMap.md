@@ -8,7 +8,7 @@ Disallows writable maps.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/prefer-ReadonlyMap": "error"
+    "misc/typescript/prefer-ReadonlyMap": "error"
   }
 };
 ```

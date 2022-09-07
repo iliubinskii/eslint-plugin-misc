@@ -8,7 +8,7 @@ Requires call signature to be first child.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/sort-call-signature": "error"
+    "misc/sort-call-signature": "error"
   }
 };
 ```

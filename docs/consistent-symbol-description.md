@@ -8,7 +8,7 @@ Requires consistent symbol description.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/consistent-symbol-description": "error"
+    "misc/consistent-symbol-description": "error"
   }
 };
 ```

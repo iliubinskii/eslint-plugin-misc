@@ -8,7 +8,7 @@ Disallow complex declarator types.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-complex-declarator-type": "error"
+    "misc/typescript/no-complex-declarator-type": "error"
   }
 };
 ```

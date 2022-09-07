@@ -21,7 +21,7 @@ exports.noLanguageMixing = (0, real_fns_1.evaluate)(() => {
         docs: {
             description: "Disallows langauge mixing.",
             failExamples: 
-            // eslint-disable-next-line @skylib/no-language-mixing -- Ok
+            // eslint-disable-next-line misc/no-language-mixing -- Ok
             'const x = "xyz123абв";',
             passExamples: `
         const x = "xyz";

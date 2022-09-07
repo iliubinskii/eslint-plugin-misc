@@ -8,7 +8,7 @@ Wraps third-party rule.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/wrap": [
+    "misc/wrap": [
       "error",
       {
         lint: string | string[],
@@ -32,7 +32,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/wrap: [
+eslint misc/wrap: [
   error,
   {
     plugin: "@typescript-eslint/eslint-plugin",
@@ -48,7 +48,7 @@ enum SampleEnum { value = "value" }
 
 ```ts
 /*
-eslint @skylib/wrap: [
+eslint misc/wrap: [
   error,
   {
     skip: "TSEnumDeclaration *",

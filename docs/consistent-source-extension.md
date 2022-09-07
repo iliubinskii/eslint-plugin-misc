@@ -8,7 +8,7 @@ Requires consistent import/export source extension.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/consistent-source-extension": "error"
+    "misc/consistent-source-extension": "error"
   }
 };
 ```

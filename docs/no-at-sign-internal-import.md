@@ -8,7 +8,7 @@ Disallows "@/**" import.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-at-sign-internal-import": "error"
+    "misc/no-at-sign-internal-import": "error"
   }
 };
 ```

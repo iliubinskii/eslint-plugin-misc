@@ -8,7 +8,7 @@ Requires using enums instead of string literals.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/vue/component-name": "error"
+    "misc/vue/component-name": "error"
   }
 };
 ```

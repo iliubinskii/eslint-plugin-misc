@@ -8,7 +8,7 @@ Disallows "." import.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-index-import": "error"
+    "misc/no-index-import": "error"
   }
 };
 ```

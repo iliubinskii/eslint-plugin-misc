@@ -4,7 +4,7 @@ exports.create = void 0;
 const real_fns_1 = require("real-fns");
 const utils_1 = require("@typescript-eslint/utils");
 const source_internal_1 = require("./source.internal");
-// eslint-disable-next-line @skylib/only-export-name -- Ok
+// eslint-disable-next-line misc/only-export-name -- Ok
 exports.create = (0, real_fns_1.defineFn)(
 /**
  * Creates rule listener.

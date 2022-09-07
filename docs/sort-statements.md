@@ -24,7 +24,7 @@ StatementType =
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/sort-statements": [
+    "misc/sort-statements": [
       "error",
       {
         blockOrder: StatementType[],

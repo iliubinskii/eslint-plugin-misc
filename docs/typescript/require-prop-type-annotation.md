@@ -8,7 +8,7 @@ Requires type annotation for class properties.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/require-prop-type-annotation": "error"
+    "misc/typescript/require-prop-type-annotation": "error"
   }
 };
 ```

@@ -8,7 +8,7 @@ Disallow empty interfaces.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-empty-interfaces": "error"
+    "misc/typescript/no-empty-interfaces": "error"
   }
 };
 ```

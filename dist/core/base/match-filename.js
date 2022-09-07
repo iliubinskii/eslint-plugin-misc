@@ -30,7 +30,7 @@ exports.matchFilename = utils.createRule({
         },
         failExamples: `
       /*
-      eslint @skylib/match-filename: [
+      eslint misc/match-filename: [
         error,
         {
           disallow: "source1"
@@ -41,7 +41,7 @@ exports.matchFilename = utils.createRule({
     `,
         passExamples: `
       /*
-      eslint @skylib/match-filename: [
+      eslint misc/match-filename: [
         error,
         {
           disallow: "source1"

@@ -8,7 +8,7 @@ Disallows importing NodeJS modules.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-nodejs-modules": "error"
+    "misc/no-nodejs-modules": "error"
   }
 };
 ```

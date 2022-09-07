@@ -33,7 +33,7 @@ exports.noSiblingImport = utils.createRule({
         passExamples: `
       // filename: file.ts
       /*
-      eslint @skylib/no-sibling-import: [
+      eslint misc/no-sibling-import: [
         error,
         {
           rules: [
@@ -106,7 +106,7 @@ function findLastIndex(str, matchers) {
  * @param callback - Callback.
  * @returns Last matching index.
  */
-// eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
+// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
 // fixme
 function findLastIndex2(arr, callback) {
     const index = real_fns_1.a.reverse(arr).findIndex(callback);

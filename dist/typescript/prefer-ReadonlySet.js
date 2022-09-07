@@ -1,5 +1,5 @@
 "use strict";
-/* eslint-disable @skylib/consistent-filename -- Ok */
+/* eslint-disable misc/consistent-filename -- Ok */
 /* eslint-disable xss/no-mixed-html -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.preferReadonlySet = void 0;

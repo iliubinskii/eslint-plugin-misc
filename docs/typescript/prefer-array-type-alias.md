@@ -8,7 +8,7 @@ Disallows unsafe "Object.assign".
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/prefer-array-type-alias": "error"
+    "misc/typescript/prefer-array-type-alias": "error"
   }
 };
 ```

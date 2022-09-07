@@ -10,7 +10,7 @@ const real_fns_1 = require("real-fns");
  * @param callback - Callback.
  * @returns Rule listener.
  */
-// eslint-disable-next-line @skylib/only-export-name -- Ok
+// eslint-disable-next-line misc/only-export-name -- Ok
 function create(callback) {
     const exportAllDeclarations = [];
     const exportDefaultDeclarations = [];

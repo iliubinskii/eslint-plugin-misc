@@ -8,7 +8,7 @@ Requires "require()" to be assigned to variable.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/restrict-identifier-characters": "error"
+    "misc/restrict-identifier-characters": "error"
   }
 };
 ```

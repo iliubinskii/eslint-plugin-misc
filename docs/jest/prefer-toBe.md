@@ -8,7 +8,7 @@ Requires "toBe" matcher instead of "toStrictEqual" for primitive argument types.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/jest/prefer-toBe": "error"
+    "misc/jest/prefer-toBe": "error"
   }
 };
 ```

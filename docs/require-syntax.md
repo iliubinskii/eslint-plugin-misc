@@ -8,7 +8,7 @@ Requires script to contain syntax.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/require-syntax": [
+    "misc/require-syntax": [
       "error",
       {
         message: string,
@@ -32,7 +32,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/require-syntax: [
+eslint misc/require-syntax: [
   error,
   {
     selector: "Identifier[name=x]",
@@ -47,7 +47,7 @@ export const y = 1;
 
 ```ts
 /*
-eslint @skylib/require-syntax: [
+eslint misc/require-syntax: [
   error,
   {
     selector: "Identifier[name=x]",

@@ -8,7 +8,7 @@ Disallows restricted syntax.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-restricted-syntax": [
+    "misc/no-restricted-syntax": [
       "error",
       {
         ignoreSelector: string | string[],
@@ -34,7 +34,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/no-restricted-syntax: [
+eslint misc/no-restricted-syntax: [
   error,
   {
     selector: "Identifier",
@@ -49,7 +49,7 @@ const x = 1;
 
 ```ts
 /*
-eslint @skylib/no-restricted-syntax: [
+eslint misc/no-restricted-syntax: [
   error,
   {
     selector: "Identifier",

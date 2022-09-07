@@ -8,7 +8,7 @@ Disallows importing of internal modules.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-internal-modules": "error"
+    "misc/no-internal-modules": "error"
   }
 };
 ```

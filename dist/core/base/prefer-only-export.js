@@ -21,7 +21,7 @@ exports.preferOnlyExport = utils.createRule({
         optionDescriptions: { selector: "AST selector" },
         failExamples: `
       /*
-      eslint @skylib/prefer-only-export: [
+      eslint misc/prefer-only-export: [
         error,
         {
           selector: "Program > ExportNamedDeclaration > ClassDeclaration"
@@ -33,7 +33,7 @@ exports.preferOnlyExport = utils.createRule({
     `,
         passExamples: `
       /*
-      eslint @skylib/prefer-only-export: [
+      eslint misc/prefer-only-export: [
         error,
         {
           selector: "Program > ExportNamedDeclaration > ClassDeclaration"

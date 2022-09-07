@@ -8,7 +8,7 @@ Requires consistent key-value pairs inside enums (key should match value).
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/consistent-enum-members": "error"
+    "misc/consistent-enum-members": "error"
   }
 };
 ```

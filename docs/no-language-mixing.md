@@ -8,7 +8,7 @@ Disallows langauge mixing.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-language-mixing": "error"
+    "misc/no-language-mixing": "error"
   }
 };
 ```

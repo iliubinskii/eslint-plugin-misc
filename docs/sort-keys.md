@@ -8,7 +8,7 @@ Sorts object keys.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/sort-keys": [
+    "misc/sort-keys": [
       "error",
       {
         overrides: [

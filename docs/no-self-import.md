@@ -8,7 +8,7 @@ Disallows self-import.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-self-import": "error"
+    "misc/no-self-import": "error"
   }
 };
 ```

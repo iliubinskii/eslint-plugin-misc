@@ -8,7 +8,7 @@ Restricts importing siblings.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-sibling-import": [
+    "misc/no-sibling-import": [
       "error",
       {
         rules: [
@@ -39,7 +39,7 @@ import { x } from "./sibling-file";
 ```ts
 // filename: file.ts
 /*
-eslint @skylib/no-sibling-import: [
+eslint misc/no-sibling-import: [
   error,
   {
     rules: [

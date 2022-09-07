@@ -69,7 +69,7 @@ function mergeListeners(...listeners) {
     for (const listener of listeners)
         for (const [name, visitor] of real_fns_1.o.entries(listener))
             accumulator.push(name, real_fns_1.as.callable(visitor));
-    // eslint-disable-next-line @skylib/typescript/no-unsafe-object-assignment -- Ok
+    // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
     return real_fns_1.o.fromEntries(real_fns_1.a.fromIterable(accumulator).map(([name, visitors]) => [
         name,
         node => {

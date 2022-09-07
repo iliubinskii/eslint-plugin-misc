@@ -51,7 +51,7 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
             },
             failExamples: `
         /*
-        eslint @skylib/consistent-empty-lines: [
+        eslint misc/consistent-empty-lines: [
           error,
           {
             rules: [
@@ -69,7 +69,7 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
       `,
             passExamples: `
         /*
-        eslint @skylib/consistent-empty-lines: [
+        eslint misc/consistent-empty-lines: [
           error,
           {
             rules: [
@@ -106,9 +106,9 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
                 ];
             }), {
                 "Program:exit": () => {
-                    // eslint-disable-next-line @skylib/functions/array/prefer-sort -- Ok
+                    // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
                     prevItems.sort(reverseCompare);
-                    // eslint-disable-next-line @skylib/functions/array/prefer-sort -- Ok
+                    // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
                     nextItems.sort(reverseCompare);
                     const items = _.uniqBy(real_fns_1.a.fromIterable((0, real_fns_1.evaluate)(function* () {
                         for (const prevItem of prevItems)

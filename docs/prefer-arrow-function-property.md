@@ -8,7 +8,7 @@ Requires use of arrow functions.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/prefer-arrow-function-property": "error"
+    "misc/prefer-arrow-function-property": "error"
   }
 };
 ```

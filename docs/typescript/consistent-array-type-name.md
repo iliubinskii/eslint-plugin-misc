@@ -8,7 +8,7 @@ Requires consistent array type name.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/consistent-array-type-name": "error"
+    "misc/typescript/consistent-array-type-name": "error"
   }
 };
 ```

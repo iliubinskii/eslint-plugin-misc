@@ -8,7 +8,7 @@ Disallows unnecessary initialization.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-unnecessary-initialization": "error"
+    "misc/no-unnecessary-initialization": "error"
   }
 };
 ```

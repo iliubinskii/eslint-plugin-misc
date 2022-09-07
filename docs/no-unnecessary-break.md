@@ -8,7 +8,7 @@ Disallows unnecessary "break".
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/no-unnecessary-break": "error"
+    "misc/no-unnecessary-break": "error"
   }
 };
 ```

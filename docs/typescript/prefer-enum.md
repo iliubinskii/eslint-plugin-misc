@@ -8,7 +8,7 @@ Requires using enums instead of string literals.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/prefer-enum": "error"
+    "misc/typescript/prefer-enum": "error"
   }
 };
 ```

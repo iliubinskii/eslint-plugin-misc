@@ -8,7 +8,7 @@ Requires only export if given AST element if found.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/prefer-only-export": [
+    "misc/prefer-only-export": [
       "error",
       {
         selector: string | string[]
@@ -26,7 +26,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/prefer-only-export: [
+eslint misc/prefer-only-export: [
   error,
   {
     selector: "Program > ExportNamedDeclaration > ClassDeclaration"
@@ -41,7 +41,7 @@ export const x = 1;
 
 ```ts
 /*
-eslint @skylib/prefer-only-export: [
+eslint misc/prefer-only-export: [
   error,
   {
     selector: "Program > ExportNamedDeclaration > ClassDeclaration"

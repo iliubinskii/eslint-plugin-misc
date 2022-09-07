@@ -8,7 +8,7 @@ Disallows import given sources.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/disallow-import": [
+    "misc/disallow-import": [
       "error",
       {
         allow: string | string[],
@@ -28,7 +28,7 @@ module.exports = {
 
 ```ts
 /*
-eslint @skylib/disallow-import: [
+eslint misc/disallow-import: [
   error,
   {
     disallow: "source1"
@@ -42,7 +42,7 @@ import * as source1 from "source1";
 
 ```ts
 /*
-eslint @skylib/disallow-import: [
+eslint misc/disallow-import: [
   error,
   {
     disallow: "source1"

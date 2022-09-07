@@ -8,7 +8,7 @@ Requires consistent padding in template literals.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/template-literal-format": "error"
+    "misc/template-literal-format": "error"
   }
 };
 ```

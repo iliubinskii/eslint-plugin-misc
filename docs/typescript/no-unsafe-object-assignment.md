@@ -10,7 +10,7 @@ Reports unsafe object assignments:
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-unsafe-object-assignment": "error"
+    "misc/typescript/no-unsafe-object-assignment": "error"
   }
 };
 ```

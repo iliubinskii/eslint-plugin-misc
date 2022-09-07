@@ -8,7 +8,7 @@ Disallows multi-type tuples.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/no-multi-type-tuples": "error"
+    "misc/typescript/no-multi-type-tuples": "error"
   }
 };
 ```

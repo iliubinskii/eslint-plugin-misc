@@ -8,7 +8,7 @@ Disallow complex function return types.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/vue/no-complex-return-type": "error"
+    "misc/vue/no-complex-return-type": "error"
   }
 };
 ```

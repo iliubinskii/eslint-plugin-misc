@@ -8,7 +8,7 @@ Requires boolean return type in array callbacks.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "@skylib/typescript/array-callback-return-type": "error"
+    "misc/typescript/array-callback-return-type": "error"
   }
 };
 ```

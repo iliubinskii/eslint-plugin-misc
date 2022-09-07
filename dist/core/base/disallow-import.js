@@ -26,7 +26,7 @@ exports.disallowImport = utils.createRule({
         },
         failExamples: `
       /*
-      eslint @skylib/disallow-import: [
+      eslint misc/disallow-import: [
         error,
         {
           disallow: "source1"
@@ -37,7 +37,7 @@ exports.disallowImport = utils.createRule({
     `,
         passExamples: `
       /*
-      eslint @skylib/disallow-import: [
+      eslint misc/disallow-import: [
         error,
         {
           disallow: "source1"
