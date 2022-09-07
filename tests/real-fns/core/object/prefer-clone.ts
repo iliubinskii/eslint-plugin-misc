@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/object/prefer-clone"];
+const rule = rules["real-fns/object/prefer-clone"];
 
 const MessageId = utils.getMessageId(rule);
 

@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/no-evaluate-type-param"];
+const rule = rules["real-fns/no-evaluate-type-param"];
 
 const MessageId = utils.getMessageId(rule);
 

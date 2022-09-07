@@ -3,6 +3,6 @@ import { jest } from "./jest";
 import { o } from "real-fns";
 
 export const skylibFunctions = {
-  core: o.prefixKeys(core, "functions/"),
-  jest: o.prefixKeys(jest, "functions/")
+  core: o.prefixKeys(core, "real-fns/"),
+  jest: o.prefixKeys(jest, "real-fns/")
 } as const;

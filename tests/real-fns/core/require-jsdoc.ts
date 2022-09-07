@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/require-jsdoc"];
+const rule = rules["real-fns/require-jsdoc"];
 
 const MessageId = utils.getMessageId(rule);
 

@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/types/prefer-WritableRecord"];
+const rule = rules["real-fns/types/prefer-WritableRecord"];
 
 const MessageId = utils.getMessageId(rule);
 

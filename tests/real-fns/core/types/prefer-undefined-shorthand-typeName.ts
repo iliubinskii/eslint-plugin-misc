@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/types/prefer-undefined-shorthand-typeName"];
+const rule = rules["real-fns/types/prefer-undefined-shorthand-typeName"];
 
 const MessageId = utils.getMessageId(rule);
 

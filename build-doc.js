@@ -36,10 +36,10 @@ const documentedRules = o.sort(
     rules,
     (_rule, name) =>
       !(
-        name.startsWith("config/") ||
-        name.startsWith("facades/") ||
-        name.startsWith("framework/") ||
-        name.startsWith("functions/") ||
+        name.startsWith("real-config/") ||
+        name.startsWith("real-facades/") ||
+        name.startsWith("real-framework/") ||
+        name.startsWith("real-fns/") ||
         name.startsWith("quasar-extension/")
       )
   ),

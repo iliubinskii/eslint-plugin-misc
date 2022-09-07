@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/array/prefer-reverse"];
+const rule = rules["real-fns/array/prefer-reverse"];
 
 const MessageId = utils.getMessageId(rule);
 

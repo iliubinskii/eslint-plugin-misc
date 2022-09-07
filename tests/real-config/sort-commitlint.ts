@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["config/sort-commitlint"];
+const rule = rules["real-config/sort-commitlint"];
 
 const MessageId = utils.getMessageId(rule);
 

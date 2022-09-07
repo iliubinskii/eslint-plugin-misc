@@ -16,10 +16,10 @@ export const configs = evaluate((): IndexedRecord => {
     "core": {
       rules: {
         ...rules(core),
-        "@skylib/match-filename": "off",
-        "@skylib/no-restricted-syntax": "off",
-        "@skylib/require-syntax": "off",
-        "@skylib/wrap": "off"
+        "misc/match-filename": "off",
+        "misc/no-restricted-syntax": "off",
+        "misc/require-syntax": "off",
+        "misc/wrap": "off"
       }
     },
     "eslintrc": { rules: rules(eslintrc) },
@@ -28,7 +28,7 @@ export const configs = evaluate((): IndexedRecord => {
     "quasar-extension.extras": {
       rules: {
         ...rules(skylibQuasarExtension.extras),
-        "@skylib/typescript/no-empty-interfaces": "off"
+        "misc/typescript/no-empty-interfaces": "off"
       }
     },
     "quasar-extension.jest": { rules: rules(skylibQuasarExtension.jest) },
@@ -41,14 +41,14 @@ export const configs = evaluate((): IndexedRecord => {
     "typescript": {
       rules: {
         ...rules(typescript),
-        "@skylib/typescript/no-restricted-syntax": "off"
+        "misc/typescript/no-restricted-syntax": "off"
       }
     },
     "vue": {
       rules: {
         ...rules(vue),
-        "@skylib/typescript/no-complex-declarator-type": "off",
-        "@skylib/typescript/no-complex-return-type": "off"
+        "misc/typescript/no-complex-declarator-type": "off",
+        "misc/typescript/no-complex-return-type": "off"
       }
     }
   } as const;
@@ -86,5 +86,5 @@ export const configs = evaluate((): IndexedRecord => {
  * @returns Configuration.
  */
 function rules(source: IndexedRecord): object {
-  return o.fromEntries(o.keys(source).map(key => [`@skylib/${key}`, "warn"]));
+  return o.fromEntries(o.keys(source).map(key => [`misc/${key}`, "warn"]));
 }

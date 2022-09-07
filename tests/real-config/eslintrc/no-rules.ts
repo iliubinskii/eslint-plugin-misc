@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["config/eslintrc/no-rules"];
+const rule = rules["real-config/eslintrc/no-rules"];
 
 const MessageId = utils.getMessageId(rule);
 

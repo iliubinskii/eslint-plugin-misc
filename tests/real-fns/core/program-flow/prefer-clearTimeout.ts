@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/program-flow/prefer-clearTimeout"];
+const rule = rules["real-fns/program-flow/prefer-clearTimeout"];
 
 const MessageId = utils.getMessageId(rule);
 

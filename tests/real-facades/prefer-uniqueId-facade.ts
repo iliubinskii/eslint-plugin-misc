@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["facades/prefer-uniqueId-facade"];
+const rule = rules["real-facades/prefer-uniqueId-facade"];
 
 const MessageId = utils.getMessageId(rule);
 

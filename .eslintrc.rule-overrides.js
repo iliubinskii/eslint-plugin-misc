@@ -439,7 +439,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "config/",
+            prefix: "real-config/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -452,7 +452,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "config/eslintrc/",
+            prefix: "real-config/eslintrc/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -465,7 +465,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "facades/",
+            prefix: "real-facades/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -478,7 +478,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/",
+            prefix: "real-fns/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -491,7 +491,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/jest/",
+            prefix: "real-fns/jest/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -504,7 +504,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/array/",
+            prefix: "real-fns/array/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -517,7 +517,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/converters/",
+            prefix: "real-fns/converters/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -530,7 +530,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/guards/",
+            prefix: "real-fns/guards/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -543,7 +543,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/json/",
+            prefix: "real-fns/json/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -556,7 +556,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/object/",
+            prefix: "real-fns/object/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -569,7 +569,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/program-flow/",
+            prefix: "real-fns/program-flow/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -582,7 +582,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/reflect/",
+            prefix: "real-fns/reflect/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
@@ -595,7 +595,7 @@ module.exports = {
         "@skylib/match-filename/testRule-rule": [
           "warn",
           {
-            prefix: "functions/types/",
+            prefix: "real-fns/types/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }

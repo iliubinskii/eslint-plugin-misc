@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["config/prettier"];
+const rule = rules["real-config/prettier"];
 
 const MessageId = utils.getMessageId(rule);
 

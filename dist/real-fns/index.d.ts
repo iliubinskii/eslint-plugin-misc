@@ -85,9 +85,9 @@ export declare const skylibFunctions: {
         readonly "prefer-evaluate": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
         readonly "require-jsdoc": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/require-jsdoc").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/require-jsdoc").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
         readonly "require-return-in-defineFn": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
-    }, "functions/">;
+    }, "real-fns/">;
     readonly jest: o.PrefixKeys<o.PrefixKeys<{
         "prefer-mockCallsToBe": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
-    }, "jest/">, "functions/">;
+    }, "jest/">, "real-fns/">;
 };
 //# sourceMappingURL=index.d.ts.map

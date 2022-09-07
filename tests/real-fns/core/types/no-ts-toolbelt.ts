@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/types/no-ts-toolbelt"];
+const rule = rules["real-fns/types/no-ts-toolbelt"];
 
 const MessageId = utils.getMessageId(rule);
 

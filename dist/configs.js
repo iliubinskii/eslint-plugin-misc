@@ -15,13 +15,13 @@ const vue_1 = require("./vue");
 exports.configs = (0, real_fns_1.evaluate)(() => {
     const result = {
         "core": {
-            rules: Object.assign(Object.assign({}, rules(core_1.core)), { "@skylib/match-filename": "off", "@skylib/no-restricted-syntax": "off", "@skylib/require-syntax": "off", "@skylib/wrap": "off" })
+            rules: Object.assign(Object.assign({}, rules(core_1.core)), { "misc/match-filename": "off", "misc/no-restricted-syntax": "off", "misc/require-syntax": "off", "misc/wrap": "off" })
         },
         "eslintrc": { rules: rules(eslintrc_1.eslintrc) },
         "jest": { rules: rules(jest_1.jest) },
         "quasar-extension.core": { rules: rules(quasar_extension_1.skylibQuasarExtension.core) },
         "quasar-extension.extras": {
-            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.skylibQuasarExtension.extras)), { "@skylib/typescript/no-empty-interfaces": "off" })
+            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.skylibQuasarExtension.extras)), { "misc/typescript/no-empty-interfaces": "off" })
         },
         "quasar-extension.jest": { rules: rules(quasar_extension_1.skylibQuasarExtension.jest) },
         "quasar-extension.vue": { rules: rules(quasar_extension_1.skylibQuasarExtension.vue) },
@@ -31,10 +31,10 @@ exports.configs = (0, real_fns_1.evaluate)(() => {
         "real-fns.jest": { rules: rules(real_fns_2.skylibFunctions.jest) },
         "real-framework": { rules: rules(real_framework_1.skylibFramework) },
         "typescript": {
-            rules: Object.assign(Object.assign({}, rules(typescript_1.typescript)), { "@skylib/typescript/no-restricted-syntax": "off" })
+            rules: Object.assign(Object.assign({}, rules(typescript_1.typescript)), { "misc/typescript/no-restricted-syntax": "off" })
         },
         "vue": {
-            rules: Object.assign(Object.assign({}, rules(vue_1.vue)), { "@skylib/typescript/no-complex-declarator-type": "off", "@skylib/typescript/no-complex-return-type": "off" })
+            rules: Object.assign(Object.assign({}, rules(vue_1.vue)), { "misc/typescript/no-complex-declarator-type": "off", "misc/typescript/no-complex-return-type": "off" })
         }
     };
     return Object.assign(Object.assign({}, result), { "all": Object.assign(Object.assign({}, result.core), { overrides: [
@@ -55,6 +55,6 @@ exports.configs = (0, real_fns_1.evaluate)(() => {
  * @returns Configuration.
  */
 function rules(source) {
-    return real_fns_1.o.fromEntries(real_fns_1.o.keys(source).map(key => [`@skylib/${key}`, "warn"]));
+    return real_fns_1.o.fromEntries(real_fns_1.o.keys(source).map(key => [`misc/${key}`, "warn"]));
 }
 //# sourceMappingURL=configs.js.map

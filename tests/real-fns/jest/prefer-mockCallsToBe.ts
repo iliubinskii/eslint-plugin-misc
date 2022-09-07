@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/jest/prefer-mockCallsToBe"];
+const rule = rules["real-fns/jest/prefer-mockCallsToBe"];
 
 const MessageId = utils.getMessageId(rule);
 

@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/guards/not-empty-always-true"];
+const rule = rules["real-fns/guards/not-empty-always-true"];
 
 const MessageId = utils.getMessageId(rule);
 

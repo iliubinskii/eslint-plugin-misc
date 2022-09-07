@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/guards/string-always-false"];
+const rule = rules["real-fns/guards/string-always-false"];
 
 const MessageId = utils.getMessageId(rule);
 

@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/types/prefer-IndexedRecord"];
+const rule = rules["real-fns/types/prefer-IndexedRecord"];
 
 const MessageId = utils.getMessageId(rule);
 

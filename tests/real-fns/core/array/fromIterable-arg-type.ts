@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/array/fromIterable-arg-type"];
+const rule = rules["real-fns/array/fromIterable-arg-type"];
 
 const MessageId = utils.getMessageId(rule);
 

@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/prefer-evaluate"];
+const rule = rules["real-fns/prefer-evaluate"];
 
 const MessageId = utils.getMessageId(rule);
 

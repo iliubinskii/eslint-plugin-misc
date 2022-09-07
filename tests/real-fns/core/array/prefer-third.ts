@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/array/prefer-third"];
+const rule = rules["real-fns/array/prefer-third"];
 
 const MessageId = utils.getMessageId(rule);
 

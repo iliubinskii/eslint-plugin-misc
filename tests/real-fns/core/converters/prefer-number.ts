@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["functions/converters/prefer-number"];
+const rule = rules["real-fns/converters/prefer-number"];
 
 const MessageId = utils.getMessageId(rule);
 
