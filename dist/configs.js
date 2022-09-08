@@ -5,11 +5,11 @@ const real_fns_1 = require("real-fns");
 const core_1 = require("./core");
 const eslintrc_1 = require("./eslintrc");
 const jest_1 = require("./jest");
+const quasar_extension_1 = require("./quasar-extension");
 const real_config_1 = require("./real-config");
 const real_facades_1 = require("./real-facades");
 const real_framework_1 = require("./real-framework");
 const real_fns_2 = require("./real-fns");
-const quasar_extension_1 = require("./quasar-extension");
 const typescript_1 = require("./typescript");
 const vue_1 = require("./vue");
 exports.configs = (0, real_fns_1.evaluate)(() => {
@@ -19,17 +19,17 @@ exports.configs = (0, real_fns_1.evaluate)(() => {
         },
         "eslintrc": { rules: rules(eslintrc_1.eslintrc) },
         "jest": { rules: rules(jest_1.jest) },
-        "quasar-extension.core": { rules: rules(quasar_extension_1.skylibQuasarExtension.core) },
+        "quasar-extension.core": { rules: rules(quasar_extension_1.quasarExtension.core) },
         "quasar-extension.extras": {
-            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.skylibQuasarExtension.extras)), { "misc/typescript/no-empty-interfaces": "off" })
+            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.quasarExtension.extras)), { "misc/typescript/no-empty-interfaces": "off" })
         },
-        "quasar-extension.jest": { rules: rules(quasar_extension_1.skylibQuasarExtension.jest) },
-        "quasar-extension.vue": { rules: rules(quasar_extension_1.skylibQuasarExtension.vue) },
-        "real-config": { rules: rules(real_config_1.skylibConfig) },
-        "real-facades": { rules: rules(real_facades_1.skylibFacades) },
-        "real-fns.core": { rules: rules(real_fns_2.skylibFunctions.core) },
-        "real-fns.jest": { rules: rules(real_fns_2.skylibFunctions.jest) },
-        "real-framework": { rules: rules(real_framework_1.skylibFramework) },
+        "quasar-extension.jest": { rules: rules(quasar_extension_1.quasarExtension.jest) },
+        "quasar-extension.vue": { rules: rules(quasar_extension_1.quasarExtension.vue) },
+        "real-config": { rules: rules(real_config_1.realConfig) },
+        "real-facades": { rules: rules(real_facades_1.realFacades) },
+        "real-fns.core": { rules: rules(real_fns_2.realFunctions.core) },
+        "real-fns.jest": { rules: rules(real_fns_2.realFunctions.jest) },
+        "real-framework": { rules: rules(real_framework_1.realFramework) },
         "typescript": {
             rules: Object.assign(Object.assign({}, rules(typescript_1.typescript)), { "misc/typescript/no-restricted-syntax": "off" })
         },

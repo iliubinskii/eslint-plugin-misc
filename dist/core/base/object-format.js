@@ -53,25 +53,31 @@ exports.objectFormat = utils.createRule({
             ObjectExpression: node => {
                 const texts = node.properties.map(property => context.getFullText(property).trim());
                 if (texts.length) {
-                    const expectMultiline = predictedLength() > maxLineLength ||
-                        texts.length > maxObjectSize ||
+                    const text = context.getText(node);
+                    const expectMultiline = texts.length > maxObjectSize ||
                         texts.some(real_fns_1.s.multiline) ||
                         node.properties.some(context.hasTrailingComment);
-                    const gotMultiline = real_fns_1.s.multiline(context.getText(node));
-                    if (expectMultiline === gotMultiline) {
-                        // Valid
-                    }
-                    else
+                    const expectSingleLine = !expectMultiline;
+                    const gotMultiline = real_fns_1.s.multiline(text);
+                    const gotSingleLine = real_fns_1.s.singleLine(text);
+                    if (expectMultiline && gotSingleLine)
                         context.report({
                             fix: () => ({
                                 range: node.range,
-                                text: expectMultiline
-                                    ? `{${eol}${texts.join(commaEol)}${eol}}`
-                                    : `{${texts.join(comma)}}`
+                                text: `{${eol}${texts.join(commaEol)}${eol}}`
                             }),
-                            messageId: expectMultiline
-                                ? MessageId.preferMultiline
-                                : MessageId.preferSingleLine,
+                            messageId: MessageId.preferMultiline,
+                            node
+                        });
+                    if (expectSingleLine &&
+                        gotMultiline &&
+                        predictedLength() <= maxLineLength)
+                        context.report({
+                            fix: () => ({
+                                range: node.range,
+                                text: `{${texts.join(comma)}}`
+                            }),
+                            messageId: MessageId.preferSingleLine,
                             node
                         });
                 }

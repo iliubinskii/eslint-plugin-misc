@@ -1,5 +1,5 @@
 import { o } from "real-fns";
-export declare const skylibFunctions: {
+export declare const realFunctions: {
     readonly core: o.PrefixKeys<{
         readonly "types/no-Writable": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
         readonly "types/no-ts-toolbelt": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;

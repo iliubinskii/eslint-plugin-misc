@@ -1,5 +1,5 @@
 import { o } from "real-fns";
-export declare const skylibQuasarExtension: {
+export declare const quasarExtension: {
     readonly core: o.PrefixKeys<{
         readonly "no-computed-type-param": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
         readonly "no-ref-type-param": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;

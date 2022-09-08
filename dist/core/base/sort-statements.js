@@ -127,11 +127,11 @@ const defaultOrder = [
     StatementType.ExportDeclaration,
     StatementType.ExportDefaultDeclaration,
     StatementType.ExportUnknown,
-    StatementType.ExportTypeDeclaration,
     StatementType.ExportFunctionDeclaration,
+    StatementType.ExportTypeDeclaration,
     StatementType.Unknown,
-    StatementType.TypeDeclaration,
     StatementType.FunctionDeclaration,
+    StatementType.TypeDeclaration,
     StatementType.JestTest
 ];
 const prepareForComparison = (0, real_fns_1.evaluate)(() => {
