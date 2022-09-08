@@ -21,15 +21,6 @@ module.exports = {
       "warn",
       {
         sources: [
-          // eslint-disable-next-line no-warning-comments -- Wait for real-config update
-          // fixme
-          {
-            _id: "lodash-commonjs-es",
-            autoImport: true,
-            localName: "_",
-            source: "lodash-commonjs-es",
-            wildcard: true
-          },
           {
             _id: "rule-templates",
             autoImport: true,
@@ -98,7 +89,8 @@ module.exports = {
         message: "Remove dot at the end of sentence",
         selector: [
           `${prefixes.createRule} > ObjectExpression > Property[key.name=docs] > ObjectExpression > Property[key.name=/^(optionDescriptions|optionTypes|suboptionDescriptions|suboptionTypes)$/u] > ObjectExpression > Property > Literal.value[value=/\\.$/u]`,
-          `${prefixes.createRule} > ObjectExpression > Property[key.name=messages] > ObjectExpression > Property > Literal.value[value=/\\.$/u]`
+          `${prefixes.createRule} > ObjectExpression > Property[key.name=messages] > ObjectExpression > Property > Literal.value[value=/\\.$/u]`,
+          `${prefixes.wrapRule} > ObjectExpression > Property[key.name=options] > ArrayExpression > ObjectExpression > Property[key.name=message] > Literal.value[value=/\\.$/u]`
         ]
       }
     ],
@@ -113,7 +105,7 @@ module.exports = {
       "warn",
       {
         message: "Add dot at the end of sentence",
-        selector: `${prefixes.createRule} > ObjectExpression > Property[key.name=docs] > ObjectExpression > Property[key.name=description] > Literal.value[value=/[^.]$/u]`
+        selector: `${prefixes.createWrapRule} > ObjectExpression > Property[key.name=docs] > ObjectExpression > Property[key.name=description] > Literal.value[value=/[^.]$/u]`
       }
     ],
     "misc/no-sibling-import": [

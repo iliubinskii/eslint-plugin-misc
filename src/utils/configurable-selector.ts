@@ -2,12 +2,6 @@ import * as _ from "lodash-commonjs-es";
 import { assert } from "real-fns";
 import type { strings } from "real-fns";
 
-export interface Options {
-  readonly excludeSelectors: strings;
-  readonly includeSelectors: strings;
-  readonly noDefaultSelectors: boolean;
-}
-
 /**
  * Creates selector.
  *
@@ -28,4 +22,10 @@ export function get(options: Options, defaultSelectors: strings): string {
   assert.toBeTrue(selectors.length > 0, "Expecting at least one selector");
 
   return selectors.join(", ");
+}
+
+export interface Options {
+  readonly excludeSelectors: strings;
+  readonly includeSelectors: strings;
+  readonly noDefaultSelectors: boolean;
 }

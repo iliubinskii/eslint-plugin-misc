@@ -15,7 +15,8 @@ export const noUnnecessaryArray = evaluate(() => {
       {
         message: "Unnecessary array",
         selector: [
-          "Property[key.name=overrides] > ArrayExpression > ObjectExpression > Property[key.name=files] > ArrayExpression[elements.length=1]",
+          "AssignmentExpression[left.object.name=module][left.property.name=exports] > ObjectExpression > Property[key.name=extends] > ArrayExpression[elements.length=1]",
+          "Property[key.name=overrides] > ArrayExpression > ObjectExpression > Property[key.name=/^(?:extends|files)$/u] > ArrayExpression[elements.length=1]",
           `${prefix} > ${suffix}`,
           `${prefix} > Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression > ObjectExpression > ${suffix}`
         ]

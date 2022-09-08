@@ -1,4 +1,3 @@
-/* eslint-disable misc/consistent-filename -- Ok */
 /* eslint-disable xss/no-mixed-html -- Ok */
 
 import * as utils from "../utils";

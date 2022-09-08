@@ -1,4 +1,3 @@
-import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
 import { a, as, is } from "real-fns";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
@@ -154,14 +153,15 @@ export const consistentFilename = utils.createRule({
     ): string {
       return got
         .split(".")
-        .map((part, index) =>
-          index === 0
-            ? utils.setCasing(
-                match ? utils.nodeText(as.not.empty(node), part) : part,
-                format
-              )
-            : _.kebabCase(part)
-        )
+        .map((part, index) => {
+          if (index === 0)
+            return utils.setCasing(
+              match ? utils.nodeText(as.not.empty(node), part) : part,
+              format
+            );
+
+          return utils.setCasing(part, utils.Casing.kebabCase);
+        })
         .join(".");
     }
   }

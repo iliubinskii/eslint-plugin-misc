@@ -1,4 +1,5 @@
 import { base } from "./base";
+import { classMethodsUseThis } from "./class-methods-use-this";
 import { consistentArrayTypeName } from "./consistent-array-type-name";
 import { defineFunctionInOneStatement } from "./define-function-in-one-statement";
 import { noBooleanLiteralType } from "./no-boolean-literal-type";
@@ -7,20 +8,22 @@ import { noComplexReturnType } from "./no-complex-return-type";
 import { noEmptyInterfaces } from "./no-empty-interfaces";
 import { noNever } from "./no-never";
 import { noShadow } from "./no-shadow";
-import { noThisVoid } from "./no-this-void";
 import { noUnsafeObjectAssign } from "./no-unsafe-object-assign";
 import { o } from "real-fns";
 import { preferArrayTypeAlias } from "./prefer-array-type-alias";
+import { preferClassMethod } from "./prefer-class-method";
 import { preferEnum } from "./prefer-enum";
 import { preferReadonlyArray } from "./prefer-readonly-array";
-import { preferReadonlyMap } from "./prefer-ReadonlyMap";
+import { preferReadonlyMap } from "./prefer-readonly-map";
 import { preferReadonlyProperty } from "./prefer-readonly-property";
-import { preferReadonlySet } from "./prefer-ReadonlySet";
+import { preferReadonlySet } from "./prefer-readonly-set";
 import { requirePropTypeAnnotation } from "./require-prop-type-annotation";
+import { requireThisVoid } from "./require-this-void";
 
 export const typescript = o.prefixKeys(
   {
     ...base,
+    "class-methods-use-this": classMethodsUseThis,
     "consistent-array-type-name": consistentArrayTypeName,
     "define-function-in-one-statement": defineFunctionInOneStatement,
     "no-boolean-literal-type": noBooleanLiteralType,
@@ -29,15 +32,16 @@ export const typescript = o.prefixKeys(
     "no-empty-interfaces": noEmptyInterfaces,
     "no-never": noNever,
     "no-shadow": noShadow,
-    "no-this-void": noThisVoid,
     "no-unsafe-object-assign": noUnsafeObjectAssign,
-    "prefer-ReadonlyMap": preferReadonlyMap,
-    "prefer-ReadonlySet": preferReadonlySet,
     "prefer-array-type-alias": preferArrayTypeAlias,
+    "prefer-class-method": preferClassMethod,
     "prefer-enum": preferEnum,
     "prefer-readonly-array": preferReadonlyArray,
+    "prefer-readonly-map": preferReadonlyMap,
     "prefer-readonly-property": preferReadonlyProperty,
-    "require-prop-type-annotation": requirePropTypeAnnotation
+    "prefer-readonly-set": preferReadonlySet,
+    "require-prop-type-annotation": requirePropTypeAnnotation,
+    "require-this-void": requireThisVoid
   },
   "typescript/"
 );

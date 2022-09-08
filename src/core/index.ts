@@ -17,7 +17,6 @@ import { noUnnecessaryAsConst } from "./no-unnecessary-as-const";
 import { noUnnecessaryBreak } from "./no-unnecessary-break";
 import { noUnnecessaryInitialization } from "./no-unnecessary-initialization";
 import { preferArrowFunctionProperty } from "./prefer-arrow-function-property";
-import { preferArrowStaticMethod } from "./prefer-arrow-static-method";
 import { preferConstRequire } from "./prefer-const-require";
 import { restrictIdentifierCharacters } from "./restrict-identifier-characters";
 import { sortCallSignature } from "./sort-call-signature";
@@ -43,7 +42,6 @@ export const core = {
   "no-unnecessary-break": noUnnecessaryBreak,
   "no-unnecessary-initialization": noUnnecessaryInitialization,
   "prefer-arrow-function-property": preferArrowFunctionProperty,
-  "prefer-arrow-static-method": preferArrowStaticMethod,
   "prefer-const-require": preferConstRequire,
   "restrict-identifier-characters": restrictIdentifierCharacters,
   "sort-call-signature": sortCallSignature,

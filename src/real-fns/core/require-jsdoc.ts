@@ -4,17 +4,17 @@ import { evaluate } from "real-fns";
 
 export const requireJsdoc = evaluate(() => {
   const prefix =
-    ":matches(ExportNamedDeclaration, Program, TSModuleBlock) > VariableDeclaration > VariableDeclarator[id.typeAnnotation=undefined] > CallExpression[callee.name=defineFn]";
+    "VariableDeclarator[id.typeAnnotation=undefined] > CallExpression[callee.name=defineFn]";
+
+  const suffix = ":matches(ArrowFunctionExpression, FunctionExpression)";
 
   return utils.wrapRule({
     rule: core["require-jsdoc"],
     options: [
       {
         includeSelectors: [
-          `${prefix} > ArrowFunctionExpression`,
-          `${prefix} > FunctionExpression`,
-          `${prefix} > ObjectExpression > Property > ArrowFunctionExpression`,
-          `${prefix} > ObjectExpression > Property > FunctionExpression`
+          `${prefix} > ${suffix}`,
+          `${prefix} > ObjectExpression > Property > ${suffix}`
         ],
         noDefaultSelectors: true
       }

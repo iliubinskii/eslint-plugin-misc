@@ -1,13 +1,10 @@
 import * as ruleTemplates from "../../rule-templates";
 import * as utils from "../../utils";
 import { is } from "real-fns";
-import type { strings } from "real-fns";
 
 export interface Options {
-  // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-  // fixme
-  readonly allow: strings | string;
-  readonly disallow: strings | string;
+  readonly allow: utils.FilePattern;
+  readonly disallow: utils.FilePattern;
 }
 
 export enum MessageId {
@@ -18,7 +15,7 @@ export const disallowImport = utils.createRule({
   name: "disallow-import",
   vue: true,
   isOptions: is.object.factory<Options>(
-    { allow: utils.isStringOrStrings, disallow: utils.isStringOrStrings },
+    { allow: utils.isFilePattern, disallow: utils.isFilePattern },
     {}
   ),
   defaultOptions: { allow: [], disallow: [] },

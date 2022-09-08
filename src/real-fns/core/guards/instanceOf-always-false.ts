@@ -1,4 +1,4 @@
-/* eslint-disable misc/consistent-filename -- Postponed */
+/* eslint-disable misc/consistent-filename -- Ok */
 
 import * as utils from "../../../utils";
 import { typescript } from "../../../typescript";

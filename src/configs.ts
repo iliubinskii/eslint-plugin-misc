@@ -28,6 +28,7 @@ export const configs = evaluate((): IndexedRecord => {
     "quasar-extension.extras": {
       rules: {
         ...rules(quasarExtension.extras),
+        "misc/typescript/consistent-optional-props": "off",
         "misc/typescript/no-empty-interfaces": "off"
       }
     },

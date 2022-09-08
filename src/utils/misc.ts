@@ -35,19 +35,20 @@ import minimatch from "minimatch";
 
 export const isCasing = is.factory(is.enumeration, Casing);
 
-export const isStringOrStrings = is.or.factory(is.string, is.strings);
-
 export const isFilePattern: is.Guard<FilePattern> = is.or.factory(
-  isStringOrStrings,
-  is.object.factory<AllowDisallowPatterns>(
-    { allow: isStringOrStrings, disallow: isStringOrStrings },
-    {}
-  )
+  is.string,
+  is.strings
 );
 
-export const isRegexpPattern: is.Guard<RegexpPattern> = isStringOrStrings;
+export const isRegexpPattern: is.Guard<RegexpPattern> = is.or.factory(
+  is.string,
+  is.strings
+);
 
-export const isSelector: is.Guard<Selector> = isStringOrStrings;
+export const isSelector: is.Guard<Selector> = is.or.factory(
+  is.string,
+  is.strings
+);
 
 export const isTypeGroup = is.factory(is.enumeration, TypeGroup);
 
@@ -68,7 +69,7 @@ export const projectRoot = fn.pipe(
  * @returns Matcher.
  */
 export function createFileMatcher(
-  pattern: FilePattern,
+  pattern: AllowDisallowPatterns | FilePattern,
   defVal: boolean,
   options: Readonly<minimatch.IOptions>
 ): Matcher {

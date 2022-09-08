@@ -23,7 +23,7 @@ export const objectFormat = utils.createRule({
     { maxLineLength: is.number, maxObjectSize: is.number },
     {}
   ),
-  defaultOptions: { maxLineLength: 75, maxObjectSize: 3 },
+  defaultOptions: { maxLineLength: 80, maxObjectSize: 3 },
   messages: {
     [MessageId.preferMultiline]: "Prefer multiline object literal",
     [MessageId.preferSingleLine]: "Prefer single-line object literal"

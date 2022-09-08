@@ -1,7 +1,6 @@
-import * as _ from "lodash-commonjs-es";
 import type * as estree from "estree";
+import type { ClassToInterface, Rec, unknowns } from "real-fns";
 import type {
-  Casing,
   Context,
   Docs,
   Options,
@@ -11,13 +10,13 @@ import type {
   esRange,
   esRanges
 } from "./types";
-import type { ClassToInterface, Rec, unknowns } from "real-fns";
 import type {
   RuleContext,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { a, assert, evaluate, is, json, o, s } from "real-fns";
 import { createFileMatcher, projectRoot, setCasing } from "./misc";
+import { Casing } from "./types";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { TypeCheck } from "./TypeCheck";
 import fs from "node:fs";
@@ -28,53 +27,6 @@ export const isProjectConfig: is.Guard<ProjectConfig> = is.factory(
   {},
   { name: is.string }
 );
-
-export type ContextOptionsArray = readonly [object];
-
-export interface CreateRuleOptions<
-  M extends string,
-  O extends object,
-  S extends object,
-  K extends string = never
-> {
-  /**
-   * Creates rule listener.
-   *
-   * @param context - Context.
-   * @param typeCheck - Type check.
-   * @returns Rule listener.
-   */
-  readonly create: (
-    context: Context<M, O, S, K>,
-    typeCheck: ClassToInterface<TypeCheck>
-  ) => RuleListener;
-  readonly defaultOptions?: Readonly<Partial<O>>;
-  readonly defaultSuboptions?: Readonly<Partial<S>>;
-  readonly docs: Docs<keyof O, keyof S>;
-  readonly fixable?: "code" | "whitespace";
-  readonly isOptions?: is.Guard<O>;
-  readonly isSuboptions?: is.Guard<S>;
-  readonly messages: Rec<M, string>;
-  readonly name: string;
-  readonly suboptionsKey?: K;
-  readonly vue: boolean;
-}
-
-export type PartialOptions<
-  O extends object,
-  S extends object,
-  K extends string = never
-> = Partial<O> & { readonly [L in K]?: SuboptionsArray<Partial<S>> };
-
-export type PartialOptionsArray<
-  O extends object,
-  S extends object,
-  K extends string = never
-> = readonly [PartialOptions<O, S, K>];
-
-export interface ProjectConfig {
-  readonly name?: string;
-}
 
 /**
  * Creates context.
@@ -260,11 +212,13 @@ export function createContext<
 
     if (name === "index") return identifierFromPath(dir, expected);
 
-    const candidates = name
-      .split(".")
-      .filter((part, index) => !(index === 0 && part === "index"))
+    const candidates = a
+      .omit(name.split("."), (part, index) => index === 0 && part === "index")
       .map(part =>
-        /^[A-Z]/u.test(part) ? s.ucFirst(_.camelCase(part)) : _.camelCase(part)
+        setCasing(
+          part,
+          /^[A-Z]/u.test(part) ? Casing.pascalCase : Casing.camelCase
+        )
       );
 
     return is.not.empty(expected) && candidates.includes(expected)
@@ -313,6 +267,53 @@ export function getProjectConfig(path = "package.json"): ProjectConfig {
   }
 
   return {};
+}
+
+export type ContextOptionsArray = readonly [object];
+
+export interface CreateRuleOptions<
+  M extends string,
+  O extends object,
+  S extends object,
+  K extends string = never
+> {
+  /**
+   * Creates rule listener.
+   *
+   * @param context - Context.
+   * @param typeCheck - Type check.
+   * @returns Rule listener.
+   */
+  readonly create: (
+    context: Context<M, O, S, K>,
+    typeCheck: ClassToInterface<TypeCheck>
+  ) => RuleListener;
+  readonly defaultOptions?: Readonly<Partial<O>>;
+  readonly defaultSuboptions?: Readonly<Partial<S>>;
+  readonly docs: Docs<keyof O, keyof S>;
+  readonly fixable?: "code" | "whitespace";
+  readonly isOptions?: is.Guard<O>;
+  readonly isSuboptions?: is.Guard<S>;
+  readonly messages: Rec<M, string>;
+  readonly name: string;
+  readonly suboptionsKey?: K;
+  readonly vue: boolean;
+}
+
+export type PartialOptions<
+  O extends object,
+  S extends object,
+  K extends string = never
+> = Partial<O> & { readonly [L in K]?: SuboptionsArray<Partial<S>> };
+
+export type PartialOptionsArray<
+  O extends object,
+  S extends object,
+  K extends string = never
+> = readonly [PartialOptions<O, S, K>];
+
+export interface ProjectConfig {
+  readonly name?: string;
 }
 
 const isSharedSuboptions = is.object.factory<SharedSuboptions>(

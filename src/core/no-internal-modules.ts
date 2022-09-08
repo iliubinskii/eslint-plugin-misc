@@ -3,7 +3,7 @@ import { base } from "./base";
 
 export const noInternalModules = utils.wrapRule({
   rule: base["disallow-import"],
-  options: [{ allow: "@/**", disallow: ["./*/**", "[^@]*/**", "@*/*/**"] }],
+  options: [{ disallow: ["./*/**", "[^@]*/**", "@?*/*/**"] }],
   docs: {
     description: "Disallows importing of internal modules.",
     failExamples: `

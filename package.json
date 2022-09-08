@@ -29,8 +29,8 @@
     "build": "cf ./dist && tsc --project tsconfig-build.json",
     "build-doc": "cf ./docs && node ./build-doc.js && cpy assets/docs/static/* docs",
     "clear-cache": "cf cache node_modules/.cache",
-    "commitlint": "commitlint --edit",
-    "commitlint-all": "commitlint --config commitlint-all.config.js --from=",
+    "commitlint": "commitlint --from=",
+    "commitlint-next": "commitlint --config commitlint-next.config.js --edit",
     "config-lint": "node node_modules/real-config/bin/config-lint.js",
     "delete-tags": "php node_modules/real-config/bin/delete-tags.php",
     "full-check": "php node_modules/real-config/bin/full-check.php",
@@ -66,13 +66,13 @@
     "lodash-commonjs-es": "^0.1.1",
     "minimatch": "^5.1.0",
     "natural-compare": "^1.4.0",
-    "real-fns": "^0.1.1",
+    "real-fns": "^0.1.2",
     "types-fix": "^0.1.0"
   },
   "devDependencies": {
-    "eslint-plugin-misc": "^0.1.2",
+    "eslint-plugin-misc": "^0.1.4",
     "get-current-line": "^6.6.0",
-    "real-config": "^0.1.3"
+    "real-config": "^0.1.5"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",

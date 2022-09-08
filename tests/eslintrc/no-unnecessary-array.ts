@@ -10,13 +10,31 @@ utils.testRule("no-unnecessary-array", rule, [
     name: `Test at line ${getCurrentLine().line}`,
     code: `
       module.exports = {
+        extends: ["a"]
+      };
+    `,
+    errors: [{ line: 2, messageId: MessageId.customMessage }]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    code: `
+      module.exports = {
         overrides: [
-          { files: ["./a"] },
-          { files: ["./a", "./b"] }
+          {
+            files: ["./a"],
+            extends: ["a"]
+          },
+          {
+            files: ["./a", "./b"],
+            extends: ["a", "b"]
+          }
         ]
       };
     `,
-    errors: [{ line: 3, messageId: MessageId.customMessage }]
+    errors: [
+      { line: 4, messageId: MessageId.customMessage },
+      { line: 5, messageId: MessageId.customMessage }
+    ]
   },
   {
     name: `Test at line ${getCurrentLine().line}`,

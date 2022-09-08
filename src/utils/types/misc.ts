@@ -3,7 +3,7 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Rec, strings } from "real-fns";
+import type { Rec, a, strings } from "real-fns";
 
 export enum Casing {
   camelCase = "camelCase",
@@ -38,10 +38,8 @@ export enum TypeGroup {
 }
 
 export interface AllowDisallowPatterns {
-  // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-  // fixme
-  readonly allow: strings | string;
-  readonly disallow: strings | string;
+  readonly allow: a.Mixed<string>;
+  readonly disallow: a.Mixed<string>;
 }
 
 export interface Docs<
@@ -57,9 +55,7 @@ export interface Docs<
   readonly suboptionTypes?: Rec<S, string>;
 }
 
-// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-// fixme
-export type FilePattern = AllowDisallowPatterns | strings | string;
+export type FilePattern = a.Mixed<string>;
 
 export interface Matcher {
   /**
@@ -79,9 +75,7 @@ export type Options<
   K extends string = never
 > = O & { readonly [L in K]: SuboptionsArray<S> };
 
-// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-// fixme
-export type RegexpPattern = strings | string;
+export type RegexpPattern = a.Mixed<string>;
 
 export type ReportDescriptor<T extends string = string> =
   BaseReportDescriptor<T>;
@@ -94,9 +88,7 @@ export type RuleFixes = readonly RuleFix[];
 
 export type RuleListeners = readonly RuleListener[];
 
-// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-// fixme
-export type Selector = strings | string;
+export type Selector = a.Mixed<string>;
 
 export interface SharedSuboptions {
   readonly filesToLint?: strings;

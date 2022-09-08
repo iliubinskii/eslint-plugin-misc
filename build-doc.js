@@ -30,18 +30,14 @@ const { rules } =
   require("./dist/rules.core.js");
 
 const documentedRules = o.sort(
-  // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-  // fixme - Use o.pick
-  o.filter(
+  o.omit(
     rules,
     (_rule, name) =>
-      !(
-        name.startsWith("real-config/") ||
-        name.startsWith("real-facades/") ||
-        name.startsWith("real-framework/") ||
-        name.startsWith("real-fns/") ||
-        name.startsWith("quasar-extension/")
-      )
+      name.startsWith("real-config/") ||
+      name.startsWith("real-facades/") ||
+      name.startsWith("real-framework/") ||
+      name.startsWith("real-fns/") ||
+      name.startsWith("quasar-extension/")
   ),
   (_value1, _value2, key1, key2) => {
     if (key1.includes("/") && !key2.includes("/")) return 1;
@@ -130,34 +126,34 @@ const documentedRules = o.sort(
           .join("\n")
       : "";
 
-    const config = evaluate(() => {
-      if (options)
-        return suboptions
-          ? templates.configOptionsSuboptions
-          : templates.configOptions;
+    const config = s.replacePairs(
+      evaluate(() => {
+        if (options)
+          return suboptions
+            ? templates.configOptionsSuboptions
+            : templates.configOptions;
 
-      return suboptions ? templates.configSuboptions : templates.config;
-    })
-      .replace("{{key}}", suboptionsKey)
-      .replace("{{options}}", options)
-      .replace("{{options-annotation}}", optionsAnnotation)
-      .replace("{{suboptions}}", suboptions)
-      .replace("{{suboptions-annotation}}", suboptionsAnnotation);
+        return suboptions ? templates.configSuboptions : templates.config;
+      }),
+      {
+        "{{key}}": suboptionsKey,
+        "{{options}}": options,
+        "{{options-annotation}}": optionsAnnotation,
+        "{{suboptions}}": suboptions,
+        "{{suboptions-annotation}}": suboptionsAnnotation
+      }
+    );
 
     fs.writeFileSync(
       `./docs/${name}.md`,
-      // eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-      // fixme: Use s.strtr
-      s.replaceAll(
-        templates.rule
-          .replace("{{description}}", description)
-          .replace("{{fail-examples}}", failExamples)
-          .replace("{{pass-examples}}", passExamples)
-          .replace("{{config}}", config)
-          .replace("{{options}}", options),
-        "{{name}}",
-        name
-      )
+      s.replacePairs(templates.rule, {
+        "{{config}}": config,
+        "{{description}}": description,
+        "{{fail-examples}}": failExamples,
+        "{{name}}": name,
+        "{{options}}": options,
+        "{{pass-examples}}": passExamples
+      })
     );
   }
 }

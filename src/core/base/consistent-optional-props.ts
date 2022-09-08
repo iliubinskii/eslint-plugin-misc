@@ -48,7 +48,7 @@ export const consistentOptionalProps = utils.createRule({
     { classes: isStyle, interfaces: isStyle },
     {}
   ),
-  defaultOptions: { classes: Style.combined, interfaces: Style.combined },
+  defaultOptions: { classes: Style.undefined, interfaces: Style.optional },
   isSuboptions: is.object.factory<Suboptions>(
     {
       _id: is.string,

@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / {{name}}
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / {{name}}
 
 # {{name}}
 

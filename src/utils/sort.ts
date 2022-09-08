@@ -93,14 +93,6 @@ export namespace sort {
   }
 }
 
-interface Item {
-  readonly index: number;
-  readonly key: string;
-  readonly node: TSESTree.Node;
-}
-
-type Items = readonly Item[];
-
 /**
  * Sorts items.
  *
@@ -165,3 +157,11 @@ function sortGroup<T extends TSESTree.Node = TSESTree.Node>(
     }
   }
 }
+
+interface Item {
+  readonly index: number;
+  readonly key: string;
+  readonly node: TSESTree.Node;
+}
+
+type Items = readonly Item[];

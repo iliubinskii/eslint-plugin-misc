@@ -556,21 +556,6 @@ const safeBooleanWithUndefined = new ReadonlySet([
   ts.TypeFlags.UniqueESSymbol
 ]);
 
-type ExpectedFlags =
-  | ts.TypeFlags.BigInt
-  | ts.TypeFlags.BigIntLiteral
-  | ts.TypeFlags.BooleanLiteral
-  | ts.TypeFlags.ESSymbol
-  | ts.TypeFlags.Null
-  | ts.TypeFlags.Number
-  | ts.TypeFlags.NumberLiteral
-  | ts.TypeFlags.Object
-  | ts.TypeFlags.String
-  | ts.TypeFlags.StringLiteral
-  | ts.TypeFlags.Undefined
-  | ts.TypeFlags.UniqueESSymbol
-  | ts.TypeFlags.Void;
-
 /**
  * Asserts node to be expression.
  *
@@ -605,3 +590,18 @@ function checkTypeFlags(type: ts.Type, ...flags: TypeFlagsArray): boolean {
       type.types.every(subtype => flags.includes(subtype.getFlags())))
   );
 }
+
+type ExpectedFlags =
+  | ts.TypeFlags.BigInt
+  | ts.TypeFlags.BigIntLiteral
+  | ts.TypeFlags.BooleanLiteral
+  | ts.TypeFlags.ESSymbol
+  | ts.TypeFlags.Null
+  | ts.TypeFlags.Number
+  | ts.TypeFlags.NumberLiteral
+  | ts.TypeFlags.Object
+  | ts.TypeFlags.String
+  | ts.TypeFlags.StringLiteral
+  | ts.TypeFlags.Undefined
+  | ts.TypeFlags.UniqueESSymbol
+  | ts.TypeFlags.Void;
