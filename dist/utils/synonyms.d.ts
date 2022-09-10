@@ -1,10 +1,10 @@
 import type { IndexedRecord } from "real-fns";
 /**
- * Creates synonyms object.
+ * Creates synonyms.
  *
  * @param config - Path to synonyms configuration.
  * @param core - Core rules.
- * @returns Synonyms object.
+ * @returns Synonyms.
  */
 export declare function getSynonyms(config: string, core: IndexedRecord): IndexedRecord;
 //# sourceMappingURL=synonyms.d.ts.map

@@ -20,51 +20,6 @@ class TypeCheck {
             writable: true,
             value: void 0
         });
-        /**
-         * Checks if type is an object.
-         *
-         * @param type - Type.
-         * @returns _True_ if type is an object, _false_ otherwise.
-         */
-        Object.defineProperty(this, "isObjectType", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: (type) => tsutils.isObjectType(type)
-        });
-        /**
-         * Checks if type is safe boolean condition.
-         *
-         * @param type - Type.
-         * @returns _True_ if type is safe boolean condition, _false_ otherwise.
-         */
-        Object.defineProperty(this, "isSafeBooleanCondition", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: (type) => {
-                if (safeBoolean.has(type.getFlags()))
-                    return true;
-                if (tsutils.isUnionType(type)) {
-                    const parts = tsutils.unionTypeParts(type);
-                    if (parts.length === 2) {
-                        if (parts.some(part => tsutils.isBooleanLiteralType(part, true)) &&
-                            parts.some(part => tsutils.isBooleanLiteralType(part, false)))
-                            return true;
-                        if (parts.some(part => tsutils.isBooleanLiteralType(part, true)) &&
-                            parts.some(part => part.getFlags() === ts.TypeFlags.Undefined))
-                            return true;
-                        if (parts.some(part => tsutils.isObjectType(part)) &&
-                            parts.some(part => part.getFlags() === ts.TypeFlags.Undefined))
-                            return true;
-                        if (parts.some(part => safeBooleanWithUndefined.has(part.getFlags())) &&
-                            parts.some(part => part.getFlags() === ts.TypeFlags.Undefined))
-                            return true;
-                    }
-                }
-                return false;
-            }
-        });
         Object.defineProperty(this, "code", {
             enumerable: true,
             configurable: true,
@@ -185,6 +140,16 @@ class TypeCheck {
         return this.checker.isArrayType(type) || this.checker.isTupleType(type);
     }
     /**
+     * Checks if type is an object.
+     *
+     * @param this - No this.
+     * @param type - Type.
+     * @returns _True_ if type is an object, _false_ otherwise.
+     */
+    isObjectType(type) {
+        return tsutils.isObjectType(type);
+    }
+    /**
      * Checks if property is readonly in type.
      *
      * @param property - Property.
@@ -193,6 +158,35 @@ class TypeCheck {
      */
     isReadonlyProperty(property, type) {
         return tsutils.isPropertyReadonlyInType(type, property.getEscapedName(), this.checker);
+    }
+    /**
+     * Checks if type is safe boolean condition.
+     *
+     * @param this - No this.
+     * @param type - Type.
+     * @returns _True_ if type is safe boolean condition, _false_ otherwise.
+     */
+    isSafeBooleanCondition(type) {
+        if (safeBoolean.has(type.getFlags()))
+            return true;
+        if (tsutils.isUnionType(type)) {
+            const parts = tsutils.unionTypeParts(type);
+            if (parts.length === 2) {
+                if (parts.some(part => tsutils.isBooleanLiteralType(part, true)) &&
+                    parts.some(part => tsutils.isBooleanLiteralType(part, false)))
+                    return true;
+                if (parts.some(part => tsutils.isBooleanLiteralType(part, true)) &&
+                    parts.some(part => part.getFlags() === ts.TypeFlags.Undefined))
+                    return true;
+                if (parts.some(part => tsutils.isObjectType(part)) &&
+                    parts.some(part => part.getFlags() === ts.TypeFlags.Undefined))
+                    return true;
+                if (parts.some(part => safeBooleanWithUndefined.has(part.getFlags())) &&
+                    parts.some(part => part.getFlags() === ts.TypeFlags.Undefined))
+                    return true;
+            }
+        }
+        return false;
     }
     /**
      * Checks if type contains type group.
@@ -235,7 +229,6 @@ class TypeCheck {
      * @param expected - Expected type group.
      * @returns _True_ if type belongs to type group, _false_ otherwise.
      */
-    // eslint-disable-next-line complexity -- Wait for real-config update
     typeIs(type, expected) {
         if (expected)
             switch (expected) {

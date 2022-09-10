@@ -1,4 +1,4 @@
-// eslint-disable-next-line misc/no-at-sign-internal-import, misc/no-internal-modules -- Ok
+// eslint-disable-next-line misc/no-at-sign-internal-import -- Ok
 import { getProjectConfig } from "@/utils/create-rule.internal";
 
 test.each([

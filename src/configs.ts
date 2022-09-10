@@ -87,5 +87,5 @@ export const configs = evaluate((): IndexedRecord => {
  * @returns Configuration.
  */
 function rules(source: IndexedRecord): object {
-  return o.fromEntries(o.keys(source).map(key => [`misc/${key}`, "warn"]));
+  return o.fromEntries(o.keys(source).map(key => [`misc/${key}`, "error"]));
 }

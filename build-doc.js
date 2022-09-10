@@ -1,4 +1,4 @@
-const { evaluate, is, o, s } = require("real-fns");
+const { a, evaluate, is, o, s } = require("real-fns");
 
 const { stringify: baseStringify } = require("javascript-stringify");
 
@@ -25,9 +25,8 @@ const templates = {
   rule: fs.readFileSync("./assets/docs/templates/rule.md").toString().trim()
 };
 
-const { rules } =
-  // eslint-disable-next-line misc/no-internal-modules -- Ok
-  require("./dist/rules.core.js");
+// eslint-disable-next-line misc/no-internal-modules -- Ok
+const { rules } = require("./dist/rules.core.js");
 
 const documentedRules = o.sort(
   o.omit(
@@ -106,23 +105,31 @@ const documentedRules = o.sort(
       : "";
 
     const suboptions = suboptionTypes
-      ? o
-          .entries(suboptionTypes)
-          .map(([option, type]) => `${option}: ${type}`)
+      ? a
+          .sort([
+            ...o
+              .entries(suboptionTypes)
+              .map(([option, type]) => `${option}: ${type}`),
+            "filesToLint: string[]",
+            "filesToSkip: string[]"
+          ])
           .join(",\n            ")
       : "";
 
     const suboptionsAnnotation = suboptionDescriptions
-      ? o
-          .entries(suboptionDescriptions)
-          .map(([option, description]) => {
-            const defVal =
-              defaultSuboptions && is.not.empty(defaultSuboptions[option])
-                ? stringify(defaultSuboptions[option])
-                : "-";
+      ? a
+          .sort([
+            ...o.entries(suboptionDescriptions).map(([option, description]) => {
+              const defVal =
+                defaultSuboptions && is.not.empty(defaultSuboptions[option])
+                  ? stringify(defaultSuboptions[option])
+                  : "-";
 
-            return `| ${suboptionsKey}.${option} | ${description} | ${defVal} |`;
-          })
+              return `| \`${suboptionsKey}.${option}\` | ${description} | ${defVal} |`;
+            }),
+            "| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |",
+            "| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |"
+          ])
           .join("\n")
       : "";
 

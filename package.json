@@ -4,8 +4,14 @@
   "private": false,
   "description": "ESLint plugin",
   "keywords": [
+    "custom",
     "eslint",
-    "plugin"
+    "jest",
+    "plugin",
+    "synonyms",
+    "typescript",
+    "vue",
+    "vuejs"
   ],
   "homepage": "https://github.com/ilyub/eslint-plugin-misc",
   "bugs": {
@@ -70,9 +76,9 @@
     "types-fix": "^0.1.0"
   },
   "devDependencies": {
-    "eslint-plugin-misc": "^0.1.4",
+    "eslint-plugin-misc": "^0.1.5",
     "get-current-line": "^6.6.0",
-    "real-config": "^0.1.5"
+    "real-config": "^0.1.6"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",

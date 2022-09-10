@@ -13,6 +13,8 @@ module.exports = {
       {
         rules: [
           {
+            filesToLint: string[],
+            filesToSkip: string[],
             hierarchy: string[][]
           },
           ...
@@ -25,7 +27,9 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| rules.hierarchy | Allows some sibling dependencies | [] |
+| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
+| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
+| `rules.hierarchy` | Allows some sibling dependencies | [] |
 
 ## Examples of incorrect code
 

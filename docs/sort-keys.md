@@ -15,6 +15,8 @@ module.exports = {
           {
             _id: string,
             customOrder: string[],
+            filesToLint: string[],
+            filesToSkip: string[],
             selector: string | string[],
             sendToBottom: string,
             sendToTop: string
@@ -29,11 +31,13 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| overrides._id | Id | - |
-| overrides.customOrder | Array elements with custom order | - |
-| overrides.selector | AST elements to be sorted (AST selector) | - |
-| overrides.sendToBottom | Array elements that should be sent to bottom | - |
-| overrides.sendToTop | Array elements that should be sent to top | - |
+| `overrides._id` | Id | - |
+| `overrides.customOrder` | Array elements with custom order | - |
+| `overrides.selector` | AST elements to be sorted (AST selector) | - |
+| `overrides.sendToBottom` | Array elements that should be sent to bottom | - |
+| `overrides.sendToTop` | Array elements that should be sent to top | - |
+| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
+| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
 
 ## Examples of incorrect code
 

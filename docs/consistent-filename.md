@@ -15,6 +15,8 @@ module.exports = {
         overrides: [
           {
             _id: string,
+            filesToLint: string[],
+            filesToSkip: string[],
             format: "PascalCase" | "camelCase" | "kebab-case",
             match: boolean,
             selector: string | string[]
@@ -30,10 +32,12 @@ module.exports = {
 | Option | Description | Default |
 | :----- | :----- | :----- |
 | format | Default file name format | "kebab-case"|
-| overrides._id | Id | - |
-| overrides.format | Overrides default file name format | - |
-| overrides.match | Apply override only if AST element's text matches file name | false |
-| overrides.selector | Triggers override when AST element matching AST selector is found | - |
+| `overrides._id` | Id | - |
+| `overrides.format` | Overrides default file name format | - |
+| `overrides.match` | Apply override only if AST element's text matches file name | false |
+| `overrides.selector` | Triggers override when AST element matching AST selector is found | - |
+| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
+| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
 
 ## Examples of incorrect code
 

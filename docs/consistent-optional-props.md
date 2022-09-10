@@ -19,6 +19,8 @@ module.exports = {
         overrides: [
           {
             _id: string,
+            filesToLint: string[],
+            filesToSkip: string[],
             pattern: string | string[],
             propertyPattern: string | string[],
             style: "combined" | "optional" | "undefined",
@@ -36,11 +38,13 @@ module.exports = {
 | :----- | :----- | :----- |
 | classes | Prefered style for classes | "undefined"|
 | interfaces | Prefered style for interfaces | "optional"|
-| overrides._id | Id | - |
-| overrides.pattern | Only for selected class/interface names (regular expression) | [] |
-| overrides.propertyPattern | Only for selected property names (regular expression) | [] |
-| overrides.style | Prefered style | - |
-| overrides.target | Classes or interfaces | - |
+| `overrides._id` | Id | - |
+| `overrides.pattern` | Only for selected class/interface names (regular expression) | [] |
+| `overrides.propertyPattern` | Only for selected property names (regular expression) | [] |
+| `overrides.style` | Prefered style | - |
+| `overrides.target` | Classes or interfaces | - |
+| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
+| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
 
 ## Examples of incorrect code
 

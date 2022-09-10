@@ -77,11 +77,11 @@ exports.noRestrictedSyntax = utils.createRule({
         optionDescriptions: {
             checkArrayType: "Check array argument type",
             checkReturnType: "Check function return type",
-            ignoreSelector: "Allowed AST elements (AST selector)",
+            ignoreSelector: "Allowed AST elements (AST selectors)",
             message: "Custom message",
             replacement: "Replacement",
             search: "Serch term for replacement (regular expression)",
-            selector: "Disallowed AST elements (AST selector)",
+            selector: "Disallowed AST elements (AST selectors)",
             typeHas: "Restrict syntax only if AST element's type includes given type",
             typeHasNoneOf: "Restrict syntax only if AST element's type includes none of given types",
             typeHasOneOf: "Restrict syntax only if AST element's type includes one of given types",

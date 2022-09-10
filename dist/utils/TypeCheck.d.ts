@@ -87,10 +87,11 @@ export declare class TypeCheck {
     /**
      * Checks if type is an object.
      *
+     * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is an object, _false_ otherwise.
      */
-    readonly isObjectType: (type: ts.Type) => type is ts.ObjectType;
+    isObjectType(this: void, type: ts.Type): type is ts.ObjectType;
     /**
      * Checks if property is readonly in type.
      *
@@ -102,10 +103,11 @@ export declare class TypeCheck {
     /**
      * Checks if type is safe boolean condition.
      *
+     * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is safe boolean condition, _false_ otherwise.
      */
-    readonly isSafeBooleanCondition: (type: ts.Type) => boolean;
+    isSafeBooleanCondition(this: void, type: ts.Type): boolean;
     /**
      * Checks if type contains type group.
      *

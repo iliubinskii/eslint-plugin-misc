@@ -14,8 +14,8 @@ exports.consistentSymbolDescription = utils.wrapRule({
     ],
     docs: {
         description: "Requires consistent symbol description.",
-        failExamples: 'const x = Symbol("kebab-case__kebab-case");',
-        passExamples: 'const x = Symbol("PascalCase");'
+        failExamples: 'const x = Symbol("SampleDescription");',
+        passExamples: 'const x = Symbol("kebab-case__kebab-case");'
     }
 });
 //# sourceMappingURL=consistent-symbol-description.js.map

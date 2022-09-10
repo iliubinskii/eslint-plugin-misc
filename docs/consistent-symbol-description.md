@@ -16,11 +16,11 @@ module.exports = {
 ## Examples of incorrect code
 
 ```ts
-const x = Symbol("kebab-case__kebab-case");
+const x = Symbol("SampleDescription");
 ```
 
 ## Examples of correct code
 
 ```ts
-const x = Symbol("PascalCase");
+const x = Symbol("kebab-case__kebab-case");
 ```

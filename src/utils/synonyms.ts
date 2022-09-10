@@ -3,11 +3,11 @@ import { assert, is, o } from "real-fns";
 import fs from "node:fs";
 
 /**
- * Creates synonyms object.
+ * Creates synonyms.
  *
  * @param config - Path to synonyms configuration.
  * @param core - Core rules.
- * @returns Synonyms object.
+ * @returns Synonyms.
  */
 // eslint-disable-next-line misc/only-export-name -- Ok
 export function getSynonyms(

@@ -15,6 +15,8 @@ module.exports = {
           {
             _id: string,
             emptyLine: "always" | "any" | "never",
+            filesToLint: string[],
+            filesToSkip: string[],
             next: string | string[],
             prev: string | string[],
             selector: string | string[]
@@ -29,11 +31,13 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| rules._id | Id | - |
-| rules.emptyLine | Requires or disallows empty line | - |
-| rules.next | The second of the two adjustent AST selector (AST selector) | - |
-| rules.prev | The first of the two adjustent AST elements (AST selector) | - |
-| rules.selector | One selector for both adjustent AST elements (AST selector) | - |
+| `rules._id` | Id | - |
+| `rules.emptyLine` | Requires or disallows empty line | - |
+| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
+| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
+| `rules.next` | The second of the two adjustent AST elements (AST selectors) | - |
+| `rules.prev` | The first of the two adjustent AST elements (AST selectors) | - |
+| `rules.selector` | One selector for both adjustent AST elements (AST selectors) | - |
 
 ## Examples of incorrect code
 

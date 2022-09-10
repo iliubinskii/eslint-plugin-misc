@@ -26,11 +26,11 @@ exports.noRestrictedSyntax = utils.createRule({
             selector: "string | string[]"
         },
         optionDescriptions: {
-            ignoreSelector: "Allowed AST elements (AST selector)",
+            ignoreSelector: "Allowed AST elements (AST selectors)",
             message: "Custom message",
             replacement: "Replacement",
             search: "Serch term for replacement (regular expression)",
-            selector: "Disallowed AST elements (AST selector)"
+            selector: "Disallowed AST elements (AST selectors)"
         },
         failExamples: `
       /*

@@ -5,11 +5,11 @@ const tslib_1 = require("tslib");
 const real_fns_1 = require("real-fns");
 const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
 /**
- * Creates synonyms object.
+ * Creates synonyms.
  *
  * @param config - Path to synonyms configuration.
  * @param core - Core rules.
- * @returns Synonyms object.
+ * @returns Synonyms.
  */
 // eslint-disable-next-line misc/only-export-name -- Ok
 function getSynonyms(config, core) {

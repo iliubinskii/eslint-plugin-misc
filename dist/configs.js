@@ -55,6 +55,6 @@ exports.configs = (0, real_fns_1.evaluate)(() => {
  * @returns Configuration.
  */
 function rules(source) {
-    return real_fns_1.o.fromEntries(real_fns_1.o.keys(source).map(key => [`misc/${key}`, "warn"]));
+    return real_fns_1.o.fromEntries(real_fns_1.o.keys(source).map(key => [`misc/${key}`, "error"]));
 }
 //# sourceMappingURL=configs.js.map

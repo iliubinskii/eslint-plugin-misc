@@ -165,11 +165,13 @@ export class TypeCheck {
   /**
    * Checks if type is an object.
    *
+   * @param this - No this.
    * @param type - Type.
    * @returns _True_ if type is an object, _false_ otherwise.
    */
-  public readonly isObjectType = (type: ts.Type): type is ts.ObjectType =>
-    tsutils.isObjectType(type);
+  public isObjectType(this: void, type: ts.Type): type is ts.ObjectType {
+    return tsutils.isObjectType(type);
+  }
 
   /**
    * Checks if property is readonly in type.
@@ -189,10 +191,11 @@ export class TypeCheck {
   /**
    * Checks if type is safe boolean condition.
    *
+   * @param this - No this.
    * @param type - Type.
    * @returns _True_ if type is safe boolean condition, _false_ otherwise.
    */
-  public readonly isSafeBooleanCondition = (type: ts.Type): boolean => {
+  public isSafeBooleanCondition(this: void, type: ts.Type): boolean {
     if (safeBoolean.has(type.getFlags())) return true;
 
     if (tsutils.isUnionType(type)) {
@@ -226,7 +229,7 @@ export class TypeCheck {
     }
 
     return false;
-  };
+  }
 
   /**
    * Checks if type contains type group.
@@ -272,7 +275,7 @@ export class TypeCheck {
    * @param expected - Expected type group.
    * @returns _True_ if type belongs to type group, _false_ otherwise.
    */
-  // eslint-disable-next-line complexity -- Wait for real-config update
+
   public typeIs(type: ts.Type, expected: TypeGroup | undefined): boolean {
     if (expected)
       switch (expected) {
