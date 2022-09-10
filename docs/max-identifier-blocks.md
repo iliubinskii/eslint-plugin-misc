@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / max-identifier-blocks
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / max-identifier-blocks
 
 # max-identifier-blocks
 

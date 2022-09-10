@@ -97,19 +97,6 @@ exports.noSiblingImport = utils.createRule({
  * @returns Index.
  */
 function findLastIndex(str, matchers) {
-    return findLastIndex2(matchers, matcher => matcher(str));
-}
-/**
- * Finds last index.
- *
- * @param arr - Array.
- * @param callback - Callback.
- * @returns Last matching index.
- */
-// eslint-disable-next-line no-warning-comments -- Wait for real-fns update
-// fixme
-function findLastIndex2(arr, callback) {
-    const index = real_fns_1.a.reverse(arr).findIndex(callback);
-    return index === -1 ? -1 : arr.length - index - 1;
+    return real_fns_1.a.findLastIndex(matchers, matcher => matcher(str));
 }
 //# sourceMappingURL=no-sibling-import.js.map

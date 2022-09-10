@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-language-mixing
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-language-mixing
 
 # no-language-mixing
 

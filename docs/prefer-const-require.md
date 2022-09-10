@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / prefer-const-require
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / prefer-const-require
 
 # prefer-const-require
 

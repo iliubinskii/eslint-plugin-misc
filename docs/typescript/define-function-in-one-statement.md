@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / typescript/define-function-in-one-statement
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/define-function-in-one-statement
 
 # typescript/define-function-in-one-statement
 

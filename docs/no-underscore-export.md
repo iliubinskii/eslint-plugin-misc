@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-underscore-export
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-underscore-export
 
 # no-underscore-export
 

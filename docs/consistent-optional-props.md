@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / consistent-optional-props
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-optional-props
 
 # consistent-optional-props
 
@@ -34,8 +34,8 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| classes | Prefered style for classes | "combined"|
-| interfaces | Prefered style for interfaces | "combined"|
+| classes | Prefered style for classes | "undefined"|
+| interfaces | Prefered style for interfaces | "optional"|
 | overrides._id | Id | - |
 | overrides.pattern | Only for selected class/interface names (regular expression) | [] |
 | overrides.propertyPattern | Only for selected property names (regular expression) | [] |

@@ -1,7 +1,7 @@
-import type { strings } from "real-fns";
+import * as utils from "../../utils";
 export interface Options {
-    readonly allow: strings | string;
-    readonly disallow: strings | string;
+    readonly allow: utils.FilePattern;
+    readonly disallow: utils.FilePattern;
 }
 export declare enum MessageId {
     disallowedSource = "disallowedSource"

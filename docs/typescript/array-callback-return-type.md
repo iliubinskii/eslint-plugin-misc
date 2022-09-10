@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / typescript/array-callback-return-type
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/array-callback-return-type
 
 # typescript/array-callback-return-type
 

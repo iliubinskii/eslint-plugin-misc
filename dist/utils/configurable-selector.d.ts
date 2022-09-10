@@ -1,9 +1,4 @@
 import type { strings } from "real-fns";
-export interface Options {
-    readonly excludeSelectors: strings;
-    readonly includeSelectors: strings;
-    readonly noDefaultSelectors: boolean;
-}
 /**
  * Creates selector.
  *
@@ -12,4 +7,9 @@ export interface Options {
  * @returns Selector.
  */
 export declare function get(options: Options, defaultSelectors: strings): string;
+export interface Options {
+    readonly excludeSelectors: strings;
+    readonly includeSelectors: strings;
+    readonly noDefaultSelectors: boolean;
+}
 //# sourceMappingURL=configurable-selector.d.ts.map

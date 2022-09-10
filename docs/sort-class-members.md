@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / sort-class-members
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-class-members
 
 # sort-class-members
 

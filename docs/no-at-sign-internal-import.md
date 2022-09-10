@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-at-sign-internal-import
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-at-sign-internal-import
 
 # no-at-sign-internal-import
 

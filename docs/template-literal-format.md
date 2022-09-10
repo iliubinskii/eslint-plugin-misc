@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / template-literal-format
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / template-literal-format
 
 # template-literal-format
 

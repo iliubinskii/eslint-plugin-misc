@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / sort-statements
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-statements
 
 # sort-statements
 

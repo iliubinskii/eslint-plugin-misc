@@ -6,7 +6,7 @@ const utils = tslib_1.__importStar(require("../utils"));
 const base_1 = require("./base");
 exports.noInternalModules = utils.wrapRule({
     rule: base_1.base["disallow-import"],
-    options: [{ allow: "@/**", disallow: ["./*/**", "[^@]*/**", "@*/*/**"] }],
+    options: [{ disallow: ["./*/**", "[^@]*/**", "@?*/*/**"] }],
     docs: {
         description: "Disallows importing of internal modules.",
         failExamples: `

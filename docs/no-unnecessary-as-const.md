@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-unnecessary-as-const
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-unnecessary-as-const
 
 # no-unnecessary-as-const
 

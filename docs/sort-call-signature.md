@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / sort-call-signature
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-call-signature
 
 # sort-call-signature
 

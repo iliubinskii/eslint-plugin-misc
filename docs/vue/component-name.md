@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / vue/component-name
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/component-name
 
 # vue/component-name
 

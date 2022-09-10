@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / require-jsdoc
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / require-jsdoc
 
 # require-jsdoc
 
@@ -14,8 +14,7 @@ module.exports = {
         excludeSelectors: string[],
         includeSelectors: string[],
         interfaces: "callSignatures" | "constructSignatures" | "interface",
-        noDefaultSelectors: boolean,
-        properties: Array<"function" | "nonFunction">
+        noDefaultSelectors: boolean
       }
     ]
   }
@@ -26,9 +25,8 @@ module.exports = {
 | :----- | :----- | :----- |
 | excludeSelectors | Skip these selectors | []|
 | includeSelectors | Check additional selectors | []|
-| interfaces | Require documenation for interface ("interface"), call signatures ("callSignatures"), construct signatures ("constructSignatures") | ['callSignatures','constructSignatures','interface']|
+| interfaces | Require documenation for interface ("interface"), call signatures ("callSignatures"), construct signatures ("constructSignatures") | ['callSignatures','constructSignatures']|
 | noDefaultSelectors | Do not check default selectors | false|
-| properties | Require documenation for function properties ("function"), non-function properties ("nonFunction") | ['function','nonFunction']|
 
 ## Examples of incorrect code
 

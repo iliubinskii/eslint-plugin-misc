@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProjectConfig = exports.createContext = exports.isProjectConfig = void 0;
 const tslib_1 = require("tslib");
-const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const real_fns_1 = require("real-fns");
 const misc_1 = require("./misc");
+const types_1 = require("./types");
 const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
 const node_path_1 = tslib_1.__importDefault(require("node:path"));
 exports.isProjectConfig = real_fns_1.is.factory(real_fns_1.is.object.of, {}, { name: real_fns_1.is.string });
@@ -119,10 +119,9 @@ function createContext(context, ruleOptionsArray, options) {
         const name = stripExtension(base);
         if (name === "index")
             return identifierFromPath(dir, expected);
-        const candidates = name
-            .split(".")
-            .filter((part, index) => !(index === 0 && part === "index"))
-            .map(part => /^[A-Z]/u.test(part) ? real_fns_1.s.ucFirst(_.camelCase(part)) : _.camelCase(part));
+        const candidates = real_fns_1.a
+            .omit(name.split("."), (part, index) => index === 0 && part === "index")
+            .map(part => (0, misc_1.setCasing)(part, /^[A-Z]/u.test(part) ? types_1.Casing.pascalCase : types_1.Casing.camelCase));
         return real_fns_1.is.not.empty(expected) && candidates.includes(expected)
             ? expected
             : real_fns_1.a.first(candidates);

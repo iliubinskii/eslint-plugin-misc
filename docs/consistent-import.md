@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / consistent-import
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-import
 
 # consistent-import
 

@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / restrict-identifier-characters
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / restrict-identifier-characters
 
 # restrict-identifier-characters
 

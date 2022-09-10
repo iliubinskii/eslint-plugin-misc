@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / typescript/no-complex-return-type
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-complex-return-type
 
 # typescript/no-complex-return-type
 

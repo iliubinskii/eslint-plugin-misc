@@ -1,5 +1,5 @@
 "use strict";
-/* eslint-disable misc/consistent-filename -- Postponed */
+/* eslint-disable misc/consistent-filename -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.preferFromIterable = void 0;
 const tslib_1 = require("tslib");

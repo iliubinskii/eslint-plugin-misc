@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-self-import
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-self-import
 
 # no-self-import
 

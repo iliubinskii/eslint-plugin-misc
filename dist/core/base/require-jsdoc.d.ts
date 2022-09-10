@@ -4,15 +4,7 @@ import { is } from "real-fns";
 export declare type InterfaceOptions = readonly InterfaceOption[];
 export interface Options extends utils.configurableSelector.Options {
     readonly interfaces: InterfaceOptions;
-    readonly properties: PropertyOptions;
 }
-export declare type PropertyOptions = readonly PropertyOption[];
-export declare enum PropertyOption {
-    function = "function",
-    nonFunction = "nonFunction"
-}
-export declare const isPropertyOption: is.Guard<PropertyOption>;
-export declare const isPropertyOptions: is.Guard<readonly PropertyOption[]>;
 export declare enum InterfaceOption {
     callSignatures = "callSignatures",
     constructSignatures = "constructSignatures",

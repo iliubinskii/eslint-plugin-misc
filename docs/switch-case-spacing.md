@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / switch-case-spacing
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / switch-case-spacing
 
 # switch-case-spacing
 

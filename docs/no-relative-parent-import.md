@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-relative-parent-import
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-relative-parent-import
 
 # no-relative-parent-import
 

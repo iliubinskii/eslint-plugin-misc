@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-expression-empty-lines
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-expression-empty-lines
 
 # no-expression-empty-lines
 

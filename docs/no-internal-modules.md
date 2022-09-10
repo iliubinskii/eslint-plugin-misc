@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / no-internal-modules
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-internal-modules
 
 # no-internal-modules
 

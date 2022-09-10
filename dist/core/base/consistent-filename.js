@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.consistentFilename = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
-const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
 const real_fns_1 = require("real-fns");
 const node_path_1 = tslib_1.__importDefault(require("node:path"));
@@ -122,9 +121,11 @@ exports.consistentFilename = utils.createRule({
         function getExpected(got, format, match = false, node) {
             return got
                 .split(".")
-                .map((part, index) => index === 0
-                ? utils.setCasing(match ? utils.nodeText(real_fns_1.as.not.empty(node), part) : part, format)
-                : _.kebabCase(part))
+                .map((part, index) => {
+                if (index === 0)
+                    return utils.setCasing(match ? utils.nodeText(real_fns_1.as.not.empty(node), part) : part, format);
+                return utils.setCasing(part, utils.Casing.kebabCase);
+            })
                 .join(".");
         }
     }

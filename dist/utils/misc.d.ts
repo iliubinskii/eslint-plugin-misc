@@ -1,5 +1,5 @@
 import { fn, is } from "real-fns";
-import type { FilePattern, Matcher, RegexpPattern, RuleListeners, Selector } from "./types";
+import type { AllowDisallowPatterns, FilePattern, Matcher, RegexpPattern, RuleListeners, Selector } from "./types";
 import { Casing, TypeGroup } from "./types";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { unknowns } from "real-fns";
@@ -7,7 +7,6 @@ import type { RuleListener, RuleModule } from "@typescript-eslint/utils/dist/ts-
 import type { WrapRuleOptions } from "./misc.internal";
 import minimatch from "minimatch";
 export declare const isCasing: is.Guard<Casing>;
-export declare const isStringOrStrings: is.Guard<string | readonly string[]>;
 export declare const isFilePattern: is.Guard<FilePattern>;
 export declare const isRegexpPattern: is.Guard<RegexpPattern>;
 export declare const isSelector: is.Guard<Selector>;
@@ -22,7 +21,7 @@ export declare const projectRoot: string;
  * @param options - Minimatch options.
  * @returns Matcher.
  */
-export declare function createFileMatcher(pattern: FilePattern, defVal: boolean, options: Readonly<minimatch.IOptions>): Matcher;
+export declare function createFileMatcher(pattern: AllowDisallowPatterns | FilePattern, defVal: boolean, options: Readonly<minimatch.IOptions>): Matcher;
 /**
  * Creates matcher.
  *

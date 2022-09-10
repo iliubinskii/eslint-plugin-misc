@@ -1,17 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.requireJsdoc = exports.isInterfaceOptions = exports.isInterfaceOption = exports.MessageId = exports.InterfaceOption = exports.isPropertyOptions = exports.isPropertyOption = exports.PropertyOption = void 0;
+exports.requireJsdoc = exports.isInterfaceOptions = exports.isInterfaceOption = exports.MessageId = exports.InterfaceOption = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
 const real_fns_1 = require("real-fns");
-var PropertyOption;
-(function (PropertyOption) {
-    PropertyOption["function"] = "function";
-    PropertyOption["nonFunction"] = "nonFunction";
-})(PropertyOption = exports.PropertyOption || (exports.PropertyOption = {}));
-exports.isPropertyOption = real_fns_1.is.factory(real_fns_1.is.enumeration, PropertyOption);
-exports.isPropertyOptions = real_fns_1.is.factory(real_fns_1.is.array.of, exports.isPropertyOption);
 var InterfaceOption;
 (function (InterfaceOption) {
     InterfaceOption["callSignatures"] = "callSignatures";
@@ -33,19 +26,16 @@ exports.requireJsdoc = utils.createRule({
         excludeSelectors: real_fns_1.is.strings,
         includeSelectors: real_fns_1.is.strings,
         interfaces: exports.isInterfaceOptions,
-        noDefaultSelectors: real_fns_1.is.boolean,
-        properties: exports.isPropertyOptions
+        noDefaultSelectors: real_fns_1.is.boolean
     }, {}),
     defaultOptions: {
         excludeSelectors: [],
         includeSelectors: [],
         interfaces: [
             InterfaceOption.callSignatures,
-            InterfaceOption.constructSignatures,
-            InterfaceOption.interface
+            InterfaceOption.constructSignatures
         ],
-        noDefaultSelectors: false,
-        properties: [PropertyOption.function, PropertyOption.nonFunction]
+        noDefaultSelectors: false
     },
     messages: {
         [MessageId.undocumented]: "Missing documentation",
@@ -58,15 +48,13 @@ exports.requireJsdoc = utils.createRule({
             excludeSelectors: "string[]",
             includeSelectors: "string[]",
             interfaces: '"callSignatures" | "constructSignatures" | "interface"',
-            noDefaultSelectors: "boolean",
-            properties: 'Array<"function" | "nonFunction">'
+            noDefaultSelectors: "boolean"
         },
         optionDescriptions: {
             excludeSelectors: "Skip these selectors",
             includeSelectors: "Check additional selectors",
             interfaces: 'Require documenation for interface ("interface"), call signatures ("callSignatures"), construct signatures ("constructSignatures")',
-            noDefaultSelectors: "Do not check default selectors",
-            properties: 'Require documenation for function properties ("function"), non-function properties ("nonFunction")'
+            noDefaultSelectors: "Do not check default selectors"
         },
         failExamples: "function f(): void {}",
         passExamples: `
@@ -80,29 +68,44 @@ exports.requireJsdoc = utils.createRule({
         const selector = utils.configurableSelector.get(context.options, defaultSelectors);
         return {
             [selector]: (node) => {
-                switch (node.type) {
-                    case utils_1.AST_NODE_TYPES.TSInterfaceDeclaration:
-                        lintInterface(node);
-                        break;
-                    case utils_1.AST_NODE_TYPES.MethodDefinition:
-                    case utils_1.AST_NODE_TYPES.TSMethodSignature:
-                        lintMethod(node);
-                        break;
-                    case utils_1.AST_NODE_TYPES.PropertyDefinition:
-                    case utils_1.AST_NODE_TYPES.TSPropertySignature:
-                        lintProperty(node);
-                        break;
-                    default:
-                        lintNodeByTypeSymbol(node);
+                if (hasOwnComment(node)) {
+                    // Has doc comment
                 }
+                else
+                    switch (node.type) {
+                        case utils_1.AST_NODE_TYPES.TSInterfaceDeclaration:
+                            lintInterface(node);
+                            break;
+                        case utils_1.AST_NODE_TYPES.MethodDefinition:
+                        case utils_1.AST_NODE_TYPES.TSMethodSignature:
+                            lintMethod(node);
+                            break;
+                        default:
+                            lintNodeByTypeSymbol(node);
+                    }
             }
         };
+        function hasOwnComment(node) {
+            if (context
+                .getComments(node)
+                .some(value => value.trimStart().startsWith("/**")))
+                return true;
+            if (node.parent) {
+                if (node.type === utils_1.AST_NODE_TYPES.TSFunctionType &&
+                    node.parent.type === utils_1.AST_NODE_TYPES.TSTypeAnnotation)
+                    return hasOwnComment(node.parent);
+                if (node.type === utils_1.AST_NODE_TYPES.TSTypeAnnotation &&
+                    node.parent.type === utils_1.AST_NODE_TYPES.TSPropertySignature)
+                    return hasOwnComment(node.parent);
+            }
+            return false;
+        }
         function lintCallSignatures(node, type) {
             const hasDocComment = type
                 .getCallSignatures()
                 .every(signature => typeCheck.hasDocComment(signature));
             if (hasDocComment) {
-                // Valid
+                // Has doc comment
             }
             else
                 context.report({
@@ -115,7 +118,7 @@ exports.requireJsdoc = utils.createRule({
                 .getConstructSignatures()
                 .every(signature => typeCheck.hasDocComment(signature));
             if (hasDocComment) {
-                // Valid
+                // Has doc comment
             }
             else
                 context.report({
@@ -144,7 +147,7 @@ exports.requireJsdoc = utils.createRule({
             const symbol = typeCheck.getSymbol(node);
             if (symbol)
                 if (typeCheck.hasDocComment(symbol)) {
-                    // Valid
+                    // Has doc comment
                 }
                 else
                     context.report({ messageId: MessageId.undocumented, node });
@@ -155,35 +158,27 @@ exports.requireJsdoc = utils.createRule({
             const symbol = type.getSymbol();
             if (symbol)
                 if (typeCheck.hasDocComment(symbol)) {
-                    // Valid
+                    // Has doc comment
                 }
                 else
                     context.report({ messageId: MessageId.undocumented, node });
         }
-        function lintProperty(node) {
-            const { properties } = context.options;
-            const { key, typeAnnotation } = node;
-            if (typeAnnotation) {
-                const type = typeAnnotation.typeAnnotation.type;
-                if (type === utils_1.AST_NODE_TYPES.TSFunctionType
-                    ? properties.includes(PropertyOption.function)
-                    : properties.includes(PropertyOption.nonFunction))
-                    lintNodeBySymbol(key);
-            }
-        }
     }
 });
 const defaultSelectors = [
-    utils_1.AST_NODE_TYPES.ClassDeclaration,
-    utils_1.AST_NODE_TYPES.FunctionDeclaration,
     utils_1.AST_NODE_TYPES.MethodDefinition,
-    utils_1.AST_NODE_TYPES.PropertyDefinition,
     utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition,
     utils_1.AST_NODE_TYPES.TSCallSignatureDeclaration,
     utils_1.AST_NODE_TYPES.TSConstructSignatureDeclaration,
     utils_1.AST_NODE_TYPES.TSDeclareFunction,
     utils_1.AST_NODE_TYPES.TSInterfaceDeclaration,
     utils_1.AST_NODE_TYPES.TSMethodSignature,
-    utils_1.AST_NODE_TYPES.TSPropertySignature
+    ":matches(ExportNamedDeclaration, Program, TSModuleBlock) > FunctionDeclaration",
+    "PropertyDefinition > TSTypeAnnotation > TSFunctionType",
+    "PropertyDefinition > TSTypeAnnotation > TSTypeLiteral > TSPropertySignature > TSTypeAnnotation > TSFunctionType",
+    "PropertyDefinition[typeAnnotation=undefined] > :matches(ArrowFunctionExpression, FunctionExpression)",
+    "VariableDeclarator > Identifier.id > TSTypeAnnotation > TSFunctionType",
+    "VariableDeclarator > Identifier.id > TSTypeAnnotation > TSTypeLiteral > TSPropertySignature > TSTypeAnnotation > TSFunctionType",
+    "VariableDeclarator[id.typeAnnotation=undefined] > ObjectExpression > Property > :matches(ArrowFunctionExpression, FunctionExpression)"
 ];
 //# sourceMappingURL=require-jsdoc.js.map

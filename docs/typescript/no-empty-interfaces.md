@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / typescript/no-empty-interfaces
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-empty-interfaces
 
 # typescript/no-empty-interfaces
 

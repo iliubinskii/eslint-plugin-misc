@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / consistent-filename
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-filename
 
 # consistent-filename
 

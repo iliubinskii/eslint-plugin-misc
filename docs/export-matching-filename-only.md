@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / export-matching-filename-only
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / export-matching-filename-only
 
 # export-matching-filename-only
 

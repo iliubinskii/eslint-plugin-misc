@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / typescript/prefer-enum
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-enum
 
 # typescript/prefer-enum
 

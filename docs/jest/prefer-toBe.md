@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / jest/prefer-toBe
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / jest/prefer-toBe
 
 # jest/prefer-toBe
 

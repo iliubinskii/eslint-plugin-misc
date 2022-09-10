@@ -1,9 +1,25 @@
-import type { Context, Docs, SuboptionsArray } from "./types";
 import type { ClassToInterface, Rec, unknowns } from "real-fns";
+import type { Context, Docs, SuboptionsArray } from "./types";
 import type { RuleContext, RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import { is } from "real-fns";
 import type { TypeCheck } from "./TypeCheck";
 export declare const isProjectConfig: is.Guard<ProjectConfig>;
+/**
+ * Creates context.
+ *
+ * @param context - Raw context.
+ * @param ruleOptionsArray - Rule options.
+ * @param options - Options.
+ * @returns Context.
+ */
+export declare function createContext<M extends string, O extends object, S extends object, K extends string = never>(context: RuleContext<M, unknowns>, ruleOptionsArray: unknowns, options: CreateRuleOptions<M, O, S, K>): Context<M, O, S, K>;
+/**
+ * Parses package.json file.
+ *
+ * @param path - Path.
+ * @returns Project configuration.
+ */
+export declare function getProjectConfig(path?: string): ProjectConfig;
 export declare type ContextOptionsArray = readonly [object];
 export interface CreateRuleOptions<M extends string, O extends object, S extends object, K extends string = never> {
     /**
@@ -32,20 +48,4 @@ export declare type PartialOptionsArray<O extends object, S extends object, K ex
 export interface ProjectConfig {
     readonly name?: string;
 }
-/**
- * Creates context.
- *
- * @param context - Raw context.
- * @param ruleOptionsArray - Rule options.
- * @param options - Options.
- * @returns Context.
- */
-export declare function createContext<M extends string, O extends object, S extends object, K extends string = never>(context: RuleContext<M, unknowns>, ruleOptionsArray: unknowns, options: CreateRuleOptions<M, O, S, K>): Context<M, O, S, K>;
-/**
- * Parses package.json file.
- *
- * @param path - Path.
- * @returns Project configuration.
- */
-export declare function getProjectConfig(path?: string): ProjectConfig;
 //# sourceMappingURL=create-rule.internal.d.ts.map

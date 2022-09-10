@@ -14,7 +14,7 @@ exports.objectFormat = utils.createRule({
     fixable: utils.Fixable.code,
     vue: true,
     isOptions: real_fns_1.is.object.factory({ maxLineLength: real_fns_1.is.number, maxObjectSize: real_fns_1.is.number }, {}),
-    defaultOptions: { maxLineLength: 75, maxObjectSize: 3 },
+    defaultOptions: { maxLineLength: 80, maxObjectSize: 3 },
     messages: {
         [MessageId.preferMultiline]: "Prefer multiline object literal",
         [MessageId.preferSingleLine]: "Prefer single-line object literal"

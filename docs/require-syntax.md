@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / require-syntax
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / require-syntax
 
 # require-syntax
 

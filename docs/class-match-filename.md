@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / class-match-filename
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / class-match-filename
 
 # class-match-filename
 

@@ -12,7 +12,7 @@ var MessageId;
 exports.disallowImport = utils.createRule({
     name: "disallow-import",
     vue: true,
-    isOptions: real_fns_1.is.object.factory({ allow: utils.isStringOrStrings, disallow: utils.isStringOrStrings }, {}),
+    isOptions: real_fns_1.is.object.factory({ allow: utils.isFilePattern, disallow: utils.isFilePattern }, {}),
     defaultOptions: { allow: [], disallow: [] },
     messages: {
         [MessageId.disallowedSource]: "Import from this source is not allowed"

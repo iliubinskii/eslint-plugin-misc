@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / disallow-import
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / disallow-import
 
 # disallow-import
 

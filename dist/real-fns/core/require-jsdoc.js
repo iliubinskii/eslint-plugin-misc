@@ -6,16 +6,15 @@ const utils = tslib_1.__importStar(require("../../utils"));
 const core_1 = require("../../core");
 const real_fns_1 = require("real-fns");
 exports.requireJsdoc = (0, real_fns_1.evaluate)(() => {
-    const prefix = ":matches(ExportNamedDeclaration, Program, TSModuleBlock) > VariableDeclaration > VariableDeclarator[id.typeAnnotation=undefined] > CallExpression[callee.name=defineFn]";
+    const prefix = "VariableDeclarator[id.typeAnnotation=undefined] > CallExpression[callee.name=defineFn]";
+    const suffix = ":matches(ArrowFunctionExpression, FunctionExpression)";
     return utils.wrapRule({
         rule: core_1.core["require-jsdoc"],
         options: [
             {
                 includeSelectors: [
-                    `${prefix} > ArrowFunctionExpression`,
-                    `${prefix} > FunctionExpression`,
-                    `${prefix} > ObjectExpression > Property > ArrowFunctionExpression`,
-                    `${prefix} > ObjectExpression > Property > FunctionExpression`
+                    `${prefix} > ${suffix}`,
+                    `${prefix} > ObjectExpression > Property > ${suffix}`
                 ],
                 noDefaultSelectors: true
             }

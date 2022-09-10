@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / vue/element-contents-spacing
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/element-contents-spacing
 
 # vue/element-contents-spacing
 

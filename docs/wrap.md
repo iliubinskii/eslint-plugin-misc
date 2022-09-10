@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / wrap
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / wrap
 
 # wrap
 

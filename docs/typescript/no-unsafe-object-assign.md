@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / typescript/no-unsafe-object-assign
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-unsafe-object-assign
 
 # typescript/no-unsafe-object-assign
 

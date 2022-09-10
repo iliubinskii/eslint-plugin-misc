@@ -1,5 +1,5 @@
 import type { ReportDescriptor as BaseReportDescriptor, RuleFix, RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Rec, strings } from "real-fns";
+import type { Rec, a, strings } from "real-fns";
 export declare enum Casing {
     camelCase = "camelCase",
     kebabCase = "kebab-case",
@@ -28,8 +28,8 @@ export declare enum TypeGroup {
     unknown = "unknown"
 }
 export interface AllowDisallowPatterns {
-    readonly allow: strings | string;
-    readonly disallow: strings | string;
+    readonly allow: a.Mixed<string>;
+    readonly disallow: a.Mixed<string>;
 }
 export interface Docs<O extends PropertyKey = never, S extends PropertyKey = never> {
     readonly description: string;
@@ -40,7 +40,7 @@ export interface Docs<O extends PropertyKey = never, S extends PropertyKey = nev
     readonly suboptionDescriptions?: Rec<S, string>;
     readonly suboptionTypes?: Rec<S, string>;
 }
-export declare type FilePattern = AllowDisallowPatterns | strings | string;
+export declare type FilePattern = a.Mixed<string>;
 export interface Matcher {
     /**
      * Checks if string matches condition.
@@ -54,12 +54,12 @@ export declare type Matchers = readonly Matcher[];
 export declare type Options<O extends object, S extends object, K extends string = never> = O & {
     readonly [L in K]: SuboptionsArray<S>;
 };
-export declare type RegexpPattern = strings | string;
+export declare type RegexpPattern = a.Mixed<string>;
 export declare type ReportDescriptor<T extends string = string> = BaseReportDescriptor<T>;
 export declare type ReportDescriptors<T extends string = string> = ReadonlyArray<ReportDescriptor<T>>;
 export declare type RuleFixes = readonly RuleFix[];
 export declare type RuleListeners = readonly RuleListener[];
-export declare type Selector = strings | string;
+export declare type Selector = a.Mixed<string>;
 export interface SharedSuboptions {
     readonly filesToLint?: strings;
     readonly filesToSkip?: strings;

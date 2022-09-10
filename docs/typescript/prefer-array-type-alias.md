@@ -1,4 +1,4 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin/) / typescript/prefer-array-type-alias
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-array-type-alias
 
 # typescript/prefer-array-type-alias
 
