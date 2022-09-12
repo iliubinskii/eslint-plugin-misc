@@ -8,7 +8,7 @@ exports.noQInput = utils.wrapRule({
     rule: core_1.core["no-restricted-syntax"],
     options: [
         {
-            message: 'Use "m-input" component instead',
+            message: 'Use "e-input" component instead',
             selector: "VElement[name=q-input]"
         }
     ]

@@ -24,11 +24,11 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| ignoreSelector | Allowed AST elements (AST selectors) | []|
-| message | Custom message | -|
-| replacement | Replacement | -|
-| search | Serch term for replacement (regular expression) | -|
-| selector | Disallowed AST elements (AST selectors) | -|
+| `ignoreSelector` | Allowed AST elements (AST selectors) | `[]` |
+| `message` | Custom message | `-` |
+| `replacement` | Replacement | `-` |
+| `search` | Serch term for replacement (regular expression) | `-` |
+| `selector` | Disallowed AST elements (AST selectors) | `-` |
 
 ## Examples of incorrect code
 

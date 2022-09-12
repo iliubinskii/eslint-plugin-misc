@@ -21,8 +21,8 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| maxLineLength | Max line length for single-line object | 80|
-| maxObjectSize | Max object size for single-line object | 3|
+| `maxLineLength` | Max line length for single-line object | `80` |
+| `maxObjectSize` | Max object size for single-line object | `3` |
 
 ## Examples of incorrect code
 

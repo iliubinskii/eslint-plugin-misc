@@ -99,7 +99,7 @@ const documentedRules = o.sort(
                 ? stringify(defaultOptions[option])
                 : "-";
 
-            return `| ${option} | ${description} | ${defVal}|`;
+            return `| \`${option}\` | ${description} | \`${defVal}\` |`;
           })
           .join("\n")
       : "";
@@ -125,10 +125,10 @@ const documentedRules = o.sort(
                   ? stringify(defaultSuboptions[option])
                   : "-";
 
-              return `| \`${suboptionsKey}.${option}\` | ${description} | ${defVal} |`;
+              return `| \`${suboptionsKey}.${option}\` | ${description} | \`${defVal}\` |`;
             }),
-            "| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |",
-            "| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |"
+            `| \`${suboptionsKey}.filesToLint\` | Files to lint (minimatch patterns) | \`[]\` |`,
+            `| \`${suboptionsKey}.filesToSkip\` | Files to skip (minimatch patterns) | \`[]\` |`
           ])
           .join("\n")
       : "";

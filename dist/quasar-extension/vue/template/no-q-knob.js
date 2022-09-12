@@ -8,7 +8,7 @@ exports.noQKnob = utils.wrapRule({
     rule: core_1.core["no-restricted-syntax"],
     options: [
         {
-            message: 'Use "m-knob" component instead',
+            message: 'Use "e-knob" component instead',
             selector: "VElement[name=q-knob]"
         }
     ]

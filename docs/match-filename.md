@@ -23,10 +23,10 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| format | Format | -|
-| prefix | Prefix | ""|
-| selector | AST selector | -|
-| suffix | Suffix | ""|
+| `format` | Format | `-` |
+| `prefix` | Prefix | `""` |
+| `selector` | AST selector | `-` |
+| `suffix` | Suffix | `""` |
 
 ## Examples of incorrect code
 

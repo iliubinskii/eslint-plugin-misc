@@ -39,10 +39,10 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| blockOrder | Order inside block statement | []|
-| moduleOrder | Order inside module declaration | []|
-| order | Default order | []|
-| programOrder | Root statements order | []|
+| `blockOrder` | Order inside block statement | `[]` |
+| `moduleOrder` | Order inside module declaration | `[]` |
+| `order` | Default order | `[]` |
+| `programOrder` | Root statements order | `[]` |
 
 ## Examples of incorrect code
 

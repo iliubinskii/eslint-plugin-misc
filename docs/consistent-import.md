@@ -34,16 +34,16 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
-| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
-| `sources._id` | Id | - |
-| `sources.altLocalNames` | Alternative local names | [] |
-| `sources.autoImportSource` | Auto-import source (defaults to "source") | - |
-| `sources.autoImport` | Enable auto-import | false |
-| `sources.localName` | Local name | - |
-| `sources.sourcePattern` | Soure pattern (minimatch) | - |
-| `sources.source` | Source | - |
-| `sources.wildcard` | Prefer wildcard import | false |
+| `sources._id` | Id | `-` |
+| `sources.altLocalNames` | Alternative local names | `[]` |
+| `sources.autoImportSource` | Auto-import source (defaults to "source") | `-` |
+| `sources.autoImport` | Enable auto-import | `false` |
+| `sources.filesToLint` | Files to lint (minimatch patterns) | `[]` |
+| `sources.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
+| `sources.localName` | Local name | `-` |
+| `sources.sourcePattern` | Soure pattern (minimatch) | `-` |
+| `sources.source` | Source | `-` |
+| `sources.wildcard` | Prefer wildcard import | `false` |
 
 ## Examples of incorrect code
 

@@ -31,13 +31,13 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| format | Default file name format | "kebab-case"|
-| `overrides._id` | Id | - |
-| `overrides.format` | Overrides default file name format | - |
-| `overrides.match` | Apply override only if AST element's text matches file name | false |
-| `overrides.selector` | Triggers override when AST element matching AST selector is found | - |
-| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
-| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
+| `format` | Default file name format | `"kebab-case"` |
+| `overrides._id` | Id | `-` |
+| `overrides.filesToLint` | Files to lint (minimatch patterns) | `[]` |
+| `overrides.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
+| `overrides.format` | Overrides default file name format | `-` |
+| `overrides.match` | Apply override only if AST element's text matches file name | `false` |
+| `overrides.selector` | Triggers override when AST element matching AST selector is found | `-` |
 
 ## Examples of incorrect code
 

@@ -8,7 +8,7 @@ exports.noQCardActions = utils.wrapRule({
     rule: core_1.core["no-restricted-syntax"],
     options: [
         {
-            message: 'Use "m-card-actions" component instead',
+            message: 'Use "e-card-actions" component instead',
             selector: "VElement[name=q-card-actions]"
         }
     ]

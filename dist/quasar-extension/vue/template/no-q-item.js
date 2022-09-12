@@ -8,7 +8,7 @@ exports.noQItem = utils.wrapRule({
     rule: core_1.core["no-restricted-syntax"],
     options: [
         {
-            message: 'Use "m-item" component instead',
+            message: 'Use "e-item" component instead',
             selector: "VElement[name=q-item]"
         }
     ]

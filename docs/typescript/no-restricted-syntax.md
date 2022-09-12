@@ -52,19 +52,19 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| checkArrayType | Check array argument type | false|
-| checkReturnType | Check function return type | false|
-| ignoreSelector | Allowed AST elements (AST selectors) | []|
-| message | Custom message | -|
-| replacement | Replacement | -|
-| search | Serch term for replacement (regular expression) | -|
-| selector | Disallowed AST elements (AST selectors) | -|
-| typeHas | Restrict syntax only if AST element's type includes given type | -|
-| typeHasNoneOf | Restrict syntax only if AST element's type includes none of given types | -|
-| typeHasOneOf | Restrict syntax only if AST element's type includes one of given types | -|
-| typeIs | Restrict syntax only if AST element's type is equal to given type | -|
-| typeIsNoneOf | Restrict syntax only if AST element's type is none of given types | -|
-| typeIsOneOf | Restrict syntax only if AST element's type is one of given types | -|
+| `checkArrayType` | Check array argument type | `false` |
+| `checkReturnType` | Check function return type | `false` |
+| `ignoreSelector` | Allowed AST elements (AST selectors) | `[]` |
+| `message` | Custom message | `-` |
+| `replacement` | Replacement | `-` |
+| `search` | Serch term for replacement (regular expression) | `-` |
+| `selector` | Disallowed AST elements (AST selectors) | `-` |
+| `typeHas` | Restrict syntax only if AST element's type includes given type | `-` |
+| `typeHasNoneOf` | Restrict syntax only if AST element's type includes none of given types | `-` |
+| `typeHasOneOf` | Restrict syntax only if AST element's type includes one of given types | `-` |
+| `typeIs` | Restrict syntax only if AST element's type is equal to given type | `-` |
+| `typeIsNoneOf` | Restrict syntax only if AST element's type is none of given types | `-` |
+| `typeIsOneOf` | Restrict syntax only if AST element's type is one of given types | `-` |
 
 ## Examples of incorrect code
 

@@ -27,9 +27,9 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
-| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
-| `rules.hierarchy` | Allows some sibling dependencies | [] |
+| `rules.filesToLint` | Files to lint (minimatch patterns) | `[]` |
+| `rules.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
+| `rules.hierarchy` | Allows some sibling dependencies | `[]` |
 
 ## Examples of incorrect code
 

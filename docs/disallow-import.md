@@ -21,8 +21,8 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| allow | Allowed sources (minimatch) | []|
-| disallow | Disallowed sources (minimatch) | []|
+| `allow` | Allowed sources (minimatch) | `[]` |
+| `disallow` | Disallowed sources (minimatch) | `[]` |
 
 ## Examples of incorrect code
 

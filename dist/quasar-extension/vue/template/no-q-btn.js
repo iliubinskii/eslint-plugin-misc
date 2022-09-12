@@ -8,7 +8,7 @@ exports.noQBtn = utils.wrapRule({
     rule: core_1.core["no-restricted-syntax"],
     options: [
         {
-            message: 'Use "m-button" component instead',
+            message: 'Use "e-button" component instead',
             selector: "VElement[name=q-btn]"
         }
     ]

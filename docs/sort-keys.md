@@ -31,13 +31,13 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| `overrides._id` | Id | - |
-| `overrides.customOrder` | Array elements with custom order | - |
-| `overrides.selector` | AST elements to be sorted (AST selector) | - |
-| `overrides.sendToBottom` | Array elements that should be sent to bottom | - |
-| `overrides.sendToTop` | Array elements that should be sent to top | - |
-| `rules.filesToLint` | Files to lint (minimatch patterns) | [] |
-| `rules.filesToSkip` | Files to skip (minimatch patterns) | [] |
+| `overrides._id` | Id | `-` |
+| `overrides.customOrder` | Array elements with custom order | `-` |
+| `overrides.filesToLint` | Files to lint (minimatch patterns) | `[]` |
+| `overrides.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
+| `overrides.selector` | AST elements to be sorted (AST selector) | `-` |
+| `overrides.sendToBottom` | Array elements that should be sent to bottom | `-` |
+| `overrides.sendToTop` | Array elements that should be sent to top | `-` |
 
 ## Examples of incorrect code
 
