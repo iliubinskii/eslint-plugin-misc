@@ -76,9 +76,9 @@
     "types-fix": "^0.1.0"
   },
   "devDependencies": {
-    "eslint-plugin-misc": "^0.1.5",
+    "eslint-plugin-misc": "^1.0.0",
     "get-current-line": "^6.6.0",
-    "real-config": "^0.1.6"
+    "real-config": "^0.1.7"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
