@@ -5,7 +5,7 @@ export const noQToggle = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "m-toggle" component instead',
+      message: 'Use "e-toggle" component instead',
       selector: "VElement[name=q-toggle]"
     }
   ]

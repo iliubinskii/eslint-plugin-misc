@@ -5,7 +5,7 @@ export const noQForm = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "m-form" component instead',
+      message: 'Use "e-form" component instead',
       selector: "VElement[name=q-form]"
     }
   ]

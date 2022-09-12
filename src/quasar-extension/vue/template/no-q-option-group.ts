@@ -5,7 +5,7 @@ export const noQOptionGroup = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "m-option-group" component instead',
+      message: 'Use "e-option-group" component instead',
       selector: "VElement[name=q-option-group]"
     }
   ]

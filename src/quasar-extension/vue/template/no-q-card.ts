@@ -5,7 +5,7 @@ export const noQCard = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "m-card" component instead',
+      message: 'Use "e-card" component instead',
       selector: "VElement[name=q-card]"
     }
   ]

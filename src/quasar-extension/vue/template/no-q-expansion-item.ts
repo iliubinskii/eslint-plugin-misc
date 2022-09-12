@@ -5,7 +5,7 @@ export const noQExpansionItem = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "m-expansion-item" component instead',
+      message: 'Use "e-expansion-item" component instead',
       selector: "VElement[name=q-expansion-item]"
     }
   ]

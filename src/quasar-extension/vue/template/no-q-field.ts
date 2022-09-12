@@ -5,7 +5,7 @@ export const noQField = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "m-field" component instead',
+      message: 'Use "e-field" component instead',
       selector: "VElement[name=q-field]"
     }
   ]

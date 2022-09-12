@@ -5,7 +5,7 @@ export const noQMenu = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "m-menu" component instead',
+      message: 'Use "e-menu" component instead',
       selector: "VElement[name=q-menu]"
     }
   ]

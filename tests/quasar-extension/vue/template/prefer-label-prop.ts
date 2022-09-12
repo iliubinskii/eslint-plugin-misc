@@ -10,10 +10,10 @@ utils.testRule("prefer-label-prop", rule, [
     name: `Test at line ${getCurrentLine().line}`,
     code: `
       <template>
-        <m-button>Text</m-button>
-        <m-button>
+        <e-button>Text</e-button>
+        <e-button>
           Text
-        </m-button>
+        </e-button>
       </template>
     `,
     errors: [
