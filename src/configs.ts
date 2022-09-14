@@ -68,7 +68,7 @@ export const configs = evaluate((): IndexedRecord => {
     "quasar-extension": {
       ...result["quasar-extension.core"],
       overrides: [
-        { files: "*.extras", ...result["quasar-extension.extras"] },
+        { files: "*.extras.ts", ...result["quasar-extension.extras"] },
         { files: "*.vue", ...result["quasar-extension.vue"] },
         { files: "./tests/**", ...result["quasar-extension.jest"] }
       ]
