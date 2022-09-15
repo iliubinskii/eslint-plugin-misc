@@ -1,7 +1,7 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import type { Rec, stringU, strings } from "real-fns";
 import { a, assert, evaluate, is, o, s } from "real-fns";
+import type { stringU, strings } from "real-fns";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
@@ -14,6 +14,7 @@ export interface Options {
 }
 
 export enum StatementType {
+  Declare = "Declare",
   DeclareGlobal = "DeclareGlobal",
   ExportAllDeclaration = "ExportAllDeclaration",
   ExportDeclaration = "ExportDeclaration",
@@ -58,6 +59,7 @@ export const sortStatements = utils.createRule({
 
       \`\`\`ts
       StatementType =
+        | "Declare"
         | "DeclareGlobal"
         | "ExportAllDeclaration"
         | "ExportDeclaration"
@@ -143,6 +145,7 @@ export const sortStatements = utils.createRule({
 const defaultOrder: StatementTypes = [
   StatementType.ImportDeclaration,
   StatementType.DeclareGlobal,
+  StatementType.Declare,
   StatementType.ExportAllDeclaration,
   StatementType.ExportDeclaration,
   StatementType.ExportDefaultDeclaration,
@@ -175,21 +178,6 @@ const prepareForComparison = evaluate((): PrepareForComparison => {
     return map[char] as string;
   }
 });
-
-const sortable: Rec<StatementType, boolean> = {
-  [StatementType.DeclareGlobal]: true,
-  [StatementType.ExportAllDeclaration]: true,
-  [StatementType.ExportDeclaration]: true,
-  [StatementType.ExportDefaultDeclaration]: false,
-  [StatementType.ExportFunctionDeclaration]: true,
-  [StatementType.ExportTypeDeclaration]: true,
-  [StatementType.ExportUnknown]: false,
-  [StatementType.FunctionDeclaration]: true,
-  [StatementType.ImportDeclaration]: false,
-  [StatementType.JestTest]: true,
-  [StatementType.TypeDeclaration]: true,
-  [StatementType.Unknown]: false
-};
 
 /**
  * Checks identifier name.
@@ -310,20 +298,21 @@ function sortingOrder(order: StatementTypes): (node: TSESTree.Node) => string {
         return buildResult(StatementType.TypeDeclaration, node.id.name);
 
       case AST_NODE_TYPES.TSModuleDeclaration:
-        return buildResult(
-          node.global ?? false
-            ? StatementType.DeclareGlobal
-            : StatementType.Unknown
-        );
+        if (node.declare ?? false)
+          return node.global ?? false
+            ? buildResult(StatementType.DeclareGlobal)
+            : buildResult(StatementType.Declare, utils.nodeText(node.id, "?"));
+
+        return buildResult(StatementType.Unknown);
 
       default:
         return buildResult(StatementType.Unknown);
     }
 
-    function buildResult(type: StatementType, id = ""): string {
+    function buildResult(type: StatementType, id = "?"): string {
       const order1 = 1_000_000 + order.indexOf(type);
 
-      const order2 = sortable[type] ? id : "";
+      const order2 = id;
 
       const order3 = 1_000_000 + node.range[0];
 

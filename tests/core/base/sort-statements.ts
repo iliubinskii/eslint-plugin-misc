@@ -37,6 +37,8 @@ utils.testRule(
         export { A, B, C };
         export * as source2 from "source2";
         export * from "source1";
+        declare module "b" {}
+        declare module "a" {}
         declare global {}
         import "source1";
       `,
@@ -44,6 +46,8 @@ utils.testRule(
         import "source2";
         import "source1";
         declare global {}
+        declare module "a" {}
+        declare module "b" {}
         export * from "source1";
         export * as source2 from "source2";
         export { A, B, C };
@@ -68,7 +72,7 @@ utils.testRule(
         type T4 = 1;
       `,
       errors: [
-        { line: 2, endLine: 25, messageId: MessageId.incorrectSortingOrder }
+        { line: 2, endLine: 27, messageId: MessageId.incorrectSortingOrder }
       ]
     },
     {
