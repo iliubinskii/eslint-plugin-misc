@@ -161,6 +161,46 @@ utils.testRule(
       errors: [
         { line: 4, messageId: MessageId.removeEmptyLine, data: { _id: "id" } }
       ]
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      options: [
+        {
+          rules: [
+            {
+              _id: "id",
+              emptyLine: EmptyLine.commented,
+              selector: "ImportDeclaration"
+            }
+          ]
+        }
+      ],
+      code: `
+        import x1 from "source1";
+
+        import x2 from "source2";
+        // Comment
+        import x3 from "source3";
+        import x4 from "source4";
+
+        import x5 from "source5";
+      `,
+      output: `
+        import x1 from "source1";
+        import x2 from "source2";
+
+        // Comment
+        import x3 from "source3";
+
+        import x4 from "source4";
+        import x5 from "source5";
+      `,
+      errors: [
+        { line: 3, messageId: MessageId.removeEmptyLine, data: { _id: "id" } },
+        { line: 5, messageId: MessageId.addEmptyLine, data: { _id: "id" } },
+        { line: 6, messageId: MessageId.addEmptyLine, data: { _id: "id" } },
+        { line: 8, messageId: MessageId.removeEmptyLine, data: { _id: "id" } }
+      ]
     }
   ],
   [

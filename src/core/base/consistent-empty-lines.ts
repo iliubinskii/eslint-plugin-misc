@@ -19,6 +19,7 @@ export interface Suboptions {
 export enum EmptyLine {
   always = "always",
   any = "any",
+  commented = "commented",
   never = "never"
 }
 
@@ -139,21 +140,21 @@ export const consistentEmptyLines = evaluate(() => {
 
             const items = _.uniqBy(
               a.fromIterable(
-                evaluate(function* (): Generator<Item> {
+                evaluate(function* (): Generator<Pair> {
                   for (const prevItem of prevItems)
                     for (const nextItem of nextItems)
                       if (
                         prevItem.rule._id === nextItem.rule._id &&
                         context.isAdjacentNodes(prevItem.node, nextItem.node)
                       )
-                        yield nextItem;
+                        yield { ...nextItem, prevNode: prevItem.node };
                 })
               ),
               "node"
             );
 
             for (const item of items) {
-              const { node, rule } = item;
+              const { node, prevNode, rule } = item;
 
               const { _id, emptyLine } = rule;
 
@@ -164,6 +165,12 @@ export const consistentEmptyLines = evaluate(() => {
                   switch (emptyLine) {
                     case EmptyLine.always:
                       return true;
+
+                    case EmptyLine.commented:
+                      return (
+                        context.hasComments(node) ||
+                        context.hasComments(prevNode)
+                      );
 
                     case EmptyLine.never:
                       return false;
@@ -220,3 +227,10 @@ interface Item {
 }
 
 type Items = readonly Item[];
+
+interface Pair {
+  readonly index: number;
+  readonly node: TSESTree.Node;
+  readonly prevNode: TSESTree.Node;
+  readonly rule: Suboptions;
+}

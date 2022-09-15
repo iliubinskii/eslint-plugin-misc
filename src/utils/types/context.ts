@@ -68,6 +68,13 @@ export interface Context<
     mixed: esRange | TSESTree.Comment | TSESTree.Node | number
   ) => string;
   /**
+   * Checks if node has leading comments.
+   *
+   * @param node - Node.
+   * @returns _True_ if node has leading comments, _false_ otherwise.
+   */
+  readonly hasComments: (node: TSESTree.Node) => boolean;
+  /**
    * Checks if node has trailing comment.
    *
    * @param node - Node.

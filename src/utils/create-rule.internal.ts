@@ -74,6 +74,7 @@ export function createContext<
       start: source.getLocFromIndex(range[0])
     }),
     getText,
+    hasComments: node => getCommentRanges(node).length > 0,
     hasTrailingComment: node =>
       code.slice(node.range[1]).trimStart().startsWith("//"),
     identifierFromPath,
