@@ -15,6 +15,11 @@ utils.testRule("prefer-class-method", rule, [
       }
 
       class D {
+        static f: F = () => {};
+        g: G = () => {};
+      }
+
+      class E {
         static f() {}
         g() {}
       }
