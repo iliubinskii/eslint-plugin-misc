@@ -41,6 +41,12 @@ module.exports = {
             wildcard: true
           },
           {
+            _id: "utils/types/AST",
+            localName: "AST",
+            source: "eslint-plugin-misc/src/utils/types/AST",
+            wildcard: true
+          },
+          {
             _id: "utils/types/TSESTree",
             localName: "TSESTree",
             source: "eslint-plugin-misc/src/utils/types/TSESTree",
