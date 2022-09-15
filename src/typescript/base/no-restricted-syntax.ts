@@ -56,7 +56,7 @@ export const noRestrictedSyntax = utils.createRule({
   messages: { [MessageId.customMessage]: "{{message}}" },
   docs: {
     description: `
-      Disallows restricted syntax.
+      Disallows AST syntax with additional type check.
 
       \`\`\`ts
       type TypeGroup =

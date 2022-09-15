@@ -28,7 +28,8 @@ export const noRestrictedSyntax = utils.createRule({
   defaultOptions: { ignoreSelector: [] },
   messages: { [MessageId.customMessage]: "{{message}}" },
   docs: {
-    description: "Disallows restricted syntax.",
+    description:
+      "Disallows AST syntax (an extended version of ESLint core rule).",
     optionTypes: {
       ignoreSelector: "string | string[]",
       message: "string",

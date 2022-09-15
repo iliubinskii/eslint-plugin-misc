@@ -5,8 +5,8 @@
 - [Overview](#overview)
 - [Configs](#configs)
 - [Rules](#rules)
-- [Rule synonyms](#rule-synonyms)
-- [Custom checks](#custom-checks)
+- [Rule Synonyms](#rule-synonyms)
+- [Custom Checks](#custom-checks)
 
 ## <a name="overview"></a>Overview
 
@@ -40,7 +40,7 @@ module.exports = {
 
 {{rules}}
 
-## <a name="rule-synonyms"></a>Rule synonyms
+## <a name="rule-synonyms"></a>Rule Synonyms
 
 You can create rule synonyms like this:
 ```js
@@ -75,12 +75,9 @@ module.exports = {
 };
 ```
 
-## <a name="custom-checks"></a>Custom checks
+## <a name="custom-checks"></a>Custom Checks
 
-The following rules can be used to create custom checks:
-  - no-restricted-syntax &mdash; Disallows AST syntax (an extended version of ESLint core rule).
-  - require-syntax &mdash; Requires AST syntax.
-  - wrap &mdash; Allows to modify third-party rule.
-  - typescript/no-restricted-syntax &mdash; Disallows AST syntax with additional type check.
+You can use the following rules to create custom checks:
+{{rules:custom-checks}}
 
-If you want to apply one rule several times (e.g. you want to restrict several syntaxes), use rule synonyms.
+If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.

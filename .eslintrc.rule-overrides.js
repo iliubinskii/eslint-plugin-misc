@@ -135,7 +135,8 @@ module.exports = {
       {
         message: 'Use "no-restricted-syntax" instead',
         selector: "[name=/^type[A-Z]/u]",
-        trigger: 'Literal[value="typescript/no-restricted-syntax"]'
+        trigger:
+          'MemberExpression[object.name=typescript][property.value="typescript/no-restricted-syntax"]'
       }
     ],
     "misc/require-syntax/require-docs": [

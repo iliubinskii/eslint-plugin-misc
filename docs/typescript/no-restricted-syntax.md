@@ -2,7 +2,7 @@
 
 # typescript/no-restricted-syntax
 
-Disallows restricted syntax.
+Disallows AST syntax with additional type check.
 
 ```ts
 type TypeGroup =

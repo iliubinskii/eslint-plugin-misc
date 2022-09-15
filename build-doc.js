@@ -1,4 +1,4 @@
-const { a, evaluate, is, o, s } = require("real-fns");
+const { ReadonlySet, a, evaluate, is, o, s } = require("real-fns");
 
 const { stringify: baseStringify } = require("javascript-stringify");
 
@@ -28,36 +28,47 @@ const templates = {
 // eslint-disable-next-line misc/no-internal-modules -- Ok
 const { rules } = require("./dist/rules.core.js");
 
-const documentedRules = o.sort(
-  o.omit(
-    rules,
-    (_rule, name) =>
-      name.startsWith("real-config/") ||
-      name.startsWith("real-facades/") ||
-      name.startsWith("real-framework/") ||
-      name.startsWith("real-fns/") ||
-      name.startsWith("quasar-extension/")
-  ),
-  (_value1, _value2, key1, key2) => {
-    if (key1.includes("/") && !key2.includes("/")) return 1;
+const documentedRules = o.entries(
+  o.sort(
+    o.omit(
+      rules,
+      (_rule, name) =>
+        name.startsWith("real-config/") ||
+        name.startsWith("real-facades/") ||
+        name.startsWith("real-framework/") ||
+        name.startsWith("real-fns/") ||
+        name.startsWith("quasar-extension/")
+    ),
+    (_value1, _value2, key1, key2) => {
+      if (key1.includes("/") && !key2.includes("/")) return 1;
 
-    if (key2.includes("/") && !key1.includes("/")) return -1;
+      if (key2.includes("/") && !key1.includes("/")) return -1;
 
-    return key1.localeCompare(key2);
-  }
+      return key1.localeCompare(key2);
+    }
+  )
 );
 
 {
-  const index = templates.index.replace(
-    "{{rules}}",
-    o
-      .keys(documentedRules)
-      .map(
-        name =>
-          `- [${name}](https://ilyub.github.io/eslint-plugin-misc/${name}.html)`
-      )
-      .join("\n")
-  );
+  const customChecks = new ReadonlySet([
+    "no-restricted-syntax",
+    "require-syntax",
+    "wrap",
+    "typescript/no-restricted-syntax"
+  ]);
+
+  const index = templates.index
+    .replace(
+      "{{rules}}",
+      documentedRules.map(([name, rule]) => listItem(name, rule)).join("\n")
+    )
+    .replace(
+      "{{rules:custom-checks}}",
+      documentedRules
+        .filter(([name]) => customChecks.has(name))
+        .map(([name, rule]) => listItem(name, rule))
+        .join("\n")
+    );
 
   fs.writeFileSync("./README.md", index);
   fs.writeFileSync("./docs/index.md", index);
@@ -69,7 +80,7 @@ const documentedRules = o.sort(
   fs.mkdirSync("./docs/typescript");
   fs.mkdirSync("./docs/vue");
 
-  for (const [name, rule] of o.entries(documentedRules)) {
+  for (const [name, rule] of documentedRules) {
     const {
       defaultOptions,
       defaultSuboptions,
@@ -163,6 +174,21 @@ const documentedRules = o.sort(
       })
     );
   }
+}
+
+/**
+ * Creates list item.
+ *
+ * @param name - Rule name.
+ * @param rule - Rule.
+ * @returns List item.
+ */
+function listItem(name, rule) {
+  const description = s
+    .firstLine(rule.meta.docs.description)
+    .replace(/[.:]$/u, "");
+
+  return `- [${name}](https://ilyub.github.io/eslint-plugin-misc/${name}.html) &mdash; ${description}.`;
 }
 
 /**

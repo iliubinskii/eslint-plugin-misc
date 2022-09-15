@@ -13,8 +13,7 @@ exports.noEmptyLines = utils.wrapRule({
         }
     ],
     docs: {
-        // eslint-disable-next-line xss/no-mixed-html -- Ok
-        description: "Disallow empty lines inside <template> section.",
+        description: "Disallow empty lines inside &lt;template&gt; section.",
         failExamples: `
       <template>
         <p></p>

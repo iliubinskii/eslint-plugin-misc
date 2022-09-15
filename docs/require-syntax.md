@@ -2,7 +2,7 @@
 
 # require-syntax
 
-Requires script to contain syntax.
+Requires AST syntax.
 
 ```ts
 module.exports = {

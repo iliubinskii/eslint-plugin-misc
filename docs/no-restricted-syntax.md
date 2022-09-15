@@ -2,7 +2,7 @@
 
 # no-restricted-syntax
 
-Disallows restricted syntax.
+Disallows AST syntax (an extended version of ESLint core rule).
 
 ```ts
 module.exports = {

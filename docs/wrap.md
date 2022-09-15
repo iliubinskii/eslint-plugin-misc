@@ -2,7 +2,7 @@
 
 # wrap
 
-Wraps third-party rule.
+Wraps and modifies third-party rule.
 
 ```ts
 module.exports = {

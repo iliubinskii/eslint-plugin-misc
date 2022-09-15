@@ -2,7 +2,7 @@
 
 # vue/no-empty-lines
 
-Disallow empty lines inside <template> section.
+Disallow empty lines inside &lt;template&gt; section.
 
 ```ts
 module.exports = {

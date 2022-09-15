@@ -15,7 +15,7 @@ exports.requireSyntax = utils.createRule({
     defaultOptions: { once: false, trigger: "Program" },
     messages: { [MessageId.customMessage]: "{{message}}" },
     docs: {
-        description: "Requires script to contain syntax.",
+        description: "Requires AST syntax.",
         optionTypes: {
             message: "string",
             once: "boolean",

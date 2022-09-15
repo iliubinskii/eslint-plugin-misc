@@ -43,7 +43,7 @@ export const wrap = utils.createRule({
   defaultOptions: { lint: [], skip: [] },
   messages: { [MessageId.customMessage]: "{{message}}" },
   docs: {
-    description: "Wraps third-party rule.",
+    description: "Wraps and modifies third-party rule.",
     optionTypes: {
       lint: "string | string[]",
       plugin: "string",
