@@ -30,10 +30,10 @@ module.exports = {
 ## <a name="custom-checks"></a>Custom checks
 
 The following rules can be used to create custom checks:
-  - no-restricted-syntax - Disallows AST syntax (an extended version of ESLint core rule).
-  - require-syntax - Requires AST syntax.
-  - wrap - Allows to modify third-party rule.
-  - typescript/no-restricted-syntax - Disallows AST syntax with additional type check.
+  - no-restricted-syntax &mdash; Disallows AST syntax (an extended version of ESLint core rule).
+  - require-syntax &mdash; Requires AST syntax.
+  - wrap &mdash; Allows to modify third-party rule.
+  - typescript/no-restricted-syntax &mdash; Disallows AST syntax with additional type check.
 
 If you want to apply one rule several times (e.g. you want to restrict several syntaxes), use rule synonyms.
 
@@ -74,12 +74,12 @@ module.exports = {
 
 ## <a name="configs"></a>Configs
 
-- plugin:misc/all - All rules.
-- plugin:misc/core - Core rules.
-- plugin:misc/eslintrc - Rules for ESLint configuration files.
-- plugin:misc/jest - Rules for Jest test files.
-- plugin:misc/typescript - Rules for typescript files.
-- plugin:misc/vue - Rules for Vue single-file components.
+- plugin:misc/all &mdash; All rules.
+- plugin:misc/core &mdash; Core rules.
+- plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
+- plugin:misc/jest &mdash; Rules for Jest test files.
+- plugin:misc/typescript &mdash; Rules for typescript files.
+- plugin:misc/vue &mdash; Rules for Vue single-file components.
 
 ## <a name="rules"></a>Rules
 
