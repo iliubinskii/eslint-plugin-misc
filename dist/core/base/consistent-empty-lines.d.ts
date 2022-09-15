@@ -10,6 +10,7 @@ export interface Suboptions {
 export declare enum EmptyLine {
     always = "always",
     any = "any",
+    commented = "commented",
     never = "never"
 }
 export declare enum MessageId {

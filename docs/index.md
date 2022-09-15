@@ -3,10 +3,10 @@
 ## Table of contents
 
 - [Overview](#overview)
-- [Custom checks](#custom-checks)
-- [Rule synonyms](#rule-synonyms)
 - [Configs](#configs)
 - [Rules](#rules)
+- [Rule synonyms](#rule-synonyms)
+- [Custom checks](#custom-checks)
 
 ## <a name="overview"></a>Overview
 
@@ -27,59 +27,14 @@ module.exports = {
 };
 ```
 
-## <a name="custom-checks"></a>Custom checks
-
-The following rules can be used to create custom checks:
-  - no-restricted-syntax - Disallows AST syntax (an extended version of ESLint core rule).
-  - require-syntax - Requires AST syntax.
-  - wrap - Allows to modify third-party rule.
-  - typescript/no-restricted-syntax - Disallows AST syntax with additional type check.
-
-If you want to apply one rule several times (e.g. you want to restrict several syntaxes), use rule synonyms.
-
-## <a name="rule-synonyms"></a>Rule synonyms
-
-You can create rule synonyms like this:
-```js
-// .eslintrc.synonyms.js
-module.exports = [
-  "misc/wrap/class-methods-use-this",
-  "misc/wrap/no-shadow"
-];
-
-// .eslintrc.js
-module.exports = {
-  rules: {
-    // Same as ESLint core rule, but suppresses warnings for methods that have "this: void" annotation.
-    "misc/wrap/class-methods-use-this": [
-      "error",
-      {
-        plugin: "eslint",
-        rule: "class-methods-use-this",
-        skip: "FunctionExpression[params.0.name=this][params.0.typeAnnotation.typeAnnotation.type=TSVoidKeyword]"
-      }
-    ],
-    // Same as typescript-eslint rule, but suppresses warnings for enums.
-    "misc/wrap/no-shadow": [
-      "error",
-      {
-        plugin: "@typescript-eslint/eslint-plugin",
-        rule: "no-shadow",
-        skip: "TSEnumDeclaration *"
-      }
-    ]
-  }
-};
-```
-
 ## <a name="configs"></a>Configs
 
-- plugin:misc/all - All rules.
-- plugin:misc/core - Core rules.
-- plugin:misc/eslintrc - Rules for ESLint configuration files.
-- plugin:misc/jest - Rules for Jest test files.
-- plugin:misc/typescript - Rules for typescript files.
-- plugin:misc/vue - Rules for Vue single-file components.
+- plugin:misc/all &mdash; All rules.
+- plugin:misc/core &mdash; Core rules.
+- plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
+- plugin:misc/jest &mdash; Rules for Jest test files.
+- plugin:misc/typescript &mdash; Rules for typescript files.
+- plugin:misc/vue &mdash; Rules for Vue single-file components.
 
 ## <a name="rules"></a>Rules
 
@@ -170,3 +125,48 @@ module.exports = {
 - [vue/no-complex-return-type](https://ilyub.github.io/eslint-plugin-misc/vue/no-complex-return-type.html)
 - [vue/no-empty-lines](https://ilyub.github.io/eslint-plugin-misc/vue/no-empty-lines.html)
 - [vue/sort-v-bind](https://ilyub.github.io/eslint-plugin-misc/vue/sort-v-bind.html)
+
+## <a name="rule-synonyms"></a>Rule synonyms
+
+You can create rule synonyms like this:
+```js
+// .eslintrc.synonyms.js
+module.exports = [
+  "misc/wrap/class-methods-use-this",
+  "misc/wrap/no-shadow"
+];
+
+// .eslintrc.js
+module.exports = {
+  rules: {
+    // Same as ESLint core rule, but suppresses warnings for methods that have "this: void" annotation.
+    "misc/wrap/class-methods-use-this": [
+      "error",
+      {
+        plugin: "eslint",
+        rule: "class-methods-use-this",
+        skip: "FunctionExpression[params.0.name=this][params.0.typeAnnotation.typeAnnotation.type=TSVoidKeyword]"
+      }
+    ],
+    // Same as typescript-eslint rule, but suppresses warnings for enums.
+    "misc/wrap/no-shadow": [
+      "error",
+      {
+        plugin: "@typescript-eslint/eslint-plugin",
+        rule: "no-shadow",
+        skip: "TSEnumDeclaration *"
+      }
+    ]
+  }
+};
+```
+
+## <a name="custom-checks"></a>Custom checks
+
+The following rules can be used to create custom checks:
+  - no-restricted-syntax &mdash; Disallows AST syntax (an extended version of ESLint core rule).
+  - require-syntax &mdash; Requires AST syntax.
+  - wrap &mdash; Allows to modify third-party rule.
+  - typescript/no-restricted-syntax &mdash; Disallows AST syntax with additional type check.
+
+If you want to apply one rule several times (e.g. you want to restrict several syntaxes), use rule synonyms.

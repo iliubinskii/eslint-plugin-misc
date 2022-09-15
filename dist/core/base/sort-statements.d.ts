@@ -7,6 +7,7 @@ export interface Options {
     readonly programOrder: StatementTypes;
 }
 export declare enum StatementType {
+    Declare = "Declare",
     DeclareGlobal = "DeclareGlobal",
     ExportAllDeclaration = "ExportAllDeclaration",
     ExportDeclaration = "ExportDeclaration",

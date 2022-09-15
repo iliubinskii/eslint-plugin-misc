@@ -43,7 +43,7 @@ exports.configs = (0, real_fns_1.evaluate)(() => {
                 Object.assign({ files: "./tests/**" }, result.jest),
                 Object.assign({ files: ".eslintrc.js" }, result.eslintrc)
             ] }), "quasar-extension": Object.assign(Object.assign({}, result["quasar-extension.core"]), { overrides: [
-                Object.assign({ files: "*.extras" }, result["quasar-extension.extras"]),
+                Object.assign({ files: "*.extras.ts" }, result["quasar-extension.extras"]),
                 Object.assign({ files: "*.vue" }, result["quasar-extension.vue"]),
                 Object.assign({ files: "./tests/**" }, result["quasar-extension.jest"])
             ] }), "real-fns": Object.assign(Object.assign({}, result["real-fns.core"]), { overrides: [Object.assign({ files: "./tests/**" }, result["real-fns.jest"])] }) });

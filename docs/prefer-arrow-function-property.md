@@ -16,11 +16,18 @@ module.exports = {
 ## Examples of incorrect code
 
 ```ts
-const x = { f: function () {} };
+const x = {
+  f() {},
+  g: function () {}
+};
 ```
 
 ## Examples of correct code
 
 ```ts
-const x = { f: () => {} };
+const x = {
+  f: () => {},
+  g(this: void) {},
+  h: function (this: void) {}
+};
 ```

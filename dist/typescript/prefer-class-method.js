@@ -9,19 +9,24 @@ exports.preferClassMethod = utils.wrapRule({
     options: [
         {
             message: "use of class method instead of function property",
-            selector: "PropertyDefinition > ArrowFunctionExpression"
+            selector: "PropertyDefinition:not([typeAnnotation]) > ArrowFunctionExpression"
         }
     ],
     docs: {
         description: "Requires use of class methods instead of function properties.",
         failExamples: `
-      class C {
-        static f: () => {};
-        g: () => {};
+      class SampleClass {
+        static f = () => {};
+        g = () => {};
       }
     `,
         passExamples: `
-      class C {
+      class SampleClass1 {
+        static f: F = () => {};
+        g: G = () => {};
+      }
+
+      class SampleClass2 {
         static f() {}
         g() {}
       }

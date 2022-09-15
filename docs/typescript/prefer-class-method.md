@@ -16,16 +16,21 @@ module.exports = {
 ## Examples of incorrect code
 
 ```ts
-class C {
-  static f: () => {};
-  g: () => {};
+class SampleClass {
+  static f = () => {};
+  g = () => {};
 }
 ```
 
 ## Examples of correct code
 
 ```ts
-class C {
+class SampleClass1 {
+  static f: F = () => {};
+  g: G = () => {};
+}
+
+class SampleClass2 {
   static f() {}
   g() {}
 }

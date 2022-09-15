@@ -9,13 +9,24 @@ exports.preferArrowFunctionProperty = utils.wrapRule({
     options: [
         {
             message: "Prefer arrow function",
-            selector: "Property > FunctionExpression.value"
+            selector: "Property > FunctionExpression.value:not([params.0.name=this])"
         }
     ],
     docs: {
         description: "Requires use of arrow functions.",
-        failExamples: "const x = { f: function () {} };",
-        passExamples: "const x = { f: () => {} };"
+        failExamples: `
+      const x = {
+        f() {},
+        g: function () {}
+      };
+    `,
+        passExamples: `
+      const x = {
+        f: () => {},
+        g(this: void) {},
+        h: function (this: void) {}
+      };
+    `
     }
 });
 //# sourceMappingURL=prefer-arrow-function-property.js.map

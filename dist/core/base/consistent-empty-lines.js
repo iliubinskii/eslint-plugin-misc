@@ -9,6 +9,7 @@ var EmptyLine;
 (function (EmptyLine) {
     EmptyLine["always"] = "always";
     EmptyLine["any"] = "any";
+    EmptyLine["commented"] = "commented";
     EmptyLine["never"] = "never";
 })(EmptyLine = exports.EmptyLine || (exports.EmptyLine = {}));
 var MessageId;
@@ -115,10 +116,10 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
                             for (const nextItem of nextItems)
                                 if (prevItem.rule._id === nextItem.rule._id &&
                                     context.isAdjacentNodes(prevItem.node, nextItem.node))
-                                    yield nextItem;
+                                    yield Object.assign(Object.assign({}, nextItem), { prevNode: prevItem.node });
                     })), "node");
                     for (const item of items) {
-                        const { node, rule } = item;
+                        const { node, prevNode, rule } = item;
                         const { _id, emptyLine } = rule;
                         if (emptyLine === EmptyLine.any) {
                             // Skip check
@@ -128,6 +129,9 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
                                 switch (emptyLine) {
                                     case EmptyLine.always:
                                         return true;
+                                    case EmptyLine.commented:
+                                        return (context.hasComments(node) ||
+                                            context.hasComments(prevNode));
                                     case EmptyLine.never:
                                         return false;
                                 }

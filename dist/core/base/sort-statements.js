@@ -8,6 +8,7 @@ const real_fns_1 = require("real-fns");
 const utils_1 = require("@typescript-eslint/utils");
 var StatementType;
 (function (StatementType) {
+    StatementType["Declare"] = "Declare";
     StatementType["DeclareGlobal"] = "DeclareGlobal";
     StatementType["ExportAllDeclaration"] = "ExportAllDeclaration";
     StatementType["ExportDeclaration"] = "ExportDeclaration";
@@ -46,6 +47,7 @@ exports.sortStatements = utils.createRule({
 
       \`\`\`ts
       StatementType =
+        | "Declare"
         | "DeclareGlobal"
         | "ExportAllDeclaration"
         | "ExportDeclaration"
@@ -123,6 +125,7 @@ exports.sortStatements = utils.createRule({
 const defaultOrder = [
     StatementType.ImportDeclaration,
     StatementType.DeclareGlobal,
+    StatementType.Declare,
     StatementType.ExportAllDeclaration,
     StatementType.ExportDeclaration,
     StatementType.ExportDefaultDeclaration,
@@ -146,20 +149,6 @@ const prepareForComparison = (0, real_fns_1.evaluate)(() => {
         return map[char];
     }
 });
-const sortable = {
-    [StatementType.DeclareGlobal]: true,
-    [StatementType.ExportAllDeclaration]: true,
-    [StatementType.ExportDeclaration]: true,
-    [StatementType.ExportDefaultDeclaration]: false,
-    [StatementType.ExportFunctionDeclaration]: true,
-    [StatementType.ExportTypeDeclaration]: true,
-    [StatementType.ExportUnknown]: false,
-    [StatementType.FunctionDeclaration]: true,
-    [StatementType.ImportDeclaration]: false,
-    [StatementType.JestTest]: true,
-    [StatementType.TypeDeclaration]: true,
-    [StatementType.Unknown]: false
-};
 /**
  * Checks identifier name.
  *
@@ -210,7 +199,7 @@ function getJestTestName(node) {
  */
 function sortingOrder(order) {
     return node => {
-        var _a;
+        var _a, _b;
         switch (node.type) {
             case utils_1.AST_NODE_TYPES.ExportAllDeclaration:
                 return buildResult(StatementType.ExportAllDeclaration, `${node.source.value}\u0002${node.exportKind}`);
@@ -246,15 +235,17 @@ function sortingOrder(order) {
             case utils_1.AST_NODE_TYPES.TSTypeAliasDeclaration:
                 return buildResult(StatementType.TypeDeclaration, node.id.name);
             case utils_1.AST_NODE_TYPES.TSModuleDeclaration:
-                return buildResult(((_a = node.global) !== null && _a !== void 0 ? _a : false)
-                    ? StatementType.DeclareGlobal
-                    : StatementType.Unknown);
+                if ((_a = node.declare) !== null && _a !== void 0 ? _a : false)
+                    return ((_b = node.global) !== null && _b !== void 0 ? _b : false)
+                        ? buildResult(StatementType.DeclareGlobal)
+                        : buildResult(StatementType.Declare, utils.nodeText(node.id, "?"));
+                return buildResult(StatementType.Unknown);
             default:
                 return buildResult(StatementType.Unknown);
         }
-        function buildResult(type, id = "") {
+        function buildResult(type, id = "?") {
             const order1 = 1000000 + order.indexOf(type);
-            const order2 = sortable[type] ? id : "";
+            const order2 = id;
             const order3 = 1000000 + node.range[0];
             return `${order1}\u0001${order2}\u0001${order3}`;
         }

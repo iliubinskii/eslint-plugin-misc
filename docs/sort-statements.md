@@ -6,6 +6,7 @@ Sorts statements.
 
 ```ts
 StatementType =
+  | "Declare"
   | "DeclareGlobal"
   | "ExportAllDeclaration"
   | "ExportDeclaration"

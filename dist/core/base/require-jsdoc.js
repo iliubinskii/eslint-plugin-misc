@@ -177,6 +177,7 @@ const defaultSelectors = [
     "PropertyDefinition > TSTypeAnnotation > TSFunctionType",
     "PropertyDefinition > TSTypeAnnotation > TSTypeLiteral > TSPropertySignature > TSTypeAnnotation > TSFunctionType",
     "PropertyDefinition[typeAnnotation=undefined] > :matches(ArrowFunctionExpression, FunctionExpression)",
+    "TSPropertySignature > TSTypeAnnotation > TSFunctionType",
     "VariableDeclarator > Identifier.id > TSTypeAnnotation > TSFunctionType",
     "VariableDeclarator > Identifier.id > TSTypeAnnotation > TSTypeLiteral > TSPropertySignature > TSTypeAnnotation > TSFunctionType",
     "VariableDeclarator[id.typeAnnotation=undefined] > ObjectExpression > Property > :matches(ArrowFunctionExpression, FunctionExpression)"

@@ -3,10 +3,10 @@
 ## Table of contents
 
 - [Overview](#overview)
-- [Custom checks](#custom-checks)
-- [Rule synonyms](#rule-synonyms)
 - [Configs](#configs)
 - [Rules](#rules)
+- [Rule synonyms](#rule-synonyms)
+- [Custom checks](#custom-checks)
 
 ## <a name="overview"></a>Overview
 
@@ -27,15 +27,18 @@ module.exports = {
 };
 ```
 
-## <a name="custom-checks"></a>Custom checks
+## <a name="configs"></a>Configs
 
-The following rules can be used to create custom checks:
-  - no-restricted-syntax &mdash; Disallows AST syntax (an extended version of ESLint core rule).
-  - require-syntax &mdash; Requires AST syntax.
-  - wrap &mdash; Allows to modify third-party rule.
-  - typescript/no-restricted-syntax &mdash; Disallows AST syntax with additional type check.
+- plugin:misc/all &mdash; All rules.
+- plugin:misc/core &mdash; Core rules.
+- plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
+- plugin:misc/jest &mdash; Rules for Jest test files.
+- plugin:misc/typescript &mdash; Rules for typescript files.
+- plugin:misc/vue &mdash; Rules for Vue single-file components.
 
-If you want to apply one rule several times (e.g. you want to restrict several syntaxes), use rule synonyms.
+## <a name="rules"></a>Rules
+
+{{rules}}
 
 ## <a name="rule-synonyms"></a>Rule synonyms
 
@@ -72,15 +75,12 @@ module.exports = {
 };
 ```
 
-## <a name="configs"></a>Configs
+## <a name="custom-checks"></a>Custom checks
 
-- plugin:misc/all &mdash; All rules.
-- plugin:misc/core &mdash; Core rules.
-- plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
-- plugin:misc/jest &mdash; Rules for Jest test files.
-- plugin:misc/typescript &mdash; Rules for typescript files.
-- plugin:misc/vue &mdash; Rules for Vue single-file components.
+The following rules can be used to create custom checks:
+  - no-restricted-syntax &mdash; Disallows AST syntax (an extended version of ESLint core rule).
+  - require-syntax &mdash; Requires AST syntax.
+  - wrap &mdash; Allows to modify third-party rule.
+  - typescript/no-restricted-syntax &mdash; Disallows AST syntax with additional type check.
 
-## <a name="rules"></a>Rules
-
-{{rules}}
+If you want to apply one rule several times (e.g. you want to restrict several syntaxes), use rule synonyms.
