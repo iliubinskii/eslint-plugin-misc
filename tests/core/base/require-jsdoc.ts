@@ -194,7 +194,29 @@ utils.testRule("require-jsdoc", rule, [
     code: `
       class C {
         f: () => void;
-        g: { h: () => void };
+        g: {
+          h: () => void
+        };
+      }
+    `,
+    errors: [
+      { line: 2, messageId: MessageId.undocumented },
+      { line: 4, messageId: MessageId.undocumented }
+    ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    code: `
+      interface I {
+        f: () => void;
+        readonly g: () => void;
+      }
+
+      interface J {
+        /** Comment */
+        f: () => void;
+        /** Comment */
+        readonly g: () => void;
       }
     `,
     errors: [
