@@ -12,7 +12,6 @@ import { noUnsafeObjectAssign } from "./no-unsafe-object-assign";
 import { o } from "real-fns";
 import { preferArrayTypeAlias } from "./prefer-array-type-alias";
 import { preferClassMethod } from "./prefer-class-method";
-import { preferEnum } from "./prefer-enum";
 import { preferReadonlyArray } from "./prefer-readonly-array";
 import { preferReadonlyMap } from "./prefer-readonly-map";
 import { preferReadonlyProperty } from "./prefer-readonly-property";
@@ -35,7 +34,6 @@ export const typescript = o.prefixKeys(
     "no-unsafe-object-assign": noUnsafeObjectAssign,
     "prefer-array-type-alias": preferArrayTypeAlias,
     "prefer-class-method": preferClassMethod,
-    "prefer-enum": preferEnum,
     "prefer-readonly-array": preferReadonlyArray,
     "prefer-readonly-map": preferReadonlyMap,
     "prefer-readonly-property": preferReadonlyProperty,

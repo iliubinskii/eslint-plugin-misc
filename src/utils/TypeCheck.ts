@@ -163,6 +163,18 @@ export class TypeCheck {
   }
 
   /**
+   * Checks if type is enum literal.
+   *
+   * @param this - No this.
+   * @param type - Type.
+   * @returns _True_ if type is enum literal, _false_ otherwise.
+   */
+  public isEnumLiteralType(this: void, type: ts.Type): boolean {
+    // eslint-disable-next-line no-bitwise -- Ok
+    return (type.getFlags() & ts.TypeFlags.EnumLiteral) !== 0;
+  }
+
+  /**
    * Checks if type is an object.
    *
    * @param this - No this.
