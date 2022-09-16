@@ -5,8 +5,9 @@
 - [Overview](#overview)
 - [Configs](#configs)
 - [Rules](#rules)
-- [Rule Synonyms](#rule-synonyms)
-- [Custom Checks](#custom-checks)
+- [Synonyms](#synonyms)
+- [Custom checks](#custom-checks)
+- [Rules under consideration](#rules-under-consideration)
 
 ## <a name="overview"></a>Overview
 
@@ -40,7 +41,7 @@ module.exports = {
 
 {{rules}}
 
-## <a name="rule-synonyms"></a>Rule Synonyms
+## <a name="synonyms"></a>Synonyms
 
 You can create rule synonyms like this:
 ```js
@@ -75,9 +76,23 @@ module.exports = {
 };
 ```
 
-## <a name="custom-checks"></a>Custom Checks
+## <a name="custom-checks"></a>Custom checks
 
 You can use the following rules to create custom checks:
 {{rules:custom-checks}}
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
+
+## <a name="rules-under-consideration"></a>Rules under consideration
+
+- boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
+- consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.
+- consistent-test-file-name &mdash; Require that test file name matches some source file name.
+- no-re-export-mixing &mdash; Require that file contains either only re-export or only export of new items.
+- escape-doc-comment-entities &mdash; Require that "\<" and "\>" symbols inside doc comments are properly escaped.
+- no-duplicate-import &mdash; Forbid combining `import { x } from "source"` and `import { x as y } from "source"` in the same file.
+- protected-rules &mdash; Do not allow to disable selected ESLint rules.
+- sort-eslint-comments &mdash; Sort rules in eslint-disable comments.
+- sort-switch-cases &mdash; Sort switch cases.
+- spell-check &mdash; Spell check with international language support based on hunspell spell checker.
+- vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).
