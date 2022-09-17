@@ -73,12 +73,13 @@
     "minimatch": "^5.1.0",
     "natural-compare": "^1.4.0",
     "real-fns": "^0.1.2",
+    "tslib": "^2.4.0",
     "types-fix": "^0.1.0"
   },
   "devDependencies": {
     "eslint-plugin-misc": "^1.1.0",
     "get-current-line": "^6.6.0",
-    "real-config": "^0.1.7"
+    "real-config": "^1.0.0"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
