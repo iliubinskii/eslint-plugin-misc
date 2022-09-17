@@ -3,20 +3,35 @@ import { core } from "../core";
 import { evaluate } from "real-fns";
 
 export const sortArray = evaluate(() => {
-  const prefix =
-    "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression";
+  const obj = {
+    options:
+      "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression",
+    overrides:
+      "Property[key.name=overrides] > ArrayExpression > ObjectExpression",
+    suboptions:
+      "Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression > ObjectExpression"
+  } as const;
 
-  const suffix =
-    "Property[key.name=/^(?:allow|disallow|excludeSelectors|ignoreSelector|includeSelectors|pattern|propertyPattern|selector)$/u] > ArrayExpression";
+  const prop = {
+    array:
+      "Property[key.name=/^(?:allow|disallow|excludeSelectors|ignoreSelector|includeSelectors|pattern|propertyPattern|selector)$/u]",
+    arrayOfArrays: "Property[key.name=hierarchy]",
+    overrides: "Property[key.name=files]"
+  } as const;
+
+  const arr = "ArrayExpression";
+
+  const suffix = "ArrayExpression";
 
   return utils.wrapRule({
     rule: core["sort-array"],
     options: [
       {
         selector: [
-          "Property[key.name=overrides] > ArrayExpression > ObjectExpression > Property[key.name=files] > ArrayExpression",
-          `${prefix} > ${suffix}`,
-          `${prefix} > Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression > ObjectExpression > ${suffix}`
+          `${obj.options} > ${prop.array} > ${suffix}`,
+          `${obj.options} > ${obj.suboptions} > ${prop.array} > ${suffix}`,
+          `${obj.options} > ${obj.suboptions} > ${prop.arrayOfArrays} > ${arr} > ${suffix}`,
+          `${obj.overrides} > ${prop.overrides} > ${suffix}`
         ],
         triggerByComment: false
       }

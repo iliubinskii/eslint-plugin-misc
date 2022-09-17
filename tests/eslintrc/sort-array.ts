@@ -145,5 +145,45 @@ utils.testRule("sort-array", rule, [
       { line: 15, messageId: MessageId.incorrectSortingOrder },
       { line: 16, messageId: MessageId.incorrectSortingOrder }
     ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    code: `
+      module.exports = {
+        rules: [
+          {
+            "misc/rule": [
+              "warn",
+              {
+                rules: [
+                  {
+                    hierarchy: [["./b", "./a"]]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      };
+    `,
+    output: `
+      module.exports = {
+        rules: [
+          {
+            "misc/rule": [
+              "warn",
+              {
+                rules: [
+                  {
+                    hierarchy: [["./a", "./b"]]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      };
+    `,
+    errors: [{ line: 9, messageId: MessageId.incorrectSortingOrder }]
   }
 ]);
