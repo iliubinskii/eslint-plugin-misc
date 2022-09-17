@@ -11,6 +11,7 @@ import { noInternalModules } from "./no-internal-modules";
 import { noLanguageMixing } from "./no-language-mixing";
 import { noNegatedConditions } from "./no-negated-conditions";
 import { noNodejsModules } from "./no-nodejs-modules";
+import { noParamReassign } from "./no-param-reassign";
 import { noRelativeParentImport } from "./no-relative-parent-import";
 import { noUnderscoreExport } from "./no-underscore-export";
 import { noUnnecessaryAsConst } from "./no-unnecessary-as-const";
@@ -36,6 +37,7 @@ export const core = {
   "no-language-mixing": noLanguageMixing,
   "no-negated-conditions": noNegatedConditions,
   "no-nodejs-modules": noNodejsModules,
+  "no-param-reassign": noParamReassign,
   "no-relative-parent-import": noRelativeParentImport,
   "no-underscore-export": noUnderscoreExport,
   "no-unnecessary-as-const": noUnnecessaryAsConst,
