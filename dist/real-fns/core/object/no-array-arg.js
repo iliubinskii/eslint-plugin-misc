@@ -10,7 +10,7 @@ exports.noArrayArg = utils.wrapRule({
         {
             message: "Do not use with array type",
             selector: "CallExpression[callee.object.name=o][callee.property.name=/^(?:entries|keys|values)$/u] > .arguments:first-child",
-            typeIs: utils.TypeGroup.array
+            typeIs: utils.TypeGroup.arrayOrTuple
         }
     ]
 });

@@ -18,6 +18,7 @@ var TypeGroup;
 (function (TypeGroup) {
     TypeGroup["any"] = "any";
     TypeGroup["array"] = "array";
+    TypeGroup["arrayOrTuple"] = "arrayOrTuple";
     TypeGroup["boolean"] = "boolean";
     TypeGroup["complex"] = "complex";
     TypeGroup["function"] = "function";

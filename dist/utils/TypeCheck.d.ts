@@ -85,6 +85,21 @@ export declare class TypeCheck {
      */
     isArrayOrTupleType(type: ts.Type): type is ts.TupleTypeReference | ts.TypeReference;
     /**
+     * Checks if type is an array.
+     *
+     * @param type - Type.
+     * @returns _True_ if type is an array, _false_ otherwise.
+     */
+    isArrayType(type: ts.Type): type is ts.TypeReference;
+    /**
+     * Checks if type is enum literal.
+     *
+     * @param this - No this.
+     * @param type - Type.
+     * @returns _True_ if type is enum literal, _false_ otherwise.
+     */
+    isEnumLiteralType(this: void, type: ts.Type): boolean;
+    /**
      * Checks if type is an object.
      *
      * @param this - No this.
@@ -108,6 +123,13 @@ export declare class TypeCheck {
      * @returns _True_ if type is safe boolean condition, _false_ otherwise.
      */
     isSafeBooleanCondition(this: void, type: ts.Type): boolean;
+    /**
+     * Checks if type is an array or a tuple.
+     *
+     * @param type - Type.
+     * @returns _True_ if type is an array or a tuple, _false_ otherwise.
+     */
+    isTupleType(type: ts.Type): type is ts.TupleTypeReference;
     /**
      * Checks if type contains type group.
      *

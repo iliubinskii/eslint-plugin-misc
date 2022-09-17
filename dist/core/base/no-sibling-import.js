@@ -59,8 +59,8 @@ exports.noSiblingImport = utils.createRule({
                 const matchers = rule.hierarchy.map(pattern => utils.createFileMatcher(pattern, false, { dot: true }));
                 const maxIndex = findLastIndex(`./${basename}`, matchers);
                 return Object.assign(Object.assign({}, rule), { matcher: str => {
-                        const index = findLastIndex(str, matchers);
-                        return index !== -1 && maxIndex !== -1 && index <= maxIndex;
+                        const index = findIndex(str, matchers);
+                        return index !== -1 && maxIndex !== -1 && index < maxIndex;
                     } });
             });
             return (str) => rules.some(rule => rule.matcher(str));
@@ -91,6 +91,16 @@ exports.noSiblingImport = utils.createRule({
 });
 /**
  * Finds index.
+ *
+ * @param str - String.
+ * @param matchers - Matchers.
+ * @returns Index.
+ */
+function findIndex(str, matchers) {
+    return matchers.findIndex(matcher => matcher(str));
+}
+/**
+ * Finds last index.
  *
  * @param str - String.
  * @param matchers - Matchers.

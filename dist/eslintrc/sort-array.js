@@ -6,16 +6,30 @@ const utils = tslib_1.__importStar(require("../utils"));
 const core_1 = require("../core");
 const real_fns_1 = require("real-fns");
 exports.sortArray = (0, real_fns_1.evaluate)(() => {
-    const prefix = "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression";
-    const suffix = "Property[key.name=/^(?:allow|disallow|excludeSelectors|ignoreSelector|includeSelectors|pattern|propertyPattern|selector)$/u] > ArrayExpression";
+    const obj = {
+        options: "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression",
+        overrides: "Property[key.name=overrides] > ArrayExpression > ObjectExpression",
+        root: "AssignmentExpression[left.object.name=module][left.property.name=exports] > ObjectExpression",
+        suboptions: "Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression > ObjectExpression"
+    };
+    const prop = {
+        array: "Property[key.name=/^(?:allow|disallow|excludeSelectors|ignoreSelector|includeSelectors|pattern|propertyPattern|selector)$/u]",
+        arrayOfArrays: "Property[key.name=/^(?:hierarchy)$/u]",
+        overrides: "Property[key.name=/^(?:files|globals|ignorePatterns)$/u]",
+        root: "Property[key.name=/^(?:globals|ignorePatterns)$/u]"
+    };
+    const arr = "ArrayExpression";
+    const suffix = "ArrayExpression";
     return utils.wrapRule({
         rule: core_1.core["sort-array"],
         options: [
             {
                 selector: [
-                    "Property[key.name=overrides] > ArrayExpression > ObjectExpression > Property[key.name=files] > ArrayExpression",
-                    `${prefix} > ${suffix}`,
-                    `${prefix} > Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression > ObjectExpression > ${suffix}`
+                    `${obj.root} > ${prop.root} > ${suffix}`,
+                    `${obj.overrides} > ${prop.overrides} > ${suffix}`,
+                    `${obj.options} > ${prop.array} > ${suffix}`,
+                    `${obj.options} > ${obj.suboptions} > ${prop.array} > ${suffix}`,
+                    `${obj.options} > ${obj.suboptions} > ${prop.arrayOfArrays} > ${arr} > ${suffix}`
                 ],
                 triggerByComment: false
             }

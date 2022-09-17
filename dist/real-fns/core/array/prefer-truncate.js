@@ -10,7 +10,7 @@ exports.preferTruncate = utils.wrapRule({
         {
             message: 'Use "a.truncate" function instead',
             selector: "AssignmentExpression[right.value=0] > MemberExpression.left[property.name=length] > .object",
-            typeIs: utils.TypeGroup.array
+            typeIs: utils.TypeGroup.arrayOrTuple
         }
     ]
 });

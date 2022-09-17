@@ -61,6 +61,7 @@ module.exports = {
 - [no-language-mixing](https://ilyub.github.io/eslint-plugin-misc/no-language-mixing.html) &mdash; Disallows langauge mixing.
 - [no-negated-conditions](https://ilyub.github.io/eslint-plugin-misc/no-negated-conditions.html) &mdash; Disallows negated conditions.
 - [no-nodejs-modules](https://ilyub.github.io/eslint-plugin-misc/no-nodejs-modules.html) &mdash; Disallows importing NodeJS modules.
+- [no-param-reassign](https://ilyub.github.io/eslint-plugin-misc/no-param-reassign.html) &mdash; This rule wraps "no-param-reassign" core rule, but allows to edit params at the top of function body.
 - [no-relative-parent-import](https://ilyub.github.io/eslint-plugin-misc/no-relative-parent-import.html) &mdash; Disallows relative parent import.
 - [no-restricted-syntax](https://ilyub.github.io/eslint-plugin-misc/no-restricted-syntax.html) &mdash; Disallows AST syntax (an extended version of ESLint core rule).
 - [no-self-import](https://ilyub.github.io/eslint-plugin-misc/no-self-import.html) &mdash; Disallows self-import.

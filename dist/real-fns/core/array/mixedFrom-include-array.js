@@ -11,7 +11,7 @@ exports.mixedFromIncludeArray = utils.wrapRule({
         {
             message: "Expecting type to include array",
             selector: "CallExpression[callee.object.name=a][callee.property.name=fromMixed] > .arguments:first-child",
-            typeHasNoneOf: [utils.TypeGroup.array]
+            typeHasNoneOf: [utils.TypeGroup.arrayOrTuple]
         }
     ]
 });

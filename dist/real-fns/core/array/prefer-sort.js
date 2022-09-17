@@ -10,7 +10,7 @@ exports.preferSort = utils.wrapRule({
         {
             message: 'Use "a.sort" instead (avoid mutation side-effects)',
             selector: ".callee[property.name=sort] > .object",
-            typeHas: utils.TypeGroup.array
+            typeHas: utils.TypeGroup.arrayOrTuple
         }
     ]
 });

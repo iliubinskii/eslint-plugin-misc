@@ -140,6 +140,26 @@ class TypeCheck {
         return this.checker.isArrayType(type) || this.checker.isTupleType(type);
     }
     /**
+     * Checks if type is an array.
+     *
+     * @param type - Type.
+     * @returns _True_ if type is an array, _false_ otherwise.
+     */
+    isArrayType(type) {
+        return this.checker.isArrayType(type);
+    }
+    /**
+     * Checks if type is enum literal.
+     *
+     * @param this - No this.
+     * @param type - Type.
+     * @returns _True_ if type is enum literal, _false_ otherwise.
+     */
+    isEnumLiteralType(type) {
+        // eslint-disable-next-line no-bitwise -- Ok
+        return (type.getFlags() & ts.TypeFlags.EnumLiteral) !== 0;
+    }
+    /**
      * Checks if type is an object.
      *
      * @param this - No this.
@@ -189,6 +209,15 @@ class TypeCheck {
         return false;
     }
     /**
+     * Checks if type is an array or a tuple.
+     *
+     * @param type - Type.
+     * @returns _True_ if type is an array or a tuple, _false_ otherwise.
+     */
+    isTupleType(type) {
+        return this.checker.isTupleType(type);
+    }
+    /**
      * Checks if type contains type group.
      *
      * @param type - Type.
@@ -235,12 +264,13 @@ class TypeCheck {
                 case types_1.TypeGroup.any:
                     return checkTypeFlags(type, ts.TypeFlags.Any);
                 case types_1.TypeGroup.array:
-                    return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.checker.isArrayType(type));
+                    return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.isArrayType(type));
+                case types_1.TypeGroup.arrayOrTuple:
+                    return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.isArrayOrTupleType(type));
                 case types_1.TypeGroup.boolean:
                     return checkTypeFlags(type, ts.TypeFlags.Boolean, ts.TypeFlags.BooleanLike, ts.TypeFlags.BooleanLiteral);
                 case types_1.TypeGroup.complex: {
-                    if (this.checker.isArrayType(type) ||
-                        this.checker.isTupleType(type)) {
+                    if (this.isArrayOrTupleType(type)) {
                         const subtypes = type.typeArguments;
                         real_fns_1.assert.not.empty(subtypes, "Missing type arguments");
                         return subtypes.some(subtype => this.typeIs(subtype, types_1.TypeGroup.complex));
@@ -263,9 +293,8 @@ class TypeCheck {
                     return checkTypeFlags(type, ts.TypeFlags.Number, ts.TypeFlags.NumberLike, ts.TypeFlags.NumberLiteral);
                 case types_1.TypeGroup.object:
                     return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) &&
-                        !this.typeIs(type, types_1.TypeGroup.array) &&
-                        !this.typeIs(type, types_1.TypeGroup.function) &&
-                        !this.typeIs(type, types_1.TypeGroup.tuple));
+                        !this.typeIs(type, types_1.TypeGroup.arrayOrTuple) &&
+                        !this.typeIs(type, types_1.TypeGroup.function));
                 case types_1.TypeGroup.parameter:
                     return type.isTypeParameter();
                 case types_1.TypeGroup.readonly:
@@ -277,7 +306,7 @@ class TypeCheck {
                 case types_1.TypeGroup.symbol:
                     return checkTypeFlags(type, ts.TypeFlags.ESSymbol, ts.TypeFlags.ESSymbolLike, ts.TypeFlags.UniqueESSymbol);
                 case types_1.TypeGroup.tuple:
-                    return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.checker.isTupleType(type));
+                    return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.isTupleType(type));
                 case types_1.TypeGroup.undefined:
                     return checkTypeFlags(type, ts.TypeFlags.Undefined);
                 case types_1.TypeGroup.unknown:

@@ -5,5 +5,6 @@ export declare const base: {
     readonly "no-multi-type-tuples": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./no-multi-type-tuples").MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<object, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
     readonly "no-restricted-syntax": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./no-restricted-syntax").MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<import("./no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
     readonly "no-unsafe-object-assignment": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./no-unsafe-object-assignment").MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<object, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    readonly "prefer-enum": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./prefer-enum").MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<object, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
 };
 //# sourceMappingURL=index.d.ts.map

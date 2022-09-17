@@ -7,12 +7,14 @@ const no_inferrable_types_1 = require("./no-inferrable-types");
 const no_multi_type_tuples_1 = require("./no-multi-type-tuples");
 const no_restricted_syntax_1 = require("./no-restricted-syntax");
 const no_unsafe_object_assignment_1 = require("./no-unsafe-object-assignment");
+const prefer_enum_1 = require("./prefer-enum");
 exports.base = {
     "array-callback-return-type": array_callback_return_type_1.arrayCallbackReturnType,
     "exhaustive-switch": exhaustive_switch_1.exhaustiveSwitch,
     "no-inferrable-types": no_inferrable_types_1.noInferrableTypes,
     "no-multi-type-tuples": no_multi_type_tuples_1.noMultiTypeTuples,
     "no-restricted-syntax": no_restricted_syntax_1.noRestrictedSyntax,
-    "no-unsafe-object-assignment": no_unsafe_object_assignment_1.noUnsafeObjectAssignment
+    "no-unsafe-object-assignment": no_unsafe_object_assignment_1.noUnsafeObjectAssignment,
+    "prefer-enum": prefer_enum_1.preferEnum
 };
 //# sourceMappingURL=index.js.map

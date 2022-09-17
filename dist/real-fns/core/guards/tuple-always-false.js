@@ -12,7 +12,7 @@ exports.tupleAlwaysFalse = utils.wrapRule({
             selector: "CallExpression[callee.object.name=/^(?:as|assert|is)$/u][callee.property.name=/^(?:tuple|tupleU)$/u] > .arguments:first-child",
             typeHasNoneOf: [
                 utils.TypeGroup.any,
-                utils.TypeGroup.array,
+                utils.TypeGroup.arrayOrTuple,
                 utils.TypeGroup.unknown
             ]
         }
