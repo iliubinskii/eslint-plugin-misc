@@ -21,6 +21,7 @@ export enum Fixable {
 export enum TypeGroup {
   any = "any",
   array = "array",
+  arrayOrTuple = "arrayOrTuple",
   boolean = "boolean",
   complex = "complex",
   function = "function",

@@ -7,7 +7,7 @@ export const preferReverse = utils.wrapRule({
     {
       message: 'Use "a.reverse" instead (avoid mutation side-effects)',
       selector: ".callee[property.name=reverse] > .object",
-      typeHas: utils.TypeGroup.array
+      typeHas: utils.TypeGroup.arrayOrTuple
     }
   ]
 });

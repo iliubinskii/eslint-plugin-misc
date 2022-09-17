@@ -163,6 +163,17 @@ export class TypeCheck {
   }
 
   /**
+   * Checks if type is an array.
+   *
+   * @param type - Type.
+   * @returns _True_ if type is an array, _false_ otherwise.
+   */
+
+  public isArrayType(type: ts.Type): type is ts.TypeReference {
+    return this.checker.isArrayType(type);
+  }
+
+  /**
    * Checks if type is enum literal.
    *
    * @param this - No this.
@@ -244,6 +255,17 @@ export class TypeCheck {
   }
 
   /**
+   * Checks if type is an array or a tuple.
+   *
+   * @param type - Type.
+   * @returns _True_ if type is an array or a tuple, _false_ otherwise.
+   */
+
+  public isTupleType(type: ts.Type): type is ts.TupleTypeReference {
+    return this.checker.isTupleType(type);
+  }
+
+  /**
    * Checks if type contains type group.
    *
    * @param type - Type.
@@ -300,7 +322,16 @@ export class TypeCheck {
               type,
               ts.TypeFlags.NonPrimitive,
               ts.TypeFlags.Object
-            ) && this.checker.isArrayType(type)
+            ) && this.isArrayType(type)
+          );
+
+        case TypeGroup.arrayOrTuple:
+          return (
+            checkTypeFlags(
+              type,
+              ts.TypeFlags.NonPrimitive,
+              ts.TypeFlags.Object
+            ) && this.isArrayOrTupleType(type)
           );
 
         case TypeGroup.boolean:
@@ -312,10 +343,7 @@ export class TypeCheck {
           );
 
         case TypeGroup.complex: {
-          if (
-            this.checker.isArrayType(type) ||
-            this.checker.isTupleType(type)
-          ) {
+          if (this.isArrayOrTupleType(type)) {
             const subtypes = type.typeArguments;
 
             assert.not.empty(subtypes, "Missing type arguments");
@@ -372,9 +400,8 @@ export class TypeCheck {
               ts.TypeFlags.NonPrimitive,
               ts.TypeFlags.Object
             ) &&
-            !this.typeIs(type, TypeGroup.array) &&
-            !this.typeIs(type, TypeGroup.function) &&
-            !this.typeIs(type, TypeGroup.tuple)
+            !this.typeIs(type, TypeGroup.arrayOrTuple) &&
+            !this.typeIs(type, TypeGroup.function)
           );
 
         case TypeGroup.parameter:
@@ -413,7 +440,7 @@ export class TypeCheck {
               type,
               ts.TypeFlags.NonPrimitive,
               ts.TypeFlags.Object
-            ) && this.checker.isTupleType(type)
+            ) && this.isTupleType(type)
           );
 
         case TypeGroup.undefined:

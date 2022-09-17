@@ -10,7 +10,7 @@ export const fromIterableArgType = utils.wrapRule({
       message: "Unnecessary with array type",
       selector:
         "CallExpression[callee.object.name=a][callee.property.name=fromIterable] > .arguments:first-child",
-      typeIs: utils.TypeGroup.array
+      typeIs: utils.TypeGroup.arrayOrTuple
     }
   ]
 });

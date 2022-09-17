@@ -10,7 +10,7 @@ export const arrayAlwaysFalse = utils.wrapRule({
         "CallExpression[callee.object.name=/^(?:as|assert|is)$/u][callee.property.name=/^(?:array|arrayU)$/u] > .arguments:first-child",
       typeHasNoneOf: [
         utils.TypeGroup.any,
-        utils.TypeGroup.array,
+        utils.TypeGroup.arrayOrTuple,
         utils.TypeGroup.object,
         utils.TypeGroup.unknown
       ]
