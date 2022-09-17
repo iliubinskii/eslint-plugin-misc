@@ -28,6 +28,18 @@ utils.testRule(
         };
       `,
       errors: [{ line: 3, messageId: MessageId.customMessage }]
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        class C {
+          f(x, y) {
+            x;
+            y++;
+          }
+        }
+      `,
+      errors: [{ line: 4, messageId: MessageId.customMessage }]
     }
   ],
   [
@@ -47,6 +59,17 @@ utils.testRule(
           x++;
           y;
         };
+      `
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        class C {
+          f(x, y) {
+            x++;
+            y;
+          }
+        }
       `
     }
   ]

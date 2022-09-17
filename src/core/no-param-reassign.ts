@@ -7,7 +7,7 @@ export const noParamReassign = utils.wrapRule({
     {
       plugin: "eslint",
       rule: "no-param-reassign",
-      skip: ":matches(ArrowFunctionExpression, FunctionDeclaration) > BlockStatement > ExpressionStatement:first-child *"
+      skip: ":matches(ArrowFunctionExpression, FunctionDeclaration, FunctionExpression) > BlockStatement > ExpressionStatement:first-child *"
     }
   ],
   docs: {
