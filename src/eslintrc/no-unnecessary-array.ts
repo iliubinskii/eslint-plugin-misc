@@ -17,7 +17,7 @@ export const noUnnecessaryArray = evaluate(() => {
     array:
       "Property[key.name=/^(?:allow|disallow|ignoreSelector|pattern|propertyPattern|selector)$/u]",
     overrides: "Property[key.name=/^(?:extends|files)$/u]",
-    root: "Property[key.name=extends]"
+    root: "Property[key.name=/^(?:extends)$/u]"
   } as const;
 
   const suffix = "ArrayExpression[elements.length=1]";

@@ -10,6 +10,20 @@ utils.testRule("sort-array", rule, [
     name: `Test at line ${getCurrentLine().line}`,
     code: `
       module.exports = {
+        globals: ["b", "a"]
+      };
+    `,
+    output: `
+      module.exports = {
+        globals: ["a", "b"]
+      };
+    `,
+    errors: [{ line: 2, messageId: MessageId.incorrectSortingOrder }]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    code: `
+      module.exports = {
         overrides: [
           {
             files: ["./b", "./a"]

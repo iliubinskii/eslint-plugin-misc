@@ -8,6 +8,7 @@ export const sortArray = evaluate(() => {
       "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression",
     overrides:
       "Property[key.name=overrides] > ArrayExpression > ObjectExpression",
+    root: "AssignmentExpression[left.object.name=module][left.property.name=exports] > ObjectExpression",
     suboptions:
       "Property[key.name=/^(?:folders|overrides|rules|sources)$/u] > ArrayExpression > ObjectExpression"
   } as const;
@@ -15,8 +16,9 @@ export const sortArray = evaluate(() => {
   const prop = {
     array:
       "Property[key.name=/^(?:allow|disallow|excludeSelectors|ignoreSelector|includeSelectors|pattern|propertyPattern|selector)$/u]",
-    arrayOfArrays: "Property[key.name=hierarchy]",
-    overrides: "Property[key.name=files]"
+    arrayOfArrays: "Property[key.name=/^(?:hierarchy)$/u]",
+    overrides: "Property[key.name=/^(?:files|globals|ignorePatterns)$/u]",
+    root: "Property[key.name=/^(?:globals|ignorePatterns)$/u]"
   } as const;
 
   const arr = "ArrayExpression";
@@ -28,10 +30,11 @@ export const sortArray = evaluate(() => {
     options: [
       {
         selector: [
+          `${obj.root} > ${prop.root} > ${suffix}`,
+          `${obj.overrides} > ${prop.overrides} > ${suffix}`,
           `${obj.options} > ${prop.array} > ${suffix}`,
           `${obj.options} > ${obj.suboptions} > ${prop.array} > ${suffix}`,
-          `${obj.options} > ${obj.suboptions} > ${prop.arrayOfArrays} > ${arr} > ${suffix}`,
-          `${obj.overrides} > ${prop.overrides} > ${suffix}`
+          `${obj.options} > ${obj.suboptions} > ${prop.arrayOfArrays} > ${arr} > ${suffix}`
         ],
         triggerByComment: false
       }
