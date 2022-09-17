@@ -80,9 +80,9 @@ export const noSiblingImport = utils.createRule({
         return {
           ...rule,
           matcher: str => {
-            const index = findLastIndex(str, matchers);
+            const index = findIndex(str, matchers);
 
-            return index !== -1 && maxIndex !== -1 && index <= maxIndex;
+            return index !== -1 && maxIndex !== -1 && index < maxIndex;
           }
         };
       });
@@ -122,6 +122,17 @@ export const noSiblingImport = utils.createRule({
 
 /**
  * Finds index.
+ *
+ * @param str - String.
+ * @param matchers - Matchers.
+ * @returns Index.
+ */
+function findIndex(str: string, matchers: utils.Matchers): number {
+  return matchers.findIndex(matcher => matcher(str));
+}
+
+/**
+ * Finds last index.
  *
  * @param str - String.
  * @param matchers - Matchers.

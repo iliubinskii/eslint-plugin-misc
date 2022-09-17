@@ -11,45 +11,42 @@ utils.testRule(
   [
     {
       name: `Test at line ${getCurrentLine().line}`,
-      code: 'import * as source from "./source";',
+      code: `
+        import a from "./source";
+        import e from "./subfolder";
+        import b from "./file.internal";
+        import d from "../source";
+        require("node:fs");
+      `,
       errors: [{ line: 1, messageId: MessageId.disallowedSource }]
     },
     {
       name: `Test at line ${getCurrentLine().line}`,
-      options: [{ rules: [{ hierarchy: [["./*"], ["./source"]] }] }],
-      code: 'import * as source from "./source";',
-      errors: [{ line: 1, messageId: MessageId.disallowedSource }]
+      options: [
+        {
+          rules: [
+            { hierarchy: [["./source1"], ["./file"]] },
+            { hierarchy: [["./source2"], ["./another-file"]] }
+          ]
+        }
+      ],
+      code: `
+        import x from "./source1";
+        import y from "./source2";
+      `,
+      errors: [{ line: 2, messageId: MessageId.disallowedSource }]
     }
   ],
   [
     {
       name: `Test at line ${getCurrentLine().line}`,
-      options: [{ rules: [{ hierarchy: [["./*"]] }] }],
-      code: 'import * as source from "./source";'
-    },
-    {
-      name: `Test at line ${getCurrentLine().line}`,
-      options: [{ rules: [{ hierarchy: [["./source"], ["./file"]] }] }],
-      code: 'import * as source from "./source";'
+      options: [{ rules: [{ hierarchy: [["./*"], ["./*"]] }] }],
+      code: 'import x from "./source";'
     },
     {
       name: `Test at line ${getCurrentLine().line}`,
       filename: "subfolder/index.ts",
-      code: 'import * as source from "./source";'
-    },
-    {
-      name: `Test at line ${getCurrentLine().line}`,
-      code: 'import * as internal from "./file.internal";'
-    },
-    {
-      name: `Test at line ${getCurrentLine().line}`,
-      options: [{ rules: [{ hierarchy: [["./source"], ["./file"]] }] }],
-      code: `
-        import * as source from "./source";
-        import * as parentSource from "../parent-source";
-        import * as subfolder from "./subfolder";
-        require("node:fs");
-      `
+      code: 'import x from "./source";'
     }
   ]
 );
