@@ -106,12 +106,11 @@ function sortGroup<T extends TSESTree.Node = TSESTree.Node>(
   context: Context<MessageId, object, object>
 ): void {
   if (items.length >= 2) {
-    items = items.map((item, index): Item => ({ ...item, index }));
-
     const { _id } = options;
 
-    const sortedItems = a.sort(items, (item1, item2) =>
-      compare(item1.key, item2.key)
+    const sortedItems = a.sort(
+      items.map((item, index): Item => ({ ...item, index })),
+      (item1, item2) => compare(item1.key, item2.key)
     );
 
     const fixes: Writable<RuleFixes> = [];

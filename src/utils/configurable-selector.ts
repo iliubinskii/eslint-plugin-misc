@@ -12,6 +12,7 @@ import type { strings } from "real-fns";
 export function get(options: Options, defaultSelectors: strings): string {
   const { excludeSelectors, includeSelectors, noDefaultSelectors } = options;
 
+  // eslint-disable-next-line misc/no-param-reassign -- Ok
   defaultSelectors = noDefaultSelectors ? [] : defaultSelectors;
 
   const selectors = _.difference(
