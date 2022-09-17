@@ -64,6 +64,9 @@
       "sortJSONType": false,
       "sortJSONTypeReverse": false
     },
+    "sortJSON.excludedPaths": [
+      "src/manifest.json"
+    ],
     "typescript.suggestionActions.enabled": false,
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "typescript.updateImportsOnFileMove.enabled": "always",
