@@ -33,7 +33,12 @@ export const configs = evaluate((): IndexedRecord => {
       }
     },
     "quasar-extension.jest": { rules: rules(quasarExtension.jest) },
-    "quasar-extension.vue": { rules: rules(quasarExtension.vue) },
+    "quasar-extension.vue": {
+      rules: {
+        ...rules(quasarExtension.vue),
+        "misc/quasar-extension/vue/template/prefer-quasar": "off"
+      }
+    },
     "real-config": { rules: rules(realConfig) },
     "real-facades": { rules: rules(realFacades) },
     "real-fns.core": { rules: rules(realFunctions.core) },

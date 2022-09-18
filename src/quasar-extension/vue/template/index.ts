@@ -17,7 +17,7 @@ import { noQToggle } from "./no-q-toggle";
 import { noQTooltip } from "./no-q-tooltip";
 import { o } from "real-fns";
 import { preferLabelProp } from "./prefer-label-prop";
-import { preferLangVar } from "./prefer-lang-var";
+import { preferQuasarComponents } from "./prefer-quasar-components";
 
 export const template = o.prefixKeys(
   {
@@ -39,7 +39,7 @@ export const template = o.prefixKeys(
     "no-q-toggle": noQToggle,
     "no-q-tooltip": noQTooltip,
     "prefer-label-prop": preferLabelProp,
-    "prefer-lang-var": preferLangVar
+    "prefer-quasar-components": preferQuasarComponents
   },
   "template/"
 );
