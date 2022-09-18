@@ -104,13 +104,13 @@ const documentedRules = o.entries(
     const optionsAnnotation = optionDescriptions
       ? o
           .entries(optionDescriptions)
-          .map(([option, description]) => {
+          .map(([option, optionDescription]) => {
             const defVal =
               defaultOptions && is.not.empty(defaultOptions[option])
                 ? stringify(defaultOptions[option])
                 : "-";
 
-            return `| \`${option}\` | ${description} | \`${defVal}\` |`;
+            return `| \`${option}\` | ${optionDescription} | \`${defVal}\` |`;
           })
           .join("\n")
       : "";
@@ -130,14 +130,16 @@ const documentedRules = o.entries(
     const suboptionsAnnotation = suboptionDescriptions
       ? a
           .sort([
-            ...o.entries(suboptionDescriptions).map(([option, description]) => {
-              const defVal =
-                defaultSuboptions && is.not.empty(defaultSuboptions[option])
-                  ? stringify(defaultSuboptions[option])
-                  : "-";
+            ...o
+              .entries(suboptionDescriptions)
+              .map(([option, optionDescription]) => {
+                const defVal =
+                  defaultSuboptions && is.not.empty(defaultSuboptions[option])
+                    ? stringify(defaultSuboptions[option])
+                    : "-";
 
-              return `| \`${suboptionsKey}.${option}\` | ${description} | \`${defVal}\` |`;
-            }),
+                return `| \`${suboptionsKey}.${option}\` | ${optionDescription} | \`${defVal}\` |`;
+              }),
             `| \`${suboptionsKey}.filesToLint\` | Files to lint (minimatch patterns) | \`[]\` |`,
             `| \`${suboptionsKey}.filesToSkip\` | Files to skip (minimatch patterns) | \`[]\` |`
           ])
