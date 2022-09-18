@@ -42,7 +42,7 @@
     "full-check": "php node_modules/real-config/bin/full-check.php",
     "git:unix": "git config --replace-all core.ignorecase false",
     "git:windows": "git config --replace-all core.ignorecase true",
-    "husky:commit-msg": "npm run commitlint",
+    "husky:commit-msg": "npm run commitlint-next",
     "husky:post-commit": "php node_modules/real-config/bin/post-commit.php",
     "husky:pre-commit": "php node_modules/real-config/bin/pre-commit.php",
     "husky:unset-hooks": "git config --unset core.hooksPath",
