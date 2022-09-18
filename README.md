@@ -65,6 +65,7 @@ module.exports = {
 - [no-relative-parent-import](https://ilyub.github.io/eslint-plugin-misc/no-relative-parent-import.html) &mdash; Disallows relative parent import.
 - [no-restricted-syntax](https://ilyub.github.io/eslint-plugin-misc/no-restricted-syntax.html) &mdash; Disallows AST syntax (an extended version of ESLint core rule).
 - [no-self-import](https://ilyub.github.io/eslint-plugin-misc/no-self-import.html) &mdash; Disallows self-import.
+- [no-shadow](https://ilyub.github.io/eslint-plugin-misc/no-shadow.html) &mdash; This rule wraps "@typescript-eslint/no-shadow" rule, but skips checking enum.
 - [no-sibling-import](https://ilyub.github.io/eslint-plugin-misc/no-sibling-import.html) &mdash; Restricts importing siblings.
 - [no-underscore-export](https://ilyub.github.io/eslint-plugin-misc/no-underscore-export.html) &mdash; Disallows underscore export.
 - [no-unnecessary-as-const](https://ilyub.github.io/eslint-plugin-misc/no-unnecessary-as-const.html) &mdash; Disallows unnecessary "as const".
@@ -109,7 +110,6 @@ module.exports = {
 - [typescript/no-multi-type-tuples](https://ilyub.github.io/eslint-plugin-misc/typescript/no-multi-type-tuples.html) &mdash; Disallows multi-type tuples.
 - [typescript/no-never](https://ilyub.github.io/eslint-plugin-misc/typescript/no-never.html) &mdash; Disallow "never" type.
 - [typescript/no-restricted-syntax](https://ilyub.github.io/eslint-plugin-misc/typescript/no-restricted-syntax.html) &mdash; Disallows AST syntax with additional type check.
-- [typescript/no-shadow](https://ilyub.github.io/eslint-plugin-misc/typescript/no-shadow.html) &mdash; This rule wraps "@typescript-eslint/no-shadow" rule, but skips checking enum.
 - [typescript/no-unsafe-object-assign](https://ilyub.github.io/eslint-plugin-misc/typescript/no-unsafe-object-assign.html) &mdash; Disallows unsafe "Object.assign".
 - [typescript/no-unsafe-object-assignment](https://ilyub.github.io/eslint-plugin-misc/typescript/no-unsafe-object-assignment.html) &mdash; Reports unsafe object assignments.
 - [typescript/prefer-array-type-alias](https://ilyub.github.io/eslint-plugin-misc/typescript/prefer-array-type-alias.html) &mdash; Disallows unsafe "Object.assign".

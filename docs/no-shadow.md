@@ -1,6 +1,6 @@
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-shadow
+[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-shadow
 
-# typescript/no-shadow
+# no-shadow
 
 This rule wraps "@typescript-eslint/no-shadow" rule, but skips checking enum.
 
@@ -8,7 +8,7 @@ This rule wraps "@typescript-eslint/no-shadow" rule, but skips checking enum.
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "misc/typescript/no-shadow": "error"
+    "misc/no-shadow": "error"
   }
 };
 ```

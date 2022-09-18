@@ -12,20 +12,20 @@ exports.noNegatedConditions = utils.wrapRule({
             selector: [
                 'IfStatement > BinaryExpression[operator="!=="]',
                 'IfStatement > UnaryExpression[operator="!"]',
-                'IfStatement > LogicalExpression > BinaryExpression.left[operator="!=="]',
-                'IfStatement > LogicalExpression > UnaryExpression.left[operator="!"]'
+                ':not(LogicalExpression) > LogicalExpression > BinaryExpression.left[operator="!=="]',
+                ':not(LogicalExpression) > LogicalExpression > UnaryExpression.left[operator="!"]'
             ]
         }
     ],
     docs: {
         description: "Disallows negated conditions.",
         failExamples: `
-      if (!x) {}
-      if (x !== 1) {}
+      if (!x && y) {}
+      if (x !== -1 && y) {}
     `,
         passExamples: `
-      if (x) {}
-      if (x === 1) {}
+      if (x && !y) {}
+      if (x && y !== -1) {}
     `
     }
 });

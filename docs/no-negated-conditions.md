@@ -16,13 +16,13 @@ module.exports = {
 ## Examples of incorrect code
 
 ```ts
-if (!x) {}
-if (x !== 1) {}
+if (!x && y) {}
+if (x !== -1 && y) {}
 ```
 
 ## Examples of correct code
 
 ```ts
-if (x) {}
-if (x === 1) {}
+if (x && !y) {}
+if (x && y !== -1) {}
 ```

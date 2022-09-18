@@ -64,9 +64,8 @@ exports.sort = (0, real_fns_1.defineFn)(
  */
 function sortGroup(items, options, context) {
     if (items.length >= 2) {
-        items = items.map((item, index) => (Object.assign(Object.assign({}, item), { index })));
         const { _id } = options;
-        const sortedItems = real_fns_1.a.sort(items, (item1, item2) => (0, compare_1.compare)(item1.key, item2.key));
+        const sortedItems = real_fns_1.a.sort(items.map((item, index) => (Object.assign(Object.assign({}, item), { index }))), (item1, item2) => (0, compare_1.compare)(item1.key, item2.key));
         const fixes = [];
         let min;
         let max;

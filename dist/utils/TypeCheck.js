@@ -454,10 +454,10 @@ function assertExpression(tsNode, error) {
 function checkTypeFlags(type, ...flags) {
     if (type.isTypeParameter()) {
         const constraint = type.getConstraint();
-        if (real_fns_1.is.not.empty(constraint))
-            type = constraint;
-        else
+        if (real_fns_1.is.empty(constraint))
             return flags.includes(ts.TypeFlags.Unknown);
+        // eslint-disable-next-line misc/no-param-reassign -- Ok
+        type = constraint;
     }
     return (flags.includes(type.getFlags()) ||
         (type.isUnion() &&

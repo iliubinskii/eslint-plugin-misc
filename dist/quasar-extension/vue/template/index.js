@@ -20,7 +20,7 @@ const no_q_toggle_1 = require("./no-q-toggle");
 const no_q_tooltip_1 = require("./no-q-tooltip");
 const real_fns_1 = require("real-fns");
 const prefer_label_prop_1 = require("./prefer-label-prop");
-const prefer_lang_var_1 = require("./prefer-lang-var");
+const prefer_quasar_components_1 = require("./prefer-quasar-components");
 exports.template = real_fns_1.o.prefixKeys({
     "no-mixed-classes": no_mixed_classes_1.noMixedClasses,
     "no-q-btn": no_q_btn_1.noQBtn,
@@ -40,6 +40,6 @@ exports.template = real_fns_1.o.prefixKeys({
     "no-q-toggle": no_q_toggle_1.noQToggle,
     "no-q-tooltip": no_q_tooltip_1.noQTooltip,
     "prefer-label-prop": prefer_label_prop_1.preferLabelProp,
-    "prefer-lang-var": prefer_lang_var_1.preferLangVar
+    "prefer-quasar-components": prefer_quasar_components_1.preferQuasarComponents
 }, "template/");
 //# sourceMappingURL=index.js.map
