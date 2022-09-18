@@ -7,7 +7,6 @@ import { noComplexDeclaratorType } from "./no-complex-declarator-type";
 import { noComplexReturnType } from "./no-complex-return-type";
 import { noEmptyInterfaces } from "./no-empty-interfaces";
 import { noNever } from "./no-never";
-import { noShadow } from "./no-shadow";
 import { noUnsafeObjectAssign } from "./no-unsafe-object-assign";
 import { o } from "real-fns";
 import { preferArrayTypeAlias } from "./prefer-array-type-alias";
@@ -30,7 +29,6 @@ export const typescript = o.prefixKeys(
     "no-complex-return-type": noComplexReturnType,
     "no-empty-interfaces": noEmptyInterfaces,
     "no-never": noNever,
-    "no-shadow": noShadow,
     "no-unsafe-object-assign": noUnsafeObjectAssign,
     "prefer-array-type-alias": preferArrayTypeAlias,
     "prefer-class-method": preferClassMethod,

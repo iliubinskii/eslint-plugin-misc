@@ -13,6 +13,7 @@ import { noNegatedConditions } from "./no-negated-conditions";
 import { noNodejsModules } from "./no-nodejs-modules";
 import { noParamReassign } from "./no-param-reassign";
 import { noRelativeParentImport } from "./no-relative-parent-import";
+import { noShadow } from "./no-shadow";
 import { noUnderscoreExport } from "./no-underscore-export";
 import { noUnnecessaryAsConst } from "./no-unnecessary-as-const";
 import { noUnnecessaryBreak } from "./no-unnecessary-break";
@@ -39,6 +40,7 @@ export const core = {
   "no-nodejs-modules": noNodejsModules,
   "no-param-reassign": noParamReassign,
   "no-relative-parent-import": noRelativeParentImport,
+  "no-shadow": noShadow,
   "no-underscore-export": noUnderscoreExport,
   "no-unnecessary-as-const": noUnnecessaryAsConst,
   "no-unnecessary-break": noUnnecessaryBreak,

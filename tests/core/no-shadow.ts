@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["typescript/no-shadow"];
+const rule = rules["no-shadow"];
 
 const MessageId = utils.getMessageId(rule);
 
