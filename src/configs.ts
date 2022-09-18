@@ -36,7 +36,7 @@ export const configs = evaluate((): IndexedRecord => {
     "quasar-extension.vue": {
       rules: {
         ...rules(quasarExtension.vue),
-        "misc/quasar-extension/vue/template/prefer-quasar": "off"
+        "misc/quasar-extension/vue/template/prefer-quasar-components": "off"
       }
     },
     "real-config": { rules: rules(realConfig) },
