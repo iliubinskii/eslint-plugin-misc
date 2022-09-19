@@ -68,15 +68,15 @@
     "@types/minimatch": "^5.1.2",
     "@types/natural-compare": "^1.4.1",
     "javascript-stringify": "^2.1.0",
-    "lodash-commonjs-es": "^0.1.1",
+    "lodash-commonjs-es": "^1.0.1",
     "minimatch": "^5.1.0",
     "natural-compare": "^1.4.0",
-    "real-fns": "^0.1.2",
+    "real-fns": "^1.0.1",
     "tslib": "^2.4.0",
-    "types-fix": "^0.1.0"
+    "types-fix": "^1.0.1"
   },
   "devDependencies": {
-    "eslint-plugin-misc": "^1.2.0",
+    "eslint-plugin-misc": "^1.2.1",
     "get-current-line": "^6.6.0",
     "real-config": "^1.2.0"
   },
