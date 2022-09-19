@@ -1,8 +1,3 @@
-.quasar
-.php-cs-fixer.cache
-.scannerwork
 cache
-lcov.info
 lcov-report
 node_modules
-vendor
