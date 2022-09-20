@@ -1,6 +1,16 @@
 import * as _ from "lodash-commonjs-es";
+import type {
+  AllowDisallowPatterns,
+  FilePattern,
+  Matcher,
+  RegexpPattern,
+  RuleListeners,
+  Selector
+} from "./types";
+import { Casing, TypeGroup } from "./types";
+import type { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
+import type { Entry, unknowns } from "real-fns";
 import {
-  Accumulator,
   ProxyHandlerAction,
   a,
   as,
@@ -13,23 +23,13 @@ import {
   wrapProxyHandler
 } from "real-fns";
 import type {
-  AllowDisallowPatterns,
-  FilePattern,
-  Matcher,
-  RegexpPattern,
-  RuleListeners,
-  Selector
-} from "./types";
-import { Casing, TypeGroup } from "./types";
-import type { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import type { Entry, unknowns } from "real-fns";
-import type {
   RuleContext,
   RuleFunction,
   RuleListener,
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { Accumulator } from "real-classes";
 import type { WrapRuleOptions } from "./misc.internal";
 import minimatch from "minimatch";
 

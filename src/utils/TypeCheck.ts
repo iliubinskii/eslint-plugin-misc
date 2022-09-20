@@ -601,7 +601,7 @@ const safeBooleanWithUndefined = new ReadonlySet([
 /**
  * Asserts node to be expression.
  *
- * @param tsNode - Typescript node.
+ * @param tsNode - TypeScript node.
  * @param error - Error.
  */
 function assertExpression(
