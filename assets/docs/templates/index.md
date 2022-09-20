@@ -9,22 +9,31 @@
 ## Table of contents
 
 - [Overview](#overview)
+- [Installation](#installation)
+- [ESLint configuration file](#eslint-configuration-file)
 - [Configs](#configs)
 - [Rules](#rules)
 - [Synonyms](#synonyms)
 - [Custom checks](#custom-checks)
-- [Rules under consideration](#rules-under-consideration)
+- [Planned rules](#planned-rules)
+- [Related packages](#related-packages)
 
 ## <a name="overview"></a>Overview
 
-This plugin includes miscellaneous ESLint rules.
+This plugin includes miscellaneous ESLint rules for:
+- Javascript files
+- Typescript files
+- Jest test files
+- Vue single-file components
 
-Installation:
+## <a name="installation"></a>Installation
+
 ```
 npm install --save-dev eslint-plugin-misc
 ```
 
-Configuring:
+## <a name="eslint-configuration-file"></a>ESLint configuration file
+
 ```js
 // .eslintrc.js
 module.exports = {
@@ -89,7 +98,7 @@ You can use the following rules to create custom checks:
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 
-## <a name="rules-under-consideration"></a>Rules under consideration
+## <a name="planned-rules"></a>Planned rules
 
 - boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
 - consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.
@@ -102,3 +111,12 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - sort-switch-cases &mdash; Sort switch cases.
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
 - vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).
+
+## <a name="related-packages"></a>Related packages
+
+- [eslint-plugin-misc](https://www.npmjs.com/package/eslint-plugin-misc) &mdash; ESLint plugin.
+- [quasar-extension](https://www.npmjs.com/package/quasar-extension) &mdash; Quasar extension.
+- [real-fns](https://www.npmjs.com/package/real-fns) &mdash; A collection of utility functions.
+- [real-classes](https://www.npmjs.com/package/real-classes) &mdash; A collection of utility classes.
+- [real-facades](https://www.npmjs.com/package/real-facades) &mdash; Facades (each facade provides interface to pluggable implementation).
+- [real-framework](https://www.npmjs.com/package/real-framework) &mdash; Facade implementations.
