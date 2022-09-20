@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrapRule = exports.setCasing = exports.selector = exports.nodeText = exports.mergeListeners = exports.createRegexpMatcher = exports.createFileMatcher = exports.projectRoot = exports.isTypeGroups = exports.isTypeGroup = exports.isSelector = exports.isRegexpPattern = exports.isFilePattern = exports.isCasing = void 0;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
-const real_fns_1 = require("real-fns");
 const types_1 = require("./types");
+const real_fns_1 = require("real-fns");
 const utils_1 = require("@typescript-eslint/utils");
+const real_classes_1 = require("real-classes");
 const minimatch_1 = tslib_1.__importDefault(require("minimatch"));
 exports.isCasing = real_fns_1.is.factory(real_fns_1.is.enumeration, types_1.Casing);
 exports.isFilePattern = real_fns_1.is.or.factory(real_fns_1.is.string, real_fns_1.is.strings);
@@ -64,7 +65,7 @@ exports.createRegexpMatcher = createRegexpMatcher;
  * @returns Merged listeners.
  */
 function mergeListeners(...listeners) {
-    const accumulator = new real_fns_1.Accumulator();
+    const accumulator = new real_classes_1.Accumulator();
     for (const listener of listeners)
         for (const [name, visitor] of real_fns_1.o.entries(listener))
             accumulator.push(name, real_fns_1.as.callable(visitor));

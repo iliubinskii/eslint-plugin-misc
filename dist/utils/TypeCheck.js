@@ -438,7 +438,7 @@ const safeBooleanWithUndefined = new real_fns_1.ReadonlySet([
 /**
  * Asserts node to be expression.
  *
- * @param tsNode - Typescript node.
+ * @param tsNode - TypeScript node.
  * @param error - Error.
  */
 function assertExpression(tsNode, error) {
