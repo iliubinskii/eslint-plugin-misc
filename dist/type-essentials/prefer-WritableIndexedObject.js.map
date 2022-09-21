@@ -1,0 +1,1 @@
+{"version":3,"file":"prefer-WritableIndexedObject.js","sourceRoot":"","sources":["../../src/type-essentials/prefer-WritableIndexedObject.ts"],"names":[],"mappings":";AAAA,mDAAmD;;;;AAEnD,wDAAkC;AAClC,kCAA+B;AAElB,QAAA,2BAA2B,GAAG,KAAK,CAAC,QAAQ,CAAC;IACxD,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,0CAA0C;YACnD,QAAQ,EACN,oJAAoJ;SACvJ;KACF;CACF,CAAC,CAAC"}

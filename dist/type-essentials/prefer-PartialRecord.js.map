@@ -1,0 +1,1 @@
+{"version":3,"file":"prefer-PartialRecord.js","sourceRoot":"","sources":["../../src/type-essentials/prefer-PartialRecord.ts"],"names":[],"mappings":";AAAA,mDAAmD;;;;AAEnD,wDAAkC;AAClC,kCAA+B;AAElB,QAAA,mBAAmB,GAAG,KAAK,CAAC,QAAQ,CAAC;IAChD,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,kCAAkC;YAC3C,QAAQ,EACN,qIAAqI;SACxI;KACF;CACF,CAAC,CAAC"}
