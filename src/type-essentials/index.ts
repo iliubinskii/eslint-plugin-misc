@@ -11,7 +11,7 @@ import { preferUndefinedShorthandTypeName } from "./prefer-undefined-shorthand-t
 import { preferWritableIndexedObject } from "./prefer-WritableIndexedObject";
 import { preferWritableRecord } from "./prefer-WritableRecord";
 
-export const types = o.prefixKeys(
+export const typeEssentials = o.prefixKeys(
   {
     "no-Writable": noWritable,
     "no-ts-toolbelt": noTsToolbelt,
@@ -25,5 +25,5 @@ export const types = o.prefixKeys(
     "prefer-undefined-shorthand-type": preferUndefinedShorthandType,
     "prefer-undefined-shorthand-typeName": preferUndefinedShorthandTypeName
   },
-  "types/"
+  "type-essentials/"
 );

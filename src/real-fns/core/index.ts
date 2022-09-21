@@ -12,7 +12,6 @@ import { programFlow } from "./program-flow";
 import { reflect } from "./reflect";
 import { requireJsdoc } from "./require-jsdoc";
 import { requireReturnInDefineFn } from "./require-return-in-defineFn";
-import { types } from "./types";
 
 export const core = {
   "no-evaluate-type-param": noEvaluateTypeParam,
@@ -28,6 +27,5 @@ export const core = {
   ...json,
   ...object,
   ...programFlow,
-  ...reflect,
-  ...types
+  ...reflect
 } as const;

@@ -1,7 +1,7 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["real-fns/types/prefer-WritableIndexedObject"];
+const rule = rules["type-essentials/prefer-WritableIndexedObject"];
 
 const MessageId = utils.getMessageId(rule);
 

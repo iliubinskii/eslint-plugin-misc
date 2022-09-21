@@ -1,14 +1,14 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["real-fns/types/prefer-WritableRecord"];
+const rule = rules["type-essentials/no-ts-toolbelt"];
 
 const MessageId = utils.getMessageId(rule);
 
-utils.testRule("prefer-WritableRecord", rule, [
+utils.testRule("no-ts-toolbelt", rule, [
   {
     name: `Test at line ${getCurrentLine().line}`,
-    code: "type T = Record<string, number>;",
+    code: 'import { FilterKeys } from "ts-toolbelt/out/Object/FilterKeys";',
     errors: [{ line: 1, messageId: MessageId.customMessage }]
   }
 ]);

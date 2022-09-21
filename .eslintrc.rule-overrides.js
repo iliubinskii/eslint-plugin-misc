@@ -347,7 +347,7 @@ module.exports = {
     },
     {
       files:
-        "./src/{quasar-extension,real-config,real-facades,real-fns,real-framework}/**",
+        "./src/{quasar-extension,real-classes,real-config,real-facades,real-fns,real-service-providers,type-essentials}/**",
       rules: {
         "misc/no-restricted-syntax/no-unnecessary-docs": [
           "warn",
@@ -662,6 +662,19 @@ module.exports = {
           "warn",
           {
             prefix: "quasar-extension/vue/template/",
+            selector:
+              "VariableDeclarator[id.name=rule] > .init > Literal.property"
+          }
+        ]
+      }
+    },
+    {
+      files: "./tests/type-essentials/**",
+      rules: {
+        "misc/match-filename/testRule-rule": [
+          "warn",
+          {
+            prefix: "type-essentials/",
             selector:
               "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }

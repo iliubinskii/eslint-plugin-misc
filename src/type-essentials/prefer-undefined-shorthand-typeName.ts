@@ -1,7 +1,7 @@
 /* eslint-disable misc/consistent-filename -- Ok */
 
-import * as utils from "../../../utils";
-import { core } from "../../../core";
+import * as utils from "../utils";
+import { core } from "../core";
 
 // eslint-disable-next-line misc/max-identifier-blocks -- Ok
 export const preferUndefinedShorthandTypeName = utils.wrapRule({

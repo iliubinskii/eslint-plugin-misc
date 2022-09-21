@@ -1,5 +1,5 @@
-import * as utils from "../../../utils";
-import { core } from "../../../core";
+import * as utils from "../utils";
+import { core } from "../core";
 
 export const preferUndefinedShorthandLiteral = utils.wrapRule({
   rule: core["no-restricted-syntax"],

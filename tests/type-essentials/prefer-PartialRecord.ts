@@ -1,14 +1,14 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["real-fns/types/prefer-undefined-shorthand-type"];
+const rule = rules["type-essentials/prefer-PartialRecord"];
 
 const MessageId = utils.getMessageId(rule);
 
-utils.testRule("prefer-undefined-shorthand-type", rule, [
+utils.testRule("prefer-PartialRecord", rule, [
   {
     name: `Test at line ${getCurrentLine().line}`,
-    code: "type T = boolean | undefined;",
+    code: "type T = Partial<Rec<string, number>>;",
     errors: [{ line: 1, messageId: MessageId.customMessage }]
   }
 ]);

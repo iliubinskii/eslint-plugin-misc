@@ -4,10 +4,12 @@ import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
 import { quasarExtension } from "./quasar-extension";
+import { realClasses } from "./real-classes";
 import { realConfig } from "./real-config";
 import { realFacades } from "./real-facades";
-import { realFramework } from "./real-framework";
-import { realFunctions } from "./real-fns";
+import { realFns } from "./real-fns";
+import { realServiceProviders } from "./real-service-providers";
+import { typeEssentials } from "./type-essentials";
 import { typescript } from "./typescript";
 import { vue } from "./vue";
 
@@ -39,11 +41,13 @@ export const configs = evaluate((): IndexedRecord => {
         "misc/quasar-extension/vue/template/prefer-quasar-components": "off"
       }
     },
+    "real-classes": { rules: rules(realClasses) },
     "real-config": { rules: rules(realConfig) },
     "real-facades": { rules: rules(realFacades) },
-    "real-fns.core": { rules: rules(realFunctions.core) },
-    "real-fns.jest": { rules: rules(realFunctions.jest) },
-    "real-framework": { rules: rules(realFramework) },
+    "real-fns.core": { rules: rules(realFns.core) },
+    "real-fns.jest": { rules: rules(realFns.jest) },
+    "real-service-providers": { rules: rules(realServiceProviders) },
+    "type-essentials": { rules: rules(typeEssentials) },
     "typescript": {
       rules: {
         ...rules(typescript),

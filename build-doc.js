@@ -33,11 +33,13 @@ const documentedRules = o.entries(
     o.omit(
       rules,
       (_rule, name) =>
+        name.startsWith("quasar-extension/") ||
+        name.startsWith("real-classes/") ||
         name.startsWith("real-config/") ||
         name.startsWith("real-facades/") ||
-        name.startsWith("real-framework/") ||
         name.startsWith("real-fns/") ||
-        name.startsWith("quasar-extension/")
+        name.startsWith("real-service-providers/") ||
+        name.startsWith("type-essentials/")
     ),
     (_value1, _value2, key1, key2) => {
       if (key1.includes("/") && !key2.includes("/")) return 1;
