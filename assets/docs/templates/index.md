@@ -20,9 +20,9 @@
 
 ## <a name="overview"></a>Overview
 
-This plugin includes miscellaneous ESLint rules for:
-- Javascript files
-- Typescript files
+A collection of ESLint rules for:
+- JavaScript files
+- TypeScript files
 - Jest test files
 - Vue single-file components
 
@@ -119,4 +119,4 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - [real-fns](https://www.npmjs.com/package/real-fns) &mdash; A collection of utility functions.
 - [real-classes](https://www.npmjs.com/package/real-classes) &mdash; A collection of utility classes.
 - [real-facades](https://www.npmjs.com/package/real-facades) &mdash; Facades (each facade provides interface to pluggable implementation).
-- [real-framework](https://www.npmjs.com/package/real-framework) &mdash; Facade implementations.
+- [real-service-providers](https://www.npmjs.com/package/real-service-providers) &mdash; Facade implementations.
