@@ -1,6 +1,8 @@
+# {{name}}
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / {{name}}
 
-# {{name}}
+## Overview
 
 {{description}}
 

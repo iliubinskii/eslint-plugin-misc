@@ -72,8 +72,8 @@ const documentedRules = o.entries(
         .join("\n")
     );
 
-  fs.writeFileSync("./README.md", index);
-  fs.writeFileSync("./docs/index.md", index);
+  fs.writeFileSync("./README.md", `${index}\n`);
+  fs.writeFileSync("./docs/index.md", `${index}\n`);
 }
 
 {
