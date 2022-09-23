@@ -1,6 +1,8 @@
+# sort-array
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-array
 
-# sort-array
+## Overview
 
 Sorts arrays.
 

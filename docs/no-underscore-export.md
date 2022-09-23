@@ -1,6 +1,8 @@
+# no-underscore-export
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-underscore-export
 
-# no-underscore-export
+## Overview
 
 Disallows underscore export.
 

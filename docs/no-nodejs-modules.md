@@ -1,6 +1,8 @@
+# no-nodejs-modules
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-nodejs-modules
 
-# no-nodejs-modules
+## Overview
 
 Disallows importing NodeJS modules.
 

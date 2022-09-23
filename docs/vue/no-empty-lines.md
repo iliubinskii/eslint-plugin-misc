@@ -1,6 +1,8 @@
+# vue/no-empty-lines
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/no-empty-lines
 
-# vue/no-empty-lines
+## Overview
 
 Disallow empty lines inside &lt;template&gt; section.
 

@@ -1,6 +1,8 @@
+# no-index-import
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-index-import
 
-# no-index-import
+## Overview
 
 Disallows "." import.
 

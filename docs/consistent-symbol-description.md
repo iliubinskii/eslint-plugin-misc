@@ -1,6 +1,8 @@
+# consistent-symbol-description
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-symbol-description
 
-# consistent-symbol-description
+## Overview
 
 Requires consistent symbol description.
 

@@ -1,6 +1,8 @@
+# prefer-const-require
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / prefer-const-require
 
-# prefer-const-require
+## Overview
 
 Requires "require()" to be assigned to variable.
 

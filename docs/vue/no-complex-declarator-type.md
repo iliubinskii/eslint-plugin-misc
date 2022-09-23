@@ -1,6 +1,8 @@
+# vue/no-complex-declarator-type
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/no-complex-declarator-type
 
-# vue/no-complex-declarator-type
+## Overview
 
 Disallow complex declarator types.
 

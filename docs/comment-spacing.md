@@ -1,6 +1,8 @@
+# comment-spacing
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / comment-spacing
 
-# comment-spacing
+## Overview
 
 Requires consistent empty lines around comments.
 

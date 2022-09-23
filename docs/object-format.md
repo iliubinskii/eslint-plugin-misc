@@ -1,6 +1,8 @@
+# object-format
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / object-format
 
-# object-format
+## Overview
 
 Requires multiline or single-line object format.
 

@@ -23,7 +23,7 @@ exports.configs = (0, real_fns_1.evaluate)(() => {
         "jest": { rules: rules(jest_1.jest) },
         "quasar-extension.core": { rules: rules(quasar_extension_1.quasarExtension.core) },
         "quasar-extension.extras": {
-            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.quasarExtension.extras)), { "misc/typescript/consistent-optional-props": "off", "misc/typescript/no-empty-interfaces": "off" })
+            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.quasarExtension.extras)), { "misc/consistent-optional-props": "off", "misc/typescript/no-empty-interfaces": "off" })
         },
         "quasar-extension.jest": { rules: rules(quasar_extension_1.quasarExtension.jest) },
         "quasar-extension.vue": {

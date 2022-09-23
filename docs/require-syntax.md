@@ -1,6 +1,8 @@
+# require-syntax
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / require-syntax
 
-# require-syntax
+## Overview
 
 Requires AST syntax.
 

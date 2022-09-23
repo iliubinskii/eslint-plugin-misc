@@ -18,21 +18,22 @@
 - [Planned rules](#planned-rules)
 - [Related packages](#related-packages)
 
-## <a name="overview"></a>Overview
+## [](#overview)Overview
 
 A collection of ESLint rules for:
+
 - JavaScript files
 - TypeScript files
 - Jest test files
 - Vue single-file components
 
-## <a name="installation"></a>Installation
+## [](#installation)Installation
 
-```
+```sh
 npm install --save-dev eslint-plugin-misc
 ```
 
-## <a name="eslint-configuration-file"></a>ESLint configuration file
+## [](#eslint-configuration-file)ESLint configuration file
 
 ```js
 // .eslintrc.js
@@ -43,7 +44,7 @@ module.exports = {
 };
 ```
 
-## <a name="configs"></a>Configs
+## [](#configs)Configs
 
 - plugin:misc/all &mdash; All rules.
 - plugin:misc/core &mdash; Core rules.
@@ -52,7 +53,7 @@ module.exports = {
 - plugin:misc/typescript &mdash; Rules for typescript files.
 - plugin:misc/vue &mdash; Rules for Vue single-file components.
 
-## <a name="rules"></a>Rules
+## [](#rules)Rules
 
 - [class-match-filename](https://ilyub.github.io/eslint-plugin-misc/class-match-filename.html) &mdash; Requires class name to match filename.
 - [comment-spacing](https://ilyub.github.io/eslint-plugin-misc/comment-spacing.html) &mdash; Requires consistent empty lines around comments.
@@ -144,9 +145,10 @@ module.exports = {
 - [vue/no-readonly-v-model](https://ilyub.github.io/eslint-plugin-misc/vue/no-readonly-v-model.html) &mdash; Disallows using readonly property as model value.
 - [vue/sort-v-bind](https://ilyub.github.io/eslint-plugin-misc/vue/sort-v-bind.html) &mdash; Sorts "v-bind" directive.
 
-## <a name="synonyms"></a>Synonyms
+## [](#synonyms)Synonyms
 
 You can create rule synonyms like this:
+
 ```js
 // .eslintrc.synonyms.js
 module.exports = [
@@ -179,9 +181,10 @@ module.exports = {
 };
 ```
 
-## <a name="custom-checks"></a>Custom checks
+## [](#custom-checks)Custom checks
 
 You can use the following rules to create custom checks:
+
 - [no-restricted-syntax](https://ilyub.github.io/eslint-plugin-misc/no-restricted-syntax.html) &mdash; Disallows AST syntax (an extended version of ESLint core rule).
 - [require-syntax](https://ilyub.github.io/eslint-plugin-misc/require-syntax.html) &mdash; Requires AST syntax.
 - [wrap](https://ilyub.github.io/eslint-plugin-misc/wrap.html) &mdash; Wraps and modifies third-party rule.
@@ -189,7 +192,7 @@ You can use the following rules to create custom checks:
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 
-## <a name="planned-rules"></a>Planned rules
+## [](#planned-rules)Planned rules
 
 - boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
 - consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.
@@ -203,7 +206,7 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
 - vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).
 
-## <a name="related-packages"></a>Related packages
+## [](#related-packages)Related packages
 
 - [eslint-plugin-misc](https://www.npmjs.com/package/eslint-plugin-misc) &mdash; ESLint plugin.
 - [quasar-extension](https://www.npmjs.com/package/quasar-extension) &mdash; Quasar extension.

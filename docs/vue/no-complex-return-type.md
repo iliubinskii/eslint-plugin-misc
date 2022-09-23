@@ -1,6 +1,8 @@
+# vue/no-complex-return-type
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/no-complex-return-type
 
-# vue/no-complex-return-type
+## Overview
 
 Disallow complex function return types.
 

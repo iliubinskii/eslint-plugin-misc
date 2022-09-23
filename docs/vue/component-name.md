@@ -1,6 +1,8 @@
+# vue/component-name
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/component-name
 
-# vue/component-name
+## Overview
 
 Requires using enums instead of string literals.
 

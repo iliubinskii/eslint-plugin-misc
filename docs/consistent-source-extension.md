@@ -1,6 +1,8 @@
+# consistent-source-extension
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-source-extension
 
-# consistent-source-extension
+## Overview
 
 Requires consistent import/export source extension.
 

@@ -1,6 +1,8 @@
+# match-filename
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / match-filename
 
-# match-filename
+## Overview
 
 Requires that AST element matches filename.
 

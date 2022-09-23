@@ -1,6 +1,8 @@
+# sort-keys
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-keys
 
-# sort-keys
+## Overview
 
 Sorts object keys.
 

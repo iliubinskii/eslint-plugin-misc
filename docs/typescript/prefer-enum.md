@@ -1,6 +1,8 @@
+# typescript/prefer-enum
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-enum
 
-# typescript/prefer-enum
+## Overview
 
 Requires using enums instead of string literals.
 

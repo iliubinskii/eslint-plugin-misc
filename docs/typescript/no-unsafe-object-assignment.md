@@ -1,6 +1,8 @@
+# typescript/no-unsafe-object-assignment
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-unsafe-object-assignment
 
-# typescript/no-unsafe-object-assignment
+## Overview
 
 Reports unsafe object assignments:
 - Unsafe optional assignment

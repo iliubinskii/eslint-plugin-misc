@@ -1,6 +1,8 @@
+# no-self-import
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-self-import
 
-# no-self-import
+## Overview
 
 Disallows self-import.
 

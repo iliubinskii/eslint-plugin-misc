@@ -1,6 +1,8 @@
+# jest/no-toThrow-literal
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / jest/no-toThrow-literal
 
-# jest/no-toThrow-literal
+## Overview
 
 Disallows string argument in "toThrow" matcher.
 

@@ -1,6 +1,8 @@
+# no-unnecessary-break
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-unnecessary-break
 
-# no-unnecessary-break
+## Overview
 
 Disallows unnecessary "break".
 

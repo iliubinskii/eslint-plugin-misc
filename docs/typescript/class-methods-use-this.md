@@ -1,6 +1,8 @@
+# typescript/class-methods-use-this
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/class-methods-use-this
 
-# typescript/class-methods-use-this
+## Overview
 
 This rule wraps "class-methods-use-this" core rule, but skips methods with "this: void" argument.
 

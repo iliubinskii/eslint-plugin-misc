@@ -1,6 +1,8 @@
+# sort-construct-signature
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-construct-signature
 
-# sort-construct-signature
+## Overview
 
 Requires construct signature to be first child.
 

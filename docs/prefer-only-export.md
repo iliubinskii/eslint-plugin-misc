@@ -1,6 +1,8 @@
+# prefer-only-export
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / prefer-only-export
 
-# prefer-only-export
+## Overview
 
 Requires only export if given AST element if found.
 

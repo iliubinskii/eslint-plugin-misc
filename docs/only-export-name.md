@@ -1,6 +1,8 @@
+# only-export-name
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / only-export-name
 
-# only-export-name
+## Overview
 
 Requires that only export matches filename.
 

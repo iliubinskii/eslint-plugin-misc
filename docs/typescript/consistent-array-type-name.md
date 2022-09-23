@@ -1,6 +1,8 @@
+# typescript/consistent-array-type-name
+
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/consistent-array-type-name
 
-# typescript/consistent-array-type-name
+## Overview
 
 Requires consistent array type name.
 
