@@ -14,6 +14,7 @@
     "[php]": {
       "editor.defaultFormatter": "junstyle.php-cs-fixer"
     },
+    "debug.javascript.codelens.npmScripts": "never",
     "editor.codeActionsOnSave": {
       "source.fixAll": true,
       "source.fixAll.eslint": true
@@ -30,9 +31,8 @@
     "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "intelephense.files.exclude": [
-      "**/{.DS_Store,.git,.hg,.history,.svn,CVS,bower_components}/**",
-      "**/vendor/**/{Tests,tests,vendor}/**"
+    "foldOnOpen.targets": [
+      "AllBlockComments"
     ],
     "javascript.suggestionActions.enabled": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -41,10 +41,13 @@
     "php-cs-fixer.executablePathWindows": "${workspaceFolder}/vendor/bin/php-cs-fixer.bat",
     "php-cs-fixer.onsave": true,
     "search.exclude": {
+      "CHANGELOG.md": true,
+      "composer.lock": true,
       "dist": true,
       "docs": true,
       "es": true,
-      "lcov.info": true
+      "lcov.info": true,
+      "package-lock.json": true
     },
     "sort-json.settings.contextMenu": {
       "sortJSON": false,
