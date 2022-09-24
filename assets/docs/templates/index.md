@@ -10,12 +10,11 @@
 
 - [Overview](#overview)
 - [Installation](#installation)
-- [ESLint configuration file](#eslint-configuration-file)
 - [Configs](#configs)
 - [Rules](#rules)
 - [Synonyms](#synonyms)
 - [Custom checks](#custom-checks)
-- [Planned rules](#planned-rules)
+- [Planned in future releases](#planned-in-future-releases)
 - [Related packages](#related-packages)
 
 ## [](#overview)Overview
@@ -32,8 +31,6 @@ A collection of ESLint rules for:
 ```sh
 npm install --save-dev eslint-plugin-misc
 ```
-
-## [](#eslint-configuration-file)ESLint configuration file
 
 ```js
 // .eslintrc.js
@@ -59,7 +56,7 @@ module.exports = {
 
 ## [](#synonyms)Synonyms
 
-You can create rule synonyms like this:
+You can use the same rule several times by adding synonym:
 
 ```js
 // .eslintrc.synonyms.js
@@ -95,13 +92,14 @@ module.exports = {
 
 ## [](#custom-checks)Custom checks
 
-You can use the following rules to create custom checks:
+Many custom checks can be created without writing full-fledged ESLint plugin.
+Use the rules below to create custom checks or adapt existing third-party rules:
 
-{{rules:custom-checks}}
+{{rules:custom}}
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 
-## [](#planned-rules)Planned rules
+## [](#planned-in-future-releases)Planned in future releases
 
 - boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
 - consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.

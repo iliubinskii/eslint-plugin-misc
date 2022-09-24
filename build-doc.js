@@ -65,7 +65,7 @@ const documentedRules = o.entries(
       documentedRules.map(([name, rule]) => listItem(name, rule)).join("\n")
     )
     .replace(
-      "{{rules:custom-checks}}",
+      "{{rules:custom}}",
       documentedRules
         .filter(([name]) => customChecks.has(name))
         .map(([name, rule]) => listItem(name, rule))

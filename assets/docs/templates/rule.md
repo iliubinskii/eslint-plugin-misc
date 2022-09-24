@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / {{name}}
 
-## Overview
-
 {{description}}
 
 {{config}}
