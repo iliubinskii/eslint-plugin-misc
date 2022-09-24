@@ -5,7 +5,7 @@ export const noTsToolbelt = utils.wrapRule({
   rule: core["no-restricted-syntax"],
   options: [
     {
-      message: 'Use "real-fns" type instead',
+      message: 'Use "type-essentials" type instead',
       selector: [
         "ImportDeclaration > Literal.source[value=ts-toolbelt/out/Object/FilterKeys]",
         "ImportDeclaration > Literal.source[value=ts-toolbelt/out/Object/Optional]",
