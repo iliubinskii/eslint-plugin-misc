@@ -14,17 +14,16 @@
 - [Rules](#rules)
 - [Synonyms](#synonyms)
 - [Custom checks](#custom-checks)
-- [Planned in future releases](#planned-in-future-releases)
+- [Planned rules](#planned-rules)
 - [Related packages](#related-packages)
 
 ## [](#overview)Overview
 
 A collection of ESLint rules for:
 
-- JavaScript files
-- TypeScript files
+- JavaScript / TypeScript files
 - Jest test files
-- Vue single-file components
+- Vue single-file components (using vue-eslint-parser)
 
 ## [](#installation)Installation
 
@@ -68,13 +67,13 @@ module.exports = [
 // .eslintrc.js
 module.exports = {
   rules: {
-    // Same as ESLint core rule, but suppresses warnings for methods that have "this: void" annotation.
+    // Same as ESLint core rule, but suppresses warnings for methods that have "this" parameter.
     "misc/wrap/class-methods-use-this": [
       "error",
       {
         plugin: "eslint",
         rule: "class-methods-use-this",
-        skip: "FunctionExpression[params.0.name=this][params.0.typeAnnotation.typeAnnotation.type=TSVoidKeyword]"
+        skip: "FunctionExpression[params.0.name=this]"
       }
     ],
     // Same as typescript-eslint rule, but suppresses warnings for enums.
@@ -99,7 +98,7 @@ Use the rules below to create custom checks or adapt existing third-party rules:
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 
-## [](#planned-in-future-releases)Planned in future releases
+## [](#planned-rules)Planned rules
 
 - boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
 - consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.

@@ -10,7 +10,6 @@
 
 - [Overview](#overview)
 - [Installation](#installation)
-- [ESLint configuration file](#eslint-configuration-file)
 - [Configs](#configs)
 - [Rules](#rules)
 - [Synonyms](#synonyms)
@@ -22,18 +21,15 @@
 
 A collection of ESLint rules for:
 
-- JavaScript files
-- TypeScript files
+- JavaScript / TypeScript files
 - Jest test files
-- Vue single-file components
+- Vue single-file components (using vue-eslint-parser)
 
 ## [](#installation)Installation
 
 ```sh
 npm install --save-dev eslint-plugin-misc
 ```
-
-## [](#eslint-configuration-file)ESLint configuration file
 
 ```js
 // .eslintrc.js
@@ -147,7 +143,7 @@ module.exports = {
 
 ## [](#synonyms)Synonyms
 
-You can create rule synonyms like this:
+You can use the same rule several times by adding synonym:
 
 ```js
 // .eslintrc.synonyms.js
@@ -159,13 +155,13 @@ module.exports = [
 // .eslintrc.js
 module.exports = {
   rules: {
-    // Same as ESLint core rule, but suppresses warnings for methods that have "this: void" annotation.
+    // Same as ESLint core rule, but suppresses warnings for methods that have "this" parameter.
     "misc/wrap/class-methods-use-this": [
       "error",
       {
         plugin: "eslint",
         rule: "class-methods-use-this",
-        skip: "FunctionExpression[params.0.name=this][params.0.typeAnnotation.typeAnnotation.type=TSVoidKeyword]"
+        skip: "FunctionExpression[params.0.name=this]"
       }
     ],
     // Same as typescript-eslint rule, but suppresses warnings for enums.
@@ -183,7 +179,8 @@ module.exports = {
 
 ## [](#custom-checks)Custom checks
 
-You can use the following rules to create custom checks:
+Many custom checks can be created without writing full-fledged ESLint plugin.
+Use the rules below to create custom checks or adapt existing third-party rules:
 
 - [no-restricted-syntax](https://ilyub.github.io/eslint-plugin-misc/no-restricted-syntax.html) &mdash; Disallows AST syntax (an extended version of ESLint core rule).
 - [require-syntax](https://ilyub.github.io/eslint-plugin-misc/require-syntax.html) &mdash; Requires AST syntax.
