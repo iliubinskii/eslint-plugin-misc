@@ -1,13 +1,12 @@
-name: Build
+name: publish-to-npm
 on:
   push:
     branches:
       - master
-      - develop
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_dispatch:
 jobs:
   main:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Use checkout
@@ -17,16 +16,10 @@ jobs:
       - name: Use node
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
       - name: Use npm
         run: npm install
-      - name: Scan with sonar
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Publish to npm
-        if: github.ref == 'refs/heads/master'
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
