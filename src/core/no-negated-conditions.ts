@@ -9,8 +9,10 @@ export const noNegatedConditions = utils.wrapRule({
       selector: [
         'IfStatement > BinaryExpression[operator="!=="]',
         'IfStatement > UnaryExpression[operator="!"]',
-        ':not(LogicalExpression) > LogicalExpression > BinaryExpression.left[operator="!=="]',
-        ':not(LogicalExpression) > LogicalExpression > UnaryExpression.left[operator="!"]'
+        ':not(LogicalExpression) > LogicalExpression[operator="&&"] > BinaryExpression.left[operator="!=="]',
+        ':not(LogicalExpression) > LogicalExpression[operator="&&"] > UnaryExpression.left[operator="!"]',
+        ':not(LogicalExpression) > LogicalExpression[operator="||"] > BinaryExpression[operator="!=="]',
+        ':not(LogicalExpression) > LogicalExpression[operator="||"] > UnaryExpression[operator="!"]'
       ]
     }
   ],
