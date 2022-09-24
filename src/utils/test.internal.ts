@@ -41,5 +41,5 @@ export interface ValidTestCase<O extends unknowns>
 }
 
 export type ValidTestCases<O extends unknowns> =
-  // prettier-break
+  // @prettier
   ReadonlyArray<ValidTestCase<O>>;
