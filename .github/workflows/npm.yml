@@ -6,18 +6,18 @@ on:
   workflow_dispatch:
 jobs:
   main:
-    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-      - name: Use checkout
+      - name: Checkout master branch
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Use node
+          ref: master
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Use npm
+      - name: Install dependencies
         run: npm install
       - name: Publish to npm
         uses: JS-DevTools/npm-publish@v1
