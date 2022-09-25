@@ -5,9 +5,7 @@ import { preferIndexedObject } from "./prefer-IndexedObject";
 import { preferIndexedRecord } from "./prefer-IndexedRecord";
 import { preferNumStr } from "./prefer-NumStr";
 import { preferPartialRecord } from "./prefer-PartialRecord";
-import { preferUndefinedShorthandLiteral } from "./prefer-undefined-shorthand-literal";
-import { preferUndefinedShorthandType } from "./prefer-undefined-shorthand-type";
-import { preferUndefinedShorthandTypeName } from "./prefer-undefined-shorthand-typeName";
+import { preferUndefinedShorthand } from "./prefer-undefined-shorthand";
 import { preferWritableIndexedObject } from "./prefer-WritableIndexedObject";
 import { preferWritableRecord } from "./prefer-WritableRecord";
 
@@ -21,9 +19,7 @@ export const typeEssentials = o.prefixKeys(
     "prefer-PartialRecord": preferPartialRecord,
     "prefer-WritableIndexedObject": preferWritableIndexedObject,
     "prefer-WritableRecord": preferWritableRecord,
-    "prefer-undefined-shorthand-literal": preferUndefinedShorthandLiteral,
-    "prefer-undefined-shorthand-type": preferUndefinedShorthandType,
-    "prefer-undefined-shorthand-typeName": preferUndefinedShorthandTypeName
+    "prefer-undefined-shorthand": preferUndefinedShorthand
   },
   "type-essentials/"
 );
