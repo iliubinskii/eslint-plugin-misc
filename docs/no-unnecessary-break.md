@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-unnecessary-break
 
-## Overview
-
 Disallows unnecessary "break".
 
 ```ts

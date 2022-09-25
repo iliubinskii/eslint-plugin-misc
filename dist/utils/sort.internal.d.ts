@@ -1,5 +1,5 @@
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { stringU } from "real-fns";
+import type { stringU } from "type-essentials";
 export declare enum MessageId {
     incorrectSortingOrder = "incorrectSortingOrder",
     incorrectSortingOrderId = "incorrectSortingOrderId"

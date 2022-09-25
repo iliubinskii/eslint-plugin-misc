@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/element-contents-spacing
 
-## Overview
-
 Controls spaces around HTML element contents.
 
 ```ts

@@ -1,6 +1,6 @@
 import * as utils from "../../utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { strings } from "real-fns";
+import type { strings } from "type-essentials";
 export interface Options {
     readonly customOrder?: strings;
     readonly selector: utils.Selector;

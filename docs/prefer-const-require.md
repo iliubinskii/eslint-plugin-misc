@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / prefer-const-require
 
-## Overview
-
 Requires "require()" to be assigned to variable.
 
 ```ts

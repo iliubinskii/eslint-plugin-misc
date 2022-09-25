@@ -1,7 +1,7 @@
 import type { AllowDisallowPatterns, FilePattern, Matcher, RegexpPattern, RuleListeners, Selector } from "./types";
 import { Casing, TypeGroup } from "./types";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { unknowns } from "real-fns";
+import type { unknowns } from "type-essentials";
 import { fn, is } from "real-fns";
 import type { RuleListener, RuleModule } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { WrapRuleOptions } from "./misc.internal";

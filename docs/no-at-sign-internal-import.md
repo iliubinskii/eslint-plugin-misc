@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-at-sign-internal-import
 
-## Overview
-
 Disallows "@/**" import.
 
 ```ts

@@ -1,4 +1,4 @@
-import type { IndexedRecord } from "real-fns";
+import type { IndexedRecord } from "type-essentials";
 /**
  * Creates synonyms.
  *

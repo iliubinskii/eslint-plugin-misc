@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-chain-coalescence-mixture
 
-## Overview
-
 Disallows mixing of chain and coalescence operators.
 
 ```ts

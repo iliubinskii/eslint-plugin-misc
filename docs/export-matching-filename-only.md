@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / export-matching-filename-only
 
-## Overview
-
 Requires that export matching filename is the only export.
 
 ```ts

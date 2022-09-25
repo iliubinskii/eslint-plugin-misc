@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / wrap
 
-## Overview
-
 Wraps and modifies third-party rule.
 
 ```ts

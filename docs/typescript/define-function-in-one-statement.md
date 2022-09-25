@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/define-function-in-one-statement
 
-## Overview
-
 Requires that function is defined in one statement.
 
 ```ts

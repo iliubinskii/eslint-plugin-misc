@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-param-reassign
 
-## Overview
-
 This rule wraps "no-param-reassign" core rule, but allows to edit params at the top of function body.
 
 ```ts

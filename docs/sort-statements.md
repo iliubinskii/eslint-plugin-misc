@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-statements
 
-## Overview
-
 Sorts statements.
 
 ```ts

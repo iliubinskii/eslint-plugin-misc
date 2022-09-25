@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-enum-members
 
-## Overview
-
 Requires consistent key-value pairs inside enums (key should match value).
 
 ```ts

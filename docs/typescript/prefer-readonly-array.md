@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-array
 
-## Overview
-
 Disallows writable arrays.
 
 ```ts

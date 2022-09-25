@@ -1,5 +1,5 @@
 import { is } from "real-fns";
-import type { strings } from "real-fns";
+import type { strings } from "type-essentials";
 export interface Suboptions {
     readonly hierarchy: stringsArray;
 }

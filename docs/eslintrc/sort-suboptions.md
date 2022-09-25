@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / eslintrc/sort-suboptions
 
-## Overview
-
 Sorts safely sortable arrays in eslint configuration files.
 
 ```ts

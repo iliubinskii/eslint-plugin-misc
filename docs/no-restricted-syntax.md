@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-restricted-syntax
 
-## Overview
-
 Disallows AST syntax (an extended version of ESLint core rule).
 
 ```ts

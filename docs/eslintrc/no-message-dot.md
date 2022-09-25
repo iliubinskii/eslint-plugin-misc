@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / eslintrc/no-message-dot
 
-## Overview
-
 Disallows dot at the end of message.
 
 ```ts

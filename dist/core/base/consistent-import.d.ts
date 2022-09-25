@@ -1,5 +1,5 @@
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { strings } from "real-fns";
+import type { strings } from "type-essentials";
 export interface Suboptions {
     readonly _id: string;
     readonly altLocalNames: strings;

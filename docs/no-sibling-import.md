@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-sibling-import
 
-## Overview
-
 Restricts importing siblings.
 
 ```ts

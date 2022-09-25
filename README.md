@@ -137,7 +137,6 @@ module.exports = {
 - [vue/element-contents-spacing](https://ilyub.github.io/eslint-plugin-misc/vue/element-contents-spacing.html) &mdash; Controls spaces around HTML element contents.
 - [vue/no-complex-declarator-type](https://ilyub.github.io/eslint-plugin-misc/vue/no-complex-declarator-type.html) &mdash; Disallow complex declarator types.
 - [vue/no-complex-return-type](https://ilyub.github.io/eslint-plugin-misc/vue/no-complex-return-type.html) &mdash; Disallow complex function return types.
-- [vue/no-empty-lines](https://ilyub.github.io/eslint-plugin-misc/vue/no-empty-lines.html) &mdash; Disallow empty lines inside &lt;template&gt; section.
 - [vue/no-readonly-v-model](https://ilyub.github.io/eslint-plugin-misc/vue/no-readonly-v-model.html) &mdash; Disallows using readonly property as model value.
 - [vue/sort-v-bind](https://ilyub.github.io/eslint-plugin-misc/vue/sort-v-bind.html) &mdash; Sorts "v-bind" directive.
 

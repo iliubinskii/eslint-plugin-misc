@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-array-type-alias
 
-## Overview
-
 Disallows unsafe "Object.assign".
 
 ```ts

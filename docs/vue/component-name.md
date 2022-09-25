@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/component-name
 
-## Overview
-
 Requires using enums instead of string literals.
 
 ```ts

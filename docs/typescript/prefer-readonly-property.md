@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-property
 
-## Overview
-
 Disallows writable properties.
 
 ```ts

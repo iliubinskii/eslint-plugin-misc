@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-symbol-description
 
-## Overview
-
 Requires consistent symbol description.
 
 ```ts

@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-boolean-literal-type
 
-## Overview
-
 Disallows boolean literal type.
 
 ```ts

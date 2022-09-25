@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / restrict-identifier-characters
 
-## Overview
-
 Requires "require()" to be assigned to variable.
 
 ```ts

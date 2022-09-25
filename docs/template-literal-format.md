@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / template-literal-format
 
-## Overview
-
 Requires consistent padding in template literals.
 
 ```ts

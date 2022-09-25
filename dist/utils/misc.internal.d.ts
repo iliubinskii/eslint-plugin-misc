@@ -1,6 +1,6 @@
 import type { Docs } from "./types";
 import type { RuleModule } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { unknowns } from "real-fns";
+import type { unknowns } from "type-essentials";
 export interface WrapRuleOptions<M extends string, O extends unknowns> {
     readonly docs?: Docs;
     readonly options: O;

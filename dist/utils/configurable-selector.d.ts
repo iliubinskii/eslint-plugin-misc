@@ -1,4 +1,4 @@
-import type { strings } from "real-fns";
+import type { strings } from "type-essentials";
 /**
  * Creates selector.
  *

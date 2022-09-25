@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-import
 
-## Overview
-
 Requires consistent import.
 
 ```ts

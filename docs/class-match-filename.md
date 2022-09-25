@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / class-match-filename
 
-## Overview
-
 Requires class name to match filename.
 
 ```ts

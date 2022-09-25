@@ -4,7 +4,7 @@ import type { Signatures, TypeParts } from "./TypeCheck.internal";
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
 import type { TypeGroups } from "./types";
-import type { unknowns } from "real-fns";
+import type { unknowns } from "type-essentials";
 export declare class TypeCheck {
     readonly checker: ts.TypeChecker;
     /**

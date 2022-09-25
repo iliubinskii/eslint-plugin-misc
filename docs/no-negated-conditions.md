@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-negated-conditions
 
-## Overview
-
 Disallows negated conditions.
 
 ```ts

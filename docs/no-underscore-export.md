@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-underscore-export
 
-## Overview
-
 Disallows underscore export.
 
 ```ts

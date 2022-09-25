@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-inferrable-types
 
-## Overview
-
 Reports inferrable types.
 
 ```ts

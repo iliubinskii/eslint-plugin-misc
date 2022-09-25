@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/array-callback-return-type
 
-## Overview
-
 Requires boolean return type in array callbacks.
 
 ```ts

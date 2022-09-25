@@ -1,4 +1,4 @@
-# ESLint plugin with misc rules
+# ESLint plugin
 
 [![Stars](https://img.shields.io/github/stars/ilyub/eslint-plugin-misc)](https://github.com/ilyub/eslint-plugin-misc)
 [![Downloads](https://img.shields.io/npm/dm/eslint-plugin-misc)](https://www.npmjs.com/package/eslint-plugin-misc)
@@ -10,7 +10,6 @@
 
 - [Overview](#overview)
 - [Installation](#installation)
-- [ESLint configuration file](#eslint-configuration-file)
 - [Configs](#configs)
 - [Rules](#rules)
 - [Synonyms](#synonyms)
@@ -22,18 +21,15 @@
 
 A collection of ESLint rules for:
 
-- JavaScript files
-- TypeScript files
+- JavaScript / TypeScript files
 - Jest test files
-- Vue single-file components
+- Vue single-file components (using vue-eslint-parser)
 
 ## [](#installation)Installation
 
 ```sh
 npm install --save-dev eslint-plugin-misc
 ```
-
-## [](#eslint-configuration-file)ESLint configuration file
 
 ```js
 // .eslintrc.js
@@ -141,13 +137,12 @@ module.exports = {
 - [vue/element-contents-spacing](https://ilyub.github.io/eslint-plugin-misc/vue/element-contents-spacing.html) &mdash; Controls spaces around HTML element contents.
 - [vue/no-complex-declarator-type](https://ilyub.github.io/eslint-plugin-misc/vue/no-complex-declarator-type.html) &mdash; Disallow complex declarator types.
 - [vue/no-complex-return-type](https://ilyub.github.io/eslint-plugin-misc/vue/no-complex-return-type.html) &mdash; Disallow complex function return types.
-- [vue/no-empty-lines](https://ilyub.github.io/eslint-plugin-misc/vue/no-empty-lines.html) &mdash; Disallow empty lines inside &lt;template&gt; section.
 - [vue/no-readonly-v-model](https://ilyub.github.io/eslint-plugin-misc/vue/no-readonly-v-model.html) &mdash; Disallows using readonly property as model value.
 - [vue/sort-v-bind](https://ilyub.github.io/eslint-plugin-misc/vue/sort-v-bind.html) &mdash; Sorts "v-bind" directive.
 
 ## [](#synonyms)Synonyms
 
-You can create rule synonyms like this:
+You can use the same rule several times by adding synonym:
 
 ```js
 // .eslintrc.synonyms.js
@@ -159,13 +154,13 @@ module.exports = [
 // .eslintrc.js
 module.exports = {
   rules: {
-    // Same as ESLint core rule, but suppresses warnings for methods that have "this: void" annotation.
+    // Same as ESLint core rule, but suppresses warnings for methods that have "this" parameter.
     "misc/wrap/class-methods-use-this": [
       "error",
       {
         plugin: "eslint",
         rule: "class-methods-use-this",
-        skip: "FunctionExpression[params.0.name=this][params.0.typeAnnotation.typeAnnotation.type=TSVoidKeyword]"
+        skip: "FunctionExpression[params.0.name=this]"
       }
     ],
     // Same as typescript-eslint rule, but suppresses warnings for enums.
@@ -183,7 +178,8 @@ module.exports = {
 
 ## [](#custom-checks)Custom checks
 
-You can use the following rules to create custom checks:
+Many custom checks can be created without writing full-fledged ESLint plugin.
+Use the rules below to create custom checks or adapt existing third-party rules:
 
 - [no-restricted-syntax](https://ilyub.github.io/eslint-plugin-misc/no-restricted-syntax.html) &mdash; Disallows AST syntax (an extended version of ESLint core rule).
 - [require-syntax](https://ilyub.github.io/eslint-plugin-misc/require-syntax.html) &mdash; Requires AST syntax.

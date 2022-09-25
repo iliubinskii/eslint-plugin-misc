@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-unnecessary-template-literal
 
-## Overview
-
 Disallows unnecessary template literals.
 
 ```ts

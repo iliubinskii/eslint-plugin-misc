@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-shadow
 
-## Overview
-
 This rule wraps "@typescript-eslint/no-shadow" rule, but skips checking enum.
 
 ```ts

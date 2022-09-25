@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-restricted-syntax
 
-## Overview
-
 Disallows AST syntax with additional type check.
 
 ```ts

@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/exhaustive-switch
 
-## Overview
-
 Checks exhaustiveness of switch statement.
 
 ```ts

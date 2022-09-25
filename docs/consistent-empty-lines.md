@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-empty-lines
 
-## Overview
-
 Requires consistent empty lines.
 
 ```ts

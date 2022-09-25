@@ -2,8 +2,6 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-self-import
 
-## Overview
-
 Disallows self-import.
 
 ```ts
