@@ -2,7 +2,7 @@ import * as _ from "lodash-commonjs-es";
 import type { Callback } from "./export.internal";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "real-fns";
+import type { Writable } from "type-essentials";
 import { is } from "real-fns";
 import type { utils } from "..";
 

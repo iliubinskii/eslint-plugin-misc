@@ -5,7 +5,7 @@ import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { is } from "real-fns";
-import type { strings } from "real-fns";
+import type { strings } from "type-essentials";
 
 export type InterfaceOptions = readonly InterfaceOption[];
 

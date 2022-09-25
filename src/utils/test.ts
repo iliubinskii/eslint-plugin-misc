@@ -8,7 +8,7 @@ import type {
   TestCaseError,
   ValidTestCases
 } from "./test.internal";
-import type { Rec, unknowns } from "real-fns";
+import type { Rec, unknowns } from "type-essentials";
 import { o, s } from "real-fns";
 import { TSESLint } from "@typescript-eslint/utils";
 import { projectRoot } from "./misc";

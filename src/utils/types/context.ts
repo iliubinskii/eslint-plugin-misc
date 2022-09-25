@@ -4,8 +4,9 @@ import type {
   ReportDescriptor,
   RuleContext
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { s, strings, unknowns } from "real-fns";
+import type { strings, unknowns } from "type-essentials";
 import type { TSESTree } from "@typescript-eslint/utils";
+import type { s } from "real-fns";
 
 // eslint-disable-next-line misc/only-export-name -- Ok
 export interface Context<

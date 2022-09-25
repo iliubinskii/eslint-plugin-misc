@@ -9,7 +9,7 @@ import type {
 } from "./types";
 import { Casing, TypeGroup } from "./types";
 import type { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import type { Entry, unknowns } from "real-fns";
+import type { Entry, unknowns } from "type-essentials";
 import {
   ProxyHandlerAction,
   a,

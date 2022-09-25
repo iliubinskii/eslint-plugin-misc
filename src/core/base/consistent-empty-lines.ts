@@ -6,7 +6,7 @@ import type {
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { a, as, evaluate, is, s } from "real-fns";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "real-fns";
+import type { Writable } from "type-essentials";
 
 export interface Suboptions {
   readonly _id: string;

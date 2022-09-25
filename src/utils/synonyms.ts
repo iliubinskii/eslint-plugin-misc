@@ -1,4 +1,4 @@
-import type { Entry, IndexedRecord } from "real-fns";
+import type { Entry, IndexedRecord } from "type-essentials";
 import { assert, is, o } from "real-fns";
 import fs from "node:fs";
 

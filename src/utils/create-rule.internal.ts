@@ -1,5 +1,4 @@
 import type * as estree from "estree";
-import type { ClassToInterface, Rec, unknowns } from "real-fns";
 import type {
   Context,
   Docs,
@@ -10,6 +9,7 @@ import type {
   esRange,
   esRanges
 } from "./types";
+import type { Rec, unknowns } from "type-essentials";
 import type {
   RuleContext,
   RuleListener
@@ -17,6 +17,7 @@ import type {
 import { a, assert, evaluate, is, json, o, s } from "real-fns";
 import { createFileMatcher, projectRoot, setCasing } from "./misc";
 import { Casing } from "./types";
+import type { ClassToInterface } from "real-fns";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { TypeCheck } from "./TypeCheck";
 import fs from "node:fs";

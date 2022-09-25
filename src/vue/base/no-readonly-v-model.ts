@@ -3,7 +3,7 @@ import type { AST } from "vue-eslint-parser";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "real-fns";
+import type { Writable } from "type-essentials";
 
 export enum MessageId {
   noReadonlyProperty = "noReadonlyProperty"

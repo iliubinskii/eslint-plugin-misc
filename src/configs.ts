@@ -1,5 +1,5 @@
 import { evaluate, o } from "real-fns";
-import type { IndexedRecord } from "real-fns";
+import type { IndexedRecord } from "type-essentials";
 import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";

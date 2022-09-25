@@ -1,5 +1,5 @@
 import type * as ts from "typescript";
-import type { NumStr } from "real-fns";
+import type { NumStr } from "type-essentials";
 
 export type Signatures = readonly ts.Signature[];
 

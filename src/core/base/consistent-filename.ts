@@ -2,7 +2,7 @@ import * as utils from "../../utils";
 import { a, as, is } from "real-fns";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "real-fns";
+import type { Writable } from "type-essentials";
 import path from "node:path";
 
 export interface Options {

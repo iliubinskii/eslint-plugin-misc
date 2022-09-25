@@ -3,7 +3,7 @@ import * as utils from "../../utils";
 import { evaluate, is } from "real-fns";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "real-fns";
+import type { Writable } from "type-essentials";
 
 export interface Options {
   readonly checkArrayType: boolean;

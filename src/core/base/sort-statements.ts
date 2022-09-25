@@ -1,7 +1,7 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
 import { a, assert, evaluate, is, o, s } from "real-fns";
-import type { stringU, strings } from "real-fns";
+import type { stringU, strings } from "type-essentials";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";

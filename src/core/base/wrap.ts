@@ -13,7 +13,7 @@ import type {
   RuleListener,
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Writable, strings } from "real-fns";
+import type { Writable, strings } from "type-essentials";
 import type { TSESTree } from "@typescript-eslint/utils";
 
 export interface Options {

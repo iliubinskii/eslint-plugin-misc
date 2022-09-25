@@ -4,7 +4,7 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Writable, strings } from "real-fns";
+import type { Writable, strings } from "type-essentials";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { is } from "real-fns";

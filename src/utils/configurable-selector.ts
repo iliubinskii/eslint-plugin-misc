@@ -1,6 +1,6 @@
 import * as _ from "lodash-commonjs-es";
 import { assert } from "real-fns";
-import type { strings } from "real-fns";
+import type { strings } from "type-essentials";
 
 /**
  * Creates selector.
