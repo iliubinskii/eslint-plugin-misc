@@ -60,8 +60,9 @@
     "prepare": "node node_modules/real-config/bin/prepare.js",
     "sonar": "sonar-scanner",
     "test": "cf ./lcov-report && jest && git restore lcov.info",
-    "test-fast": "cf ./lcov-report && jest --config=jest.config.fast.js && git restore lcov.info",
+    "test-fast": "cf ./lcov-report && jest --max-workers=4 && git restore lcov.info",
     "test-release": "cf ./lcov-report && jest",
+    "test-single": "jest --collect-coverage=off",
     "tsc": "tsc --noEmit",
     "upgrade": "npm run ncu-upgrade && npm run npm:install"
   },
@@ -70,20 +71,20 @@
     "@types/minimatch": "^5.1.2",
     "@types/natural-compare": "^1.4.1",
     "javascript-stringify": "^2.1.0",
-    "lodash-commonjs-es": "^1.0.2",
+    "lodash-commonjs-es": "^1.0.3",
     "minimatch": "^5.1.0",
     "natural-compare": "^1.4.0",
-    "real-classes": "^1.1.0",
-    "real-fns": "^2.0.0",
+    "real-classes": "^1.1.1",
+    "real-fns": "^2.0.1",
     "tslib": "^2.4.0",
     "tsutils": "^3.21.0",
     "type-essentials": "^1.0.0",
-    "types-fix": "^1.0.2"
+    "types-fix": "^1.0.3"
   },
   "devDependencies": {
-    "eslint-plugin-misc": "^1.4.0",
+    "eslint-plugin-misc": "^1.4.1",
     "get-current-line": "^6.6.0",
-    "real-config": "^1.9.0"
+    "real-config": "^1.10.0"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
