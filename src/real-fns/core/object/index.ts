@@ -9,6 +9,7 @@ import { preferEntries } from "./prefer-entries";
 import { preferGetPrototypeOf } from "./prefer-getPrototypeOf";
 import { preferHasOwnProp } from "./prefer-hasOwnProp";
 import { preferKeys } from "./prefer-keys";
+import { preferOmitKeys } from "./prefer-omitKeys";
 import { preferValues } from "./prefer-values";
 
 export const object = o.prefixKeys(
@@ -23,6 +24,7 @@ export const object = o.prefixKeys(
     "prefer-getPrototypeOf": preferGetPrototypeOf,
     "prefer-hasOwnProp": preferHasOwnProp,
     "prefer-keys": preferKeys,
+    "prefer-omitKeys": preferOmitKeys,
     "prefer-values": preferValues
   },
   "object/"
