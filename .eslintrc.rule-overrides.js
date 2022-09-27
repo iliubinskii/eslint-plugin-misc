@@ -119,10 +119,6 @@ module.exports = {
       {
         rules: [
           {
-            filesToLint: ["./*"],
-            hierarchy: [["./jest.config"], ["./jest.config.fast"]]
-          },
-          {
             filesToLint: ["./src/utils/*"],
             hierarchy: [
               ["./TypeCheck", "./compare", "./misc"],
