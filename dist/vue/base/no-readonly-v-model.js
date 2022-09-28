@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.noReadonlyVModel = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
+const real_fns_1 = require("real-fns");
 const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
@@ -21,38 +22,38 @@ exports.noReadonlyVModel = utils.createRule({
       <script lang="ts">
       export default defineComponent({
         setup: () => {
-          const obj: SampleInterface = { value: 1 };
+          const obj: SampleInterface = { x: 1 };
 
           return { obj };
 
           interface SampleInterface {
-            readonly value: unknown;
+            readonly x: unknown;
           }
         }
       });
       </script>
 
       <template>
-        <sample-component v-model="obj.value" />
+        <sample-component v-model="obj.x" />
       </template>
     `,
         passExamples: `
       <script lang="ts">
       export default defineComponent({
         setup: () => {
-          const obj: SampleInterface = { value: 1 };
+          const obj: SampleInterface = { x: 1 };
 
           return { obj };
 
           interface SampleInterface {
-            value: unknown;
+            x: unknown;
           }
         }
       });
       </script>
 
       <template>
-        <sample-component v-model="obj.value" />
+        <sample-component v-model="obj.x" />
       </template>
     `
     },
@@ -70,9 +71,19 @@ exports.noReadonlyVModel = utils.createRule({
                         node.value.expression.property.type === utils_1.AST_NODE_TYPES.Identifier) {
                         const variable = variables.get(node.value.expression.object.name);
                         if (variable) {
-                            const type = typeCheck.getType(variable);
+                            const type = (0, real_fns_1.evaluate)(() => {
+                                const result = typeCheck.getType(variable);
+                                const symbol = result.getSymbol();
+                                if (symbol && ["ComputedRef", "Ref"].includes(symbol.name)) {
+                                    const argType = typeCheck.getArgTypes(result)[0];
+                                    if (argType)
+                                        return argType;
+                                }
+                                return result;
+                            });
                             const property = type.getProperty(node.value.expression.property.name);
-                            if (property && typeCheck.isReadonlyProperty(property, type))
+                            if (real_fns_1.is.not.empty(property) &&
+                                typeCheck.isReadonlyProperty(property, type))
                                 context.report({
                                     loc: context.getLoc(node.range),
                                     messageId: MessageId.noReadonlyProperty

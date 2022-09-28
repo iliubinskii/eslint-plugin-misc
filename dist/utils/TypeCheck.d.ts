@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 import type { ParserServices, TSESTree } from "@typescript-eslint/utils";
-import type { Signatures, TypeParts } from "./TypeCheck.internal";
+import type { Signatures, TypeParts, Types } from "./TypeCheck.internal";
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
 import type { TypeGroups } from "./types";
@@ -13,6 +13,13 @@ export declare class TypeCheck {
      * @param context - Context.
      */
     constructor(context: RuleContext<never, unknowns>);
+    /**
+     * Returns arg types.
+     *
+     * @param type - Type.
+     * @returns Arg types.
+     */
+    getArgTypes(type: ts.Type): Types;
     /**
      * Extracts call signatures from node.
      *
@@ -57,7 +64,7 @@ export declare class TypeCheck {
      */
     getSymbol(node: TSESTree.Node): ts.Symbol | undefined;
     /**
-     * Determines type of the node.
+     * Returns node type.
      *
      * @param node - Node.
      * @returns Type.

@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-misc",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "private": false,
   "description": "ESLint plugin.",
   "keywords": [

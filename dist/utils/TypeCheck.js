@@ -40,6 +40,17 @@ class TypeCheck {
         this.toTsNode = esTreeNodeToTSNodeMap.get.bind(esTreeNodeToTSNodeMap);
     }
     /**
+     * Returns arg types.
+     *
+     * @param type - Type.
+     * @returns Arg types.
+     */
+    getArgTypes(type) {
+        return tsutils.isTypeReference(type)
+            ? this.checker.getTypeArguments(type)
+            : [];
+    }
+    /**
      * Extracts call signatures from node.
      *
      * @param node - Node.
@@ -102,7 +113,7 @@ class TypeCheck {
         return this.checker.getSymbolAtLocation(tsNode);
     }
     /**
-     * Determines type of the node.
+     * Returns node type.
      *
      * @param node - Node.
      * @returns Type.

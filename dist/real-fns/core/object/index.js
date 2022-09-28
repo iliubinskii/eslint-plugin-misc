@@ -12,6 +12,7 @@ const prefer_entries_1 = require("./prefer-entries");
 const prefer_getPrototypeOf_1 = require("./prefer-getPrototypeOf");
 const prefer_hasOwnProp_1 = require("./prefer-hasOwnProp");
 const prefer_keys_1 = require("./prefer-keys");
+const prefer_omitKeys_1 = require("./prefer-omitKeys");
 const prefer_values_1 = require("./prefer-values");
 exports.object = real_fns_1.o.prefixKeys({
     "no-array-arg": no_array_arg_1.noArrayArg,
@@ -24,6 +25,7 @@ exports.object = real_fns_1.o.prefixKeys({
     "prefer-getPrototypeOf": prefer_getPrototypeOf_1.preferGetPrototypeOf,
     "prefer-hasOwnProp": prefer_hasOwnProp_1.preferHasOwnProp,
     "prefer-keys": prefer_keys_1.preferKeys,
+    "prefer-omitKeys": prefer_omitKeys_1.preferOmitKeys,
     "prefer-values": prefer_values_1.preferValues
 }, "object/");
 //# sourceMappingURL=index.js.map

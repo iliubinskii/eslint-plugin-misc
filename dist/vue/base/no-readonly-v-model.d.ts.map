@@ -1,1 +1,1 @@
-{"version":3,"file":"no-readonly-v-model.d.ts","sourceRoot":"","sources":["../../../src/vue/base/no-readonly-v-model.ts"],"names":[],"mappings":"AAGA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,yCAAyC,CAAC;AAI5E,oBAAY,SAAS;IACnB,kBAAkB,uBAAuB;CAC1C;AAED,eAAO,MAAM,gBAAgB,mLAkG3B,CAAC"}
+{"version":3,"file":"no-readonly-v-model.d.ts","sourceRoot":"","sources":["../../../src/vue/base/no-readonly-v-model.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,yCAAyC,CAAC;AAI5E,oBAAY,SAAS;IACnB,kBAAkB,uBAAuB;CAC1C;AAED,eAAO,MAAM,gBAAgB,mLAiH3B,CAAC"}

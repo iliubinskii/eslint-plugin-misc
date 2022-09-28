@@ -19,19 +19,19 @@ module.exports = {
 <script lang="ts">
 export default defineComponent({
   setup: () => {
-    const obj: SampleInterface = { value: 1 };
+    const obj: SampleInterface = { x: 1 };
 
     return { obj };
 
     interface SampleInterface {
-      readonly value: unknown;
+      readonly x: unknown;
     }
   }
 });
 </script>
 
 <template>
-  <sample-component v-model="obj.value" />
+  <sample-component v-model="obj.x" />
 </template>
 ```
 
@@ -41,18 +41,18 @@ export default defineComponent({
 <script lang="ts">
 export default defineComponent({
   setup: () => {
-    const obj: SampleInterface = { value: 1 };
+    const obj: SampleInterface = { x: 1 };
 
     return { obj };
 
     interface SampleInterface {
-      value: unknown;
+      x: unknown;
     }
   }
 });
 </script>
 
 <template>
-  <sample-component v-model="obj.value" />
+  <sample-component v-model="obj.x" />
 </template>
 ```
