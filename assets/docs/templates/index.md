@@ -17,7 +17,7 @@
 - [Planned rules](#planned-rules)
 - [Related packages](#related-packages)
 
-## [](#overview)Overview
+## <a id="overview"></a>Overview
 
 A collection of ESLint rules for:
 
@@ -25,7 +25,7 @@ A collection of ESLint rules for:
 - Jest test files
 - Vue single-file components (using vue-eslint-parser)
 
-## [](#installation)Installation
+## <a id="installation"></a>Installation
 
 ```sh
 npm install --save-dev eslint-plugin-misc
@@ -40,7 +40,7 @@ module.exports = {
 };
 ```
 
-## [](#configs)Configs
+## <a id="configs"></a>Configs
 
 - plugin:misc/all &mdash; All rules.
 - plugin:misc/core &mdash; Core rules.
@@ -49,11 +49,11 @@ module.exports = {
 - plugin:misc/typescript &mdash; Rules for typescript files.
 - plugin:misc/vue &mdash; Rules for Vue single-file components.
 
-## [](#rules)Rules
+## <a id="rules"></a>Rules
 
 {{rules}}
 
-## [](#synonyms)Synonyms
+## <a id="synonyms"></a>Synonyms
 
 You can use the same rule several times by adding synonym:
 
@@ -89,7 +89,7 @@ module.exports = {
 };
 ```
 
-## [](#custom-checks)Custom checks
+## <a id="custom-checks"></a>Custom checks
 
 Many custom checks can be created without writing full-fledged ESLint plugin.
 Use the rules below to create custom checks or adapt existing third-party rules:
@@ -98,7 +98,7 @@ Use the rules below to create custom checks or adapt existing third-party rules:
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 
-## [](#planned-rules)Planned rules
+## <a id="planned-rules"></a>Planned rules
 
 - boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
 - consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.
@@ -112,7 +112,7 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
 - vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).
 
-## [](#related-packages)Related packages
+## <a id="related-packages"></a>Related packages
 
 - [eslint-plugin-misc](https://www.npmjs.com/package/eslint-plugin-misc) &mdash; ESLint plugin.
 - [quasar-extension](https://www.npmjs.com/package/quasar-extension) &mdash; Quasar extension.
