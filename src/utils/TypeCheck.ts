@@ -6,7 +6,8 @@ import { ReadonlySet, as, assert, is } from "real-fns";
 import type {
   Signatures,
   TypeFlagsArray,
-  TypeParts
+  TypeParts,
+  Types
 } from "./TypeCheck.internal";
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
@@ -36,6 +37,18 @@ export class TypeCheck {
     this.checker = program.getTypeChecker();
     this.code = context.getSourceCode().getText();
     this.toTsNode = esTreeNodeToTSNodeMap.get.bind(esTreeNodeToTSNodeMap);
+  }
+
+  /**
+   * Returns arg types.
+   *
+   * @param type - Type.
+   * @returns Arg types.
+   */
+  public getArgTypes(type: ts.Type): Types {
+    return tsutils.isTypeReference(type)
+      ? this.checker.getTypeArguments(type)
+      : [];
   }
 
   /**
@@ -118,7 +131,7 @@ export class TypeCheck {
   }
 
   /**
-   * Determines type of the node.
+   * Returns node type.
    *
    * @param node - Node.
    * @returns Type.

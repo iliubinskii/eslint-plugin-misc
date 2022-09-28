@@ -1,4 +1,5 @@
 import * as utils from "../../utils";
+import { evaluate, is } from "real-fns";
 import type { AST } from "vue-eslint-parser";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
@@ -23,38 +24,38 @@ export const noReadonlyVModel = utils.createRule({
       <script lang="ts">
       export default defineComponent({
         setup: () => {
-          const obj: SampleInterface = { value: 1 };
+          const obj: SampleInterface = { x: 1 };
 
           return { obj };
 
           interface SampleInterface {
-            readonly value: unknown;
+            readonly x: unknown;
           }
         }
       });
       </script>
 
       <template>
-        <sample-component v-model="obj.value" />
+        <sample-component v-model="obj.x" />
       </template>
     `,
     passExamples: `
       <script lang="ts">
       export default defineComponent({
         setup: () => {
-          const obj: SampleInterface = { value: 1 };
+          const obj: SampleInterface = { x: 1 };
 
           return { obj };
 
           interface SampleInterface {
-            value: unknown;
+            x: unknown;
           }
         }
       });
       </script>
 
       <template>
-        <sample-component v-model="obj.value" />
+        <sample-component v-model="obj.x" />
       </template>
     `
   },
@@ -77,13 +78,28 @@ export const noReadonlyVModel = utils.createRule({
             const variable = variables.get(node.value.expression.object.name);
 
             if (variable) {
-              const type = typeCheck.getType(variable);
+              const type = evaluate(() => {
+                const result = typeCheck.getType(variable);
+
+                const symbol = result.getSymbol();
+
+                if (symbol && ["ComputedRef", "Ref"].includes(symbol.name)) {
+                  const argType = typeCheck.getArgTypes(result)[0];
+
+                  if (argType) return argType;
+                }
+
+                return result;
+              });
 
               const property = type.getProperty(
                 node.value.expression.property.name
               );
 
-              if (property && typeCheck.isReadonlyProperty(property, type))
+              if (
+                is.not.empty(property) &&
+                typeCheck.isReadonlyProperty(property, type)
+              )
                 context.report({
                   loc: context.getLoc(node.range),
                   messageId: MessageId.noReadonlyProperty

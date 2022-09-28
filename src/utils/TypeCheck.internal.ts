@@ -8,3 +8,5 @@ export type TypeFlagsArray = readonly ts.TypeFlags[];
 export type TypePart = NumStr | ts.Type;
 
 export type TypeParts = readonly TypePart[];
+
+export type Types = readonly ts.Type[];

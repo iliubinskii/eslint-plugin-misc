@@ -14,10 +14,10 @@ utils.testRule(
       code: `
         <script lang="ts">
         interface SampleInterface {
-          readonly value: unknown;
+          readonly x: unknown;
         }
 
-        const obj: SampleInterface = { value: 1 };
+        const obj: SampleInterface = { x: 1 };
 
         export default defineComponent({
           setup: () => ({ obj })
@@ -25,7 +25,7 @@ utils.testRule(
         </script>
 
         <template>
-          <sample-component v-model="obj.value" />
+          <sample-component v-model="obj.x" />
         </template>
       `,
       errors: [{ line: 14, messageId: MessageId.noReadonlyProperty }]
@@ -34,11 +34,15 @@ utils.testRule(
       name: `Test at line ${getCurrentLine().line}`,
       code: `
         <script lang="ts">
-        interface SampleInterface {
-          readonly value: unknown;
+        interface ComputedRef<T>  {
+          value: T;
         }
 
-        const obj: SampleInterface = { value: 1 };
+        interface SampleInterface {
+          readonly x: unknown;
+        }
+
+        const obj: ComputedRef<SampleInterface> = { value: { x: 1 } };
 
         export default defineComponent({
           setup: () => { return { obj }; }
@@ -46,10 +50,35 @@ utils.testRule(
         </script>
 
         <template>
-          <sample-component v-model="obj.value" />
+          <sample-component v-model="obj.x" />
         </template>
       `,
-      errors: [{ line: 14, messageId: MessageId.noReadonlyProperty }]
+      errors: [{ line: 18, messageId: MessageId.noReadonlyProperty }]
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        <script lang="ts">
+        interface Ref<T>  {
+          value: T;
+        }
+
+        interface SampleInterface {
+          readonly x: unknown;
+        }
+
+        const obj: Ref<SampleInterface> = { value: { x: 1 } };
+
+        export default defineComponent({
+          setup: () => { return { obj }; }
+        });
+        </script>
+
+        <template>
+          <sample-component v-model="obj.x" />
+        </template>
+      `,
+      errors: [{ line: 18, messageId: MessageId.noReadonlyProperty }]
     }
   ],
   [
@@ -58,10 +87,10 @@ utils.testRule(
       code: `
         <script lang="ts">
         interface SampleInterface {
-          value: unknown;
+          x: unknown;
         }
 
-        const obj: SampleInterface = { value: 1 };
+        const obj: SampleInterface = { x: 1 };
 
         export default defineComponent({
           setup: () => ({ obj })
@@ -69,7 +98,7 @@ utils.testRule(
         </script>
 
         <template>
-          <sample-component v-model="obj.value" />
+          <sample-component v-model="obj.x" />
         </template>
       `
     },
@@ -77,11 +106,15 @@ utils.testRule(
       name: `Test at line ${getCurrentLine().line}`,
       code: `
         <script lang="ts">
-        interface SampleInterface {
-          value: unknown;
+        interface ComputedRef<T>  {
+          value: T;
         }
 
-        const obj: SampleInterface = { value: 1 };
+        interface SampleInterface {
+          x: unknown;
+        }
+
+        const obj: ComputedRef<SampleInterface> = { value: { x: 1 } };
 
         export default defineComponent({
           setup: () => { return { obj }; }
@@ -89,7 +122,49 @@ utils.testRule(
         </script>
 
         <template>
-          <sample-component v-model="obj.value" />
+          <sample-component v-model="obj.x" />
+        </template>
+      `
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        <script lang="ts">
+        interface Ref<T>  {
+          value: T;
+        }
+
+        interface SampleInterface {
+          x: unknown;
+        }
+
+        const obj: Ref<SampleInterface> = { value: { x: 1 } };
+
+        export default defineComponent({
+          setup: () => { return { obj }; }
+        });
+        </script>
+
+        <template>
+          <sample-component v-model="obj.x" />
+        </template>
+      `
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        <script lang="ts">
+        interface Ref {}
+
+        const obj: Ref = {};
+
+        export default defineComponent({
+          setup: () => { return { obj }; }
+        });
+        </script>
+
+        <template>
+          <sample-component v-model="obj.x" />
         </template>
       `
     }
