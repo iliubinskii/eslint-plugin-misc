@@ -84,7 +84,7 @@
   "devDependencies": {
     "eslint-plugin-misc": "^1.4.1",
     "get-current-line": "^6.6.0",
-    "real-config": "^1.10.0"
+    "real-config": "^1.11.0"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
