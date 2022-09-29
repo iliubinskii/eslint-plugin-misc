@@ -1,4 +1,5 @@
 {
+  "extends": "real-config/tsconfig/strict",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "cache/typescript",
@@ -28,7 +29,6 @@
     "lcov-report",
     "node_modules"
   ],
-  "extends": "real-config/tsconfig/strict",
   "include": [
     "*.js",
     "*.ts",
