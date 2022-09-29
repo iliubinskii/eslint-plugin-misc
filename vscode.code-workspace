@@ -61,26 +61,25 @@
       "package-lock.json": true
     },
     "sort-json.settings.contextMenu": {
-      "sortJSON": false,
-      "sortJSONReverse": false,
-      "sortJSONDeepReverse": false,
       "setSortType": false,
+      "sortJSON": false,
+      "sortJSONDeepReverse": false,
+      "sortJSONReverse": false,
       "toggleSortCaseSensitive": false
     },
+    "sort-json.settings.ignoreArraysOnDeepSort": true,
     "sort-json.settings.isCaseSensitive": true,
-    "sortJSON.contextMenu": {
-      "sortJSONReverse": false,
-      "sortJSONKeyLength": false,
-      "sortJSONKeyLengthReverse": false,
-      "sortJSONAlphaNum": false,
-      "sortJSONAlphaNumReverse": false,
-      "sortJSONValues": false,
-      "sortJSONValuesReverse": false,
-      "sortJSONType": false,
-      "sortJSONTypeReverse": false
-    },
-    "sortJSON.excludedPaths": [
-      "src/manifest.json"
+    "sort-json.settings.orderOverride": [
+      "name",
+      "description",
+      "keywords",
+      "type",
+      "minimum-stability",
+      "prefer-stable",
+      "version",
+      "license",
+      "homepage",
+      "extends"
     ],
     "typescript.suggestionActions.enabled": false,
     "typescript.tsdk": "node_modules\\typescript\\lib",
