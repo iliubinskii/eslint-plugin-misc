@@ -195,6 +195,7 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - consistent-test-file-name &mdash; Require that test file name matches some source file name.
 - no-re-export-mixing &mdash; Require that file contains either only re-export or only export of new items.
 - escape-doc-comment-entities &mdash; Require that "\<" and "\>" symbols inside doc comments are properly escaped.
+- no-array-mutation &mdash; Forbid array mutation.
 - no-duplicate-import &mdash; Forbid combining `import { x } from "source"` and `import { x as y } from "source"` in the same file.
 - protected-rules &mdash; Do not allow to disable selected ESLint rules.
 - sort-eslint-comments &mdash; Sort rules in eslint-disable comments.
