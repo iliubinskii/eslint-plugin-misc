@@ -70,7 +70,7 @@
     "@types/minimatch": "^5.1.2",
     "@types/natural-compare": "^1.4.1",
     "javascript-stringify": "^2.1.0",
-    "lodash-commonjs-es": "^1.0.3",
+    "lodash-commonjs-es": "^1.0.5",
     "minimatch": "^5.1.0",
     "natural-compare": "^1.4.0",
     "real-classes": "^1.1.1",
@@ -81,9 +81,9 @@
     "types-fix": "^1.0.3"
   },
   "devDependencies": {
-    "eslint-plugin-misc": "^1.4.1",
+    "eslint-plugin-misc": "^1.5.0",
     "get-current-line": "^6.6.0",
-    "real-config": "^1.11.0"
+    "real-config": "^1.12.0"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
