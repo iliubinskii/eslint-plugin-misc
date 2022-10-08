@@ -14,6 +14,9 @@
     "[php]": {
       "editor.defaultFormatter": "junstyle.php-cs-fixer"
     },
+    "[scss]": {
+      "editor.formatOnSave": false
+    },
     "debug.javascript.codelens.npmScripts": "never",
     "editor.codeActionsOnSave": {
       "source.fixAll": true,
@@ -80,6 +83,12 @@
       "license",
       "homepage",
       "extends"
+    ],
+    "stylelint.validate": [
+      "css",
+      "less",
+      "postcss",
+      "scss"
     ],
     "typescript.suggestionActions.enabled": false,
     "typescript.tsdk": "node_modules\\typescript\\lib",
