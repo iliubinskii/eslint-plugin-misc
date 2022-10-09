@@ -19,6 +19,7 @@ import { requireJsdoc } from "./require-jsdoc";
 import { requireSyntax } from "./require-syntax";
 import { sortArray } from "./sort-array";
 import { sortClassMembers } from "./sort-class-members";
+import { sortExportSpecifiers } from "./sort-export-specifiers";
 import { sortKeys } from "./sort-keys";
 import { sortStatements } from "./sort-statements";
 import { sortTopComments } from "./sort-top-comments";
@@ -48,6 +49,7 @@ export const base = {
   "require-syntax": requireSyntax,
   "sort-array": sortArray,
   "sort-class-members": sortClassMembers,
+  "sort-export-specifiers": sortExportSpecifiers,
   "sort-keys": sortKeys,
   "sort-statements": sortStatements,
   "sort-top-comments": sortTopComments,
