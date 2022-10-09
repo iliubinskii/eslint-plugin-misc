@@ -227,41 +227,36 @@ export class TypeCheck {
   /**
    * Checks if type is safe boolean condition.
    *
-   * @param this - No this.
    * @param type - Type.
    * @returns _True_ if type is safe boolean condition, _false_ otherwise.
    */
-  public isSafeBooleanCondition(this: void, type: ts.Type): boolean {
+  public isSafeBooleanCondition(type: ts.Type): boolean {
     if (safeBoolean.has(type.getFlags())) return true;
 
     if (tsutils.isUnionType(type)) {
       const parts = tsutils.unionTypeParts(type);
 
-      if (parts.length === 2) {
-        if (
-          parts.some(part => tsutils.isBooleanLiteralType(part, true)) &&
-          parts.some(part => tsutils.isBooleanLiteralType(part, false))
+      if (
+        parts.every(
+          part =>
+            tsutils.isBooleanLiteralType(part, true) ||
+            tsutils.isBooleanLiteralType(part, false)
+        ) ||
+        parts.every(
+          part =>
+            tsutils.isBooleanLiteralType(part, true) ||
+            this.isUndefinedType(part)
+        ) ||
+        parts.every(
+          part => tsutils.isObjectType(part) || this.isUndefinedType(part)
+        ) ||
+        parts.every(
+          part =>
+            safeBooleanWithUndefined.has(part.getFlags()) ||
+            this.isUndefinedType(part)
         )
-          return true;
-
-        if (
-          parts.some(part => tsutils.isBooleanLiteralType(part, true)) &&
-          parts.some(part => part.getFlags() === ts.TypeFlags.Undefined)
-        )
-          return true;
-
-        if (
-          parts.some(part => tsutils.isObjectType(part)) &&
-          parts.some(part => part.getFlags() === ts.TypeFlags.Undefined)
-        )
-          return true;
-
-        if (
-          parts.some(part => safeBooleanWithUndefined.has(part.getFlags())) &&
-          parts.some(part => part.getFlags() === ts.TypeFlags.Undefined)
-        )
-          return true;
-      }
+      )
+        return true;
     }
 
     return false;
@@ -276,6 +271,18 @@ export class TypeCheck {
 
   public isTupleType(type: ts.Type): type is ts.TupleTypeReference {
     return this.checker.isTupleType(type);
+  }
+
+  /**
+   * Checks if type is undefined.
+   *
+   * @param this - No this.
+   * @param type - Type.
+   * @returns _True_ if type is undefined, _false_ otherwise.
+   */
+  public isUndefinedType(this: void, type: ts.Type): boolean {
+    // eslint-disable-next-line no-bitwise -- Ok
+    return (type.getFlags() & ts.TypeFlags.Undefined) !== 0;
   }
 
   /**

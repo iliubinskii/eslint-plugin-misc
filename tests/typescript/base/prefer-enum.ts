@@ -9,11 +9,31 @@ utils.testRule("prefer-enum", rule, [
   {
     name: `Test at line ${getCurrentLine().line}`,
     code: `
-      function f(x: E) {
+      function f(x: E | undefined) {
         x === "a";
+      }
+
+      enum E {
+        a = "a",
+        b = "b"
+      }
+
+      type T = "a" | 2;
+    `,
+    errors: [{ line: 2, messageId: MessageId.preferEnumToStringLiteral }]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    code: `
+      function f(x: E, y: E | undefined) {
+        x === "a";
+        y === "a";
         x !== "a";
+        y !== "a";
         "a" === x;
+        "a" === y;
         "a" !== x;
+        "a" !== y;
       }
 
       function g(x: E) {
@@ -41,7 +61,11 @@ utils.testRule("prefer-enum", rule, [
       { line: 2, messageId: MessageId.preferEnumToStringLiteral },
       { line: 3, messageId: MessageId.preferEnumToStringLiteral },
       { line: 4, messageId: MessageId.preferEnumToStringLiteral },
-      { line: 5, messageId: MessageId.preferEnumToStringLiteral }
+      { line: 5, messageId: MessageId.preferEnumToStringLiteral },
+      { line: 6, messageId: MessageId.preferEnumToStringLiteral },
+      { line: 7, messageId: MessageId.preferEnumToStringLiteral },
+      { line: 8, messageId: MessageId.preferEnumToStringLiteral },
+      { line: 9, messageId: MessageId.preferEnumToStringLiteral }
     ]
   },
   {
