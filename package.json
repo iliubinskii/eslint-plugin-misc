@@ -82,6 +82,7 @@
   },
   "devDependencies": {
     "eslint-plugin-misc": "^1.5.0",
+    "eslint-plugin-sort-exports": "^0.7.0",
     "get-current-line": "^6.6.0",
     "real-config": "^1.12.0"
   },
