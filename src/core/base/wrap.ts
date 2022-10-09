@@ -1,5 +1,3 @@
-/* eslint-disable misc/require-syntax/require-fix -- Ok */
-
 import * as utils from "../../utils";
 import {
   ProxyHandlerAction,
@@ -13,10 +11,11 @@ import type {
   RuleListener,
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Writable, strings } from "type-essentials";
+import type { Writable, stringU, strings } from "type-essentials";
 import type { TSESTree } from "@typescript-eslint/utils";
 
 export interface Options {
+  readonly disableFix: boolean;
   readonly lint: utils.Selector;
   readonly plugin: string;
   readonly rule: string;
@@ -33,6 +32,7 @@ export const wrap = utils.createRule({
   vue: true,
   isOptions: is.object.factory<Options>(
     {
+      disableFix: is.boolean,
       lint: utils.isSelector,
       plugin: is.string,
       rule: is.string,
@@ -40,17 +40,19 @@ export const wrap = utils.createRule({
     },
     {}
   ),
-  defaultOptions: { lint: [], skip: [] },
+  defaultOptions: { disableFix: false, lint: [], skip: [] },
   messages: { [MessageId.customMessage]: "{{message}}" },
   docs: {
     description: "Wraps and modifies third-party rule.",
     optionTypes: {
+      disableFix: "boolean",
       lint: "string | string[]",
       plugin: "string",
       rule: "string",
       skip: "string | string[]"
     },
     optionDescriptions: {
+      disableFix: "Disables fix",
       lint: "AST selectors to lint",
       plugin: "NPM package name",
       rule: "ESLint rule name",
@@ -86,6 +88,7 @@ export const wrap = utils.createRule({
   },
   create: (context): RuleListener => {
     const {
+      disableFix,
       lint: mixedLint,
       plugin,
       rule: name,
@@ -148,19 +151,32 @@ export const wrap = utils.createRule({
 
           for (const report of reports)
             if (lintMatcher(report) && !skipMatcher(report)) {
-              const { data, messageId } = { data: {}, ...report } as const;
-
-              const message = as.not
-                .empty(rule.meta.messages[messageId])
-                .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1: string) => {
-                  const result = data[match1];
-
-                  return as.numStr(result).toString();
-                });
+              const { data, fix, message, messageId, ...rest } = {
+                data: {},
+                // eslint-disable-next-line unicorn/no-null -- Ok
+                fix: null,
+                message: undefined as stringU,
+                ...report
+              } as const;
 
               context.rawContext.report({
-                ...report,
-                data: { message },
+                ...rest,
+                data: {
+                  message:
+                    message ??
+                    as.not
+                      .empty(rule.meta.messages[messageId])
+                      .replace(
+                        /\{\{\s*(\w+)\s*\}\}/gu,
+                        (_str, match1: string) => {
+                          const result = data[match1];
+
+                          return as.numStr(result).toString();
+                        }
+                      )
+                },
+                // eslint-disable-next-line unicorn/no-null -- Ok
+                fix: disableFix ? null : fix,
                 messageId: MessageId.customMessage
               });
             }

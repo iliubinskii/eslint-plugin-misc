@@ -17,7 +17,13 @@ utils.testRule(
           y++;
         }
       `,
-      errors: [{ line: 3, messageId: MessageId.customMessage }]
+      errors: [
+        {
+          line: 3,
+          messageId: MessageId.customMessage,
+          data: { message: "Assignment to function parameter 'y'." }
+        }
+      ]
     },
     {
       name: `Test at line ${getCurrentLine().line}`,
@@ -27,7 +33,13 @@ utils.testRule(
           y++;
         };
       `,
-      errors: [{ line: 3, messageId: MessageId.customMessage }]
+      errors: [
+        {
+          line: 3,
+          messageId: MessageId.customMessage,
+          data: { message: "Assignment to function parameter 'y'." }
+        }
+      ]
     },
     {
       name: `Test at line ${getCurrentLine().line}`,
@@ -39,7 +51,13 @@ utils.testRule(
           }
         }
       `,
-      errors: [{ line: 4, messageId: MessageId.customMessage }]
+      errors: [
+        {
+          line: 4,
+          messageId: MessageId.customMessage,
+          data: { message: "Assignment to function parameter 'y'." }
+        }
+      ]
     }
   ],
   [

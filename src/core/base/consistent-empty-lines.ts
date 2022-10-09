@@ -135,6 +135,7 @@ export const consistentEmptyLines = evaluate(() => {
           "Program:exit": () => {
             // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
             prevItems.sort(reverseCompare);
+
             // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
             nextItems.sort(reverseCompare);
 

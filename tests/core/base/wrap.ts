@@ -84,5 +84,39 @@ utils.testRule("wrap", rule, [
         }
       }
     ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    options: [
+      {
+        disableFix: true,
+        plugin: "eslint-plugin-sort-exports",
+        rule: "sort-exports"
+      }
+    ],
+    code: "export { b, a };",
+    errors: [
+      {
+        line: 1,
+        messageId: MessageId.customMessage,
+        data: { message: "Expected a before b" }
+      }
+    ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    options: [{ plugin: "eslint", rule: "no-param-reassign" }],
+    code: `
+      function f(x) {
+        x++;
+      }
+    `,
+    errors: [
+      {
+        line: 2,
+        messageId: MessageId.customMessage,
+        data: { message: "Assignment to function parameter 'x'." }
+      }
+    ]
   }
 ]);
