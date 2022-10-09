@@ -101,5 +101,23 @@ utils.testRule("element-contents-spacing", rule, [
       { line: 2, endLine: 5, messageId: MessageId.addSpaces },
       { line: 6, endLine: 9, messageId: MessageId.addSpaces }
     ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    code: `
+      <template>
+        <p
+          >contents</p
+        >
+      </template>
+    `,
+    output: `
+      <template>
+        <p
+          > contents </p
+        >
+      </template>
+    `,
+    errors: [{ line: 3, messageId: MessageId.addSpaces }]
   }
 ]);

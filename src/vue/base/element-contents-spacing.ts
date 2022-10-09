@@ -39,6 +39,8 @@ export const elementContentsSpacing = utils.createRule({
   create: (context): RuleListener => ({
     VElement: (node: AST.VElement) => {
       if (node.children.length) {
+        const nodeText = context.getText(node.range);
+
         const range = evaluate(() => {
           const { children } = node;
 
@@ -49,22 +51,22 @@ export const elementContentsSpacing = utils.createRule({
           return [first.range[0], last.range[1]] as const;
         });
 
-        const got = context.getText(range);
+        const text = context.getText(range);
 
-        const leadingSpaces = s.leadingSpaces(got);
+        const leadingSpaces = s.leadingSpaces(text);
 
-        const trailingSpaces = s.trailingSpaces(got);
+        const trailingSpaces = s.trailingSpaces(text);
 
-        if (s.multiline(got) && (!leadingSpaces || !trailingSpaces))
+        if (s.multiline(nodeText) && (!leadingSpaces || !trailingSpaces))
           context.report({
-            fix: (): RuleFix => ({ range, text: ` ${got.trim()} ` }),
+            fix: (): RuleFix => ({ range, text: ` ${text.trim()} ` }),
             loc: context.getLoc(range),
             messageId: MessageId.addSpaces
           });
 
-        if (s.singleLine(got) && (leadingSpaces || trailingSpaces))
+        if (s.singleLine(nodeText) && (leadingSpaces || trailingSpaces))
           context.report({
-            fix: (): RuleFix => ({ range, text: got.trim() }),
+            fix: (): RuleFix => ({ range, text: text.trim() }),
             loc: context.getLoc(range),
             messageId: MessageId.removeSpaces
           });
