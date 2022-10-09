@@ -56,7 +56,11 @@ exports.preferEnum = utils.createRule({
             }
         };
         function lintLiteral(node, type) {
-            if (type && typeCheck.isEnumLiteralType(type))
+            if (type &&
+                (typeCheck.isEnumLiteralType(type) ||
+                    (type.isUnion() &&
+                        type.types.every(subtype => typeCheck.isEnumLiteralType(subtype) ||
+                            typeCheck.isUndefinedType(subtype)))))
                 context.report({
                     messageId: MessageId.preferEnumToStringLiteral,
                     node

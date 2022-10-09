@@ -1,5 +1,4 @@
 "use strict";
-/* eslint-disable misc/require-syntax/require-fix -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrap = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
@@ -14,22 +13,25 @@ exports.wrap = utils.createRule({
     fixable: utils.Fixable.code,
     vue: true,
     isOptions: real_fns_1.is.object.factory({
+        disableFix: real_fns_1.is.boolean,
         lint: utils.isSelector,
         plugin: real_fns_1.is.string,
         rule: real_fns_1.is.string,
         skip: utils.isSelector
     }, {}),
-    defaultOptions: { lint: [], skip: [] },
+    defaultOptions: { disableFix: false, lint: [], skip: [] },
     messages: { [MessageId.customMessage]: "{{message}}" },
     docs: {
         description: "Wraps and modifies third-party rule.",
         optionTypes: {
+            disableFix: "boolean",
             lint: "string | string[]",
             plugin: "string",
             rule: "string",
             skip: "string | string[]"
         },
         optionDescriptions: {
+            disableFix: "Disables fix",
             lint: "AST selectors to lint",
             plugin: "NPM package name",
             rule: "ESLint rule name",
@@ -64,7 +66,7 @@ exports.wrap = utils.createRule({
     `
     },
     create: (context) => {
-        const { lint: mixedLint, plugin, rule: name, skip: mixedSkip } = context.options;
+        const { disableFix, lint: mixedLint, plugin, rule: name, skip: mixedSkip } = context.options;
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- Ok
         const rule = plugin === "eslint"
             ? // eslint-disable-next-line misc/prefer-const-require -- Ok
@@ -100,14 +102,19 @@ exports.wrap = utils.createRule({
                     : () => false;
                 for (const report of reports)
                     if (lintMatcher(report) && !skipMatcher(report)) {
-                        const { data, messageId } = Object.assign({ data: {} }, report);
-                        const message = real_fns_1.as.not
-                            .empty(rule.meta.messages[messageId])
-                            .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
-                            const result = data[match1];
-                            return real_fns_1.as.numStr(result).toString();
-                        });
-                        context.rawContext.report(Object.assign(Object.assign({}, report), { data: { message }, messageId: MessageId.customMessage }));
+                        const _a = Object.assign({ data: {}, 
+                            // eslint-disable-next-line unicorn/no-null -- Ok
+                            fix: null, message: undefined }, report), { data, fix, message, messageId } = _a, rest = tslib_1.__rest(_a, ["data", "fix", "message", "messageId"]);
+                        context.rawContext.report(Object.assign(Object.assign({}, rest), { data: {
+                                message: message !== null && message !== void 0 ? message : real_fns_1.as.not
+                                    .empty(rule.meta.messages[messageId])
+                                    .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
+                                    const result = data[match1];
+                                    return real_fns_1.as.numStr(result).toString();
+                                })
+                            }, 
+                            // eslint-disable-next-line unicorn/no-null -- Ok
+                            fix: disableFix ? null : fix, messageId: MessageId.customMessage }));
                     }
             }
         });

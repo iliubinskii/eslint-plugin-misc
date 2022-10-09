@@ -125,11 +125,10 @@ export declare class TypeCheck {
     /**
      * Checks if type is safe boolean condition.
      *
-     * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is safe boolean condition, _false_ otherwise.
      */
-    isSafeBooleanCondition(this: void, type: ts.Type): boolean;
+    isSafeBooleanCondition(type: ts.Type): boolean;
     /**
      * Checks if type is an array or a tuple.
      *
@@ -137,6 +136,14 @@ export declare class TypeCheck {
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
     isTupleType(type: ts.Type): type is ts.TupleTypeReference;
+    /**
+     * Checks if type is undefined.
+     *
+     * @param this - No this.
+     * @param type - Type.
+     * @returns _True_ if type is undefined, _false_ otherwise.
+     */
+    isUndefinedType(this: void, type: ts.Type): boolean;
     /**
      * Checks if type contains type group.
      *

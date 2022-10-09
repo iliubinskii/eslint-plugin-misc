@@ -1,6 +1,7 @@
 import * as utils from "../../utils";
 import type { RuleListener, RuleModule } from "@typescript-eslint/utils/dist/ts-eslint";
 export interface Options {
+    readonly disableFix: boolean;
     readonly lint: utils.Selector;
     readonly plugin: string;
     readonly rule: string;

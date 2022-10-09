@@ -22,6 +22,7 @@ const require_jsdoc_1 = require("./require-jsdoc");
 const require_syntax_1 = require("./require-syntax");
 const sort_array_1 = require("./sort-array");
 const sort_class_members_1 = require("./sort-class-members");
+const sort_export_specifiers_1 = require("./sort-export-specifiers");
 const sort_keys_1 = require("./sort-keys");
 const sort_statements_1 = require("./sort-statements");
 const sort_top_comments_1 = require("./sort-top-comments");
@@ -50,6 +51,7 @@ exports.base = {
     "require-syntax": require_syntax_1.requireSyntax,
     "sort-array": sort_array_1.sortArray,
     "sort-class-members": sort_class_members_1.sortClassMembers,
+    "sort-export-specifiers": sort_export_specifiers_1.sortExportSpecifiers,
     "sort-keys": sort_keys_1.sortKeys,
     "sort-statements": sort_statements_1.sortStatements,
     "sort-top-comments": sort_top_comments_1.sortTopComments,

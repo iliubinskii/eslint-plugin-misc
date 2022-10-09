@@ -11,6 +11,7 @@ module.exports = {
     "misc/wrap": [
       "error",
       {
+        disableFix: boolean,
         lint: string | string[],
         plugin: string,
         rule: string,
@@ -23,6 +24,7 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
+| `disableFix` | Disables fix | `false` |
 | `lint` | AST selectors to lint | `[]` |
 | `plugin` | NPM package name | `-` |
 | `rule` | ESLint rule name | `-` |

@@ -96,6 +96,7 @@ module.exports = {
 - [sort-call-signature](https://ilyub.github.io/eslint-plugin-misc/sort-call-signature.html) &mdash; Requires call signature to be first child.
 - [sort-class-members](https://ilyub.github.io/eslint-plugin-misc/sort-class-members.html) &mdash; Sorts class members by type and alphabetically inside each type group.
 - [sort-construct-signature](https://ilyub.github.io/eslint-plugin-misc/sort-construct-signature.html) &mdash; Requires construct signature to be first child.
+- [sort-export-specifiers](https://ilyub.github.io/eslint-plugin-misc/sort-export-specifiers.html) &mdash; Sorts export specifiers.
 - [sort-keys](https://ilyub.github.io/eslint-plugin-misc/sort-keys.html) &mdash; Sorts object keys.
 - [sort-statements](https://ilyub.github.io/eslint-plugin-misc/sort-statements.html) &mdash; Sorts statements.
 - [sort-top-comments](https://ilyub.github.io/eslint-plugin-misc/sort-top-comments.html) &mdash; Sorts top comments.

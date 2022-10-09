@@ -17,7 +17,7 @@
 - [Planned rules](#planned-rules)
 - [Related packages](#related-packages)
 
-## [](#overview)Overview
+## <a id="overview"></a>Overview
 
 A collection of ESLint rules for:
 
@@ -25,7 +25,7 @@ A collection of ESLint rules for:
 - Jest test files
 - Vue single-file components (using vue-eslint-parser)
 
-## [](#installation)Installation
+## <a id="installation"></a>Installation
 
 ```sh
 npm install --save-dev eslint-plugin-misc
@@ -40,7 +40,7 @@ module.exports = {
 };
 ```
 
-## [](#configs)Configs
+## <a id="configs"></a>Configs
 
 - plugin:misc/all &mdash; All rules.
 - plugin:misc/core &mdash; Core rules.
@@ -49,7 +49,7 @@ module.exports = {
 - plugin:misc/typescript &mdash; Rules for typescript files.
 - plugin:misc/vue &mdash; Rules for Vue single-file components.
 
-## [](#rules)Rules
+## <a id="rules"></a>Rules
 
 - [class-match-filename](https://ilyub.github.io/eslint-plugin-misc/class-match-filename.html) &mdash; Requires class name to match filename.
 - [comment-spacing](https://ilyub.github.io/eslint-plugin-misc/comment-spacing.html) &mdash; Requires consistent empty lines around comments.
@@ -96,6 +96,7 @@ module.exports = {
 - [sort-call-signature](https://ilyub.github.io/eslint-plugin-misc/sort-call-signature.html) &mdash; Requires call signature to be first child.
 - [sort-class-members](https://ilyub.github.io/eslint-plugin-misc/sort-class-members.html) &mdash; Sorts class members by type and alphabetically inside each type group.
 - [sort-construct-signature](https://ilyub.github.io/eslint-plugin-misc/sort-construct-signature.html) &mdash; Requires construct signature to be first child.
+- [sort-export-specifiers](https://ilyub.github.io/eslint-plugin-misc/sort-export-specifiers.html) &mdash; Sorts export specifiers.
 - [sort-keys](https://ilyub.github.io/eslint-plugin-misc/sort-keys.html) &mdash; Sorts object keys.
 - [sort-statements](https://ilyub.github.io/eslint-plugin-misc/sort-statements.html) &mdash; Sorts statements.
 - [sort-top-comments](https://ilyub.github.io/eslint-plugin-misc/sort-top-comments.html) &mdash; Sorts top comments.
@@ -140,7 +141,7 @@ module.exports = {
 - [vue/no-readonly-v-model](https://ilyub.github.io/eslint-plugin-misc/vue/no-readonly-v-model.html) &mdash; Disallows using readonly property as model value.
 - [vue/sort-v-bind](https://ilyub.github.io/eslint-plugin-misc/vue/sort-v-bind.html) &mdash; Sorts "v-bind" directive.
 
-## [](#synonyms)Synonyms
+## <a id="synonyms"></a>Synonyms
 
 You can use the same rule several times by adding synonym:
 
@@ -176,7 +177,7 @@ module.exports = {
 };
 ```
 
-## [](#custom-checks)Custom checks
+## <a id="custom-checks"></a>Custom checks
 
 Many custom checks can be created without writing full-fledged ESLint plugin.
 Use the rules below to create custom checks or adapt existing third-party rules:
@@ -188,13 +189,14 @@ Use the rules below to create custom checks or adapt existing third-party rules:
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 
-## [](#planned-rules)Planned rules
+## <a id="planned-rules"></a>Planned rules
 
 - boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
 - consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.
 - consistent-test-file-name &mdash; Require that test file name matches some source file name.
 - no-re-export-mixing &mdash; Require that file contains either only re-export or only export of new items.
 - escape-doc-comment-entities &mdash; Require that "\<" and "\>" symbols inside doc comments are properly escaped.
+- no-array-mutation &mdash; Forbid array mutation.
 - no-duplicate-import &mdash; Forbid combining `import { x } from "source"` and `import { x as y } from "source"` in the same file.
 - protected-rules &mdash; Do not allow to disable selected ESLint rules.
 - sort-eslint-comments &mdash; Sort rules in eslint-disable comments.
@@ -202,7 +204,7 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
 - vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).
 
-## [](#related-packages)Related packages
+## <a id="related-packages"></a>Related packages
 
 - [eslint-plugin-misc](https://www.npmjs.com/package/eslint-plugin-misc) &mdash; ESLint plugin.
 - [quasar-extension](https://www.npmjs.com/package/quasar-extension) &mdash; Quasar extension.

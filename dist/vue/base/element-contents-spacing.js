@@ -37,24 +37,25 @@ exports.elementContentsSpacing = utils.createRule({
     create: (context) => ({
         VElement: (node) => {
             if (node.children.length) {
+                const nodeText = context.getText(node.range);
                 const range = (0, real_fns_1.evaluate)(() => {
                     const { children } = node;
                     const first = real_fns_1.a.first(children);
                     const last = real_fns_1.a.last(children);
                     return [first.range[0], last.range[1]];
                 });
-                const got = context.getText(range);
-                const leadingSpaces = real_fns_1.s.leadingSpaces(got);
-                const trailingSpaces = real_fns_1.s.trailingSpaces(got);
-                if (real_fns_1.s.multiline(got) && (!leadingSpaces || !trailingSpaces))
+                const text = context.getText(range);
+                const leadingSpaces = real_fns_1.s.leadingSpaces(text);
+                const trailingSpaces = real_fns_1.s.trailingSpaces(text);
+                if (real_fns_1.s.multiline(nodeText) && (!leadingSpaces || !trailingSpaces))
                     context.report({
-                        fix: () => ({ range, text: ` ${got.trim()} ` }),
+                        fix: () => ({ range, text: ` ${text.trim()} ` }),
                         loc: context.getLoc(range),
                         messageId: MessageId.addSpaces
                     });
-                if (real_fns_1.s.singleLine(got) && (leadingSpaces || trailingSpaces))
+                if (real_fns_1.s.singleLine(nodeText) && (leadingSpaces || trailingSpaces))
                     context.report({
-                        fix: () => ({ range, text: got.trim() }),
+                        fix: () => ({ range, text: text.trim() }),
                         loc: context.getLoc(range),
                         messageId: MessageId.removeSpaces
                     });
