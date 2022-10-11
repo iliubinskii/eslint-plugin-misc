@@ -6,6 +6,7 @@ import nodePath from "node:path";
 import type { strings } from "type-essentials";
 
 export interface Suboptions {
+  readonly _id: string;
   readonly hierarchy: stringsArray;
 }
 
@@ -18,7 +19,7 @@ export enum MessageId {
 export const isStringsArray = is.factory(is.array.of, is.strings);
 
 export const isSuboptions = is.object.factory<Suboptions>(
-  { hierarchy: isStringsArray },
+  { _id: is.string, hierarchy: isStringsArray },
   {}
 );
 
@@ -26,7 +27,7 @@ export const noSiblingImport = utils.createRule({
   name: "no-sibling-import",
   vue: true,
   isSuboptions: is.object.factory<Suboptions>(
-    { hierarchy: isStringsArray },
+    { _id: is.string, hierarchy: isStringsArray },
     {}
   ),
   defaultSuboptions: { hierarchy: [] },
@@ -36,8 +37,11 @@ export const noSiblingImport = utils.createRule({
   },
   docs: {
     description: "Restricts importing siblings.",
-    suboptionTypes: { hierarchy: "string[][]" },
-    suboptionDescriptions: { hierarchy: "Allows some sibling dependencies" },
+    suboptionTypes: { _id: "string", hierarchy: "string[][]" },
+    suboptionDescriptions: {
+      _id: "Id",
+      hierarchy: "Allows some sibling dependencies"
+    },
     failExamples: `
       // filename: file.ts
       import { x } from "./sibling-file";
