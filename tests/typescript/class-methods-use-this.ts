@@ -12,6 +12,7 @@ utils.testRule("class-methods-use-this", rule, [
       class C {
         f() {}
         g(this: void) {}
+        get h() {}
       }
     `,
     errors: [
