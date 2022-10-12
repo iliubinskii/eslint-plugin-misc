@@ -25,8 +25,8 @@ utils.testRule(
       options: [
         {
           rules: [
-            { hierarchy: [["./source1"], ["./file"]] },
-            { hierarchy: [["./source2"], ["./another-file"]] }
+            { _id: "id1", hierarchy: [["./source1"], ["./file"]] },
+            { _id: "id2", hierarchy: [["./source2"], ["./another-file"]] }
           ]
         }
       ],
@@ -40,7 +40,7 @@ utils.testRule(
   [
     {
       name: `Test at line ${getCurrentLine().line}`,
-      options: [{ rules: [{ hierarchy: [["./*"], ["./*"]] }] }],
+      options: [{ rules: [{ _id: "id", hierarchy: [["./*"], ["./*"]] }] }],
       code: 'import x from "./source";'
     },
     {
