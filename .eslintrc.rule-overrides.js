@@ -119,6 +119,7 @@ module.exports = {
       {
         rules: [
           {
+            _id: "utils",
             filesToLint: ["./src/utils/*"],
             hierarchy: [
               ["./TypeCheck", "./compare", "./misc"],
@@ -126,6 +127,7 @@ module.exports = {
             ]
           },
           {
+            _id: "utils/types",
             filesToLint: ["./src/utils/types/*"],
             hierarchy: [["./misc"], ["./context"]]
           }
