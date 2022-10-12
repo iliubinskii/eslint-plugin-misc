@@ -71,6 +71,14 @@ export declare class TypeCheck {
      */
     getType(node: TSESTree.Node): ts.Type;
     /**
+     * Returns symbol type.
+     *
+     * @param symbol - Symbol.
+     * @param node - Node.
+     * @returns Type.
+     */
+    getTypeBySymbol(symbol: ts.Symbol, node: TSESTree.Node): ts.Type;
+    /**
      * Checks if mixed has doc comment.
      *
      * @param mixed - Mixed.

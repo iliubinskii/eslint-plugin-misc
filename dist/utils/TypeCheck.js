@@ -123,6 +123,17 @@ class TypeCheck {
         return this.checker.getTypeAtLocation(tsNode);
     }
     /**
+     * Returns symbol type.
+     *
+     * @param symbol - Symbol.
+     * @param node - Node.
+     * @returns Type.
+     */
+    getTypeBySymbol(symbol, node) {
+        const tsNode = this.toTsNode(node);
+        return this.checker.getTypeOfSymbolAtLocation(symbol, tsNode);
+    }
+    /**
      * Checks if mixed has doc comment.
      *
      * @param mixed - Mixed.
@@ -205,7 +216,7 @@ class TypeCheck {
                 tsutils.isBooleanLiteralType(part, false)) ||
                 parts.every(part => tsutils.isBooleanLiteralType(part, true) ||
                     this.isUndefinedType(part)) ||
-                parts.every(part => tsutils.isObjectType(part) || this.isUndefinedType(part)) ||
+                parts.every(part => this.isObjectType(part) || this.isUndefinedType(part)) ||
                 parts.every(part => safeBooleanWithUndefined.has(part.getFlags()) ||
                     this.isUndefinedType(part)))
                 return true;

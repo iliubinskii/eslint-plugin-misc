@@ -63,32 +63,19 @@ exports.noReadonlyVModel = utils.createRule({
         const variables = new Map();
         return {
             "Program:exit": () => {
-                for (const node of directives)
-                    if (node.value &&
-                        node.value.expression &&
-                        node.value.expression.type === utils_1.AST_NODE_TYPES.MemberExpression &&
-                        node.value.expression.object.type === utils_1.AST_NODE_TYPES.Identifier &&
-                        node.value.expression.property.type === utils_1.AST_NODE_TYPES.Identifier) {
-                        const variable = variables.get(node.value.expression.object.name);
-                        if (variable) {
-                            const type = (0, real_fns_1.evaluate)(() => {
-                                const result = typeCheck.getType(variable);
-                                const symbol = result.getSymbol();
-                                if (symbol && ["ComputedRef", "Ref"].includes(symbol.name)) {
-                                    const argType = typeCheck.getArgTypes(result)[0];
-                                    if (argType)
-                                        return argType;
-                                }
-                                return result;
-                            });
-                            const property = type.getProperty(node.value.expression.property.name);
-                            if (real_fns_1.is.not.empty(property) &&
-                                typeCheck.isReadonlyProperty(property, type))
-                                context.report({
-                                    loc: context.getLoc(node.range),
-                                    messageId: MessageId.noReadonlyProperty
-                                });
-                        }
+                for (const directive of directives)
+                    if (directive.value && directive.value.expression) {
+                        const expression = directive.value.expression;
+                        if (expression.type === utils_1.AST_NODE_TYPES.MemberExpression &&
+                            expression.object.type === utils_1.AST_NODE_TYPES.Identifier &&
+                            expression.property.type === utils_1.AST_NODE_TYPES.Identifier)
+                            lintDirective(directive, expression.object.name, expression.property.name);
+                        if (expression.type === utils_1.AST_NODE_TYPES.MemberExpression &&
+                            expression.object.type === utils_1.AST_NODE_TYPES.MemberExpression &&
+                            expression.object.object.type === utils_1.AST_NODE_TYPES.Identifier &&
+                            expression.object.property.type === utils_1.AST_NODE_TYPES.Identifier &&
+                            expression.property.type === utils_1.AST_NODE_TYPES.Identifier)
+                            lintDirective(directive, expression.object.object.name, expression.object.property.name, expression.property.name);
                     }
             },
             "Property[key.name=setup] > ArrowFunctionExpression > BlockStatement > ReturnStatement > ObjectExpression > Property": (node) => {
@@ -104,6 +91,36 @@ exports.noReadonlyVModel = utils.createRule({
                     directives.push(node);
             }
         };
+        function lintDirective(directive, name, ...path) {
+            const variable = variables.get(name);
+            if (variable) {
+                const type = (0, real_fns_1.evaluate)(() => {
+                    const result = typeCheck.getType(variable);
+                    const symbol = result.getSymbol();
+                    if (symbol && ["ComputedRef", "Ref"].includes(symbol.name)) {
+                        const argType = typeCheck.getArgTypes(result)[0];
+                        if (argType)
+                            return argType;
+                    }
+                    return result;
+                });
+                lintType(directive, variable, type, ...path);
+            }
+        }
+        function lintType(directive, variable, type, ...path) {
+            const property = type.getProperty(real_fns_1.a.first(path));
+            if (real_fns_1.is.not.empty(property))
+                if (path.length > 1)
+                    lintType(directive, variable, typeCheck.getTypeBySymbol(property, variable), ...path.slice(1));
+                else if (typeCheck.isReadonlyProperty(property, type))
+                    context.report({
+                        loc: context.getLoc(directive.range),
+                        messageId: MessageId.noReadonlyProperty
+                    });
+                else {
+                    // Valid
+                }
+        }
     }
 });
 //# sourceMappingURL=no-readonly-v-model.js.map

@@ -87,14 +87,15 @@ function sortGroup(items, options, context) {
                 real_fns_1.a.get(items, real_fns_1.as.not.empty(min)).node.range[0],
                 real_fns_1.a.get(items, real_fns_1.as.not.empty(max)).node.range[1]
             ]);
-            context.report(real_fns_1.is.not.empty(_id)
-                ? {
+            if (real_fns_1.is.not.empty(_id))
+                context.report({
                     data: { _id },
                     fix: () => fixes,
                     loc,
                     messageId: sort_internal_1.MessageId.incorrectSortingOrderId
-                }
-                : {
+                });
+            else
+                context.report({
                     fix: () => fixes,
                     loc,
                     messageId: sort_internal_1.MessageId.incorrectSortingOrder

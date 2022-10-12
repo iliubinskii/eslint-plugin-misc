@@ -13,6 +13,7 @@ module.exports = {
       {
         rules: [
           {
+            _id: string,
             filesToLint: string[],
             filesToSkip: string[],
             hierarchy: string[][]
@@ -27,6 +28,7 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
+| `rules._id` | Id | `-` |
 | `rules.filesToLint` | Files to lint (minimatch patterns) | `[]` |
 | `rules.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
 | `rules.hierarchy` | Allows some sibling dependencies | `[]` |

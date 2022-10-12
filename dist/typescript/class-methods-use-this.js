@@ -10,7 +10,10 @@ exports.classMethodsUseThis = utils.wrapRule({
         {
             plugin: "eslint",
             rule: "class-methods-use-this",
-            skip: "FunctionExpression[params.0.name=this][params.0.typeAnnotation.typeAnnotation.type=TSVoidKeyword]"
+            skip: [
+                "FunctionExpression[params.0.name=this][params.0.typeAnnotation.typeAnnotation.type=TSVoidKeyword]",
+                "MethodDefinition[kind=get] > FunctionExpression"
+            ]
         }
     ],
     docs: {

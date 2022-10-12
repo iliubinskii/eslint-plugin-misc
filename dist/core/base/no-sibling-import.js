@@ -12,11 +12,11 @@ var MessageId;
     MessageId["disallowedSource"] = "disallowedSource";
 })(MessageId = exports.MessageId || (exports.MessageId = {}));
 exports.isStringsArray = real_fns_1.is.factory(real_fns_1.is.array.of, real_fns_1.is.strings);
-exports.isSuboptions = real_fns_1.is.object.factory({ hierarchy: exports.isStringsArray }, {});
+exports.isSuboptions = real_fns_1.is.object.factory({ _id: real_fns_1.is.string, hierarchy: exports.isStringsArray }, {});
 exports.noSiblingImport = utils.createRule({
     name: "no-sibling-import",
     vue: true,
-    isSuboptions: real_fns_1.is.object.factory({ hierarchy: exports.isStringsArray }, {}),
+    isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, hierarchy: exports.isStringsArray }, {}),
     defaultSuboptions: { hierarchy: [] },
     suboptionsKey: "rules",
     messages: {
@@ -24,8 +24,11 @@ exports.noSiblingImport = utils.createRule({
     },
     docs: {
         description: "Restricts importing siblings.",
-        suboptionTypes: { hierarchy: "string[][]" },
-        suboptionDescriptions: { hierarchy: "Allows some sibling dependencies" },
+        suboptionTypes: { _id: "string", hierarchy: "string[][]" },
+        suboptionDescriptions: {
+            _id: "Id",
+            hierarchy: "Allows some sibling dependencies"
+        },
         failExamples: `
       // filename: file.ts
       import { x } from "./sibling-file";

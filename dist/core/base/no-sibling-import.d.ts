@@ -1,6 +1,7 @@
 import { is } from "real-fns";
 import type { strings } from "type-essentials";
 export interface Suboptions {
+    readonly _id: string;
     readonly hierarchy: stringsArray;
 }
 export declare type stringsArray = readonly strings[];

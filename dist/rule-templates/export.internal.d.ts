@@ -1,4 +1,4 @@
-import type { utils } from "..";
+import type * as utils from "../utils";
 export interface Callback {
     /**
      * Callback.

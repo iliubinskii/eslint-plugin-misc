@@ -6,6 +6,7 @@ const tslib_1 = require("tslib");
 const ts = tslib_1.__importStar(require("typescript"));
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
+const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["unsafeOptionalAssignment"] = "unsafeOptionalAssignment";
@@ -49,7 +50,7 @@ exports.noUnsafeObjectAssignment = utils.createRule({
         return {
             ArrowFunctionExpression: node => {
                 if (node.body.type === utils_1.AST_NODE_TYPES.BlockStatement) {
-                    // Сhecked by ReturnStatement visitor
+                    // Сhecked by ReturnStatement
                 }
                 else if (node.returnType)
                     lintDestSource(node.returnType.typeAnnotation, node.body);
@@ -78,7 +79,8 @@ exports.noUnsafeObjectAssignment = utils.createRule({
             }
         };
         function lintDestSource(dest, source) {
-            if (source.type === utils_1.AST_NODE_TYPES.ObjectExpression) {
+            if (source.type === utils_1.AST_NODE_TYPES.ArrayExpression ||
+                source.type === utils_1.AST_NODE_TYPES.ObjectExpression) {
                 // Ignore
             }
             else {
@@ -88,7 +90,8 @@ exports.noUnsafeObjectAssignment = utils.createRule({
             }
         }
         function lintNode(node) {
-            if (node.type === utils_1.AST_NODE_TYPES.ObjectExpression) {
+            if (node.type === utils_1.AST_NODE_TYPES.ArrayExpression ||
+                node.type === utils_1.AST_NODE_TYPES.ObjectExpression) {
                 // Ignore
             }
             else {
@@ -98,58 +101,79 @@ exports.noUnsafeObjectAssignment = utils.createRule({
                     lintTypes(destType, sourceType, node);
             }
         }
-        function lintTypes(dest, source, node) {
-            if (dest === source) {
-                // Ignore self-assignment
+        function lintProperties(dest, source, node) {
+            return lintProperties1(dest, source, node);
+        }
+        function lintProperties1(dest, source, node) {
+            for (const sourcePart of source.isUnion() ? source.types : [source]) {
+                const report = lintProperties2(dest, sourcePart, node);
+                if (report)
+                    return report;
             }
-            else if (typeCheck.isObjectType(dest) &&
-                typeCheck.isObjectType(source)) {
-                for (const destProperty of dest.getProperties())
-                    if (destProperty.name.startsWith("__@")) {
-                        // Ignore internal properties
-                    }
-                    else {
-                        const sourceProperty = source.getProperty(destProperty.name);
-                        if (sourceProperty) {
-                            const destReadonly = typeCheck.isReadonlyProperty(destProperty, dest);
-                            const sourceReadonly = typeCheck.isReadonlyProperty(sourceProperty, source);
-                            if (sourceReadonly && !destReadonly) {
-                                context.report({
-                                    data: { name: destProperty.name },
-                                    messageId: MessageId.unsafeReadonlyAssignment,
-                                    node
-                                });
-                                return;
-                            }
-                        }
-                        else {
-                            context.report({
+            return undefined;
+        }
+        function lintProperties2(dest, source, node) {
+            const reports = [];
+            for (const destPart of dest.isUnion() ? dest.types : [dest]) {
+                const report = lintProperties3(destPart, source, node);
+                if (report)
+                    reports.push(report);
+                else
+                    return undefined;
+            }
+            return real_fns_1.a.first(reports);
+        }
+        function lintProperties3(dest, source, node) {
+            if (dest === source)
+                return undefined;
+            for (const destProperty of dest.getProperties())
+                if (destProperty.name.startsWith("__@")) {
+                    // Ignore internal properties
+                }
+                else {
+                    const sourceProperty = source.getProperty(destProperty.name);
+                    if (sourceProperty) {
+                        const destReadonly = typeCheck.isReadonlyProperty(destProperty, dest);
+                        const sourceReadonly = typeCheck.isReadonlyProperty(sourceProperty, source);
+                        if (sourceReadonly && !destReadonly)
+                            return {
                                 data: { name: destProperty.name },
-                                messageId: MessageId.unsafeOptionalAssignment,
+                                messageId: MessageId.unsafeReadonlyAssignment,
                                 node
-                            });
-                            return;
-                        }
+                            };
                     }
-                for (const kind of [ts.IndexKind.Number, ts.IndexKind.String]) {
-                    const sourceIndex = typeCheck.getIndexInfo(source, kind);
-                    const destIndex = typeCheck.getIndexInfo(dest, kind);
-                    if (sourceIndex &&
-                        destIndex &&
-                        sourceIndex.isReadonly &&
-                        !destIndex.isReadonly) {
-                        context.report({
+                    else
+                        return {
+                            data: { name: destProperty.name },
+                            messageId: MessageId.unsafeOptionalAssignment,
+                            node
+                        };
+                }
+            return undefined;
+        }
+        function lintSignatures(dest, source, node) {
+            for (const kind of [ts.IndexKind.Number, ts.IndexKind.String]) {
+                const destIndex = typeCheck.getIndexInfo(dest, kind);
+                const sourceIndex = typeCheck.getIndexInfo(source, kind);
+                if (destIndex && sourceIndex) {
+                    if (sourceIndex.isReadonly && !destIndex.isReadonly)
+                        return {
                             data: { name: "Index signature" },
                             messageId: MessageId.unsafeReadonlyAssignment,
                             node
-                        });
-                        return;
-                    }
+                        };
+                    const report = lintProperties(destIndex.type, sourceIndex.type, node);
+                    if (report)
+                        return report;
                 }
             }
-            else {
-                // Ignore non-object types
-            }
+            return undefined;
+        }
+        function lintTypes(dest, source, node) {
+            var _a;
+            const report = (_a = lintProperties(dest, source, node)) !== null && _a !== void 0 ? _a : lintSignatures(dest, source, node);
+            if (report)
+                context.report(report);
         }
     }
 });
