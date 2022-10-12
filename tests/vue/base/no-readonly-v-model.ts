@@ -79,6 +79,31 @@ utils.testRule(
         </template>
       `,
       errors: [{ line: 18, messageId: MessageId.noReadonlyProperty }]
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        <script lang="ts">
+        interface I {
+          readonly x: J;
+        }
+
+        interface J {
+          readonly y: unknown;
+        }
+
+        const obj: I = { x: { y: 1 } };
+
+        export default defineComponent({
+          setup: () => ({ obj })
+        });
+        </script>
+
+        <template>
+          <sample-component v-model="obj.x.y" />
+        </template>
+      `,
+      errors: [{ line: 18, messageId: MessageId.noReadonlyProperty }]
     }
   ],
   [
@@ -147,6 +172,30 @@ utils.testRule(
 
         <template>
           <sample-component v-model="obj.x" />
+        </template>
+      `
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        <script lang="ts">
+        interface I {
+          readonly x: J;
+        }
+
+        interface J {
+          y: unknown;
+        }
+
+        const obj: I = { x: { y: 1 } };
+
+        export default defineComponent({
+          setup: () => ({ obj })
+        });
+        </script>
+
+        <template>
+          <sample-component v-model="obj.x.y" />
         </template>
       `
     },

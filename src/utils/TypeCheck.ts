@@ -143,6 +143,19 @@ export class TypeCheck {
   }
 
   /**
+   * Returns symbol type.
+   *
+   * @param symbol - Symbol.
+   * @param node - Node.
+   * @returns Type.
+   */
+  public getTypeBySymbol(symbol: ts.Symbol, node: TSESTree.Node): ts.Type {
+    const tsNode = this.toTsNode(node);
+
+    return this.checker.getTypeOfSymbolAtLocation(symbol, tsNode);
+  }
+
+  /**
    * Checks if mixed has doc comment.
    *
    * @param mixed - Mixed.

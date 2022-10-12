@@ -1,10 +1,12 @@
+// eslint-disable-next-line misc/disallow-import/typescript -- Ok
+import type * as ts from "typescript";
 import * as utils from "../../utils";
-import { evaluate, is } from "real-fns";
+import type { Writable, strings } from "type-essentials";
+import { a, evaluate, is } from "real-fns";
 import type { AST } from "vue-eslint-parser";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "type-essentials";
 
 export enum MessageId {
   noReadonlyProperty = "noReadonlyProperty"
@@ -67,44 +69,34 @@ export const noReadonlyVModel = utils.createRule({
 
     return {
       "Program:exit": () => {
-        for (const node of directives)
-          if (
-            node.value &&
-            node.value.expression &&
-            node.value.expression.type === AST_NODE_TYPES.MemberExpression &&
-            node.value.expression.object.type === AST_NODE_TYPES.Identifier &&
-            node.value.expression.property.type === AST_NODE_TYPES.Identifier
-          ) {
-            const variable = variables.get(node.value.expression.object.name);
+        for (const directive of directives)
+          if (directive.value && directive.value.expression) {
+            const expression = directive.value.expression;
 
-            if (variable) {
-              const type = evaluate(() => {
-                const result = typeCheck.getType(variable);
-
-                const symbol = result.getSymbol();
-
-                if (symbol && ["ComputedRef", "Ref"].includes(symbol.name)) {
-                  const argType = typeCheck.getArgTypes(result)[0];
-
-                  if (argType) return argType;
-                }
-
-                return result;
-              });
-
-              const property = type.getProperty(
-                node.value.expression.property.name
+            if (
+              expression.type === AST_NODE_TYPES.MemberExpression &&
+              expression.object.type === AST_NODE_TYPES.Identifier &&
+              expression.property.type === AST_NODE_TYPES.Identifier
+            )
+              lintDirective(
+                directive,
+                expression.object.name,
+                expression.property.name
               );
 
-              if (
-                is.not.empty(property) &&
-                typeCheck.isReadonlyProperty(property, type)
-              )
-                context.report({
-                  loc: context.getLoc(node.range),
-                  messageId: MessageId.noReadonlyProperty
-                });
-            }
+            if (
+              expression.type === AST_NODE_TYPES.MemberExpression &&
+              expression.object.type === AST_NODE_TYPES.MemberExpression &&
+              expression.object.object.type === AST_NODE_TYPES.Identifier &&
+              expression.object.property.type === AST_NODE_TYPES.Identifier &&
+              expression.property.type === AST_NODE_TYPES.Identifier
+            )
+              lintDirective(
+                directive,
+                expression.object.object.name,
+                expression.object.property.name,
+                expression.property.name
+              );
           }
       },
       "Property[key.name=setup] > ArrowFunctionExpression > BlockStatement > ReturnStatement > ObjectExpression > Property":
@@ -122,5 +114,57 @@ export const noReadonlyVModel = utils.createRule({
           directives.push(node);
       }
     };
+
+    function lintDirective(
+      directive: AST.VDirective,
+      name: string,
+      ...path: strings
+    ): void {
+      const variable = variables.get(name);
+
+      if (variable) {
+        const type = evaluate(() => {
+          const result = typeCheck.getType(variable);
+
+          const symbol = result.getSymbol();
+
+          if (symbol && ["ComputedRef", "Ref"].includes(symbol.name)) {
+            const argType = typeCheck.getArgTypes(result)[0];
+
+            if (argType) return argType;
+          }
+
+          return result;
+        });
+
+        lintType(directive, variable, type, ...path);
+      }
+    }
+
+    function lintType(
+      directive: AST.VDirective,
+      variable: TSESTree.Node,
+      type: ts.Type,
+      ...path: strings
+    ): void {
+      const property = type.getProperty(a.first(path));
+
+      if (is.not.empty(property))
+        if (path.length > 1)
+          lintType(
+            directive,
+            variable,
+            typeCheck.getTypeBySymbol(property, variable),
+            ...path.slice(1)
+          );
+        else if (typeCheck.isReadonlyProperty(property, type))
+          context.report({
+            loc: context.getLoc(directive.range),
+            messageId: MessageId.noReadonlyProperty
+          });
+        else {
+          // Valid
+        }
+    }
   }
 });
