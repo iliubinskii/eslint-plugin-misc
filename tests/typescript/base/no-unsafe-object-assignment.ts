@@ -211,6 +211,29 @@ utils.testRule(
           data: { name: "value" }
         }
       ]
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        function f(x: I[]): J[] {
+          return x;
+        }
+
+        interface I {
+          readonly value: string;
+        }
+
+        interface J {
+          value: string;
+        }
+      `,
+      errors: [
+        {
+          line: 2,
+          messageId: MessageId.unsafeReadonlyAssignment,
+          data: { name: "value" }
+        }
+      ]
     }
   ],
   [
@@ -234,6 +257,34 @@ utils.testRule(
         }
 
         function f(x: I) {}
+      `
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        async function f(): Promise<I> {
+          return { value: "" } as I;
+        }
+
+        interface I {
+          [K: string]: unknown;
+        }
+      `
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        async function f(): I | J {
+          return {} as I | J;
+        }
+
+        interface I {
+          x: string;
+        }
+
+        interface J {
+          y: string;
+        }
       `
     }
   ]
