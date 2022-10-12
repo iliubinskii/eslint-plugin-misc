@@ -139,20 +139,19 @@ function sortGroup<T extends TSESTree.Node = TSESTree.Node>(
         a.get(items, as.not.empty(max)).node.range[1]
       ]);
 
-      context.report(
-        is.not.empty(_id)
-          ? {
-              data: { _id },
-              fix: () => fixes,
-              loc,
-              messageId: MessageId.incorrectSortingOrderId
-            }
-          : {
-              fix: () => fixes,
-              loc,
-              messageId: MessageId.incorrectSortingOrder
-            }
-      );
+      if (is.not.empty(_id))
+        context.report({
+          data: { _id },
+          fix: () => fixes,
+          loc,
+          messageId: MessageId.incorrectSortingOrderId
+        });
+      else
+        context.report({
+          fix: () => fixes,
+          loc,
+          messageId: MessageId.incorrectSortingOrder
+        });
     }
   }
 }

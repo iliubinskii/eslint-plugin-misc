@@ -95,13 +95,13 @@ export const wrap = utils.createRule({
       skip: mixedSkip
     } = context.options;
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- Ok
-    const rule: RuleModule<string> =
+    const rule = (
       plugin === "eslint"
         ? // eslint-disable-next-line misc/prefer-const-require -- Ok
           require(`${utils.projectRoot}node_modules/eslint/lib/rules/${name}`)
         : // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, misc/prefer-const-require -- Ok
-          require(plugin).rules[name];
+          require(plugin).rules[name]
+    ) as RuleModule<string>;
 
     const lint = utils.selector(mixedLint);
 
