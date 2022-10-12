@@ -261,7 +261,7 @@ export class TypeCheck {
             this.isUndefinedType(part)
         ) ||
         parts.every(
-          part => tsutils.isObjectType(part) || this.isUndefinedType(part)
+          part => this.isObjectType(part) || this.isUndefinedType(part)
         ) ||
         parts.every(
           part =>
