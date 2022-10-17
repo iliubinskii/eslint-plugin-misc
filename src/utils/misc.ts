@@ -223,7 +223,7 @@ export function wrapRule<M extends string, O extends unknowns>(
   const docs: ESLintUtils.NamedCreateRuleMetaDocs = {
     recommended: false,
     requiresTypeChecking: true,
-    ...o.removeUndefinedKeys({
+    ...o.removeUndefinedKeys.alt({
       ...rawDocs,
       description: rawDocs
         ? s.unpadMultiline(rawDocs.description)

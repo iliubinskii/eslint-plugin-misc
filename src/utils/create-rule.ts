@@ -43,7 +43,7 @@ export function createRule<
   const docs: ESLintUtils.NamedCreateRuleMetaDocs = {
     recommended: false,
     requiresTypeChecking: true,
-    ...o.removeUndefinedKeys({
+    ...o.removeUndefinedKeys.alt({
       ...rawDocs,
       defaultOptions,
       defaultSuboptions,
@@ -104,7 +104,7 @@ export function createRule<
       messages,
       schema: [{}],
       type: "suggestion",
-      ...o.removeUndefinedKeys({ fixable })
+      ...o.removeUndefinedKeys.alt({ fixable })
     },
     name: options.name
   });
