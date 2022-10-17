@@ -73,6 +73,8 @@
     "sort-json.settings.ignoreArraysOnDeepSort": true,
     "sort-json.settings.isCaseSensitive": true,
     "sort-json.settings.orderOverride": [
+      "$schema",
+      "$id",
       "name",
       "description",
       "keywords",
@@ -80,6 +82,7 @@
       "minimum-stability",
       "prefer-stable",
       "version",
+      "private",
       "license",
       "homepage",
       "extends"
