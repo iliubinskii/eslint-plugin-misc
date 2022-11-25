@@ -2,7 +2,7 @@ import * as ts from "typescript";
 import * as tsutils from "tsutils";
 import { AST_NODE_TYPES, ESLintUtils } from "@typescript-eslint/utils";
 import type { ParserServices, TSESTree } from "@typescript-eslint/utils";
-import { ReadonlySet, as, assert, is } from "real-fns";
+import { ReadonlySet, as, assert, is, typedef } from "real-fns";
 import type {
   Signatures,
   TypeFlagsArray,
@@ -597,21 +597,21 @@ export class TypeCheck {
   }
 }
 
-const isExpectedFlags: is.Guard<ExpectedFlags> = is.factory(is.enumeration, {
-  [ts.TypeFlags.BigInt]: ts.TypeFlags.BigInt,
-  [ts.TypeFlags.BigIntLiteral]: ts.TypeFlags.BigIntLiteral,
-  [ts.TypeFlags.BooleanLiteral]: ts.TypeFlags.BooleanLiteral,
-  [ts.TypeFlags.ESSymbol]: ts.TypeFlags.ESSymbol,
-  [ts.TypeFlags.Null]: ts.TypeFlags.Null,
-  [ts.TypeFlags.Number]: ts.TypeFlags.Number,
-  [ts.TypeFlags.NumberLiteral]: ts.TypeFlags.NumberLiteral,
-  [ts.TypeFlags.Object]: ts.TypeFlags.Object,
-  [ts.TypeFlags.String]: ts.TypeFlags.String,
-  [ts.TypeFlags.StringLiteral]: ts.TypeFlags.StringLiteral,
-  [ts.TypeFlags.Undefined]: ts.TypeFlags.Undefined,
-  [ts.TypeFlags.UniqueESSymbol]: ts.TypeFlags.UniqueESSymbol,
-  [ts.TypeFlags.Void]: ts.TypeFlags.Void
-} as const);
+const expectedFlags = new ReadonlySet<ExpectedFlags>([
+  ts.TypeFlags.BigInt,
+  ts.TypeFlags.BigIntLiteral,
+  ts.TypeFlags.BooleanLiteral,
+  ts.TypeFlags.ESSymbol,
+  ts.TypeFlags.Null,
+  ts.TypeFlags.Number,
+  ts.TypeFlags.NumberLiteral,
+  ts.TypeFlags.Object,
+  ts.TypeFlags.String,
+  ts.TypeFlags.StringLiteral,
+  ts.TypeFlags.Undefined,
+  ts.TypeFlags.UniqueESSymbol,
+  ts.TypeFlags.Void
+]);
 
 const safeBoolean = new ReadonlySet([
   ts.TypeFlags.BigInt,
@@ -666,6 +666,16 @@ function checkTypeFlags(type: ts.Type, ...flags: TypeFlagsArray): boolean {
     (type.isUnion() &&
       type.types.every(subtype => flags.includes(subtype.getFlags())))
   );
+}
+
+/**
+ * Checks if value type is ExpectedFlags.
+ *
+ * @param value - Value.
+ * @returns _True_ if value type is ExpectedFlags, _false_ otherwise.
+ */
+function isExpectedFlags(value: unknown): value is ExpectedFlags {
+  return typedef<ReadonlySet<unknown>>(expectedFlags).has(value);
 }
 
 type ExpectedFlags =
