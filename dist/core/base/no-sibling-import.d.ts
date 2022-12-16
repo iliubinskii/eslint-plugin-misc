@@ -4,7 +4,7 @@ export interface Suboptions {
     readonly _id: string;
     readonly hierarchy: stringsArray;
 }
-export declare type stringsArray = readonly strings[];
+export type stringsArray = readonly strings[];
 export declare enum MessageId {
     disallowedSource = "disallowedSource"
 }

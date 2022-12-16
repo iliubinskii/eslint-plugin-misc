@@ -430,21 +430,21 @@ class TypeCheck {
     }
 }
 exports.TypeCheck = TypeCheck;
-const isExpectedFlags = real_fns_1.is.factory(real_fns_1.is.enumeration, {
-    [ts.TypeFlags.BigInt]: ts.TypeFlags.BigInt,
-    [ts.TypeFlags.BigIntLiteral]: ts.TypeFlags.BigIntLiteral,
-    [ts.TypeFlags.BooleanLiteral]: ts.TypeFlags.BooleanLiteral,
-    [ts.TypeFlags.ESSymbol]: ts.TypeFlags.ESSymbol,
-    [ts.TypeFlags.Null]: ts.TypeFlags.Null,
-    [ts.TypeFlags.Number]: ts.TypeFlags.Number,
-    [ts.TypeFlags.NumberLiteral]: ts.TypeFlags.NumberLiteral,
-    [ts.TypeFlags.Object]: ts.TypeFlags.Object,
-    [ts.TypeFlags.String]: ts.TypeFlags.String,
-    [ts.TypeFlags.StringLiteral]: ts.TypeFlags.StringLiteral,
-    [ts.TypeFlags.Undefined]: ts.TypeFlags.Undefined,
-    [ts.TypeFlags.UniqueESSymbol]: ts.TypeFlags.UniqueESSymbol,
-    [ts.TypeFlags.Void]: ts.TypeFlags.Void
-});
+const expectedFlags = new real_fns_1.ReadonlySet([
+    ts.TypeFlags.BigInt,
+    ts.TypeFlags.BigIntLiteral,
+    ts.TypeFlags.BooleanLiteral,
+    ts.TypeFlags.ESSymbol,
+    ts.TypeFlags.Null,
+    ts.TypeFlags.Number,
+    ts.TypeFlags.NumberLiteral,
+    ts.TypeFlags.Object,
+    ts.TypeFlags.String,
+    ts.TypeFlags.StringLiteral,
+    ts.TypeFlags.Undefined,
+    ts.TypeFlags.UniqueESSymbol,
+    ts.TypeFlags.Void
+]);
 const safeBoolean = new real_fns_1.ReadonlySet([
     ts.TypeFlags.BigInt,
     ts.TypeFlags.BigIntLiteral,
@@ -488,5 +488,14 @@ function checkTypeFlags(type, ...flags) {
     return (flags.includes(type.getFlags()) ||
         (type.isUnion() &&
             type.types.every(subtype => flags.includes(subtype.getFlags()))));
+}
+/**
+ * Checks if value type is ExpectedFlags.
+ *
+ * @param value - Value.
+ * @returns _True_ if value type is ExpectedFlags, _false_ otherwise.
+ */
+function isExpectedFlags(value) {
+    return (0, real_fns_1.typedef)(expectedFlags).has(value);
 }
 //# sourceMappingURL=TypeCheck.js.map

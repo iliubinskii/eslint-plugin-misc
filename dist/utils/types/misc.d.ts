@@ -42,7 +42,7 @@ export interface Docs<O extends PropertyKey = never, S extends PropertyKey = nev
     readonly suboptionDescriptions?: Rec<S, string>;
     readonly suboptionTypes?: Rec<S, string>;
 }
-export declare type FilePattern = a.Mixed<string>;
+export type FilePattern = a.Mixed<string>;
 export interface Matcher {
     /**
      * Checks if string matches condition.
@@ -52,23 +52,23 @@ export interface Matcher {
      */
     (str: string): boolean;
 }
-export declare type Matchers = readonly Matcher[];
-export declare type Options<O extends object, S extends object, K extends string = never> = O & {
+export type Matchers = readonly Matcher[];
+export type Options<O extends object, S extends object, K extends string = never> = O & {
     readonly [L in K]: SuboptionsArray<S>;
 };
-export declare type RegexpPattern = a.Mixed<string>;
-export declare type ReportDescriptor<T extends string = string> = BaseReportDescriptor<T>;
-export declare type ReportDescriptors<T extends string = string> = ReadonlyArray<ReportDescriptor<T>>;
-export declare type RuleFixes = readonly RuleFix[];
-export declare type RuleListeners = readonly RuleListener[];
-export declare type Selector = a.Mixed<string>;
+export type RegexpPattern = a.Mixed<string>;
+export type ReportDescriptor<T extends string = string> = BaseReportDescriptor<T>;
+export type ReportDescriptors<T extends string = string> = ReadonlyArray<ReportDescriptor<T>>;
+export type RuleFixes = readonly RuleFix[];
+export type RuleListeners = readonly RuleListener[];
+export type Selector = a.Mixed<string>;
 export interface SharedSuboptions {
     readonly filesToLint?: strings;
     readonly filesToSkip?: strings;
 }
-export declare type Suboptions<T extends object> = SharedSuboptions & T;
-export declare type SuboptionsArray<T extends object> = ReadonlyArray<Suboptions<T>>;
-export declare type TypeGroups = readonly TypeGroup[];
-export declare type esRange = readonly [number, number];
-export declare type esRanges = readonly esRange[];
+export type Suboptions<T extends object> = SharedSuboptions & T;
+export type SuboptionsArray<T extends object> = ReadonlyArray<Suboptions<T>>;
+export type TypeGroups = readonly TypeGroup[];
+export type esRange = readonly [number, number];
+export type esRanges = readonly esRange[];
 //# sourceMappingURL=misc.d.ts.map

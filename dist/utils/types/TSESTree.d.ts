@@ -1,10 +1,10 @@
 import type { TSESTree } from "@typescript-eslint/utils";
-export declare type ExportAllDeclarations = readonly TSESTree.ExportAllDeclaration[];
-export declare type ExportDeclaration = TSESTree.ExportAllDeclaration | TSESTree.ExportDefaultDeclaration | TSESTree.ExportNamedDeclaration;
-export declare type ExportDeclarations = readonly ExportDeclaration[];
-export declare type ExportDefaultDeclarations = readonly TSESTree.ExportDefaultDeclaration[];
-export declare type ExportNamedDeclarations = readonly TSESTree.ExportNamedDeclaration[];
-export declare type Identifiers = readonly TSESTree.Identifier[];
-export declare type ImportDeclarations = readonly TSESTree.ImportDeclaration[];
-export declare type Nodes = readonly TSESTree.Node[];
+export type ExportAllDeclarations = readonly TSESTree.ExportAllDeclaration[];
+export type ExportDeclaration = TSESTree.ExportAllDeclaration | TSESTree.ExportDefaultDeclaration | TSESTree.ExportNamedDeclaration;
+export type ExportDeclarations = readonly ExportDeclaration[];
+export type ExportDefaultDeclarations = readonly TSESTree.ExportDefaultDeclaration[];
+export type ExportNamedDeclarations = readonly TSESTree.ExportNamedDeclaration[];
+export type Identifiers = readonly TSESTree.Identifier[];
+export type ImportDeclarations = readonly TSESTree.ImportDeclaration[];
+export type Nodes = readonly TSESTree.Node[];
 //# sourceMappingURL=TSESTree.d.ts.map

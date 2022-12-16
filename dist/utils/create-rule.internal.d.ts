@@ -21,7 +21,7 @@ export declare function createContext<M extends string, O extends object, S exte
  * @returns Project configuration.
  */
 export declare function getProjectConfig(path?: string): ProjectConfig;
-export declare type ContextOptionsArray = readonly [object];
+export type ContextOptionsArray = readonly [object];
 export interface CreateRuleOptions<M extends string, O extends object, S extends object, K extends string = never> {
     /**
      * Creates rule listener.
@@ -42,10 +42,10 @@ export interface CreateRuleOptions<M extends string, O extends object, S extends
     readonly suboptionsKey?: K;
     readonly vue: boolean;
 }
-export declare type PartialOptions<O extends object, S extends object, K extends string = never> = Partial<O> & {
+export type PartialOptions<O extends object, S extends object, K extends string = never> = Partial<O> & {
     readonly [L in K]?: SuboptionsArray<Partial<S>>;
 };
-export declare type PartialOptionsArray<O extends object, S extends object, K extends string = never> = readonly [PartialOptions<O, S, K>];
+export type PartialOptionsArray<O extends object, S extends object, K extends string = never> = readonly [PartialOptions<O, S, K>];
 export interface ProjectConfig {
     readonly name?: string;
 }

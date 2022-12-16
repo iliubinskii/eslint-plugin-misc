@@ -1,8 +1,8 @@
 import type * as ts from "typescript";
 import type { NumStr } from "type-essentials";
-export declare type Signatures = readonly ts.Signature[];
-export declare type TypeFlagsArray = readonly ts.TypeFlags[];
-export declare type TypePart = NumStr | ts.Type;
-export declare type TypeParts = readonly TypePart[];
-export declare type Types = readonly ts.Type[];
+export type Signatures = readonly ts.Signature[];
+export type TypeFlagsArray = readonly ts.TypeFlags[];
+export type TypePart = NumStr | ts.Type;
+export type TypeParts = readonly TypePart[];
+export type Types = readonly ts.Type[];
 //# sourceMappingURL=TypeCheck.internal.d.ts.map

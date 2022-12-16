@@ -136,7 +136,7 @@ exports.setCasing = setCasing;
  */
 function wrapRule(options) {
     const { docs: rawDocs, options: ruleOptions, rule } = options;
-    const docs = Object.assign({ recommended: false, requiresTypeChecking: true }, real_fns_1.o.removeUndefinedKeys(Object.assign(Object.assign({}, rawDocs), { description: rawDocs
+    const docs = Object.assign({ recommended: false, requiresTypeChecking: true }, real_fns_1.o.removeUndefinedKeys.alt(Object.assign(Object.assign({}, rawDocs), { description: rawDocs
             ? real_fns_1.s.unpadMultiline(rawDocs.description)
             : "No description.", failExamples: rawDocs
             ? real_fns_1.s.unpadMultiline(rawDocs.failExamples)
