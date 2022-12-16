@@ -77,8 +77,10 @@ exports.sortClassMembers = utils.createRule({
         };
         function getMemberName(node) {
             switch (node.type) {
+                case utils_1.AST_NODE_TYPES.AccessorProperty:
                 case utils_1.AST_NODE_TYPES.MethodDefinition:
                 case utils_1.AST_NODE_TYPES.PropertyDefinition:
+                case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
                 case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
                 case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
                     return utils.nodeText(node.key, () => context.getText(node.key));
@@ -124,8 +126,10 @@ const functionExpressions = new real_fns_1.ReadonlySet([
 function getMemberAccessibility(node) {
     var _a;
     switch (node.type) {
+        case utils_1.AST_NODE_TYPES.AccessorProperty:
         case utils_1.AST_NODE_TYPES.MethodDefinition:
         case utils_1.AST_NODE_TYPES.PropertyDefinition:
+        case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
         case utils_1.AST_NODE_TYPES.TSIndexSignature:
@@ -165,8 +169,10 @@ function getMemberAccessorType(node) {
 function getMemberDynamicStatic(node) {
     var _a;
     switch (node.type) {
+        case utils_1.AST_NODE_TYPES.AccessorProperty:
         case utils_1.AST_NODE_TYPES.MethodDefinition:
         case utils_1.AST_NODE_TYPES.PropertyDefinition:
+        case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
         case utils_1.AST_NODE_TYPES.TSIndexSignature:
@@ -185,6 +191,9 @@ function getMemberDynamicStatic(node) {
  */
 function getMemberTypes(node) {
     switch (node.type) {
+        case utils_1.AST_NODE_TYPES.AccessorProperty:
+        case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
+            return [Type.accessor];
         case utils_1.AST_NODE_TYPES.MethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
             return (0, real_fns_1.evaluate)(() => {
