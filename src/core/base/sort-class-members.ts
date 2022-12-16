@@ -98,8 +98,10 @@ export const sortClassMembers = utils.createRule({
 
     function getMemberName(node: TSESTree.ClassElement): string {
       switch (node.type) {
+        case AST_NODE_TYPES.AccessorProperty:
         case AST_NODE_TYPES.MethodDefinition:
         case AST_NODE_TYPES.PropertyDefinition:
+        case AST_NODE_TYPES.TSAbstractAccessorProperty:
         case AST_NODE_TYPES.TSAbstractMethodDefinition:
         case AST_NODE_TYPES.TSAbstractPropertyDefinition:
           return utils.nodeText(node.key, () => context.getText(node.key));
@@ -149,8 +151,10 @@ function getMemberAccessibility(
   node: TSESTree.ClassElement
 ): TSESTree.Accessibility {
   switch (node.type) {
+    case AST_NODE_TYPES.AccessorProperty:
     case AST_NODE_TYPES.MethodDefinition:
     case AST_NODE_TYPES.PropertyDefinition:
+    case AST_NODE_TYPES.TSAbstractAccessorProperty:
     case AST_NODE_TYPES.TSAbstractMethodDefinition:
     case AST_NODE_TYPES.TSAbstractPropertyDefinition:
     case AST_NODE_TYPES.TSIndexSignature:
@@ -195,8 +199,10 @@ function getMemberAccessorType(node: TSESTree.ClassElement): AccessorType {
  */
 function getMemberDynamicStatic(node: TSESTree.ClassElement): DynamicStatic {
   switch (node.type) {
+    case AST_NODE_TYPES.AccessorProperty:
     case AST_NODE_TYPES.MethodDefinition:
     case AST_NODE_TYPES.PropertyDefinition:
+    case AST_NODE_TYPES.TSAbstractAccessorProperty:
     case AST_NODE_TYPES.TSAbstractMethodDefinition:
     case AST_NODE_TYPES.TSAbstractPropertyDefinition:
     case AST_NODE_TYPES.TSIndexSignature:
@@ -217,6 +223,10 @@ function getMemberDynamicStatic(node: TSESTree.ClassElement): DynamicStatic {
  */
 function getMemberTypes(node: TSESTree.ClassElement): Types {
   switch (node.type) {
+    case AST_NODE_TYPES.AccessorProperty:
+    case AST_NODE_TYPES.TSAbstractAccessorProperty:
+      return [Type.accessor];
+
     case AST_NODE_TYPES.MethodDefinition:
     case AST_NODE_TYPES.TSAbstractMethodDefinition:
       return evaluate(() => {
