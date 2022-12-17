@@ -286,6 +286,20 @@ utils.testRule(
           y: string;
         }
       `
+    },
+    {
+      name: `Test at line ${getCurrentLine().line}`,
+      code: `
+        function f(x: unknown) {}
+
+        function g<T>() {
+          f(C<T>);
+        }
+
+        class C<T> {
+          public x: T | undefined;
+        }
+      `
     }
   ]
 );

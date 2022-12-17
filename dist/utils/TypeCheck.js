@@ -80,8 +80,9 @@ class TypeCheck {
      */
     getContextualType(node) {
         const tsNode = this.toTsNode(node);
-        assertExpression(tsNode, "Expecting expression");
-        return this.checker.getContextualType(tsNode);
+        return tsutils.isExpression(tsNode)
+            ? this.checker.getContextualType(tsNode)
+            : undefined;
     }
     /**
      * Extracts index info from type.
@@ -461,15 +462,6 @@ const safeBooleanWithUndefined = new real_fns_1.ReadonlySet([
     ts.TypeFlags.NonPrimitive,
     ts.TypeFlags.UniqueESSymbol
 ]);
-/**
- * Asserts node to be expression.
- *
- * @param tsNode - TypeScript node.
- * @param error - Error.
- */
-function assertExpression(tsNode, error) {
-    real_fns_1.assert.toBeTrue(tsutils.isExpression(tsNode), error);
-}
 /**
  * Checks type flags.
  *
