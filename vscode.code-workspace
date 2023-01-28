@@ -64,13 +64,11 @@
       "package-lock.json": true
     },
     "sort-json.settings.contextMenu": {
-      "sortJSON": false,
-      "sortJSONDeepReverse": false,
-      "sortJSONReverse": false
+      "sortJsonSubMenu": false,
+      "ascendingSort": true
     },
-    "sort-json.settings.ignoreArraysOnDeepSort": true,
     "sort-json.settings.isCaseSensitive": true,
-    "sort-json.settings.orderOverride": [
+    "sort-json.settings.orderOverrideKeys": [
       "$schema",
       "$id",
       "name",
@@ -85,6 +83,7 @@
       "homepage",
       "extends"
     ],
+    "sort-json.settings.sortMode": "Objects Only",
     "stylelint.validate": [
       "css",
       "less",
