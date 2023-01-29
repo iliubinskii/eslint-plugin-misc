@@ -4,8 +4,8 @@ import type { TSESTree } from "@typescript-eslint/utils";
 import type { unknowns } from "type-essentials";
 import { fn, is } from "real-fns";
 import type { RuleListener, RuleModule } from "@typescript-eslint/utils/dist/ts-eslint";
+import type { MinimatchOptions } from "minimatch";
 import type { WrapRuleOptions } from "./misc.internal";
-import minimatch from "minimatch";
 export declare const isCasing: is.Guard<Casing>;
 export declare const isFilePattern: is.Guard<FilePattern>;
 export declare const isRegexpPattern: is.Guard<RegexpPattern>;
@@ -21,7 +21,7 @@ export declare const projectRoot: string;
  * @param options - Minimatch options.
  * @returns Matcher.
  */
-export declare function createFileMatcher(pattern: AllowDisallowPatterns | FilePattern, defVal: boolean, options: Readonly<minimatch.IOptions>): Matcher;
+export declare function createFileMatcher(pattern: AllowDisallowPatterns | FilePattern, defVal: boolean, options: Readonly<MinimatchOptions>): Matcher;
 /**
  * Creates matcher.
  *
