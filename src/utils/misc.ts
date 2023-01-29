@@ -30,6 +30,7 @@ import type {
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { Accumulator } from "real-classes";
+import type { MinimatchOptions } from "minimatch";
 import type { WrapRuleOptions } from "./misc.internal";
 import minimatch from "minimatch";
 
@@ -71,7 +72,7 @@ export const projectRoot = fn.pipe(
 export function createFileMatcher(
   pattern: AllowDisallowPatterns | FilePattern,
   defVal: boolean,
-  options: Readonly<minimatch.IOptions>
+  options: Readonly<MinimatchOptions>
 ): Matcher {
   if (is.string(pattern)) return createFileMatcher([pattern], defVal, options);
 
