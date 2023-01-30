@@ -1,6 +1,8 @@
 {
   "name": "TypeScript functions",
-  "extends": "real-config/typedoc/recommended",
+  "extends": [
+    "real-config/typedoc/recommended"
+  ],
   "intentionallyNotExported": [
     "global.configurable.LocaleName"
   ],
