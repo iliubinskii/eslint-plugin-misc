@@ -68,21 +68,36 @@
       "ascendingSort": true
     },
     "sort-json.settings.isCaseSensitive": true,
-    "sort-json.settings.orderOverrideKeys": [
-      "$schema",
-      "$id",
-      "name",
-      "description",
-      "keywords",
-      "type",
-      "minimum-stability",
-      "prefer-stable",
-      "version",
-      "private",
-      "license",
-      "homepage",
-      "extends"
-    ],
+    "sort-json.settings.orderOverrideKeys": {
+      "composer.json": [
+        "name",
+        "description",
+        "keywords",
+        "type",
+        "minimum-stability",
+        "prefer-stable",
+        "private",
+        "license",
+        "homepage",
+        "archive",
+        "authors",
+        "require-dev"
+      ],
+      "manifest.json": [
+        "name",
+        "short_name",
+        "start_url",
+        "display",
+        "background_color",
+        "theme_color",
+        "icons"
+      ],
+      "": [
+        "$schema",
+        "$id",
+        "type"
+      ]
+    },
     "sort-json.settings.sortMode": "Objects Only",
     "stylelint.validate": [
       "css",
