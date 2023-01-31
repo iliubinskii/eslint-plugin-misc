@@ -43,12 +43,9 @@
     ".stylelintrc-html.js",
     "fixtures/**/*.js",
     "fixtures/**/*.ts",
-    "fixtures/**/*.vue",
     "src/**/*.js",
     "src/**/*.ts",
-    "src/**/*.vue",
     "tests/**/*.js",
-    "tests/**/*.ts",
-    "tests/**/*.vue"
+    "tests/**/*.ts"
   ]
 }
