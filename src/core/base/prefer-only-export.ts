@@ -17,7 +17,7 @@ export const preferOnlyExport = utils.createRule({
   defaultOptions: { selector: [] },
   messages: { [MessageId.invalidExport]: "Expecting only export" },
   docs: {
-    description: "Requires only export if given AST element if found.",
+    description: "Requires only export if given AST element is found.",
     optionTypes: { selector: "string | string[]" },
     optionDescriptions: { selector: "AST selector" },
     failExamples: `
