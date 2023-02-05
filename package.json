@@ -44,9 +44,9 @@
     "husky:commit-msg": "npm run commitlint-next",
     "husky:pre-commit": "php node_modules/real-config/bin/pre-commit.php",
     "husky:unset-hooks": "git config --unset core.hooksPath",
-    "lint": "eslint --fix --max-warnings=0 --no-error-on-unmatched-pattern **/*.{js,ts,tsx,vue}",
-    "lint-no-fix": "eslint --max-warnings=0 --no-error-on-unmatched-pattern **/*.{js,ts,tsx,vue}",
-    "lint-no-fix-profile": "set TIMING=1 && eslint --max-warnings=0 --no-error-on-unmatched-pattern **/*.{js,ts,tsx,vue}",
+    "lint": "eslint --fix --max-warnings=0 --no-error-on-unmatched-pattern **/*.{js,jsx,ts,tsx,vue}",
+    "lint-no-fix": "eslint --max-warnings=0 --no-error-on-unmatched-pattern **/*.{js,jsx,ts,tsx,vue}",
+    "lint-no-fix-profile": "set TIMING=1 && eslint --max-warnings=0 --no-error-on-unmatched-pattern **/*.{js,jsx,ts,tsx,vue}",
     "major-release": "php node_modules/real-config/bin/major-release.php",
     "markdownlint": "markdownlint *.md --ignore=CHANGELOG.md",
     "ncu": "ncu --dep=dev,peer,prod",
@@ -58,7 +58,6 @@
     "npm:update": "npm update --no-audit --strict-peer-deps",
     "package-json-lint": "npmPkgJsonLint ./package.json",
     "prepare": "node node_modules/real-config/bin/prepare.js",
-    "sonar": "sonar-scanner",
     "test": "cf coverage/lcov-report && jest",
     "test-fast": "cf coverage/lcov-report && jest --max-workers=4",
     "test-release": "jest --coverage-directory=. --coverage-reporters=lcovonly",
@@ -84,7 +83,7 @@
     "eslint-plugin-misc": "^1.8.2",
     "eslint-plugin-sort-exports": "^0.8.0",
     "get-current-line": "^6.6.0",
-    "real-config": "^1.18.0"
+    "real-config": "^1.21.1"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
