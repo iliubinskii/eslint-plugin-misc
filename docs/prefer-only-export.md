@@ -2,7 +2,7 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / prefer-only-export
 
-Requires only export if given AST element if found.
+Requires only export if given AST element is found.
 
 ```ts
 module.exports = {

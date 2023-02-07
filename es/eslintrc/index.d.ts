@@ -1,0 +1,8 @@
+import { o } from "real-fns";
+export declare const eslintrc: o.PrefixKeys<{
+    "no-message-dot": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "no-unnecessary-array": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "sort-array": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../utils/sort.internal").MessageId | import("../core/base/sort-array").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/sort-array").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+    "sort-suboptions": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../utils/sort.internal").MessageId | import("../core/base/sort-array").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/sort-array").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+}, "eslintrc/">;
+//# sourceMappingURL=index.d.ts.map

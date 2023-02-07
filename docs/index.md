@@ -88,7 +88,7 @@ module.exports = {
 - [only-export-name](https://ilyub.github.io/eslint-plugin-misc/only-export-name.html) &mdash; Requires that only export matches filename.
 - [prefer-arrow-function-property](https://ilyub.github.io/eslint-plugin-misc/prefer-arrow-function-property.html) &mdash; Requires use of arrow functions.
 - [prefer-const-require](https://ilyub.github.io/eslint-plugin-misc/prefer-const-require.html) &mdash; Requires "require()" to be assigned to variable.
-- [prefer-only-export](https://ilyub.github.io/eslint-plugin-misc/prefer-only-export.html) &mdash; Requires only export if given AST element if found.
+- [prefer-only-export](https://ilyub.github.io/eslint-plugin-misc/prefer-only-export.html) &mdash; Requires only export if given AST element is found.
 - [require-jsdoc](https://ilyub.github.io/eslint-plugin-misc/require-jsdoc.html) &mdash; Requires JSDoc documentation.
 - [require-syntax](https://ilyub.github.io/eslint-plugin-misc/require-syntax.html) &mdash; Requires AST syntax.
 - [restrict-identifier-characters](https://ilyub.github.io/eslint-plugin-misc/restrict-identifier-characters.html) &mdash; Requires "require()" to be assigned to variable.

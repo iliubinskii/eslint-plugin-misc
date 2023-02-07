@@ -1,0 +1,2 @@
+export declare const consistentOptionalProps: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../../core/base/consistent-optional-props").MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<import("../../core/base/consistent-optional-props").Options, import("../../core/base/consistent-optional-props").Suboptions, "overrides">, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+//# sourceMappingURL=consistent-optional-props.d.ts.map
