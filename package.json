@@ -35,8 +35,8 @@
   "scripts": {
     "add-tags": "php node_modules/real-config/bin/add-tags.php",
     "browserslist": "browserslist",
-    "build": "cf dist && tsc --project tsconfig-build.json",
     "build-changelog": "auto-changelog",
+    "build-commonjs": "cf dist && tsc --project tsconfig-build.json",
     "build-doc": "cf docs && node build-doc.js && cpy assets/docs/static/* docs",
     "build-es": "cf es && tsc --project tsconfig-build-es.json",
     "clear-cache": "cf .cache node_modules/.cache",
