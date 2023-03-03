@@ -229,7 +229,7 @@ export function createContext<
   }
 
   function stripExtension(str: string): string {
-    for (const ext of [".js", ".ts", ".tsx", ".vue"])
+    for (const ext of [".js", ".jsx", ".ts", ".tsx", ".vue"])
       if (str.endsWith(ext)) return str.slice(0, -ext.length);
 
     return str;
