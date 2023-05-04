@@ -8,7 +8,7 @@ import type { Writable, strings } from "type-essentials";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { is } from "real-fns";
-import minimatch from "minimatch";
+import { minimatch } from "minimatch";
 
 export interface Suboptions {
   readonly _id: string;

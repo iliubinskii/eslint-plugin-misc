@@ -1,8 +1,8 @@
 import * as utils from "../../utils";
+import { as, is } from "real-fns";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import { is } from "real-fns";
 import type { strings } from "type-essentials";
 
 export interface Options {
@@ -84,7 +84,11 @@ export const sortArray = utils.createRule({
             : true;
 
           if (sort)
-            utils.sort(node.elements, context, { ...context.options, keyNode });
+            utils.sort(
+              node.elements.map(element => as.not.empty(element)),
+              context,
+              { ...context.options, keyNode }
+            );
         } else context.report({ messageId: MessageId.expectingArray, node });
       }
     };

@@ -32,7 +32,7 @@ import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { Accumulator } from "real-classes";
 import type { MinimatchOptions } from "minimatch";
 import type { WrapRuleOptions } from "./misc.internal";
-import minimatch from "minimatch";
+import { minimatch } from "minimatch";
 
 export const isCasing = is.factory(is.enumeration, Casing);
 
