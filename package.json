@@ -88,10 +88,10 @@
     "types-fix": "^1.0.4"
   },
   "devDependencies": {
-    "eslint-plugin-misc": "^1.9.5",
+    "eslint-plugin-misc": "^1.10.0",
     "eslint-plugin-sort-exports": "^0.8.0",
     "get-current-line": "^6.6.0",
-    "real-config": "^1.27.2"
+    "real-config": "^1.29.0"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
