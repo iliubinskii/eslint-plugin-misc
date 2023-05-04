@@ -73,15 +73,15 @@
     "upgrade": "npm run ncu-upgrade && npm run install-dev"
   },
   "dependencies": {
-    "@types/estree": "^1.0.0",
+    "@types/estree": "^1.0.1",
     "@types/minimatch": "^5.1.2",
     "@types/natural-compare": "^1.4.1",
     "javascript-stringify": "^2.1.0",
     "lodash-commonjs-es": "^1.0.6",
-    "minimatch": "^7.4.1",
+    "minimatch": "^9.0.0",
     "natural-compare": "^1.4.0",
     "real-classes": "^1.1.4",
-    "real-fns": "^2.2.2",
+    "real-fns": "^2.2.4",
     "tslib": "^2.5.0",
     "tsutils": "^3.21.0",
     "type-essentials": "^1.1.2",
@@ -91,12 +91,12 @@
     "eslint-plugin-misc": "^1.9.5",
     "eslint-plugin-sort-exports": "^0.8.0",
     "get-current-line": "^6.6.0",
-    "real-config": "^1.24.0"
+    "real-config": "^1.27.2"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=5",
     "@typescript-eslint/utils": ">=5",
-    "typescript": ">=4",
+    "typescript": ">=5",
     "vue-eslint-parser": ">=9"
   },
   "engines": {
