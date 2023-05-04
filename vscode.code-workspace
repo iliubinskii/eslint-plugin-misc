@@ -17,6 +17,9 @@
     "[scss]": {
       "editor.formatOnSave": false
     },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
     "debug.javascript.codelens.npmScripts": "never",
     "editor.codeActionsOnSave": {
       "source.fixAll": true,
@@ -64,11 +67,16 @@
       "package-lock.json": true
     },
     "sort-json.settings.contextMenu": {
-      "sortJsonSubMenu": false,
-      "ascendingSort": true
+      "ascendingSort": true,
+      "sortJsonSubMenu": false
     },
     "sort-json.settings.isCaseSensitive": true,
     "sort-json.settings.orderOverrideKeys": {
+      "": [
+        "$schema",
+        "$id",
+        "type"
+      ],
       "composer.json": [
         "name",
         "description",
@@ -92,10 +100,23 @@
         "theme_color",
         "icons"
       ],
-      "": [
-        "$schema",
-        "$id",
-        "type"
+      "tsconfig-build-es.json": [
+        "extends"
+      ],
+      "tsconfig-build.json": [
+        "extends"
+      ],
+      "tsconfig-min.json": [
+        "extends"
+      ],
+      "tsconfig-prepublish.json": [
+        "extends"
+      ],
+      "tsconfig-typedoc.json": [
+        "extends"
+      ],
+      "tsconfig.json": [
+        "extends"
       ]
     },
     "sort-json.settings.sortMode": "Objects Only",
@@ -108,7 +129,7 @@
     "typescript.suggestionActions.enabled": false,
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "volar.codeLens.references": false,
+    "vue.codeActions.savingTimeLimit": 30000,
     "workbench.colorCustomizations": {
       "editor.foldBackground": "#0000"
     },
