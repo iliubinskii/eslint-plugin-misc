@@ -3,7 +3,7 @@ import { Casing, TypeGroup } from "./types";
 import { ProxyHandlerAction, a, as, cast, fn, is, o, reflect, s, wrapProxyHandler } from "real-fns";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { Accumulator } from "real-classes";
-import minimatch from "minimatch";
+import { minimatch } from "minimatch";
 export const isCasing = is.factory(is.enumeration, Casing);
 export const isFilePattern = is.or.factory(is.string, is.strings);
 export const isRegexpPattern = is.or.factory(is.string, is.strings);

@@ -1,6 +1,6 @@
 import * as utils from "../../utils";
+import { as, is } from "real-fns";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { is } from "real-fns";
 export var MessageId;
 (function (MessageId) {
     MessageId["expectingArray"] = "expectingArray";
@@ -58,7 +58,7 @@ export const sortArray = utils.createRule({
                         ? context.getComments(node).includes("// @sorted")
                         : true;
                     if (sort)
-                        utils.sort(node.elements, context, Object.assign(Object.assign({}, context.options), { keyNode }));
+                        utils.sort(node.elements.map(element => as.not.empty(element)), context, Object.assign(Object.assign({}, context.options), { keyNode }));
                 }
                 else
                     context.report({ messageId: MessageId.expectingArray, node });

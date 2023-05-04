@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortArray = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const utils_1 = require("@typescript-eslint/utils");
 const real_fns_1 = require("real-fns");
+const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
     MessageId["expectingArray"] = "expectingArray";
@@ -62,7 +62,7 @@ exports.sortArray = utils.createRule({
                         ? context.getComments(node).includes("// @sorted")
                         : true;
                     if (sort)
-                        utils.sort(node.elements, context, Object.assign(Object.assign({}, context.options), { keyNode }));
+                        utils.sort(node.elements.map(element => real_fns_1.as.not.empty(element)), context, Object.assign(Object.assign({}, context.options), { keyNode }));
                 }
                 else
                     context.report({ messageId: MessageId.expectingArray, node });

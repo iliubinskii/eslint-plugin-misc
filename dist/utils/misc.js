@@ -7,7 +7,7 @@ const types_1 = require("./types");
 const real_fns_1 = require("real-fns");
 const utils_1 = require("@typescript-eslint/utils");
 const real_classes_1 = require("real-classes");
-const minimatch_1 = tslib_1.__importDefault(require("minimatch"));
+const minimatch_1 = require("minimatch");
 exports.isCasing = real_fns_1.is.factory(real_fns_1.is.enumeration, types_1.Casing);
 exports.isFilePattern = real_fns_1.is.or.factory(real_fns_1.is.string, real_fns_1.is.strings);
 exports.isRegexpPattern = real_fns_1.is.or.factory(real_fns_1.is.string, real_fns_1.is.strings);
@@ -27,7 +27,7 @@ function createFileMatcher(pattern, defVal, options) {
     if (real_fns_1.is.string(pattern))
         return createFileMatcher([pattern], defVal, options);
     if (real_fns_1.is.strings(pattern)) {
-        const matchers = pattern.map((p) => str => (0, minimatch_1.default)(str, p, options));
+        const matchers = pattern.map((p) => str => (0, minimatch_1.minimatch)(str, p, options));
         return matchers.length
             ? str => matchers.some(matcher => matcher(str))
             : () => defVal;

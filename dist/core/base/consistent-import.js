@@ -6,7 +6,7 @@ const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
 const real_fns_1 = require("real-fns");
-const minimatch_1 = tslib_1.__importDefault(require("minimatch"));
+const minimatch_1 = require("minimatch");
 var MessageId;
 (function (MessageId) {
     MessageId["autoImport"] = "autoImport";
@@ -186,7 +186,7 @@ exports.consistentImport = utils.createRule({
         function findSuboptions(source) {
             const suboptions = context.options.sources.find(candidate => {
                 var _a;
-                return (0, minimatch_1.default)(source, (_a = candidate.sourcePattern) !== null && _a !== void 0 ? _a : candidate.source, {
+                return (0, minimatch_1.minimatch)(source, (_a = candidate.sourcePattern) !== null && _a !== void 0 ? _a : candidate.source, {
                     dot: true
                 });
             });

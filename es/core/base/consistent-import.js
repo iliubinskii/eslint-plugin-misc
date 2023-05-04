@@ -2,7 +2,7 @@ import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { is } from "real-fns";
-import minimatch from "minimatch";
+import { minimatch } from "minimatch";
 export var MessageId;
 (function (MessageId) {
     MessageId["autoImport"] = "autoImport";
