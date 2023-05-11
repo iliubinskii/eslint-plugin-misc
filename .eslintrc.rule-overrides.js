@@ -4,6 +4,8 @@ const { eslint } = require("real-config/api");
 
 const consistentImport = eslint.rules["misc/consistent-import"];
 
+const spellChecker = eslint.rules["spellcheck/spell-checker"];
+
 const prefixes = {
   createRule:
     "CallExpression[callee.object.name=utils][callee.property.name=createRule]",
@@ -240,6 +242,10 @@ module.exports = {
         selector: `${prefixes.createRule} > ObjectExpression > Property[key.name=create] > ArrowFunctionExpression[params.length>=2]`,
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=vue][value.value=false]`
       }
+    ],
+    "spellcheck/spell-checker": [
+      "warn",
+      { ...spellChecker, skipWords: [...spellChecker.skipWords, "inferrable"] }
     ]
   },
   overrides: [
