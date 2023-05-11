@@ -29,6 +29,9 @@
     "editor.foldingStrategy": "indentation",
     "editor.formatOnSave": true,
     "editor.tabSize": 2,
+    "editor.unicodeHighlight.allowedLocales": {
+      "ru": true
+    },
     "editor.unicodeHighlight.ambiguousCharacters": true,
     "eslint.codeActionsOnSave.rules": [
       "*"
