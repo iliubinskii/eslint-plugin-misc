@@ -41,7 +41,7 @@ export const noRestrictedSyntax = utils.createRule({
       ignoreSelector: "Allowed AST elements (AST selectors)",
       message: "Custom message",
       replacement: "Replacement",
-      search: "Serch term for replacement (regular expression)",
+      search: "Search term for replacement (regular expression)",
       selector: "Disallowed AST elements (AST selectors)"
     },
     failExamples: `

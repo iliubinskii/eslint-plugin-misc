@@ -71,7 +71,7 @@ module.exports = {
 - [no-expression-empty-lines](https://ilyub.github.io/eslint-plugin-misc/no-expression-empty-lines.html) &mdash; Disallows empty lines inside expressions.
 - [no-index-import](https://ilyub.github.io/eslint-plugin-misc/no-index-import.html) &mdash; Disallows "." import.
 - [no-internal-modules](https://ilyub.github.io/eslint-plugin-misc/no-internal-modules.html) &mdash; Disallows importing of internal modules.
-- [no-language-mixing](https://ilyub.github.io/eslint-plugin-misc/no-language-mixing.html) &mdash; Disallows langauge mixing.
+- [no-language-mixing](https://ilyub.github.io/eslint-plugin-misc/no-language-mixing.html) &mdash; Disallows language mixing.
 - [no-negated-conditions](https://ilyub.github.io/eslint-plugin-misc/no-negated-conditions.html) &mdash; Disallows negated conditions.
 - [no-nodejs-modules](https://ilyub.github.io/eslint-plugin-misc/no-nodejs-modules.html) &mdash; Disallows importing NodeJS modules.
 - [no-param-reassign](https://ilyub.github.io/eslint-plugin-misc/no-param-reassign.html) &mdash; This rule wraps "no-param-reassign" core rule, but allows to edit params at the top of function body.
@@ -105,7 +105,7 @@ module.exports = {
 - [template-literal-format](https://ilyub.github.io/eslint-plugin-misc/template-literal-format.html) &mdash; Requires consistent padding in template literals.
 - [wrap](https://ilyub.github.io/eslint-plugin-misc/wrap.html) &mdash; Wraps and modifies third-party rule.
 - [eslintrc/no-message-dot](https://ilyub.github.io/eslint-plugin-misc/eslintrc/no-message-dot.html) &mdash; Disallows dot at the end of message.
-- [eslintrc/no-unnecessary-array](https://ilyub.github.io/eslint-plugin-misc/eslintrc/no-unnecessary-array.html) &mdash; Disallows unnessecary single-element arrays in eslint configuration files.
+- [eslintrc/no-unnecessary-array](https://ilyub.github.io/eslint-plugin-misc/eslintrc/no-unnecessary-array.html) &mdash; Disallows unnecessary single-element arrays in eslint configuration files.
 - [eslintrc/sort-array](https://ilyub.github.io/eslint-plugin-misc/eslintrc/sort-array.html) &mdash; Sorts safely sortable arrays in eslint configuration files.
 - [eslintrc/sort-suboptions](https://ilyub.github.io/eslint-plugin-misc/eslintrc/sort-suboptions.html) &mdash; Sorts safely sortable arrays in eslint configuration files.
 - [jest/no-toThrow-literal](https://ilyub.github.io/eslint-plugin-misc/jest/no-toThrow-literal.html) &mdash; Disallows string argument in "toThrow" matcher.

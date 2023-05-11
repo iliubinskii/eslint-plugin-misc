@@ -176,7 +176,7 @@ export function nodeText(
 }
 
 /**
- * Assemles selector.
+ * Assembles selector.
  *
  * @param raw - Raw selector.
  * @returns Selector.

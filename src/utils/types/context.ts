@@ -91,11 +91,11 @@ export interface Context<
    */
   readonly identifierFromPath: (path: string, expected?: string) => string;
   /**
-   * Checks if two nodes are adjustent.
+   * Checks if two nodes are adjacent.
    *
    * @param node1 - First node.
    * @param node2 - Second node.
-   * @returns _True_ if two nodes are adjustent, _false_ otherwise.
+   * @returns _True_ if two nodes are adjacent, _false_ otherwise.
    */
   readonly isAdjacentNodes: (
     node1: TSESTree.Node,

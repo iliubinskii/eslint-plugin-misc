@@ -80,8 +80,8 @@ export const consistentOptionalProps = utils.createRule({
       interfaces: '"combined" | "optional" | "undefined"'
     },
     optionDescriptions: {
-      classes: "Prefered style for classes",
-      interfaces: "Prefered style for interfaces"
+      classes: "Preferred style for classes",
+      interfaces: "Preferred style for interfaces"
     },
     suboptionTypes: {
       _id: "string",
@@ -94,7 +94,7 @@ export const consistentOptionalProps = utils.createRule({
       _id: "Id",
       pattern: "Only for selected class/interface names (regular expression)",
       propertyPattern: "Only for selected property names (regular expression)",
-      style: "Prefered style",
+      style: "Preferred style",
       target: "Classes or interfaces"
     },
     failExamples: `
@@ -118,9 +118,12 @@ export const consistentOptionalProps = utils.createRule({
 
         const matcher = utils.createRegexpMatcher(pattern, true);
 
-        const properyMatcher = utils.createRegexpMatcher(propertyPattern, true);
+        const propertyMatcher = utils.createRegexpMatcher(
+          propertyPattern,
+          true
+        );
 
-        return { ...override, matcher, properyMatcher };
+        return { ...override, matcher, propertyMatcher };
       });
 
     return {
@@ -199,7 +202,7 @@ export const consistentOptionalProps = utils.createRule({
               candidate =>
                 targets.has(candidate.target) &&
                 candidate.matcher(name) &&
-                candidate.properyMatcher(propertyName)
+                candidate.propertyMatcher(propertyName)
             );
           });
 
@@ -254,5 +257,5 @@ const exclusionStyles = new ReadonlySet([Style.combined, Style.optional]);
 
 interface SuboptionsExtended extends Suboptions {
   readonly matcher: utils.Matcher;
-  readonly properyMatcher: utils.Matcher;
+  readonly propertyMatcher: utils.Matcher;
 }
