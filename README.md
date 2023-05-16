@@ -3,9 +3,8 @@
 [![Downloads](https://img.shields.io/npm/dm/eslint-plugin-misc)](https://www.npmjs.com/package/eslint-plugin-misc)
 [![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/eslint-plugin-misc)](https://snyk.io/advisor/npm-package/eslint-plugin-misc)
 [![Dependencies](https://img.shields.io/librariesio/release/npm/eslint-plugin-misc)](https://libraries.io/npm/eslint-plugin-misc)
-[![Coverage](https://img.shields.io/sonar/coverage/ilyub_eslint-plugin-misc.svg?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/component_measures?id=ilyub_eslint-plugin-misc&metric=coverage)
+[![Coverage](https://img.shields.io/sonar/coverage/ilyub_eslint-plugin-misc/master.svg?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/component_measures?id=ilyub_eslint-plugin-misc&metric=coverage)
 [![Stars](https://img.shields.io/github/stars/ilyub/eslint-plugin-misc)](https://github.com/ilyub/eslint-plugin-misc)
-[![Sponsors](https://img.shields.io/github/sponsors/ilyub)](https://github.com/sponsors/ilyub)
 
 ## Table of contents
 
@@ -16,7 +15,6 @@
 - [Synonyms](#synonyms)
 - [Custom checks](#custom-checks)
 - [Planned rules](#planned-rules)
-- [Related packages](#related-packages)
 
 ## <a id="overview"></a>Overview
 
@@ -71,7 +69,7 @@ module.exports = {
 - [no-expression-empty-lines](https://ilyub.github.io/eslint-plugin-misc/no-expression-empty-lines.html) &mdash; Disallows empty lines inside expressions.
 - [no-index-import](https://ilyub.github.io/eslint-plugin-misc/no-index-import.html) &mdash; Disallows "." import.
 - [no-internal-modules](https://ilyub.github.io/eslint-plugin-misc/no-internal-modules.html) &mdash; Disallows importing of internal modules.
-- [no-language-mixing](https://ilyub.github.io/eslint-plugin-misc/no-language-mixing.html) &mdash; Disallows language mixing.
+- [no-language-mixing](https://ilyub.github.io/eslint-plugin-misc/no-language-mixing.html) &mdash; Disallows langauge mixing.
 - [no-negated-conditions](https://ilyub.github.io/eslint-plugin-misc/no-negated-conditions.html) &mdash; Disallows negated conditions.
 - [no-nodejs-modules](https://ilyub.github.io/eslint-plugin-misc/no-nodejs-modules.html) &mdash; Disallows importing NodeJS modules.
 - [no-param-reassign](https://ilyub.github.io/eslint-plugin-misc/no-param-reassign.html) &mdash; This rule wraps "no-param-reassign" core rule, but allows to edit params at the top of function body.
@@ -105,7 +103,7 @@ module.exports = {
 - [template-literal-format](https://ilyub.github.io/eslint-plugin-misc/template-literal-format.html) &mdash; Requires consistent padding in template literals.
 - [wrap](https://ilyub.github.io/eslint-plugin-misc/wrap.html) &mdash; Wraps and modifies third-party rule.
 - [eslintrc/no-message-dot](https://ilyub.github.io/eslint-plugin-misc/eslintrc/no-message-dot.html) &mdash; Disallows dot at the end of message.
-- [eslintrc/no-unnecessary-array](https://ilyub.github.io/eslint-plugin-misc/eslintrc/no-unnecessary-array.html) &mdash; Disallows unnecessary single-element arrays in eslint configuration files.
+- [eslintrc/no-unnecessary-array](https://ilyub.github.io/eslint-plugin-misc/eslintrc/no-unnecessary-array.html) &mdash; Disallows unnessecary single-element arrays in eslint configuration files.
 - [eslintrc/sort-array](https://ilyub.github.io/eslint-plugin-misc/eslintrc/sort-array.html) &mdash; Sorts safely sortable arrays in eslint configuration files.
 - [eslintrc/sort-suboptions](https://ilyub.github.io/eslint-plugin-misc/eslintrc/sort-suboptions.html) &mdash; Sorts safely sortable arrays in eslint configuration files.
 - [jest/no-toThrow-literal](https://ilyub.github.io/eslint-plugin-misc/jest/no-toThrow-literal.html) &mdash; Disallows string argument in "toThrow" matcher.
@@ -204,12 +202,3 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - sort-switch-cases &mdash; Sort switch cases.
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
 - vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).
-
-## <a id="related-packages"></a>Related packages
-
-- [eslint-plugin-misc](https://www.npmjs.com/package/eslint-plugin-misc) &mdash; ESLint plugin.
-- [quasar-extension](https://www.npmjs.com/package/quasar-extension) &mdash; Quasar extension.
-- [real-fns](https://www.npmjs.com/package/real-fns) &mdash; A collection of utility functions.
-- [real-classes](https://www.npmjs.com/package/real-classes) &mdash; A collection of utility classes.
-- [real-facades](https://www.npmjs.com/package/real-facades) &mdash; Facades (each facade provides interface to pluggable implementation).
-- [real-service-providers](https://www.npmjs.com/package/real-service-providers) &mdash; Facade implementations.

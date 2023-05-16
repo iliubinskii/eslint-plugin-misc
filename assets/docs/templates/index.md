@@ -3,9 +3,8 @@
 [![Downloads](https://img.shields.io/npm/dm/eslint-plugin-misc)](https://www.npmjs.com/package/eslint-plugin-misc)
 [![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/eslint-plugin-misc)](https://snyk.io/advisor/npm-package/eslint-plugin-misc)
 [![Dependencies](https://img.shields.io/librariesio/release/npm/eslint-plugin-misc)](https://libraries.io/npm/eslint-plugin-misc)
-[![Coverage](https://img.shields.io/sonar/coverage/ilyub_eslint-plugin-misc.svg?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/component_measures?id=ilyub_eslint-plugin-misc&metric=coverage)
+[![Coverage](https://img.shields.io/sonar/coverage/ilyub_eslint-plugin-misc/master.svg?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/component_measures?id=ilyub_eslint-plugin-misc&metric=coverage)
 [![Stars](https://img.shields.io/github/stars/ilyub/eslint-plugin-misc)](https://github.com/ilyub/eslint-plugin-misc)
-[![Sponsors](https://img.shields.io/github/sponsors/ilyub)](https://github.com/sponsors/ilyub)
 
 ## Table of contents
 
@@ -16,7 +15,6 @@
 - [Synonyms](#synonyms)
 - [Custom checks](#custom-checks)
 - [Planned rules](#planned-rules)
-- [Related packages](#related-packages)
 
 ## <a id="overview"></a>Overview
 
@@ -113,12 +111,3 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - sort-switch-cases &mdash; Sort switch cases.
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
 - vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).
-
-## <a id="related-packages"></a>Related packages
-
-- [eslint-plugin-misc](https://www.npmjs.com/package/eslint-plugin-misc) &mdash; ESLint plugin.
-- [quasar-extension](https://www.npmjs.com/package/quasar-extension) &mdash; Quasar extension.
-- [real-fns](https://www.npmjs.com/package/real-fns) &mdash; A collection of utility functions.
-- [real-classes](https://www.npmjs.com/package/real-classes) &mdash; A collection of utility classes.
-- [real-facades](https://www.npmjs.com/package/real-facades) &mdash; Facades (each facade provides interface to pluggable implementation).
-- [real-service-providers](https://www.npmjs.com/package/real-service-providers) &mdash; Facade implementations.
