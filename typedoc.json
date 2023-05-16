@@ -4,7 +4,7 @@
     "real-config/typedoc/recommended"
   ],
   "intentionallyNotExported": [
-    "global.configurable.LocaleName"
+    "__global.configurable.LocaleName"
   ],
   "out": "docs",
   "tsconfig": "tsconfig-typedoc.json"
