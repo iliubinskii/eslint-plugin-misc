@@ -2,7 +2,7 @@
 
 [ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-language-mixing
 
-Disallows langauge mixing.
+Disallows language mixing.
 
 ```ts
 module.exports = {

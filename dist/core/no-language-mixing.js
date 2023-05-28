@@ -19,7 +19,7 @@ exports.noLanguageMixing = (0, real_fns_1.evaluate)(() => {
             }
         ],
         docs: {
-            description: "Disallows langauge mixing.",
+            description: "Disallows language mixing.",
             failExamples: 
             // eslint-disable-next-line misc/no-language-mixing -- Ok
             'const x = "xyz123абв";',

@@ -98,7 +98,7 @@ function nodeText(node, defVal) {
 }
 exports.nodeText = nodeText;
 /**
- * Assemles selector.
+ * Assembles selector.
  *
  * @param raw - Raw selector.
  * @returns Selector.

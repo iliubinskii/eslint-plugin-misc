@@ -50,7 +50,7 @@ exports.noUnsafeObjectAssignment = utils.createRule({
         return {
             ArrowFunctionExpression: node => {
                 if (node.body.type === utils_1.AST_NODE_TYPES.BlockStatement) {
-                    // Сhecked by ReturnStatement
+                    // Checked by ReturnStatement
                 }
                 else if (node.returnType)
                     lintDestSource(node.returnType.typeAnnotation, node.body);

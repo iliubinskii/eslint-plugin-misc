@@ -46,9 +46,9 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
             suboptionDescriptions: {
                 _id: "Id",
                 emptyLine: "Requires or disallows empty line",
-                next: "The second of the two adjustent AST elements (AST selectors)",
-                prev: "The first of the two adjustent AST elements (AST selectors)",
-                selector: "One selector for both adjustent AST elements (AST selectors)"
+                next: "The second of the two adjacent AST elements (AST selectors)",
+                prev: "The first of the two adjacent AST elements (AST selectors)",
+                selector: "One selector for both adjacent AST elements (AST selectors)"
             },
             failExamples: `
         /*

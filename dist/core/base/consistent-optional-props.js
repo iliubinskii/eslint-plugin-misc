@@ -60,8 +60,8 @@ exports.consistentOptionalProps = utils.createRule({
             interfaces: '"combined" | "optional" | "undefined"'
         },
         optionDescriptions: {
-            classes: "Prefered style for classes",
-            interfaces: "Prefered style for interfaces"
+            classes: "Preferred style for classes",
+            interfaces: "Preferred style for interfaces"
         },
         suboptionTypes: {
             _id: "string",
@@ -74,7 +74,7 @@ exports.consistentOptionalProps = utils.createRule({
             _id: "Id",
             pattern: "Only for selected class/interface names (regular expression)",
             propertyPattern: "Only for selected property names (regular expression)",
-            style: "Prefered style",
+            style: "Preferred style",
             target: "Classes or interfaces"
         },
         failExamples: `
@@ -96,8 +96,8 @@ exports.consistentOptionalProps = utils.createRule({
             .map((override) => {
             const { pattern, propertyPattern } = override;
             const matcher = utils.createRegexpMatcher(pattern, true);
-            const properyMatcher = utils.createRegexpMatcher(propertyPattern, true);
-            return Object.assign(Object.assign({}, override), { matcher, properyMatcher });
+            const propertyMatcher = utils.createRegexpMatcher(propertyPattern, true);
+            return Object.assign(Object.assign({}, override), { matcher, propertyMatcher });
         });
         return {
             ClassDeclaration: lintClass,
@@ -142,7 +142,7 @@ exports.consistentOptionalProps = utils.createRule({
                         const targets = new real_fns_1.ReadonlySet([target, undefined]);
                         return overrides.find(candidate => targets.has(candidate.target) &&
                             candidate.matcher(name) &&
-                            candidate.properyMatcher(propertyName));
+                            candidate.propertyMatcher(propertyName));
                     });
                     const expected = (0, real_fns_1.evaluate)(() => {
                         const result = override ? override.style : context.options[target];

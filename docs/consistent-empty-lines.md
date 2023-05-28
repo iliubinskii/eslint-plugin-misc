@@ -35,9 +35,9 @@ module.exports = {
 | `rules.emptyLine` | Requires or disallows empty line | `-` |
 | `rules.filesToLint` | Files to lint (minimatch patterns) | `[]` |
 | `rules.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
-| `rules.next` | The second of the two adjustent AST elements (AST selectors) | `-` |
-| `rules.prev` | The first of the two adjustent AST elements (AST selectors) | `-` |
-| `rules.selector` | One selector for both adjustent AST elements (AST selectors) | `-` |
+| `rules.next` | The second of the two adjacent AST elements (AST selectors) | `-` |
+| `rules.prev` | The first of the two adjacent AST elements (AST selectors) | `-` |
+| `rules.selector` | One selector for both adjacent AST elements (AST selectors) | `-` |
 
 ## Examples of incorrect code
 

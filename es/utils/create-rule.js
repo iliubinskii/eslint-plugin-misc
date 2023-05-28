@@ -4,10 +4,10 @@ import { ESLintUtils } from "@typescript-eslint/utils";
 import { TypeCheck } from "./TypeCheck";
 import { createContext } from "./create-rule.internal";
 /**
- * Creates rule listenter.
+ * Creates rule listener.
  *
  * @param options - Options.
- * @returns Rule listenter.
+ * @returns Rule listener.
  */
 export function createRule(options) {
     const { create, defaultOptions, defaultSuboptions, docs: rawDocs, fixable, messages, suboptionsKey, vue } = options;

@@ -7,10 +7,10 @@ const utils_1 = require("@typescript-eslint/utils");
 const TypeCheck_1 = require("./TypeCheck");
 const create_rule_internal_1 = require("./create-rule.internal");
 /**
- * Creates rule listenter.
+ * Creates rule listener.
  *
  * @param options - Options.
- * @returns Rule listenter.
+ * @returns Rule listener.
  */
 function createRule(options) {
     const { create, defaultOptions, defaultSuboptions, docs: rawDocs, fixable, messages, suboptionsKey, vue } = options;

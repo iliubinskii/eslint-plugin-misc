@@ -56,7 +56,7 @@ exports.consistentImport = utils.createRule({
             autoImportSource: 'Auto-import source (defaults to "source")',
             localName: "Local name",
             source: "Source",
-            sourcePattern: "Soure pattern (minimatch)",
+            sourcePattern: "Source pattern (minimatch)",
             wildcard: "Prefer wildcard import"
         },
         failExamples: `

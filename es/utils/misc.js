@@ -90,7 +90,7 @@ export function nodeText(node, defVal) {
     }
 }
 /**
- * Assemles selector.
+ * Assembles selector.
  *
  * @param raw - Raw selector.
  * @returns Selector.

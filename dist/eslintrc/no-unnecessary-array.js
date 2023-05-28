@@ -32,7 +32,7 @@ exports.noUnnecessaryArray = (0, real_fns_1.evaluate)(() => {
             }
         ],
         docs: {
-            description: "Disallows unnessecary single-element arrays in eslint configuration files.",
+            description: "Disallows unnecessary single-element arrays in eslint configuration files.",
             failExamples: `
         module.exports = {
           overrides: [

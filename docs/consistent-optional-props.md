@@ -36,14 +36,14 @@ module.exports = {
 
 | Option | Description | Default |
 | :----- | :----- | :----- |
-| `classes` | Prefered style for classes | `"undefined"` |
-| `interfaces` | Prefered style for interfaces | `"optional"` |
+| `classes` | Preferred style for classes | `"undefined"` |
+| `interfaces` | Preferred style for interfaces | `"optional"` |
 | `overrides._id` | Id | `-` |
 | `overrides.filesToLint` | Files to lint (minimatch patterns) | `[]` |
 | `overrides.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
 | `overrides.pattern` | Only for selected class/interface names (regular expression) | `[]` |
 | `overrides.propertyPattern` | Only for selected property names (regular expression) | `[]` |
-| `overrides.style` | Prefered style | `-` |
+| `overrides.style` | Preferred style | `-` |
 | `overrides.target` | Classes or interfaces | `-` |
 
 ## Examples of incorrect code

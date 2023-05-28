@@ -41,7 +41,7 @@ module.exports = {
 | `sources.filesToLint` | Files to lint (minimatch patterns) | `[]` |
 | `sources.filesToSkip` | Files to skip (minimatch patterns) | `[]` |
 | `sources.localName` | Local name | `-` |
-| `sources.sourcePattern` | Soure pattern (minimatch) | `-` |
+| `sources.sourcePattern` | Source pattern (minimatch) | `-` |
 | `sources.source` | Source | `-` |
 | `sources.wildcard` | Prefer wildcard import | `false` |
 

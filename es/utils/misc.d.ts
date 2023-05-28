@@ -46,7 +46,7 @@ export declare function mergeListeners(...listeners: RuleListeners): RuleListene
  */
 export declare function nodeText(node: TSESTree.Node, defVal: fn.ValueGenerator<string> | string): string;
 /**
- * Assemles selector.
+ * Assembles selector.
  *
  * @param raw - Raw selector.
  * @returns Selector.

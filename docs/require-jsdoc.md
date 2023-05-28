@@ -25,7 +25,7 @@ module.exports = {
 | :----- | :----- | :----- |
 | `excludeSelectors` | Skip these selectors | `[]` |
 | `includeSelectors` | Check additional selectors | `[]` |
-| `interfaces` | Require documenation for interface ("interface"), call signatures ("callSignatures"), construct signatures ("constructSignatures") | `['callSignatures','constructSignatures']` |
+| `interfaces` | Require documentation for interface ("interface"), call signatures ("callSignatures"), construct signatures ("constructSignatures") | `['callSignatures','constructSignatures']` |
 | `noDefaultSelectors` | Do not check default selectors | `false` |
 
 ## Examples of incorrect code
