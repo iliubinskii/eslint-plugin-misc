@@ -80,6 +80,15 @@
         "$id",
         "type"
       ],
+      "app.json": [
+        "name",
+        "slug",
+        "owner",
+        "version",
+        "icon",
+        "orientation",
+        "userInterfaceStyle"
+      ],
       "composer.json": [
         "name",
         "description",
