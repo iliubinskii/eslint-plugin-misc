@@ -13,7 +13,7 @@ var MessageId;
     MessageId["invalidLocalName"] = "invalidLocalName";
     MessageId["wildcardDisallowed"] = "wildcardDisallowed";
     MessageId["wildcardRequired"] = "wildcardRequired";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentImport = utils.createRule({
     name: "consistent-import",
     fixable: utils.Fixable.code,

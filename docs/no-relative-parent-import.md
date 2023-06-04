@@ -1,6 +1,6 @@
 # no-relative-parent-import
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-relative-parent-import
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-relative-parent-import
 
 Disallows relative parent import.
 

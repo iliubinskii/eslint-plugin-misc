@@ -1,6 +1,6 @@
 # typescript/no-complex-declarator-type
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-complex-declarator-type
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-complex-declarator-type
 
 Disallow complex declarator types.
 

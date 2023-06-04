@@ -1,6 +1,6 @@
 # typescript/require-prop-type-annotation
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/require-prop-type-annotation
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/require-prop-type-annotation
 
 Requires type annotation for class properties.
 

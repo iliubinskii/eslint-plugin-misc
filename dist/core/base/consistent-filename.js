@@ -9,7 +9,7 @@ var MessageId;
 (function (MessageId) {
     MessageId["invalidFilename"] = "invalidFilename";
     MessageId["invalidFilenameId"] = "invalidFilenameId";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentFilename = utils.createRule({
     name: "consistent-filename",
     vue: true,

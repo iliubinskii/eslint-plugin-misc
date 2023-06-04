@@ -9,7 +9,7 @@ const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
     MessageId["inconsistentMember"] = "inconsistentMember";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentEnumMembers = utils.createRule({
     name: "consistent-enum-members",
     vue: true,

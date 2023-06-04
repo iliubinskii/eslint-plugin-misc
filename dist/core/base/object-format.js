@@ -8,7 +8,7 @@ var MessageId;
 (function (MessageId) {
     MessageId["preferMultiline"] = "preferMultiline";
     MessageId["preferSingleLine"] = "preferSingleLine";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.objectFormat = utils.createRule({
     name: "object-format",
     fixable: utils.Fixable.code,

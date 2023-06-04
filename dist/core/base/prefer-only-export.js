@@ -8,7 +8,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["invalidExport"] = "invalidExport";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.preferOnlyExport = utils.createRule({
     name: "prefer-only-export",
     vue: true,

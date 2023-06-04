@@ -8,7 +8,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.noRestrictedSyntax = utils.createRule({
     name: "no-restricted-syntax",
     fixable: utils.Fixable.code,

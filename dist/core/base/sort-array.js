@@ -8,7 +8,7 @@ const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
     MessageId["expectingArray"] = "expectingArray";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.sortArray = utils.createRule({
     name: "sort-array",
     fixable: utils.Fixable.code,

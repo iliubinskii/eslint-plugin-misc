@@ -8,7 +8,7 @@ var MessageId;
 (function (MessageId) {
     MessageId["addSpaces"] = "addSpaces";
     MessageId["removeSpaces"] = "removeSpaces";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.elementContentsSpacing = utils.createRule({
     name: "element-contents-spacing",
     fixable: utils.Fixable.code,

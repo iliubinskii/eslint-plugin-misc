@@ -1,6 +1,6 @@
 # typescript/no-inferrable-types
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-inferrable-types
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-inferrable-types
 
 Reports inferrable types.
 

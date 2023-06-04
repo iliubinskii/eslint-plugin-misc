@@ -1,6 +1,6 @@
 # consistent-enum-members
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-enum-members
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / consistent-enum-members
 
 Requires consistent key-value pairs inside enums (key should match value).
 

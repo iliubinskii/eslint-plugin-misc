@@ -1,6 +1,6 @@
 # consistent-import
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-import
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / consistent-import
 
 Requires consistent import.
 

@@ -8,7 +8,7 @@ const node_path_1 = tslib_1.__importDefault(require("node:path"));
 var MessageId;
 (function (MessageId) {
     MessageId["noSelfImport"] = "noSelfImport";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.noSelfImport = utils.createRule({
     name: "no-self-import",
     vue: true,

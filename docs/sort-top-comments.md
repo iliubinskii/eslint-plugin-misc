@@ -1,6 +1,6 @@
 # sort-top-comments
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-top-comments
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / sort-top-comments
 
 Sorts top comments.
 

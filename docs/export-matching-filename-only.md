@@ -1,6 +1,6 @@
 # export-matching-filename-only
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / export-matching-filename-only
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / export-matching-filename-only
 
 Requires that export matching filename is the only export.
 

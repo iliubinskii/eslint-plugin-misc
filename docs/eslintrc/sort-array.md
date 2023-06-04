@@ -1,6 +1,6 @@
 # eslintrc/sort-array
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / eslintrc/sort-array
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / eslintrc/sort-array
 
 Sorts safely sortable arrays in eslint configuration files.
 

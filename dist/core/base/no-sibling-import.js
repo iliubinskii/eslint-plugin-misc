@@ -10,7 +10,7 @@ const node_path_1 = tslib_1.__importDefault(require("node:path"));
 var MessageId;
 (function (MessageId) {
     MessageId["disallowedSource"] = "disallowedSource";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.isStringsArray = real_fns_1.is.factory(real_fns_1.is.array.of, real_fns_1.is.strings);
 exports.isSuboptions = real_fns_1.is.object.factory({ _id: real_fns_1.is.string, hierarchy: exports.isStringsArray }, {});
 exports.noSiblingImport = utils.createRule({

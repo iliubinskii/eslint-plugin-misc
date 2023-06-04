@@ -8,7 +8,7 @@ const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
     MessageId["noReadonlyProperty"] = "noReadonlyProperty";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.noReadonlyVModel = utils.createRule({
     name: "no-readonly-v-model",
     // eslint-disable-next-line misc/require-syntax/require-vue-false -- Ok

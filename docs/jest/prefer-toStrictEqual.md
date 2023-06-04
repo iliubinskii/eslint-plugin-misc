@@ -1,6 +1,6 @@
 # jest/prefer-toStrictEqual
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / jest/prefer-toStrictEqual
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / jest/prefer-toStrictEqual
 
 Requires "toStrictEqual" matcher instead of "toBe" for non-primitive argument types.
 

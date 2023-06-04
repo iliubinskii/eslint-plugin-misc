@@ -7,7 +7,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.requireSyntax = utils.createRule({
     name: "require-syntax",
     vue: true,

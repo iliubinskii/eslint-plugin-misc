@@ -7,7 +7,7 @@ const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
     MessageId["triviallyInferrableType"] = "triviallyInferrableType";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.noInferrableTypes = utils.createRule({
     name: "no-inferrable-types",
     vue: true,

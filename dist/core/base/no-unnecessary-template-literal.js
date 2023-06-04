@@ -6,7 +6,7 @@ const utils = tslib_1.__importStar(require("../../utils"));
 var MessageId;
 (function (MessageId) {
     MessageId["unnecessaryTemplateLiteral"] = "unnecessaryTemplateLiteral";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.noUnnecessaryTemplateLiteral = utils.createRule({
     name: "no-unnecessary-template-literal",
     vue: true,

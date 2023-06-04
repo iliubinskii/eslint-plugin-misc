@@ -7,7 +7,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["invalidFormat"] = "invalidFormat";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.templateLiteralFormat = utils.createRule({
     name: "template-literal-format",
     fixable: utils.Fixable.code,

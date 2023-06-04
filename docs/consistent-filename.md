@@ -1,6 +1,6 @@
 # consistent-filename
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-filename
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / consistent-filename
 
 Enforces consistent file name format.
 

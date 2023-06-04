@@ -1,6 +1,6 @@
 # no-unnecessary-as-const
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-unnecessary-as-const
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-unnecessary-as-const
 
 Disallows unnecessary "as const".
 

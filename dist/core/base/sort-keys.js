@@ -9,7 +9,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["expectingObject"] = "expectingObject";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.sortKeys = utils.createRule({
     name: "sort-keys",
     fixable: utils.Fixable.code,

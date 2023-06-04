@@ -7,7 +7,7 @@ const utils = tslib_1.__importStar(require("../../utils"));
 var MessageId;
 (function (MessageId) {
     MessageId["invalidName"] = "invalidName";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.onlyExportName = utils.createRule({
     name: "only-export-name",
     vue: true,

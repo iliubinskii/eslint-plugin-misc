@@ -1,6 +1,6 @@
 # sort-keys
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-keys
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / sort-keys
 
 Sorts object keys.
 

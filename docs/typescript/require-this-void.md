@@ -1,6 +1,6 @@
 # typescript/require-this-void
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/require-this-void
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/require-this-void
 
 Requires "this: void" for static methods.
 

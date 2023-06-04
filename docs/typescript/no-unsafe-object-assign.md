@@ -1,6 +1,6 @@
 # typescript/no-unsafe-object-assign
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-unsafe-object-assign
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-unsafe-object-assign
 
 Disallows unsafe "Object.assign".
 

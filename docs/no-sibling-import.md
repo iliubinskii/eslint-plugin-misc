@@ -1,6 +1,6 @@
 # no-sibling-import
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-sibling-import
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-sibling-import
 
 Restricts importing siblings.
 

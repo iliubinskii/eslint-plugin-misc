@@ -1,6 +1,6 @@
 # class-match-filename
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / class-match-filename
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / class-match-filename
 
 Requires class name to match filename.
 

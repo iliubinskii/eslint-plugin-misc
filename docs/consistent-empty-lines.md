@@ -1,6 +1,6 @@
 # consistent-empty-lines
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-empty-lines
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / consistent-empty-lines
 
 Requires consistent empty lines.
 

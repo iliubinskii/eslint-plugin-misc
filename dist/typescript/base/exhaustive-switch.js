@@ -8,7 +8,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["inexhaustiveSwitch"] = "inexhaustiveSwitch";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.exhaustiveSwitch = utils.createRule({
     name: "exhaustive-switch",
     vue: false,

@@ -1,6 +1,6 @@
 # no-restricted-syntax
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-restricted-syntax
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-restricted-syntax
 
 Disallows AST syntax (an extended version of ESLint core rule).
 

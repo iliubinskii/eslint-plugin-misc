@@ -13,18 +13,18 @@ var MessageId;
     MessageId["optionalId"] = "optionalId";
     MessageId["undefined"] = "undefined";
     MessageId["undefinedId"] = "undefinedId";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 var Style;
 (function (Style) {
     Style["combined"] = "combined";
     Style["optional"] = "optional";
     Style["undefined"] = "undefined";
-})(Style = exports.Style || (exports.Style = {}));
+})(Style || (exports.Style = Style = {}));
 var Target;
 (function (Target) {
     Target["classes"] = "classes";
     Target["interfaces"] = "interfaces";
-})(Target = exports.Target || (exports.Target = {}));
+})(Target || (exports.Target = Target = {}));
 exports.isStyle = real_fns_1.is.factory(real_fns_1.is.enumeration, Style);
 exports.isTarget = real_fns_1.is.factory(real_fns_1.is.enumeration, Target);
 exports.consistentOptionalProps = utils.createRule({

@@ -1,6 +1,6 @@
 # eslintrc/sort-suboptions
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / eslintrc/sort-suboptions
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / eslintrc/sort-suboptions
 
 Sorts safely sortable arrays in eslint configuration files.
 

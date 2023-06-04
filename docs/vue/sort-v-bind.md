@@ -1,6 +1,6 @@
 # vue/sort-v-bind
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/sort-v-bind
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / vue/sort-v-bind
 
 Sorts "v-bind" directive.
 

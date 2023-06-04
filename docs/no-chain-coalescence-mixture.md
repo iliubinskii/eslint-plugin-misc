@@ -1,6 +1,6 @@
 # no-chain-coalescence-mixture
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-chain-coalescence-mixture
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-chain-coalescence-mixture
 
 Disallows mixing of chain and coalescence operators.
 

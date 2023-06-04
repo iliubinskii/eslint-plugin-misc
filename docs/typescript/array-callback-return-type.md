@@ -1,6 +1,6 @@
 # typescript/array-callback-return-type
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/array-callback-return-type
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/array-callback-return-type
 
 Requires boolean return type in array callbacks.
 

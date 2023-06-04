@@ -1,6 +1,6 @@
 # sort-class-members
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-class-members
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / sort-class-members
 
 Sorts class members by type and alphabetically inside each type group.
 

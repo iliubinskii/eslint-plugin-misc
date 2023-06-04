@@ -8,7 +8,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["disallowedSource"] = "disallowedSource";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.disallowImport = utils.createRule({
     name: "disallow-import",
     vue: true,

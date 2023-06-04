@@ -1,6 +1,6 @@
 # wrap
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / wrap
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / wrap
 
 Wraps and modifies third-party rule.
 

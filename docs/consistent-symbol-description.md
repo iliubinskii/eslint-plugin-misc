@@ -1,6 +1,6 @@
 # consistent-symbol-description
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-symbol-description
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / consistent-symbol-description
 
 Requires consistent symbol description.
 

@@ -8,7 +8,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["invalidType"] = "invalidType";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.arrayCallbackReturnType = utils.createRule({
     name: "array-callback-return-type",
     vue: false,

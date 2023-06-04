@@ -1,6 +1,6 @@
 # restrict-identifier-characters
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / restrict-identifier-characters
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / restrict-identifier-characters
 
 Requires "require()" to be assigned to variable.
 

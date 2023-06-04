@@ -1,6 +1,6 @@
 # typescript/prefer-class-method
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-class-method
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/prefer-class-method
 
 Requires use of class methods instead of function properties.
 

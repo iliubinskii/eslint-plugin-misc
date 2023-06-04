@@ -1,6 +1,6 @@
 # switch-case-spacing
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / switch-case-spacing
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / switch-case-spacing
 
 Ensures consistent empty lines between switch case statements.
 

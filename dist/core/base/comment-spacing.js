@@ -8,7 +8,7 @@ var MessageId;
 (function (MessageId) {
     MessageId["addEmptyLine"] = "addEmptyLine";
     MessageId["removeEmptyLine"] = "removeEmptyLine";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.commentSpacing = utils.createRule({
     name: "comment-spacing",
     fixable: utils.Fixable.whitespace,

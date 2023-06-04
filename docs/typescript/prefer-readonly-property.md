@@ -1,6 +1,6 @@
 # typescript/prefer-readonly-property
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-property
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-property
 
 Disallows writable properties.
 

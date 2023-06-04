@@ -1,6 +1,6 @@
 # consistent-source-extension
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-source-extension
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / consistent-source-extension
 
 Requires consistent import/export source extension.
 

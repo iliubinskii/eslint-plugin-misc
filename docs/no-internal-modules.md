@@ -1,6 +1,6 @@
 # no-internal-modules
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-internal-modules
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-internal-modules
 
 Disallows importing of internal modules.
 

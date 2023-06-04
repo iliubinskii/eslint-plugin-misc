@@ -1,6 +1,6 @@
 # no-index-import
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-index-import
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-index-import
 
 Disallows "." import.
 

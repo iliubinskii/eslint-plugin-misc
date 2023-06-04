@@ -1,6 +1,6 @@
 # template-literal-format
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / template-literal-format
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / template-literal-format
 
 Requires consistent padding in template literals.
 

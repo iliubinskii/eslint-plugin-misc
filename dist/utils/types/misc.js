@@ -8,12 +8,12 @@ var Casing;
     Casing["kebabCase"] = "kebab-case";
     // eslint-disable-next-line misc/consistent-enum-members -- Ok
     Casing["pascalCase"] = "PascalCase";
-})(Casing = exports.Casing || (exports.Casing = {}));
+})(Casing || (exports.Casing = Casing = {}));
 var Fixable;
 (function (Fixable) {
     Fixable["code"] = "code";
     Fixable["whitespace"] = "whitespace";
-})(Fixable = exports.Fixable || (exports.Fixable = {}));
+})(Fixable || (exports.Fixable = Fixable = {}));
 var TypeGroup;
 (function (TypeGroup) {
     TypeGroup["any"] = "any";
@@ -33,5 +33,5 @@ var TypeGroup;
     TypeGroup["tuple"] = "tuple";
     TypeGroup["undefined"] = "undefined";
     TypeGroup["unknown"] = "unknown";
-})(TypeGroup = exports.TypeGroup || (exports.TypeGroup = {}));
+})(TypeGroup || (exports.TypeGroup = TypeGroup = {}));
 //# sourceMappingURL=misc.js.map

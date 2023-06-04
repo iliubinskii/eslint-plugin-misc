@@ -1,6 +1,6 @@
 # typescript/prefer-readonly-map
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-map
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-map
 
 Disallows writable maps.
 

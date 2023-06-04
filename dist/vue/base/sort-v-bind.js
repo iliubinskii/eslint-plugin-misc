@@ -7,7 +7,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["incorrectSortingOrder"] = "incorrectSortingOrder";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.sortVBind = utils.createRule({
     name: "sort-v-bind",
     vue: true,

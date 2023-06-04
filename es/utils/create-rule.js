@@ -13,7 +13,7 @@ export function createRule(options) {
     const { create, defaultOptions, defaultSuboptions, docs: rawDocs, fixable, messages, suboptionsKey, vue } = options;
     const docs = Object.assign({ recommended: false, requiresTypeChecking: true }, o.removeUndefinedKeys.alt(Object.assign(Object.assign({}, rawDocs), { defaultOptions,
         defaultSuboptions, description: s.unpadMultiline(rawDocs.description), failExamples: s.unpadMultiline(rawDocs.failExamples), passExamples: s.unpadMultiline(rawDocs.passExamples), suboptionsKey })));
-    const ruleCreator = ESLintUtils.RuleCreator((name) => `https://ilyub.github.io/eslint-plugin-misc/${name}.html`);
+    const ruleCreator = ESLintUtils.RuleCreator((name) => `https://iliubinskii.github.io/eslint-plugin-misc/${name}.html`);
     return ruleCreator({
         create: (rawContext, rawOptions) => {
             const { parserServices } = rawContext;

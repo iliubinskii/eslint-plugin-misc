@@ -1,6 +1,6 @@
 # match-filename
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / match-filename
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / match-filename
 
 Requires that AST element matches filename.
 

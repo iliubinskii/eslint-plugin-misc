@@ -1,6 +1,6 @@
 # typescript/exhaustive-switch
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/exhaustive-switch
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/exhaustive-switch
 
 Checks exhaustiveness of switch statement.
 

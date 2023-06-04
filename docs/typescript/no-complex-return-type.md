@@ -1,6 +1,6 @@
 # typescript/no-complex-return-type
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-complex-return-type
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-complex-return-type
 
 Disallow complex function return types.
 

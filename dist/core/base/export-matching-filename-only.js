@@ -7,7 +7,7 @@ const utils = tslib_1.__importStar(require("../../utils"));
 var MessageId;
 (function (MessageId) {
     MessageId["invalidExport"] = "invalidExport";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.exportMatchingFilenameOnly = utils.createRule({
     name: "export-matching-filename-only",
     vue: true,

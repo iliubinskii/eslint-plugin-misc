@@ -10,13 +10,13 @@ var InterfaceOption;
     InterfaceOption["callSignatures"] = "callSignatures";
     InterfaceOption["constructSignatures"] = "constructSignatures";
     InterfaceOption["interface"] = "interface";
-})(InterfaceOption = exports.InterfaceOption || (exports.InterfaceOption = {}));
+})(InterfaceOption || (exports.InterfaceOption = InterfaceOption = {}));
 var MessageId;
 (function (MessageId) {
     MessageId["undocumented"] = "undocumented";
     MessageId["undocumentedCallSignature"] = "undocumentedCallSignature";
     MessageId["undocumentedConstructSignature"] = "undocumentedConstructSignature";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.isInterfaceOption = real_fns_1.is.factory(real_fns_1.is.enumeration, InterfaceOption);
 exports.isInterfaceOptions = real_fns_1.is.factory(real_fns_1.is.array.of, exports.isInterfaceOption);
 exports.requireJsdoc = utils.createRule({

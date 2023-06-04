@@ -1,6 +1,6 @@
 # no-at-sign-import
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-at-sign-import
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-at-sign-import
 
 Disallows "@" import.
 

@@ -1,6 +1,6 @@
 # sort-array
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-array
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / sort-array
 
 Sorts arrays.
 

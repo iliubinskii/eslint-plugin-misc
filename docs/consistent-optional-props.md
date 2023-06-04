@@ -1,6 +1,6 @@
 # consistent-optional-props
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / consistent-optional-props
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / consistent-optional-props
 
 Ensures consistent optional property style:
 - Combined syntax: "x?: T \| undefined"

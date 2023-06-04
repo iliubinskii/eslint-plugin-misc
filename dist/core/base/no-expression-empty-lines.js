@@ -7,7 +7,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["unexpectedEmptyLine"] = "unexpectedEmptyLine";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.noExpressionEmptyLines = utils.createRule({
     name: "no-expression-empty-lines",
     fixable: utils.Fixable.whitespace,

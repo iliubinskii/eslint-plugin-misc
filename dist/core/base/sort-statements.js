@@ -21,7 +21,7 @@ var StatementType;
     StatementType["JestTest"] = "JestTest";
     StatementType["TypeDeclaration"] = "TypeDeclaration";
     StatementType["Unknown"] = "Unknown";
-})(StatementType = exports.StatementType || (exports.StatementType = {}));
+})(StatementType || (exports.StatementType = StatementType = {}));
 exports.isStatementType = real_fns_1.is.factory(real_fns_1.is.enumeration, StatementType);
 exports.isStatementTypes = real_fns_1.is.factory(real_fns_1.is.array.of, exports.isStatementType);
 exports.sortStatements = utils.createRule({

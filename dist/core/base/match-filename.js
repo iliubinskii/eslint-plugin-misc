@@ -7,7 +7,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["invalidText"] = "invalidText";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.matchFilename = utils.createRule({
     name: "match-filename",
     vue: true,

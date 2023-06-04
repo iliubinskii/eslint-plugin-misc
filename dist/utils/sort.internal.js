@@ -5,5 +5,5 @@ var MessageId;
 (function (MessageId) {
     MessageId["incorrectSortingOrder"] = "incorrectSortingOrder";
     MessageId["incorrectSortingOrderId"] = "incorrectSortingOrderId";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 //# sourceMappingURL=sort.internal.js.map

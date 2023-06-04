@@ -1,6 +1,6 @@
 # typescript/no-empty-interfaces
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-empty-interfaces
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-empty-interfaces
 
 Disallow empty interfaces.
 

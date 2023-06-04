@@ -1,6 +1,6 @@
 # sort-statements
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-statements
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / sort-statements
 
 Sorts statements.
 

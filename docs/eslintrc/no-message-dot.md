@@ -1,6 +1,6 @@
 # eslintrc/no-message-dot
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / eslintrc/no-message-dot
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / eslintrc/no-message-dot
 
 Disallows dot at the end of message.
 

@@ -8,7 +8,7 @@ var MessageId;
 (function (MessageId) {
     MessageId["addEmptyLine"] = "addEmptyLine";
     MessageId["removeEmptyLine"] = "removeEmptyLine";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.switchCaseSpacing = utils.createRule({
     name: "switch-case-spacing",
     fixable: utils.Fixable.whitespace,

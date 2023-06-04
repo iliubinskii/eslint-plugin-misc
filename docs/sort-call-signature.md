@@ -1,6 +1,6 @@
 # sort-call-signature
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-call-signature
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / sort-call-signature
 
 Requires call signature to be first child.
 

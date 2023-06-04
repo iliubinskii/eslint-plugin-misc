@@ -1,6 +1,6 @@
 # no-expression-empty-lines
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-expression-empty-lines
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-expression-empty-lines
 
 Disallows empty lines inside expressions.
 

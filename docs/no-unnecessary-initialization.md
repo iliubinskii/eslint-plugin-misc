@@ -1,6 +1,6 @@
 # no-unnecessary-initialization
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-unnecessary-initialization
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-unnecessary-initialization
 
 Disallows unnecessary initialization.
 

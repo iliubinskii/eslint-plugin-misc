@@ -1,6 +1,6 @@
 # prefer-arrow-function-property
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / prefer-arrow-function-property
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / prefer-arrow-function-property
 
 Requires use of arrow functions.
 

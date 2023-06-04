@@ -7,7 +7,7 @@ const real_fns_1 = require("real-fns");
 var MessageId;
 (function (MessageId) {
     MessageId["incorrectSorting"] = "incorrectSorting";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.sortTopComments = utils.createRule({
     name: "sort-top-comments",
     fixable: utils.Fixable.code,

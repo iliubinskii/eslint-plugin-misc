@@ -16,7 +16,7 @@ function createRule(options) {
     const { create, defaultOptions, defaultSuboptions, docs: rawDocs, fixable, messages, suboptionsKey, vue } = options;
     const docs = Object.assign({ recommended: false, requiresTypeChecking: true }, real_fns_1.o.removeUndefinedKeys.alt(Object.assign(Object.assign({}, rawDocs), { defaultOptions,
         defaultSuboptions, description: real_fns_1.s.unpadMultiline(rawDocs.description), failExamples: real_fns_1.s.unpadMultiline(rawDocs.failExamples), passExamples: real_fns_1.s.unpadMultiline(rawDocs.passExamples), suboptionsKey })));
-    const ruleCreator = utils_1.ESLintUtils.RuleCreator((name) => `https://ilyub.github.io/eslint-plugin-misc/${name}.html`);
+    const ruleCreator = utils_1.ESLintUtils.RuleCreator((name) => `https://iliubinskii.github.io/eslint-plugin-misc/${name}.html`);
     return ruleCreator({
         create: (rawContext, rawOptions) => {
             const { parserServices } = rawContext;

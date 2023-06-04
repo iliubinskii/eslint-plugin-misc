@@ -1,6 +1,6 @@
 # vue/no-readonly-v-model
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / vue/no-readonly-v-model
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / vue/no-readonly-v-model
 
 Disallows using readonly property as model value.
 

@@ -1,6 +1,6 @@
 # sort-export-specifiers
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / sort-export-specifiers
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / sort-export-specifiers
 
 Sorts export specifiers.
 

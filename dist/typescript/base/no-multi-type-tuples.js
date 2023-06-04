@@ -7,7 +7,7 @@ const utils = tslib_1.__importStar(require("../../utils"));
 var MessageId;
 (function (MessageId) {
     MessageId["multiTypeTuple"] = "multiTypeTuple";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.noMultiTypeTuples = utils.createRule({
     name: "no-multi-type-tuples",
     vue: true,

@@ -1,6 +1,6 @@
 # typescript/prefer-readonly-set
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-set
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/prefer-readonly-set
 
 Disallows writable sets.
 

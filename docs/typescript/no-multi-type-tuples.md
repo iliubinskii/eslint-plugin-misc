@@ -1,6 +1,6 @@
 # typescript/no-multi-type-tuples
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-multi-type-tuples
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-multi-type-tuples
 
 Disallows multi-type tuples.
 

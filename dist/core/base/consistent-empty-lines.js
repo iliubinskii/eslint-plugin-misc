@@ -11,12 +11,12 @@ var EmptyLine;
     EmptyLine["any"] = "any";
     EmptyLine["commented"] = "commented";
     EmptyLine["never"] = "never";
-})(EmptyLine = exports.EmptyLine || (exports.EmptyLine = {}));
+})(EmptyLine || (exports.EmptyLine = EmptyLine = {}));
 var MessageId;
 (function (MessageId) {
     MessageId["addEmptyLine"] = "addEmptyLine";
     MessageId["removeEmptyLine"] = "removeEmptyLine";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
     const isEmptyLine = real_fns_1.is.factory(real_fns_1.is.enumeration, EmptyLine);
     const isSuboptions = real_fns_1.is.object.factory({ _id: real_fns_1.is.string, emptyLine: isEmptyLine }, {

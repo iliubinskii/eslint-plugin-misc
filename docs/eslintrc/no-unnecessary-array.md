@@ -1,6 +1,6 @@
 # eslintrc/no-unnecessary-array
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / eslintrc/no-unnecessary-array
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / eslintrc/no-unnecessary-array
 
 Disallows unnecessary single-element arrays in eslint configuration files.
 

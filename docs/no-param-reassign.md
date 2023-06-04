@@ -1,6 +1,6 @@
 # no-param-reassign
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / no-param-reassign
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / no-param-reassign
 
 This rule wraps "no-param-reassign" core rule, but allows to edit params at the top of function body.
 

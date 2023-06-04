@@ -1,6 +1,6 @@
 # typescript/no-never
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-never
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-never
 
 Disallow "never" type.
 

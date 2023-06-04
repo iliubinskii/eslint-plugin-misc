@@ -1,6 +1,6 @@
 # require-jsdoc
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / require-jsdoc
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / require-jsdoc
 
 Requires JSDoc documentation.
 

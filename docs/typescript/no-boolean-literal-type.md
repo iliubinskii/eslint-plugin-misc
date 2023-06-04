@@ -1,6 +1,6 @@
 # typescript/no-boolean-literal-type
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / typescript/no-boolean-literal-type
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-boolean-literal-type
 
 Disallows boolean literal type.
 

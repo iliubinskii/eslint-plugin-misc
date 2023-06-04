@@ -11,7 +11,7 @@ var MessageId;
     MessageId["preferEnumToStringLiteral"] = "preferEnumToStringLiteral";
     // eslint-disable-next-line misc/max-identifier-blocks -- Ok
     MessageId["preferEnumToStringUnionType"] = "preferEnumToStringUnionType";
-})(MessageId = exports.MessageId || (exports.MessageId = {}));
+})(MessageId || (exports.MessageId = MessageId = {}));
 exports.preferEnum = utils.createRule({
     name: "prefer-enum",
     vue: false,
