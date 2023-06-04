@@ -1,5 +1,5 @@
 {
-  "name": "TypeScript functions",
+  "name": "ESLint plugin",
   "extends": [
     "real-config/typedoc/recommended"
   ],
