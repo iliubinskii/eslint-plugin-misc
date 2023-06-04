@@ -1,6 +1,6 @@
 # {{name}}
 
-[ESLint plugin](https://ilyub.github.io/eslint-plugin-misc/) / {{name}}
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / {{name}}
 
 {{description}}
 

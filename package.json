@@ -11,17 +11,17 @@
     "ts",
     "typescript"
   ],
-  "homepage": "https://github.com/ilyub/eslint-plugin-misc",
+  "homepage": "https://github.com/iliubinskii/eslint-plugin-misc",
   "bugs": {
-    "url": "https://github.com/ilyub/eslint-plugin-misc/issues"
+    "url": "https://github.com/iliubinskii/eslint-plugin-misc/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ilyub/eslint-plugin-misc.git"
+    "url": "git://github.com/iliubinskii/eslint-plugin-misc.git"
   },
   "license": "ISC",
-  "author": "Ilia Liubinskii <admin.phpdev@gmail.com> (https://github.com/ilyub)",
-  "publisher": "ilyub",
+  "author": "Ilia Liubinskii <admin.phpdev@gmail.com> (https://github.com/iliubinskii)",
+  "publisher": "iliubinskii",
   "main": "dist/index.js",
   "module": "es/index.js",
   "files": [

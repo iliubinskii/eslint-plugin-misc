@@ -98,54 +98,54 @@ const documentedRules = o.entries(
 
     const options = optionTypes
       ? o
-          .entries(optionTypes)
-          .map(([option, type]) => `${option}: ${type}`)
-          .join(",\n        ")
+        .entries(optionTypes)
+        .map(([option, type]) => `${option}: ${type}`)
+        .join(",\n        ")
       : "";
 
     const optionsAnnotation = optionDescriptions
       ? o
-          .entries(optionDescriptions)
-          .map(([option, optionDescription]) => {
-            const defVal =
-              defaultOptions && is.not.empty(defaultOptions[option])
-                ? stringify(defaultOptions[option])
-                : "-";
+        .entries(optionDescriptions)
+        .map(([option, optionDescription]) => {
+          const defVal =
+            defaultOptions && is.not.empty(defaultOptions[option])
+              ? stringify(defaultOptions[option])
+              : "-";
 
-            return `| \`${option}\` | ${optionDescription} | \`${defVal}\` |`;
-          })
-          .join("\n")
+          return `| \`${option}\` | ${optionDescription} | \`${defVal}\` |`;
+        })
+        .join("\n")
       : "";
 
     const suboptions = suboptionTypes
       ? a
-          .sort([
-            ...o
-              .entries(suboptionTypes)
-              .map(([option, type]) => `${option}: ${type}`),
-            "filesToLint: string[]",
-            "filesToSkip: string[]"
-          ])
-          .join(",\n            ")
+        .sort([
+          ...o
+            .entries(suboptionTypes)
+            .map(([option, type]) => `${option}: ${type}`),
+          "filesToLint: string[]",
+          "filesToSkip: string[]"
+        ])
+        .join(",\n            ")
       : "";
 
     const suboptionsAnnotation = suboptionDescriptions
       ? a
-          .sort([
-            ...o
-              .entries(suboptionDescriptions)
-              .map(([option, optionDescription]) => {
-                const defVal =
-                  defaultSuboptions && is.not.empty(defaultSuboptions[option])
-                    ? stringify(defaultSuboptions[option])
-                    : "-";
+        .sort([
+          ...o
+            .entries(suboptionDescriptions)
+            .map(([option, optionDescription]) => {
+              const defVal =
+                defaultSuboptions && is.not.empty(defaultSuboptions[option])
+                  ? stringify(defaultSuboptions[option])
+                  : "-";
 
-                return `| \`${suboptionsKey}.${option}\` | ${optionDescription} | \`${defVal}\` |`;
-              }),
-            `| \`${suboptionsKey}.filesToLint\` | Files to lint (minimatch patterns) | \`[]\` |`,
-            `| \`${suboptionsKey}.filesToSkip\` | Files to skip (minimatch patterns) | \`[]\` |`
-          ])
-          .join("\n")
+              return `| \`${suboptionsKey}.${option}\` | ${optionDescription} | \`${defVal}\` |`;
+            }),
+          `| \`${suboptionsKey}.filesToLint\` | Files to lint (minimatch patterns) | \`[]\` |`,
+          `| \`${suboptionsKey}.filesToSkip\` | Files to skip (minimatch patterns) | \`[]\` |`
+        ])
+        .join("\n")
       : "";
 
     const config = s.replacePairs(
@@ -192,7 +192,7 @@ function listItem(name, rule) {
     .firstLine(rule.meta.docs.description)
     .replace(/[.:]$/u, "");
 
-  return `- [${name}](https://ilyub.github.io/eslint-plugin-misc/${name}.html) &mdash; ${description}.`;
+  return `- [${name}](https://iliubinskii.github.io/eslint-plugin-misc/${name}.html) &mdash; ${description}.`;
 }
 
 /**
