@@ -81,7 +81,7 @@
     "natural-compare": "^1.4.0",
     "real-classes": "^1.1.4",
     "real-fns": "^2.4.0",
-    "tslib": "^2.5.2",
+    "tslib": "^2.5.3",
     "tsutils": "^3.21.0",
     "type-essentials": "^1.1.2"
   },
