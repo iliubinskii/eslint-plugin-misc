@@ -55,7 +55,8 @@ export function createRule<
   };
 
   const ruleCreator = ESLintUtils.RuleCreator(
-    (name: string) => `https://iliubinskii.github.io/eslint-plugin-misc/${name}.html`
+    (name: string) =>
+      `https://iliubinskii.github.io/eslint-plugin-misc/${name}.html`
   );
 
   return ruleCreator({
