@@ -143,7 +143,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "vue.codeActions.savingTimeLimit": 30000,
     "workbench.colorCustomizations": {
-      "editor.foldBackground": "#0000"
+      "editor.foldBackground": "#00000000"
     },
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 30
