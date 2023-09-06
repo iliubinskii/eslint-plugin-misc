@@ -76,28 +76,28 @@
     "@types/minimatch": "^5.1.2",
     "@types/natural-compare": "^1.4.1",
     "javascript-stringify": "^2.1.0",
-    "lodash-commonjs-es": "^1.0.6",
-    "minimatch": "^9.0.1",
+    "lodash-commonjs-es": "^1.0.7",
+    "minimatch": "^9.0.3",
     "natural-compare": "^1.4.0",
-    "real-classes": "^1.1.4",
-    "real-fns": "^2.4.0",
-    "tslib": "^2.5.3",
+    "real-classes": "^1.1.6",
+    "real-fns": "^2.4.1",
+    "tslib": "^2.6.2",
     "tsutils": "^3.21.0",
-    "type-essentials": "^1.1.2"
+    "type-essentials": "^1.1.4"
   },
   "devDependencies": {
-    "@types/node": "^20.2.5",
-    "eslint-plugin-misc": "^1.10.1",
+    "@types/node": "^20.5.9",
+    "eslint-plugin-misc": "^1.11.0",
     "eslint-plugin-sort-exports": "^0.8.0",
     "get-current-line": "^6.6.0",
-    "real-config": "^1.37.0",
-    "types-fix": "^1.0.4"
+    "real-config": "^1.40.3",
+    "types-fix": "^1.0.6"
   },
   "peerDependencies": {
-    "@typescript-eslint/parser": ">=5",
-    "@typescript-eslint/utils": ">=5",
-    "typescript": ">=5",
-    "vue-eslint-parser": ">=9"
+    "@typescript-eslint/parser": "^5.6.2",
+    "@typescript-eslint/utils": "^5.6.2",
+    "typescript": "^5.1.6",
+    "vue-eslint-parser": "^9.3.1"
   },
   "engines": {
     "node": ">=16.0.0",
