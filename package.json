@@ -68,7 +68,7 @@
     "test": "cf coverage/lcov-report && jest",
     "test-fast": "cf coverage/lcov-report && jest --max-workers=4",
     "test-release": "jest --coverage-directory=. --coverage-reporters=lcovonly",
-    "typescript-lint": "tsc --noEmit",
+    "tslint": "tsc --noEmit",
     "update": "npm update --no-audit --strict-peer-deps"
   },
   "dependencies": {
