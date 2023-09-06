@@ -21,16 +21,11 @@ export const preferArrayTypeAlias = utils.wrapRule({
     }
   ],
   docs: {
-    description: 'Disallows unsafe "Object.assign".',
-    failExamples: `
-      const x = { value: 1 } as const;
-
-      Object.assign(x, { value: 2 });
-    `,
+    description: "Prefer alias for array type.",
+    failExamples: "function f(x: readonly string[]) {}",
     passExamples: `
-      const x = { value: 1 };
-
-      Object.assign(x, { value: 2 });
+      type strings = readonly string[];
+      function f(x: strings) {}
     `
   }
 });

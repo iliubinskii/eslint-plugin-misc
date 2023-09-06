@@ -2,7 +2,7 @@
 
 [ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / restrict-identifier-characters
 
-Requires "require()" to be assigned to variable.
+Requires that identifier consists only of english characters and dollar sign.
 
 ```ts
 module.exports = {
@@ -16,11 +16,11 @@ module.exports = {
 ## Examples of incorrect code
 
 ```ts
-function f() { return require("node:path"); }
+const абв = 1;
 ```
 
 ## Examples of correct code
 
 ```ts
-const path = require("node:path");
+const $x1 = 2;
 ```

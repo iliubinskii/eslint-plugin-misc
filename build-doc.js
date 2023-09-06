@@ -21,8 +21,8 @@ const templates = {
     .readFileSync("./assets/docs/templates/config-suboptions.md")
     .toString()
     .trim(),
-  index: fs.readFileSync("./assets/docs/templates/index.md").toString().trim(),
-  rule: fs.readFileSync("./assets/docs/templates/rule.md").toString().trim()
+  index: fs.readFileSync("./assets/docs/templates/index.md").toString(),
+  rule: fs.readFileSync("./assets/docs/templates/rule.md").toString()
 };
 
 // eslint-disable-next-line misc/no-internal-modules -- Ok
@@ -72,8 +72,8 @@ const documentedRules = o.entries(
         .join("\n")
     );
 
-  fs.writeFileSync("./README.md", `${index}\n`);
-  fs.writeFileSync("./docs/index.md", `${index}\n`);
+  fs.writeFileSync("./README.md", index);
+  fs.writeFileSync("./docs/index.md", index);
 }
 
 {

@@ -51,6 +51,7 @@ exports.consistentOptionalProps = utils.createRule({
     docs: {
         description: `
       Ensures consistent optional property style:
+
       - Combined syntax: "x?: T \\| undefined"
       - Only optional syntax: "x?: T"
       - Only undefined syntax: "x: T \\| undefined"

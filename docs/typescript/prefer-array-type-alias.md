@@ -2,7 +2,7 @@
 
 [ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/prefer-array-type-alias
 
-Disallows unsafe "Object.assign".
+Prefer alias for array type.
 
 ```ts
 module.exports = {
@@ -16,15 +16,12 @@ module.exports = {
 ## Examples of incorrect code
 
 ```ts
-const x = { value: 1 } as const;
-
-Object.assign(x, { value: 2 });
+function f(x: readonly string[]) {}
 ```
 
 ## Examples of correct code
 
 ```ts
-const x = { value: 1 };
-
-Object.assign(x, { value: 2 });
+type strings = readonly string[];
+function f(x: strings) {}
 ```

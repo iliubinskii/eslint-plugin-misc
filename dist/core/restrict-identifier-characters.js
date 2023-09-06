@@ -13,9 +13,9 @@ exports.restrictIdentifierCharacters = utils.wrapRule({
         }
     ],
     docs: {
-        description: 'Requires "require()" to be assigned to variable.',
-        failExamples: 'function f() { return require("node:path"); }',
-        passExamples: 'const path = require("node:path");'
+        description: "Requires that identifier consists only of english characters and dollar sign.",
+        failExamples: "const абв = 1;",
+        passExamples: "const $x1 = 2;"
     }
 });
 //# sourceMappingURL=restrict-identifier-characters.js.map

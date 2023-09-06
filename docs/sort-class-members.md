@@ -5,6 +5,7 @@
 Sorts class members by type and alphabetically inside each type group.
 
 Type groups:
+
 - Accessibility: "private", "protected", "public"
 - Accessor type: "get", "set"
 - Dynamic/static members: "dynamic", "static"

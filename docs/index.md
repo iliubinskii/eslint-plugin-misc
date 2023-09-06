@@ -2,7 +2,6 @@
 
 [![Stars](https://img.shields.io/github/stars/iliubinskii/eslint-plugin-misc)](https://github.com/iliubinskii/eslint-plugin-misc)
 [![Downloads](https://img.shields.io/npm/dm/eslint-plugin-misc)](https://www.npmjs.com/package/eslint-plugin-misc)
-[![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/eslint-plugin-misc)](https://snyk.io/advisor/npm-package/eslint-plugin-misc)
 [![Dependencies](https://img.shields.io/librariesio/release/npm/eslint-plugin-misc)](https://libraries.io/npm/eslint-plugin-misc)
 [![Coverage](https://img.shields.io/sonar/coverage/iliub_eslint-plugin-misc/master.svg?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/component_measures?id=iliub_eslint-plugin-misc&metric=coverage)
 
@@ -90,7 +89,7 @@ module.exports = {
 - [prefer-only-export](https://iliubinskii.github.io/eslint-plugin-misc/prefer-only-export.html) &mdash; Requires only export if given AST element is found.
 - [require-jsdoc](https://iliubinskii.github.io/eslint-plugin-misc/require-jsdoc.html) &mdash; Requires JSDoc documentation.
 - [require-syntax](https://iliubinskii.github.io/eslint-plugin-misc/require-syntax.html) &mdash; Requires AST syntax.
-- [restrict-identifier-characters](https://iliubinskii.github.io/eslint-plugin-misc/restrict-identifier-characters.html) &mdash; Requires "require()" to be assigned to variable.
+- [restrict-identifier-characters](https://iliubinskii.github.io/eslint-plugin-misc/restrict-identifier-characters.html) &mdash; Requires that identifier consists only of english characters and dollar sign.
 - [sort-array](https://iliubinskii.github.io/eslint-plugin-misc/sort-array.html) &mdash; Sorts arrays.
 - [sort-call-signature](https://iliubinskii.github.io/eslint-plugin-misc/sort-call-signature.html) &mdash; Requires call signature to be first child.
 - [sort-class-members](https://iliubinskii.github.io/eslint-plugin-misc/sort-class-members.html) &mdash; Sorts class members by type and alphabetically inside each type group.
@@ -124,7 +123,7 @@ module.exports = {
 - [typescript/no-restricted-syntax](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-restricted-syntax.html) &mdash; Disallows AST syntax with additional type check.
 - [typescript/no-unsafe-object-assign](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-unsafe-object-assign.html) &mdash; Disallows unsafe "Object.assign".
 - [typescript/no-unsafe-object-assignment](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-unsafe-object-assignment.html) &mdash; Reports unsafe object assignments.
-- [typescript/prefer-array-type-alias](https://iliubinskii.github.io/eslint-plugin-misc/typescript/prefer-array-type-alias.html) &mdash; Disallows unsafe "Object.assign".
+- [typescript/prefer-array-type-alias](https://iliubinskii.github.io/eslint-plugin-misc/typescript/prefer-array-type-alias.html) &mdash; Prefer alias for array type.
 - [typescript/prefer-class-method](https://iliubinskii.github.io/eslint-plugin-misc/typescript/prefer-class-method.html) &mdash; Requires use of class methods instead of function properties.
 - [typescript/prefer-enum](https://iliubinskii.github.io/eslint-plugin-misc/typescript/prefer-enum.html) &mdash; Requires using enums instead of string literals.
 - [typescript/prefer-readonly-array](https://iliubinskii.github.io/eslint-plugin-misc/typescript/prefer-readonly-array.html) &mdash; Disallows writable arrays.
