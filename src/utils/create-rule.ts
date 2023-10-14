@@ -35,6 +35,7 @@ export function createRule<
     defaultSuboptions,
     docs: rawDocs,
     fixable,
+    hasSuggestions,
     messages,
     suboptionsKey,
     vue
@@ -105,7 +106,7 @@ export function createRule<
       messages,
       schema: [{}],
       type: "suggestion",
-      ...o.removeUndefinedKeys.alt({ fixable })
+      ...o.removeUndefinedKeys.alt({ fixable, hasSuggestions })
     },
     name: options.name
   });

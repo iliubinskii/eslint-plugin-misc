@@ -294,6 +294,7 @@ export interface CreateRuleOptions<
   readonly defaultSuboptions?: Readonly<Partial<S>>;
   readonly docs: Docs<keyof O, keyof S>;
   readonly fixable?: "code" | "whitespace";
+  readonly hasSuggestions?: boolean;
   readonly isOptions?: is.Guard<O>;
   readonly isSuboptions?: is.Guard<S>;
   readonly messages: Rec<M, string>;

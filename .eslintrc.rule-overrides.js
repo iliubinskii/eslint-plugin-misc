@@ -281,6 +281,7 @@ module.exports = {
                 customOrder: [
                   "name",
                   "fixable",
+                  "hasSuggestions",
                   "vue",
                   "isOptions",
                   "defaultOptions",
