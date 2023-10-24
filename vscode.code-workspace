@@ -22,8 +22,8 @@
     },
     "debug.javascript.codelens.npmScripts": "never",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      "source.fixAll.eslint": true
+      "source.fixAll": "explicit",
+      "source.sortPackageJson": "explicit"
     },
     "editor.detectIndentation": false,
     "editor.foldingStrategy": "indentation",
@@ -112,6 +112,33 @@
         "theme_color",
         "icons"
       ],
+      "package.json": [
+        "name",
+        "displayName",
+        "version",
+        "private",
+        "description",
+        "keywords",
+        "homepage",
+        "bugs",
+        "repository",
+        "license",
+        "author",
+        "publisher",
+        "exports",
+        "main",
+        "module",
+        "types",
+        "files",
+        "scripts",
+        "jest",
+        "dependencies",
+        "devDependencies",
+        "peerDependencies",
+        "engines",
+        "publishConfig",
+        "overrides"
+      ],
       "tsconfig-build-es.json": [
         "extends"
       ],
@@ -141,7 +168,6 @@
     "typescript.suggestionActions.enabled": false,
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "vue.codeActions.savingTimeLimit": 30000,
     "workbench.colorCustomizations": {
       "editor.foldBackground": "#00000000"
     },
