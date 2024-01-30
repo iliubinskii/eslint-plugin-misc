@@ -8,7 +8,6 @@ const utils_1 = require("@typescript-eslint/utils");
 exports.sortClassMembers = utils.createRule({
     name: "sort-class-members",
     fixable: utils.Fixable.code,
-    vue: true,
     isOptions: real_fns_1.is.object.factory({ sortingOrder: real_fns_1.is.strings }, {}),
     defaultOptions: { sortingOrder: [] },
     messages: utils.sort.messages,

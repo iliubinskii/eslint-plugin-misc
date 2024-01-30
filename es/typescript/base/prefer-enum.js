@@ -10,7 +10,6 @@ export var MessageId;
 })(MessageId || (MessageId = {}));
 export const preferEnum = utils.createRule({
     name: "prefer-enum",
-    vue: false,
     messages: {
         [MessageId.preferEnumToStringLiteral]: "Use enum instead of string literal",
         [MessageId.preferEnumToStringUnionType]: "Use enum instead of string union type"

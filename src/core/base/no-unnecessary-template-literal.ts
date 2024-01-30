@@ -7,7 +7,6 @@ export enum MessageId {
 
 export const noUnnecessaryTemplateLiteral = utils.createRule({
   name: "no-unnecessary-template-literal",
-  vue: true,
   messages: {
     [MessageId.unnecessaryTemplateLiteral]: "Unnecessary template literal"
   },

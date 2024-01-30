@@ -6,7 +6,6 @@ const utils = tslib_1.__importStar(require("../../utils"));
 exports.sortExportSpecifiers = utils.createRule({
     name: "sort-export-specifiers",
     fixable: utils.Fixable.code,
-    vue: true,
     messages: utils.sort.messages,
     docs: {
         description: "Sorts export specifiers.",

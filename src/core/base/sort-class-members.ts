@@ -12,7 +12,6 @@ export interface Options {
 export const sortClassMembers = utils.createRule({
   name: "sort-class-members",
   fixable: utils.Fixable.code,
-  vue: true,
   isOptions: is.object.factory<Options>({ sortingOrder: is.strings }, {}),
   defaultOptions: { sortingOrder: [] },
   messages: utils.sort.messages,

@@ -12,17 +12,12 @@ utils.testRule(
     {
       name: `Test at line ${getCurrentLine().line}`,
       code: `
-        <script lang="ts">
         [1, true].every(x => x);
         [1, true].some(x => x);
-        </script>
-        <template>
-          <div :prop="[1, true].every(x => x)"></div>
-        </template>
       `,
       errors: [
-        { line: 2, messageId: MessageId.invalidType },
-        { line: 3, messageId: MessageId.invalidType }
+        { line: 1, messageId: MessageId.invalidType },
+        { line: 2, messageId: MessageId.invalidType }
       ]
     }
   ],

@@ -1,0 +1,1 @@
+{"version":3,"file":"sort-synonyms.js","sourceRoot":"","sources":["../../../src/project-chore/eslintrc/sort-synonyms.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,aAAa,CAAC;AACrC,OAAO,EAAE,IAAI,EAAE,MAAM,YAAY,CAAC;AAElC,MAAM,CAAC,MAAM,YAAY,GAAG,KAAK,CAAC,QAAQ,CAAC;IACzC,IAAI,EAAE,IAAI,CAAC,YAAY,CAAC;IACxB,OAAO,EAAE,CAAC,EAAE,gBAAgB,EAAE,KAAK,EAAE,CAAC;CACvC,CAAC,CAAC"}

@@ -27,7 +27,6 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
     return utils.createRule({
         name: "consistent-empty-lines",
         fixable: utils.Fixable.whitespace,
-        vue: true,
         isSuboptions,
         suboptionsKey: "rules",
         messages: {

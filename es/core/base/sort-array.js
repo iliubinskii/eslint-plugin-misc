@@ -8,7 +8,6 @@ export var MessageId;
 export const sortArray = utils.createRule({
     name: "sort-array",
     fixable: utils.Fixable.code,
-    vue: true,
     isOptions: is.object.factory({ selector: utils.isSelector, triggerByComment: is.boolean }, {
         customOrder: is.strings,
         sendToBottom: is.string,

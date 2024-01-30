@@ -13,7 +13,6 @@ export var MessageId;
 export const consistentImport = utils.createRule({
     name: "consistent-import",
     fixable: utils.Fixable.code,
-    vue: true,
     isSuboptions: is.object.factory({
         _id: is.string,
         altLocalNames: is.strings,

@@ -6,8 +6,7 @@ import { ReadonlySet, as, assert, is, typedef } from "real-fns";
 import type {
   Signatures,
   TypeFlagsArray,
-  TypeParts,
-  Types
+  TypeParts
 } from "./TypeCheck.internal";
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
@@ -37,18 +36,6 @@ export class TypeCheck {
     this.checker = program.getTypeChecker();
     this.code = context.getSourceCode().getText();
     this.toTsNode = esTreeNodeToTSNodeMap.get.bind(esTreeNodeToTSNodeMap);
-  }
-
-  /**
-   * Returns arg types.
-   *
-   * @param type - Type.
-   * @returns Arg types.
-   */
-  public getArgTypes(type: ts.Type): Types {
-    return tsutils.isTypeReference(type)
-      ? this.checker.getTypeArguments(type)
-      : [];
   }
 
   /**
@@ -140,19 +127,6 @@ export class TypeCheck {
     const tsNode = this.toTsNode(node);
 
     return this.checker.getTypeAtLocation(tsNode);
-  }
-
-  /**
-   * Returns symbol type.
-   *
-   * @param symbol - Symbol.
-   * @param node - Node.
-   * @returns Type.
-   */
-  public getTypeBySymbol(symbol: ts.Symbol, node: TSESTree.Node): ts.Type {
-    const tsNode = this.toTsNode(node);
-
-    return this.checker.getTypeOfSymbolAtLocation(symbol, tsNode);
   }
 
   /**

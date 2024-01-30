@@ -8,7 +8,6 @@ export enum MessageId {
 
 export const noInferrableTypes = utils.createRule({
   name: "no-inferrable-types",
-  vue: true,
   messages: {
     [MessageId.triviallyInferrableType]:
       "Type can be trivially inferred from initializer"

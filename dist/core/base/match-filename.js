@@ -10,7 +10,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.matchFilename = utils.createRule({
     name: "match-filename",
-    vue: true,
     isOptions: real_fns_1.is.object.factory({ prefix: real_fns_1.is.string, selector: utils.isSelector, suffix: real_fns_1.is.string }, { format: utils.isCasing }),
     defaultOptions: { prefix: "", suffix: "" },
     messages: { [MessageId.invalidText]: "Should match file name: {{expected}}" },

@@ -9,7 +9,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.noUnnecessaryTemplateLiteral = utils.createRule({
     name: "no-unnecessary-template-literal",
-    vue: true,
     messages: {
         [MessageId.unnecessaryTemplateLiteral]: "Unnecessary template literal"
     },

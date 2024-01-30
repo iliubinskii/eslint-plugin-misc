@@ -1,1 +1,1 @@
-{"version":3,"file":"no-self-import.d.ts","sourceRoot":"","sources":["../../../src/core/base/no-self-import.ts"],"names":[],"mappings":"AAIA,oBAAY,SAAS;IACnB,YAAY,iBAAiB;CAC9B;AAED,eAAO,MAAM,YAAY,0OA8BvB,CAAC"}
+{"version":3,"file":"no-self-import.d.ts","sourceRoot":"","sources":["../../../src/core/base/no-self-import.ts"],"names":[],"mappings":"AAIA,oBAAY,SAAS;IACnB,YAAY,iBAAiB;CAC9B;AAED,eAAO,MAAM,YAAY,0OA6BvB,CAAC"}

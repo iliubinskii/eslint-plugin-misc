@@ -7,7 +7,6 @@ export var MessageId;
 })(MessageId || (MessageId = {}));
 export const preferOnlyExport = utils.createRule({
     name: "prefer-only-export",
-    vue: true,
     isOptions: is.object.factory({ selector: utils.isSelector }, {}),
     defaultOptions: { selector: [] },
     messages: { [MessageId.invalidExport]: "Expecting only export" },

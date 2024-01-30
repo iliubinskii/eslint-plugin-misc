@@ -24,12 +24,10 @@ exports.getMessageId = getMessageId;
  */
 function testRule(name, rule, invalid, valid = []) {
     const tester = new utils_1.TSESLint.RuleTester({
-        parser: require.resolve("vue-eslint-parser"),
+        parser: require.resolve("@typescript-eslint/parser"),
         parserOptions: {
             ecmaFeatures: { jsx: true },
             ecmaVersion: 2017,
-            extraFileExtensions: [".vue"],
-            parser: "@typescript-eslint/parser",
             project: "./tsconfig.json",
             sourceType: "module",
             tsconfigRootDir: `${misc_1.projectRoot}fixtures`

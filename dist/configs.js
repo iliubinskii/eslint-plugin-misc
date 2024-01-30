@@ -5,62 +5,51 @@ const real_fns_1 = require("real-fns");
 const core_1 = require("./core");
 const eslintrc_1 = require("./eslintrc");
 const jest_1 = require("./jest");
-const quasar_extension_1 = require("./quasar-extension");
-const real_classes_1 = require("./real-classes");
-const real_config_1 = require("./real-config");
-const real_facades_1 = require("./real-facades");
-const real_fns_2 = require("./real-fns");
-const real_service_providers_1 = require("./real-service-providers");
-const type_essentials_1 = require("./type-essentials");
+const project_chore_1 = require("./project-chore");
+const ts_misc_1 = require("./ts-misc");
 const typescript_1 = require("./typescript");
-const vue_1 = require("./vue");
 exports.configs = (0, real_fns_1.evaluate)(() => {
-    const result = {
-        "core": {
-            rules: Object.assign(Object.assign({}, rules(core_1.core)), { "misc/match-filename": "off", "misc/no-restricted-syntax": "off", "misc/require-syntax": "off", "misc/wrap": "off" })
+    const coreRules = Object.assign(Object.assign({}, rules(core_1.core)), { "misc/match-filename": "off", "misc/no-restricted-syntax": "off", "misc/require-syntax": "off", "misc/wrap": "off" });
+    const eslintrcRules = rules(eslintrc_1.eslintrc);
+    const jestRules = rules(jest_1.jest);
+    const typescriptRules = Object.assign(Object.assign({}, rules(typescript_1.typescript)), { "misc/typescript/no-restricted-syntax": "off" });
+    return {
+        "all": {
+            overrides: [
+                { files: ["*.ts", "*.tsx"], rules: typescriptRules },
+                { files: "./tests/**", rules: jestRules },
+                { files: ".eslintrc.js", rules: eslintrcRules }
+            ],
+            rules: coreRules
         },
-        "eslintrc": { rules: rules(eslintrc_1.eslintrc) },
-        "jest": { rules: rules(jest_1.jest) },
-        "quasar-extension.core": { rules: rules(quasar_extension_1.quasarExtension.core) },
-        "quasar-extension.extras": {
-            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.quasarExtension.extras)), { "misc/consistent-optional-props": "off", "misc/typescript/no-empty-interfaces": "off" })
+        "core": { rules: coreRules },
+        "eslintrc": { rules: eslintrcRules },
+        "jest": { rules: jestRules },
+        "project-chore": { rules: rules(project_chore_1.projectChore) },
+        "ts-misc": {
+            overrides: [
+                {
+                    files: "./tests/**",
+                    rules: rules(ts_misc_1.tsMisc, name => name.startsWith("misc/ts-misc/jest/"))
+                }
+            ],
+            rules: rules(ts_misc_1.tsMisc, name => !name.startsWith("misc/ts-misc/jest/"))
         },
-        "quasar-extension.jest": { rules: rules(quasar_extension_1.quasarExtension.jest) },
-        "quasar-extension.vue": {
-            rules: Object.assign(Object.assign({}, rules(quasar_extension_1.quasarExtension.vue)), { "misc/quasar-extension/vue/template/prefer-quasar-components": "off" })
-        },
-        "real-classes": { rules: rules(real_classes_1.realClasses) },
-        "real-config": { rules: rules(real_config_1.realConfig) },
-        "real-facades": { rules: rules(real_facades_1.realFacades) },
-        "real-fns.core": { rules: rules(real_fns_2.realFns.core) },
-        "real-fns.jest": { rules: rules(real_fns_2.realFns.jest) },
-        "real-service-providers": { rules: rules(real_service_providers_1.realServiceProviders) },
-        "type-essentials": { rules: rules(type_essentials_1.typeEssentials) },
-        "typescript": {
-            rules: Object.assign(Object.assign({}, rules(typescript_1.typescript)), { "misc/typescript/no-restricted-syntax": "off" })
-        },
-        "vue": {
-            rules: Object.assign(Object.assign({}, rules(vue_1.vue)), { "misc/typescript/no-complex-declarator-type": "off", "misc/typescript/no-complex-return-type": "off" })
-        }
+        "typescript": { rules: typescriptRules }
     };
-    return Object.assign(Object.assign({}, result), { "all": Object.assign(Object.assign({}, result.core), { overrides: [
-                Object.assign({ files: "!*.js" }, result.typescript),
-                Object.assign({ files: "*.vue" }, result.vue),
-                Object.assign({ files: "./tests/**" }, result.jest),
-                Object.assign({ files: ".eslintrc.js" }, result.eslintrc)
-            ] }), "quasar-extension": Object.assign(Object.assign({}, result["quasar-extension.core"]), { overrides: [
-                Object.assign({ files: "*.extras.ts" }, result["quasar-extension.extras"]),
-                Object.assign({ files: "*.vue" }, result["quasar-extension.vue"]),
-                Object.assign({ files: "./tests/**" }, result["quasar-extension.jest"])
-            ] }), "real-fns": Object.assign(Object.assign({}, result["real-fns.core"]), { overrides: [Object.assign({ files: "./tests/**" }, result["real-fns.jest"])] }) });
 });
 /**
  * Converts rules to configuration.
  *
- * @param source - Rules.
+ * @param source - Source.
+ * @param filter - Filter.
  * @returns Configuration.
  */
-function rules(source) {
-    return real_fns_1.o.fromEntries(real_fns_1.o.keys(source).map(key => [`misc/${key}`, "error"]));
+function rules(source, filter = real_fns_1.fn.noopTrue) {
+    return real_fns_1.o.fromEntries(real_fns_1.o
+        .keys(source)
+        .map(key => `misc/${key}`)
+        .filter(filter)
+        .map(name => [name, "error"]));
 }
 //# sourceMappingURL=configs.js.map

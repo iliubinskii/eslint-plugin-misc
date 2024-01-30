@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 import type { ParserServices, TSESTree } from "@typescript-eslint/utils";
-import type { Signatures, TypeParts, Types } from "./TypeCheck.internal";
+import type { Signatures, TypeParts } from "./TypeCheck.internal";
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
 import type { TypeGroups } from "./types";
@@ -13,13 +13,6 @@ export declare class TypeCheck {
      * @param context - Context.
      */
     constructor(context: RuleContext<never, unknowns>);
-    /**
-     * Returns arg types.
-     *
-     * @param type - Type.
-     * @returns Arg types.
-     */
-    getArgTypes(type: ts.Type): Types;
     /**
      * Extracts call signatures from node.
      *
@@ -70,14 +63,6 @@ export declare class TypeCheck {
      * @returns Type.
      */
     getType(node: TSESTree.Node): ts.Type;
-    /**
-     * Returns symbol type.
-     *
-     * @param symbol - Symbol.
-     * @param node - Node.
-     * @returns Type.
-     */
-    getTypeBySymbol(symbol: ts.Symbol, node: TSESTree.Node): ts.Type;
     /**
      * Checks if mixed has doc comment.
      *

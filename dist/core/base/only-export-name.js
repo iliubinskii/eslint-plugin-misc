@@ -10,7 +10,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.onlyExportName = utils.createRule({
     name: "only-export-name",
-    vue: true,
     messages: {
         [MessageId.invalidName]: "Only export should match file name: {{expected}}"
     },

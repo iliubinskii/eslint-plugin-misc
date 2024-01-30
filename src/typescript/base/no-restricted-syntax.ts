@@ -28,7 +28,6 @@ export enum MessageId {
 export const noRestrictedSyntax = utils.createRule({
   name: "no-restricted-syntax",
   fixable: utils.Fixable.code,
-  vue: false,
   isOptions: is.object.factory<Options>(
     {
       checkArrayType: is.boolean,

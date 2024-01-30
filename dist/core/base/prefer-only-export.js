@@ -11,7 +11,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.preferOnlyExport = utils.createRule({
     name: "prefer-only-export",
-    vue: true,
     isOptions: real_fns_1.is.object.factory({ selector: utils.isSelector }, {}),
     defaultOptions: { selector: [] },
     messages: { [MessageId.invalidExport]: "Expecting only export" },

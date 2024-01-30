@@ -11,7 +11,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.noSelfImport = utils.createRule({
     name: "no-self-import",
-    vue: true,
     messages: { [MessageId.noSelfImport]: "Self-import is not allowed" },
     docs: {
         description: "Disallows self-import.",

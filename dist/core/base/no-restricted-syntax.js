@@ -12,7 +12,6 @@ var MessageId;
 exports.noRestrictedSyntax = utils.createRule({
     name: "no-restricted-syntax",
     fixable: utils.Fixable.code,
-    vue: true,
     isOptions: real_fns_1.is.object.factory({ ignoreSelector: utils.isSelector, selector: utils.isSelector }, { message: real_fns_1.is.string, replacement: real_fns_1.is.string, search: real_fns_1.is.string }),
     defaultOptions: { ignoreSelector: [] },
     messages: { [MessageId.customMessage]: "{{message}}" },

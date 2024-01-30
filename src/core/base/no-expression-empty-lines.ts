@@ -12,7 +12,6 @@ export enum MessageId {
 export const noExpressionEmptyLines = utils.createRule({
   name: "no-expression-empty-lines",
   fixable: utils.Fixable.whitespace,
-  vue: true,
   messages: { [MessageId.unexpectedEmptyLine]: "Unexpected empty line before" },
   docs: {
     description: "Disallows empty lines inside expressions.",

@@ -8,7 +8,6 @@ export var MessageId;
 export const objectFormat = utils.createRule({
     name: "object-format",
     fixable: utils.Fixable.code,
-    vue: true,
     isOptions: is.object.factory({ maxLineLength: is.number, maxObjectSize: is.number }, {}),
     defaultOptions: { maxLineLength: 80, maxObjectSize: 3 },
     messages: {

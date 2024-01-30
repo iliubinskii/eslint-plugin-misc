@@ -11,7 +11,7 @@ var MessageId;
 exports.wrap = utils.createRule({
     name: "wrap",
     fixable: utils.Fixable.code,
-    vue: true,
+    hasSuggestions: true,
     isOptions: real_fns_1.is.object.factory({
         disableFix: real_fns_1.is.boolean,
         lint: utils.isSelector,

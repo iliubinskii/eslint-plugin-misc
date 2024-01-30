@@ -12,7 +12,6 @@ var MessageId;
 exports.noRestrictedSyntax = utils.createRule({
     name: "no-restricted-syntax",
     fixable: utils.Fixable.code,
-    vue: false,
     isOptions: real_fns_1.is.object.factory({
         checkArrayType: real_fns_1.is.boolean,
         checkReturnType: real_fns_1.is.boolean,

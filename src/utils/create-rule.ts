@@ -5,13 +5,11 @@ import type {
 } from "./create-rule.internal";
 import type {
   RuleContext,
-  RuleFunction,
   RuleListener,
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { classToInterface, is, o, s } from "real-fns";
+import { classToInterface, o, s } from "real-fns";
 import { ESLintUtils } from "@typescript-eslint/utils";
-import type { TSESTree } from "@typescript-eslint/utils";
 import { TypeCheck } from "./TypeCheck";
 import { createContext } from "./create-rule.internal";
 
@@ -37,8 +35,7 @@ export function createRule<
     fixable,
     hasSuggestions,
     messages,
-    suboptionsKey,
-    vue
+    suboptionsKey
   } = options;
 
   const docs: ESLintUtils.NamedCreateRuleMetaDocs = {
@@ -65,40 +62,11 @@ export function createRule<
       rawContext: RuleContext<M, ContextOptionsArray>,
       rawOptions
     ): RuleListener => {
-      const { parserServices } = rawContext;
-
       const context = createContext(rawContext, rawOptions, options);
 
       const typeCheck = classToInterface(new TypeCheck(rawContext));
 
-      const result = create(context, typeCheck);
-
-      if (vue && is.not.empty(parserServices)) {
-        const defineTemplateBodyVisitor = o.get(
-          parserServices,
-          "defineTemplateBodyVisitor"
-        );
-
-        if (is.callable<DefineTemplateBodyVisitor>(defineTemplateBodyVisitor)) {
-          const { "Program:exit": oldProgramExit, ...oldVisitors } = result;
-
-          const { "Program:exit": newProgramExit, ...newVisitors } =
-            defineTemplateBodyVisitor(oldVisitors, oldVisitors);
-
-          return {
-            ...newVisitors,
-            "Program:exit": (node: TSESTree.Node) => {
-              if (is.callable<RuleFunction<TSESTree.Node>>(newProgramExit))
-                newProgramExit(node);
-
-              if (is.callable<RuleFunction<TSESTree.Node>>(oldProgramExit))
-                oldProgramExit(node);
-            }
-          };
-        }
-      }
-
-      return result;
+      return create(context, typeCheck);
     },
     defaultOptions: [defaultOptions ?? {}],
     meta: {
@@ -110,16 +78,4 @@ export function createRule<
     },
     name: options.name
   });
-}
-
-interface DefineTemplateBodyVisitor {
-  /**
-   * Defines template body visitor.
-   *
-   * @param templateVisitor - Template visitor.
-   * @param scriptVisitor - Script visitor.
-   * @param options - Options.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Ok
-  (templateVisitor: any, scriptVisitor?: any, options?: any): RuleListener;
 }

@@ -20,7 +20,6 @@ export enum MessageId {
 export const noRestrictedSyntax = utils.createRule({
   name: "no-restricted-syntax",
   fixable: utils.Fixable.code,
-  vue: true,
   isOptions: is.object.factory<Options>(
     { ignoreSelector: utils.isSelector, selector: utils.isSelector },
     { message: is.string, replacement: is.string, search: is.string }

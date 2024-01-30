@@ -27,7 +27,6 @@ exports.isStatementTypes = real_fns_1.is.factory(real_fns_1.is.array.of, exports
 exports.sortStatements = utils.createRule({
     name: "sort-statements",
     fixable: utils.Fixable.code,
-    vue: true,
     isOptions: real_fns_1.is.object.factory({
         blockOrder: exports.isStatementTypes,
         moduleOrder: exports.isStatementTypes,

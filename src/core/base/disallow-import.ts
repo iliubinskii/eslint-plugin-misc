@@ -13,7 +13,6 @@ export enum MessageId {
 
 export const disallowImport = utils.createRule({
   name: "disallow-import",
-  vue: true,
   isOptions: is.object.factory<Options>(
     { allow: utils.isFilePattern, disallow: utils.isFilePattern },
     {}

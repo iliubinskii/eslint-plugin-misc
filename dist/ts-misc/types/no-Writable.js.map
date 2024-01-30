@@ -1,0 +1,1 @@
+{"version":3,"file":"no-Writable.js","sourceRoot":"","sources":["../../../src/ts-misc/types/no-Writable.ts"],"names":[],"mappings":";AAAA,mDAAmD;;;;AAEnD,2DAAqC;AACrC,qCAAkC;AAErB,QAAA,UAAU,GAAG,KAAK,CAAC,QAAQ,CAAC;IACvC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,gCAAgC;YACzC,QAAQ,EACN,0JAA0J;SAC7J;KACF;CACF,CAAC,CAAC"}

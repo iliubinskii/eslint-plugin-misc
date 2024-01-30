@@ -1,1 +1,0 @@
-{"version":3,"file":"no-q-expansion-item.js","sourceRoot":"","sources":["../../../../src/quasar-extension/vue/template/no-q-expansion-item.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,gBAAgB,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC7C,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,0CAA0C;YACnD,QAAQ,EAAE,iCAAiC;SAC5C;KACF;CACF,CAAC,CAAC"}

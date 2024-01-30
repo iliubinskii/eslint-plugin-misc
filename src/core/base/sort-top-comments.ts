@@ -13,7 +13,6 @@ export enum MessageId {
 export const sortTopComments = utils.createRule({
   name: "sort-top-comments",
   fixable: utils.Fixable.code,
-  vue: true,
   messages: {
     ...utils.sort.messages,
     [MessageId.incorrectSorting]: "Incorrect sorting"

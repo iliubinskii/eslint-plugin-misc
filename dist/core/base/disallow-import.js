@@ -11,7 +11,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.disallowImport = utils.createRule({
     name: "disallow-import",
-    vue: true,
     isOptions: real_fns_1.is.object.factory({ allow: utils.isFilePattern, disallow: utils.isFilePattern }, {}),
     defaultOptions: { allow: [], disallow: [] },
     messages: {

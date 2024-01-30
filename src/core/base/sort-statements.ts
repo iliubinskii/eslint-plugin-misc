@@ -36,7 +36,6 @@ export const isStatementTypes = is.factory(is.array.of, isStatementType);
 export const sortStatements = utils.createRule({
   name: "sort-statements",
   fixable: utils.Fixable.code,
-  vue: true,
   isOptions: is.object.factory<Options>(
     {
       blockOrder: isStatementTypes,

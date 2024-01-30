@@ -33,13 +33,7 @@ const documentedRules = o.entries(
     o.omit(
       rules,
       (_rule, name) =>
-        name.startsWith("quasar-extension/") ||
-        name.startsWith("real-classes/") ||
-        name.startsWith("real-config/") ||
-        name.startsWith("real-facades/") ||
-        name.startsWith("real-fns/") ||
-        name.startsWith("real-service-providers/") ||
-        name.startsWith("type-essentials/")
+        name.startsWith("project-chore/") || name.startsWith("ts-misc/")
     ),
     (_value1, _value2, key1, key2) => {
       if (key1.includes("/") && !key2.includes("/")) return 1;
@@ -80,7 +74,6 @@ const documentedRules = o.entries(
   fs.mkdirSync("./docs/eslintrc");
   fs.mkdirSync("./docs/jest");
   fs.mkdirSync("./docs/typescript");
-  fs.mkdirSync("./docs/vue");
 
   for (const [name, rule] of documentedRules) {
     const {

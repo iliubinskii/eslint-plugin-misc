@@ -9,7 +9,6 @@ export enum MessageId {
 
 export const exhaustiveSwitch = utils.createRule({
   name: "exhaustive-switch",
-  vue: false,
   messages: { [MessageId.inexhaustiveSwitch]: "Inexhaustive switch" },
   docs: {
     description: "Checks exhaustiveness of switch statement.",

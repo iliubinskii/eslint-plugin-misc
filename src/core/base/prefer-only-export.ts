@@ -12,7 +12,6 @@ export enum MessageId {
 
 export const preferOnlyExport = utils.createRule({
   name: "prefer-only-export",
-  vue: true,
   isOptions: is.object.factory<Options>({ selector: utils.isSelector }, {}),
   defaultOptions: { selector: [] },
   messages: { [MessageId.invalidExport]: "Expecting only export" },

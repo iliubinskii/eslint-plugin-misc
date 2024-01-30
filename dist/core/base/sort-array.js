@@ -12,7 +12,6 @@ var MessageId;
 exports.sortArray = utils.createRule({
     name: "sort-array",
     fixable: utils.Fixable.code,
-    vue: true,
     isOptions: real_fns_1.is.object.factory({ selector: utils.isSelector, triggerByComment: real_fns_1.is.boolean }, {
         customOrder: real_fns_1.is.strings,
         sendToBottom: real_fns_1.is.string,

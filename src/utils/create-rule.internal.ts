@@ -229,7 +229,7 @@ export function createContext<
   }
 
   function stripExtension(str: string): string {
-    for (const ext of [".js", ".jsx", ".ts", ".tsx", ".vue"])
+    for (const ext of [".js", ".jsx", ".ts", ".tsx"])
       if (str.endsWith(ext)) return str.slice(0, -ext.length);
 
     return str;
@@ -300,7 +300,6 @@ export interface CreateRuleOptions<
   readonly messages: Rec<M, string>;
   readonly name: string;
   readonly suboptionsKey?: K;
-  readonly vue: boolean;
 }
 
 export type PartialOptions<

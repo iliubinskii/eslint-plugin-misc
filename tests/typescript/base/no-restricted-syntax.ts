@@ -9,14 +9,10 @@ utils.testRule("no-restricted-syntax", rule, [
   {
     name: `Test at line ${getCurrentLine().line}`,
     options: [{ selector: "Identifier" }],
-    code: `
-      <script lang="ts">
-      const id1 = [];
-      </script>
-    `,
+    code: "const id1 = [];",
     errors: [
       {
-        line: 2,
+        line: 1,
         messageId: MessageId.customMessage,
         data: { message: "This syntax is not allowed: Identifier" }
       }

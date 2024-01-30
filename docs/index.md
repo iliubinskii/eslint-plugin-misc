@@ -21,7 +21,6 @@ A collection of ESLint rules for:
 
 - JavaScript / TypeScript files
 - Jest test files
-- Vue single-file components (using vue-eslint-parser)
 
 ## <a id="installation"></a>Installation
 
@@ -45,7 +44,6 @@ module.exports = {
 - plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
 - plugin:misc/jest &mdash; Rules for Jest test files.
 - plugin:misc/typescript &mdash; Rules for typescript files.
-- plugin:misc/vue &mdash; Rules for Vue single-file components.
 
 ## <a id="rules"></a>Rules
 
@@ -132,12 +130,6 @@ module.exports = {
 - [typescript/prefer-readonly-set](https://iliubinskii.github.io/eslint-plugin-misc/typescript/prefer-readonly-set.html) &mdash; Disallows writable sets.
 - [typescript/require-prop-type-annotation](https://iliubinskii.github.io/eslint-plugin-misc/typescript/require-prop-type-annotation.html) &mdash; Requires type annotation for class properties.
 - [typescript/require-this-void](https://iliubinskii.github.io/eslint-plugin-misc/typescript/require-this-void.html) &mdash; Requires "this: void" for static methods.
-- [vue/component-name](https://iliubinskii.github.io/eslint-plugin-misc/vue/component-name.html) &mdash; Requires using enums instead of string literals.
-- [vue/element-contents-spacing](https://iliubinskii.github.io/eslint-plugin-misc/vue/element-contents-spacing.html) &mdash; Controls spaces around HTML element contents.
-- [vue/no-complex-declarator-type](https://iliubinskii.github.io/eslint-plugin-misc/vue/no-complex-declarator-type.html) &mdash; Disallow complex declarator types.
-- [vue/no-complex-return-type](https://iliubinskii.github.io/eslint-plugin-misc/vue/no-complex-return-type.html) &mdash; Disallow complex function return types.
-- [vue/no-readonly-v-model](https://iliubinskii.github.io/eslint-plugin-misc/vue/no-readonly-v-model.html) &mdash; Disallows using readonly property as model value.
-- [vue/sort-v-bind](https://iliubinskii.github.io/eslint-plugin-misc/vue/sort-v-bind.html) &mdash; Sorts "v-bind" directive.
 
 ## <a id="synonyms"></a>Synonyms
 
@@ -200,4 +192,3 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - sort-eslint-comments &mdash; Sort rules in eslint-disable comments.
 - sort-switch-cases &mdash; Sort switch cases.
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
-- vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).

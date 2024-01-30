@@ -43,7 +43,6 @@ export const isTarget = is.factory(is.enumeration, Target);
 
 export const consistentOptionalProps = utils.createRule({
   name: "consistent-optional-props",
-  vue: false,
   isOptions: is.object.factory<Options>(
     { classes: isStyle, interfaces: isStyle },
     {}

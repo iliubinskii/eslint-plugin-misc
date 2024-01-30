@@ -18,7 +18,6 @@ export enum MessageId {
 
 export const consistentEnumMembers = utils.createRule({
   name: "consistent-enum-members",
-  vue: true,
   isSuboptions: is.object.factory<Suboptions>(
     { _id: is.string, format: utils.isCasing, selector: utils.isSelector },
     {}

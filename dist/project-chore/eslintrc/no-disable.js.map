@@ -1,0 +1,1 @@
+{"version":3,"file":"no-disable.js","sourceRoot":"","sources":["../../../src/project-chore/eslintrc/no-disable.ts"],"names":[],"mappings":";;;;AAAA,2DAAqC;AACrC,qCAAkC;AAErB,QAAA,SAAS,GAAG,KAAK,CAAC,QAAQ,CAAC;IACtC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,sBAAsB;YAC/B,QAAQ,EAAE;gBACR,2GAA2G;gBAC3G,mFAAmF;aACpF;SACF;KACF;CACF,CAAC,CAAC"}

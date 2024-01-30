@@ -128,7 +128,7 @@ function createContext(context, ruleOptionsArray, options) {
             : real_fns_1.a.first(candidates);
     }
     function stripExtension(str) {
-        for (const ext of [".js", ".jsx", ".ts", ".tsx", ".vue"])
+        for (const ext of [".js", ".jsx", ".ts", ".tsx"])
             if (str.endsWith(ext))
                 return str.slice(0, -ext.length);
         return str;

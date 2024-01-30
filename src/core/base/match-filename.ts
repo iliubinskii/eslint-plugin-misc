@@ -16,7 +16,6 @@ export enum MessageId {
 
 export const matchFilename = utils.createRule({
   name: "match-filename",
-  vue: true,
   isOptions: is.object.factory<Options>(
     { prefix: is.string, selector: utils.isSelector, suffix: is.string },
     { format: utils.isCasing }

@@ -11,7 +11,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.arrayCallbackReturnType = utils.createRule({
     name: "array-callback-return-type",
-    vue: false,
     messages: { [MessageId.invalidType]: "Expecting boolean return type" },
     docs: {
         description: "Requires boolean return type in array callbacks.",

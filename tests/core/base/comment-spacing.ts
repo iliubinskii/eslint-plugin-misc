@@ -12,24 +12,20 @@ utils.testRule(
     {
       name: `Test at line ${getCurrentLine().line}`,
       code: `
-        <script lang="ts">
         // Comment
 
         /** Comment */
 
         function f() {}
-        </script>
       `,
       output: `
-        <script lang="ts">
         // Comment
         /** Comment */
         function f() {}
-        </script>
       `,
       errors: [
-        { line: 2, messageId: MessageId.removeEmptyLine },
-        { line: 4, messageId: MessageId.removeEmptyLine }
+        { line: 1, messageId: MessageId.removeEmptyLine },
+        { line: 3, messageId: MessageId.removeEmptyLine }
       ]
     },
     {

@@ -18,7 +18,6 @@ export enum MessageId {
 export const objectFormat = utils.createRule({
   name: "object-format",
   fixable: utils.Fixable.code,
-  vue: true,
   isOptions: is.object.factory<Options>(
     { maxLineLength: is.number, maxObjectSize: is.number },
     {}

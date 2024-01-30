@@ -10,7 +10,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.noMultiTypeTuples = utils.createRule({
     name: "no-multi-type-tuples",
-    vue: true,
     messages: { [MessageId.multiTypeTuple]: "Multi-type tuples are not allowed" },
     docs: {
         description: "Disallows multi-type tuples.",

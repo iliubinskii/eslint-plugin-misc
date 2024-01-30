@@ -9,7 +9,6 @@ export enum MessageId {
 
 export const arrayCallbackReturnType = utils.createRule({
   name: "array-callback-return-type",
-  vue: false,
   messages: { [MessageId.invalidType]: "Expecting boolean return type" },
   docs: {
     description: "Requires boolean return type in array callbacks.",

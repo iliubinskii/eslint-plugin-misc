@@ -8,7 +8,6 @@ export var MessageId;
 export const switchCaseSpacing = utils.createRule({
     name: "switch-case-spacing",
     fixable: utils.Fixable.whitespace,
-    vue: true,
     messages: {
         [MessageId.addEmptyLine]: "Add empty line before switch case",
         [MessageId.removeEmptyLine]: "Remove empty line before switch case"

@@ -4,7 +4,6 @@ import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 export const sortClassMembers = utils.createRule({
     name: "sort-class-members",
     fixable: utils.Fixable.code,
-    vue: true,
     isOptions: is.object.factory({ sortingOrder: is.strings }, {}),
     defaultOptions: { sortingOrder: [] },
     messages: utils.sort.messages,

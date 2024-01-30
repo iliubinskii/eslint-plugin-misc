@@ -21,7 +21,6 @@ export enum MessageId {
 export const sortKeys = utils.createRule({
   name: "sort-keys",
   fixable: utils.Fixable.code,
-  vue: true,
   isSuboptions: is.object.factory<Suboptions>(
     { _id: is.string, selector: utils.isSelector },
     { customOrder: is.strings, sendToBottom: is.string, sendToTop: is.string }

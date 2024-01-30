@@ -11,7 +11,6 @@ var MessageId;
 exports.sortTopComments = utils.createRule({
     name: "sort-top-comments",
     fixable: utils.Fixable.code,
-    vue: true,
     messages: Object.assign(Object.assign({}, utils.sort.messages), { [MessageId.incorrectSorting]: "Incorrect sorting" }),
     docs: {
         description: "Sorts top comments.",

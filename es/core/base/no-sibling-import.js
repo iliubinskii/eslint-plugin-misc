@@ -11,7 +11,6 @@ export const isStringsArray = is.factory(is.array.of, is.strings);
 export const isSuboptions = is.object.factory({ _id: is.string, hierarchy: isStringsArray }, {});
 export const noSiblingImport = utils.createRule({
     name: "no-sibling-import",
-    vue: true,
     isSuboptions: is.object.factory({ _id: is.string, hierarchy: isStringsArray }, {}),
     defaultSuboptions: { hierarchy: [] },
     suboptionsKey: "rules",

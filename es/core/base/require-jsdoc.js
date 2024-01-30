@@ -17,7 +17,6 @@ export const isInterfaceOption = is.factory(is.enumeration, InterfaceOption);
 export const isInterfaceOptions = is.factory(is.array.of, isInterfaceOption);
 export const requireJsdoc = utils.createRule({
     name: "require-jsdoc",
-    vue: false,
     isOptions: is.object.factory({
         excludeSelectors: is.strings,
         includeSelectors: is.strings,

@@ -1,1 +1,0 @@
-{"version":3,"file":"consistent-generic-name.js","sourceRoot":"","sources":["../../../../src/quasar-extension/vue/script/consistent-generic-name.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,qBAAqB,GAAG,KAAK,CAAC,QAAQ,CAAC;IAClD,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,sBAAsB;YAC/B,QAAQ,EACN,oJAAoJ;SACvJ;KACF;CACF,CAAC,CAAC"}

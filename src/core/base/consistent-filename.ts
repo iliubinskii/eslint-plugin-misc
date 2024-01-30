@@ -23,7 +23,6 @@ export enum MessageId {
 
 export const consistentFilename = utils.createRule({
   name: "consistent-filename",
-  vue: true,
   isOptions: is.object.factory<Options>({ format: utils.isCasing }, {}),
   defaultOptions: { format: utils.Casing.kebabCase },
   isSuboptions: is.object.factory<Suboptions>(

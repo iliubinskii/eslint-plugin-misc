@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/project-chore/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AACtC,OAAO,EAAE,CAAC,EAAE,MAAM,UAAU,CAAC;AAC7B,OAAO,EAAE,cAAc,EAAE,MAAM,mBAAmB,CAAC;AAEnD,MAAM,CAAC,MAAM,YAAY,GAAG,CAAC,CAAC,UAAU,iBACpC,iBAAiB,EAAE,cAAc,IAAK,QAAQ,GAChD,gBAAgB,CACjB,CAAC"}

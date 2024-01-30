@@ -14,7 +14,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.noUnsafeObjectAssignment = utils.createRule({
     name: "no-unsafe-object-assignment",
-    vue: false,
     messages: {
         [MessageId.unsafeOptionalAssignment]: "Unsafe optional assignment: {{name}}",
         [MessageId.unsafeReadonlyAssignment]: "Unsafe readonly-to-mutable assignment: {{name}}"

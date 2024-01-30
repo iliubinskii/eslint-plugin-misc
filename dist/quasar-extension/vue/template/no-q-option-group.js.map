@@ -1,1 +1,0 @@
-{"version":3,"file":"no-q-option-group.js","sourceRoot":"","sources":["../../../../src/quasar-extension/vue/template/no-q-option-group.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,cAAc,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC3C,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,wCAAwC;YACjD,QAAQ,EAAE,+BAA+B;SAC1C;KACF;CACF,CAAC,CAAC"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"prefer-quasar-components.js","sourceRoot":"","sources":["../../../../src/quasar-extension/vue/template/prefer-quasar-components.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,sBAAsB,GAAG,KAAK,CAAC,QAAQ,CAAC;IACnD,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP,EAAE,OAAO,EAAE,yBAAyB,EAAE,QAAQ,EAAE,uBAAuB,EAAE;KAC1E;CACF,CAAC,CAAC"}

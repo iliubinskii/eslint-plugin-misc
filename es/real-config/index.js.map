@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/real-config/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AACtC,OAAO,EAAE,CAAC,EAAE,MAAM,UAAU,CAAC;AAC7B,OAAO,EAAE,cAAc,EAAE,MAAM,mBAAmB,CAAC;AAEnD,MAAM,CAAC,MAAM,UAAU,GAAG,CAAC,CAAC,UAAU,iBAClC,iBAAiB,EAAE,cAAc,IAAK,QAAQ,GAChD,cAAc,CACf,CAAC"}

@@ -11,7 +11,6 @@ var MessageId;
 exports.templateLiteralFormat = utils.createRule({
     name: "template-literal-format",
     fixable: utils.Fixable.code,
-    vue: true,
     messages: { [MessageId.invalidFormat]: "Invalid template literal format" },
     docs: {
         description: "Requires consistent padding in template literals.",

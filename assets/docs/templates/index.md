@@ -21,7 +21,6 @@ A collection of ESLint rules for:
 
 - JavaScript / TypeScript files
 - Jest test files
-- Vue single-file components (using vue-eslint-parser)
 
 ## <a id="installation"></a>Installation
 
@@ -45,7 +44,6 @@ module.exports = {
 - plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
 - plugin:misc/jest &mdash; Rules for Jest test files.
 - plugin:misc/typescript &mdash; Rules for typescript files.
-- plugin:misc/vue &mdash; Rules for Vue single-file components.
 
 ## <a id="rules"></a>Rules
 
@@ -109,4 +107,3 @@ If you want to apply one rule several times (e.g. restrict several syntaxes), us
 - sort-eslint-comments &mdash; Sort rules in eslint-disable comments.
 - sort-switch-cases &mdash; Sort switch cases.
 - spell-check &mdash; Spell check with international language support based on hunspell spell checker.
-- vue/no-warning-comments &mdash; Forbide warning comments in `<template>` section (e.g. `<!-- todo -->`).

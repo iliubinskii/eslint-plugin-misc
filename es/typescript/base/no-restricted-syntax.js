@@ -8,7 +8,6 @@ export var MessageId;
 export const noRestrictedSyntax = utils.createRule({
     name: "no-restricted-syntax",
     fixable: utils.Fixable.code,
-    vue: false,
     isOptions: is.object.factory({
         checkArrayType: is.boolean,
         checkReturnType: is.boolean,

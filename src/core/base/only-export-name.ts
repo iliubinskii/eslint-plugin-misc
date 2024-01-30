@@ -7,7 +7,6 @@ export enum MessageId {
 
 export const onlyExportName = utils.createRule({
   name: "only-export-name",
-  vue: true,
   messages: {
     [MessageId.invalidName]: "Only export should match file name: {{expected}}"
   },

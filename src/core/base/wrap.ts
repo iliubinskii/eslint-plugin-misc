@@ -30,7 +30,6 @@ export const wrap = utils.createRule({
   name: "wrap",
   fixable: utils.Fixable.code,
   hasSuggestions: true,
-  vue: true,
   isOptions: is.object.factory<Options>(
     {
       disableFix: is.boolean,

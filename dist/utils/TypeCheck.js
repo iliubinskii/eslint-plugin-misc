@@ -40,17 +40,6 @@ class TypeCheck {
         this.toTsNode = esTreeNodeToTSNodeMap.get.bind(esTreeNodeToTSNodeMap);
     }
     /**
-     * Returns arg types.
-     *
-     * @param type - Type.
-     * @returns Arg types.
-     */
-    getArgTypes(type) {
-        return tsutils.isTypeReference(type)
-            ? this.checker.getTypeArguments(type)
-            : [];
-    }
-    /**
      * Extracts call signatures from node.
      *
      * @param node - Node.
@@ -122,17 +111,6 @@ class TypeCheck {
     getType(node) {
         const tsNode = this.toTsNode(node);
         return this.checker.getTypeAtLocation(tsNode);
-    }
-    /**
-     * Returns symbol type.
-     *
-     * @param symbol - Symbol.
-     * @param node - Node.
-     * @returns Type.
-     */
-    getTypeBySymbol(symbol, node) {
-        const tsNode = this.toTsNode(node);
-        return this.checker.getTypeOfSymbolAtLocation(symbol, tsNode);
     }
     /**
      * Checks if mixed has doc comment.

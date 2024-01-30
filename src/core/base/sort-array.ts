@@ -21,7 +21,6 @@ export enum MessageId {
 export const sortArray = utils.createRule({
   name: "sort-array",
   fixable: utils.Fixable.code,
-  vue: true,
   isOptions: is.object.factory<Options>(
     { selector: utils.isSelector, triggerByComment: is.boolean },
     {

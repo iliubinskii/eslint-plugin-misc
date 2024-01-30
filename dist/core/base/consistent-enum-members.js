@@ -12,7 +12,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentEnumMembers = utils.createRule({
     name: "consistent-enum-members",
-    vue: true,
     isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, format: utils.isCasing, selector: utils.isSelector }, {}),
     suboptionsKey: "overrides",
     messages: { [MessageId.inconsistentMember]: "Inconsistent key-value pair" },

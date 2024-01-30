@@ -8,7 +8,6 @@ export var MessageId;
 })(MessageId || (MessageId = {}));
 export const consistentFilename = utils.createRule({
     name: "consistent-filename",
-    vue: true,
     isOptions: is.object.factory({ format: utils.isCasing }, {}),
     defaultOptions: { format: utils.Casing.kebabCase },
     isSuboptions: is.object.factory({ _id: is.string, match: is.boolean, selector: utils.isSelector }, { format: utils.isCasing }),

@@ -83,14 +83,6 @@ module.exports = {
       "warn",
       { selector: `${prefixes.testRule} > Literal:first-child` }
     ],
-    "misc/match-filename/testRule-rule": [
-      "warn",
-      {
-        format: "kebab-case",
-        selector:
-          "VariableDeclarator[id.name=rule] > MemberExpression > Literal.property"
-      }
-    ],
     "misc/no-restricted-syntax/no-sentence-dot": [
       "warn",
       {
@@ -227,22 +219,6 @@ module.exports = {
         trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=isSuboptions]`
       }
     ],
-    "misc/require-syntax/require-vue-false": [
-      "warn",
-      {
-        message: 'Prefer "vue: false" option',
-        selector: `${prefixes.createRule} > ObjectExpression > Property[key.name=create] > ArrowFunctionExpression[params.length<=1]`,
-        trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=vue][value.value=true]`
-      }
-    ],
-    "misc/require-syntax/require-vue-true": [
-      "warn",
-      {
-        message: 'Prefer "vue: true" option',
-        selector: `${prefixes.createRule} > ObjectExpression > Property[key.name=create] > ArrowFunctionExpression[params.length>=2]`,
-        trigger: `${prefixes.createRule} > ObjectExpression > Property[key.name=vue][value.value=false]`
-      }
-    ],
     "spellcheck/spell-checker": [
       "warn",
       { ...spellChecker, skipWords: [...spellChecker.skipWords, "inferrable"] }
@@ -282,7 +258,6 @@ module.exports = {
                   "name",
                   "fixable",
                   "hasSuggestions",
-                  "vue",
                   "isOptions",
                   "defaultOptions",
                   "isSuboptions",
@@ -318,7 +293,7 @@ module.exports = {
       }
     },
     {
-      files: "./src/{core,typescript,vue}/base/*",
+      files: "./src/{core,typescript}/base/*",
       rules: {
         "misc/export-matching-filename-only": "off",
         "misc/sort-statements": [
@@ -351,8 +326,7 @@ module.exports = {
       }
     },
     {
-      files:
-        "./src/{quasar-extension,real-classes,real-config,real-facades,real-fns,real-service-providers,type-essentials}/**",
+      files: "./src/{project-chore,ts-misc}/**",
       rules: {
         "misc/no-restricted-syntax/no-unnecessary-docs": [
           "warn",
@@ -409,305 +383,6 @@ module.exports = {
                 selector: `${prefixes.testRule} > ArrayExpression > ObjectExpression > Property[key.name=errors] > ArrayExpression > ObjectExpression`
               }
             ]
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/eslintrc/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "eslintrc/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/jest/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "jest/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-config/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-config/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-config/eslintrc/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-config/eslintrc/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-facades/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-facades/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/jest/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/jest/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/array/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/array/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/converters/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/converters/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/guards/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/guards/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/json/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/json/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/object/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/object/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/program-flow/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/program-flow/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/reflect/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/reflect/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/real-fns/core/types/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "real-fns/types/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/quasar-extension/extras/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "quasar-extension/extras/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/quasar-extension/jest/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "quasar-extension/jest/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/quasar-extension/core/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "quasar-extension/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/quasar-extension/vue/script/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "quasar-extension/vue/script/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/quasar-extension/vue/template/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "quasar-extension/vue/template/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/type-essentials/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "type-essentials/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/typescript/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "typescript/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
-          }
-        ]
-      }
-    },
-    {
-      files: "./tests/vue/**",
-      rules: {
-        "misc/match-filename/testRule-rule": [
-          "warn",
-          {
-            prefix: "vue/",
-            selector:
-              "VariableDeclarator[id.name=rule] > .init > Literal.property"
           }
         ]
       }

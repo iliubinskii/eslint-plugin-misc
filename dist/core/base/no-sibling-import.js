@@ -15,7 +15,6 @@ exports.isStringsArray = real_fns_1.is.factory(real_fns_1.is.array.of, real_fns_
 exports.isSuboptions = real_fns_1.is.object.factory({ _id: real_fns_1.is.string, hierarchy: exports.isStringsArray }, {});
 exports.noSiblingImport = utils.createRule({
     name: "no-sibling-import",
-    vue: true,
     isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, hierarchy: exports.isStringsArray }, {}),
     defaultSuboptions: { hierarchy: [] },
     suboptionsKey: "rules",

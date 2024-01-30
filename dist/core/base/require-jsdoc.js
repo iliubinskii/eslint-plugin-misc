@@ -21,7 +21,6 @@ exports.isInterfaceOption = real_fns_1.is.factory(real_fns_1.is.enumeration, Int
 exports.isInterfaceOptions = real_fns_1.is.factory(real_fns_1.is.array.of, exports.isInterfaceOption);
 exports.requireJsdoc = utils.createRule({
     name: "require-jsdoc",
-    vue: false,
     isOptions: real_fns_1.is.object.factory({
         excludeSelectors: real_fns_1.is.strings,
         includeSelectors: real_fns_1.is.strings,

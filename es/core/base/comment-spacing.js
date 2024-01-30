@@ -8,7 +8,6 @@ export var MessageId;
 export const commentSpacing = utils.createRule({
     name: "comment-spacing",
     fixable: utils.Fixable.whitespace,
-    vue: true,
     messages: {
         [MessageId.addEmptyLine]: "Add empty line after comment",
         [MessageId.removeEmptyLine]: "Remove empty line after comment"

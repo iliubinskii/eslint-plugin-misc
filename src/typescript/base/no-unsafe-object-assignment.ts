@@ -17,7 +17,6 @@ export enum MessageId {
 
 export const noUnsafeObjectAssignment = utils.createRule({
   name: "no-unsafe-object-assignment",
-  vue: false,
   messages: {
     [MessageId.unsafeOptionalAssignment]:
       "Unsafe optional assignment: {{name}}",

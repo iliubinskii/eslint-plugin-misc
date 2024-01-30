@@ -35,12 +35,12 @@ export interface CreateRuleOptions<M extends string, O extends object, S extends
     readonly defaultSuboptions?: Readonly<Partial<S>>;
     readonly docs: Docs<keyof O, keyof S>;
     readonly fixable?: "code" | "whitespace";
+    readonly hasSuggestions?: boolean;
     readonly isOptions?: is.Guard<O>;
     readonly isSuboptions?: is.Guard<S>;
     readonly messages: Rec<M, string>;
     readonly name: string;
     readonly suboptionsKey?: K;
-    readonly vue: boolean;
 }
 export type PartialOptions<O extends object, S extends object, K extends string = never> = Partial<O> & {
     readonly [L in K]?: SuboptionsArray<Partial<S>>;

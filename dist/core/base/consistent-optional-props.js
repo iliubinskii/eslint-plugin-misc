@@ -29,7 +29,6 @@ exports.isStyle = real_fns_1.is.factory(real_fns_1.is.enumeration, Style);
 exports.isTarget = real_fns_1.is.factory(real_fns_1.is.enumeration, Target);
 exports.consistentOptionalProps = utils.createRule({
     name: "consistent-optional-props",
-    vue: false,
     isOptions: real_fns_1.is.object.factory({ classes: exports.isStyle, interfaces: exports.isStyle }, {}),
     defaultOptions: { classes: Style.undefined, interfaces: Style.optional },
     isSuboptions: real_fns_1.is.object.factory({

@@ -5,7 +5,6 @@ module.exports = [
   "misc/match-filename/createRule-id",
   "misc/match-filename/createRule-name",
   "misc/match-filename/testRule-name",
-  "misc/match-filename/testRule-rule",
   "misc/no-restricted-syntax/no-ast",
   "misc/no-restricted-syntax/no-sentence-dot",
   "misc/no-restricted-syntax/no-skipped-tests",
@@ -20,7 +19,5 @@ module.exports = [
   "misc/require-syntax/require-optionTypes",
   "misc/require-syntax/require-suboptionDescriptions",
   "misc/require-syntax/require-suboptionTypes",
-  "misc/require-syntax/require-suboptionsKey",
-  "misc/require-syntax/require-vue-false",
-  "misc/require-syntax/require-vue-true"
+  "misc/require-syntax/require-suboptionsKey"
 ];

@@ -8,7 +8,7 @@ export var MessageId;
 export const wrap = utils.createRule({
     name: "wrap",
     fixable: utils.Fixable.code,
-    vue: true,
+    hasSuggestions: true,
     isOptions: is.object.factory({
         disableFix: is.boolean,
         lint: utils.isSelector,

@@ -9,7 +9,6 @@ export var MessageId;
 export const sortKeys = utils.createRule({
     name: "sort-keys",
     fixable: utils.Fixable.code,
-    vue: true,
     isSuboptions: is.object.factory({ _id: is.string, selector: utils.isSelector }, { customOrder: is.strings, sendToBottom: is.string, sendToTop: is.string }),
     suboptionsKey: "overrides",
     messages: Object.assign(Object.assign({}, utils.sort.messages), { [MessageId.expectingObject]: "Expecting object ({{_id}})" }),

@@ -6,7 +6,6 @@ export var MessageId;
 })(MessageId || (MessageId = {}));
 export const requireSyntax = utils.createRule({
     name: "require-syntax",
-    vue: true,
     isOptions: is.object.factory({ once: is.boolean, selector: utils.isSelector, trigger: utils.isSelector }, { message: is.string }),
     defaultOptions: { once: false, trigger: "Program" },
     messages: { [MessageId.customMessage]: "{{message}}" },

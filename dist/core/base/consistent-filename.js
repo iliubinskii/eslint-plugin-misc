@@ -12,7 +12,6 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentFilename = utils.createRule({
     name: "consistent-filename",
-    vue: true,
     isOptions: real_fns_1.is.object.factory({ format: utils.isCasing }, {}),
     defaultOptions: { format: utils.Casing.kebabCase },
     isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, match: real_fns_1.is.boolean, selector: utils.isSelector }, { format: utils.isCasing }),

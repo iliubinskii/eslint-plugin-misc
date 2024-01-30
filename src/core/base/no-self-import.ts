@@ -8,7 +8,6 @@ export enum MessageId {
 
 export const noSelfImport = utils.createRule({
   name: "no-self-import",
-  vue: true,
   messages: { [MessageId.noSelfImport]: "Self-import is not allowed" },
   docs: {
     description: "Disallows self-import.",

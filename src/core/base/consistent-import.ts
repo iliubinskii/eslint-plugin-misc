@@ -31,7 +31,6 @@ export enum MessageId {
 export const consistentImport = utils.createRule({
   name: "consistent-import",
   fixable: utils.Fixable.code,
-  vue: true,
   isSuboptions: is.object.factory<Suboptions>(
     {
       _id: is.string,

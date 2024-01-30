@@ -11,29 +11,6 @@ utils.testRule(
   [
     {
       name: `Test at line ${getCurrentLine().line}`,
-      options: [{ maxLineLength: 27 }],
-      code: `
-        <template>
-          <p :value="{
-          x: 1
-          }"></p>
-          <p :value="{
-          x: 12
-          }"></p>
-        </template>
-      `,
-      output: `
-        <template>
-          <p :value="{x: 1}"></p>
-          <p :value="{
-          x: 12
-          }"></p>
-        </template>
-      `,
-      errors: [{ line: 2, endLine: 4, messageId: MessageId.preferSingleLine }]
-    },
-    {
-      name: `Test at line ${getCurrentLine().line}`,
       options: [{ maxLineLength: 22 }],
       code: `
         const obj1 = {
