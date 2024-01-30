@@ -11,9 +11,6 @@
     "[jsonc]": {
       "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "[php]": {
-      "editor.defaultFormatter": "junstyle.php-cs-fixer"
-    },
     "[scss]": {
       "editor.formatOnSave": false
     },
@@ -56,13 +53,8 @@
     ],
     "javascript.suggestionActions.enabled": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "php-cs-fixer.autoFixByBracket": true,
-    "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
-    "php-cs-fixer.executablePathWindows": "${workspaceFolder}/vendor/bin/php-cs-fixer.bat",
-    "php-cs-fixer.onsave": true,
     "search.exclude": {
       "CHANGELOG.md": true,
-      "composer.lock": true,
       "dist": true,
       "docs": true,
       "es": true,
@@ -88,20 +80,6 @@
         "icon",
         "orientation",
         "userInterfaceStyle"
-      ],
-      "composer.json": [
-        "name",
-        "description",
-        "keywords",
-        "type",
-        "minimum-stability",
-        "prefer-stable",
-        "private",
-        "license",
-        "homepage",
-        "archive",
-        "authors",
-        "require-dev"
       ],
       "manifest.json": [
         "name",
