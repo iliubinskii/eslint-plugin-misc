@@ -4,7 +4,7 @@ import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
 import { projectChore } from "./project-chore";
-import { tsMisc } from "./ts-misc";
+import { typescriptMisc } from "./typescript-misc";
 import { typescript } from "./typescript";
 
 export const configs = evaluate((): IndexedRecord => {
@@ -38,14 +38,14 @@ export const configs = evaluate((): IndexedRecord => {
     "eslintrc": { rules: eslintrcRules },
     "jest": { rules: jestRules },
     "project-chore": { rules: rules(projectChore) },
-    "ts-misc": {
+    "typescript-misc": {
       overrides: [
         {
           files: "./tests/**",
-          rules: rules(tsMisc, name => name.startsWith("misc/ts-misc/jest/"))
+          rules: rules(typescriptMisc, name => name.startsWith("misc/typescript-misc/jest/"))
         }
       ],
-      rules: rules(tsMisc, name => !name.startsWith("misc/ts-misc/jest/"))
+      rules: rules(typescriptMisc, name => !name.startsWith("misc/typescript-misc/jest/"))
     },
     "typescript": { rules: typescriptRules }
   };

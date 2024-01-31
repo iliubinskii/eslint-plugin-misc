@@ -2,14 +2,14 @@ import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
 import { projectChore } from "./project-chore";
-import { tsMisc } from "./ts-misc";
 import { typescript } from "./typescript";
+import { typescriptMisc } from "./typescript-misc";
 
 export const rules = {
   ...core,
   ...eslintrc,
   ...jest,
   ...projectChore,
-  ...tsMisc,
-  ...typescript
+  ...typescript,
+  ...typescriptMisc
 } as const;

@@ -326,7 +326,7 @@ module.exports = {
       }
     },
     {
-      files: "./src/{project-chore,ts-misc}/**",
+      files: "./src/{project-chore,typescript-misc}/**",
       rules: {
         "misc/no-restricted-syntax/no-unnecessary-docs": [
           "warn",

@@ -33,7 +33,7 @@ const documentedRules = o.entries(
     o.omit(
       rules,
       (_rule, name) =>
-        name.startsWith("project-chore/") || name.startsWith("ts-misc/")
+        name.startsWith("project-chore/") || name.startsWith("typescript-misc/")
     ),
     (_value1, _value2, key1, key2) => {
       if (key1.includes("/") && !key2.includes("/")) return 1;
