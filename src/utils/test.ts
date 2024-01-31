@@ -49,7 +49,7 @@ export function testRule<
     parser: require.resolve("@typescript-eslint/parser"),
     parserOptions: {
       ecmaFeatures: { jsx: true },
-      ecmaVersion: 2017,
+      ecmaVersion: 2020,
       project: "./tsconfig.json",
       sourceType: "module",
       tsconfigRootDir: `${projectRoot}fixtures`
