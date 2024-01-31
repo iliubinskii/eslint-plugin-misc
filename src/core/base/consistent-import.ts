@@ -128,6 +128,7 @@ export const consistentImport = utils.createRule({
   create: (context): RuleListener => {
     const eol = context.eol;
 
+    // eslint-disable-next-line misc/typescript-misc/functions/prefer-readonly-set -- Ok
     const identifiers = new Set<string>();
 
     const importDeclarations: Writable<utils.TSESTree.ImportDeclarations> = [];
