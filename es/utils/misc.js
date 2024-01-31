@@ -1,8 +1,7 @@
 import * as _ from "lodash-commonjs-es";
 import { Casing, TypeGroup } from "./types";
-import { ProxyHandlerAction, a, as, cast, fn, is, o, reflect, s, wrapProxyHandler } from "real-fns";
+import { ProxyHandlerAction, a, as, cast, fn, is, o, reflect, s, wrapProxyHandler } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { Accumulator } from "real-classes";
 import { minimatch } from "minimatch";
 export const isCasing = is.factory(is.enumeration, Casing);
 export const isFilePattern = is.or.factory(is.string, is.strings);
@@ -59,12 +58,14 @@ export function createRegexpMatcher(pattern, defVal) {
  * @returns Merged listeners.
  */
 export function mergeListeners(...listeners) {
-    const accumulator = new Accumulator();
-    for (const listener of listeners)
-        for (const [name, visitor] of o.entries(listener))
-            accumulator.push(name, as.callable(visitor));
     // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
-    return o.fromEntries(a.fromIterable(accumulator).map(([name, visitors]) => [
+    return o.fromEntries(o
+        .entries(_.groupBy(listeners.flatMap(listener => o.entries(listener)), ([name]) => name))
+        .map(([name, entries]) => [
+        name,
+        entries.map(([, visitor]) => as.callable(visitor))
+    ])
+        .map(([name, visitors]) => [
         name,
         node => {
             for (const visitor of visitors)
@@ -126,22 +127,36 @@ export function setCasing(str, casing) {
  */
 export function wrapRule(options) {
     const { docs: rawDocs, options: ruleOptions, rule } = options;
-    const docs = Object.assign({ recommended: false, requiresTypeChecking: true }, o.removeUndefinedKeys.alt(Object.assign(Object.assign({}, rawDocs), { description: rawDocs
-            ? s.unpadMultiline(rawDocs.description)
-            : "No description.", failExamples: rawDocs
-            ? s.unpadMultiline(rawDocs.failExamples)
-            : undefined, passExamples: rawDocs ? s.unpadMultiline(rawDocs.passExamples) : undefined })));
-    return Object.assign(Object.assign({}, rule), { create: context => {
+    const docs = {
+        recommended: false,
+        requiresTypeChecking: true,
+        ...o.removeUndefinedKeys.alt({
+            ...rawDocs,
+            description: rawDocs
+                ? s.unpadMultiline(rawDocs.description)
+                : "No description.",
+            failExamples: rawDocs
+                ? s.unpadMultiline(rawDocs.failExamples)
+                : undefined,
+            passExamples: rawDocs ? s.unpadMultiline(rawDocs.passExamples) : undefined
+        })
+    };
+    return {
+        ...rule,
+        create: context => {
             const optionsOverridesArray = ruleOptions.map((opts, index) => {
                 const overrides = context.options[index];
                 return is.object(opts) && is.object(overrides)
-                    ? Object.assign(Object.assign({}, opts), overrides) : opts;
+                    ? { ...opts, ...overrides }
+                    : opts;
             });
             return rule.create(new Proxy({}, wrapProxyHandler("wrap-rule", ProxyHandlerAction.throw, {
                 get: (_target, key) => key === "options"
                     ? optionsOverridesArray
                     : reflect.get(context, key)
             })));
-        }, meta: Object.assign(Object.assign({}, rule.meta), { docs }) });
+        },
+        meta: { ...rule.meta, docs }
+    };
 }
 //# sourceMappingURL=misc.js.map

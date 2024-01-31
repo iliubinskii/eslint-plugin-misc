@@ -1,4 +1,4 @@
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 export declare const typescript: o.PrefixKeys<{
     "class-methods-use-this": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../core/base/wrap").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/wrap").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
     "consistent-array-type-name": import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("./base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;

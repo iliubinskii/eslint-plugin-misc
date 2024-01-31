@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const ts = tslib_1.__importStar(require("typescript"));
 const tsutils = tslib_1.__importStar(require("tsutils"));
 const utils_1 = require("@typescript-eslint/utils");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const types_1 = require("./types");
 class TypeCheck {
     /**
@@ -34,7 +34,7 @@ class TypeCheck {
         });
         const parser = utils_1.ESLintUtils.getParserServices(context);
         const { esTreeNodeToTSNodeMap, program } = parser;
-        real_fns_1.assert.toBeTrue(tsutils.isStrictCompilerOptionEnabled(program.getCompilerOptions(), "strictNullChecks"), 'Expecting "strictNullChecks" compiler option to be enabled');
+        typescript_misc_1.assert.toBeTrue(tsutils.isStrictCompilerOptionEnabled(program.getCompilerOptions(), "strictNullChecks"), 'Expecting "strictNullChecks" compiler option to be enabled');
         this.checker = program.getTypeChecker();
         this.code = context.getSourceCode().getText();
         this.toTsNode = esTreeNodeToTSNodeMap.get.bind(esTreeNodeToTSNodeMap);
@@ -277,7 +277,7 @@ class TypeCheck {
                 case types_1.TypeGroup.complex: {
                     if (this.isArrayOrTupleType(type)) {
                         const subtypes = type.typeArguments;
-                        real_fns_1.assert.not.empty(subtypes, "Missing type arguments");
+                        typescript_misc_1.assert.not.empty(subtypes, "Missing type arguments");
                         return subtypes.some(subtype => this.typeIs(subtype, types_1.TypeGroup.complex));
                     }
                     if (type.isUnionOrIntersection())
@@ -383,7 +383,7 @@ class TypeCheck {
                 return ["function"];
             if (type.isUnion())
                 return tsutils.unionTypeParts(type).flatMap(part => recurs(part));
-            switch (real_fns_1.as.byGuard(type.flags, isExpectedFlags)) {
+            switch (typescript_misc_1.as.byGuard(type.flags, isExpectedFlags)) {
                 case ts.TypeFlags.BigInt:
                 case ts.TypeFlags.BigIntLiteral:
                     return ["bigint"];
@@ -409,7 +409,7 @@ class TypeCheck {
     }
 }
 exports.TypeCheck = TypeCheck;
-const expectedFlags = new real_fns_1.ReadonlySet([
+const expectedFlags = new typescript_misc_1.ReadonlySet([
     ts.TypeFlags.BigInt,
     ts.TypeFlags.BigIntLiteral,
     ts.TypeFlags.BooleanLiteral,
@@ -424,7 +424,7 @@ const expectedFlags = new real_fns_1.ReadonlySet([
     ts.TypeFlags.UniqueESSymbol,
     ts.TypeFlags.Void
 ]);
-const safeBoolean = new real_fns_1.ReadonlySet([
+const safeBoolean = new typescript_misc_1.ReadonlySet([
     ts.TypeFlags.BigInt,
     ts.TypeFlags.BigIntLiteral,
     ts.TypeFlags.Boolean,
@@ -434,7 +434,7 @@ const safeBoolean = new real_fns_1.ReadonlySet([
     ts.TypeFlags.String,
     ts.TypeFlags.StringLiteral
 ]);
-const safeBooleanWithUndefined = new real_fns_1.ReadonlySet([
+const safeBooleanWithUndefined = new typescript_misc_1.ReadonlySet([
     ts.TypeFlags.ESSymbol,
     ts.TypeFlags.Object,
     ts.TypeFlags.NonPrimitive,
@@ -450,7 +450,7 @@ const safeBooleanWithUndefined = new real_fns_1.ReadonlySet([
 function checkTypeFlags(type, ...flags) {
     if (type.isTypeParameter()) {
         const constraint = type.getConstraint();
-        if (real_fns_1.is.empty(constraint))
+        if (typescript_misc_1.is.empty(constraint))
             return flags.includes(ts.TypeFlags.Unknown);
         // eslint-disable-next-line misc/no-param-reassign -- Ok
         type = constraint;
@@ -466,6 +466,6 @@ function checkTypeFlags(type, ...flags) {
  * @returns _True_ if value type is ExpectedFlags, _false_ otherwise.
  */
 function isExpectedFlags(value) {
-    return (0, real_fns_1.typedef)(expectedFlags).has(value);
+    return (0, typescript_misc_1.typedef)(expectedFlags).has(value);
 }
 //# sourceMappingURL=TypeCheck.js.map

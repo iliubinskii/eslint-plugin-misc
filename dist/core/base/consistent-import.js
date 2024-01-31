@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const minimatch_1 = require("minimatch");
 var MessageId;
 (function (MessageId) {
@@ -17,16 +17,16 @@ var MessageId;
 exports.consistentImport = utils.createRule({
     name: "consistent-import",
     fixable: utils.Fixable.code,
-    isSuboptions: real_fns_1.is.object.factory({
-        _id: real_fns_1.is.string,
-        altLocalNames: real_fns_1.is.strings,
-        autoImport: real_fns_1.is.boolean,
-        source: real_fns_1.is.string,
-        wildcard: real_fns_1.is.boolean
+    isSuboptions: typescript_misc_1.is.object.factory({
+        _id: typescript_misc_1.is.string,
+        altLocalNames: typescript_misc_1.is.strings,
+        autoImport: typescript_misc_1.is.boolean,
+        source: typescript_misc_1.is.string,
+        wildcard: typescript_misc_1.is.boolean
     }, {
-        autoImportSource: real_fns_1.is.string,
-        localName: real_fns_1.is.string,
-        sourcePattern: real_fns_1.is.string
+        autoImportSource: typescript_misc_1.is.string,
+        localName: typescript_misc_1.is.string,
+        sourcePattern: typescript_misc_1.is.string
     }),
     defaultSuboptions: { altLocalNames: [], autoImport: false, wildcard: false },
     suboptionsKey: "sources",
@@ -106,7 +106,6 @@ exports.consistentImport = utils.createRule({
     },
     create: (context) => {
         const eol = context.eol;
-        // eslint-disable-next-line misc/real-fns/prefer-readonly-set -- Ok
         const identifiers = new Set();
         const importDeclarations = [];
         return {
@@ -183,18 +182,20 @@ exports.consistentImport = utils.createRule({
                 : localName;
         }
         function findSuboptions(source) {
-            const suboptions = context.options.sources.find(candidate => {
-                var _a;
-                return (0, minimatch_1.minimatch)(source, (_a = candidate.sourcePattern) !== null && _a !== void 0 ? _a : candidate.source, {
-                    dot: true
-                });
-            });
+            const suboptions = context.options.sources.find(candidate => (0, minimatch_1.minimatch)(source, candidate.sourcePattern ?? candidate.source, {
+                dot: true
+            }));
             return suboptions
-                ? Object.assign({ localName: context.identifierFromPath(source) }, suboptions) : undefined;
+                ? { localName: context.identifierFromPath(source), ...suboptions }
+                : undefined;
         }
         function lintAutoImport(node) {
             const fixes = _.uniq(context.options.sources.flatMap(suboptions => {
-                const { autoImport, autoImportSource, localName, wildcard } = Object.assign({ autoImportSource: suboptions.source, localName: context.identifierFromPath(suboptions.source) }, suboptions);
+                const { autoImport, autoImportSource, localName, wildcard } = {
+                    autoImportSource: suboptions.source,
+                    localName: context.identifierFromPath(suboptions.source),
+                    ...suboptions
+                };
                 return autoImport
                     ? context.scope.through
                         .map(ref => {
@@ -209,7 +210,7 @@ exports.consistentImport = utils.createRule({
                         }
                         return undefined;
                     })
-                        .filter(real_fns_1.is.not.empty)
+                        .filter(typescript_misc_1.is.not.empty)
                     : [];
             }));
             if (fixes.length)

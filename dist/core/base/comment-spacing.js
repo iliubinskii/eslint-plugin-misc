@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.commentSpacing = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["addEmptyLine"] = "addEmptyLine";
@@ -52,8 +52,8 @@ exports.commentSpacing = utils.createRule({
                 const multiline = isMultiline(context.getText(range));
                 const nextMultiline = isMultiline(context.getText(range[1]));
                 const spread = multiline && !nextMultiline;
-                const got = real_fns_1.s.leadingSpaces(context.getText(range[1]));
-                const expected = context.eol.repeat(spread ? 2 : 1) + real_fns_1.s.trimLeadingEmptyLines(got);
+                const got = typescript_misc_1.s.leadingSpaces(context.getText(range[1]));
+                const expected = context.eol.repeat(spread ? 2 : 1) + typescript_misc_1.s.trimLeadingEmptyLines(got);
                 if (got === expected) {
                     // Valid
                 }

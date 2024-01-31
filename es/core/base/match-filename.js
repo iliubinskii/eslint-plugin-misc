@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["invalidText"] = "invalidText";

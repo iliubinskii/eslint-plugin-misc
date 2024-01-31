@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrap = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
@@ -12,11 +12,11 @@ exports.wrap = utils.createRule({
     name: "wrap",
     fixable: utils.Fixable.code,
     hasSuggestions: true,
-    isOptions: real_fns_1.is.object.factory({
-        disableFix: real_fns_1.is.boolean,
+    isOptions: typescript_misc_1.is.object.factory({
+        disableFix: typescript_misc_1.is.boolean,
         lint: utils.isSelector,
-        plugin: real_fns_1.is.string,
-        rule: real_fns_1.is.string,
+        plugin: typescript_misc_1.is.string,
+        rule: typescript_misc_1.is.string,
         skip: utils.isSelector
     }, {}),
     defaultOptions: { disableFix: false, lint: [], skip: [] },
@@ -77,12 +77,12 @@ exports.wrap = utils.createRule({
         const lintIds = [];
         const skipIds = [];
         const reports = [];
-        return utils.mergeListeners(rule.create(new Proxy({}, (0, real_fns_1.wrapProxyHandler)("eslint-wrap-rule", real_fns_1.ProxyHandlerAction.throw, {
+        return utils.mergeListeners(rule.create(new Proxy({}, (0, typescript_misc_1.wrapProxyHandler)("eslint-wrap-rule", typescript_misc_1.ProxyHandlerAction.throw, {
             get: (_target, key) => key === "report"
                 ? (report) => {
                     reports.push(report);
                 }
-                : real_fns_1.reflect.get(context.rawContext, key)
+                : typescript_misc_1.reflect.get(context.rawContext, key)
         }))), {
             [lint]: (node) => {
                 lintIds.push(nodeId(node));
@@ -101,19 +101,28 @@ exports.wrap = utils.createRule({
                     : () => false;
                 for (const report of reports)
                     if (lintMatcher(report) && !skipMatcher(report)) {
-                        const _a = Object.assign({ data: {}, 
+                        const { data, fix, message, messageId, ...rest } = {
+                            data: {},
                             // eslint-disable-next-line unicorn/no-null -- Ok
-                            fix: null, message: undefined }, report), { data, fix, message, messageId } = _a, rest = tslib_1.__rest(_a, ["data", "fix", "message", "messageId"]);
-                        context.rawContext.report(Object.assign(Object.assign({}, rest), { data: {
-                                message: message !== null && message !== void 0 ? message : real_fns_1.as.not
-                                    .empty(rule.meta.messages[messageId])
-                                    .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
-                                    const result = data[match1];
-                                    return real_fns_1.as.numStr(result).toString();
-                                })
-                            }, 
+                            fix: null,
+                            message: undefined,
+                            ...report
+                        };
+                        context.rawContext.report({
+                            ...rest,
+                            data: {
+                                message: message ??
+                                    typescript_misc_1.as.not
+                                        .empty(rule.meta.messages[messageId])
+                                        .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
+                                        const result = data[match1];
+                                        return typescript_misc_1.as.numStr(result).toString();
+                                    })
+                            },
                             // eslint-disable-next-line unicorn/no-null -- Ok
-                            fix: disableFix ? null : fix, messageId: MessageId.customMessage }));
+                            fix: disableFix ? null : fix,
+                            messageId: MessageId.customMessage
+                        });
                     }
             }
         });

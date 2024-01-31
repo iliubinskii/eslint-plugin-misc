@@ -1,6 +1,5 @@
-import { __rest } from "tslib";
 import * as utils from "../../utils";
-import { ProxyHandlerAction, as, is, reflect, wrapProxyHandler } from "real-fns";
+import { ProxyHandlerAction, as, is, reflect, wrapProxyHandler } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
@@ -98,19 +97,28 @@ export const wrap = utils.createRule({
                     : () => false;
                 for (const report of reports)
                     if (lintMatcher(report) && !skipMatcher(report)) {
-                        const _a = Object.assign({ data: {}, 
+                        const { data, fix, message, messageId, ...rest } = {
+                            data: {},
                             // eslint-disable-next-line unicorn/no-null -- Ok
-                            fix: null, message: undefined }, report), { data, fix, message, messageId } = _a, rest = __rest(_a, ["data", "fix", "message", "messageId"]);
-                        context.rawContext.report(Object.assign(Object.assign({}, rest), { data: {
-                                message: message !== null && message !== void 0 ? message : as.not
-                                    .empty(rule.meta.messages[messageId])
-                                    .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
-                                    const result = data[match1];
-                                    return as.numStr(result).toString();
-                                })
-                            }, 
+                            fix: null,
+                            message: undefined,
+                            ...report
+                        };
+                        context.rawContext.report({
+                            ...rest,
+                            data: {
+                                message: message ??
+                                    as.not
+                                        .empty(rule.meta.messages[messageId])
+                                        .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
+                                        const result = data[match1];
+                                        return as.numStr(result).toString();
+                                    })
+                            },
                             // eslint-disable-next-line unicorn/no-null -- Ok
-                            fix: disableFix ? null : fix, messageId: MessageId.customMessage }));
+                            fix: disableFix ? null : fix,
+                            messageId: MessageId.customMessage
+                        });
                     }
             }
         });

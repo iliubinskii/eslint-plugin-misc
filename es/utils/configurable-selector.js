@@ -1,5 +1,5 @@
 import * as _ from "lodash-commonjs-es";
-import { assert } from "real-fns";
+import { assert } from "typescript-misc";
 /**
  * Creates selector.
  *

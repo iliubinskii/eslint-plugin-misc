@@ -1,4 +1,4 @@
-import type { strings } from "type-essentials";
+import type { strings } from "typescript-misc";
 /**
  * Creates selector.
  *

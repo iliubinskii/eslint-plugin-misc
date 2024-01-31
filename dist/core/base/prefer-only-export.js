@@ -4,14 +4,14 @@ exports.preferOnlyExport = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const ruleTemplates = tslib_1.__importStar(require("../../rule-templates"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["invalidExport"] = "invalidExport";
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.preferOnlyExport = utils.createRule({
     name: "prefer-only-export",
-    isOptions: real_fns_1.is.object.factory({ selector: utils.isSelector }, {}),
+    isOptions: typescript_misc_1.is.object.factory({ selector: utils.isSelector }, {}),
     defaultOptions: { selector: [] },
     messages: { [MessageId.invalidExport]: "Expecting only export" },
     docs: {

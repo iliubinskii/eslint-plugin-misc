@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.consistentOptionalProps = exports.isTarget = exports.isStyle = exports.Target = exports.Style = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
@@ -25,14 +25,14 @@ var Target;
     Target["classes"] = "classes";
     Target["interfaces"] = "interfaces";
 })(Target || (exports.Target = Target = {}));
-exports.isStyle = real_fns_1.is.factory(real_fns_1.is.enumeration, Style);
-exports.isTarget = real_fns_1.is.factory(real_fns_1.is.enumeration, Target);
+exports.isStyle = typescript_misc_1.is.factory(typescript_misc_1.is.enumeration, Style);
+exports.isTarget = typescript_misc_1.is.factory(typescript_misc_1.is.enumeration, Target);
 exports.consistentOptionalProps = utils.createRule({
     name: "consistent-optional-props",
-    isOptions: real_fns_1.is.object.factory({ classes: exports.isStyle, interfaces: exports.isStyle }, {}),
+    isOptions: typescript_misc_1.is.object.factory({ classes: exports.isStyle, interfaces: exports.isStyle }, {}),
     defaultOptions: { classes: Style.undefined, interfaces: Style.optional },
-    isSuboptions: real_fns_1.is.object.factory({
-        _id: real_fns_1.is.string,
+    isSuboptions: typescript_misc_1.is.object.factory({
+        _id: typescript_misc_1.is.string,
         pattern: utils.isRegexpPattern,
         propertyPattern: utils.isRegexpPattern,
         style: exports.isStyle
@@ -91,13 +91,13 @@ exports.consistentOptionalProps = utils.createRule({
     `
     },
     create: (context, typeCheck) => {
-        const overrides = real_fns_1.a
+        const overrides = typescript_misc_1.a
             .reverse(context.options.overrides)
             .map((override) => {
             const { pattern, propertyPattern } = override;
             const matcher = utils.createRegexpMatcher(pattern, true);
             const propertyMatcher = utils.createRegexpMatcher(propertyPattern, true);
-            return Object.assign(Object.assign({}, override), { matcher, propertyMatcher });
+            return { ...override, matcher, propertyMatcher };
         });
         return {
             ClassDeclaration: lintClass,
@@ -123,11 +123,10 @@ exports.consistentOptionalProps = utils.createRule({
         function lintProperty(node, target, name) {
             if (node.typeAnnotation) {
                 const { typeAnnotation } = node.typeAnnotation;
-                const got = (0, real_fns_1.evaluate)(() => {
-                    var _a;
+                const got = (0, typescript_misc_1.evaluate)(() => {
                     const type = typeCheck.getType(typeAnnotation);
                     const hasUndefined = typeCheck.typeHas(type, utils.TypeGroup.undefined);
-                    const optional = (_a = node.optional) !== null && _a !== void 0 ? _a : false;
+                    const optional = node.optional ?? false;
                     if (hasUndefined && optional)
                         return Style.combined;
                     if (hasUndefined)
@@ -137,14 +136,14 @@ exports.consistentOptionalProps = utils.createRule({
                     return undefined;
                 });
                 if (got) {
-                    const override = (0, real_fns_1.evaluate)(() => {
+                    const override = (0, typescript_misc_1.evaluate)(() => {
                         const propertyName = getPropertyName(node);
-                        const targets = new real_fns_1.ReadonlySet([target, undefined]);
+                        const targets = new typescript_misc_1.ReadonlySet([target, undefined]);
                         return overrides.find(candidate => targets.has(candidate.target) &&
                             candidate.matcher(name) &&
                             candidate.propertyMatcher(propertyName));
                     });
-                    const expected = (0, real_fns_1.evaluate)(() => {
+                    const expected = (0, typescript_misc_1.evaluate)(() => {
                         const result = override ? override.style : context.options[target];
                         return exclusionTypes.has(typeAnnotation.type) &&
                             exclusionStyles.has(got) &&
@@ -159,7 +158,7 @@ exports.consistentOptionalProps = utils.createRule({
                         else
                             context.report({
                                 data: override ? { _id: override._id } : {},
-                                messageId: (0, real_fns_1.evaluate)(() => {
+                                messageId: (0, typescript_misc_1.evaluate)(() => {
                                     switch (expected) {
                                         case Style.combined:
                                             return override
@@ -182,9 +181,9 @@ exports.consistentOptionalProps = utils.createRule({
         }
     }
 });
-const exclusionTypes = new real_fns_1.ReadonlySet([
+const exclusionTypes = new typescript_misc_1.ReadonlySet([
     utils_1.AST_NODE_TYPES.TSAnyKeyword,
     utils_1.AST_NODE_TYPES.TSUnknownKeyword
 ]);
-const exclusionStyles = new real_fns_1.ReadonlySet([Style.combined, Style.optional]);
+const exclusionStyles = new typescript_misc_1.ReadonlySet([Style.combined, Style.optional]);
 //# sourceMappingURL=consistent-optional-props.js.map

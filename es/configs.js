@@ -1,15 +1,24 @@
-import { evaluate, fn, o } from "real-fns";
+import { evaluate, fn, o } from "typescript-misc";
 import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
 import { projectChore } from "./project-chore";
-import { tsMisc } from "./ts-misc";
 import { typescript } from "./typescript";
+import { typescriptMisc } from "./typescript-misc";
 export const configs = evaluate(() => {
-    const coreRules = Object.assign(Object.assign({}, rules(core)), { "misc/match-filename": "off", "misc/no-restricted-syntax": "off", "misc/require-syntax": "off", "misc/wrap": "off" });
+    const coreRules = {
+        ...rules(core),
+        "misc/match-filename": "off",
+        "misc/no-restricted-syntax": "off",
+        "misc/require-syntax": "off",
+        "misc/wrap": "off"
+    };
     const eslintrcRules = rules(eslintrc);
     const jestRules = rules(jest);
-    const typescriptRules = Object.assign(Object.assign({}, rules(typescript)), { "misc/typescript/no-restricted-syntax": "off" });
+    const typescriptRules = {
+        ...rules(typescript),
+        "misc/typescript/no-restricted-syntax": "off"
+    };
     return {
         "all": {
             overrides: [
@@ -23,16 +32,16 @@ export const configs = evaluate(() => {
         "eslintrc": { rules: eslintrcRules },
         "jest": { rules: jestRules },
         "project-chore": { rules: rules(projectChore) },
-        "ts-misc": {
+        "typescript": { rules: typescriptRules },
+        "typescript-misc": {
             overrides: [
                 {
                     files: "./tests/**",
-                    rules: rules(tsMisc, name => name.startsWith("misc/ts-misc/jest/"))
+                    rules: rules(typescriptMisc, name => name.startsWith("misc/typescript-misc/jest/"))
                 }
             ],
-            rules: rules(tsMisc, name => !name.startsWith("misc/ts-misc/jest/"))
-        },
-        "typescript": { rules: typescriptRules }
+            rules: rules(typescriptMisc, name => !name.startsWith("misc/typescript-misc/jest/"))
+        }
     };
 });
 /**

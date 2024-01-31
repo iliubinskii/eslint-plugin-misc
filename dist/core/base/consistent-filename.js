@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.consistentFilename = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const node_path_1 = tslib_1.__importDefault(require("node:path"));
 var MessageId;
 (function (MessageId) {
@@ -12,9 +12,9 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentFilename = utils.createRule({
     name: "consistent-filename",
-    isOptions: real_fns_1.is.object.factory({ format: utils.isCasing }, {}),
+    isOptions: typescript_misc_1.is.object.factory({ format: utils.isCasing }, {}),
     defaultOptions: { format: utils.Casing.kebabCase },
-    isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, match: real_fns_1.is.boolean, selector: utils.isSelector }, { format: utils.isCasing }),
+    isSuboptions: typescript_misc_1.is.object.factory({ _id: typescript_misc_1.is.string, match: typescript_misc_1.is.boolean, selector: utils.isSelector }, { format: utils.isCasing }),
     defaultSuboptions: { match: false },
     suboptionsKey: "overrides",
     messages: {
@@ -90,8 +90,11 @@ exports.consistentFilename = utils.createRule({
             "Program:exit": () => {
                 const { base: got } = node_path_1.default.parse(context.filename);
                 if (items.length) {
-                    const item = real_fns_1.a.last(items);
-                    const { _id, format, match } = Object.assign({ format: context.options.format }, item.suboptions);
+                    const item = typescript_misc_1.a.last(items);
+                    const { _id, format, match } = {
+                        format: context.options.format,
+                        ...item.suboptions
+                    };
                     const expected = getExpected(got, format, match, item.node);
                     if (got === expected) {
                         // Valid
@@ -122,7 +125,7 @@ exports.consistentFilename = utils.createRule({
                 .split(".")
                 .map((part, index) => {
                 if (index === 0)
-                    return utils.setCasing(match ? utils.nodeText(real_fns_1.as.not.empty(node), part) : part, format);
+                    return utils.setCasing(match ? utils.nodeText(typescript_misc_1.as.not.empty(node), part) : part, format);
                 return utils.setCasing(part, utils.Casing.kebabCase);
             })
                 .join(".");

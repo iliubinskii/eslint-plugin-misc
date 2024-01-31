@@ -1,1 +1,1 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/project-chore/eslintrc/index.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,CAAC,EAAE,MAAM,UAAU,CAAC;AAG7B,eAAO,MAAM,QAAQ;;;;;eAQpB,CAAC"}
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/project-chore/eslintrc/index.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,CAAC,EAAE,MAAM,iBAAiB,CAAC;AAGpC,eAAO,MAAM,QAAQ;;;;;eAQpB,CAAC"}

@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["expectingObject"] = "expectingObject";
@@ -13,9 +13,12 @@ var MessageId;
 exports.sortKeys = utils.createRule({
     name: "sort-keys",
     fixable: utils.Fixable.code,
-    isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, selector: utils.isSelector }, { customOrder: real_fns_1.is.strings, sendToBottom: real_fns_1.is.string, sendToTop: real_fns_1.is.string }),
+    isSuboptions: typescript_misc_1.is.object.factory({ _id: typescript_misc_1.is.string, selector: utils.isSelector }, { customOrder: typescript_misc_1.is.strings, sendToBottom: typescript_misc_1.is.string, sendToTop: typescript_misc_1.is.string }),
     suboptionsKey: "overrides",
-    messages: Object.assign(Object.assign({}, utils.sort.messages), { [MessageId.expectingObject]: "Expecting object ({{_id}})" }),
+    messages: {
+        ...utils.sort.messages,
+        [MessageId.expectingObject]: "Expecting object ({{_id}})"
+    },
     docs: {
         description: "Sorts object keys.",
         suboptionTypes: {
@@ -54,7 +57,7 @@ exports.sortKeys = utils.createRule({
             return {
                 [selector]: (node) => {
                     if (node.type === utils_1.AST_NODE_TYPES.ObjectExpression)
-                        overrides.push({ node, options: Object.assign(Object.assign({}, override), { keyNode }) });
+                        overrides.push({ node, options: { ...override, keyNode } });
                     else
                         context.report({
                             data: { _id },

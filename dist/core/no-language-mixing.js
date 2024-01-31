@@ -4,8 +4,8 @@ exports.noLanguageMixing = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../utils"));
 const base_1 = require("./base");
-const real_fns_1 = require("real-fns");
-exports.noLanguageMixing = (0, real_fns_1.evaluate)(() => {
+const typescript_misc_1 = require("typescript-misc");
+exports.noLanguageMixing = (0, typescript_misc_1.evaluate)(() => {
     const br = "[\\d_]*";
     const eng = "\\w";
     const international = "[^\\u0000-\\u00FF]";

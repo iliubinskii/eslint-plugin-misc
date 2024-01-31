@@ -3,14 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.requireSyntax = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.requireSyntax = utils.createRule({
     name: "require-syntax",
-    isOptions: real_fns_1.is.object.factory({ once: real_fns_1.is.boolean, selector: utils.isSelector, trigger: utils.isSelector }, { message: real_fns_1.is.string }),
+    isOptions: typescript_misc_1.is.object.factory({ once: typescript_misc_1.is.boolean, selector: utils.isSelector, trigger: utils.isSelector }, { message: typescript_misc_1.is.string }),
     defaultOptions: { once: false, trigger: "Program" },
     messages: { [MessageId.customMessage]: "{{message}}" },
     docs: {
@@ -78,7 +78,7 @@ exports.requireSyntax = utils.createRule({
                             ? context.locZero
                             : context.getLoc(node.range);
                         context.report({
-                            data: { message: message !== null && message !== void 0 ? message : defaultMessage },
+                            data: { message: message ?? defaultMessage },
                             loc,
                             messageId: MessageId.customMessage
                         });

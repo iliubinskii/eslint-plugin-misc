@@ -1,6 +1,6 @@
 import * as ruleTemplates from "../../rule-templates";
 import * as utils from "../../utils";
-import { a, evaluate, is } from "real-fns";
+import { a, evaluate, is } from "typescript-misc";
 import fs from "node:fs";
 import nodePath from "node:path";
 export var MessageId;
@@ -56,10 +56,13 @@ export const noSiblingImport = utils.createRule({
             const rules = context.options.rules.map((rule) => {
                 const matchers = rule.hierarchy.map(pattern => utils.createFileMatcher(pattern, false, { dot: true }));
                 const maxIndex = findLastIndex(`./${basename}`, matchers);
-                return Object.assign(Object.assign({}, rule), { matcher: str => {
+                return {
+                    ...rule,
+                    matcher: str => {
                         const index = findIndex(str, matchers);
                         return index !== -1 && maxIndex !== -1 && index < maxIndex;
-                    } });
+                    }
+                };
             });
             return (str) => rules.some(rule => rule.matcher(str));
         });

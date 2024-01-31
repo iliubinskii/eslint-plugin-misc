@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortTopComments = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["incorrectSorting"] = "incorrectSorting";
@@ -11,7 +11,10 @@ var MessageId;
 exports.sortTopComments = utils.createRule({
     name: "sort-top-comments",
     fixable: utils.Fixable.code,
-    messages: Object.assign(Object.assign({}, utils.sort.messages), { [MessageId.incorrectSorting]: "Incorrect sorting" }),
+    messages: {
+        ...utils.sort.messages,
+        [MessageId.incorrectSorting]: "Incorrect sorting"
+    },
     docs: {
         description: "Sorts top comments.",
         failExamples: `
@@ -31,13 +34,13 @@ exports.sortTopComments = utils.createRule({
         "Program:exit": (node) => {
             const texts = context.getComments(node);
             const got = texts.join("\n");
-            const expected = real_fns_1.a.sort(texts, utils.compare).join("\n");
+            const expected = typescript_misc_1.a.sort(texts, utils.compare).join("\n");
             if (got === expected) {
                 // Valid
             }
             else {
                 const ranges = context.getCommentRanges(node);
-                const range = [real_fns_1.a.first(ranges)[0], real_fns_1.a.last(ranges)[1]];
+                const range = [typescript_misc_1.a.first(ranges)[0], typescript_misc_1.a.last(ranges)[1]];
                 context.report({
                     fix: () => ({ range, text: expected }),
                     loc: context.getLoc(range),

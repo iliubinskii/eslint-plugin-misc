@@ -1,6 +1,6 @@
 import * as utils from "../../utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 export type InterfaceOptions = readonly InterfaceOption[];
 export interface Options extends utils.configurableSelector.Options {
     readonly interfaces: InterfaceOptions;

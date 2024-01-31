@@ -1,6 +1,6 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
@@ -71,7 +71,7 @@ export const noRestrictedSyntax = utils.createRule({
                 for (const node of _.difference(nodes, ignoreNodes))
                     context.report({
                         data: {
-                            message: message !== null && message !== void 0 ? message : `This syntax is not allowed: ${selector}`
+                            message: message ?? `This syntax is not allowed: ${selector}`
                         },
                         fix: () => is.not.empty(replacement)
                             ? [

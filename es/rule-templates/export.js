@@ -1,5 +1,5 @@
 import * as _ from "lodash-commonjs-es";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 /**
  * Creates rule listener.
  *

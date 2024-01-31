@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { ReadonlySet, a, evaluate, is } from "real-fns";
+import { ReadonlySet, a, evaluate, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 export var MessageId;
 (function (MessageId) {
@@ -93,7 +93,7 @@ export const consistentOptionalProps = utils.createRule({
             const { pattern, propertyPattern } = override;
             const matcher = utils.createRegexpMatcher(pattern, true);
             const propertyMatcher = utils.createRegexpMatcher(propertyPattern, true);
-            return Object.assign(Object.assign({}, override), { matcher, propertyMatcher });
+            return { ...override, matcher, propertyMatcher };
         });
         return {
             ClassDeclaration: lintClass,
@@ -120,10 +120,9 @@ export const consistentOptionalProps = utils.createRule({
             if (node.typeAnnotation) {
                 const { typeAnnotation } = node.typeAnnotation;
                 const got = evaluate(() => {
-                    var _a;
                     const type = typeCheck.getType(typeAnnotation);
                     const hasUndefined = typeCheck.typeHas(type, utils.TypeGroup.undefined);
-                    const optional = (_a = node.optional) !== null && _a !== void 0 ? _a : false;
+                    const optional = node.optional ?? false;
                     if (hasUndefined && optional)
                         return Style.combined;
                     if (hasUndefined)

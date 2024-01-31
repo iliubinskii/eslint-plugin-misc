@@ -1,4 +1,4 @@
-import { assert, is, o } from "real-fns";
+import { assert, is, o } from "typescript-misc";
 import fs from "node:fs";
 /**
  * Creates synonyms.

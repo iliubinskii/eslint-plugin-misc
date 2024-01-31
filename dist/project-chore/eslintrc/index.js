@@ -4,9 +4,9 @@ exports.eslintrc = void 0;
 const no_disable_1 = require("./no-disable");
 const no_rules_1 = require("./no-rules");
 const no_temp_1 = require("./no-temp");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const sort_synonyms_1 = require("./sort-synonyms");
-exports.eslintrc = real_fns_1.o.prefixKeys({
+exports.eslintrc = typescript_misc_1.o.prefixKeys({
     "no-disable": no_disable_1.noDisable,
     "no-rules": no_rules_1.noRules,
     "no-temp": no_temp_1.noTemp,

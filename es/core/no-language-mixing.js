@@ -1,6 +1,6 @@
 import * as utils from "../utils";
 import { base } from "./base";
-import { evaluate } from "real-fns";
+import { evaluate } from "typescript-misc";
 export const noLanguageMixing = evaluate(() => {
     const br = "[\\d_]*";
     const eng = "\\w";

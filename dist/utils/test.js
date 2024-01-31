@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.testRule = exports.getMessageId = void 0;
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const utils_1 = require("@typescript-eslint/utils");
 const misc_1 = require("./misc");
 /**
@@ -11,7 +11,7 @@ const misc_1 = require("./misc");
  * @returns MessageId.
  */
 function getMessageId(rule) {
-    return real_fns_1.o.fromEntries.exhaustive(real_fns_1.o.keys(rule.meta.messages).map(key => [key, key]));
+    return typescript_misc_1.o.fromEntries.exhaustive(typescript_misc_1.o.keys(rule.meta.messages).map(key => [key, key]));
 }
 exports.getMessageId = getMessageId;
 /**
@@ -27,21 +27,25 @@ function testRule(name, rule, invalid, valid = []) {
         parser: require.resolve("@typescript-eslint/parser"),
         parserOptions: {
             ecmaFeatures: { jsx: true },
-            ecmaVersion: 2017,
+            ecmaVersion: 2020,
             project: "./tsconfig.json",
             sourceType: "module",
             tsconfigRootDir: `${misc_1.projectRoot}fixtures`
         }
     });
     tester.run(name, rule, {
-        invalid: invalid.map((test) => {
-            var _a, _b;
-            return (Object.assign(Object.assign({}, test), { code: real_fns_1.s.unpadMultiline(test.code), errors: test.errors.map((error) => (Object.assign({ endLine: error.line }, error))), filename: `${misc_1.projectRoot}fixtures/${(_a = test.filename) !== null && _a !== void 0 ? _a : "file.ts"}`, output: real_fns_1.s.unpadMultiline((_b = test.output) !== null && _b !== void 0 ? _b : test.code) }));
-        }),
-        valid: valid.map((test) => {
-            var _a;
-            return (Object.assign(Object.assign({}, test), { code: real_fns_1.s.unpadMultiline(test.code), filename: `${misc_1.projectRoot}fixtures/${(_a = test.filename) !== null && _a !== void 0 ? _a : "file.ts"}` }));
-        })
+        invalid: invalid.map((test) => ({
+            ...test,
+            code: typescript_misc_1.s.unpadMultiline(test.code),
+            errors: test.errors.map((error) => ({ endLine: error.line, ...error })),
+            filename: `${misc_1.projectRoot}fixtures/${test.filename ?? "file.ts"}`,
+            output: typescript_misc_1.s.unpadMultiline(test.output ?? test.code)
+        })),
+        valid: valid.map((test) => ({
+            ...test,
+            code: typescript_misc_1.s.unpadMultiline(test.code),
+            filename: `${misc_1.projectRoot}fixtures/${test.filename ?? "file.ts"}`
+        }))
     });
 }
 exports.testRule = testRule;

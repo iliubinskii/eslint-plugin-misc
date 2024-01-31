@@ -4,7 +4,7 @@ exports.exhaustiveSwitch = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["inexhaustiveSwitch"] = "inexhaustiveSwitch";
@@ -32,13 +32,13 @@ exports.exhaustiveSwitch = utils.createRule({
     },
     create: (context, typeCheck) => ({
         SwitchStatement: node => {
-            if (node.cases.some(switchCase => real_fns_1.is.null(switchCase.test))) {
+            if (node.cases.some(switchCase => typescript_misc_1.is.null(switchCase.test))) {
                 // Has default
             }
             else {
                 const got = node.cases
                     .map(switchCase => switchCase.test)
-                    .filter(real_fns_1.is.not.empty)
+                    .filter(typescript_misc_1.is.not.empty)
                     .flatMap(expression => typeCheck.typeParts(expression));
                 const expected = typeCheck.typeParts(node.discriminant);
                 if (_.difference(expected, got).length)

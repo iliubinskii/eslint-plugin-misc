@@ -4,7 +4,7 @@ exports.arrayCallbackReturnType = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["invalidType"] = "invalidType";
@@ -47,5 +47,5 @@ exports.arrayCallbackReturnType = utils.createRule({
         }
     })
 });
-const arrayCallbacks = new real_fns_1.ReadonlySet(["some", "every"]);
+const arrayCallbacks = new typescript_misc_1.ReadonlySet(["some", "every"]);
 //# sourceMappingURL=array-callback-return-type.js.map

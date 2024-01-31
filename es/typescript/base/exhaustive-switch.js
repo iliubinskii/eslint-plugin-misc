@@ -1,6 +1,6 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["inexhaustiveSwitch"] = "inexhaustiveSwitch";

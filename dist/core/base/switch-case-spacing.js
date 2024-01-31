@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.switchCaseSpacing = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["addEmptyLine"] = "addEmptyLine";
@@ -39,12 +39,12 @@ exports.switchCaseSpacing = utils.createRule({
     },
     create: (context) => ({
         SwitchStatement: node => {
-            for (const [case1, case2] of real_fns_1.a.chain(node.cases)) {
+            for (const [case1, case2] of typescript_misc_1.a.chain(node.cases)) {
                 const fallThrough = case1.consequent.length === 0;
                 const range = context.getLeadingSpaces(case2);
                 const got = context.getText(range);
                 const expected = context.eol.repeat(fallThrough ? 1 : 2) +
-                    real_fns_1.s.trimLeadingEmptyLines(got);
+                    typescript_misc_1.s.trimLeadingEmptyLines(got);
                 if (got === expected) {
                     // Valid
                 }

@@ -1,6 +1,6 @@
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { ReadonlySet } from "real-fns";
+import { ReadonlySet } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["invalidType"] = "invalidType";

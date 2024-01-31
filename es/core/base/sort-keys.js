@@ -1,7 +1,7 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["expectingObject"] = "expectingObject";
@@ -11,7 +11,10 @@ export const sortKeys = utils.createRule({
     fixable: utils.Fixable.code,
     isSuboptions: is.object.factory({ _id: is.string, selector: utils.isSelector }, { customOrder: is.strings, sendToBottom: is.string, sendToTop: is.string }),
     suboptionsKey: "overrides",
-    messages: Object.assign(Object.assign({}, utils.sort.messages), { [MessageId.expectingObject]: "Expecting object ({{_id}})" }),
+    messages: {
+        ...utils.sort.messages,
+        [MessageId.expectingObject]: "Expecting object ({{_id}})"
+    },
     docs: {
         description: "Sorts object keys.",
         suboptionTypes: {
@@ -50,7 +53,7 @@ export const sortKeys = utils.createRule({
             return {
                 [selector]: (node) => {
                     if (node.type === AST_NODE_TYPES.ObjectExpression)
-                        overrides.push({ node, options: Object.assign(Object.assign({}, override), { keyNode }) });
+                        overrides.push({ node, options: { ...override, keyNode } });
                     else
                         context.report({
                             data: { _id },

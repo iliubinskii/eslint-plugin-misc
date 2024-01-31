@@ -1,4 +1,4 @@
-import type { IndexedRecord } from "type-essentials";
+import type { IndexedRecord } from "typescript-misc";
 /**
  * Creates synonyms.
  *

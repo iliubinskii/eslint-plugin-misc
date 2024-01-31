@@ -1,4 +1,4 @@
-import { a, assert, evaluate, is, json, o, s } from "real-fns";
+import { a, assert, evaluate, is, json, o, s } from "typescript-misc";
 import { createFileMatcher, projectRoot, setCasing } from "./misc";
 import { Casing } from "./types";
 import fs from "node:fs";
@@ -70,20 +70,28 @@ export function createContext(context, ruleOptionsArray, options) {
             return src;
         })),
         options: evaluate(() => {
-            const { defaultSuboptions, isOptions, isSuboptions, suboptionsKey } = Object.assign({ isOptions: is.unknown }, options);
+            const { defaultSuboptions, isOptions, isSuboptions, suboptionsKey } = {
+                isOptions: is.unknown,
+                ...options
+            };
             const rawRuleOptions = ruleOptionsArray[0];
             assert.byGuard(rawRuleOptions, isOptions, "Expecting valid rule options");
             const result = defaultSuboptions || isSuboptions || is.not.empty(suboptionsKey)
                 ? evaluate(() => {
-                    var _a;
                     assert.not.empty(isSuboptions, "Expecting suboptions guard");
                     assert.not.empty(suboptionsKey, "Expecting suboptions key");
-                    const suboptionsArray = (_a = o.get(rawRuleOptions, suboptionsKey)) !== null && _a !== void 0 ? _a : [];
+                    const suboptionsArray = o.get(rawRuleOptions, suboptionsKey) ?? [];
                     assert.array.of(suboptionsArray, is.object, "Expecting valid rule options");
-                    const suboptionsArrayWithDefaults = suboptionsArray.map((suboptions) => (Object.assign(Object.assign({}, defaultSuboptions), suboptions)));
+                    const suboptionsArrayWithDefaults = suboptionsArray.map((suboptions) => ({
+                        ...defaultSuboptions,
+                        ...suboptions
+                    }));
                     const isSuboptionsWithShared = is.and.factory(isSharedSuboptions, isSuboptions);
                     assert.array.of(suboptionsArrayWithDefaults, isSuboptionsWithShared, "Expecting valid rule options");
-                    const ruleOptionsWithSuboptions = Object.assign(Object.assign({}, rawRuleOptions), { [suboptionsKey]: suboptionsArrayWithDefaults.filter(suboptions => shouldBeLinted(filename, suboptions)) });
+                    const ruleOptionsWithSuboptions = {
+                        ...rawRuleOptions,
+                        [suboptionsKey]: suboptionsArrayWithDefaults.filter(suboptions => shouldBeLinted(filename, suboptions))
+                    };
                     return ruleOptionsWithSuboptions;
                 })
                 : rawRuleOptions;
@@ -164,8 +172,7 @@ const isSharedSuboptions = is.object.factory({}, { filesToLint: is.strings, file
  * @returns _True_ if file should be linted, _false_ otherwise.
  */
 function shouldBeLinted(path, options) {
-    var _a, _b;
-    const matcher = createFileMatcher({ allow: (_a = options.filesToLint) !== null && _a !== void 0 ? _a : [], disallow: (_b = options.filesToSkip) !== null && _b !== void 0 ? _b : [] }, false, { dot: true, matchBase: true });
+    const matcher = createFileMatcher({ allow: options.filesToLint ?? [], disallow: options.filesToSkip ?? [] }, false, { dot: true, matchBase: true });
     const disallow = matcher(stripBase(s.path.canonicalize(path), "./"));
     return !disallow;
 }

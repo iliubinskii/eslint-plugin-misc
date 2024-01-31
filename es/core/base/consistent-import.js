@@ -1,7 +1,7 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 import { minimatch } from "minimatch";
 export var MessageId;
 (function (MessageId) {
@@ -102,7 +102,6 @@ export const consistentImport = utils.createRule({
     },
     create: (context) => {
         const eol = context.eol;
-        // eslint-disable-next-line misc/real-fns/prefer-readonly-set -- Ok
         const identifiers = new Set();
         const importDeclarations = [];
         return {
@@ -179,18 +178,20 @@ export const consistentImport = utils.createRule({
                 : localName;
         }
         function findSuboptions(source) {
-            const suboptions = context.options.sources.find(candidate => {
-                var _a;
-                return minimatch(source, (_a = candidate.sourcePattern) !== null && _a !== void 0 ? _a : candidate.source, {
-                    dot: true
-                });
-            });
+            const suboptions = context.options.sources.find(candidate => minimatch(source, candidate.sourcePattern ?? candidate.source, {
+                dot: true
+            }));
             return suboptions
-                ? Object.assign({ localName: context.identifierFromPath(source) }, suboptions) : undefined;
+                ? { localName: context.identifierFromPath(source), ...suboptions }
+                : undefined;
         }
         function lintAutoImport(node) {
             const fixes = _.uniq(context.options.sources.flatMap(suboptions => {
-                const { autoImport, autoImportSource, localName, wildcard } = Object.assign({ autoImportSource: suboptions.source, localName: context.identifierFromPath(suboptions.source) }, suboptions);
+                const { autoImport, autoImportSource, localName, wildcard } = {
+                    autoImportSource: suboptions.source,
+                    localName: context.identifierFromPath(suboptions.source),
+                    ...suboptions
+                };
                 return autoImport
                     ? context.scope.through
                         .map(ref => {

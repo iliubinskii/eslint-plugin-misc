@@ -6,7 +6,7 @@ const tslib_1 = require("tslib");
 const ts = tslib_1.__importStar(require("typescript"));
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["unsafeOptionalAssignment"] = "unsafeOptionalAssignment";
@@ -120,7 +120,7 @@ exports.noUnsafeObjectAssignment = utils.createRule({
                 else
                     return undefined;
             }
-            return real_fns_1.a.first(reports);
+            return typescript_misc_1.a.first(reports);
         }
         function lintProperties3(dest, source, node) {
             if (dest === source)
@@ -169,8 +169,8 @@ exports.noUnsafeObjectAssignment = utils.createRule({
             return undefined;
         }
         function lintTypes(dest, source, node) {
-            var _a;
-            const report = (_a = lintProperties(dest, source, node)) !== null && _a !== void 0 ? _a : lintSignatures(dest, source, node);
+            const report = lintProperties(dest, source, node) ??
+                lintSignatures(dest, source, node);
             if (report)
                 context.report(report);
         }

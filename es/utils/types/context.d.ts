@@ -1,9 +1,8 @@
 import type * as estree from "estree";
 import type { Casing, Options, esRange, esRanges } from "./misc";
 import type { ReportDescriptor, RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { strings, unknowns } from "type-essentials";
+import type { s, strings, unknowns } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { s } from "real-fns";
 export interface Context<M extends string, O extends object, S extends object, K extends string = never> {
     readonly eol: s.Eol;
     readonly filename: string;

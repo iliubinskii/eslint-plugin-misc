@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.get = void 0;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 /**
  * Creates selector.
  *
@@ -16,7 +16,7 @@ function get(options, defaultSelectors) {
     // eslint-disable-next-line misc/no-param-reassign -- Ok
     defaultSelectors = noDefaultSelectors ? [] : defaultSelectors;
     const selectors = _.difference([...defaultSelectors, ...includeSelectors], excludeSelectors);
-    real_fns_1.assert.toBeTrue(selectors.length > 0, "Expecting at least one selector");
+    typescript_misc_1.assert.toBeTrue(selectors.length > 0, "Expecting at least one selector");
     return selectors.join(", ");
 }
 exports.get = get;

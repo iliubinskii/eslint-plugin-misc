@@ -4,7 +4,7 @@ exports.requireJsdoc = exports.isInterfaceOptions = exports.isInterfaceOption = 
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var InterfaceOption;
 (function (InterfaceOption) {
     InterfaceOption["callSignatures"] = "callSignatures";
@@ -17,15 +17,15 @@ var MessageId;
     MessageId["undocumentedCallSignature"] = "undocumentedCallSignature";
     MessageId["undocumentedConstructSignature"] = "undocumentedConstructSignature";
 })(MessageId || (exports.MessageId = MessageId = {}));
-exports.isInterfaceOption = real_fns_1.is.factory(real_fns_1.is.enumeration, InterfaceOption);
-exports.isInterfaceOptions = real_fns_1.is.factory(real_fns_1.is.array.of, exports.isInterfaceOption);
+exports.isInterfaceOption = typescript_misc_1.is.factory(typescript_misc_1.is.enumeration, InterfaceOption);
+exports.isInterfaceOptions = typescript_misc_1.is.factory(typescript_misc_1.is.array.of, exports.isInterfaceOption);
 exports.requireJsdoc = utils.createRule({
     name: "require-jsdoc",
-    isOptions: real_fns_1.is.object.factory({
-        excludeSelectors: real_fns_1.is.strings,
-        includeSelectors: real_fns_1.is.strings,
+    isOptions: typescript_misc_1.is.object.factory({
+        excludeSelectors: typescript_misc_1.is.strings,
+        includeSelectors: typescript_misc_1.is.strings,
         interfaces: exports.isInterfaceOptions,
-        noDefaultSelectors: real_fns_1.is.boolean
+        noDefaultSelectors: typescript_misc_1.is.boolean
     }, {}),
     defaultOptions: {
         excludeSelectors: [],

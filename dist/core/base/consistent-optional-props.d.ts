@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 export interface Options {
     readonly classes: Style;

@@ -4,8 +4,8 @@ exports.noUnnecessaryArray = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../utils"));
 const core_1 = require("../core");
-const real_fns_1 = require("real-fns");
-exports.noUnnecessaryArray = (0, real_fns_1.evaluate)(() => {
+const typescript_misc_1 = require("typescript-misc");
+exports.noUnnecessaryArray = (0, typescript_misc_1.evaluate)(() => {
     const obj = {
         options: "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression",
         overrides: "Property[key.name=overrides] > ArrayExpression > ObjectExpression",

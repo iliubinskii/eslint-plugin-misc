@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sortClassMembers = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const utils_1 = require("@typescript-eslint/utils");
 exports.sortClassMembers = utils.createRule({
     name: "sort-class-members",
     fixable: utils.Fixable.code,
-    isOptions: real_fns_1.is.object.factory({ sortingOrder: real_fns_1.is.strings }, {}),
+    isOptions: typescript_misc_1.is.object.factory({ sortingOrder: typescript_misc_1.is.strings }, {}),
     defaultOptions: { sortingOrder: [] },
     messages: utils.sort.messages,
     docs: {
@@ -41,7 +41,7 @@ exports.sortClassMembers = utils.createRule({
     `
     },
     create: (context) => {
-        const sortingOrders = new real_fns_1.ReadonlyMap(context.options.sortingOrder.map((name, index) => [name, index]));
+        const sortingOrders = new typescript_misc_1.ReadonlyMap(context.options.sortingOrder.map((name, index) => [name, index]));
         return {
             ClassBody: node => {
                 utils.sort(node.body, context, {
@@ -67,7 +67,7 @@ exports.sortClassMembers = utils.createRule({
                                 sortingOrders.get(`${y}-${z}-${x}`),
                                 sortingOrders.get(`${z}-${x}-${y}`),
                                 sortingOrders.get(`${z}-${y}-${x}`)
-                            ].filter(real_fns_1.is.not.empty))));
+                            ].filter(typescript_misc_1.is.not.empty))));
                         const name = getMemberName(member);
                         const accessorType = getMemberAccessorType(member);
                         return `${sortingOrder}\u0001${name}\u0001${accessorType}`;
@@ -113,7 +113,7 @@ var Type;
     Type["set"] = "set";
     Type["signature"] = "signature";
 })(Type || (Type = {}));
-const functionExpressions = new real_fns_1.ReadonlySet([
+const functionExpressions = new typescript_misc_1.ReadonlySet([
     utils_1.AST_NODE_TYPES.ArrowFunctionExpression,
     utils_1.AST_NODE_TYPES.FunctionExpression
 ]);
@@ -124,7 +124,6 @@ const functionExpressions = new real_fns_1.ReadonlySet([
  * @returns Member accessibility.
  */
 function getMemberAccessibility(node) {
-    var _a;
     switch (node.type) {
         case utils_1.AST_NODE_TYPES.AccessorProperty:
         case utils_1.AST_NODE_TYPES.MethodDefinition:
@@ -133,7 +132,7 @@ function getMemberAccessibility(node) {
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
         case utils_1.AST_NODE_TYPES.TSIndexSignature:
-            return (_a = node.accessibility) !== null && _a !== void 0 ? _a : "public";
+            return node.accessibility ?? "public";
         case utils_1.AST_NODE_TYPES.StaticBlock:
             return "public";
     }
@@ -167,7 +166,6 @@ function getMemberAccessorType(node) {
  * @returns Member dynamic/static state.
  */
 function getMemberDynamicStatic(node) {
-    var _a;
     switch (node.type) {
         case utils_1.AST_NODE_TYPES.AccessorProperty:
         case utils_1.AST_NODE_TYPES.MethodDefinition:
@@ -176,7 +174,7 @@ function getMemberDynamicStatic(node) {
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
         case utils_1.AST_NODE_TYPES.TSIndexSignature:
-            return ((_a = node.static) !== null && _a !== void 0 ? _a : false)
+            return node.static ?? false
                 ? DynamicStatic.static
                 : DynamicStatic.dynamic;
         case utils_1.AST_NODE_TYPES.StaticBlock:
@@ -196,7 +194,7 @@ function getMemberTypes(node) {
             return [Type.accessor];
         case utils_1.AST_NODE_TYPES.MethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
-            return (0, real_fns_1.evaluate)(() => {
+            return (0, typescript_misc_1.evaluate)(() => {
                 switch (node.kind) {
                     case "constructor":
                         return [Type.constructor];

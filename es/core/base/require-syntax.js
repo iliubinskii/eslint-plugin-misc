@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
@@ -74,7 +74,7 @@ export const requireSyntax = utils.createRule({
                             ? context.locZero
                             : context.getLoc(node.range);
                         context.report({
-                            data: { message: message !== null && message !== void 0 ? message : defaultMessage },
+                            data: { message: message ?? defaultMessage },
                             loc,
                             messageId: MessageId.customMessage
                         });

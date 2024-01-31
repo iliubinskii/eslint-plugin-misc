@@ -4,7 +4,7 @@ exports.preferEnum = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
 const utils_1 = require("@typescript-eslint/utils");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     // eslint-disable-next-line misc/max-identifier-blocks -- Ok
@@ -47,7 +47,7 @@ exports.preferEnum = utils.createRule({
                 if (typeAnnotation.type === utils_1.AST_NODE_TYPES.TSUnionType &&
                     typeAnnotation.types.every(typeNode => typeNode.type === utils_1.AST_NODE_TYPES.TSLiteralType &&
                         typeNode.literal.type === utils_1.AST_NODE_TYPES.Literal &&
-                        real_fns_1.is.string(typeNode.literal.value)))
+                        typescript_misc_1.is.string(typeNode.literal.value)))
                     context.report({
                         messageId: MessageId.preferEnumToStringUnionType,
                         node: id

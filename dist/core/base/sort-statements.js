@@ -4,7 +4,7 @@ exports.sortStatements = exports.isStatementTypes = exports.isStatementType = ex
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const utils_1 = require("@typescript-eslint/utils");
 var StatementType;
 (function (StatementType) {
@@ -22,12 +22,12 @@ var StatementType;
     StatementType["TypeDeclaration"] = "TypeDeclaration";
     StatementType["Unknown"] = "Unknown";
 })(StatementType || (exports.StatementType = StatementType = {}));
-exports.isStatementType = real_fns_1.is.factory(real_fns_1.is.enumeration, StatementType);
-exports.isStatementTypes = real_fns_1.is.factory(real_fns_1.is.array.of, exports.isStatementType);
+exports.isStatementType = typescript_misc_1.is.factory(typescript_misc_1.is.enumeration, StatementType);
+exports.isStatementTypes = typescript_misc_1.is.factory(typescript_misc_1.is.array.of, exports.isStatementType);
 exports.sortStatements = utils.createRule({
     name: "sort-statements",
     fixable: utils.Fixable.code,
-    isOptions: real_fns_1.is.object.factory({
+    isOptions: typescript_misc_1.is.object.factory({
         blockOrder: exports.isStatementTypes,
         moduleOrder: exports.isStatementTypes,
         order: exports.isStatementTypes,
@@ -136,13 +136,13 @@ const defaultOrder = [
     StatementType.TypeDeclaration,
     StatementType.JestTest
 ];
-const prepareForComparison = (0, real_fns_1.evaluate)(() => {
+const prepareForComparison = (0, typescript_misc_1.evaluate)(() => {
     const priority = ":,.";
-    const keys = real_fns_1.a.fromString(priority);
-    const values = real_fns_1.a.sort(real_fns_1.a.fromString(priority));
-    const map = real_fns_1.o.fromEntries(keys.map((key, index) => [key, real_fns_1.a.get(values, index)]));
+    const keys = typescript_misc_1.a.fromString(priority);
+    const values = typescript_misc_1.a.sort(typescript_misc_1.a.fromString(priority));
+    const map = typescript_misc_1.o.fromEntries(keys.map((key, index) => [key, typescript_misc_1.a.get(values, index)]));
     // eslint-disable-next-line security/detect-non-literal-regexp -- Ok
-    const re = new RegExp(`[${real_fns_1.s.escapeRegExpSpecialChars(priority)}]`, "gu");
+    const re = new RegExp(`[${typescript_misc_1.s.escapeRegExpSpecialChars(priority)}]`, "gu");
     return (str) => str.replace(re, callback);
     function callback(char) {
         return map[char];
@@ -169,7 +169,7 @@ function getJestTestName(node) {
         const argument = node.expression.arguments[0];
         if (argument &&
             argument.type === utils_1.AST_NODE_TYPES.Literal &&
-            real_fns_1.is.string(argument.value)) {
+            typescript_misc_1.is.string(argument.value)) {
             const { callee } = node.expression;
             if ((callee.type === utils_1.AST_NODE_TYPES.Identifier && callee.name === "test") ||
                 (callee.type === utils_1.AST_NODE_TYPES.MemberExpression &&
@@ -198,7 +198,6 @@ function getJestTestName(node) {
  */
 function sortingOrder(order) {
     return node => {
-        var _a, _b;
         switch (node.type) {
             case utils_1.AST_NODE_TYPES.ExportAllDeclaration:
                 return buildResult(StatementType.ExportAllDeclaration, `${node.source.value}\u0002${node.exportKind}`);
@@ -209,7 +208,7 @@ function sortingOrder(order) {
                     switch (node.declaration.type) {
                         case utils_1.AST_NODE_TYPES.FunctionDeclaration:
                         case utils_1.AST_NODE_TYPES.TSDeclareFunction:
-                            real_fns_1.assert.not.empty(node.declaration.id, "Expecting node ID");
+                            typescript_misc_1.assert.not.empty(node.declaration.id, "Expecting node ID");
                             return buildResult(StatementType.ExportFunctionDeclaration, node.declaration.id.name);
                         case utils_1.AST_NODE_TYPES.TSInterfaceDeclaration:
                         case utils_1.AST_NODE_TYPES.TSTypeAliasDeclaration:
@@ -220,13 +219,13 @@ function sortingOrder(order) {
                 return buildResult(StatementType.ExportDeclaration, node.source ? `${node.source.value}\u0002${node.exportKind}` : "");
             case utils_1.AST_NODE_TYPES.ExpressionStatement: {
                 const id = getJestTestName(node);
-                return real_fns_1.is.not.empty(id)
+                return typescript_misc_1.is.not.empty(id)
                     ? buildResult(StatementType.JestTest, id)
                     : buildResult(StatementType.Unknown);
             }
             case utils_1.AST_NODE_TYPES.FunctionDeclaration:
             case utils_1.AST_NODE_TYPES.TSDeclareFunction:
-                real_fns_1.assert.not.empty(node.id, "Expecting node ID");
+                typescript_misc_1.assert.not.empty(node.id, "Expecting node ID");
                 return buildResult(StatementType.FunctionDeclaration, node.id.name);
             case utils_1.AST_NODE_TYPES.ImportDeclaration:
                 return buildResult(StatementType.ImportDeclaration);
@@ -234,8 +233,8 @@ function sortingOrder(order) {
             case utils_1.AST_NODE_TYPES.TSTypeAliasDeclaration:
                 return buildResult(StatementType.TypeDeclaration, node.id.name);
             case utils_1.AST_NODE_TYPES.TSModuleDeclaration:
-                if ((_a = node.declare) !== null && _a !== void 0 ? _a : false)
-                    return ((_b = node.global) !== null && _b !== void 0 ? _b : false)
+                if (node.declare ?? false)
+                    return node.global ?? false
                         ? buildResult(StatementType.DeclareGlobal)
                         : buildResult(StatementType.Declare, utils.nodeText(node.id, "?"));
                 return buildResult(StatementType.Unknown);

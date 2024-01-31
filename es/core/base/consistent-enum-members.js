@@ -1,6 +1,6 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import { a, is } from "real-fns";
+import { a, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 export var MessageId;
 (function (MessageId) {
@@ -53,7 +53,7 @@ export const consistentEnumMembers = utils.createRule({
                         node.initializer &&
                         node.initializer.type === AST_NODE_TYPES.Literal &&
                         node.initializer.value !==
-                            utils.setCasing(node.id.name, suboptions === null || suboptions === void 0 ? void 0 : suboptions.format))
+                            utils.setCasing(node.id.name, suboptions?.format))
                         context.report({ messageId: MessageId.inconsistentMember, node });
                 }
             },

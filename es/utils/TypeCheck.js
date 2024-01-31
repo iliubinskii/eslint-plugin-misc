@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 import * as tsutils from "tsutils";
 import { AST_NODE_TYPES, ESLintUtils } from "@typescript-eslint/utils";
-import { ReadonlySet, as, assert, is, typedef } from "real-fns";
+import { ReadonlySet, as, assert, is, typedef } from "typescript-misc";
 import { TypeGroup } from "./types";
 export class TypeCheck {
     /**

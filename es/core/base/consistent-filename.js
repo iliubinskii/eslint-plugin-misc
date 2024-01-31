@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { a, as, is } from "real-fns";
+import { a, as, is } from "typescript-misc";
 import path from "node:path";
 export var MessageId;
 (function (MessageId) {
@@ -87,7 +87,10 @@ export const consistentFilename = utils.createRule({
                 const { base: got } = path.parse(context.filename);
                 if (items.length) {
                     const item = a.last(items);
-                    const { _id, format, match } = Object.assign({ format: context.options.format }, item.suboptions);
+                    const { _id, format, match } = {
+                        format: context.options.format,
+                        ...item.suboptions
+                    };
                     const expected = getExpected(got, format, match, item.node);
                     if (got === expected) {
                         // Valid

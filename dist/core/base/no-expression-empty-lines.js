@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.noExpressionEmptyLines = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["unexpectedEmptyLine"] = "unexpectedEmptyLine";
@@ -30,9 +30,9 @@ exports.noExpressionEmptyLines = utils.createRule({
     create: (context) => ({
         MemberExpression: node => {
             const pos = node.object.range[1];
-            const got = real_fns_1.s.leadingSpaces(context.getText(pos));
+            const got = typescript_misc_1.s.leadingSpaces(context.getText(pos));
             if (got.includes("\n")) {
-                const expected = context.eol + real_fns_1.s.trimLeadingEmptyLines(got);
+                const expected = context.eol + typescript_misc_1.s.trimLeadingEmptyLines(got);
                 if (got === expected) {
                     // Valid
                 }

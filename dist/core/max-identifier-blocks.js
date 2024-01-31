@@ -4,8 +4,8 @@ exports.maxIdentifierBlocks = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../utils"));
 const base_1 = require("./base");
-const real_fns_1 = require("real-fns");
-exports.maxIdentifierBlocks = (0, real_fns_1.evaluate)(() => {
+const typescript_misc_1 = require("typescript-misc");
+exports.maxIdentifierBlocks = (0, typescript_misc_1.evaluate)(() => {
     const suffix = "[name=/^[A-Z]*[^A-Z]+([A-Z]+[^A-Z]+){4}/u]";
     return utils.wrapRule({
         rule: base_1.base["no-restricted-syntax"],

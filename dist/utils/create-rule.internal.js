@@ -2,12 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProjectConfig = exports.createContext = exports.isProjectConfig = void 0;
 const tslib_1 = require("tslib");
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const misc_1 = require("./misc");
 const types_1 = require("./types");
 const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
 const node_path_1 = tslib_1.__importDefault(require("node:path"));
-exports.isProjectConfig = real_fns_1.is.factory(real_fns_1.is.object.of, {}, { name: real_fns_1.is.string });
+exports.isProjectConfig = typescript_misc_1.is.factory(typescript_misc_1.is.object.of, {}, { name: typescript_misc_1.is.string });
 /**
  * Creates context.
  *
@@ -22,7 +22,7 @@ function createContext(context, ruleOptionsArray, options) {
     const source = context.getSourceCode();
     const code = source.getText();
     return {
-        eol: real_fns_1.s.detectEol(code),
+        eol: typescript_misc_1.s.detectEol(code),
         filename,
         getCommentRanges,
         getComments: node => getCommentRanges(node).map(range => code.slice(...range)),
@@ -54,40 +54,48 @@ function createContext(context, ruleOptionsArray, options) {
             end: source.getLocFromIndex(0),
             start: source.getLocFromIndex(0)
         },
-        normalizeSource: src => real_fns_1.s.path.canonicalize((0, real_fns_1.evaluate)(() => {
+        normalizeSource: src => typescript_misc_1.s.path.canonicalize((0, typescript_misc_1.evaluate)(() => {
             if (src === "@") {
-                real_fns_1.assert.not.empty(projectConfig.name, "Missing package name");
+                typescript_misc_1.assert.not.empty(projectConfig.name, "Missing package name");
                 return `${projectConfig.name}/src`;
             }
             if (src.startsWith("@/")) {
-                real_fns_1.assert.not.empty(projectConfig.name, "Missing package name");
+                typescript_misc_1.assert.not.empty(projectConfig.name, "Missing package name");
                 return `${projectConfig.name}/src/${src.slice(2)}`;
             }
             if (src === "." ||
                 src === ".." ||
                 src.startsWith("./") ||
                 src.startsWith("../")) {
-                real_fns_1.assert.not.empty(projectConfig.name, "Missing package name");
+                typescript_misc_1.assert.not.empty(projectConfig.name, "Missing package name");
                 const path = node_path_1.default.join(node_path_1.default.dirname(filename), src);
                 return `${projectConfig.name}/${stripBase(path)}`;
             }
             return src;
         })),
-        options: (0, real_fns_1.evaluate)(() => {
-            const { defaultSuboptions, isOptions, isSuboptions, suboptionsKey } = Object.assign({ isOptions: real_fns_1.is.unknown }, options);
+        options: (0, typescript_misc_1.evaluate)(() => {
+            const { defaultSuboptions, isOptions, isSuboptions, suboptionsKey } = {
+                isOptions: typescript_misc_1.is.unknown,
+                ...options
+            };
             const rawRuleOptions = ruleOptionsArray[0];
-            real_fns_1.assert.byGuard(rawRuleOptions, isOptions, "Expecting valid rule options");
-            const result = defaultSuboptions || isSuboptions || real_fns_1.is.not.empty(suboptionsKey)
-                ? (0, real_fns_1.evaluate)(() => {
-                    var _a;
-                    real_fns_1.assert.not.empty(isSuboptions, "Expecting suboptions guard");
-                    real_fns_1.assert.not.empty(suboptionsKey, "Expecting suboptions key");
-                    const suboptionsArray = (_a = real_fns_1.o.get(rawRuleOptions, suboptionsKey)) !== null && _a !== void 0 ? _a : [];
-                    real_fns_1.assert.array.of(suboptionsArray, real_fns_1.is.object, "Expecting valid rule options");
-                    const suboptionsArrayWithDefaults = suboptionsArray.map((suboptions) => (Object.assign(Object.assign({}, defaultSuboptions), suboptions)));
-                    const isSuboptionsWithShared = real_fns_1.is.and.factory(isSharedSuboptions, isSuboptions);
-                    real_fns_1.assert.array.of(suboptionsArrayWithDefaults, isSuboptionsWithShared, "Expecting valid rule options");
-                    const ruleOptionsWithSuboptions = Object.assign(Object.assign({}, rawRuleOptions), { [suboptionsKey]: suboptionsArrayWithDefaults.filter(suboptions => shouldBeLinted(filename, suboptions)) });
+            typescript_misc_1.assert.byGuard(rawRuleOptions, isOptions, "Expecting valid rule options");
+            const result = defaultSuboptions || isSuboptions || typescript_misc_1.is.not.empty(suboptionsKey)
+                ? (0, typescript_misc_1.evaluate)(() => {
+                    typescript_misc_1.assert.not.empty(isSuboptions, "Expecting suboptions guard");
+                    typescript_misc_1.assert.not.empty(suboptionsKey, "Expecting suboptions key");
+                    const suboptionsArray = typescript_misc_1.o.get(rawRuleOptions, suboptionsKey) ?? [];
+                    typescript_misc_1.assert.array.of(suboptionsArray, typescript_misc_1.is.object, "Expecting valid rule options");
+                    const suboptionsArrayWithDefaults = suboptionsArray.map((suboptions) => ({
+                        ...defaultSuboptions,
+                        ...suboptions
+                    }));
+                    const isSuboptionsWithShared = typescript_misc_1.is.and.factory(isSharedSuboptions, isSuboptions);
+                    typescript_misc_1.assert.array.of(suboptionsArrayWithDefaults, isSuboptionsWithShared, "Expecting valid rule options");
+                    const ruleOptionsWithSuboptions = {
+                        ...rawRuleOptions,
+                        [suboptionsKey]: suboptionsArrayWithDefaults.filter(suboptions => shouldBeLinted(filename, suboptions))
+                    };
                     return ruleOptionsWithSuboptions;
                 })
                 : rawRuleOptions;
@@ -109,9 +117,9 @@ function createContext(context, ruleOptionsArray, options) {
         ];
     }
     function getText(mixed) {
-        if (real_fns_1.is.number(mixed))
+        if (typescript_misc_1.is.number(mixed))
             return code.slice(mixed);
-        if (real_fns_1.is.array(mixed))
+        if (typescript_misc_1.is.array(mixed))
             return code.slice(...mixed);
         return code.slice(...mixed.range);
     }
@@ -120,12 +128,12 @@ function createContext(context, ruleOptionsArray, options) {
         const name = stripExtension(base);
         if (name === "index")
             return identifierFromPath(dir, expected);
-        const candidates = real_fns_1.a
+        const candidates = typescript_misc_1.a
             .omit(name.split("."), (part, index) => index === 0 && part === "index")
             .map(part => (0, misc_1.setCasing)(part, /^[A-Z]/u.test(part) ? types_1.Casing.pascalCase : types_1.Casing.camelCase));
-        return real_fns_1.is.not.empty(expected) && candidates.includes(expected)
+        return typescript_misc_1.is.not.empty(expected) && candidates.includes(expected)
             ? expected
-            : real_fns_1.a.first(candidates);
+            : typescript_misc_1.a.first(candidates);
     }
     function stripExtension(str) {
         for (const ext of [".js", ".jsx", ".ts", ".tsx"])
@@ -142,7 +150,7 @@ function createContext(context, ruleOptionsArray, options) {
             .split(".")
             .filter((part, index) => !(index === 0 && part === "index"))
             .map(part => (0, misc_1.setCasing)(part, format));
-        return candidates.includes(expected) ? expected : real_fns_1.a.first(candidates);
+        return candidates.includes(expected) ? expected : typescript_misc_1.a.first(candidates);
     }
 }
 exports.createContext = createContext;
@@ -154,14 +162,14 @@ exports.createContext = createContext;
  */
 function getProjectConfig(path = "package.json") {
     if (node_fs_1.default.existsSync(path)) {
-        const result = real_fns_1.json.decode(node_fs_1.default.readFileSync(path).toString());
+        const result = typescript_misc_1.json.decode(node_fs_1.default.readFileSync(path).toString());
         if ((0, exports.isProjectConfig)(result))
             return result;
     }
     return {};
 }
 exports.getProjectConfig = getProjectConfig;
-const isSharedSuboptions = real_fns_1.is.object.factory({}, { filesToLint: real_fns_1.is.strings, filesToSkip: real_fns_1.is.strings });
+const isSharedSuboptions = typescript_misc_1.is.object.factory({}, { filesToLint: typescript_misc_1.is.strings, filesToSkip: typescript_misc_1.is.strings });
 /**
  * Determines if file should be linted.
  *
@@ -170,9 +178,8 @@ const isSharedSuboptions = real_fns_1.is.object.factory({}, { filesToLint: real_
  * @returns _True_ if file should be linted, _false_ otherwise.
  */
 function shouldBeLinted(path, options) {
-    var _a, _b;
-    const matcher = (0, misc_1.createFileMatcher)({ allow: (_a = options.filesToLint) !== null && _a !== void 0 ? _a : [], disallow: (_b = options.filesToSkip) !== null && _b !== void 0 ? _b : [] }, false, { dot: true, matchBase: true });
-    const disallow = matcher(stripBase(real_fns_1.s.path.canonicalize(path), "./"));
+    const matcher = (0, misc_1.createFileMatcher)({ allow: options.filesToLint ?? [], disallow: options.filesToSkip ?? [] }, false, { dot: true, matchBase: true });
+    const disallow = matcher(stripBase(typescript_misc_1.s.path.canonicalize(path), "./"));
     return !disallow;
 }
 /**
@@ -183,7 +190,7 @@ function shouldBeLinted(path, options) {
  * @returns Stripped path.
  */
 function stripBase(path, replacement = "") {
-    real_fns_1.assert.toBeTrue(real_fns_1.s.path.canonicalize(path).startsWith(misc_1.projectRoot), `Expecting path to be inside project folder: ${path}`);
+    typescript_misc_1.assert.toBeTrue(typescript_misc_1.s.path.canonicalize(path).startsWith(misc_1.projectRoot), `Expecting path to be inside project folder: ${path}`);
     return `${replacement}${path.slice(misc_1.projectRoot.length)}`;
 }
 //# sourceMappingURL=create-rule.internal.js.map

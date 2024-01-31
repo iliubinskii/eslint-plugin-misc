@@ -4,7 +4,7 @@ exports.noRestrictedSyntax = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["customMessage"] = "customMessage";
@@ -12,7 +12,7 @@ var MessageId;
 exports.noRestrictedSyntax = utils.createRule({
     name: "no-restricted-syntax",
     fixable: utils.Fixable.code,
-    isOptions: real_fns_1.is.object.factory({ ignoreSelector: utils.isSelector, selector: utils.isSelector }, { message: real_fns_1.is.string, replacement: real_fns_1.is.string, search: real_fns_1.is.string }),
+    isOptions: typescript_misc_1.is.object.factory({ ignoreSelector: utils.isSelector, selector: utils.isSelector }, { message: typescript_misc_1.is.string, replacement: typescript_misc_1.is.string, search: typescript_misc_1.is.string }),
     defaultOptions: { ignoreSelector: [] },
     messages: { [MessageId.customMessage]: "{{message}}" },
     docs: {
@@ -75,13 +75,13 @@ exports.noRestrictedSyntax = utils.createRule({
                 for (const node of _.difference(nodes, ignoreNodes))
                     context.report({
                         data: {
-                            message: message !== null && message !== void 0 ? message : `This syntax is not allowed: ${selector}`
+                            message: message ?? `This syntax is not allowed: ${selector}`
                         },
-                        fix: () => real_fns_1.is.not.empty(replacement)
+                        fix: () => typescript_misc_1.is.not.empty(replacement)
                             ? [
                                 {
                                     range: node.range,
-                                    text: real_fns_1.is.not.empty(search)
+                                    text: typescript_misc_1.is.not.empty(search)
                                         ? context.getText(node).replace(
                                         // eslint-disable-next-line security/detect-non-literal-regexp -- Ok
                                         new RegExp(search, "u"), replacement)

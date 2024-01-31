@@ -1,6 +1,6 @@
 import * as utils from "../utils";
 import { core } from "../core";
-import { evaluate } from "real-fns";
+import { evaluate } from "typescript-misc";
 export const noUnnecessaryArray = evaluate(() => {
     const obj = {
         options: "Property[key.value=/^misc\\u002F/u] > ArrayExpression > ObjectExpression",

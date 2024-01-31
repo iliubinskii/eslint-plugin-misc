@@ -1,8 +1,7 @@
+import type { ClassToInterface, Rec, unknowns } from "typescript-misc";
 import type { Context, Docs, SuboptionsArray } from "./types";
-import type { Rec, unknowns } from "type-essentials";
 import type { RuleContext, RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import { is } from "real-fns";
-import type { ClassToInterface } from "real-fns";
+import { is } from "typescript-misc";
 import type { TypeCheck } from "./TypeCheck";
 export declare const isProjectConfig: is.Guard<ProjectConfig>;
 /**

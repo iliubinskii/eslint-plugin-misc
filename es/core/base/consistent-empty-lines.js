@@ -1,6 +1,6 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import { a, as, evaluate, is, s } from "real-fns";
+import { a, as, evaluate, is, s } from "typescript-misc";
 export var EmptyLine;
 (function (EmptyLine) {
     EmptyLine["always"] = "always";
@@ -102,16 +102,14 @@ export const consistentEmptyLines = evaluate(() => {
                 ];
             }), {
                 "Program:exit": () => {
-                    // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
                     prevItems.sort(reverseCompare);
-                    // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
                     nextItems.sort(reverseCompare);
                     const items = _.uniqBy(a.fromIterable(evaluate(function* () {
                         for (const prevItem of prevItems)
                             for (const nextItem of nextItems)
                                 if (prevItem.rule._id === nextItem.rule._id &&
                                     context.isAdjacentNodes(prevItem.node, nextItem.node))
-                                    yield Object.assign(Object.assign({}, nextItem), { prevNode: prevItem.node });
+                                    yield { ...nextItem, prevNode: prevItem.node };
                     })), "node");
                     for (const item of items) {
                         const { node, prevNode, rule } = item;

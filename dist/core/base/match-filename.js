@@ -3,14 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.matchFilename = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["invalidText"] = "invalidText";
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.matchFilename = utils.createRule({
     name: "match-filename",
-    isOptions: real_fns_1.is.object.factory({ prefix: real_fns_1.is.string, selector: utils.isSelector, suffix: real_fns_1.is.string }, { format: utils.isCasing }),
+    isOptions: typescript_misc_1.is.object.factory({ prefix: typescript_misc_1.is.string, selector: utils.isSelector, suffix: typescript_misc_1.is.string }, { format: utils.isCasing }),
     defaultOptions: { prefix: "", suffix: "" },
     messages: { [MessageId.invalidText]: "Should match file name: {{expected}}" },
     docs: {

@@ -1,5 +1,4 @@
-import * as configurableSelector_1 from "./configurable-selector";
-export { configurableSelector_1 as configurableSelector };
+export * as configurableSelector from "./configurable-selector";
 export * from "./misc";
 export * from "./synonyms";
 export * from "./test";

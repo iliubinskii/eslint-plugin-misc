@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { a, s } from "real-fns";
+import { a, s } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["addEmptyLine"] = "addEmptyLine";

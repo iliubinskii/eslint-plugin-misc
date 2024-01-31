@@ -23,5 +23,31 @@ import { preferConstRequire } from "./prefer-const-require";
 import { restrictIdentifierCharacters } from "./restrict-identifier-characters";
 import { sortCallSignature } from "./sort-call-signature";
 import { sortConstructSignature } from "./sort-construct-signature";
-export const core = Object.assign(Object.assign({}, base), { "class-match-filename": classMatchFilename, "consistent-source-extension": consistentSourceExtension, "consistent-symbol-description": consistentSymbolDescription, "max-identifier-blocks": maxIdentifierBlocks, "no-at-sign-import": noAtSignImport, "no-at-sign-internal-import": noAtSignInternalImport, "no-chain-coalescence-mixture": noChainCoalescenceMixture, "no-index-import": noIndexImport, "no-internal-modules": noInternalModules, "no-language-mixing": noLanguageMixing, "no-negated-conditions": noNegatedConditions, "no-nodejs-modules": noNodejsModules, "no-param-reassign": noParamReassign, "no-relative-parent-import": noRelativeParentImport, "no-shadow": noShadow, "no-underscore-export": noUnderscoreExport, "no-unnecessary-as-const": noUnnecessaryAsConst, "no-unnecessary-break": noUnnecessaryBreak, "no-unnecessary-initialization": noUnnecessaryInitialization, "prefer-arrow-function-property": preferArrowFunctionProperty, "prefer-const-require": preferConstRequire, "restrict-identifier-characters": restrictIdentifierCharacters, "sort-call-signature": sortCallSignature, "sort-construct-signature": sortConstructSignature });
+export const core = {
+    ...base,
+    "class-match-filename": classMatchFilename,
+    "consistent-source-extension": consistentSourceExtension,
+    "consistent-symbol-description": consistentSymbolDescription,
+    "max-identifier-blocks": maxIdentifierBlocks,
+    "no-at-sign-import": noAtSignImport,
+    "no-at-sign-internal-import": noAtSignInternalImport,
+    "no-chain-coalescence-mixture": noChainCoalescenceMixture,
+    "no-index-import": noIndexImport,
+    "no-internal-modules": noInternalModules,
+    "no-language-mixing": noLanguageMixing,
+    "no-negated-conditions": noNegatedConditions,
+    "no-nodejs-modules": noNodejsModules,
+    "no-param-reassign": noParamReassign,
+    "no-relative-parent-import": noRelativeParentImport,
+    "no-shadow": noShadow,
+    "no-underscore-export": noUnderscoreExport,
+    "no-unnecessary-as-const": noUnnecessaryAsConst,
+    "no-unnecessary-break": noUnnecessaryBreak,
+    "no-unnecessary-initialization": noUnnecessaryInitialization,
+    "prefer-arrow-function-property": preferArrowFunctionProperty,
+    "prefer-const-require": preferConstRequire,
+    "restrict-identifier-characters": restrictIdentifierCharacters,
+    "sort-call-signature": sortCallSignature,
+    "sort-construct-signature": sortConstructSignature
+};
 //# sourceMappingURL=index.js.map

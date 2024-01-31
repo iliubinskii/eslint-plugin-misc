@@ -1,5 +1,5 @@
-import { is } from "real-fns";
-import type { strings } from "type-essentials";
+import { is } from "typescript-misc";
+import type { strings } from "typescript-misc";
 export interface Suboptions {
     readonly _id: string;
     readonly hierarchy: stringsArray;

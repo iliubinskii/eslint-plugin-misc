@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = void 0;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 /**
  * Creates rule listener.
  *
@@ -31,7 +31,7 @@ function create(callback) {
             identifiers.push(node);
         },
         "Program > ExportAllDeclaration": (node) => {
-            if (real_fns_1.is.empty(node.exported))
+            if (typescript_misc_1.is.empty(node.exported))
                 exportAllDeclarations.push(node);
         },
         "Program > ExportDefaultDeclaration": (node) => {

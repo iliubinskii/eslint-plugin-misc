@@ -1,6 +1,6 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import { a, assert, evaluate, is, o, s } from "real-fns";
+import { a, assert, evaluate, is, o, s } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 export var StatementType;
 (function (StatementType) {
@@ -194,7 +194,6 @@ function getJestTestName(node) {
  */
 function sortingOrder(order) {
     return node => {
-        var _a, _b;
         switch (node.type) {
             case AST_NODE_TYPES.ExportAllDeclaration:
                 return buildResult(StatementType.ExportAllDeclaration, `${node.source.value}\u0002${node.exportKind}`);
@@ -230,8 +229,8 @@ function sortingOrder(order) {
             case AST_NODE_TYPES.TSTypeAliasDeclaration:
                 return buildResult(StatementType.TypeDeclaration, node.id.name);
             case AST_NODE_TYPES.TSModuleDeclaration:
-                if ((_a = node.declare) !== null && _a !== void 0 ? _a : false)
-                    return ((_b = node.global) !== null && _b !== void 0 ? _b : false)
+                if (node.declare ?? false)
+                    return node.global ?? false
                         ? buildResult(StatementType.DeclareGlobal)
                         : buildResult(StatementType.Declare, utils.nodeText(node.id, "?"));
                 return buildResult(StatementType.Unknown);

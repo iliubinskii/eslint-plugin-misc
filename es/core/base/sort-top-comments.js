@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { a } from "real-fns";
+import { a } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["incorrectSorting"] = "incorrectSorting";
@@ -7,7 +7,10 @@ export var MessageId;
 export const sortTopComments = utils.createRule({
     name: "sort-top-comments",
     fixable: utils.Fixable.code,
-    messages: Object.assign(Object.assign({}, utils.sort.messages), { [MessageId.incorrectSorting]: "Incorrect sorting" }),
+    messages: {
+        ...utils.sort.messages,
+        [MessageId.incorrectSorting]: "Incorrect sorting"
+    },
     docs: {
         description: "Sorts top comments.",
         failExamples: `

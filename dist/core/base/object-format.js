@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.objectFormat = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["preferMultiline"] = "preferMultiline";
@@ -12,7 +12,7 @@ var MessageId;
 exports.objectFormat = utils.createRule({
     name: "object-format",
     fixable: utils.Fixable.code,
-    isOptions: real_fns_1.is.object.factory({ maxLineLength: real_fns_1.is.number, maxObjectSize: real_fns_1.is.number }, {}),
+    isOptions: typescript_misc_1.is.object.factory({ maxLineLength: typescript_misc_1.is.number, maxObjectSize: typescript_misc_1.is.number }, {}),
     defaultOptions: { maxLineLength: 80, maxObjectSize: 3 },
     messages: {
         [MessageId.preferMultiline]: "Prefer multiline object literal",
@@ -54,11 +54,11 @@ exports.objectFormat = utils.createRule({
                 if (texts.length) {
                     const text = context.getText(node);
                     const expectMultiline = texts.length > maxObjectSize ||
-                        texts.some(real_fns_1.s.multiline) ||
+                        texts.some(typescript_misc_1.s.multiline) ||
                         node.properties.some(context.hasTrailingComment);
                     const expectSingleLine = !expectMultiline;
-                    const gotMultiline = real_fns_1.s.multiline(text);
-                    const gotSingleLine = real_fns_1.s.singleLine(text);
+                    const gotMultiline = typescript_misc_1.s.multiline(text);
+                    const gotSingleLine = typescript_misc_1.s.singleLine(text);
                     if (expectMultiline && gotSingleLine)
                         context.report({
                             fix: () => ({
@@ -82,10 +82,10 @@ exports.objectFormat = utils.createRule({
                 }
                 function predictedLength() {
                     const head = context.getLoc(node.range).start.column;
-                    const contents = real_fns_1.num.sum(...texts.map(text => text.length));
+                    const contents = typescript_misc_1.num.sum(...texts.map(text => text.length));
                     const commas = 2 * (texts.length - 1);
                     const brackets = 4;
-                    const tail = real_fns_1.s
+                    const tail = typescript_misc_1.s
                         .firstLine(context.getText(node.range[1]))
                         // eslint-disable-next-line regexp/optimal-quantifier-concatenation -- Wait for https://github.com/ota-meshi/eslint-plugin-regexp/issues/451
                         .replace(/^((?: as const)?\S*).*/u, "$1").length;

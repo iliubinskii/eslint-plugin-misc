@@ -1,6 +1,6 @@
 import * as utils from "../utils";
 import { base } from "./base";
-import { evaluate } from "real-fns";
+import { evaluate } from "typescript-misc";
 export const noBooleanLiteralType = evaluate(() => {
     const prefix = "TSPropertySignature[optional=true] > TSTypeAnnotation > TSLiteralType.typeAnnotation";
     return utils.wrapRule({

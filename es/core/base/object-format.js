@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { is, num, s } from "real-fns";
+import { is, num, s } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["preferMultiline"] = "preferMultiline";

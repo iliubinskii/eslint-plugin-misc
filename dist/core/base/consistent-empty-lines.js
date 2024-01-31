@@ -4,7 +4,7 @@ exports.consistentEmptyLines = exports.MessageId = exports.EmptyLine = void 0;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var EmptyLine;
 (function (EmptyLine) {
     EmptyLine["always"] = "always";
@@ -17,9 +17,9 @@ var MessageId;
     MessageId["addEmptyLine"] = "addEmptyLine";
     MessageId["removeEmptyLine"] = "removeEmptyLine";
 })(MessageId || (exports.MessageId = MessageId = {}));
-exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
-    const isEmptyLine = real_fns_1.is.factory(real_fns_1.is.enumeration, EmptyLine);
-    const isSuboptions = real_fns_1.is.object.factory({ _id: real_fns_1.is.string, emptyLine: isEmptyLine }, {
+exports.consistentEmptyLines = (0, typescript_misc_1.evaluate)(() => {
+    const isEmptyLine = typescript_misc_1.is.factory(typescript_misc_1.is.enumeration, EmptyLine);
+    const isSuboptions = typescript_misc_1.is.object.factory({ _id: typescript_misc_1.is.string, emptyLine: isEmptyLine }, {
         next: utils.isSelector,
         prev: utils.isSelector,
         selector: utils.isSelector
@@ -90,8 +90,8 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
             const prevItems = [];
             const nextItems = [];
             return utils.mergeListeners(...context.options.rules.flatMap((rule, index) => {
-                const prev = utils.selector("prev" in rule ? rule.prev : real_fns_1.as.not.empty(rule.selector));
-                const next = utils.selector("next" in rule ? rule.next : real_fns_1.as.not.empty(rule.selector));
+                const prev = utils.selector("prev" in rule ? rule.prev : typescript_misc_1.as.not.empty(rule.selector));
+                const next = utils.selector("next" in rule ? rule.next : typescript_misc_1.as.not.empty(rule.selector));
                 return [
                     {
                         [prev]: (node) => {
@@ -106,16 +106,14 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
                 ];
             }), {
                 "Program:exit": () => {
-                    // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
                     prevItems.sort(reverseCompare);
-                    // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
                     nextItems.sort(reverseCompare);
-                    const items = _.uniqBy(real_fns_1.a.fromIterable((0, real_fns_1.evaluate)(function* () {
+                    const items = _.uniqBy(typescript_misc_1.a.fromIterable((0, typescript_misc_1.evaluate)(function* () {
                         for (const prevItem of prevItems)
                             for (const nextItem of nextItems)
                                 if (prevItem.rule._id === nextItem.rule._id &&
                                     context.isAdjacentNodes(prevItem.node, nextItem.node))
-                                    yield Object.assign(Object.assign({}, nextItem), { prevNode: prevItem.node });
+                                    yield { ...nextItem, prevNode: prevItem.node };
                     })), "node");
                     for (const item of items) {
                         const { node, prevNode, rule } = item;
@@ -124,7 +122,7 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
                             // Skip check
                         }
                         else {
-                            const spread = (0, real_fns_1.evaluate)(() => {
+                            const spread = (0, typescript_misc_1.evaluate)(() => {
                                 switch (emptyLine) {
                                     case EmptyLine.always:
                                         return true;
@@ -142,7 +140,7 @@ exports.consistentEmptyLines = (0, real_fns_1.evaluate)(() => {
                             const got = context.getText(range);
                             if (got.includes("\n")) {
                                 const expected = context.eol.repeat(spread ? 2 : 1) +
-                                    real_fns_1.s.trimLeadingEmptyLines(got);
+                                    typescript_misc_1.s.trimLeadingEmptyLines(got);
                                 if (got === expected) {
                                     // Valid
                                 }

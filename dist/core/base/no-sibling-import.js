@@ -4,18 +4,18 @@ exports.noSiblingImport = exports.isSuboptions = exports.isStringsArray = export
 const tslib_1 = require("tslib");
 const ruleTemplates = tslib_1.__importStar(require("../../rule-templates"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
 const node_path_1 = tslib_1.__importDefault(require("node:path"));
 var MessageId;
 (function (MessageId) {
     MessageId["disallowedSource"] = "disallowedSource";
 })(MessageId || (exports.MessageId = MessageId = {}));
-exports.isStringsArray = real_fns_1.is.factory(real_fns_1.is.array.of, real_fns_1.is.strings);
-exports.isSuboptions = real_fns_1.is.object.factory({ _id: real_fns_1.is.string, hierarchy: exports.isStringsArray }, {});
+exports.isStringsArray = typescript_misc_1.is.factory(typescript_misc_1.is.array.of, typescript_misc_1.is.strings);
+exports.isSuboptions = typescript_misc_1.is.object.factory({ _id: typescript_misc_1.is.string, hierarchy: exports.isStringsArray }, {});
 exports.noSiblingImport = utils.createRule({
     name: "no-sibling-import",
-    isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, hierarchy: exports.isStringsArray }, {}),
+    isSuboptions: typescript_misc_1.is.object.factory({ _id: typescript_misc_1.is.string, hierarchy: exports.isStringsArray }, {}),
     defaultSuboptions: { hierarchy: [] },
     suboptionsKey: "rules",
     messages: {
@@ -56,14 +56,17 @@ exports.noSiblingImport = utils.createRule({
         const basename = node_path_1.default.basename(path);
         if (basename === "index" || basename.startsWith("index."))
             return {};
-        const matcher = (0, real_fns_1.evaluate)(() => {
+        const matcher = (0, typescript_misc_1.evaluate)(() => {
             const rules = context.options.rules.map((rule) => {
                 const matchers = rule.hierarchy.map(pattern => utils.createFileMatcher(pattern, false, { dot: true }));
                 const maxIndex = findLastIndex(`./${basename}`, matchers);
-                return Object.assign(Object.assign({}, rule), { matcher: str => {
+                return {
+                    ...rule,
+                    matcher: str => {
                         const index = findIndex(str, matchers);
                         return index !== -1 && maxIndex !== -1 && index < maxIndex;
-                    } });
+                    }
+                };
             });
             return (str) => rules.some(rule => rule.matcher(str));
         });
@@ -71,8 +74,8 @@ exports.noSiblingImport = utils.createRule({
             const source = context.stripExtension(ctx.source);
             const parts = source.split("/");
             if (parts.length === 2) {
-                const sourceDir = real_fns_1.a.first(parts);
-                const sourceBasename = real_fns_1.a.second(parts);
+                const sourceDir = typescript_misc_1.a.first(parts);
+                const sourceBasename = typescript_misc_1.a.second(parts);
                 const sourcePath = `${dir}/${sourceBasename}`;
                 if (sourceDir === ".")
                     if (matcher(source) || sourceBasename.startsWith(`${basename}.`)) {
@@ -109,6 +112,6 @@ function findIndex(str, matchers) {
  * @returns Index.
  */
 function findLastIndex(str, matchers) {
-    return real_fns_1.a.findLastIndex(matchers, matcher => matcher(str));
+    return typescript_misc_1.a.findLastIndex(matchers, matcher => matcher(str));
 }
 //# sourceMappingURL=no-sibling-import.js.map

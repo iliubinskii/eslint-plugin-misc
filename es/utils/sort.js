@@ -1,4 +1,4 @@
-import { a, as, defineFn, fn, is } from "real-fns";
+import { a, as, defineFn, fn, is } from "typescript-misc";
 import { MessageId } from "./sort.internal";
 import { compare } from "./compare";
 import { nodeText } from "./misc";
@@ -11,7 +11,10 @@ export const sort = defineFn(
  * @param options - Options.
  */
 (nodes, context, options) => {
-    const { customOrder, keyNode, sendToBottom, sendToTop, sortingOrder } = Object.assign({ customOrder: [], keyNode: fn.never, sortingOrder: (node) => {
+    const { customOrder, keyNode, sendToBottom, sendToTop, sortingOrder } = {
+        customOrder: [],
+        keyNode: fn.never,
+        sortingOrder: (node) => {
             const kNode = keyNode(node);
             if (kNode) {
                 const key = nodeText(kNode, () => `\u0002${context.getText(kNode)}`);
@@ -25,7 +28,9 @@ export const sort = defineFn(
                 return `2002\u0001${key}`;
             }
             return undefined;
-        } }, options);
+        },
+        ...options
+    };
     const sendToTopRe = is.not.empty(sendToTop)
         ? // eslint-disable-next-line security/detect-non-literal-regexp -- Ok
             new RegExp(sendToTop, "u")
@@ -62,7 +67,7 @@ export const sort = defineFn(
 function sortGroup(items, options, context) {
     if (items.length >= 2) {
         const { _id } = options;
-        const sortedItems = a.sort(items.map((item, index) => (Object.assign(Object.assign({}, item), { index }))), (item1, item2) => compare(item1.key, item2.key));
+        const sortedItems = a.sort(items.map((item, index) => ({ ...item, index })), (item1, item2) => compare(item1.key, item2.key));
         const fixes = [];
         let min;
         let max;

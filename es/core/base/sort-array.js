@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { as, is } from "real-fns";
+import { as, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 export var MessageId;
 (function (MessageId) {
@@ -18,7 +18,10 @@ export const sortArray = utils.createRule({
         selector: AST_NODE_TYPES.ArrayExpression,
         triggerByComment: true
     },
-    messages: Object.assign(Object.assign({}, utils.sort.messages), { [MessageId.expectingArray]: "Expecting array" }),
+    messages: {
+        ...utils.sort.messages,
+        [MessageId.expectingArray]: "Expecting array"
+    },
     docs: {
         description: "Sorts arrays.",
         optionTypes: {
@@ -57,7 +60,7 @@ export const sortArray = utils.createRule({
                         ? context.getComments(node).includes("// @sorted")
                         : true;
                     if (sort)
-                        utils.sort(node.elements.map(element => as.not.empty(element)), context, Object.assign(Object.assign({}, context.options), { keyNode }));
+                        utils.sort(node.elements.map(element => as.not.empty(element)), context, { ...context.options, keyNode });
                 }
                 else
                     context.report({ messageId: MessageId.expectingArray, node });

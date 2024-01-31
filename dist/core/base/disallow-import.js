@@ -4,14 +4,14 @@ exports.disallowImport = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const ruleTemplates = tslib_1.__importStar(require("../../rule-templates"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 var MessageId;
 (function (MessageId) {
     MessageId["disallowedSource"] = "disallowedSource";
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.disallowImport = utils.createRule({
     name: "disallow-import",
-    isOptions: real_fns_1.is.object.factory({ allow: utils.isFilePattern, disallow: utils.isFilePattern }, {}),
+    isOptions: typescript_misc_1.is.object.factory({ allow: utils.isFilePattern, disallow: utils.isFilePattern }, {}),
     defaultOptions: { allow: [], disallow: [] },
     messages: {
         [MessageId.disallowedSource]: "Import from this source is not allowed"

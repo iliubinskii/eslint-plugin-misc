@@ -2,7 +2,7 @@
 import * as ts from "typescript";
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { a } from "real-fns";
+import { a } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     MessageId["unsafeOptionalAssignment"] = "unsafeOptionalAssignment";
@@ -165,8 +165,8 @@ export const noUnsafeObjectAssignment = utils.createRule({
             return undefined;
         }
         function lintTypes(dest, source, node) {
-            var _a;
-            const report = (_a = lintProperties(dest, source, node)) !== null && _a !== void 0 ? _a : lintSignatures(dest, source, node);
+            const report = lintProperties(dest, source, node) ??
+                lintSignatures(dest, source, node);
             if (report)
                 context.report(report);
         }

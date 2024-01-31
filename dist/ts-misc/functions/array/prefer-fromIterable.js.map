@@ -1,1 +1,0 @@
-{"version":3,"file":"prefer-fromIterable.js","sourceRoot":"","sources":["../../../../src/ts-misc/functions/array/prefer-fromIterable.ts"],"names":[],"mappings":";AAAA,mDAAmD;;;;AAEnD,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,kBAAkB,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC/C,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,uCAAuC;YAChD,QAAQ,EAAE,oDAAoD;SAC/D;KACF;CACF,CAAC,CAAC"}

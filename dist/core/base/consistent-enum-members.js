@@ -4,7 +4,7 @@ exports.consistentEnumMembers = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const utils = tslib_1.__importStar(require("../../utils"));
-const real_fns_1 = require("real-fns");
+const typescript_misc_1 = require("typescript-misc");
 const utils_1 = require("@typescript-eslint/utils");
 var MessageId;
 (function (MessageId) {
@@ -12,7 +12,7 @@ var MessageId;
 })(MessageId || (exports.MessageId = MessageId = {}));
 exports.consistentEnumMembers = utils.createRule({
     name: "consistent-enum-members",
-    isSuboptions: real_fns_1.is.object.factory({ _id: real_fns_1.is.string, format: utils.isCasing, selector: utils.isSelector }, {}),
+    isSuboptions: typescript_misc_1.is.object.factory({ _id: typescript_misc_1.is.string, format: utils.isCasing, selector: utils.isSelector }, {}),
     suboptionsKey: "overrides",
     messages: { [MessageId.inconsistentMember]: "Inconsistent key-value pair" },
     docs: {
@@ -50,14 +50,14 @@ exports.consistentEnumMembers = utils.createRule({
             };
         }), {
             "Program:exit": () => {
-                const sortedItems = _.uniqBy(real_fns_1.a.sort(items, reverseCompare), item => item.node);
+                const sortedItems = _.uniqBy(typescript_misc_1.a.sort(items, reverseCompare), item => item.node);
                 for (const item of sortedItems) {
                     const { node, suboptions } = item;
                     if (node.id.type === utils_1.AST_NODE_TYPES.Identifier &&
                         node.initializer &&
                         node.initializer.type === utils_1.AST_NODE_TYPES.Literal &&
                         node.initializer.value !==
-                            utils.setCasing(node.id.name, suboptions === null || suboptions === void 0 ? void 0 : suboptions.format))
+                            utils.setCasing(node.id.name, suboptions?.format))
                         context.report({ messageId: MessageId.inconsistentMember, node });
                 }
             },

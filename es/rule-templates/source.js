@@ -1,4 +1,4 @@
-import { defineFn, is } from "real-fns";
+import { defineFn, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { Type } from "./source.internal";
 // eslint-disable-next-line misc/only-export-name -- Ok

@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { ReadonlyMap, ReadonlySet, evaluate, is } from "real-fns";
+import { ReadonlyMap, ReadonlySet, evaluate, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 export const sortClassMembers = utils.createRule({
     name: "sort-class-members",
@@ -120,7 +120,6 @@ const functionExpressions = new ReadonlySet([
  * @returns Member accessibility.
  */
 function getMemberAccessibility(node) {
-    var _a;
     switch (node.type) {
         case AST_NODE_TYPES.AccessorProperty:
         case AST_NODE_TYPES.MethodDefinition:
@@ -129,7 +128,7 @@ function getMemberAccessibility(node) {
         case AST_NODE_TYPES.TSAbstractMethodDefinition:
         case AST_NODE_TYPES.TSAbstractPropertyDefinition:
         case AST_NODE_TYPES.TSIndexSignature:
-            return (_a = node.accessibility) !== null && _a !== void 0 ? _a : "public";
+            return node.accessibility ?? "public";
         case AST_NODE_TYPES.StaticBlock:
             return "public";
     }
@@ -163,7 +162,6 @@ function getMemberAccessorType(node) {
  * @returns Member dynamic/static state.
  */
 function getMemberDynamicStatic(node) {
-    var _a;
     switch (node.type) {
         case AST_NODE_TYPES.AccessorProperty:
         case AST_NODE_TYPES.MethodDefinition:
@@ -172,7 +170,7 @@ function getMemberDynamicStatic(node) {
         case AST_NODE_TYPES.TSAbstractMethodDefinition:
         case AST_NODE_TYPES.TSAbstractPropertyDefinition:
         case AST_NODE_TYPES.TSIndexSignature:
-            return ((_a = node.static) !== null && _a !== void 0 ? _a : false)
+            return node.static ?? false
                 ? DynamicStatic.static
                 : DynamicStatic.dynamic;
         case AST_NODE_TYPES.StaticBlock:

@@ -1,6 +1,6 @@
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
     // eslint-disable-next-line misc/max-identifier-blocks -- Ok
