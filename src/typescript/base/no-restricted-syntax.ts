@@ -1,9 +1,9 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import { evaluate, is } from "real-fns";
+import { evaluate, is } from "typescript-misc";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "type-essentials";
+import type { Writable } from "typescript-misc";
 
 export interface Options {
   readonly checkArrayType: boolean;

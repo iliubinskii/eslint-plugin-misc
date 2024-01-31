@@ -3,7 +3,7 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { a, s } from "real-fns";
+import { a, s } from "typescript-misc";
 
 export enum MessageId {
   addEmptyLine = "addEmptyLine",

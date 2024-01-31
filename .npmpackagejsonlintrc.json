@@ -1,7 +1,7 @@
 {
   "extends": [
-    "real-config/package-json-lint/recommended.json",
-    "real-config/package-json-lint/public.json",
-    "real-config/package-json-lint/package.json"
+    "project-chore/package-json-lint/recommended.json",
+    "project-chore/package-json-lint/public.json",
+    "project-chore/package-json-lint/package.json"
   ]
 }

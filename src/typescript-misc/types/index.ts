@@ -1,6 +1,6 @@
 import { noTsToolbelt } from "./no-ts-toolbelt";
 import { noWritable } from "./no-Writable";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { preferIndexedObject } from "./prefer-IndexedObject";
 import { preferIndexedRecord } from "./prefer-IndexedRecord";
 import { preferNumStr } from "./prefer-NumStr";

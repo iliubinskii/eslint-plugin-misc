@@ -1,6 +1,6 @@
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { ReadonlySet } from "real-fns";
+import { ReadonlySet } from "typescript-misc";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 
 export enum MessageId {

@@ -4,7 +4,7 @@ import type {
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import { a } from "real-fns";
+import { a } from "typescript-misc";
 
 export enum MessageId {
   incorrectSorting = "incorrectSorting"

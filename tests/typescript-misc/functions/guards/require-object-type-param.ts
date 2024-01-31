@@ -1,7 +1,8 @@
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";
 
-const rule = rules["typescript-misc/functions/guards/require-object-type-param"];
+const rule =
+  rules["typescript-misc/functions/guards/require-object-type-param"];
 
 const MessageId = utils.getMessageId(rule);
 

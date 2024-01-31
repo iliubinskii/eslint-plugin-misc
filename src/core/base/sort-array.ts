@@ -1,9 +1,9 @@
 import * as utils from "../../utils";
-import { as, is } from "real-fns";
+import { as, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { strings } from "type-essentials";
+import type { strings } from "typescript-misc";
 
 export interface Options {
   readonly customOrder?: strings;

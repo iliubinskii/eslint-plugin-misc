@@ -4,8 +4,8 @@ import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import { is } from "real-fns";
-import type { strings } from "type-essentials";
+import { is } from "typescript-misc";
+import type { strings } from "typescript-misc";
 
 export type InterfaceOptions = readonly InterfaceOption[];
 

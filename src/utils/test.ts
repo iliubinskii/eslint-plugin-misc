@@ -8,8 +8,8 @@ import type {
   TestCaseError,
   ValidTestCases
 } from "./test.internal";
-import type { Rec, unknowns } from "type-essentials";
-import { o, s } from "real-fns";
+import type { Rec, unknowns } from "typescript-misc";
+import { o, s } from "typescript-misc";
 import { TSESLint } from "@typescript-eslint/utils";
 import { projectRoot } from "./misc";
 

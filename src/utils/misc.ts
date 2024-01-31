@@ -9,7 +9,7 @@ import type {
 } from "./types";
 import { Casing, TypeGroup } from "./types";
 import type { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import type { Entry, unknowns } from "type-essentials";
+import type { Entry, unknowns } from "typescript-misc";
 import {
   ProxyHandlerAction,
   a,
@@ -21,7 +21,7 @@ import {
   reflect,
   s,
   wrapProxyHandler
-} from "real-fns";
+} from "typescript-misc";
 import type {
   RuleContext,
   RuleFunction,
@@ -29,7 +29,6 @@ import type {
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { Accumulator } from "real-classes";
 import type { MinimatchOptions } from "minimatch";
 import type { WrapRuleOptions } from "./misc.internal";
 import { minimatch } from "minimatch";
@@ -131,25 +130,34 @@ export function createRegexpMatcher(
  * @returns Merged listeners.
  */
 export function mergeListeners(...listeners: RuleListeners): RuleListener {
-  const accumulator = new Accumulator<string, Visitor>();
-
-  for (const listener of listeners)
-    for (const [name, visitor] of o.entries(listener))
-      accumulator.push(name, as.callable<Visitor>(visitor));
-
   // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
   return o.fromEntries(
-    a.fromIterable(accumulator).map(
-      ([name, visitors]): Entry<string, Visitor> => [
-        name,
-        node => {
-          for (const visitor of visitors) visitor(node);
-        }
-      ]
-    )
+    o
+      .entries(
+        _.groupBy(
+          listeners.flatMap(listener => o.entries(listener)),
+          ([name]) => name
+        )
+      )
+      .map(
+        ([name, entries]): Entry<string, Visitors> => [
+          name,
+          entries.map(([, visitor]) => as.callable(visitor))
+        ]
+      )
+      .map(
+        ([name, visitors]): Entry<string, Visitor> => [
+          name,
+          node => {
+            for (const visitor of visitors) visitor(node);
+          }
+        ]
+      )
   );
 
   type Visitor = RuleFunction<TSESTree.Node>;
+
+  type Visitors = readonly Visitor[];
 }
 
 /**

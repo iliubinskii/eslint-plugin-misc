@@ -1,4 +1,4 @@
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { preferNumber } from "./prefer-number";
 import { preferString } from "./prefer-string";
 

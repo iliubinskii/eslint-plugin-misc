@@ -1,4 +1,4 @@
-const { ReadonlySet, a, evaluate, is, o, s } = require("real-fns");
+const { ReadonlySet, a, evaluate, is, o, s } = require("typescript-misc");
 
 const { stringify: baseStringify } = require("javascript-stringify");
 

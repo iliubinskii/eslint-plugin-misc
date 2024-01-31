@@ -1,1 +1,1 @@
-module.exports = { extends: ["./node_modules/real-config/commitlint/next"] };
+module.exports = { extends: ["./node_modules/project-chore/commitlint/next"] };

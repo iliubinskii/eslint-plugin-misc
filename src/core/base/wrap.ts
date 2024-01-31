@@ -5,13 +5,13 @@ import {
   is,
   reflect,
   wrapProxyHandler
-} from "real-fns";
+} from "typescript-misc";
 import type {
   RuleContext,
   RuleListener,
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Writable, stringU, strings } from "type-essentials";
+import type { Writable, stringU, strings } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
 
 export interface Options {

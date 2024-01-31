@@ -8,7 +8,7 @@ import type {
   RuleListener,
   RuleModule
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { classToInterface, o, s } from "real-fns";
+import { classToInterface, o, s } from "typescript-misc";
 import { ESLintUtils } from "@typescript-eslint/utils";
 import { TypeCheck } from "./TypeCheck";
 import { createContext } from "./create-rule.internal";

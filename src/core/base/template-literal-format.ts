@@ -3,7 +3,7 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { a, fn, s } from "real-fns";
+import { a, fn, s } from "typescript-misc";
 
 export enum MessageId {
   invalidFormat = "invalidFormat"

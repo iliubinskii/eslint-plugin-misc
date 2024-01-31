@@ -1,6 +1,6 @@
-/* eslint-disable misc/real-config/eslintrc/no-disable -- Ok */
+/* eslint-disable misc/project-chore/eslintrc/no-disable -- Ok */
 
-const { eslint } = require("real-config/api");
+const { eslint } = require("project-chore/api");
 
 const consistentImport = eslint.rules["misc/consistent-import"];
 

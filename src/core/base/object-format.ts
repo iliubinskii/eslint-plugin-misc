@@ -3,7 +3,7 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { is, num, s } from "real-fns";
+import { is, num, s } from "typescript-misc";
 
 export interface Options {
   readonly maxLineLength: number;

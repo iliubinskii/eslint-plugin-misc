@@ -2,7 +2,7 @@
 
 import * as utils from "../../utils";
 import { core } from "../../core";
-import { evaluate } from "real-fns";
+import { evaluate } from "typescript-misc";
 
 // eslint-disable-next-line misc/max-identifier-blocks -- Ok
 export const requireReturnInDefineFn = evaluate(() => {

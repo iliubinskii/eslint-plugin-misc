@@ -1,6 +1,6 @@
 import { noMessageDot } from "./no-message-dot";
 import { noUnnecessaryArray } from "./no-unnecessary-array";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { sortArray } from "./sort-array";
 import { sortSuboptions } from "./sort-suboptions";
 

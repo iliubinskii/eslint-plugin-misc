@@ -1,7 +1,7 @@
 import type { Context, RuleFixes } from "./types";
 import type { KeyNode, SortingOrder } from "./sort.internal";
-import type { Writable, numberU, stringU, strings } from "type-essentials";
-import { a, as, defineFn, fn, is } from "real-fns";
+import type { Writable, numberU, stringU, strings } from "typescript-misc";
+import { a, as, defineFn, fn, is } from "typescript-misc";
 import { MessageId } from "./sort.internal";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { compare } from "./compare";

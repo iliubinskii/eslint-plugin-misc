@@ -1,5 +1,5 @@
 import * as utils from "../../utils";
-import { ReadonlySet, a, evaluate, is } from "real-fns";
+import { ReadonlySet, a, evaluate, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";

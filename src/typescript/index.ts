@@ -8,7 +8,7 @@ import { noComplexReturnType } from "./no-complex-return-type";
 import { noEmptyInterfaces } from "./no-empty-interfaces";
 import { noNever } from "./no-never";
 import { noUnsafeObjectAssign } from "./no-unsafe-object-assign";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { preferArrayTypeAlias } from "./prefer-array-type-alias";
 import { preferClassMethod } from "./prefer-class-method";
 import { preferReadonlyArray } from "./prefer-readonly-array";

@@ -1,5 +1,5 @@
 import { noToThrowLiteral } from "./no-toThrow-literal";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { preferToBe } from "./prefer-toBe";
 import { preferToStrictEqual } from "./prefer-toStrictEqual";
 

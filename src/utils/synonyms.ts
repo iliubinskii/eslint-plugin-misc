@@ -1,5 +1,5 @@
-import type { Entry, IndexedRecord } from "type-essentials";
-import { assert, is, o } from "real-fns";
+import type { Entry, IndexedRecord } from "typescript-misc";
+import { assert, is, o } from "typescript-misc";
 import fs from "node:fs";
 
 /**

@@ -20,7 +20,7 @@ import { numStrAlwaysFalse } from "./numStr-always-false";
 import { numStrAlwaysTrue } from "./numStr-always-true";
 import { numberAlwaysFalse } from "./number-always-false";
 import { numberAlwaysTrue } from "./number-always-true";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { objectAlwaysFalse } from "./object-always-false";
 import { objectAlwaysTrue } from "./object-always-true";
 import { requireObjectTypeParam } from "./require-object-type-param";

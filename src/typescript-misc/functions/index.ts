@@ -3,7 +3,7 @@ import { converters } from "./converters";
 import { guards } from "./guards";
 import { json } from "./json";
 import { noEvaluateTypeParam } from "./no-evaluate-type-param";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { object } from "./object";
 import { preferDefineFn } from "./prefer-defineFn";
 import { preferEvaluate } from "./prefer-evaluate";

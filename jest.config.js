@@ -1,1 +1,1 @@
-module.exports = { preset: "real-config/jest" };
+module.exports = { preset: "project-chore/jest" };

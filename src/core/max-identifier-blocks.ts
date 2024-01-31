@@ -1,6 +1,6 @@
 import * as utils from "../utils";
 import { base } from "./base";
-import { evaluate } from "real-fns";
+import { evaluate } from "typescript-misc";
 
 export const maxIdentifierBlocks = evaluate(() => {
   const suffix = "[name=/^[A-Z]*[^A-Z]+([A-Z]+[^A-Z]+){4}/u]";

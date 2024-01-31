@@ -1,8 +1,8 @@
 import * as utils from "../../utils";
-import { a, as, is } from "real-fns";
+import { a, as, is } from "typescript-misc";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "type-essentials";
+import type { Writable } from "typescript-misc";
 import path from "node:path";
 
 export interface Options {

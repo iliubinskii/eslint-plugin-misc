@@ -1,11 +1,11 @@
-import { evaluate, fn, o } from "real-fns";
-import type { IndexedRecord } from "type-essentials";
+import { evaluate, fn, o } from "typescript-misc";
+import type { IndexedRecord } from "typescript-misc";
 import { core } from "./core";
 import { eslintrc } from "./eslintrc";
 import { jest } from "./jest";
 import { projectChore } from "./project-chore";
-import { typescriptMisc } from "./typescript-misc";
 import { typescript } from "./typescript";
+import { typescriptMisc } from "./typescript-misc";
 
 export const configs = evaluate((): IndexedRecord => {
   const coreRules = {
@@ -38,16 +38,21 @@ export const configs = evaluate((): IndexedRecord => {
     "eslintrc": { rules: eslintrcRules },
     "jest": { rules: jestRules },
     "project-chore": { rules: rules(projectChore) },
+    "typescript": { rules: typescriptRules },
     "typescript-misc": {
       overrides: [
         {
           files: "./tests/**",
-          rules: rules(typescriptMisc, name => name.startsWith("misc/typescript-misc/jest/"))
+          rules: rules(typescriptMisc, name =>
+            name.startsWith("misc/typescript-misc/jest/")
+          )
         }
       ],
-      rules: rules(typescriptMisc, name => !name.startsWith("misc/typescript-misc/jest/"))
-    },
-    "typescript": { rules: typescriptRules }
+      rules: rules(
+        typescriptMisc,
+        name => !name.startsWith("misc/typescript-misc/jest/")
+      )
+    }
   };
 });
 

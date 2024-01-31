@@ -1,6 +1,6 @@
 import * as ruleTemplates from "../../rule-templates";
 import * as utils from "../../utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 
 export interface Options {
   readonly selector: utils.Selector;

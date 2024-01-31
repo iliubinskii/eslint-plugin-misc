@@ -4,9 +4,9 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import { a, as, evaluate, is, s } from "real-fns";
+import { a, as, evaluate, is, s } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "type-essentials";
+import type { Writable } from "typescript-misc";
 
 export interface Suboptions {
   readonly _id: string;
@@ -132,10 +132,7 @@ export const consistentEmptyLines = evaluate(() => {
         }),
         {
           "Program:exit": () => {
-            // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
             prevItems.sort(reverseCompare);
-
-            // eslint-disable-next-line misc/real-fns/array/prefer-sort -- Ok
             nextItems.sort(reverseCompare);
 
             const items = _.uniqBy(

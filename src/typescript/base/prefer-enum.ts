@@ -4,7 +4,7 @@ import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 
 export enum MessageId {
   // eslint-disable-next-line misc/max-identifier-blocks -- Ok

@@ -7,8 +7,8 @@ import type {
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "type-essentials";
-import { a } from "real-fns";
+import type { Writable } from "typescript-misc";
+import { a } from "typescript-misc";
 
 export enum MessageId {
   unsafeOptionalAssignment = "unsafeOptionalAssignment",

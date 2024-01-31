@@ -2,8 +2,8 @@ import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "type-essentials";
-import { is } from "real-fns";
+import type { Writable } from "typescript-misc";
+import { is } from "typescript-misc";
 
 export interface Options {
   readonly ignoreSelector: utils.Selector;

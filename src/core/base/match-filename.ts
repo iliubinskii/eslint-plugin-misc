@@ -1,7 +1,7 @@
 import * as utils from "../../utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 
 export interface Options {
   readonly format?: utils.Casing;

@@ -1,10 +1,10 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
-import { a, is } from "real-fns";
+import { a, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import type { Writable } from "type-essentials";
+import type { Writable } from "typescript-misc";
 
 export interface Suboptions {
   readonly _id: string;

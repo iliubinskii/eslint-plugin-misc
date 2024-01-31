@@ -2,7 +2,7 @@ import { noArrayArg } from "./no-array-arg";
 import { noGet } from "./no-get";
 import { noSet } from "./no-set";
 import { noUnfreeze } from "./no-unfreeze";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { preferAssign } from "./prefer-assign";
 import { preferClone } from "./prefer-clone";
 import { preferEntries } from "./prefer-entries";

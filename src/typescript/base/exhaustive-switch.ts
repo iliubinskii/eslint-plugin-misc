@@ -1,7 +1,7 @@
 import * as _ from "lodash-commonjs-es";
 import * as utils from "../../utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 
 export enum MessageId {
   inexhaustiveSwitch = "inexhaustiveSwitch"

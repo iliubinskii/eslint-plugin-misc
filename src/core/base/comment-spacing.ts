@@ -4,7 +4,7 @@ import type {
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
-import { s } from "real-fns";
+import { s } from "typescript-misc";
 
 export enum MessageId {
   addEmptyLine = "addEmptyLine",

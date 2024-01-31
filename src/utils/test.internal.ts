@@ -3,7 +3,7 @@ import type {
   TestCaseError as BaseTestCaseError,
   ValidTestCase as BaseValidTestCase
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { unknowns } from "type-essentials";
+import type { unknowns } from "typescript-misc";
 
 // eslint-disable-next-line misc/typescript/prefer-enum -- Ok
 export type Filename =

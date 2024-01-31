@@ -1,9 +1,9 @@
 import * as ruleTemplates from "../../rule-templates";
 import * as utils from "../../utils";
-import { a, evaluate, is } from "real-fns";
+import { a, evaluate, is } from "typescript-misc";
 import fs from "node:fs";
 import nodePath from "node:path";
-import type { strings } from "type-essentials";
+import type { strings } from "typescript-misc";
 
 export interface Suboptions {
   readonly _id: string;

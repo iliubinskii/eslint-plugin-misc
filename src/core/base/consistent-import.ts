@@ -4,10 +4,10 @@ import type {
   RuleFix,
   RuleListener
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { Writable, strings } from "type-essentials";
+import type { Writable, strings } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { TSESTree } from "@typescript-eslint/utils";
-import { is } from "real-fns";
+import { is } from "typescript-misc";
 import { minimatch } from "minimatch";
 
 export interface Suboptions {
@@ -128,7 +128,6 @@ export const consistentImport = utils.createRule({
   create: (context): RuleListener => {
     const eol = context.eol;
 
-    // eslint-disable-next-line misc/real-fns/prefer-readonly-set -- Ok
     const identifiers = new Set<string>();
 
     const importDeclarations: Writable<utils.TSESTree.ImportDeclarations> = [];

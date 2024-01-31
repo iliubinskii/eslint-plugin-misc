@@ -1,7 +1,7 @@
 import { fromIterableArgType } from "./fromIterable-arg-type";
 import { mixedFromIncludeArray } from "./mixedFrom-include-array";
 import { mixedFromIncludeNonArray } from "./mixedFrom-include-non-array";
-import { o } from "real-fns";
+import { o } from "typescript-misc";
 import { preferClone } from "./prefer-clone";
 import { preferFirst } from "./prefer-first";
 import { preferFromIterable } from "./prefer-fromIterable";

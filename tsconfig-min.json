@@ -1,5 +1,5 @@
 {
-  "extends": "real-config/tsconfig/min",
+  "extends": "project-chore/tsconfig/min",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": ".cache/typescript",

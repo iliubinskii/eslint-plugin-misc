@@ -1,7 +1,7 @@
 {
   "name": "ESLint plugin",
   "extends": [
-    "real-config/typedoc/recommended"
+    "project-chore/typedoc/recommended"
   ],
   "intentionallyNotExported": [
     "__global.configurable.LocaleName"
