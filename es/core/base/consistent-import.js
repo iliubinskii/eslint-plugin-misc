@@ -102,6 +102,7 @@ export const consistentImport = utils.createRule({
     },
     create: (context) => {
         const eol = context.eol;
+        // eslint-disable-next-line misc/typescript-misc/functions/prefer-readonly-set -- Ok
         const identifiers = new Set();
         const importDeclarations = [];
         return {

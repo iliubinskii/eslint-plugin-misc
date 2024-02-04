@@ -102,11 +102,11 @@ export const consistentEmptyLines = evaluate(() => {
                 ];
             }), {
                 "Program:exit": () => {
-                    prevItems.sort(reverseCompare);
-                    nextItems.sort(reverseCompare);
+                    const prevItemsSorted = a.sort(prevItems, reverseCompare);
+                    const nextItemsSorted = a.sort(nextItems, reverseCompare);
                     const items = _.uniqBy(a.fromIterable(evaluate(function* () {
-                        for (const prevItem of prevItems)
-                            for (const nextItem of nextItems)
+                        for (const prevItem of prevItemsSorted)
+                            for (const nextItem of nextItemsSorted)
                                 if (prevItem.rule._id === nextItem.rule._id &&
                                     context.isAdjacentNodes(prevItem.node, nextItem.node))
                                     yield { ...nextItem, prevNode: prevItem.node };
