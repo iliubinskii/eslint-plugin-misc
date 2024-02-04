@@ -81,15 +81,15 @@
     "natural-compare": "^1.4.0",
     "tslib": "^2.6.2",
     "tsutils": "^3.21.0",
-    "typescript-misc": "^0.2.0"
+    "typescript-misc": "^1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.13",
+    "@types/node": "^20.11.16",
     "eslint-plugin-misc": "^2.1.0",
     "eslint-plugin-sort-exports": "^0.9.1",
     "get-current-line": "^7.4.0",
     "project-chore": "^2.2.0",
-    "types-fix": "^1.0.6"
+    "types-fix": "^1.0.7"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": "^5",
