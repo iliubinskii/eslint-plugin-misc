@@ -40,17 +40,6 @@
     "foldOnOpen.targets": [
       "AllBlockComments"
     ],
-    "intelephense.files.exclude": [
-      "**/.git/**",
-      "**/.svn/**",
-      "**/.hg/**",
-      "**/CVS/**",
-      "**/.DS_Store/**",
-      "**/bower_components/**",
-      "**/vendor/**/{Tests,tests}/**",
-      "**/.history/**",
-      "**/vendor/**/vendor/**"
-    ],
     "javascript.suggestionActions.enabled": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "search.exclude": {
