@@ -156,18 +156,21 @@ export const consistentOptionalProps = utils.createRule({
                                 data: override ? { _id: override._id } : {},
                                 messageId: evaluate(() => {
                                     switch (expected) {
-                                        case Style.combined:
+                                        case Style.combined: {
                                             return override
                                                 ? MessageId.combinedId
                                                 : MessageId.combined;
-                                        case Style.optional:
+                                        }
+                                        case Style.optional: {
                                             return override
                                                 ? MessageId.optionalId
                                                 : MessageId.optional;
-                                        case Style.undefined:
+                                        }
+                                        case Style.undefined: {
                                             return override
                                                 ? MessageId.undefinedId
                                                 : MessageId.undefined;
+                                        }
                                     }
                                 }),
                                 node

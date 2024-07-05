@@ -8,34 +8,29 @@ export declare class TypeCheck {
     readonly checker: ts.TypeChecker;
     /**
      * Creates class instance.
-     *
      * @param context - Context.
      */
     constructor(context: RuleContext<never, unknowns>);
     /**
      * Extracts call signatures from node.
-     *
      * @param node - Node.
      * @returns Call signatures.
      */
     getCallSignatures(node: TSESTree.Node): Signatures;
     /**
      * Extracts constructor type from node.
-     *
      * @param node - Node.
      * @returns Constructor type.
      */
     getConstructorType(node: TSESTree.Node): ts.Type | undefined;
     /**
      * Determines contextual type of the node.
-     *
      * @param node - Node.
      * @returns Contextual type.
      */
     getContextualType(node: TSESTree.Node): ts.Type | undefined;
     /**
      * Extracts index info from type.
-     *
      * @param type - Type.
      * @param kind - Index kind.
      * @returns Index info.
@@ -43,56 +38,48 @@ export declare class TypeCheck {
     getIndexInfo(type: ts.Type, kind: ts.IndexKind): ts.IndexInfo | undefined;
     /**
      * Extracts return type from signature.
-     *
      * @param signature - Signature.
      * @returns Return type.
      */
     getReturnType(signature: ts.Signature): ts.Type;
     /**
      * Finds symbol at node location.
-     *
      * @param node - Node.
      * @returns Symbol.
      */
     getSymbol(node: TSESTree.Node): ts.Symbol | undefined;
     /**
      * Returns node type.
-     *
      * @param node - Node.
      * @returns Type.
      */
     getType(node: TSESTree.Node): ts.Type;
     /**
      * Checks if mixed has doc comment.
-     *
      * @param mixed - Mixed.
      * @returns _True_ if mixed has doc comment, _false_ otherwise.
      */
     hasDocComment(mixed: ts.Signature | ts.Symbol): boolean;
     /**
      * Checks if node is an array or a tuple.
-     *
      * @param node - Node.
      * @returns _True_ if node is an array or a tuple, _false_ otherwise.
      */
     isArrayOrTuple(node: TSESTree.Node): boolean;
     /**
      * Checks if type is an array or a tuple.
-     *
      * @param type - Type.
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
     isArrayOrTupleType(type: ts.Type): type is ts.TupleTypeReference | ts.TypeReference;
     /**
      * Checks if type is an array.
-     *
      * @param type - Type.
      * @returns _True_ if type is an array, _false_ otherwise.
      */
     isArrayType(type: ts.Type): type is ts.TypeReference;
     /**
      * Checks if type is enum literal.
-     *
      * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is enum literal, _false_ otherwise.
@@ -100,7 +87,6 @@ export declare class TypeCheck {
     isEnumLiteralType(this: void, type: ts.Type): boolean;
     /**
      * Checks if type is an object.
-     *
      * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is an object, _false_ otherwise.
@@ -108,7 +94,6 @@ export declare class TypeCheck {
     isObjectType(this: void, type: ts.Type): type is ts.ObjectType;
     /**
      * Checks if property is readonly in type.
-     *
      * @param property - Property.
      * @param type - Type.
      * @returns _True_ if property is readonly in type, _false_ otherwise.
@@ -116,21 +101,18 @@ export declare class TypeCheck {
     isReadonlyProperty(property: ts.Symbol, type: ts.Type): boolean;
     /**
      * Checks if type is safe boolean condition.
-     *
      * @param type - Type.
      * @returns _True_ if type is safe boolean condition, _false_ otherwise.
      */
     isSafeBooleanCondition(type: ts.Type): boolean;
     /**
      * Checks if type is an array or a tuple.
-     *
      * @param type - Type.
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
     isTupleType(type: ts.Type): type is ts.TupleTypeReference;
     /**
      * Checks if type is undefined.
-     *
      * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is undefined, _false_ otherwise.
@@ -138,7 +120,6 @@ export declare class TypeCheck {
     isUndefinedType(this: void, type: ts.Type): boolean;
     /**
      * Checks if type contains type group.
-     *
      * @param type - Type.
      * @param expected - Expected type group.
      * @returns _True_ if type contains type group, _false_ otherwise.
@@ -146,7 +127,6 @@ export declare class TypeCheck {
     typeHas(type: ts.Type, expected?: TypeGroup): boolean;
     /**
      * Checks if type contains none of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type contains none of type groups, _false_ otherwise.
@@ -154,7 +134,6 @@ export declare class TypeCheck {
     typeHasNoneOf(type: ts.Type, expected?: TypeGroups): boolean;
     /**
      * Checks if type contains one of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type contains one of type groups, _false_ otherwise.
@@ -162,7 +141,6 @@ export declare class TypeCheck {
     typeHasOneOf(type: ts.Type, expected?: TypeGroups): boolean;
     /**
      * Checks if type belongs to type group.
-     *
      * @param type - Type.
      * @param expected - Expected type group.
      * @returns _True_ if type belongs to type group, _false_ otherwise.
@@ -170,7 +148,6 @@ export declare class TypeCheck {
     typeIs(type: ts.Type, expected: TypeGroup | undefined): boolean;
     /**
      * Checks if type belongs to none of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type belongs to none of type groups, _false_ otherwise.
@@ -178,7 +155,6 @@ export declare class TypeCheck {
     typeIsNoneOf(type: ts.Type, expected?: TypeGroups): boolean;
     /**
      * Checks if type belongs to one of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type belongs to one of type groups, _false_ otherwise.
@@ -186,7 +162,6 @@ export declare class TypeCheck {
     typeIsOneOf(type: ts.Type, expected?: TypeGroups): boolean;
     /**
      * Extracts type parts from node.
-     *
      * @param node - Node.
      * @returns Type parts.
      */
@@ -195,14 +170,12 @@ export declare class TypeCheck {
     protected readonly toTsNode: ParserServices["esTreeNodeToTSNodeMap"]["get"];
     /**
      * Extracts type parts from node.
-     *
      * @param node - Node.
      * @returns Type parts.
      */
     protected typePartsNoTypeof(node: TSESTree.Node): TypeParts;
     /**
      * Extracts type parts from node.
-     *
      * @param node - Node.
      * @returns Type parts.
      */

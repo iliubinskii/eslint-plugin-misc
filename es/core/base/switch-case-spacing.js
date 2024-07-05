@@ -33,27 +33,31 @@ export const switchCaseSpacing = utils.createRule({
       }
     `
     },
-    create: (context) => ({
-        SwitchStatement: node => {
-            for (const [case1, case2] of a.chain(node.cases)) {
-                const fallThrough = case1.consequent.length === 0;
-                const range = context.getLeadingSpaces(case2);
-                const got = context.getText(range);
-                const expected = context.eol.repeat(fallThrough ? 1 : 2) +
-                    s.trimLeadingEmptyLines(got);
-                if (got === expected) {
-                    // Valid
+    create: (context) => {
+        return {
+            SwitchStatement: node => {
+                for (const [case1, case2] of a.chain(node.cases)) {
+                    const fallThrough = case1.consequent.length === 0;
+                    const range = context.getLeadingSpaces(case2);
+                    const got = context.getText(range);
+                    const expected = context.eol.repeat(fallThrough ? 1 : 2) +
+                        s.trimLeadingEmptyLines(got);
+                    if (got === expected) {
+                        // Valid
+                    }
+                    else
+                        context.report({
+                            fix: () => {
+                                return { range, text: expected };
+                            },
+                            messageId: fallThrough
+                                ? MessageId.removeEmptyLine
+                                : MessageId.addEmptyLine,
+                            node: case2
+                        });
                 }
-                else
-                    context.report({
-                        fix: () => ({ range, text: expected }),
-                        messageId: fallThrough
-                            ? MessageId.removeEmptyLine
-                            : MessageId.addEmptyLine,
-                        node: case2
-                    });
             }
-        }
-    })
+        };
+    }
 });
 //# sourceMappingURL=switch-case-spacing.js.map

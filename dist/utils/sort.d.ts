@@ -25,7 +25,6 @@ export declare namespace sort {
 export interface KeyNode<T extends TSESTree.Node> {
     /**
      * Returns key node.
-     *
      * @param node - Node.
      * @returns Key node.
      */
@@ -34,7 +33,6 @@ export interface KeyNode<T extends TSESTree.Node> {
 export interface SortingOrder<T extends TSESTree.Node> {
     /**
      * Returns sorting order..
-     *
      * @param node - Node.
      * @returns Sorting order.
      */

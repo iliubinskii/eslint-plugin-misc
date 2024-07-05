@@ -68,17 +68,20 @@ export const sortArray = utils.createRule({
         };
         function keyNode(node) {
             switch (node.type) {
-                case AST_NODE_TYPES.ObjectExpression:
+                case AST_NODE_TYPES.ObjectExpression: {
                     if (is.not.empty(sortKey))
                         for (const property of node.properties)
                             if (property.type === AST_NODE_TYPES.Property &&
                                 utils.nodeText(property.key, "?") === sortKey)
                                 return property.value;
                     return node;
-                case AST_NODE_TYPES.SpreadElement:
+                }
+                case AST_NODE_TYPES.SpreadElement: {
                     return undefined;
-                default:
+                }
+                default: {
                     return node;
+                }
             }
         }
     }

@@ -1,1 +1,1 @@
-{"version":3,"file":"exhaustive-switch.d.ts","sourceRoot":"","sources":["../../../src/typescript/base/exhaustive-switch.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,yCAAyC,CAAC;AAG5E,oBAAY,SAAS;IACnB,kBAAkB,uBAAuB;CAC1C;AAED,eAAO,MAAM,gBAAgB,qKAyC3B,CAAC"}
+{"version":3,"file":"exhaustive-switch.d.ts","sourceRoot":"","sources":["../../../src/typescript/base/exhaustive-switch.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,yCAAyC,CAAC;AAG5E,oBAAY,SAAS;IACnB,kBAAkB,uBAAuB;CAC1C;AAED,eAAO,MAAM,gBAAgB,qKA2C3B,CAAC"}

@@ -2,7 +2,6 @@ import * as _ from "lodash-commonjs-es";
 import { assert } from "typescript-misc";
 /**
  * Creates selector.
- *
  * @param options - Options.
  * @param defaultSelectors - Default selectors.
  * @returns Selector.

@@ -4,7 +4,6 @@ import { TSESLint } from "@typescript-eslint/utils";
 import { projectRoot } from "./misc";
 /**
  * Extracts MessageId from rule.
- *
  * @param rule - Rule.
  * @returns MessageId.
  */
@@ -13,7 +12,6 @@ export function getMessageId(rule) {
 }
 /**
  * Runs test.
- *
  * @param name - Name.
  * @param rule - Rule.
  * @param invalid - Invalid tests.
@@ -31,18 +29,24 @@ export function testRule(name, rule, invalid, valid = []) {
         }
     });
     tester.run(name, rule, {
-        invalid: invalid.map((test) => ({
-            ...test,
-            code: s.unpadMultiline(test.code),
-            errors: test.errors.map((error) => ({ endLine: error.line, ...error })),
-            filename: `${projectRoot}fixtures/${test.filename ?? "file.ts"}`,
-            output: s.unpadMultiline(test.output ?? test.code)
-        })),
-        valid: valid.map((test) => ({
-            ...test,
-            code: s.unpadMultiline(test.code),
-            filename: `${projectRoot}fixtures/${test.filename ?? "file.ts"}`
-        }))
+        invalid: invalid.map((test) => {
+            return {
+                ...test,
+                code: s.unpadMultiline(test.code),
+                errors: test.errors.map((error) => {
+                    return { endLine: error.line, ...error };
+                }),
+                filename: `${projectRoot}fixtures/${test.filename ?? "file.ts"}`,
+                output: s.unpadMultiline(test.output ?? test.code)
+            };
+        }),
+        valid: valid.map((test) => {
+            return {
+                ...test,
+                code: s.unpadMultiline(test.code),
+                filename: `${projectRoot}fixtures/${test.filename ?? "file.ts"}`
+            };
+        })
     });
 }
 //# sourceMappingURL=test.js.map

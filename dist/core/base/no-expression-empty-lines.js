@@ -27,26 +27,30 @@ exports.noExpressionEmptyLines = utils.createRule({
         .map(x => x);
     `
     },
-    create: (context) => ({
-        MemberExpression: node => {
-            const pos = node.object.range[1];
-            const got = typescript_misc_1.s.leadingSpaces(context.getText(pos));
-            if (got.includes("\n")) {
-                const expected = context.eol + typescript_misc_1.s.trimLeadingEmptyLines(got);
-                if (got === expected) {
-                    // Valid
+    create: (context) => {
+        return {
+            MemberExpression: node => {
+                const pos = node.object.range[1];
+                const got = typescript_misc_1.s.leadingSpaces(context.getText(pos));
+                if (got.includes("\n")) {
+                    const expected = context.eol + typescript_misc_1.s.trimLeadingEmptyLines(got);
+                    if (got === expected) {
+                        // Valid
+                    }
+                    else
+                        context.report({
+                            fix: () => {
+                                return {
+                                    range: [pos, pos + got.length],
+                                    text: expected
+                                };
+                            },
+                            messageId: MessageId.unexpectedEmptyLine,
+                            node: node.property
+                        });
                 }
-                else
-                    context.report({
-                        fix: () => ({
-                            range: [pos, pos + got.length],
-                            text: expected
-                        }),
-                        messageId: MessageId.unexpectedEmptyLine,
-                        node: node.property
-                    });
             }
-        }
-    })
+        };
+    }
 });
 //# sourceMappingURL=no-expression-empty-lines.js.map

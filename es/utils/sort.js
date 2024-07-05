@@ -10,7 +10,6 @@ export var MessageId;
 export const sort = defineFn(
 /**
  * Sorts nodes.
- *
  * @param nodes - Nodes.
  * @param context - Context.
  * @param options - Options.
@@ -64,7 +63,6 @@ export const sort = defineFn(
 });
 /**
  * Sorts items.
- *
  * @param items - Items.
  * @param options - Options.
  * @param context - Context.
@@ -72,7 +70,9 @@ export const sort = defineFn(
 function sortGroup(items, options, context) {
     if (items.length >= 2) {
         const { _id } = options;
-        const sortedItems = a.sort(items.map((item, index) => ({ ...item, index })), (item1, item2) => compare(item1.key, item2.key));
+        const sortedItems = a.sort(items.map((item, index) => {
+            return { ...item, index };
+        }), (item1, item2) => compare(item1.key, item2.key));
         const fixes = [];
         let min;
         let max;
@@ -89,7 +89,7 @@ function sortGroup(items, options, context) {
                     text: context.getFullText(sortedItem.node)
                 });
             }
-        if (fixes.length) {
+        if (fixes.length > 0) {
             const loc = context.getLoc([
                 a.get(items, as.not.empty(min)).node.range[0],
                 a.get(items, as.not.empty(max)).node.range[1]

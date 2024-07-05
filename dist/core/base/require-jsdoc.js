@@ -72,15 +72,18 @@ exports.requireJsdoc = utils.createRule({
                 }
                 else
                     switch (node.type) {
-                        case utils_1.AST_NODE_TYPES.TSInterfaceDeclaration:
+                        case utils_1.AST_NODE_TYPES.TSInterfaceDeclaration: {
                             lintInterface(node);
                             break;
+                        }
                         case utils_1.AST_NODE_TYPES.MethodDefinition:
-                        case utils_1.AST_NODE_TYPES.TSMethodSignature:
+                        case utils_1.AST_NODE_TYPES.TSMethodSignature: {
                             lintMethod(node);
                             break;
-                        default:
+                        }
+                        default: {
                             lintNodeByTypeSymbol(node);
+                        }
                     }
             }
         };

@@ -94,7 +94,6 @@ export const noSiblingImport = utils.createRule({
 });
 /**
  * Finds index.
- *
  * @param str - String.
  * @param matchers - Matchers.
  * @returns Index.
@@ -104,7 +103,6 @@ function findIndex(str, matchers) {
 }
 /**
  * Finds last index.
- *
  * @param str - String.
  * @param matchers - Matchers.
  * @returns Index.

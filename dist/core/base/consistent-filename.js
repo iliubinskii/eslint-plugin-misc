@@ -89,7 +89,7 @@ exports.consistentFilename = utils.createRule({
         }), {
             "Program:exit": () => {
                 const { base: got } = node_path_1.default.parse(context.filename);
-                if (items.length) {
+                if (items.length > 0) {
                     const item = typescript_misc_1.a.last(items);
                     const { _id, format, match } = {
                         format: context.options.format,

@@ -9,7 +9,7 @@ exports.restrictIdentifierCharacters = utils.wrapRule({
     options: [
         {
             message: "Identifier must consist of english characters and dollar sign",
-            selector: "Identifier[name=/[^$\\w]/u]"
+            selector: String.raw `Identifier[name=/[^$\w]/u]`
         }
     ],
     docs: {

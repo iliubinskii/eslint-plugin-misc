@@ -65,7 +65,6 @@ export const consistentEnumMembers = utils.createRule({
 });
 /**
  * Compares items.
- *
  * @param item1 - First item.
  * @param item2 - Second item.
  * @returns - Comparison result.

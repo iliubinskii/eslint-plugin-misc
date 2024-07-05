@@ -1,7 +1,6 @@
 import type { IndexedRecord } from "typescript-misc";
 /**
  * Creates synonyms.
- *
  * @param config - Path to synonyms configuration.
  * @param core - Core rules.
  * @returns Synonyms.

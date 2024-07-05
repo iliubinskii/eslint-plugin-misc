@@ -5,7 +5,7 @@ export const consistentSymbolDescription = utils.wrapRule({
     options: [
         {
             message: "Prefer kebab-case symbol description",
-            selector: "CallExpression[callee.name=Symbol] > Literal:not([value=/^(?:[\\d\\-a-z]|__)+$/u])"
+            selector: String.raw `CallExpression[callee.name=Symbol] > Literal:not([value=/^(?:[\d\-a-z]|__)+$/u])`
         }
     ],
     docs: {

@@ -7,7 +7,6 @@ export class TypeCheck {
     checker;
     /**
      * Creates class instance.
-     *
      * @param context - Context.
      */
     constructor(context) {
@@ -20,7 +19,6 @@ export class TypeCheck {
     }
     /**
      * Extracts call signatures from node.
-     *
      * @param node - Node.
      * @returns Call signatures.
      */
@@ -30,7 +28,6 @@ export class TypeCheck {
     }
     /**
      * Extracts constructor type from node.
-     *
      * @param node - Node.
      * @returns Constructor type.
      */
@@ -42,7 +39,6 @@ export class TypeCheck {
     }
     /**
      * Determines contextual type of the node.
-     *
      * @param node - Node.
      * @returns Contextual type.
      */
@@ -54,7 +50,6 @@ export class TypeCheck {
     }
     /**
      * Extracts index info from type.
-     *
      * @param type - Type.
      * @param kind - Index kind.
      * @returns Index info.
@@ -64,7 +59,6 @@ export class TypeCheck {
     }
     /**
      * Extracts return type from signature.
-     *
      * @param signature - Signature.
      * @returns Return type.
      */
@@ -73,7 +67,6 @@ export class TypeCheck {
     }
     /**
      * Finds symbol at node location.
-     *
      * @param node - Node.
      * @returns Symbol.
      */
@@ -83,7 +76,6 @@ export class TypeCheck {
     }
     /**
      * Returns node type.
-     *
      * @param node - Node.
      * @returns Type.
      */
@@ -93,7 +85,6 @@ export class TypeCheck {
     }
     /**
      * Checks if mixed has doc comment.
-     *
      * @param mixed - Mixed.
      * @returns _True_ if mixed has doc comment, _false_ otherwise.
      */
@@ -102,7 +93,6 @@ export class TypeCheck {
     }
     /**
      * Checks if node is an array or a tuple.
-     *
      * @param node - Node.
      * @returns _True_ if node is an array or a tuple, _false_ otherwise.
      */
@@ -111,7 +101,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type is an array or a tuple.
-     *
      * @param type - Type.
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
@@ -120,7 +109,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type is an array.
-     *
      * @param type - Type.
      * @returns _True_ if type is an array, _false_ otherwise.
      */
@@ -129,7 +117,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type is enum literal.
-     *
      * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is enum literal, _false_ otherwise.
@@ -140,7 +127,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type is an object.
-     *
      * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is an object, _false_ otherwise.
@@ -150,7 +136,6 @@ export class TypeCheck {
     }
     /**
      * Checks if property is readonly in type.
-     *
      * @param property - Property.
      * @param type - Type.
      * @returns _True_ if property is readonly in type, _false_ otherwise.
@@ -160,7 +145,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type is safe boolean condition.
-     *
      * @param type - Type.
      * @returns _True_ if type is safe boolean condition, _false_ otherwise.
      */
@@ -182,7 +166,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type is an array or a tuple.
-     *
      * @param type - Type.
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
@@ -191,7 +174,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type is undefined.
-     *
      * @param this - No this.
      * @param type - Type.
      * @returns _True_ if type is undefined, _false_ otherwise.
@@ -202,7 +184,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type contains type group.
-     *
      * @param type - Type.
      * @param expected - Expected type group.
      * @returns _True_ if type contains type group, _false_ otherwise.
@@ -216,7 +197,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type contains none of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type contains none of type groups, _false_ otherwise.
@@ -226,7 +206,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type contains one of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type contains one of type groups, _false_ otherwise.
@@ -236,7 +215,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type belongs to type group.
-     *
      * @param type - Type.
      * @param expected - Expected type group.
      * @returns _True_ if type belongs to type group, _false_ otherwise.
@@ -244,14 +222,18 @@ export class TypeCheck {
     typeIs(type, expected) {
         if (expected)
             switch (expected) {
-                case TypeGroup.any:
+                case TypeGroup.any: {
                     return checkTypeFlags(type, ts.TypeFlags.Any);
-                case TypeGroup.array:
+                }
+                case TypeGroup.array: {
                     return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.isArrayType(type));
-                case TypeGroup.arrayOrTuple:
+                }
+                case TypeGroup.arrayOrTuple: {
                     return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.isArrayOrTupleType(type));
-                case TypeGroup.boolean:
+                }
+                case TypeGroup.boolean: {
                     return checkTypeFlags(type, ts.TypeFlags.Boolean, ts.TypeFlags.BooleanLike, ts.TypeFlags.BooleanLiteral);
+                }
                 case TypeGroup.complex: {
                     if (this.isArrayOrTupleType(type)) {
                         const subtypes = type.typeArguments;
@@ -266,40 +248,51 @@ export class TypeCheck {
                             checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object)
                         : false;
                 }
-                case TypeGroup.function:
+                case TypeGroup.function: {
                     return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && type.getCallSignatures().length > 0);
-                case TypeGroup.never:
+                }
+                case TypeGroup.never: {
                     return checkTypeFlags(type, ts.TypeFlags.Never);
-                case TypeGroup.null:
+                }
+                case TypeGroup.null: {
                     return checkTypeFlags(type, ts.TypeFlags.Null);
-                case TypeGroup.number:
+                }
+                case TypeGroup.number: {
                     return checkTypeFlags(type, ts.TypeFlags.Number, ts.TypeFlags.NumberLike, ts.TypeFlags.NumberLiteral);
-                case TypeGroup.object:
+                }
+                case TypeGroup.object: {
                     return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) &&
                         !this.typeIs(type, TypeGroup.arrayOrTuple) &&
                         !this.typeIs(type, TypeGroup.function));
-                case TypeGroup.parameter:
+                }
+                case TypeGroup.parameter: {
                     return type.isTypeParameter();
-                case TypeGroup.readonly:
+                }
+                case TypeGroup.readonly: {
                     return type
                         .getProperties()
                         .some(property => tsutils.isPropertyReadonlyInType(type, property.getEscapedName(), this.checker));
-                case TypeGroup.string:
+                }
+                case TypeGroup.string: {
                     return checkTypeFlags(type, ts.TypeFlags.String, ts.TypeFlags.StringLike, ts.TypeFlags.StringLiteral);
-                case TypeGroup.symbol:
+                }
+                case TypeGroup.symbol: {
                     return checkTypeFlags(type, ts.TypeFlags.ESSymbol, ts.TypeFlags.ESSymbolLike, ts.TypeFlags.UniqueESSymbol);
-                case TypeGroup.tuple:
+                }
+                case TypeGroup.tuple: {
                     return (checkTypeFlags(type, ts.TypeFlags.NonPrimitive, ts.TypeFlags.Object) && this.isTupleType(type));
-                case TypeGroup.undefined:
+                }
+                case TypeGroup.undefined: {
                     return checkTypeFlags(type, ts.TypeFlags.Undefined);
-                case TypeGroup.unknown:
+                }
+                case TypeGroup.unknown: {
                     return checkTypeFlags(type, ts.TypeFlags.Unknown);
+                }
             }
         return true;
     }
     /**
      * Checks if type belongs to none of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type belongs to none of type groups, _false_ otherwise.
@@ -309,7 +302,6 @@ export class TypeCheck {
     }
     /**
      * Checks if type belongs to one of type groups.
-     *
      * @param type - Type.
      * @param expected - Expected type groups.
      * @returns _True_ if type belongs to one of type groups, _false_ otherwise.
@@ -319,7 +311,6 @@ export class TypeCheck {
     }
     /**
      * Extracts type parts from node.
-     *
      * @param node - Node.
      * @returns Type parts.
      */
@@ -333,7 +324,6 @@ export class TypeCheck {
     toTsNode;
     /**
      * Extracts type parts from node.
-     *
      * @param node - Node.
      * @returns Type parts.
      */
@@ -351,39 +341,45 @@ export class TypeCheck {
     }
     /**
      * Extracts type parts from node.
-     *
      * @param node - Node.
      * @returns Type parts.
      */
     typePartsTypeof(node) {
         return recurs(this.checker.getTypeAtLocation(this.toTsNode(node.argument)));
         function recurs(type) {
-            if (type.getCallSignatures().length ||
-                type.getConstructSignatures().length)
+            if (type.getCallSignatures().length > 0 ||
+                type.getConstructSignatures().length > 0)
                 return ["function"];
             if (type.isUnion())
                 return tsutils.unionTypeParts(type).flatMap(part => recurs(part));
             switch (as.byGuard(type.flags, isExpectedFlags)) {
                 case ts.TypeFlags.BigInt:
-                case ts.TypeFlags.BigIntLiteral:
+                case ts.TypeFlags.BigIntLiteral: {
                     return ["bigint"];
-                case ts.TypeFlags.BooleanLiteral:
+                }
+                case ts.TypeFlags.BooleanLiteral: {
                     return ["boolean"];
+                }
                 case ts.TypeFlags.Number:
-                case ts.TypeFlags.NumberLiteral:
+                case ts.TypeFlags.NumberLiteral: {
                     return ["number"];
+                }
                 case ts.TypeFlags.Null:
-                case ts.TypeFlags.Object:
+                case ts.TypeFlags.Object: {
                     return ["object"];
+                }
                 case ts.TypeFlags.String:
-                case ts.TypeFlags.StringLiteral:
+                case ts.TypeFlags.StringLiteral: {
                     return ["string"];
+                }
                 case ts.TypeFlags.ESSymbol:
-                case ts.TypeFlags.UniqueESSymbol:
+                case ts.TypeFlags.UniqueESSymbol: {
                     return ["symbol"];
+                }
                 case ts.TypeFlags.Undefined:
-                case ts.TypeFlags.Void:
+                case ts.TypeFlags.Void: {
                     return ["undefined"];
+                }
             }
         }
     }
@@ -421,7 +417,6 @@ const safeBooleanWithUndefined = new ReadonlySet([
 ]);
 /**
  * Checks type flags.
- *
  * @param type - Type.
  * @param flags - Flags.
  * @returns _True_ if type has one of given flags, _false_ otherwise.
@@ -439,7 +434,6 @@ function checkTypeFlags(type, ...flags) {
 }
 /**
  * Checks if value type is ExpectedFlags.
- *
  * @param value - Value.
  * @returns _True_ if value type is ExpectedFlags, _false_ otherwise.
  */

@@ -1,6 +1,5 @@
 /**
  * Compares two strings.
- *
  * @param x - First value.
  * @param y - Second value.
  * @returns Comparison result.

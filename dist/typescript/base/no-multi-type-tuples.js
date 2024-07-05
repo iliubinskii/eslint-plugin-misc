@@ -16,11 +16,13 @@ exports.noMultiTypeTuples = utils.createRule({
         failExamples: "type T = [string, number];",
         passExamples: "type T = [string, string];"
     },
-    create: (context) => ({
-        TSTupleType: node => {
-            if (_.uniq(node.elementTypes.map(context.getText)).length > 1)
-                context.report({ messageId: MessageId.multiTypeTuple, node });
-        }
-    })
+    create: (context) => {
+        return {
+            TSTupleType: node => {
+                if (_.uniq(node.elementTypes.map(context.getText)).length > 1)
+                    context.report({ messageId: MessageId.multiTypeTuple, node });
+            }
+        };
+    }
 });
 //# sourceMappingURL=no-multi-type-tuples.js.map

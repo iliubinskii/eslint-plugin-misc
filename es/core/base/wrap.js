@@ -93,10 +93,10 @@ export const wrap = utils.createRule({
             }
         }, {
             "Program:exit": () => {
-                const lintMatcher = lintIds.length
+                const lintMatcher = lintIds.length > 0
                     ? (report) => "node" in report && lintIds.includes(nodeId(report.node))
                     : () => true;
-                const skipMatcher = skipIds.length
+                const skipMatcher = skipIds.length > 0
                     ? (report) => "node" in report && skipIds.includes(nodeId(report.node))
                     : () => false;
                 for (const report of reports)
@@ -114,7 +114,7 @@ export const wrap = utils.createRule({
                                 message: message ??
                                     as.not
                                         .empty(rule.meta.messages[messageId])
-                                        .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
+                                        .replaceAll(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
                                         const result = data[match1];
                                         return as.numStr(result).toString();
                                     })
@@ -130,7 +130,6 @@ export const wrap = utils.createRule({
 });
 /**
  * Generates node ID.
- *
  * @param node - Node.
  * @returns Node ID.
  */

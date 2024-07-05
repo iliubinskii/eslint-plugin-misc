@@ -120,13 +120,16 @@ export const consistentEmptyLines = evaluate(() => {
                         else {
                             const spread = evaluate(() => {
                                 switch (emptyLine) {
-                                    case EmptyLine.always:
+                                    case EmptyLine.always: {
                                         return true;
-                                    case EmptyLine.commented:
+                                    }
+                                    case EmptyLine.commented: {
                                         return (context.hasComments(node) ||
                                             context.hasComments(prevNode));
-                                    case EmptyLine.never:
+                                    }
+                                    case EmptyLine.never: {
                                         return false;
+                                    }
                                 }
                             });
                             const messageId = spread
@@ -143,7 +146,9 @@ export const consistentEmptyLines = evaluate(() => {
                                 else
                                     context.report({
                                         data: { _id },
-                                        fix: () => ({ range, text: expected }),
+                                        fix: () => {
+                                            return { range, text: expected };
+                                        },
                                         messageId,
                                         node
                                     });
@@ -157,7 +162,6 @@ export const consistentEmptyLines = evaluate(() => {
 });
 /**
  * Compares items.
- *
  * @param item1 - First item.
  * @param item2 - Second item.
  * @returns - Comparison result.

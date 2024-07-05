@@ -13,7 +13,6 @@ var MessageId;
 exports.sort = (0, typescript_misc_1.defineFn)(
 /**
  * Sorts nodes.
- *
  * @param nodes - Nodes.
  * @param context - Context.
  * @param options - Options.
@@ -67,7 +66,6 @@ exports.sort = (0, typescript_misc_1.defineFn)(
 });
 /**
  * Sorts items.
- *
  * @param items - Items.
  * @param options - Options.
  * @param context - Context.
@@ -75,7 +73,9 @@ exports.sort = (0, typescript_misc_1.defineFn)(
 function sortGroup(items, options, context) {
     if (items.length >= 2) {
         const { _id } = options;
-        const sortedItems = typescript_misc_1.a.sort(items.map((item, index) => ({ ...item, index })), (item1, item2) => (0, compare_1.compare)(item1.key, item2.key));
+        const sortedItems = typescript_misc_1.a.sort(items.map((item, index) => {
+            return { ...item, index };
+        }), (item1, item2) => (0, compare_1.compare)(item1.key, item2.key));
         const fixes = [];
         let min;
         let max;
@@ -92,7 +92,7 @@ function sortGroup(items, options, context) {
                     text: context.getFullText(sortedItem.node)
                 });
             }
-        if (fixes.length) {
+        if (fixes.length > 0) {
             const loc = context.getLoc([
                 typescript_misc_1.a.get(items, typescript_misc_1.as.not.empty(min)).node.range[0],
                 typescript_misc_1.a.get(items, typescript_misc_1.as.not.empty(max)).node.range[1]

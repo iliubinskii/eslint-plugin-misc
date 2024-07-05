@@ -45,7 +45,6 @@ export type FilePattern = a.Mixed<string>;
 export interface Matcher {
     /**
      * Checks if string matches condition.
-     *
      * @param str - String.
      * @returns _True_ if string matches condition, _false_ otherwise.
      */

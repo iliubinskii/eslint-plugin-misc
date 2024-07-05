@@ -17,31 +17,33 @@ export const arrayCallbackReturnType = utils.createRule({
       [false].every(x => x);
     `
     },
-    create: (context, typeCheck) => ({
-        CallExpression: node => {
-            const { callee } = node;
-            if (callee.type === AST_NODE_TYPES.MemberExpression &&
-                callee.property.type === AST_NODE_TYPES.Identifier &&
-                arrayCallbacks.has(callee.property.name) &&
-                typeCheck.isArrayOrTuple(callee.object)) {
-                const argument = node.arguments[0];
-                if (argument) {
-                    const isSafeBooleanCondition = typeCheck
-                        .getCallSignatures(argument)
-                        .map(typeCheck.getReturnType)
-                        .every(typeCheck.isSafeBooleanCondition);
-                    if (isSafeBooleanCondition) {
-                        // Valid
+    create: (context, typeCheck) => {
+        return {
+            CallExpression: node => {
+                const { callee } = node;
+                if (callee.type === AST_NODE_TYPES.MemberExpression &&
+                    callee.property.type === AST_NODE_TYPES.Identifier &&
+                    arrayCallbacks.has(callee.property.name) &&
+                    typeCheck.isArrayOrTuple(callee.object)) {
+                    const argument = node.arguments[0];
+                    if (argument) {
+                        const isSafeBooleanCondition = typeCheck
+                            .getCallSignatures(argument)
+                            .map(typeCheck.getReturnType)
+                            .every(typeCheck.isSafeBooleanCondition);
+                        if (isSafeBooleanCondition) {
+                            // Valid
+                        }
+                        else
+                            context.report({
+                                messageId: MessageId.invalidType,
+                                node: argument
+                            });
                     }
-                    else
-                        context.report({
-                            messageId: MessageId.invalidType,
-                            node: argument
-                        });
                 }
             }
-        }
-    })
+        };
+    }
 });
 const arrayCallbacks = new ReadonlySet(["some", "every"]);
 //# sourceMappingURL=array-callback-return-type.js.map

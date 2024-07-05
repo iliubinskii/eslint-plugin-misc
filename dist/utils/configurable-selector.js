@@ -6,7 +6,6 @@ const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const typescript_misc_1 = require("typescript-misc");
 /**
  * Creates selector.
- *
  * @param options - Options.
  * @param defaultSelectors - Default selectors.
  * @returns Selector.

@@ -78,11 +78,13 @@ export const sortClassMembers = utils.createRule({
                 case AST_NODE_TYPES.PropertyDefinition:
                 case AST_NODE_TYPES.TSAbstractAccessorProperty:
                 case AST_NODE_TYPES.TSAbstractMethodDefinition:
-                case AST_NODE_TYPES.TSAbstractPropertyDefinition:
+                case AST_NODE_TYPES.TSAbstractPropertyDefinition: {
                     return utils.nodeText(node.key, () => context.getText(node.key));
+                }
                 case AST_NODE_TYPES.StaticBlock:
-                case AST_NODE_TYPES.TSIndexSignature:
+                case AST_NODE_TYPES.TSIndexSignature: {
                     return "";
+                }
             }
         }
     }
@@ -115,7 +117,6 @@ const functionExpressions = new ReadonlySet([
 ]);
 /**
  * Returns member accessibility.
- *
  * @param node - Node.
  * @returns Member accessibility.
  */
@@ -127,37 +128,42 @@ function getMemberAccessibility(node) {
         case AST_NODE_TYPES.TSAbstractAccessorProperty:
         case AST_NODE_TYPES.TSAbstractMethodDefinition:
         case AST_NODE_TYPES.TSAbstractPropertyDefinition:
-        case AST_NODE_TYPES.TSIndexSignature:
+        case AST_NODE_TYPES.TSIndexSignature: {
             return node.accessibility ?? "public";
-        case AST_NODE_TYPES.StaticBlock:
+        }
+        case AST_NODE_TYPES.StaticBlock: {
             return "public";
+        }
     }
 }
 /**
  * Returns member accessor type.
- *
  * @param node - Node.
  * @returns Member accessor type.
  */
 function getMemberAccessorType(node) {
     switch (node.type) {
         case AST_NODE_TYPES.MethodDefinition:
-        case AST_NODE_TYPES.TSAbstractMethodDefinition:
+        case AST_NODE_TYPES.TSAbstractMethodDefinition: {
             switch (node.kind) {
-                case "get":
+                case "get": {
                     return AccessorType.get;
-                case "set":
+                }
+                case "set": {
                     return AccessorType.set;
-                default:
+                }
+                default: {
                     return AccessorType.none;
+                }
             }
-        default:
+        }
+        default: {
             return AccessorType.none;
+        }
     }
 }
 /**
  * Returns member dynamic/static state.
- *
  * @param node - Node.
  * @returns Member dynamic/static state.
  */
@@ -169,47 +175,58 @@ function getMemberDynamicStatic(node) {
         case AST_NODE_TYPES.TSAbstractAccessorProperty:
         case AST_NODE_TYPES.TSAbstractMethodDefinition:
         case AST_NODE_TYPES.TSAbstractPropertyDefinition:
-        case AST_NODE_TYPES.TSIndexSignature:
+        case AST_NODE_TYPES.TSIndexSignature: {
             return node.static ? DynamicStatic.static : DynamicStatic.dynamic;
-        case AST_NODE_TYPES.StaticBlock:
+        }
+        case AST_NODE_TYPES.StaticBlock: {
             return DynamicStatic.static;
+        }
     }
 }
 /**
  * Returns member types.
- *
  * @param node - Node.
  * @returns Member types.
  */
 function getMemberTypes(node) {
     switch (node.type) {
         case AST_NODE_TYPES.AccessorProperty:
-        case AST_NODE_TYPES.TSAbstractAccessorProperty:
+        case AST_NODE_TYPES.TSAbstractAccessorProperty: {
             return [Type.accessor];
+        }
         case AST_NODE_TYPES.MethodDefinition:
-        case AST_NODE_TYPES.TSAbstractMethodDefinition:
+        case AST_NODE_TYPES.TSAbstractMethodDefinition: {
             return evaluate(() => {
                 switch (node.kind) {
-                    case "constructor":
+                    case "constructor": {
                         return [Type.constructor];
-                    case "get":
+                    }
+                    case "get": {
                         return [Type.accessor, Type.get];
-                    case "method":
+                    }
+                    case "method": {
                         return [Type.method];
-                    case "set":
+                    }
+                    case "set": {
                         return [Type.accessor, Type.set];
+                    }
                 }
             });
-        case AST_NODE_TYPES.PropertyDefinition:
+        }
+        case AST_NODE_TYPES.PropertyDefinition: {
             return node.value && functionExpressions.has(node.value.type)
                 ? [Type.method]
                 : [Type.field];
-        case AST_NODE_TYPES.TSAbstractPropertyDefinition:
+        }
+        case AST_NODE_TYPES.TSAbstractPropertyDefinition: {
             return [Type.field];
-        case AST_NODE_TYPES.TSIndexSignature:
+        }
+        case AST_NODE_TYPES.TSIndexSignature: {
             return [Type.signature];
-        case AST_NODE_TYPES.StaticBlock:
+        }
+        case AST_NODE_TYPES.StaticBlock: {
             return [Type.block];
+        }
     }
 }
 //# sourceMappingURL=sort-class-members.js.map

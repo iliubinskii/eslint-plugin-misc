@@ -177,7 +177,7 @@ exports.consistentImport = utils.createRule({
             }
         };
         function expectedLocalName(localName, altLocalNames) {
-            return identifiers.has(localName) && altLocalNames.length
+            return identifiers.has(localName) && altLocalNames.length > 0
                 ? altLocalNames.join(", ")
                 : localName;
         }
@@ -214,7 +214,7 @@ exports.consistentImport = utils.createRule({
                         .filter(typescript_misc_1.is.not.empty)
                     : [];
             }));
-            if (fixes.length)
+            if (fixes.length > 0)
                 context.report({
                     fix: () => {
                         const fix = fixes.join(eol);

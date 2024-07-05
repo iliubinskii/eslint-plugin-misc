@@ -5,7 +5,7 @@ export const consistentSourceExtension = utils.wrapRule({
     options: [
         {
             message: "Remove extension",
-            selector: "Literal.source[value=/\\.(?:js|json|ts)$/u]"
+            selector: String.raw `Literal.source[value=/\.(?:js|json|ts)$/u]`
         }
     ],
     docs: {

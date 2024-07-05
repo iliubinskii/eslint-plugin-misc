@@ -13,14 +13,15 @@ const typescript_misc_1 = require("typescript-misc");
 const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
 /**
  * Creates synonyms.
- *
  * @param config - Path to synonyms configuration.
  * @param core - Core rules.
  * @returns Synonyms.
  */
 function getSynonyms(config, core) {
     if (node_fs_1.default.existsSync(config)) {
-        const items = typescript_misc_1.o.entries(core).map(([name, rule]) => ({ name, rule }));
+        const items = typescript_misc_1.o.entries(core).map(([name, rule]) => {
+            return { name, rule };
+        });
         const synonyms = require(node_fs_1.default.realpathSync(config));
         typescript_misc_1.assert.array.of(synonyms, typescript_misc_1.is.string, "Expecting array of strings");
         const entries = synonyms

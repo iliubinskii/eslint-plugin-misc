@@ -82,11 +82,13 @@ exports.sortClassMembers = utils.createRule({
                 case utils_1.AST_NODE_TYPES.PropertyDefinition:
                 case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
                 case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
-                case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
+                case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition: {
                     return utils.nodeText(node.key, () => context.getText(node.key));
+                }
                 case utils_1.AST_NODE_TYPES.StaticBlock:
-                case utils_1.AST_NODE_TYPES.TSIndexSignature:
+                case utils_1.AST_NODE_TYPES.TSIndexSignature: {
                     return "";
+                }
             }
         }
     }
@@ -119,7 +121,6 @@ const functionExpressions = new typescript_misc_1.ReadonlySet([
 ]);
 /**
  * Returns member accessibility.
- *
  * @param node - Node.
  * @returns Member accessibility.
  */
@@ -131,37 +132,42 @@ function getMemberAccessibility(node) {
         case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
-        case utils_1.AST_NODE_TYPES.TSIndexSignature:
+        case utils_1.AST_NODE_TYPES.TSIndexSignature: {
             return node.accessibility ?? "public";
-        case utils_1.AST_NODE_TYPES.StaticBlock:
+        }
+        case utils_1.AST_NODE_TYPES.StaticBlock: {
             return "public";
+        }
     }
 }
 /**
  * Returns member accessor type.
- *
  * @param node - Node.
  * @returns Member accessor type.
  */
 function getMemberAccessorType(node) {
     switch (node.type) {
         case utils_1.AST_NODE_TYPES.MethodDefinition:
-        case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
+        case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition: {
             switch (node.kind) {
-                case "get":
+                case "get": {
                     return AccessorType.get;
-                case "set":
+                }
+                case "set": {
                     return AccessorType.set;
-                default:
+                }
+                default: {
                     return AccessorType.none;
+                }
             }
-        default:
+        }
+        default: {
             return AccessorType.none;
+        }
     }
 }
 /**
  * Returns member dynamic/static state.
- *
  * @param node - Node.
  * @returns Member dynamic/static state.
  */
@@ -173,47 +179,58 @@ function getMemberDynamicStatic(node) {
         case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
-        case utils_1.AST_NODE_TYPES.TSIndexSignature:
+        case utils_1.AST_NODE_TYPES.TSIndexSignature: {
             return node.static ? DynamicStatic.static : DynamicStatic.dynamic;
-        case utils_1.AST_NODE_TYPES.StaticBlock:
+        }
+        case utils_1.AST_NODE_TYPES.StaticBlock: {
             return DynamicStatic.static;
+        }
     }
 }
 /**
  * Returns member types.
- *
  * @param node - Node.
  * @returns Member types.
  */
 function getMemberTypes(node) {
     switch (node.type) {
         case utils_1.AST_NODE_TYPES.AccessorProperty:
-        case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty:
+        case utils_1.AST_NODE_TYPES.TSAbstractAccessorProperty: {
             return [Type.accessor];
+        }
         case utils_1.AST_NODE_TYPES.MethodDefinition:
-        case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
+        case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition: {
             return (0, typescript_misc_1.evaluate)(() => {
                 switch (node.kind) {
-                    case "constructor":
+                    case "constructor": {
                         return [Type.constructor];
-                    case "get":
+                    }
+                    case "get": {
                         return [Type.accessor, Type.get];
-                    case "method":
+                    }
+                    case "method": {
                         return [Type.method];
-                    case "set":
+                    }
+                    case "set": {
                         return [Type.accessor, Type.set];
+                    }
                 }
             });
-        case utils_1.AST_NODE_TYPES.PropertyDefinition:
+        }
+        case utils_1.AST_NODE_TYPES.PropertyDefinition: {
             return node.value && functionExpressions.has(node.value.type)
                 ? [Type.method]
                 : [Type.field];
-        case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
+        }
+        case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition: {
             return [Type.field];
-        case utils_1.AST_NODE_TYPES.TSIndexSignature:
+        }
+        case utils_1.AST_NODE_TYPES.TSIndexSignature: {
             return [Type.signature];
-        case utils_1.AST_NODE_TYPES.StaticBlock:
+        }
+        case utils_1.AST_NODE_TYPES.StaticBlock: {
             return [Type.block];
+        }
     }
 }
 //# sourceMappingURL=sort-class-members.js.map

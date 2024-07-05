@@ -25,51 +25,54 @@ exports.templateLiteralFormat = utils.createRule({
       \`;
     `
     },
-    create: (context) => ({
-        TemplateLiteral: node => {
-            const lines = typescript_misc_1.s.lines(context.getText(node));
-            if (lines.length > 1) {
-                const firstLine = typescript_misc_1.a.first(lines);
-                const middleLines = lines.slice(1, -1);
-                const nonEmptyMiddleLines = middleLines.filter(line => line.length);
-                const lastLine = typescript_misc_1.a.last(lines);
-                if (firstLine === "`" &&
-                    nonEmptyMiddleLines.length &&
-                    lastLine.trimStart() === "`") {
-                    const firstPadding = typescript_misc_1.fn.pipe(context.getText([0, node.range[0]]), typescript_misc_1.s.lines, typescript_misc_1.a.last, typescript_misc_1.s.leadingSpaces).length;
-                    const middlePadding = Math.min(...nonEmptyMiddleLines.map(line => typescript_misc_1.s.leadingSpaces(line).length));
-                    const middleDelta = firstPadding - middlePadding + 2;
-                    const lastPadding = typescript_misc_1.s.leadingSpaces(lastLine).length;
-                    const lastDelta = firstPadding - lastPadding;
-                    if (middleDelta || lastDelta)
-                        context.report({
-                            fix: () => ({
-                                range: node.range,
-                                text: [
-                                    firstLine,
-                                    ...middleLines.map(line => pad(line, middleDelta)),
-                                    pad(lastLine, lastDelta)
-                                ].join(context.eol)
-                            }),
-                            messageId: MessageId.invalidFormat,
-                            node
-                        });
+    create: (context) => {
+        return {
+            TemplateLiteral: node => {
+                const lines = typescript_misc_1.s.lines(context.getText(node));
+                if (lines.length > 1) {
+                    const firstLine = typescript_misc_1.a.first(lines);
+                    const middleLines = lines.slice(1, -1);
+                    const nonEmptyMiddleLines = middleLines.filter(line => line.length);
+                    const lastLine = typescript_misc_1.a.last(lines);
+                    if (firstLine === "`" &&
+                        nonEmptyMiddleLines.length > 0 &&
+                        lastLine.trimStart() === "`") {
+                        const firstPadding = typescript_misc_1.fn.pipe(context.getText([0, node.range[0]]), typescript_misc_1.s.lines, typescript_misc_1.a.last, typescript_misc_1.s.leadingSpaces).length;
+                        const middlePadding = Math.min(...nonEmptyMiddleLines.map(line => typescript_misc_1.s.leadingSpaces(line).length));
+                        const middleDelta = firstPadding - middlePadding + 2;
+                        const lastPadding = typescript_misc_1.s.leadingSpaces(lastLine).length;
+                        const lastDelta = firstPadding - lastPadding;
+                        if (middleDelta || lastDelta)
+                            context.report({
+                                fix: () => {
+                                    return {
+                                        range: node.range,
+                                        text: [
+                                            firstLine,
+                                            ...middleLines.map(line => pad(line, middleDelta)),
+                                            pad(lastLine, lastDelta)
+                                        ].join(context.eol)
+                                    };
+                                },
+                                messageId: MessageId.invalidFormat,
+                                node
+                            });
+                    }
+                    else
+                        context.report({ messageId: MessageId.invalidFormat, node });
                 }
-                else
-                    context.report({ messageId: MessageId.invalidFormat, node });
             }
-        }
-    })
+        };
+    }
 });
 /**
  * Pads line.
- *
  * @param line - Line.
  * @param delta - The number of spaces to add/remove.
  * @returns Padded line.
  */
 function pad(line, delta) {
-    return line.length
+    return line.length > 0
         ? " ".repeat(typescript_misc_1.s.leadingSpaces(line).length + delta) + line.trimStart()
         : line;
 }

@@ -26,24 +26,28 @@ export const sortTopComments = utils.createRule({
       // Comment 4
     `
     },
-    create: (context) => ({
-        "Program:exit": (node) => {
-            const texts = context.getComments(node);
-            const got = texts.join("\n");
-            const expected = a.sort(texts, utils.compare).join("\n");
-            if (got === expected) {
-                // Valid
+    create: (context) => {
+        return {
+            "Program:exit": (node) => {
+                const texts = context.getComments(node);
+                const got = texts.join("\n");
+                const expected = a.sort(texts, utils.compare).join("\n");
+                if (got === expected) {
+                    // Valid
+                }
+                else {
+                    const ranges = context.getCommentRanges(node);
+                    const range = [a.first(ranges)[0], a.last(ranges)[1]];
+                    context.report({
+                        fix: () => {
+                            return { range, text: expected };
+                        },
+                        loc: context.getLoc(range),
+                        messageId: MessageId.incorrectSorting
+                    });
+                }
             }
-            else {
-                const ranges = context.getCommentRanges(node);
-                const range = [a.first(ranges)[0], a.last(ranges)[1]];
-                context.report({
-                    fix: () => ({ range, text: expected }),
-                    loc: context.getLoc(range),
-                    messageId: MessageId.incorrectSorting
-                });
-            }
-        }
-    })
+        };
+    }
 });
 //# sourceMappingURL=sort-top-comments.js.map

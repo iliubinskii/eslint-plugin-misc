@@ -46,35 +46,38 @@ exports.commentSpacing = utils.createRule({
       function h() {}
     `
     },
-    create: (context) => ({
-        ":statement, TSDeclareFunction, TSExportAssignment": (node) => {
-            for (const range of context.getCommentRanges(node)) {
-                const multiline = isMultiline(context.getText(range));
-                const nextMultiline = isMultiline(context.getText(range[1]));
-                const spread = multiline && !nextMultiline;
-                const got = typescript_misc_1.s.leadingSpaces(context.getText(range[1]));
-                const expected = context.eol.repeat(spread ? 2 : 1) + typescript_misc_1.s.trimLeadingEmptyLines(got);
-                if (got === expected) {
-                    // Valid
+    create: (context) => {
+        return {
+            ":statement, TSDeclareFunction, TSExportAssignment": (node) => {
+                for (const range of context.getCommentRanges(node)) {
+                    const multiline = isMultiline(context.getText(range));
+                    const nextMultiline = isMultiline(context.getText(range[1]));
+                    const spread = multiline && !nextMultiline;
+                    const got = typescript_misc_1.s.leadingSpaces(context.getText(range[1]));
+                    const expected = context.eol.repeat(spread ? 2 : 1) + typescript_misc_1.s.trimLeadingEmptyLines(got);
+                    if (got === expected) {
+                        // Valid
+                    }
+                    else
+                        context.report({
+                            fix: () => {
+                                return {
+                                    range: [range[1], range[1] + got.length],
+                                    text: expected
+                                };
+                            },
+                            loc: context.getLoc(range),
+                            messageId: spread
+                                ? MessageId.addEmptyLine
+                                : MessageId.removeEmptyLine
+                        });
                 }
-                else
-                    context.report({
-                        fix: () => ({
-                            range: [range[1], range[1] + got.length],
-                            text: expected
-                        }),
-                        loc: context.getLoc(range),
-                        messageId: spread
-                            ? MessageId.addEmptyLine
-                            : MessageId.removeEmptyLine
-                    });
             }
-        }
-    })
+        };
+    }
 });
 /**
  * Checks if string starts with multiline comment.
- *
  * @param str - String.
  * @returns _True_ if string starts with multiline comment, _false_ otherwise.
  */

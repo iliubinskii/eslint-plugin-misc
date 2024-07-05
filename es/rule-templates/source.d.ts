@@ -10,7 +10,6 @@ export declare const create: ((callback: Callback) => RuleListener) & Readonly<{
 export interface Callback {
     /**
      * Callback.
-     *
      * @param ctx - Context.
      */
     (ctx: Ctx): void;

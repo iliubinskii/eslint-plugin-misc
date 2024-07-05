@@ -2,7 +2,6 @@ import type * as utils from "../utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 /**
  * Creates rule listener.
- *
  * @param callback - Callback.
  * @returns Rule listener.
  */
@@ -10,7 +9,6 @@ export declare function create(callback: Callback): RuleListener;
 export interface Callback {
     /**
      * Callback.
-     *
      * @param ctx - Context.
      */
     (ctx: Ctx): void;

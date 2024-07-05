@@ -12,15 +12,16 @@ exports.sortExportSpecifiers = utils.createRule({
         failExamples: "export { b, a };",
         passExamples: "export { a, b };"
     },
-    create: (context) => ({
-        ExportNamedDeclaration: node => {
-            utils.sort(node.specifiers, context, { keyNode });
-        }
-    })
+    create: (context) => {
+        return {
+            ExportNamedDeclaration: node => {
+                utils.sort(node.specifiers, context, { keyNode });
+            }
+        };
+    }
 });
 /**
  * Returns key node.
- *
  * @param node - Node.
  * @returns Key node.
  */

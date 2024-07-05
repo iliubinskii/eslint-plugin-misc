@@ -85,7 +85,7 @@ export const consistentFilename = utils.createRule({
         }), {
             "Program:exit": () => {
                 const { base: got } = path.parse(context.filename);
-                if (items.length) {
+                if (items.length > 0) {
                     const item = a.last(items);
                     const { _id, format, match } = {
                         format: context.options.format,

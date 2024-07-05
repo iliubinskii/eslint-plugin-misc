@@ -72,17 +72,20 @@ exports.sortArray = utils.createRule({
         };
         function keyNode(node) {
             switch (node.type) {
-                case utils_1.AST_NODE_TYPES.ObjectExpression:
+                case utils_1.AST_NODE_TYPES.ObjectExpression: {
                     if (typescript_misc_1.is.not.empty(sortKey))
                         for (const property of node.properties)
                             if (property.type === utils_1.AST_NODE_TYPES.Property &&
                                 utils.nodeText(property.key, "?") === sortKey)
                                 return property.value;
                     return node;
-                case utils_1.AST_NODE_TYPES.SpreadElement:
+                }
+                case utils_1.AST_NODE_TYPES.SpreadElement: {
                     return undefined;
-                default:
+                }
+                default: {
                     return node;
+                }
             }
         }
     }

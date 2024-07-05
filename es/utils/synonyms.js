@@ -9,14 +9,15 @@ import { assert, is, o } from "typescript-misc";
 import fs from "node:fs";
 /**
  * Creates synonyms.
- *
  * @param config - Path to synonyms configuration.
  * @param core - Core rules.
  * @returns Synonyms.
  */
 export function getSynonyms(config, core) {
     if (fs.existsSync(config)) {
-        const items = o.entries(core).map(([name, rule]) => ({ name, rule }));
+        const items = o.entries(core).map(([name, rule]) => {
+            return { name, rule };
+        });
         const synonyms = require(fs.realpathSync(config));
         assert.array.of(synonyms, is.string, "Expecting array of strings");
         const entries = synonyms

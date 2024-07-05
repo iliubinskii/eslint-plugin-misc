@@ -27,7 +27,7 @@
     "/src"
   ],
   "scripts": {
-    "prepare-next-version": "run-s type-check format lint test build-commonjs build-es build-doc && git add . && git commit -m \"build: Next version\"",
+    "prepare-next-version": "run-s type-check format lint test build-commonjs build-es build-doc && git add . && git commit -m \"build: Prepare next version\"",
     "build-commonjs": "cf dist && tsc --project tsconfig-build.json",
     "build-doc": "cf docs && tsx utils/build-doc.ts && cpy assets/docs/static/* docs",
     "build-es": "cf es && tsc --project tsconfig-build-es.json",

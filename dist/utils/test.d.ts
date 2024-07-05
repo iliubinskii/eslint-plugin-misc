@@ -2,14 +2,12 @@ import type { InvalidTestCase as BaseInvalidTestCase, TestCaseError as BaseTestC
 import type { Rec, unknowns } from "typescript-misc";
 /**
  * Extracts MessageId from rule.
- *
  * @param rule - Rule.
  * @returns MessageId.
  */
 export declare function getMessageId<T extends string>(rule: RuleModule<T, unknowns>): Rec<T, T>;
 /**
  * Runs test.
- *
  * @param name - Name.
  * @param rule - Rule.
  * @param invalid - Invalid tests.

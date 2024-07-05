@@ -30,24 +30,26 @@ exports.exhaustiveSwitch = utils.createRule({
       }
     `
     },
-    create: (context, typeCheck) => ({
-        SwitchStatement: node => {
-            if (node.cases.some(switchCase => typescript_misc_1.is.null(switchCase.test))) {
-                // Has default
+    create: (context, typeCheck) => {
+        return {
+            SwitchStatement: node => {
+                if (node.cases.some(switchCase => typescript_misc_1.is.null(switchCase.test))) {
+                    // Has default
+                }
+                else {
+                    const got = node.cases
+                        .map(switchCase => switchCase.test)
+                        .filter(typescript_misc_1.is.not.empty)
+                        .flatMap(expression => typeCheck.typeParts(expression));
+                    const expected = typeCheck.typeParts(node.discriminant);
+                    if (_.difference(expected, got).length > 0)
+                        context.report({
+                            messageId: MessageId.inexhaustiveSwitch,
+                            node: node.discriminant
+                        });
+                }
             }
-            else {
-                const got = node.cases
-                    .map(switchCase => switchCase.test)
-                    .filter(typescript_misc_1.is.not.empty)
-                    .flatMap(expression => typeCheck.typeParts(expression));
-                const expected = typeCheck.typeParts(node.discriminant);
-                if (_.difference(expected, got).length)
-                    context.report({
-                        messageId: MessageId.inexhaustiveSwitch,
-                        node: node.discriminant
-                    });
-            }
-        }
-    })
+        };
+    }
 });
 //# sourceMappingURL=exhaustive-switch.js.map

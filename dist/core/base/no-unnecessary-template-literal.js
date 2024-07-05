@@ -32,18 +32,20 @@ exports.noUnnecessaryTemplateLiteral = utils.createRule({
       \`;
     `
     },
-    create: (context) => ({
-        TemplateLiteral: node => {
-            if (node.expressions.length ||
-                node.quasis.some(quasi => quasi.value.raw.trim().includes("\n"))) {
-                // Valid
+    create: (context) => {
+        return {
+            TemplateLiteral: node => {
+                if (node.expressions.length > 0 ||
+                    node.quasis.some(quasi => quasi.value.raw.trim().includes("\n"))) {
+                    // Valid
+                }
+                else
+                    context.report({
+                        messageId: MessageId.unnecessaryTemplateLiteral,
+                        node
+                    });
             }
-            else
-                context.report({
-                    messageId: MessageId.unnecessaryTemplateLiteral,
-                    node
-                });
-        }
-    })
+        };
+    }
 });
 //# sourceMappingURL=no-unnecessary-template-literal.js.map

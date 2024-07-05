@@ -23,7 +23,6 @@ exports.isTypeGroups = typescript_misc_1.is.factory(typescript_misc_1.is.array.o
 exports.projectRoot = typescript_misc_1.fn.pipe(process.cwd(), typescript_misc_1.s.path.canonicalize, typescript_misc_1.s.path.addTrailingSlash);
 /**
  * Creates file matcher.
- *
  * @param pattern - Pattern.
  * @param defVal - Default value.
  * @param options - Minimatch options.
@@ -34,20 +33,19 @@ function createFileMatcher(pattern, defVal, options) {
         return createFileMatcher([pattern], defVal, options);
     if (typescript_misc_1.is.strings(pattern)) {
         const matchers = pattern.map((p) => str => (0, minimatch_1.minimatch)(str, p, options));
-        return matchers.length
+        return matchers.length > 0
             ? str => matchers.some(matcher => matcher(str))
             : () => defVal;
     }
     const { allow, disallow } = pattern;
     const allowMatcher = createFileMatcher(allow, false, options);
     const disallowMatcher = createFileMatcher(disallow, true, options);
-    return allow.length || disallow.length
+    return allow.length > 0 || disallow.length > 0
         ? str => disallowMatcher(str) && !allowMatcher(str)
         : () => defVal;
 }
 /**
  * Creates matcher.
- *
  * @param pattern - RegExp pattern(s).
  * @param defVal - Default value.
  * @returns Matcher.
@@ -58,13 +56,12 @@ function createRegexpMatcher(pattern, defVal) {
     const matchers = pattern.map((p) => str => 
     // eslint-disable-next-line security/detect-non-literal-regexp -- Ok
     new RegExp(p, "u").test(str));
-    return matchers.length
+    return matchers.length > 0
         ? str => matchers.some(matcher => matcher(str))
         : () => defVal;
 }
 /**
  * Merges listeners.
- *
  * @param listeners - Listeners.
  * @returns Merged listeners.
  */
@@ -85,24 +82,25 @@ function mergeListeners(...listeners) {
 }
 /**
  * Returns string representing node.
- *
  * @param node - Node.
  * @param defVal - Default value.
  * @returns String representing node.
  */
 function nodeText(node, defVal) {
     switch (node.type) {
-        case utils_1.AST_NODE_TYPES.Identifier:
+        case utils_1.AST_NODE_TYPES.Identifier: {
             return node.name;
-        case utils_1.AST_NODE_TYPES.Literal:
+        }
+        case utils_1.AST_NODE_TYPES.Literal: {
             return typescript_misc_1.cast.string(node.value);
-        default:
+        }
+        default: {
             return typescript_misc_1.as.callable(defVal)();
+        }
     }
 }
 /**
  * Assembles selector.
- *
  * @param raw - Raw selector.
  * @returns Selector.
  */
@@ -112,26 +110,28 @@ function selector(raw) {
 }
 /**
  * Sets casing.
- *
  * @param str - String.
  * @param casing - Casing.
  * @returns Formatted string.
  */
 function setCasing(str, casing) {
     switch (casing) {
-        case types_1.Casing.camelCase:
+        case types_1.Casing.camelCase: {
             return _.camelCase(str);
-        case types_1.Casing.kebabCase:
+        }
+        case types_1.Casing.kebabCase: {
             return _.kebabCase(str);
-        case types_1.Casing.pascalCase:
+        }
+        case types_1.Casing.pascalCase: {
             return typescript_misc_1.s.ucFirst(_.camelCase(str));
-        case undefined:
+        }
+        case undefined: {
             return str;
+        }
     }
 }
 /**
  * Wraps third-party rule.
- *
  * @param options - Options.
  * @returns Wrapped rule.
  */

@@ -5,7 +5,6 @@ const tslib_1 = require("tslib");
 const natural_compare_1 = tslib_1.__importDefault(require("natural-compare"));
 /**
  * Compares two strings.
- *
  * @param x - First value.
  * @param y - Second value.
  * @returns Comparison result.

@@ -47,7 +47,7 @@ export const objectFormat = utils.createRule({
         return {
             ObjectExpression: node => {
                 const texts = node.properties.map(property => context.getFullText(property).trim());
-                if (texts.length) {
+                if (texts.length > 0) {
                     const text = context.getText(node);
                     const expectMultiline = texts.length > maxObjectSize ||
                         texts.some(s.multiline) ||
@@ -57,10 +57,12 @@ export const objectFormat = utils.createRule({
                     const gotSingleLine = s.singleLine(text);
                     if (expectMultiline && gotSingleLine)
                         context.report({
-                            fix: () => ({
-                                range: node.range,
-                                text: `{${eol}${texts.join(commaEol)}${eol}}`
-                            }),
+                            fix: () => {
+                                return {
+                                    range: node.range,
+                                    text: `{${eol}${texts.join(commaEol)}${eol}}`
+                                };
+                            },
                             messageId: MessageId.preferMultiline,
                             node
                         });
@@ -68,10 +70,12 @@ export const objectFormat = utils.createRule({
                         gotMultiline &&
                         predictedLength() <= maxLineLength)
                         context.report({
-                            fix: () => ({
-                                range: node.range,
-                                text: `{${texts.join(comma)}}`
-                            }),
+                            fix: () => {
+                                return {
+                                    range: node.range,
+                                    text: `{${texts.join(comma)}}`
+                                };
+                            },
                             messageId: MessageId.preferSingleLine,
                             node
                         });

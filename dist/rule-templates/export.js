@@ -6,7 +6,6 @@ const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const typescript_misc_1 = require("typescript-misc");
 /**
  * Creates rule listener.
- *
  * @param callback - Callback.
  * @returns Rule listener.
  */

@@ -133,7 +133,7 @@ export const noRestrictedSyntax = utils.createRule({
                                 ? type.typeArguments
                                 : undefined;
                         if (checkReturnType)
-                            return type.getCallSignatures().length
+                            return type.getCallSignatures().length > 0
                                 ? type
                                     .getCallSignatures()
                                     .map(signature => signature.getReturnType())

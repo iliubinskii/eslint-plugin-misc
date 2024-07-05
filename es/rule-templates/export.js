@@ -2,7 +2,6 @@ import * as _ from "lodash-commonjs-es";
 import { is } from "typescript-misc";
 /**
  * Creates rule listener.
- *
  * @param callback - Callback.
  * @returns Rule listener.
  */

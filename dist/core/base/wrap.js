@@ -97,10 +97,10 @@ exports.wrap = utils.createRule({
             }
         }, {
             "Program:exit": () => {
-                const lintMatcher = lintIds.length
+                const lintMatcher = lintIds.length > 0
                     ? (report) => "node" in report && lintIds.includes(nodeId(report.node))
                     : () => true;
-                const skipMatcher = skipIds.length
+                const skipMatcher = skipIds.length > 0
                     ? (report) => "node" in report && skipIds.includes(nodeId(report.node))
                     : () => false;
                 for (const report of reports)
@@ -118,7 +118,7 @@ exports.wrap = utils.createRule({
                                 message: message ??
                                     typescript_misc_1.as.not
                                         .empty(rule.meta.messages[messageId])
-                                        .replace(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
+                                        .replaceAll(/\{\{\s*(\w+)\s*\}\}/gu, (_str, match1) => {
                                         const result = data[match1];
                                         return typescript_misc_1.as.numStr(result).toString();
                                     })
@@ -134,7 +134,6 @@ exports.wrap = utils.createRule({
 });
 /**
  * Generates node ID.
- *
  * @param node - Node.
  * @returns Node ID.
  */

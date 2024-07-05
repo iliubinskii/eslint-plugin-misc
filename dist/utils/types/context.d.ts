@@ -8,70 +8,60 @@ export interface Context<M extends string, O extends object, S extends object, K
     readonly filename: string;
     /**
      * Returns comment ranges.
-     *
      * @param node - Node.
      * @returns Comment ranges.
      */
     readonly getCommentRanges: (node: TSESTree.Node) => esRanges;
     /**
      * Returns comments.
-     *
      * @param node - Node.
      * @returns Comments.
      */
     readonly getComments: (node: TSESTree.Node) => strings;
     /**
      * Returns range with leading comments.
-     *
      * @param node - Node.
      * @returns Range with leading comments.
      */
     readonly getFullRange: (node: TSESTree.Node) => esRange;
     /**
      * Returns text with leading comments.
-     *
      * @param node - Node.
      * @returns Text with leading comments.
      */
     readonly getFullText: (node: TSESTree.Node) => string;
     /**
      * Returns leading spaces.
-     *
      * @param node - Node.
      * @returns Leading spaces.
      */
     readonly getLeadingSpaces: (node: TSESTree.Node) => esRange;
     /**
      * Creates location from range.
-     *
      * @param range - Range.
      * @returns Location.
      */
     readonly getLoc: (range: esRange) => estree.SourceLocation;
     /**
      * Gets text from mixed source.
-     *
      * @param mixed - Mixed source.
      * @returns Text.
      */
     readonly getText: (mixed: esRange | TSESTree.Comment | TSESTree.Node | number) => string;
     /**
      * Checks if node has leading comments.
-     *
      * @param node - Node.
      * @returns _True_ if node has leading comments, _false_ otherwise.
      */
     readonly hasComments: (node: TSESTree.Node) => boolean;
     /**
      * Checks if node has trailing comment.
-     *
      * @param node - Node.
      * @returns _True_ if node has trailing comment, _false_ otherwise.
      */
     readonly hasTrailingComment: (node: TSESTree.Node) => boolean;
     /**
      * Creates identifier from path.
-     *
      * @param path - Path.
      * @param expected - Expected identifier.
      * @returns Identifier.
@@ -79,7 +69,6 @@ export interface Context<M extends string, O extends object, S extends object, K
     readonly identifierFromPath: (path: string, expected?: string) => string;
     /**
      * Checks if two nodes are adjacent.
-     *
      * @param node1 - First node.
      * @param node2 - Second node.
      * @returns _True_ if two nodes are adjacent, _false_ otherwise.
@@ -88,7 +77,6 @@ export interface Context<M extends string, O extends object, S extends object, K
     readonly locZero: TSESTree.SourceLocation;
     /**
      * Normalizes source.
-     *
      * @param source - Source.
      * @returns Normalized source.
      */
@@ -97,20 +85,17 @@ export interface Context<M extends string, O extends object, S extends object, K
     readonly rawContext: Readonly<RuleContext<any, any>>;
     /**
      * Reports error.
-     *
      * @param descriptor - Descriptor.
      */
     readonly report: (descriptor: ReportDescriptor<M>) => void;
     /**
      * Strips extension.
-     *
      * @param path - Path.
      * @returns Stripped path.
      */
     readonly stripExtension: (path: string) => string;
     /**
      * Creates text from path.
-     *
      * @param path - Path.
      * @param expected - Expected text.
      * @param format - Format.

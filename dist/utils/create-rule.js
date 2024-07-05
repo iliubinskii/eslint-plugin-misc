@@ -14,7 +14,6 @@ const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
 const node_path_1 = tslib_1.__importDefault(require("node:path"));
 /**
  * Creates rule listener.
- *
  * @param options - Options.
  * @returns Rule listener.
  */
@@ -53,7 +52,6 @@ function createRule(options) {
 }
 /**
  * Parses package.json file.
- *
  * @param path - Path.
  * @returns Project configuration.
  */
@@ -68,7 +66,6 @@ function getProjectConfig(path = "package.json") {
 const isSharedSuboptions = typescript_misc_1.is.object.factory({}, { filesToLint: typescript_misc_1.is.strings, filesToSkip: typescript_misc_1.is.strings });
 /**
  * Determines if file should be linted.
- *
  * @param path - Path.
  * @param options - Options.
  * @returns _True_ if file should be linted, _false_ otherwise.
@@ -80,7 +77,6 @@ function shouldBeLinted(path, options) {
 }
 /**
  * Strips base path.
- *
  * @param path - Path.
  * @param replacement - Replacement.
  * @returns Stripped path.
@@ -92,7 +88,6 @@ function stripBase(path, replacement = "") {
 const isProjectConfig = typescript_misc_1.is.factory(typescript_misc_1.is.object.of, {}, { name: typescript_misc_1.is.string });
 /**
  * Creates context.
- *
  * @param context - Raw context.
  * @param ruleOptionsArray - Rule options.
  * @param options - Options.
@@ -115,10 +110,12 @@ function createContext(context, ruleOptionsArray, options) {
             const pos = code.slice(0, end).trimEnd().length;
             return [pos, end];
         },
-        getLoc: (range) => ({
-            end: source.getLocFromIndex(range[1]),
-            start: source.getLocFromIndex(range[0])
-        }),
+        getLoc: (range) => {
+            return {
+                end: source.getLocFromIndex(range[1]),
+                start: source.getLocFromIndex(range[0])
+            };
+        },
         getText,
         hasComments: node => getCommentRanges(node).length > 0,
         hasTrailingComment: node => code.slice(node.range[1]).trimStart().startsWith("//"),
@@ -168,10 +165,12 @@ function createContext(context, ruleOptionsArray, options) {
                     typescript_misc_1.assert.not.empty(suboptionsKey, "Expecting suboptions key");
                     const suboptionsArray = typescript_misc_1.o.get(rawRuleOptions, suboptionsKey) ?? [];
                     typescript_misc_1.assert.array.of(suboptionsArray, typescript_misc_1.is.object, "Expecting valid rule options");
-                    const suboptionsArrayWithDefaults = suboptionsArray.map((suboptions) => ({
-                        ...defaultSuboptions,
-                        ...suboptions
-                    }));
+                    const suboptionsArrayWithDefaults = suboptionsArray.map((suboptions) => {
+                        return {
+                            ...defaultSuboptions,
+                            ...suboptions
+                        };
+                    });
                     const isSuboptionsWithShared = typescript_misc_1.is.and.factory(isSharedSuboptions, isSuboptions);
                     typescript_misc_1.assert.array.of(suboptionsArrayWithDefaults, isSuboptionsWithShared, "Expecting valid rule options");
                     const ruleOptionsWithSuboptions = {

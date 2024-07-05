@@ -124,13 +124,16 @@ exports.consistentEmptyLines = (0, typescript_misc_1.evaluate)(() => {
                         else {
                             const spread = (0, typescript_misc_1.evaluate)(() => {
                                 switch (emptyLine) {
-                                    case EmptyLine.always:
+                                    case EmptyLine.always: {
                                         return true;
-                                    case EmptyLine.commented:
+                                    }
+                                    case EmptyLine.commented: {
                                         return (context.hasComments(node) ||
                                             context.hasComments(prevNode));
-                                    case EmptyLine.never:
+                                    }
+                                    case EmptyLine.never: {
                                         return false;
+                                    }
                                 }
                             });
                             const messageId = spread
@@ -147,7 +150,9 @@ exports.consistentEmptyLines = (0, typescript_misc_1.evaluate)(() => {
                                 else
                                     context.report({
                                         data: { _id },
-                                        fix: () => ({ range, text: expected }),
+                                        fix: () => {
+                                            return { range, text: expected };
+                                        },
                                         messageId,
                                         node
                                     });
@@ -161,7 +166,6 @@ exports.consistentEmptyLines = (0, typescript_misc_1.evaluate)(() => {
 });
 /**
  * Compares items.
- *
  * @param item1 - First item.
  * @param item2 - Second item.
  * @returns - Comparison result.
