@@ -1,6 +1,15 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# Get the current Git branch name
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+# Forbid direct commits to master or develop
+if [ "$BRANCH_NAME" = "master" ]; then
+  echo "Commits to $BRANCH_NAME branch are forbidden."
+  exit 1
+fi
+
 # Prefer global type check, because changes to one file may cause type errors in other files
 npm run type-check
 
