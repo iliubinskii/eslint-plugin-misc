@@ -1,3 +1,5 @@
+/* eslint-disable no-sync -- Ok */
+/* eslint-disable security/detect-non-literal-fs-filename -- Ok */
 import * as ruleTemplates from "../../rule-templates";
 import * as utils from "../../utils";
 import { a, evaluate, is } from "typescript-misc";

@@ -1,7 +1,9 @@
-import * as utils from "./utils";
-import { rules as core } from "./rules.core";
+import { core } from "./core";
+import { getSynonyms } from "./utils";
+import { typescript } from "./typescript";
 
 export const rules = {
   ...core,
-  ...utils.getSynonyms("./.eslintrc.synonyms.js", core)
+  ...typescript,
+  ...getSynonyms("./.eslintrc.synonyms.cjs", { ...core, ...typescript })
 } as const;

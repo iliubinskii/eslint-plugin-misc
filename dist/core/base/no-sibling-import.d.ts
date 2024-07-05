@@ -10,5 +10,5 @@ export declare enum MessageId {
 }
 export declare const isStringsArray: is.Guard<readonly (readonly string[])[]>;
 export declare const isSuboptions: is.Guard<Suboptions>;
-export declare const noSiblingImport: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<object, Suboptions, "rules">, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+export declare const noSiblingImport: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<MessageId, import("../../utils/create-rule").PartialOptionsArray<object, Suboptions, "rules">, import("@typescript-eslint/utils/dist/ts-eslint").RuleListener>;
 //# sourceMappingURL=no-sibling-import.d.ts.map

@@ -46,12 +46,33 @@ utils.testRule("no-restricted-syntax", rule, [
       {
         message: "Custom message",
         replacement: "e",
-        search: /d/u.source,
+        search: /[cd]/u.source,
         selector: "Identifier"
       }
     ],
     code: "const id1 = [];",
     output: "const ie1 = [];",
+    errors: [
+      {
+        line: 1,
+        messageId: MessageId.customMessage,
+        data: { message: "Custom message" }
+      }
+    ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    options: [
+      {
+        message: "Custom message",
+        replacement: "y",
+        search: /x/u.source,
+        selector: "Identifier, Literal",
+        ignoreSelector: "Identifier"
+      }
+    ],
+    code: 'type x = "x";',
+    output: 'type x = "y";',
     errors: [
       {
         line: 1,

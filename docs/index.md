@@ -40,8 +40,6 @@ module.exports = {
 
 - plugin:misc/all &mdash; All rules.
 - plugin:misc/core &mdash; Core rules.
-- plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
-- plugin:misc/jest &mdash; Rules for Jest test files.
 - plugin:misc/typescript &mdash; Rules for typescript files.
 
 ## <a id="rules"></a>Rules
@@ -93,18 +91,10 @@ module.exports = {
 - [sort-construct-signature](https://iliubinskii.github.io/eslint-plugin-misc/sort-construct-signature.html) &mdash; Requires construct signature to be first child.
 - [sort-export-specifiers](https://iliubinskii.github.io/eslint-plugin-misc/sort-export-specifiers.html) &mdash; Sorts export specifiers.
 - [sort-keys](https://iliubinskii.github.io/eslint-plugin-misc/sort-keys.html) &mdash; Sorts object keys.
-- [sort-statements](https://iliubinskii.github.io/eslint-plugin-misc/sort-statements.html) &mdash; Sorts statements.
 - [sort-top-comments](https://iliubinskii.github.io/eslint-plugin-misc/sort-top-comments.html) &mdash; Sorts top comments.
 - [switch-case-spacing](https://iliubinskii.github.io/eslint-plugin-misc/switch-case-spacing.html) &mdash; Ensures consistent empty lines between switch case statements.
 - [template-literal-format](https://iliubinskii.github.io/eslint-plugin-misc/template-literal-format.html) &mdash; Requires consistent padding in template literals.
 - [wrap](https://iliubinskii.github.io/eslint-plugin-misc/wrap.html) &mdash; Wraps and modifies third-party rule.
-- [eslintrc/no-message-dot](https://iliubinskii.github.io/eslint-plugin-misc/eslintrc/no-message-dot.html) &mdash; Disallows dot at the end of message.
-- [eslintrc/no-unnecessary-array](https://iliubinskii.github.io/eslint-plugin-misc/eslintrc/no-unnecessary-array.html) &mdash; Disallows unnecessary single-element arrays in eslint configuration files.
-- [eslintrc/sort-array](https://iliubinskii.github.io/eslint-plugin-misc/eslintrc/sort-array.html) &mdash; Sorts safely sortable arrays in eslint configuration files.
-- [eslintrc/sort-suboptions](https://iliubinskii.github.io/eslint-plugin-misc/eslintrc/sort-suboptions.html) &mdash; Sorts safely sortable arrays in eslint configuration files.
-- [jest/no-toThrow-literal](https://iliubinskii.github.io/eslint-plugin-misc/jest/no-toThrow-literal.html) &mdash; Disallows string argument in "toThrow" matcher.
-- [jest/prefer-toBe](https://iliubinskii.github.io/eslint-plugin-misc/jest/prefer-toBe.html) &mdash; Requires "toBe" matcher instead of "toStrictEqual" for primitive argument types.
-- [jest/prefer-toStrictEqual](https://iliubinskii.github.io/eslint-plugin-misc/jest/prefer-toStrictEqual.html) &mdash; Requires "toStrictEqual" matcher instead of "toBe" for non-primitive argument types.
 - [typescript/array-callback-return-type](https://iliubinskii.github.io/eslint-plugin-misc/typescript/array-callback-return-type.html) &mdash; Requires boolean return type in array callbacks.
 - [typescript/class-methods-use-this](https://iliubinskii.github.io/eslint-plugin-misc/typescript/class-methods-use-this.html) &mdash; This rule wraps "class-methods-use-this" core rule, but skips methods with "this: void" argument.
 - [typescript/consistent-array-type-name](https://iliubinskii.github.io/eslint-plugin-misc/typescript/consistent-array-type-name.html) &mdash; Requires consistent array type name.
@@ -135,11 +125,8 @@ module.exports = {
 You can use the same rule several times by adding synonym:
 
 ```js
-// .eslintrc.synonyms.js
-module.exports = [
-  "misc/wrap/class-methods-use-this",
-  "misc/wrap/no-shadow"
-];
+// .eslintrc.synonyms.cjs
+module.exports = ["misc/wrap/class-methods-use-this", "misc/wrap/no-shadow"];
 
 // .eslintrc.js
 module.exports = {

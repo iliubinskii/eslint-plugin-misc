@@ -6,7 +6,6 @@ import { is } from "typescript-misc";
  * @param callback - Callback.
  * @returns Rule listener.
  */
-// eslint-disable-next-line misc/only-export-name -- Ok
 export function create(callback) {
     const exportAllDeclarations = [];
     const exportDefaultDeclarations = [];

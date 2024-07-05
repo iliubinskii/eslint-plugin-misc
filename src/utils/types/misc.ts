@@ -7,9 +7,7 @@ import type { Rec, a, strings } from "typescript-misc";
 
 export enum Casing {
   camelCase = "camelCase",
-  // eslint-disable-next-line misc/consistent-enum-members -- Ok
   kebabCase = "kebab-case",
-  // eslint-disable-next-line misc/consistent-enum-members -- Ok
   pascalCase = "PascalCase"
 }
 

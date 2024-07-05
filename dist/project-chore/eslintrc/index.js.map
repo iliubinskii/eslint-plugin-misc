@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/project-chore/eslintrc/index.ts"],"names":[],"mappings":";;;AAAA,6CAAyC;AACzC,yCAAqC;AACrC,uCAAmC;AACnC,qDAAoC;AACpC,mDAA+C;AAElC,QAAA,QAAQ,GAAG,mBAAC,CAAC,UAAU,CAClC;IACE,YAAY,EAAE,sBAAS;IACvB,UAAU,EAAE,kBAAO;IACnB,SAAS,EAAE,gBAAM;IACjB,eAAe,EAAE,4BAAY;CAC9B,EACD,WAAW,CACZ,CAAC"}

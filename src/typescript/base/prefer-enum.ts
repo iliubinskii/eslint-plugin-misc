@@ -1,4 +1,3 @@
-// eslint-disable-next-line misc/disallow-import/typescript -- Ok
 import type * as ts from "typescript";
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
@@ -7,9 +6,7 @@ import type { TSESTree } from "@typescript-eslint/utils";
 import { is } from "typescript-misc";
 
 export enum MessageId {
-  // eslint-disable-next-line misc/max-identifier-blocks -- Ok
   preferEnumToStringLiteral = "preferEnumToStringLiteral",
-  // eslint-disable-next-line misc/max-identifier-blocks -- Ok
   preferEnumToStringUnionType = "preferEnumToStringUnionType"
 }
 

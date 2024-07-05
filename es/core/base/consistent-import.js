@@ -102,7 +102,6 @@ export const consistentImport = utils.createRule({
     },
     create: (context) => {
         const eol = context.eol;
-        // eslint-disable-next-line misc/typescript-misc/functions/prefer-readonly-set -- Ok
         const identifiers = new Set();
         const importDeclarations = [];
         return {
@@ -194,8 +193,9 @@ export const consistentImport = utils.createRule({
                     ...suboptions
                 };
                 return autoImport
-                    ? context.scope.through
-                        .map(ref => {
+                    ? context.rawContext.sourceCode
+                        .getScope(node)
+                        .through.map(ref => {
                         if (ref.identifier.name === localName) {
                             context.report({
                                 messageId: MessageId.autoImport,

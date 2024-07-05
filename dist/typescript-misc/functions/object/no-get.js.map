@@ -1,1 +1,0 @@
-{"version":3,"file":"no-get.js","sourceRoot":"","sources":["../../../../src/typescript-misc/functions/object/no-get.ts"],"names":[],"mappings":";;;;AAAA,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,KAAK,GAAG,KAAK,CAAC,QAAQ,CAAC;IAClC,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,oCAAoC;YAC7C,QAAQ,EACN,yGAAyG;SAC5G;KACF;CACF,CAAC,CAAC"}

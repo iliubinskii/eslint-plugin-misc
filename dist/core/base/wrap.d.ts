@@ -10,5 +10,5 @@ export interface Options {
 export declare enum MessageId {
     customMessage = "customMessage"
 }
-export declare const wrap: RuleModule<MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<Options, object, never>, RuleListener>;
+export declare const wrap: RuleModule<MessageId, import("../../utils/create-rule").PartialOptionsArray<Options, object, never>, RuleListener>;
 //# sourceMappingURL=wrap.d.ts.map

@@ -1,6 +1,8 @@
 "use strict";
+/* eslint-disable unicorn/prefer-module -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.testRule = exports.getMessageId = void 0;
+exports.getMessageId = getMessageId;
+exports.testRule = testRule;
 const typescript_misc_1 = require("typescript-misc");
 const utils_1 = require("@typescript-eslint/utils");
 const misc_1 = require("./misc");
@@ -13,7 +15,6 @@ const misc_1 = require("./misc");
 function getMessageId(rule) {
     return typescript_misc_1.o.fromEntries.exhaustive(typescript_misc_1.o.keys(rule.meta.messages).map(key => [key, key]));
 }
-exports.getMessageId = getMessageId;
 /**
  * Runs test.
  *
@@ -48,5 +49,4 @@ function testRule(name, rule, invalid, valid = []) {
         }))
     });
 }
-exports.testRule = testRule;
 //# sourceMappingURL=test.js.map

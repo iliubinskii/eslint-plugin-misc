@@ -58,7 +58,6 @@ export function createRegexpMatcher(pattern, defVal) {
  * @returns Merged listeners.
  */
 export function mergeListeners(...listeners) {
-    // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
     return o.fromEntries(o
         .entries(_.groupBy(listeners.flatMap(listener => o.entries(listener)), ([name]) => name))
         .map(([name, entries]) => [
@@ -128,17 +127,13 @@ export function setCasing(str, casing) {
 export function wrapRule(options) {
     const { docs: rawDocs, options: ruleOptions, rule } = options;
     const docs = {
-        recommended: false,
+        recommended: "recommended",
         requiresTypeChecking: true,
         ...o.removeUndefinedKeys.alt({
             ...rawDocs,
-            description: rawDocs
-                ? s.unpadMultiline(rawDocs.description)
-                : "No description.",
-            failExamples: rawDocs
-                ? s.unpadMultiline(rawDocs.failExamples)
-                : undefined,
-            passExamples: rawDocs ? s.unpadMultiline(rawDocs.passExamples) : undefined
+            description: s.unpadMultiline(rawDocs.description),
+            failExamples: s.unpadMultiline(rawDocs.failExamples),
+            passExamples: s.unpadMultiline(rawDocs.passExamples)
         })
     };
     return {

@@ -122,7 +122,7 @@ export const consistentOptionalProps = utils.createRule({
                 const got = evaluate(() => {
                     const type = typeCheck.getType(typeAnnotation);
                     const hasUndefined = typeCheck.typeHas(type, utils.TypeGroup.undefined);
-                    const optional = node.optional ?? false;
+                    const { optional } = node;
                     if (hasUndefined && optional)
                         return Style.combined;
                     if (hasUndefined)

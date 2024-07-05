@@ -1,3 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires -- Ok */
+/* eslint-disable global-require -- Ok */
+/* eslint-disable import/no-dynamic-require -- Ok */
+/* eslint-disable no-sync -- Ok */
+/* eslint-disable security/detect-non-literal-fs-filename -- Ok */
+/* eslint-disable security/detect-non-literal-require -- Ok */
+/* eslint-disable unicorn/prefer-module -- Ok */
+
 import type { Entry, IndexedRecord } from "typescript-misc";
 import { assert, is, o } from "typescript-misc";
 import fs from "node:fs";
@@ -9,7 +17,6 @@ import fs from "node:fs";
  * @param core - Core rules.
  * @returns Synonyms.
  */
-// eslint-disable-next-line misc/only-export-name -- Ok
 export function getSynonyms(
   config: string,
   core: IndexedRecord

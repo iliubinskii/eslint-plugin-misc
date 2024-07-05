@@ -5,144 +5,76 @@
     }
   ],
   "settings": {
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
     "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[less]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[postcss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[scss]": {
-      "editor.formatOnSave": false
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[typescriptreact]": {
       "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
+    "[yaml]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "css.validate": false,
     "debug.javascript.codelens.npmScripts": "never",
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.sortPackageJson": "explicit"
     },
+    "editor.colorDecorators": false,
     "editor.detectIndentation": false,
     "editor.foldingStrategy": "indentation",
     "editor.formatOnSave": true,
+    "editor.lightbulb.enabled": "off",
     "editor.tabSize": 2,
     "editor.unicodeHighlight.allowedLocales": {
       "ru": true
     },
     "editor.unicodeHighlight.ambiguousCharacters": true,
-    "eslint.codeActionsOnSave.rules": [
-      "*"
-    ],
+    "eslint.codeActionsOnSave.rules": ["*"],
     "eslint.format.enable": true,
     "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "foldOnOpen.targets": [
-      "AllBlockComments"
-    ],
-    "intelephense.files.exclude": [
-      "**/.git/**",
-      "**/.svn/**",
-      "**/.hg/**",
-      "**/CVS/**",
-      "**/.DS_Store/**",
-      "**/bower_components/**",
-      "**/vendor/**/{Tests,tests}/**",
-      "**/.history/**",
-      "**/vendor/**/vendor/**"
-    ],
+    "foldOnOpen.targets": ["AllBlockComments"],
     "javascript.suggestionActions.enabled": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "scss.validate": false,
     "search.exclude": {
-      "CHANGELOG.md": true,
       "dist": true,
       "docs": true,
       "es": true,
-      "lcov.info": true,
       "package-lock.json": true
     },
-    "sort-json.settings.contextMenu": {
-      "ascendingSort": true,
-      "sortJsonSubMenu": false
-    },
-    "sort-json.settings.isCaseSensitive": true,
-    "sort-json.settings.orderOverrideKeys": {
-      "": [
-        "$schema",
-        "$id",
-        "type"
-      ],
-      "app.json": [
-        "name",
-        "slug",
-        "owner",
-        "version",
-        "icon",
-        "orientation",
-        "userInterfaceStyle"
-      ],
-      "manifest.json": [
-        "name",
-        "short_name",
-        "start_url",
-        "display",
-        "background_color",
-        "theme_color",
-        "icons"
-      ],
-      "package.json": [
-        "name",
-        "displayName",
-        "version",
-        "private",
-        "description",
-        "keywords",
-        "homepage",
-        "bugs",
-        "repository",
-        "license",
-        "author",
-        "publisher",
-        "exports",
-        "main",
-        "module",
-        "types",
-        "files",
-        "scripts",
-        "jest",
-        "dependencies",
-        "devDependencies",
-        "peerDependencies",
-        "engines",
-        "publishConfig",
-        "overrides"
-      ],
-      "tsconfig-build-es.json": [
-        "extends"
-      ],
-      "tsconfig-build.json": [
-        "extends"
-      ],
-      "tsconfig-min.json": [
-        "extends"
-      ],
-      "tsconfig-prepublish.json": [
-        "extends"
-      ],
-      "tsconfig-typedoc.json": [
-        "extends"
-      ],
-      "tsconfig.json": [
-        "extends"
-      ]
-    },
-    "sort-json.settings.sortMode": "Objects Only",
-    "stylelint.validate": [
-      "css",
-      "less",
-      "postcss",
-      "scss"
-    ],
+    "sortJSON.excludedPaths": ["assets"],
+    "stylelint.validate": ["css", "less", "postcss", "scss"],
+    "tailwindCSS.experimental.classRegex": [["`([^`]*)`"]],
     "typescript.suggestionActions.enabled": false,
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "typescript.updateImportsOnFileMove.enabled": "always",

@@ -36,7 +36,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `classes` | Preferred style for classes | `"undefined"` |
 | `interfaces` | Preferred style for interfaces | `"optional"` |
 | `overrides._id` | Id | `-` |

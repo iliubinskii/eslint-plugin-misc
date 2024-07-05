@@ -17,5 +17,5 @@ export declare enum MessageId {
     addEmptyLine = "addEmptyLine",
     removeEmptyLine = "removeEmptyLine"
 }
-export declare const consistentEmptyLines: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<object, Suboptions, "rules">, RuleListener>;
+export declare const consistentEmptyLines: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<MessageId, import("../../utils/create-rule").PartialOptionsArray<object, Suboptions, "rules">, RuleListener>;
 //# sourceMappingURL=consistent-empty-lines.d.ts.map

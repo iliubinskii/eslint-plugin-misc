@@ -23,7 +23,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `disableFix` | Disables fix | `false` |
 | `lint` | AST selectors to lint | `[]` |
 | `plugin` | NPM package name | `-` |

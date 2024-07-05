@@ -1,10 +1,13 @@
 import { defineFn, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import type { Callback } from "./source.internal";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
-import { Type } from "./source.internal";
+import type { TSESTree } from "@typescript-eslint/utils";
 
-// eslint-disable-next-line misc/only-export-name -- Ok
+export enum Type {
+  export = "export",
+  import = "import"
+}
+
 export const create = defineFn(
   /**
    * Creates rule listener.
@@ -53,3 +56,18 @@ export const create = defineFn(
   }),
   { Type }
 );
+
+export interface Callback {
+  /**
+   * Callback.
+   *
+   * @param ctx - Context.
+   */
+  (ctx: Ctx): void;
+}
+
+export interface Ctx {
+  readonly node: TSESTree.Node;
+  readonly source: string;
+  readonly type: Type;
+}

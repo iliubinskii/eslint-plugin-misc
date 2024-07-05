@@ -181,7 +181,7 @@ export const consistentOptionalProps = utils.createRule({
             utils.TypeGroup.undefined
           );
 
-          const optional = node.optional ?? false;
+          const { optional } = node;
 
           if (hasUndefined && optional) return Style.combined;
 

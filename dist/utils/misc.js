@@ -1,6 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.wrapRule = exports.setCasing = exports.selector = exports.nodeText = exports.mergeListeners = exports.createRegexpMatcher = exports.createFileMatcher = exports.projectRoot = exports.isTypeGroups = exports.isTypeGroup = exports.isSelector = exports.isRegexpPattern = exports.isFilePattern = exports.isCasing = void 0;
+exports.projectRoot = exports.isTypeGroups = exports.isTypeGroup = exports.isSelector = exports.isRegexpPattern = exports.isFilePattern = exports.isCasing = void 0;
+exports.createFileMatcher = createFileMatcher;
+exports.createRegexpMatcher = createRegexpMatcher;
+exports.mergeListeners = mergeListeners;
+exports.nodeText = nodeText;
+exports.selector = selector;
+exports.setCasing = setCasing;
+exports.wrapRule = wrapRule;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const types_1 = require("./types");
@@ -38,7 +45,6 @@ function createFileMatcher(pattern, defVal, options) {
         ? str => disallowMatcher(str) && !allowMatcher(str)
         : () => defVal;
 }
-exports.createFileMatcher = createFileMatcher;
 /**
  * Creates matcher.
  *
@@ -56,7 +62,6 @@ function createRegexpMatcher(pattern, defVal) {
         ? str => matchers.some(matcher => matcher(str))
         : () => defVal;
 }
-exports.createRegexpMatcher = createRegexpMatcher;
 /**
  * Merges listeners.
  *
@@ -64,7 +69,6 @@ exports.createRegexpMatcher = createRegexpMatcher;
  * @returns Merged listeners.
  */
 function mergeListeners(...listeners) {
-    // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
     return typescript_misc_1.o.fromEntries(typescript_misc_1.o
         .entries(_.groupBy(listeners.flatMap(listener => typescript_misc_1.o.entries(listener)), ([name]) => name))
         .map(([name, entries]) => [
@@ -79,7 +83,6 @@ function mergeListeners(...listeners) {
         }
     ]));
 }
-exports.mergeListeners = mergeListeners;
 /**
  * Returns string representing node.
  *
@@ -97,7 +100,6 @@ function nodeText(node, defVal) {
             return typescript_misc_1.as.callable(defVal)();
     }
 }
-exports.nodeText = nodeText;
 /**
  * Assembles selector.
  *
@@ -108,7 +110,6 @@ function selector(raw) {
     const result = typescript_misc_1.a.fromMixed(raw).join(", ");
     return result === "" ? "Unknown" : result;
 }
-exports.selector = selector;
 /**
  * Sets casing.
  *
@@ -128,7 +129,6 @@ function setCasing(str, casing) {
             return str;
     }
 }
-exports.setCasing = setCasing;
 /**
  * Wraps third-party rule.
  *
@@ -138,17 +138,13 @@ exports.setCasing = setCasing;
 function wrapRule(options) {
     const { docs: rawDocs, options: ruleOptions, rule } = options;
     const docs = {
-        recommended: false,
+        recommended: "recommended",
         requiresTypeChecking: true,
         ...typescript_misc_1.o.removeUndefinedKeys.alt({
             ...rawDocs,
-            description: rawDocs
-                ? typescript_misc_1.s.unpadMultiline(rawDocs.description)
-                : "No description.",
-            failExamples: rawDocs
-                ? typescript_misc_1.s.unpadMultiline(rawDocs.failExamples)
-                : undefined,
-            passExamples: rawDocs ? typescript_misc_1.s.unpadMultiline(rawDocs.passExamples) : undefined
+            description: typescript_misc_1.s.unpadMultiline(rawDocs.description),
+            failExamples: typescript_misc_1.s.unpadMultiline(rawDocs.failExamples),
+            passExamples: typescript_misc_1.s.unpadMultiline(rawDocs.passExamples)
         })
     };
     return {
@@ -169,5 +165,4 @@ function wrapRule(options) {
         meta: { ...rule.meta, docs }
     };
 }
-exports.wrapRule = wrapRule;
 //# sourceMappingURL=misc.js.map

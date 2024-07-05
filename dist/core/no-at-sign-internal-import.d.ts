@@ -1,2 +1,2 @@
-export declare const noAtSignInternalImport: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./base/disallow-import").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("./base/disallow-import").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+export declare const noAtSignInternalImport: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<import("./base/disallow-import").MessageId, import("../utils/create-rule").PartialOptionsArray<import("./base/disallow-import").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint").RuleListener>;
 //# sourceMappingURL=no-at-sign-internal-import.d.ts.map

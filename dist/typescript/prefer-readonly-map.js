@@ -1,5 +1,4 @@
 "use strict";
-/* eslint-disable xss/no-mixed-html -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.preferReadonlyMap = void 0;
 const tslib_1 = require("tslib");

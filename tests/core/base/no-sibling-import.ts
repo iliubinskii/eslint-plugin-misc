@@ -14,7 +14,7 @@ utils.testRule(
       code: `
         import a from "./source";
         import e from "./subfolder";
-        import b from "./file.internal";
+        import b from "./file.module";
         import d from "../source";
         require("node:fs");
       `,

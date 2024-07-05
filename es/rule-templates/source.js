@@ -1,7 +1,10 @@
 import { defineFn, is } from "typescript-misc";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
-import { Type } from "./source.internal";
-// eslint-disable-next-line misc/only-export-name -- Ok
+export var Type;
+(function (Type) {
+    Type["export"] = "export";
+    Type["import"] = "import";
+})(Type || (Type = {}));
 export const create = defineFn(
 /**
  * Creates rule listener.

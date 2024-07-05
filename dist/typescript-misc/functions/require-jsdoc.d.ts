@@ -1,2 +1,0 @@
-export declare const requireJsdoc: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../../core/base/require-jsdoc").MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<import("../../core/base/require-jsdoc").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
-//# sourceMappingURL=require-jsdoc.d.ts.map

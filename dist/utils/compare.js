@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.compare = void 0;
+exports.compare = compare;
 const tslib_1 = require("tslib");
 const natural_compare_1 = tslib_1.__importDefault(require("natural-compare"));
 /**
@@ -13,5 +13,4 @@ const natural_compare_1 = tslib_1.__importDefault(require("natural-compare"));
 function compare(x, y) {
     return (0, natural_compare_1.default)(x, y);
 }
-exports.compare = compare;
 //# sourceMappingURL=compare.js.map

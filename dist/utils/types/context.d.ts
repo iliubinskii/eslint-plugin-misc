@@ -1,7 +1,7 @@
 import type * as estree from "estree";
 import type { Casing, Options, esRange, esRanges } from "./misc";
 import type { ReportDescriptor, RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { s, strings, unknowns } from "typescript-misc";
+import type { s, strings } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
 export interface Context<M extends string, O extends object, S extends object, K extends string = never> {
     readonly eol: s.Eol;
@@ -101,7 +101,6 @@ export interface Context<M extends string, O extends object, S extends object, K
      * @param descriptor - Descriptor.
      */
     readonly report: (descriptor: ReportDescriptor<M>) => void;
-    readonly scope: ReturnType<RuleContext<M, unknowns>["getScope"]>;
     /**
      * Strips extension.
      *

@@ -70,34 +70,39 @@ utils.testRule("sort-array", rule, [
         selector: "ArrayExpression",
         sendToBottom: /^bottom:/u.source,
         sendToTop: /^top:/u.source,
+        customOrder: ["custom:x", "custom:y"],
         sortKey: "key",
         triggerByComment: false
       }
     ],
     code: `
       const x = [
-        { ...{}, a: 1, key: "top:x" },
-        { ...{}, a: 2, key: "bottom:y" },
+        { ...{}, a: 1, key: "custom:x" },
+        { ...{}, a: 2, key: "top:x" },
         { ...{}, a: 3, key: "bottom:x" },
         { ...{}, a: 4, key: "a" },
         { ...{}, a: 5, key: "c" },
         { ...{}, a: 6, key: "b" },
-        { ...{}, a: 7, key: "top:y" }
+        { ...{}, a: 7, key: "top:y" },
+        { ...{}, a: 8, key: "custom:y" },
+        { ...{}, a: 9, key: "bottom:y" }
       ];
     `,
     output: `
       const x = [
-        { ...{}, a: 1, key: "top:x" },
+        { ...{}, a: 1, key: "custom:x" },
+        { ...{}, a: 8, key: "custom:y" },
+        { ...{}, a: 2, key: "top:x" },
         { ...{}, a: 7, key: "top:y" },
         { ...{}, a: 4, key: "a" },
         { ...{}, a: 6, key: "b" },
         { ...{}, a: 5, key: "c" },
         { ...{}, a: 3, key: "bottom:x" },
-        { ...{}, a: 2, key: "bottom:y" }
+        { ...{}, a: 9, key: "bottom:y" }
       ];
     `,
     errors: [
-      { line: 3, endLine: 8, messageId: MessageId.incorrectSortingOrder }
+      { line: 3, endLine: 9, messageId: MessageId.incorrectSortingOrder }
     ]
   },
   {

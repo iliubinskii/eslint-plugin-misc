@@ -9,5 +9,5 @@ export interface Options {
 export declare enum MessageId {
     customMessage = "customMessage"
 }
-export declare const requireSyntax: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<Options, object, never>, RuleListener>;
+export declare const requireSyntax: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<MessageId, import("../../utils/create-rule").PartialOptionsArray<Options, object, never>, RuleListener>;
 //# sourceMappingURL=require-syntax.d.ts.map

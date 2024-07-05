@@ -16,5 +16,5 @@ export declare enum MessageId {
     wildcardDisallowed = "wildcardDisallowed",
     wildcardRequired = "wildcardRequired"
 }
-export declare const consistentImport: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<object, Suboptions, "sources">, RuleListener>;
+export declare const consistentImport: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<MessageId, import("../../utils/create-rule").PartialOptionsArray<object, Suboptions, "sources">, RuleListener>;
 //# sourceMappingURL=consistent-import.d.ts.map

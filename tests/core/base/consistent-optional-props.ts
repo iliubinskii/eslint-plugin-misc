@@ -1,4 +1,3 @@
-// eslint-disable-next-line misc/no-at-sign-internal-import -- Ok
 import { Style, Target } from "@/core/base/consistent-optional-props";
 import { rules, utils } from "@";
 import getCurrentLine from "get-current-line";

@@ -24,7 +24,6 @@ const sort_array_1 = require("./sort-array");
 const sort_class_members_1 = require("./sort-class-members");
 const sort_export_specifiers_1 = require("./sort-export-specifiers");
 const sort_keys_1 = require("./sort-keys");
-const sort_statements_1 = require("./sort-statements");
 const sort_top_comments_1 = require("./sort-top-comments");
 const switch_case_spacing_1 = require("./switch-case-spacing");
 const template_literal_format_1 = require("./template-literal-format");
@@ -53,7 +52,6 @@ exports.base = {
     "sort-class-members": sort_class_members_1.sortClassMembers,
     "sort-export-specifiers": sort_export_specifiers_1.sortExportSpecifiers,
     "sort-keys": sort_keys_1.sortKeys,
-    "sort-statements": sort_statements_1.sortStatements,
     "sort-top-comments": sort_top_comments_1.sortTopComments,
     "switch-case-spacing": switch_case_spacing_1.switchCaseSpacing,
     "template-literal-format": template_literal_format_1.templateLiteralFormat,

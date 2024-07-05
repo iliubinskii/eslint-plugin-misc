@@ -1,11 +1,10 @@
-import type { AllowDisallowPatterns, FilePattern, Matcher, RegexpPattern, RuleListeners, Selector } from "./types";
+import type { AllowDisallowPatterns, Docs, FilePattern, Matcher, RegexpPattern, RuleListeners, Selector } from "./types";
 import { Casing, TypeGroup } from "./types";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { unknowns } from "typescript-misc";
 import { fn, is } from "typescript-misc";
 import type { RuleListener, RuleModule } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { MinimatchOptions } from "minimatch";
-import type { WrapRuleOptions } from "./misc.internal";
 export declare const isCasing: is.Guard<Casing>;
 export declare const isFilePattern: is.Guard<FilePattern>;
 export declare const isRegexpPattern: is.Guard<RegexpPattern>;
@@ -67,4 +66,9 @@ export declare function setCasing(str: string, casing?: Casing): string;
  * @returns Wrapped rule.
  */
 export declare function wrapRule<M extends string, O extends unknowns>(options: WrapRuleOptions<M, O>): RuleModule<M, O>;
+export interface WrapRuleOptions<M extends string, O extends unknowns> {
+    readonly docs: Docs;
+    readonly options: O;
+    readonly rule: RuleModule<M, O>;
+}
 //# sourceMappingURL=misc.d.ts.map

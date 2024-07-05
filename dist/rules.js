@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.rules = void 0;
-const tslib_1 = require("tslib");
-const utils = tslib_1.__importStar(require("./utils"));
-const rules_core_1 = require("./rules.core");
+const core_1 = require("./core");
+const utils_1 = require("./utils");
+const typescript_1 = require("./typescript");
 exports.rules = {
-    ...rules_core_1.rules,
-    ...utils.getSynonyms("./.eslintrc.synonyms.js", rules_core_1.rules)
+    ...core_1.core,
+    ...typescript_1.typescript,
+    ...(0, utils_1.getSynonyms)("./.eslintrc.synonyms.cjs", { ...core_1.core, ...typescript_1.typescript })
 };
 //# sourceMappingURL=rules.js.map

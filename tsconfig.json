@@ -1,51 +1,58 @@
 {
-  "extends": "project-chore/tsconfig/strict",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": ".cache/typescript",
+    "allowJs": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "checkJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "exactOptionalPropertyTypes": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["DOM", "ES2022"],
+    "module": "CommonJS",
+    "moduleResolution": "Node10",
+    "newLine": "lf",
+    "noEmit": false,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
     "paths": {
-      "@": [
-        "src"
-      ],
-      "@/*": [
-        "src/*"
-      ]
+      "@": ["./src"],
+      "@/*": ["./src/*"]
     },
-    "typeRoots": [
-      "node_modules/@types",
-      "node_modules/types-fix"
-    ],
-    "types": [
-      "jest",
-      "node",
-      "typescript-any-to-unknown"
-    ]
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2022",
+    "types": ["jest", "node"],
+    "useDefineForClassFields": true,
+    "useUnknownInCatchVariables": true
   },
-  "exclude": [
-    ".cache",
-    "coverage",
-    "dist",
-    "docs",
-    "es",
-    "node_modules"
-  ],
+  "exclude": ["coverage", "dist", "node_modules"],
   "include": [
-    "*.js",
-    "*.ts",
-    ".eslintrc.js",
-    ".eslintrc.overrides.js",
-    ".eslintrc.rule-overrides.js",
-    ".eslintrc.synonyms.js",
-    ".eslintrc.temp.js",
-    ".postcssrc.js",
-    ".prettierrc.js",
-    ".stylelintrc.js",
-    ".stylelintrc-html.js",
-    "fixtures/**/*.js",
-    "fixtures/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.ts",
-    "tests/**/*.js",
-    "tests/**/*.ts"
+    ".eslintrc.base.cjs",
+    ".eslintrc.cjs",
+    ".eslintrc.spellcheck.cjs",
+    ".prettierrc.mjs",
+    ".stylelintrc.base.mjs",
+    ".stylelintrc.mjs",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

@@ -2,10 +2,10 @@
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "misc/{{name}}": [
+    "misc/%NAME%": [
       "error",
       {
-        {{options}}
+        %OPTIONS%
       }
     ]
   }
@@ -13,5 +13,6 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
-{{options-annotation}}
+| :----- | :---------- | :------ |
+
+%OPTIONS-ANNOTATION%

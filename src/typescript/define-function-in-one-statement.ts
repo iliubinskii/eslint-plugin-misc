@@ -1,7 +1,6 @@
 import * as utils from "../utils";
 import { base } from "./base";
 
-// eslint-disable-next-line misc/max-identifier-blocks -- Ok
 export const defineFunctionInOneStatement = utils.wrapRule({
   rule: base["no-restricted-syntax"],
   options: [

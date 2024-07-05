@@ -13,5 +13,5 @@ export declare enum MessageId {
     invalidFilename = "invalidFilename",
     invalidFilenameId = "invalidFilenameId"
 }
-export declare const consistentFilename: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<Options, Suboptions, "overrides">, RuleListener>;
+export declare const consistentFilename: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<MessageId, import("../../utils/create-rule").PartialOptionsArray<Options, Suboptions, "overrides">, RuleListener>;
 //# sourceMappingURL=consistent-filename.d.ts.map

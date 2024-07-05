@@ -1,1 +1,0 @@
-{"version":3,"file":"sort-commitlint.js","sourceRoot":"","sources":["../../src/project-chore/sort-commitlint.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,UAAU,CAAC;AAClC,OAAO,EAAE,IAAI,EAAE,MAAM,SAAS,CAAC;AAE/B,MAAM,CAAC,MAAM,cAAc,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC3C,IAAI,EAAE,IAAI,CAAC,YAAY,CAAC;IACxB,OAAO,EAAE,CAAC,EAAE,gBAAgB,EAAE,KAAK,EAAE,CAAC;CACvC,CAAC,CAAC"}

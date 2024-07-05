@@ -2,7 +2,7 @@
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "misc/{{name}}": "error"
+    "misc/%NAME%": "error"
   }
 };
 ```

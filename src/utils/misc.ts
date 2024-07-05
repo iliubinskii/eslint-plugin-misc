@@ -1,6 +1,7 @@
 import * as _ from "lodash-commonjs-es";
 import type {
   AllowDisallowPatterns,
+  Docs,
   FilePattern,
   Matcher,
   RegexpPattern,
@@ -30,7 +31,6 @@ import type {
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { MinimatchOptions } from "minimatch";
-import type { WrapRuleOptions } from "./misc.internal";
 import { minimatch } from "minimatch";
 
 export const isCasing = is.factory(is.enumeration, Casing);
@@ -130,7 +130,6 @@ export function createRegexpMatcher(
  * @returns Merged listeners.
  */
 export function mergeListeners(...listeners: RuleListeners): RuleListener {
-  // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
   return o.fromEntries(
     o
       .entries(
@@ -229,18 +228,14 @@ export function wrapRule<M extends string, O extends unknowns>(
 ): RuleModule<M, O> {
   const { docs: rawDocs, options: ruleOptions, rule } = options;
 
-  const docs: ESLintUtils.NamedCreateRuleMetaDocs = {
-    recommended: false,
+  const docs: ESLintUtils.NamedCreateRuleMetaDocs<O> = {
+    recommended: "recommended",
     requiresTypeChecking: true,
     ...o.removeUndefinedKeys.alt({
       ...rawDocs,
-      description: rawDocs
-        ? s.unpadMultiline(rawDocs.description)
-        : "No description.",
-      failExamples: rawDocs
-        ? s.unpadMultiline(rawDocs.failExamples)
-        : undefined,
-      passExamples: rawDocs ? s.unpadMultiline(rawDocs.passExamples) : undefined
+      description: s.unpadMultiline(rawDocs.description),
+      failExamples: s.unpadMultiline(rawDocs.failExamples),
+      passExamples: s.unpadMultiline(rawDocs.passExamples)
     })
   };
 
@@ -269,4 +264,10 @@ export function wrapRule<M extends string, O extends unknowns>(
     },
     meta: { ...rule.meta, docs }
   };
+}
+
+export interface WrapRuleOptions<M extends string, O extends unknowns> {
+  readonly docs: Docs;
+  readonly options: O;
+  readonly rule: RuleModule<M, O>;
 }

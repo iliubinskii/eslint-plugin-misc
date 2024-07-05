@@ -174,9 +174,7 @@ function getMemberDynamicStatic(node) {
         case utils_1.AST_NODE_TYPES.TSAbstractMethodDefinition:
         case utils_1.AST_NODE_TYPES.TSAbstractPropertyDefinition:
         case utils_1.AST_NODE_TYPES.TSIndexSignature:
-            return node.static ?? false
-                ? DynamicStatic.static
-                : DynamicStatic.dynamic;
+            return node.static ? DynamicStatic.static : DynamicStatic.dynamic;
         case utils_1.AST_NODE_TYPES.StaticBlock:
             return DynamicStatic.static;
     }

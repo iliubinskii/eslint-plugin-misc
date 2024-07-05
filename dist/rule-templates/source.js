@@ -1,10 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.create = void 0;
+exports.create = exports.Type = void 0;
 const typescript_misc_1 = require("typescript-misc");
 const utils_1 = require("@typescript-eslint/utils");
-const source_internal_1 = require("./source.internal");
-// eslint-disable-next-line misc/only-export-name -- Ok
+var Type;
+(function (Type) {
+    Type["export"] = "export";
+    Type["import"] = "import";
+})(Type || (exports.Type = Type = {}));
 exports.create = (0, typescript_misc_1.defineFn)(
 /**
  * Creates rule listener.
@@ -20,26 +23,26 @@ exports.create = (0, typescript_misc_1.defineFn)(
             if (typescript_misc_1.is.not.empty(source) &&
                 source.type === utils_1.AST_NODE_TYPES.Literal &&
                 typescript_misc_1.is.string(source.value))
-                callback({ node: source, source: source.value, type: source_internal_1.Type.import });
+                callback({ node: source, source: source.value, type: Type.import });
         }
     },
     ExportAllDeclaration: node => {
         const source = node.source;
-        callback({ node: source, source: source.value, type: source_internal_1.Type.export });
+        callback({ node: source, source: source.value, type: Type.export });
     },
     ExportNamedDeclaration: node => {
         const source = node.source;
         if (source)
-            callback({ node: source, source: source.value, type: source_internal_1.Type.export });
+            callback({ node: source, source: source.value, type: Type.export });
     },
     ImportDeclaration: node => {
         const source = node.source;
-        callback({ node: source, source: source.value, type: source_internal_1.Type.import });
+        callback({ node: source, source: source.value, type: Type.import });
     },
     ImportExpression: node => {
         const source = node.source;
         if (source.type === utils_1.AST_NODE_TYPES.Literal && typescript_misc_1.is.string(source.value))
-            callback({ node: source, source: source.value, type: source_internal_1.Type.import });
+            callback({ node: source, source: source.value, type: Type.import });
     }
-}), { Type: source_internal_1.Type });
+}), { Type });
 //# sourceMappingURL=source.js.map

@@ -2,8 +2,6 @@
   "default": true,
   "line-length": false,
   "no-inline-html": {
-    "allowed_elements": [
-      "a"
-    ]
+    "allowed_elements": ["a"]
   }
 }

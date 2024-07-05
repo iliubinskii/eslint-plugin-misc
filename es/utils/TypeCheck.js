@@ -4,30 +4,13 @@ import { AST_NODE_TYPES, ESLintUtils } from "@typescript-eslint/utils";
 import { ReadonlySet, as, assert, is, typedef } from "typescript-misc";
 import { TypeGroup } from "./types";
 export class TypeCheck {
+    checker;
     /**
      * Creates class instance.
      *
      * @param context - Context.
      */
     constructor(context) {
-        Object.defineProperty(this, "checker", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
-        Object.defineProperty(this, "code", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
-        Object.defineProperty(this, "toTsNode", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
         const parser = ESLintUtils.getParserServices(context);
         const { esTreeNodeToTSNodeMap, program } = parser;
         assert.toBeTrue(tsutils.isStrictCompilerOptionEnabled(program.getCompilerOptions(), "strictNullChecks"), 'Expecting "strictNullChecks" compiler option to be enabled');
@@ -132,7 +115,6 @@ export class TypeCheck {
      * @param type - Type.
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
-    // eslint-disable-next-line misc/max-identifier-blocks -- Ok
     isArrayOrTupleType(type) {
         return this.checker.isArrayType(type) || this.checker.isTupleType(type);
     }
@@ -347,6 +329,8 @@ export class TypeCheck {
             ? this.typePartsTypeof(node)
             : this.typePartsNoTypeof(node);
     }
+    code;
+    toTsNode;
     /**
      * Extracts type parts from node.
      *
@@ -447,7 +431,6 @@ function checkTypeFlags(type, ...flags) {
         const constraint = type.getConstraint();
         if (is.empty(constraint))
             return flags.includes(ts.TypeFlags.Unknown);
-        // eslint-disable-next-line misc/no-param-reassign -- Ok
         type = constraint;
     }
     return (flags.includes(type.getFlags()) ||

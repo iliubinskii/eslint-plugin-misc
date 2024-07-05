@@ -1,10 +1,9 @@
 import * as ts from "typescript";
+import type { NumStr, unknowns } from "typescript-misc";
 import type { ParserServices, TSESTree } from "@typescript-eslint/utils";
-import type { Signatures, TypeParts } from "./TypeCheck.internal";
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
 import type { TypeGroups } from "./types";
-import type { unknowns } from "typescript-misc";
 export declare class TypeCheck {
     readonly checker: ts.TypeChecker;
     /**
@@ -209,4 +208,9 @@ export declare class TypeCheck {
      */
     protected typePartsTypeof(node: TSESTree.UnaryExpression): TypeParts;
 }
+export type Signatures = readonly ts.Signature[];
+export type TypeFlagsArray = readonly ts.TypeFlags[];
+export type TypePart = NumStr | ts.Type;
+export type TypeParts = readonly TypePart[];
+export type Types = readonly ts.Type[];
 //# sourceMappingURL=TypeCheck.d.ts.map

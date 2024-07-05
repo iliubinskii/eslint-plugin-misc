@@ -1,12 +1,16 @@
 import type { Context, RuleFixes } from "./types";
-import type { KeyNode, SortingOrder } from "./sort.internal";
 import type { Writable, numberU, stringU, strings } from "typescript-misc";
 import { a, as, defineFn, fn, is } from "typescript-misc";
-import { MessageId } from "./sort.internal";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { compare } from "./compare";
 import { nodeText } from "./misc";
 
+export enum MessageId {
+  incorrectSortingOrder = "incorrectSortingOrder",
+  incorrectSortingOrderId = "incorrectSortingOrderId"
+}
+
+// eslint-disable-next-line import/export -- Ok
 export const sort = defineFn(
   /**
    * Sorts nodes.
@@ -27,7 +31,7 @@ export const sort = defineFn(
         const kNode = keyNode(node);
 
         if (kNode) {
-          const key = nodeText(kNode, () => `\u0002${context.getText(kNode)}`);
+          const key = nodeText(kNode, () => context.getText(kNode));
 
           const index = customOrder.indexOf(key);
 
@@ -79,10 +83,8 @@ export const sort = defineFn(
   }
 );
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
+// eslint-disable-next-line import/export -- Ok
 export namespace sort {
-  export type MessageId = import("./sort.internal").MessageId;
-
   export interface Options<T extends TSESTree.Node> {
     readonly _id?: string;
     readonly customOrder?: strings;
@@ -91,6 +93,26 @@ export namespace sort {
     readonly sendToTop?: string;
     readonly sortingOrder?: SortingOrder<T>;
   }
+}
+
+export interface KeyNode<T extends TSESTree.Node> {
+  /**
+   * Returns key node.
+   *
+   * @param node - Node.
+   * @returns Key node.
+   */
+  (node: T): TSESTree.Node | undefined;
+}
+
+export interface SortingOrder<T extends TSESTree.Node> {
+  /**
+   * Returns sorting order..
+   *
+   * @param node - Node.
+   * @returns Sorting order.
+   */
+  (node: T): stringU;
 }
 
 /**

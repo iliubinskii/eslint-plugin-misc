@@ -30,7 +30,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `rules._id` | Id | `-` |
 | `rules.emptyLine` | Requires or disallows empty line | `-` |
 | `rules.filesToLint` | Files to lint (minimatch patterns) | `[]` |

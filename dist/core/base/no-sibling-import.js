@@ -1,4 +1,6 @@
 "use strict";
+/* eslint-disable no-sync -- Ok */
+/* eslint-disable security/detect-non-literal-fs-filename -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.noSiblingImport = exports.isSuboptions = exports.isStringsArray = exports.MessageId = void 0;
 const tslib_1 = require("tslib");

@@ -1,5 +1,4 @@
 import { rules, utils } from "@";
-// eslint-disable-next-line misc/no-at-sign-internal-import -- Ok
 import { InterfaceOption } from "@/core/base/require-jsdoc";
 import getCurrentLine from "get-current-line";
 
@@ -133,6 +132,25 @@ utils.testRule("require-jsdoc", rule, [
       { line: 13, messageId: MessageId.undocumented },
       { line: 14, messageId: MessageId.undocumented }
     ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    options: [
+      {
+        noDefaultSelectors: true,
+        includeSelectors: ["ClassDeclaration"]
+      }
+    ],
+    code: `
+      class C {
+        public constructor()  {}
+        public get x(): boolean { return true; }
+        public set x(value: boolean) {}
+        public f() {}
+        public static g() {}
+      }
+    `,
+    errors: [{ line: 1, endLine: 7, messageId: MessageId.undocumented }]
   },
   {
     name: `Test at line ${getCurrentLine().line}`,

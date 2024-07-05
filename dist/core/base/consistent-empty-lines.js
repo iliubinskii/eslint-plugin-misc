@@ -108,7 +108,7 @@ exports.consistentEmptyLines = (0, typescript_misc_1.evaluate)(() => {
                 "Program:exit": () => {
                     const prevItemsSorted = typescript_misc_1.a.sort(prevItems, reverseCompare);
                     const nextItemsSorted = typescript_misc_1.a.sort(nextItems, reverseCompare);
-                    const items = _.uniqBy(typescript_misc_1.a.fromIterable((0, typescript_misc_1.evaluate)(function* () {
+                    const items = _.uniqBy(typescript_misc_1.a.fromIterable((0, typescript_misc_1.evaluate)(function* generatePairs() {
                         for (const prevItem of prevItemsSorted)
                             for (const nextItem of nextItemsSorted)
                                 if (prevItem.rule._id === nextItem.rule._id &&

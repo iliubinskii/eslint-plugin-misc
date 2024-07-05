@@ -24,7 +24,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `customOrder` | Array elements with custom order | `-` |
 | `selector` | AST elements to be sorted (AST selector) | `"ArrayExpression"` |
 | `sendToBottom` | Array elements that should be sent to bottom | `-` |

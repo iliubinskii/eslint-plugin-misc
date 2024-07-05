@@ -1,4 +1,3 @@
-// eslint-disable-next-line misc/disallow-import/typescript -- Ok
 import type * as ts from "typescript";
 import * as utils from "../../utils";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
@@ -194,7 +193,6 @@ export const requireJsdoc = utils.createRule({
         } else context.report({ messageId: MessageId.undocumented, node });
     }
 
-    // eslint-disable-next-line misc/max-identifier-blocks -- Ok
     function lintNodeByTypeSymbol(node: TSESTree.Node): void {
       const type = typeCheck.getType(node);
 

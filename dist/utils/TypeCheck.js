@@ -8,30 +8,13 @@ const utils_1 = require("@typescript-eslint/utils");
 const typescript_misc_1 = require("typescript-misc");
 const types_1 = require("./types");
 class TypeCheck {
+    checker;
     /**
      * Creates class instance.
      *
      * @param context - Context.
      */
     constructor(context) {
-        Object.defineProperty(this, "checker", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
-        Object.defineProperty(this, "code", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
-        Object.defineProperty(this, "toTsNode", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: void 0
-        });
         const parser = utils_1.ESLintUtils.getParserServices(context);
         const { esTreeNodeToTSNodeMap, program } = parser;
         typescript_misc_1.assert.toBeTrue(tsutils.isStrictCompilerOptionEnabled(program.getCompilerOptions(), "strictNullChecks"), 'Expecting "strictNullChecks" compiler option to be enabled');
@@ -136,7 +119,6 @@ class TypeCheck {
      * @param type - Type.
      * @returns _True_ if type is an array or a tuple, _false_ otherwise.
      */
-    // eslint-disable-next-line misc/max-identifier-blocks -- Ok
     isArrayOrTupleType(type) {
         return this.checker.isArrayType(type) || this.checker.isTupleType(type);
     }
@@ -351,6 +333,8 @@ class TypeCheck {
             ? this.typePartsTypeof(node)
             : this.typePartsNoTypeof(node);
     }
+    code;
+    toTsNode;
     /**
      * Extracts type parts from node.
      *
@@ -452,7 +436,6 @@ function checkTypeFlags(type, ...flags) {
         const constraint = type.getConstraint();
         if (typescript_misc_1.is.empty(constraint))
             return flags.includes(ts.TypeFlags.Unknown);
-        // eslint-disable-next-line misc/no-param-reassign -- Ok
         type = constraint;
     }
     return (flags.includes(type.getFlags()) ||

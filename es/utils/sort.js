@@ -1,7 +1,12 @@
 import { a, as, defineFn, fn, is } from "typescript-misc";
-import { MessageId } from "./sort.internal";
 import { compare } from "./compare";
 import { nodeText } from "./misc";
+export var MessageId;
+(function (MessageId) {
+    MessageId["incorrectSortingOrder"] = "incorrectSortingOrder";
+    MessageId["incorrectSortingOrderId"] = "incorrectSortingOrderId";
+})(MessageId || (MessageId = {}));
+// eslint-disable-next-line import/export -- Ok
 export const sort = defineFn(
 /**
  * Sorts nodes.
@@ -17,7 +22,7 @@ export const sort = defineFn(
         sortingOrder: (node) => {
             const kNode = keyNode(node);
             if (kNode) {
-                const key = nodeText(kNode, () => `\u0002${context.getText(kNode)}`);
+                const key = nodeText(kNode, () => context.getText(kNode));
                 const index = customOrder.indexOf(key);
                 if (index >= 0)
                     return `${1000 + index}`;

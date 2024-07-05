@@ -51,7 +51,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `checkArrayType` | Check array argument type | `false` |
 | `checkReturnType` | Check function return type | `false` |
 | `ignoreSelector` | Allowed AST elements (AST selectors) | `[]` |

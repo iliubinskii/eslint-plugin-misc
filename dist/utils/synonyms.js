@@ -1,6 +1,13 @@
 "use strict";
+/* eslint-disable @typescript-eslint/no-var-requires -- Ok */
+/* eslint-disable global-require -- Ok */
+/* eslint-disable import/no-dynamic-require -- Ok */
+/* eslint-disable no-sync -- Ok */
+/* eslint-disable security/detect-non-literal-fs-filename -- Ok */
+/* eslint-disable security/detect-non-literal-require -- Ok */
+/* eslint-disable unicorn/prefer-module -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSynonyms = void 0;
+exports.getSynonyms = getSynonyms;
 const tslib_1 = require("tslib");
 const typescript_misc_1 = require("typescript-misc");
 const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
@@ -11,7 +18,6 @@ const node_fs_1 = tslib_1.__importDefault(require("node:fs"));
  * @param core - Core rules.
  * @returns Synonyms.
  */
-// eslint-disable-next-line misc/only-export-name -- Ok
 function getSynonyms(config, core) {
     if (node_fs_1.default.existsSync(config)) {
         const items = typescript_misc_1.o.entries(core).map(([name, rule]) => ({ name, rule }));
@@ -27,5 +33,4 @@ function getSynonyms(config, core) {
     }
     return {};
 }
-exports.getSynonyms = getSynonyms;
 //# sourceMappingURL=synonyms.js.map

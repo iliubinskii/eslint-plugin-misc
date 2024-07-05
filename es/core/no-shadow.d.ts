@@ -1,2 +1,2 @@
-export declare const noShadow: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./base/wrap").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("./base/wrap").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+export declare const noShadow: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<import("./base/wrap").MessageId, import("../utils/create-rule").PartialOptionsArray<import("./base/wrap").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint").RuleListener>;
 //# sourceMappingURL=no-shadow.d.ts.map

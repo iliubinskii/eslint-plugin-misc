@@ -30,7 +30,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `format` | Default file name format | `"kebab-case"` |
 | `overrides._id` | Id | `-` |
 | `overrides.filesToLint` | Files to lint (minimatch patterns) | `[]` |

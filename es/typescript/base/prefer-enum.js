@@ -3,9 +3,7 @@ import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import { is } from "typescript-misc";
 export var MessageId;
 (function (MessageId) {
-    // eslint-disable-next-line misc/max-identifier-blocks -- Ok
     MessageId["preferEnumToStringLiteral"] = "preferEnumToStringLiteral";
-    // eslint-disable-next-line misc/max-identifier-blocks -- Ok
     MessageId["preferEnumToStringUnionType"] = "preferEnumToStringUnionType";
 })(MessageId || (MessageId = {}));
 export const preferEnum = utils.createRule({

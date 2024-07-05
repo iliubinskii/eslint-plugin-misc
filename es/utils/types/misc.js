@@ -1,9 +1,7 @@
 export var Casing;
 (function (Casing) {
     Casing["camelCase"] = "camelCase";
-    // eslint-disable-next-line misc/consistent-enum-members -- Ok
     Casing["kebabCase"] = "kebab-case";
-    // eslint-disable-next-line misc/consistent-enum-members -- Ok
     Casing["pascalCase"] = "PascalCase";
 })(Casing || (Casing = {}));
 export var Fixable;

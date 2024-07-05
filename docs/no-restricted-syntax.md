@@ -23,7 +23,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `ignoreSelector` | Allowed AST elements (AST selectors) | `[]` |
 | `message` | Custom message | `-` |
 | `replacement` | Replacement | `-` |

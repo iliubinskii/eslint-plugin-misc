@@ -1,19 +1,19 @@
-# {{name}}
+# %NAME%
 
-[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / {{name}}
+[ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / %NAME%
 
-{{description}}
+%DESCRIPTION%
 
-{{config}}
+%CONFIG%
 
 ## Examples of incorrect code
 
 ```ts
-{{fail-examples}}
+%FAIL-EXAMPLES%
 ```
 
 ## Examples of correct code
 
 ```ts
-{{pass-examples}}
+%PASS-EXAMPLES%
 ```

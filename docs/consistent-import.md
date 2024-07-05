@@ -33,7 +33,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `sources._id` | Id | `-` |
 | `sources.altLocalNames` | Alternative local names | `[]` |
 | `sources.autoImportSource` | Auto-import source (defaults to "source") | `-` |

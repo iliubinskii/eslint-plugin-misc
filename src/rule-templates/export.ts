@@ -1,6 +1,5 @@
 import * as _ from "lodash-commonjs-es";
 import type * as utils from "../utils";
-import type { Callback } from "./export.internal";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { Writable } from "typescript-misc";
@@ -12,7 +11,6 @@ import { is } from "typescript-misc";
  * @param callback - Callback.
  * @returns Rule listener.
  */
-// eslint-disable-next-line misc/only-export-name -- Ok
 export function create(callback: Callback): RuleListener {
   const exportAllDeclarations: Writable<utils.TSESTree.ExportAllDeclarations> =
     [];
@@ -73,4 +71,22 @@ export function create(callback: Callback): RuleListener {
       });
     }
   };
+}
+
+export interface Callback {
+  /**
+   * Callback.
+   *
+   * @param ctx - Context.
+   */
+  (ctx: Ctx): void;
+}
+
+export interface Ctx {
+  readonly exportAllDeclarations: utils.TSESTree.ExportAllDeclarations;
+  readonly exportDeclarations: utils.TSESTree.ExportDeclarations;
+  readonly exportDefaultDeclarations: utils.TSESTree.ExportDefaultDeclarations;
+  readonly exportNamedDeclarations: utils.TSESTree.ExportNamedDeclarations;
+  readonly identifiers: utils.TSESTree.Identifiers;
+  readonly onlyExport: boolean;
 }

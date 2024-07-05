@@ -28,7 +28,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `overrides._id` | Id | `-` |
 | `overrides.filesToLint` | Files to lint (minimatch patterns) | `[]` |
 | `overrides.filesToSkip` | Files to skip (minimatch patterns) | `[]` |

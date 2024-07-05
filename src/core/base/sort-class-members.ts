@@ -206,9 +206,7 @@ function getMemberDynamicStatic(node: TSESTree.ClassElement): DynamicStatic {
     case AST_NODE_TYPES.TSAbstractMethodDefinition:
     case AST_NODE_TYPES.TSAbstractPropertyDefinition:
     case AST_NODE_TYPES.TSIndexSignature:
-      return node.static ?? false
-        ? DynamicStatic.static
-        : DynamicStatic.dynamic;
+      return node.static ? DynamicStatic.static : DynamicStatic.dynamic;
 
     case AST_NODE_TYPES.StaticBlock:
       return DynamicStatic.static;

@@ -384,7 +384,8 @@ utils.testRule("no-restricted-syntax", rule, [
     ],
     code: `
       var id1: number;
-      var id2: string;
+      var id2: string | object;
+      var id3: object;
     `,
     errors: [
       {
@@ -394,6 +395,50 @@ utils.testRule("no-restricted-syntax", rule, [
       },
       {
         line: 2,
+        messageId: MessageId.customMessage,
+        data: { message: "Custom message" }
+      }
+    ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    options: [
+      {
+        message: "Custom message",
+        selector: "Identifier[name=/^id\\w$/u]",
+        typeIsOneOf: [utils.TypeGroup.number, utils.TypeGroup.string]
+      }
+    ],
+    code: `
+      var id1: number;
+      var id2: string | object;
+      var id3: object;
+    `,
+    errors: [
+      {
+        line: 1,
+        messageId: MessageId.customMessage,
+        data: { message: "Custom message" }
+      }
+    ]
+  },
+  {
+    name: `Test at line ${getCurrentLine().line}`,
+    options: [
+      {
+        message: "Custom message",
+        selector: "Identifier[name=/^id\\w$/u]",
+        typeHasNoneOf: [utils.TypeGroup.number, utils.TypeGroup.string]
+      }
+    ],
+    code: `
+      var id1: number;
+      var id2: string;
+      var id3: object;
+    `,
+    errors: [
+      {
+        line: 3,
         messageId: MessageId.customMessage,
         data: { message: "Custom message" }
       }

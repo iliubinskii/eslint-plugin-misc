@@ -12,5 +12,5 @@ export interface Options {
 export declare enum MessageId {
     expectingArray = "expectingArray"
 }
-export declare const sortArray: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../../utils/sort.internal").MessageId | MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<Options, object, never>, RuleListener>;
+export declare const sortArray: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<import("../../utils/sort").MessageId | MessageId, import("../../utils/create-rule").PartialOptionsArray<Options, object, never>, RuleListener>;
 //# sourceMappingURL=sort-array.d.ts.map

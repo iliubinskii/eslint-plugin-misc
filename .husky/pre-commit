@@ -1,4 +1,8 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-npm run husky-pre-commit
+# Prefer global type check, because changes to one file may cause type errors in other files
+npm run type-check
+
+# Lint the staged files
+npx lint-staged

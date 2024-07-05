@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.create = void 0;
+exports.create = create;
 const tslib_1 = require("tslib");
 const _ = tslib_1.__importStar(require("lodash-commonjs-es"));
 const typescript_misc_1 = require("typescript-misc");
@@ -10,7 +10,6 @@ const typescript_misc_1 = require("typescript-misc");
  * @param callback - Callback.
  * @returns Rule listener.
  */
-// eslint-disable-next-line misc/only-export-name -- Ok
 function create(callback) {
     const exportAllDeclarations = [];
     const exportDefaultDeclarations = [];
@@ -60,5 +59,4 @@ function create(callback) {
         }
     };
 }
-exports.create = create;
 //# sourceMappingURL=export.js.map

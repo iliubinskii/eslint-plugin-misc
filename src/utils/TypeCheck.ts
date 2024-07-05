@@ -1,17 +1,12 @@
 import * as ts from "typescript";
 import * as tsutils from "tsutils";
 import { AST_NODE_TYPES, ESLintUtils } from "@typescript-eslint/utils";
+import type { NumStr, unknowns } from "typescript-misc";
 import type { ParserServices, TSESTree } from "@typescript-eslint/utils";
 import { ReadonlySet, as, assert, is, typedef } from "typescript-misc";
-import type {
-  Signatures,
-  TypeFlagsArray,
-  TypeParts
-} from "./TypeCheck.internal";
 import type { RuleContext } from "@typescript-eslint/utils/dist/ts-eslint";
 import { TypeGroup } from "./types";
 import type { TypeGroups } from "./types";
-import type { unknowns } from "typescript-misc";
 
 export class TypeCheck {
   public readonly checker: ts.TypeChecker;
@@ -155,7 +150,6 @@ export class TypeCheck {
    * @param type - Type.
    * @returns _True_ if type is an array or a tuple, _false_ otherwise.
    */
-  // eslint-disable-next-line misc/max-identifier-blocks -- Ok
   public isArrayOrTupleType(
     type: ts.Type
   ): type is ts.TupleTypeReference | ts.TypeReference {
@@ -571,6 +565,16 @@ export class TypeCheck {
   }
 }
 
+export type Signatures = readonly ts.Signature[];
+
+export type TypeFlagsArray = readonly ts.TypeFlags[];
+
+export type TypePart = NumStr | ts.Type;
+
+export type TypeParts = readonly TypePart[];
+
+export type Types = readonly ts.Type[];
+
 const expectedFlags = new ReadonlySet<ExpectedFlags>([
   ts.TypeFlags.BigInt,
   ts.TypeFlags.BigIntLiteral,
@@ -618,7 +622,6 @@ function checkTypeFlags(type: ts.Type, ...flags: TypeFlagsArray): boolean {
 
     if (is.empty(constraint)) return flags.includes(ts.TypeFlags.Unknown);
 
-    // eslint-disable-next-line misc/no-param-reassign -- Ok
     type = constraint;
   }
 

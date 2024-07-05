@@ -40,24 +40,19 @@ module.exports = {
 
 - plugin:misc/all &mdash; All rules.
 - plugin:misc/core &mdash; Core rules.
-- plugin:misc/eslintrc &mdash; Rules for ESLint configuration files.
-- plugin:misc/jest &mdash; Rules for Jest test files.
 - plugin:misc/typescript &mdash; Rules for typescript files.
 
 ## <a id="rules"></a>Rules
 
-{{rules}}
+%RULES%
 
 ## <a id="synonyms"></a>Synonyms
 
 You can use the same rule several times by adding synonym:
 
 ```js
-// .eslintrc.synonyms.js
-module.exports = [
-  "misc/wrap/class-methods-use-this",
-  "misc/wrap/no-shadow"
-];
+// .eslintrc.synonyms.cjs
+module.exports = ["misc/wrap/class-methods-use-this", "misc/wrap/no-shadow"];
 
 // .eslintrc.js
 module.exports = {
@@ -89,7 +84,7 @@ module.exports = {
 Many custom checks can be created without writing full-fledged ESLint plugin.
 Use the rules below to create custom checks or adapt existing third-party rules:
 
-{{rules:custom}}
+%CUSTOM-RULES%
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 

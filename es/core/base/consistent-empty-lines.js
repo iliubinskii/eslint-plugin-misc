@@ -104,7 +104,7 @@ export const consistentEmptyLines = evaluate(() => {
                 "Program:exit": () => {
                     const prevItemsSorted = a.sort(prevItems, reverseCompare);
                     const nextItemsSorted = a.sort(nextItems, reverseCompare);
-                    const items = _.uniqBy(a.fromIterable(evaluate(function* () {
+                    const items = _.uniqBy(a.fromIterable(evaluate(function* generatePairs() {
                         for (const prevItem of prevItemsSorted)
                             for (const nextItem of nextItemsSorted)
                                 if (prevItem.rule._id === nextItem.rule._id &&

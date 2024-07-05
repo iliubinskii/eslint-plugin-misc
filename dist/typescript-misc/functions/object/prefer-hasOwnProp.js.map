@@ -1,1 +1,0 @@
-{"version":3,"file":"prefer-hasOwnProp.js","sourceRoot":"","sources":["../../../../src/typescript-misc/functions/object/prefer-hasOwnProp.ts"],"names":[],"mappings":";AAAA,mDAAmD;;;;AAEnD,8DAAwC;AACxC,wCAAqC;AAExB,QAAA,gBAAgB,GAAG,KAAK,CAAC,QAAQ,CAAC;IAC7C,IAAI,EAAE,WAAI,CAAC,sBAAsB,CAAC;IAClC,OAAO,EAAE;QACP;YACE,OAAO,EAAE,qCAAqC;YAC9C,QAAQ,EACN,4JAA4J;SAC/J;KACF;CACF,CAAC,CAAC"}

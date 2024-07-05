@@ -1,52 +1,27 @@
-import { evaluate, fn, o } from "typescript-misc";
+import { fn, o } from "typescript-misc";
 import { core } from "./core";
-import { eslintrc } from "./eslintrc";
-import { jest } from "./jest";
-import { projectChore } from "./project-chore";
 import { typescript } from "./typescript";
-import { typescriptMisc } from "./typescript-misc";
-export const configs = evaluate(() => {
-    const coreRules = {
-        ...rules(core),
-        "misc/match-filename": "off",
-        "misc/no-restricted-syntax": "off",
-        "misc/require-syntax": "off",
-        "misc/wrap": "off"
-    };
-    const eslintrcRules = rules(eslintrc);
-    const jestRules = rules(jest);
-    const typescriptRules = {
-        ...rules(typescript),
-        "misc/typescript/no-restricted-syntax": "off"
-    };
-    return {
-        "all": {
-            overrides: [
-                { files: ["*.ts", "*.tsx"], rules: typescriptRules },
-                { files: "./tests/**", rules: jestRules },
-                { files: ".eslintrc.js", rules: eslintrcRules }
-            ],
-            rules: coreRules
-        },
-        "core": { rules: coreRules },
-        "eslintrc": { rules: eslintrcRules },
-        "jest": { rules: jestRules },
-        "project-chore": { rules: rules(projectChore) },
-        "typescript": { rules: typescriptRules },
-        "typescript-misc": {
-            overrides: [
-                {
-                    files: "./tests/**",
-                    rules: rules(typescriptMisc, name => name.startsWith("misc/typescript-misc/jest/"))
-                }
-            ],
-            rules: rules(typescriptMisc, name => !name.startsWith("misc/typescript-misc/jest/"))
-        }
-    };
-});
+const coreRules = {
+    ...rules(core),
+    "misc/match-filename": "off",
+    "misc/no-restricted-syntax": "off",
+    "misc/require-syntax": "off",
+    "misc/wrap": "off"
+};
+const typescriptRules = {
+    ...rules(typescript),
+    "misc/typescript/no-restricted-syntax": "off"
+};
+export const configs = {
+    all: {
+        overrides: [{ files: ["*.ts", "*.tsx"], rules: typescriptRules }],
+        rules: coreRules
+    },
+    core: { rules: coreRules },
+    typescript: { rules: typescriptRules }
+};
 /**
  * Converts rules to configuration.
- *
  * @param source - Source.
  * @param filter - Filter.
  * @returns Configuration.

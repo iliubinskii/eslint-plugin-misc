@@ -1,4 +1,9 @@
 "use strict";
+/* eslint-disable @typescript-eslint/no-var-requires -- Ok */
+/* eslint-disable global-require -- Ok */
+/* eslint-disable import/no-dynamic-require -- Ok */
+/* eslint-disable security/detect-non-literal-require -- Ok */
+/* eslint-disable unicorn/prefer-module -- Ok */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.wrap = exports.MessageId = void 0;
 const tslib_1 = require("tslib");
@@ -68,9 +73,8 @@ exports.wrap = utils.createRule({
     create: (context) => {
         const { disableFix, lint: mixedLint, plugin, rule: name, skip: mixedSkip } = context.options;
         const rule = (plugin === "eslint"
-            ? // eslint-disable-next-line misc/prefer-const-require -- Ok
-                require(`${utils.projectRoot}node_modules/eslint/lib/rules/${name}`)
-            : // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, misc/prefer-const-require -- Ok
+            ? require(`${utils.projectRoot}node_modules/eslint/lib/rules/${name}`)
+            : // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- Ok
                 require(plugin).rules[name]);
         const lint = utils.selector(mixedLint);
         const skip = utils.selector(mixedSkip);

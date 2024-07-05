@@ -1,2 +1,0 @@
-export declare const sortSuboptions: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("../utils/sort.internal").MessageId | import("../core/base/sort-array").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("../core/base/sort-array").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
-//# sourceMappingURL=sort-suboptions.d.ts.map

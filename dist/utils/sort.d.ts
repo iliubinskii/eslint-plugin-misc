@@ -1,8 +1,10 @@
 import type { Context } from "./types";
-import type { KeyNode, SortingOrder } from "./sort.internal";
-import type { strings } from "typescript-misc";
-import { MessageId } from "./sort.internal";
+import type { stringU, strings } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
+export declare enum MessageId {
+    incorrectSortingOrder = "incorrectSortingOrder",
+    incorrectSortingOrderId = "incorrectSortingOrderId"
+}
 export declare const sort: (<T extends TSESTree.Node = TSESTree.Node>(nodes: readonly T[], context: Context<MessageId, object, object>, options: sort.Options<T>) => void) & Readonly<{
     MessageId: typeof MessageId;
     messages: {
@@ -11,7 +13,6 @@ export declare const sort: (<T extends TSESTree.Node = TSESTree.Node>(nodes: rea
     };
 }>;
 export declare namespace sort {
-    type MessageId = import("./sort.internal").MessageId;
     interface Options<T extends TSESTree.Node> {
         readonly _id?: string;
         readonly customOrder?: strings;
@@ -20,5 +21,23 @@ export declare namespace sort {
         readonly sendToTop?: string;
         readonly sortingOrder?: SortingOrder<T>;
     }
+}
+export interface KeyNode<T extends TSESTree.Node> {
+    /**
+     * Returns key node.
+     *
+     * @param node - Node.
+     * @returns Key node.
+     */
+    (node: T): TSESTree.Node | undefined;
+}
+export interface SortingOrder<T extends TSESTree.Node> {
+    /**
+     * Returns sorting order..
+     *
+     * @param node - Node.
+     * @returns Sorting order.
+     */
+    (node: T): stringU;
 }
 //# sourceMappingURL=sort.d.ts.map

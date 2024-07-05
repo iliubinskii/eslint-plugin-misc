@@ -4,10 +4,9 @@ import type {
   ReportDescriptor,
   RuleContext
 } from "@typescript-eslint/utils/dist/ts-eslint";
-import type { s, strings, unknowns } from "typescript-misc";
+import type { s, strings } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
 
-// eslint-disable-next-line misc/only-export-name -- Ok
 export interface Context<
   M extends string,
   O extends object,
@@ -117,7 +116,6 @@ export interface Context<
    * @param descriptor - Descriptor.
    */
   readonly report: (descriptor: ReportDescriptor<M>) => void;
-  readonly scope: ReturnType<RuleContext<M, unknowns>["getScope"]>;
   /**
    * Strips extension.
    *

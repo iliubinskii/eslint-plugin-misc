@@ -30,7 +30,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `overrides._id` | Id | `-` |
 | `overrides.customOrder` | Array elements with custom order | `-` |
 | `overrides.filesToLint` | Files to lint (minimatch patterns) | `[]` |

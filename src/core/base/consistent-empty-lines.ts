@@ -138,7 +138,7 @@ export const consistentEmptyLines = evaluate(() => {
 
             const items = _.uniqBy(
               a.fromIterable(
-                evaluate(function* (): Generator<Pair> {
+                evaluate(function* generatePairs(): Generator<Pair> {
                   for (const prevItem of prevItemsSorted)
                     for (const nextItem of nextItemsSorted)
                       if (

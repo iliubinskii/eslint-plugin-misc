@@ -1,4 +1,3 @@
-/* eslint-disable xss/no-mixed-html -- Ok */
 import * as utils from "../utils";
 import { base } from "./base";
 export const preferReadonlyMap = utils.wrapRule({

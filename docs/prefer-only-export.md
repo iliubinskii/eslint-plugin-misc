@@ -19,7 +19,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `selector` | AST selector | `[]` |
 
 ## Examples of incorrect code

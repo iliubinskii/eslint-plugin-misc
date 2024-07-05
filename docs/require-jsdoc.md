@@ -22,7 +22,8 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
+| :----- | :---------- | :------ |
+
 | `excludeSelectors` | Skip these selectors | `[]` |
 | `includeSelectors` | Check additional selectors | `[]` |
 | `interfaces` | Require documentation for interface ("interface"), call signatures ("callSignatures"), construct signatures ("constructSignatures") | `['callSignatures','constructSignatures']` |

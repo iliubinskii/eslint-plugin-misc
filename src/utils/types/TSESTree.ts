@@ -1,5 +1,3 @@
-/* eslint-disable misc/consistent-filename -- Ok */
-
 import type { TSESTree } from "@typescript-eslint/utils";
 
 export type ExportAllDeclarations = readonly TSESTree.ExportAllDeclaration[];

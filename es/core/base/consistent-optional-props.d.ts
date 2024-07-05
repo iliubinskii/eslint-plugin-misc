@@ -31,5 +31,5 @@ export declare enum Target {
 }
 export declare const isStyle: is.Guard<Style>;
 export declare const isTarget: is.Guard<Target>;
-export declare const consistentOptionalProps: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<MessageId, import("../../utils/create-rule.internal").PartialOptionsArray<Options, Suboptions, "overrides">, RuleListener>;
+export declare const consistentOptionalProps: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<MessageId, import("../../utils/create-rule").PartialOptionsArray<Options, Suboptions, "overrides">, RuleListener>;
 //# sourceMappingURL=consistent-optional-props.d.ts.map

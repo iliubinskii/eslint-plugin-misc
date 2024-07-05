@@ -1,10 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sort = void 0;
+exports.sort = exports.MessageId = void 0;
 const typescript_misc_1 = require("typescript-misc");
-const sort_internal_1 = require("./sort.internal");
 const compare_1 = require("./compare");
 const misc_1 = require("./misc");
+var MessageId;
+(function (MessageId) {
+    MessageId["incorrectSortingOrder"] = "incorrectSortingOrder";
+    MessageId["incorrectSortingOrderId"] = "incorrectSortingOrderId";
+})(MessageId || (exports.MessageId = MessageId = {}));
+// eslint-disable-next-line import/export -- Ok
 exports.sort = (0, typescript_misc_1.defineFn)(
 /**
  * Sorts nodes.
@@ -20,7 +25,7 @@ exports.sort = (0, typescript_misc_1.defineFn)(
         sortingOrder: (node) => {
             const kNode = keyNode(node);
             if (kNode) {
-                const key = (0, misc_1.nodeText)(kNode, () => `\u0002${context.getText(kNode)}`);
+                const key = (0, misc_1.nodeText)(kNode, () => context.getText(kNode));
                 const index = customOrder.indexOf(key);
                 if (index >= 0)
                     return `${1000 + index}`;
@@ -54,10 +59,10 @@ exports.sort = (0, typescript_misc_1.defineFn)(
     }
     sortGroup(items, options, context);
 }, {
-    MessageId: sort_internal_1.MessageId,
+    MessageId,
     messages: {
-        [sort_internal_1.MessageId.incorrectSortingOrder]: "Incorrect sorting order",
-        [sort_internal_1.MessageId.incorrectSortingOrderId]: "Incorrect sorting order ({{_id}})"
+        [MessageId.incorrectSortingOrder]: "Incorrect sorting order",
+        [MessageId.incorrectSortingOrderId]: "Incorrect sorting order ({{_id}})"
     }
 });
 /**
@@ -97,13 +102,13 @@ function sortGroup(items, options, context) {
                     data: { _id },
                     fix: () => fixes,
                     loc,
-                    messageId: sort_internal_1.MessageId.incorrectSortingOrderId
+                    messageId: MessageId.incorrectSortingOrderId
                 });
             else
                 context.report({
                     fix: () => fixes,
                     loc,
-                    messageId: sort_internal_1.MessageId.incorrectSortingOrder
+                    messageId: MessageId.incorrectSortingOrder
                 });
         }
     }

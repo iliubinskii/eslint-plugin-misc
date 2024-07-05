@@ -1,1 +1,1 @@
-{"version":3,"file":"no-multi-type-tuples.d.ts","sourceRoot":"","sources":["../../../src/typescript/base/no-multi-type-tuples.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,yCAAyC,CAAC;AAE5E,oBAAY,SAAS;IACnB,cAAc,mBAAmB;CAClC;AAED,eAAO,MAAM,iBAAiB,mLAc5B,CAAC"}
+{"version":3,"file":"no-multi-type-tuples.d.ts","sourceRoot":"","sources":["../../../src/typescript/base/no-multi-type-tuples.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,yCAAyC,CAAC;AAE5E,oBAAY,SAAS;IACnB,cAAc,mBAAmB;CAClC;AAED,eAAO,MAAM,iBAAiB,qKAc5B,CAAC"}

@@ -1,2 +1,2 @@
-export declare const consistentArrayTypeName: import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleModule<import("./base/no-restricted-syntax").MessageId, import("../utils/create-rule.internal").PartialOptionsArray<import("./base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint/Rule").RuleListener>;
+export declare const consistentArrayTypeName: import("@typescript-eslint/utils/dist/ts-eslint").RuleModule<import("./base/no-restricted-syntax").MessageId, import("../utils/create-rule").PartialOptionsArray<import("./base/no-restricted-syntax").Options, object, never>, import("@typescript-eslint/utils/dist/ts-eslint").RuleListener>;
 //# sourceMappingURL=consistent-array-type-name.d.ts.map

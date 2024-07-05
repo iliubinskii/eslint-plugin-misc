@@ -72,7 +72,7 @@ utils.testRule(
           constructor () {}
           set x(value: number) {}
           get x(): number { return this.value; }
-          abstract value2 = 1;
+          abstract value2;
           value1 = 1;
           [key: string]: unknown;
         }
@@ -81,7 +81,7 @@ utils.testRule(
         abstract class C {
           [key: string]: unknown;
           value1 = 1;
-          abstract value2 = 1;
+          abstract value2;
           get x(): number { return this.value; }
           set x(value: number) {}
           constructor () {}

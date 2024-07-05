@@ -7,7 +7,7 @@ export const noEmptyInterfaces = utils.wrapRule({
     {
       message: "Empty interface is not allowed",
       selector:
-        "TSInterfaceDeclaration[body.body.length=0][extends=undefined] > Identifier"
+        "TSInterfaceDeclaration[body.body.length=0][extends.length=0] > Identifier"
     }
   ],
   docs: {

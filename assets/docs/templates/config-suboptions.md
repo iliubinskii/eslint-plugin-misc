@@ -2,12 +2,12 @@
 module.exports = {
   plugins: ["misc"],
   rules: {
-    "misc/{{name}}": [
+    "misc/%NAME%": [
       "error",
       {
-        {{key}}: [
+        %KEY%: [
           {
-            {{suboptions}}
+            %SUBOPTIONS%
           },
           ...
         ]
@@ -18,5 +18,6 @@ module.exports = {
 ```
 
 | Option | Description | Default |
-| :----- | :----- | :----- |
-{{suboptions-annotation}}
+| :----- | :---------- | :------ |
+
+%SUBOPTIONS-ANNOTATION%
