@@ -8,13 +8,6 @@ import fs from "node:fs";
 import nodePath from "node:path";
 import type { strings } from "typescript-misc";
 
-export interface Suboptions {
-  readonly _id: string;
-  readonly hierarchy: stringsArray;
-}
-
-export type stringsArray = readonly strings[];
-
 export enum MessageId {
   disallowedSource = "disallowedSource"
 }
@@ -126,9 +119,15 @@ export const noSiblingImport = utils.createRule({
   }
 });
 
+export interface Suboptions {
+  readonly _id: string;
+  readonly hierarchy: stringsArray;
+}
+
+export type stringsArray = readonly strings[];
+
 /**
  * Finds index.
- *
  * @param str - String.
  * @param matchers - Matchers.
  * @returns Index.
@@ -139,7 +138,6 @@ function findIndex(str: string, matchers: utils.Matchers): number {
 
 /**
  * Finds last index.
- *
  * @param str - String.
  * @param matchers - Matchers.
  * @returns Index.

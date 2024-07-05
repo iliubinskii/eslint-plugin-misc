@@ -48,43 +48,46 @@ export const commentSpacing = utils.createRule({
       function h() {}
     `
   },
-  create: (context): RuleListener => ({
-    ":statement, TSDeclareFunction, TSExportAssignment": (
-      node: TSESTree.Node
-    ) => {
-      for (const range of context.getCommentRanges(node)) {
-        const multiline = isMultiline(context.getText(range));
+  create: (context): RuleListener => {
+    return {
+      ":statement, TSDeclareFunction, TSExportAssignment": (
+        node: TSESTree.Node
+      ) => {
+        for (const range of context.getCommentRanges(node)) {
+          const multiline = isMultiline(context.getText(range));
 
-        const nextMultiline = isMultiline(context.getText(range[1]));
+          const nextMultiline = isMultiline(context.getText(range[1]));
 
-        const spread = multiline && !nextMultiline;
+          const spread = multiline && !nextMultiline;
 
-        const got = s.leadingSpaces(context.getText(range[1]));
+          const got = s.leadingSpaces(context.getText(range[1]));
 
-        const expected =
-          context.eol.repeat(spread ? 2 : 1) + s.trimLeadingEmptyLines(got);
+          const expected =
+            context.eol.repeat(spread ? 2 : 1) + s.trimLeadingEmptyLines(got);
 
-        if (got === expected) {
-          // Valid
-        } else
-          context.report({
-            fix: (): RuleFix => ({
-              range: [range[1], range[1] + got.length],
-              text: expected
-            }),
-            loc: context.getLoc(range),
-            messageId: spread
-              ? MessageId.addEmptyLine
-              : MessageId.removeEmptyLine
-          });
+          if (got === expected) {
+            // Valid
+          } else
+            context.report({
+              fix: (): RuleFix => {
+                return {
+                  range: [range[1], range[1] + got.length],
+                  text: expected
+                };
+              },
+              loc: context.getLoc(range),
+              messageId: spread
+                ? MessageId.addEmptyLine
+                : MessageId.removeEmptyLine
+            });
+        }
       }
-    }
-  })
+    };
+  }
 });
 
 /**
  * Checks if string starts with multiline comment.
- *
  * @param str - String.
  * @returns _True_ if string starts with multiline comment, _false_ otherwise.
  */

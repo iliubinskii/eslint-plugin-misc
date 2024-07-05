@@ -5,22 +5,6 @@ import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { Writable } from "typescript-misc";
 
-export interface Options {
-  readonly checkArrayType: boolean;
-  readonly checkReturnType: boolean;
-  readonly ignoreSelector: utils.Selector;
-  readonly message?: string;
-  readonly replacement?: string;
-  readonly search?: string;
-  readonly selector: utils.Selector;
-  readonly typeHas?: utils.TypeGroup;
-  readonly typeHasNoneOf?: utils.TypeGroups;
-  readonly typeHasOneOf?: utils.TypeGroups;
-  readonly typeIs?: utils.TypeGroup;
-  readonly typeIsNoneOf?: utils.TypeGroups;
-  readonly typeIsOneOf?: utils.TypeGroups;
-}
-
 export enum MessageId {
   customMessage = "customMessage"
 }
@@ -185,7 +169,7 @@ export const noRestrictedSyntax = utils.createRule({
                   : undefined;
 
               if (checkReturnType)
-                return type.getCallSignatures().length
+                return type.getCallSignatures().length > 0
                   ? type
                       .getCallSignatures()
                       .map(signature => signature.getReturnType())
@@ -234,3 +218,19 @@ export const noRestrictedSyntax = utils.createRule({
     );
   }
 });
+
+export interface Options {
+  readonly checkArrayType: boolean;
+  readonly checkReturnType: boolean;
+  readonly ignoreSelector: utils.Selector;
+  readonly message?: string;
+  readonly replacement?: string;
+  readonly search?: string;
+  readonly selector: utils.Selector;
+  readonly typeHas?: utils.TypeGroup;
+  readonly typeHasNoneOf?: utils.TypeGroups;
+  readonly typeHasOneOf?: utils.TypeGroups;
+  readonly typeIs?: utils.TypeGroup;
+  readonly typeIsNoneOf?: utils.TypeGroups;
+  readonly typeIsOneOf?: utils.TypeGroups;
+}

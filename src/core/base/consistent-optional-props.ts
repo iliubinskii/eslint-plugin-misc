@@ -4,19 +4,6 @@ import { AST_NODE_TYPES } from "@typescript-eslint/utils";
 import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
 
-export interface Options {
-  readonly classes: Style;
-  readonly interfaces: Style;
-}
-
-export interface Suboptions {
-  readonly _id: string;
-  readonly pattern: utils.RegexpPattern;
-  readonly propertyPattern: utils.RegexpPattern;
-  readonly style: Style;
-  readonly target?: Target;
-}
-
 export enum MessageId {
   combined = "combined",
   combinedId = "combinedId",
@@ -224,20 +211,23 @@ export const consistentOptionalProps = utils.createRule({
                 data: override ? { _id: override._id } : {},
                 messageId: evaluate(() => {
                   switch (expected) {
-                    case Style.combined:
+                    case Style.combined: {
                       return override
                         ? MessageId.combinedId
                         : MessageId.combined;
+                    }
 
-                    case Style.optional:
+                    case Style.optional: {
                       return override
                         ? MessageId.optionalId
                         : MessageId.optional;
+                    }
 
-                    case Style.undefined:
+                    case Style.undefined: {
                       return override
                         ? MessageId.undefinedId
                         : MessageId.undefined;
+                    }
                   }
                 }),
                 node
@@ -247,6 +237,19 @@ export const consistentOptionalProps = utils.createRule({
     }
   }
 });
+
+export interface Options {
+  readonly classes: Style;
+  readonly interfaces: Style;
+}
+
+export interface Suboptions {
+  readonly _id: string;
+  readonly pattern: utils.RegexpPattern;
+  readonly propertyPattern: utils.RegexpPattern;
+  readonly style: Style;
+  readonly target?: Target;
+}
 
 const exclusionTypes = new ReadonlySet([
   AST_NODE_TYPES.TSAnyKeyword,

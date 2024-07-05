@@ -6,12 +6,6 @@ import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { Writable } from "typescript-misc";
 
-export interface Suboptions {
-  readonly _id: string;
-  readonly format: utils.Casing;
-  readonly selector: utils.Selector;
-}
-
 export enum MessageId {
   inconsistentMember = "inconsistentMember"
 }
@@ -91,9 +85,14 @@ export const consistentEnumMembers = utils.createRule({
   }
 });
 
+export interface Suboptions {
+  readonly _id: string;
+  readonly format: utils.Casing;
+  readonly selector: utils.Selector;
+}
+
 /**
  * Compares items.
- *
  * @param item1 - First item.
  * @param item2 - Second item.
  * @returns - Comparison result.

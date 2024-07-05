@@ -12,7 +12,6 @@ import fs from "node:fs";
 
 /**
  * Creates synonyms.
- *
  * @param config - Path to synonyms configuration.
  * @param core - Core rules.
  * @returns Synonyms.
@@ -22,7 +21,9 @@ export function getSynonyms(
   core: IndexedRecord
 ): IndexedRecord {
   if (fs.existsSync(config)) {
-    const items = o.entries(core).map(([name, rule]): Item => ({ name, rule }));
+    const items = o.entries(core).map(([name, rule]): Item => {
+      return { name, rule };
+    });
 
     const synonyms: unknown = require(fs.realpathSync(config));
 

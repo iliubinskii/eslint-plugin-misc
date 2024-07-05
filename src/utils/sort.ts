@@ -14,7 +14,6 @@ export enum MessageId {
 export const sort = defineFn(
   /**
    * Sorts nodes.
-   *
    * @param nodes - Nodes.
    * @param context - Context.
    * @param options - Options.
@@ -98,7 +97,6 @@ export namespace sort {
 export interface KeyNode<T extends TSESTree.Node> {
   /**
    * Returns key node.
-   *
    * @param node - Node.
    * @returns Key node.
    */
@@ -108,7 +106,6 @@ export interface KeyNode<T extends TSESTree.Node> {
 export interface SortingOrder<T extends TSESTree.Node> {
   /**
    * Returns sorting order..
-   *
    * @param node - Node.
    * @returns Sorting order.
    */
@@ -117,7 +114,6 @@ export interface SortingOrder<T extends TSESTree.Node> {
 
 /**
  * Sorts items.
- *
  * @param items - Items.
  * @param options - Options.
  * @param context - Context.
@@ -131,7 +127,9 @@ function sortGroup<T extends TSESTree.Node = TSESTree.Node>(
     const { _id } = options;
 
     const sortedItems = a.sort(
-      items.map((item, index): Item => ({ ...item, index })),
+      items.map((item, index): Item => {
+        return { ...item, index };
+      }),
       (item1, item2) => compare(item1.key, item2.key)
     );
 
@@ -155,7 +153,7 @@ function sortGroup<T extends TSESTree.Node = TSESTree.Node>(
         });
       }
 
-    if (fixes.length) {
+    if (fixes.length > 0) {
       const loc = context.getLoc([
         a.get(items, as.not.empty(min)).node.range[0],
         a.get(items, as.not.empty(max)).node.range[1]

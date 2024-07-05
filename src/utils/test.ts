@@ -13,7 +13,6 @@ import { projectRoot } from "./misc";
 
 /**
  * Extracts MessageId from rule.
- *
  * @param rule - Rule.
  * @returns MessageId.
  */
@@ -27,7 +26,6 @@ export function getMessageId<T extends string>(
 
 /**
  * Runs test.
- *
  * @param name - Name.
  * @param rule - Rule.
  * @param invalid - Invalid tests.
@@ -55,24 +53,24 @@ export function testRule<
   });
 
   tester.run(name, rule, {
-    invalid: invalid.map(
-      (test): BaseInvalidTestCase<M, O> => ({
+    invalid: invalid.map((test): BaseInvalidTestCase<M, O> => {
+      return {
         ...test,
         code: s.unpadMultiline(test.code),
-        errors: test.errors.map(
-          (error): TestCaseError<M> => ({ endLine: error.line, ...error })
-        ),
+        errors: test.errors.map((error): TestCaseError<M> => {
+          return { endLine: error.line, ...error };
+        }),
         filename: `${projectRoot}fixtures/${test.filename ?? "file.ts"}`,
         output: s.unpadMultiline(test.output ?? test.code)
-      })
-    ),
-    valid: valid.map(
-      (test): BaseValidTestCase<O> => ({
+      };
+    }),
+    valid: valid.map((test): BaseValidTestCase<O> => {
+      return {
         ...test,
         code: s.unpadMultiline(test.code),
         filename: `${projectRoot}fixtures/${test.filename ?? "file.ts"}`
-      })
-    )
+      };
+    })
   });
 }
 

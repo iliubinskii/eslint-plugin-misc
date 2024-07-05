@@ -5,17 +5,6 @@ import type { TSESTree } from "@typescript-eslint/utils";
 import type { Writable } from "typescript-misc";
 import path from "node:path";
 
-export interface Options {
-  readonly format: utils.Casing;
-}
-
-export interface Suboptions {
-  readonly _id: string;
-  readonly format?: utils.Casing;
-  readonly match: boolean;
-  readonly selector: utils.Selector;
-}
-
 export enum MessageId {
   invalidFilename = "invalidFilename",
   invalidFilenameId = "invalidFilenameId"
@@ -110,7 +99,7 @@ export const consistentFilename = utils.createRule({
         "Program:exit": () => {
           const { base: got } = path.parse(context.filename);
 
-          if (items.length) {
+          if (items.length > 0) {
             const item = a.last(items);
 
             const { _id, format, match } = {
@@ -165,6 +154,17 @@ export const consistentFilename = utils.createRule({
     }
   }
 });
+
+export interface Options {
+  readonly format: utils.Casing;
+}
+
+export interface Suboptions {
+  readonly _id: string;
+  readonly format?: utils.Casing;
+  readonly match: boolean;
+  readonly selector: utils.Selector;
+}
 
 interface Item {
   readonly node: TSESTree.Node;

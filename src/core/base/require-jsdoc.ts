@@ -6,12 +6,6 @@ import type { TSESTree } from "@typescript-eslint/utils";
 import { is } from "typescript-misc";
 import type { strings } from "typescript-misc";
 
-export type InterfaceOptions = readonly InterfaceOption[];
-
-export interface Options extends utils.configurableSelector.Options {
-  readonly interfaces: InterfaceOptions;
-}
-
 export enum InterfaceOption {
   callSignatures = "callSignatures",
   constructSignatures = "constructSignatures",
@@ -90,19 +84,22 @@ export const requireJsdoc = utils.createRule({
           // Has doc comment
         } else
           switch (node.type) {
-            case AST_NODE_TYPES.TSInterfaceDeclaration:
+            case AST_NODE_TYPES.TSInterfaceDeclaration: {
               lintInterface(node);
 
               break;
+            }
 
             case AST_NODE_TYPES.MethodDefinition:
-            case AST_NODE_TYPES.TSMethodSignature:
+            case AST_NODE_TYPES.TSMethodSignature: {
               lintMethod(node);
 
               break;
+            }
 
-            default:
+            default: {
               lintNodeByTypeSymbol(node);
+            }
           }
       }
     };
@@ -205,6 +202,12 @@ export const requireJsdoc = utils.createRule({
     }
   }
 });
+
+export type InterfaceOptions = readonly InterfaceOption[];
+
+export interface Options extends utils.configurableSelector.Options {
+  readonly interfaces: InterfaceOptions;
+}
 
 const defaultSelectors: strings = [
   AST_NODE_TYPES.MethodDefinition,

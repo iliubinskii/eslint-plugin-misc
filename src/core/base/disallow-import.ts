@@ -2,11 +2,6 @@ import * as ruleTemplates from "../../rule-templates";
 import * as utils from "../../utils";
 import { is } from "typescript-misc";
 
-export interface Options {
-  readonly allow: utils.FilePattern;
-  readonly disallow: utils.FilePattern;
-}
-
 export enum MessageId {
   disallowedSource = "disallowedSource"
 }
@@ -65,3 +60,8 @@ export const disallowImport = utils.createRule({
     });
   }
 });
+
+export interface Options {
+  readonly allow: utils.FilePattern;
+  readonly disallow: utils.FilePattern;
+}

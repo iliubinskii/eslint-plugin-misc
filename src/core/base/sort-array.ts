@@ -5,15 +5,6 @@ import type { RuleListener } from "@typescript-eslint/utils/dist/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { strings } from "typescript-misc";
 
-export interface Options {
-  readonly customOrder?: strings;
-  readonly selector: utils.Selector;
-  readonly sendToBottom?: string;
-  readonly sendToTop?: string;
-  readonly sortKey?: string;
-  readonly triggerByComment: boolean;
-}
-
 export enum MessageId {
   expectingArray = "expectingArray"
 }
@@ -94,7 +85,7 @@ export const sortArray = utils.createRule({
 
     function keyNode(node: TSESTree.Node): TSESTree.Node | undefined {
       switch (node.type) {
-        case AST_NODE_TYPES.ObjectExpression:
+        case AST_NODE_TYPES.ObjectExpression: {
           if (is.not.empty(sortKey))
             for (const property of node.properties)
               if (
@@ -104,13 +95,25 @@ export const sortArray = utils.createRule({
                 return property.value;
 
           return node;
+        }
 
-        case AST_NODE_TYPES.SpreadElement:
+        case AST_NODE_TYPES.SpreadElement: {
           return undefined;
+        }
 
-        default:
+        default: {
           return node;
+        }
       }
     }
   }
 });
+
+export interface Options {
+  readonly customOrder?: strings;
+  readonly selector: utils.Selector;
+  readonly sendToBottom?: string;
+  readonly sendToTop?: string;
+  readonly sortKey?: string;
+  readonly triggerByComment: boolean;
+}

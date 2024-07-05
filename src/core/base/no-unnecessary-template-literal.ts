@@ -30,18 +30,20 @@ export const noUnnecessaryTemplateLiteral = utils.createRule({
       \`;
     `
   },
-  create: (context): RuleListener => ({
-    TemplateLiteral: node => {
-      if (
-        node.expressions.length ||
-        node.quasis.some(quasi => quasi.value.raw.trim().includes("\n"))
-      ) {
-        // Valid
-      } else
-        context.report({
-          messageId: MessageId.unnecessaryTemplateLiteral,
-          node
-        });
-    }
-  })
+  create: (context): RuleListener => {
+    return {
+      TemplateLiteral: node => {
+        if (
+          node.expressions.length > 0 ||
+          node.quasis.some(quasi => quasi.value.raw.trim().includes("\n"))
+        ) {
+          // Valid
+        } else
+          context.report({
+            messageId: MessageId.unnecessaryTemplateLiteral,
+            node
+          });
+      }
+    };
+  }
 });

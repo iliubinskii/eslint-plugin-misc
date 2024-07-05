@@ -136,7 +136,7 @@ utils.testRule("no-restricted-syntax", rule, [
     options: [
       {
         message: "Custom message",
-        selector: "Identifier[name=/^id\\w$/u]",
+        selector: String.raw`Identifier[name=/^id\w$/u]`,
         typeIs: utils.TypeGroup.complex
       }
     ],
@@ -378,7 +378,7 @@ utils.testRule("no-restricted-syntax", rule, [
     options: [
       {
         message: "Custom message",
-        selector: "Identifier[name=/^id\\w$/u]",
+        selector: String.raw`Identifier[name=/^id\w$/u]`,
         typeHasOneOf: [utils.TypeGroup.number, utils.TypeGroup.string]
       }
     ],
@@ -405,7 +405,7 @@ utils.testRule("no-restricted-syntax", rule, [
     options: [
       {
         message: "Custom message",
-        selector: "Identifier[name=/^id\\w$/u]",
+        selector: String.raw`Identifier[name=/^id\w$/u]`,
         typeIsOneOf: [utils.TypeGroup.number, utils.TypeGroup.string]
       }
     ],
@@ -427,7 +427,7 @@ utils.testRule("no-restricted-syntax", rule, [
     options: [
       {
         message: "Custom message",
-        selector: "Identifier[name=/^id\\w$/u]",
+        selector: String.raw`Identifier[name=/^id\w$/u]`,
         typeHasNoneOf: [utils.TypeGroup.number, utils.TypeGroup.string]
       }
     ],

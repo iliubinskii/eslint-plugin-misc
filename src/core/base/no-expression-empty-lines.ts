@@ -28,27 +28,31 @@ export const noExpressionEmptyLines = utils.createRule({
         .map(x => x);
     `
   },
-  create: (context): RuleListener => ({
-    MemberExpression: node => {
-      const pos = node.object.range[1];
+  create: (context): RuleListener => {
+    return {
+      MemberExpression: node => {
+        const pos = node.object.range[1];
 
-      const got = s.leadingSpaces(context.getText(pos));
+        const got = s.leadingSpaces(context.getText(pos));
 
-      if (got.includes("\n")) {
-        const expected = context.eol + s.trimLeadingEmptyLines(got);
+        if (got.includes("\n")) {
+          const expected = context.eol + s.trimLeadingEmptyLines(got);
 
-        if (got === expected) {
-          // Valid
-        } else
-          context.report({
-            fix: (): RuleFix => ({
-              range: [pos, pos + got.length],
-              text: expected
-            }),
-            messageId: MessageId.unexpectedEmptyLine,
-            node: node.property
-          });
+          if (got === expected) {
+            // Valid
+          } else
+            context.report({
+              fix: (): RuleFix => {
+                return {
+                  range: [pos, pos + got.length],
+                  text: expected
+                };
+              },
+              messageId: MessageId.unexpectedEmptyLine,
+              node: node.property
+            });
+        }
       }
-    }
-  })
+    };
+  }
 });

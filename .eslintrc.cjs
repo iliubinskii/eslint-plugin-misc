@@ -23,17 +23,10 @@ const config = {
     ],
     "import/no-namespace": "off",
     "jsdoc/require-jsdoc": "off",
-    "unicorn/prefer-string-raw": "off",
-    "unicorn/prefer-string-replace-all": "off",
-    "jsdoc/tag-lines": "off",
-    "arrow-body-style": "off",
     "no-magic-numbers": "off",
     "no-type-assertion/no-type-assertion": "off",
     "sonarjs/cognitive-complexity": "off",
-    "sort/exports": "off",
-    "sort/object-properties": "off",
-    "unicorn/explicit-length-check": "off",
-    "unicorn/switch-case-braces": "off"
+    "sort/object-properties": "off"
   }
 };
 

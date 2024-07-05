@@ -5,14 +5,6 @@ import type { TSESTree } from "@typescript-eslint/utils";
 import type { Writable } from "typescript-misc";
 import { is } from "typescript-misc";
 
-export interface Options {
-  readonly ignoreSelector: utils.Selector;
-  readonly message?: string;
-  readonly replacement?: string;
-  readonly search?: string;
-  readonly selector: utils.Selector;
-}
-
 export enum MessageId {
   customMessage = "customMessage"
 }
@@ -126,3 +118,11 @@ export const noRestrictedSyntax = utils.createRule({
     );
   }
 });
+
+export interface Options {
+  readonly ignoreSelector: utils.Selector;
+  readonly message?: string;
+  readonly replacement?: string;
+  readonly search?: string;
+  readonly selector: utils.Selector;
+}

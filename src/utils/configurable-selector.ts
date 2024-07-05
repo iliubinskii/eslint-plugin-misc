@@ -4,7 +4,6 @@ import type { strings } from "typescript-misc";
 
 /**
  * Creates selector.
- *
  * @param options - Options.
  * @param defaultSelectors - Default selectors.
  * @returns Selector.

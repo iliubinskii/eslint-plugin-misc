@@ -38,7 +38,6 @@ import nodePath from "node:path";
 
 /**
  * Creates rule listener.
- *
  * @param options - Options.
  * @returns Rule listener.
  */
@@ -107,7 +106,6 @@ export function createRule<
 
 /**
  * Parses package.json file.
- *
  * @param path - Path.
  * @returns Project configuration.
  */
@@ -129,7 +127,6 @@ export interface CreateRuleOptions<
 > {
   /**
    * Creates rule listener.
-   *
    * @param context - Context.
    * @param typeCheck - Type check.
    * @returns Rule listener.
@@ -175,7 +172,6 @@ const isSharedSuboptions = is.object.factory<SharedSuboptions>(
 
 /**
  * Determines if file should be linted.
- *
  * @param path - Path.
  * @param options - Options.
  * @returns _True_ if file should be linted, _false_ otherwise.
@@ -194,7 +190,6 @@ function shouldBeLinted(path: string, options: SharedSuboptions): boolean {
 
 /**
  * Strips base path.
- *
  * @param path - Path.
  * @param replacement - Replacement.
  * @returns Stripped path.
@@ -216,7 +211,6 @@ const isProjectConfig: is.Guard<ProjectConfig> = is.factory(
 
 /**
  * Creates context.
- *
  * @param context - Raw context.
  * @param ruleOptionsArray - Rule options.
  * @param options - Options.
@@ -255,10 +249,12 @@ function createContext<
 
       return [pos, end];
     },
-    getLoc: (range): estree.SourceLocation => ({
-      end: source.getLocFromIndex(range[1]),
-      start: source.getLocFromIndex(range[0])
-    }),
+    getLoc: (range): estree.SourceLocation => {
+      return {
+        end: source.getLocFromIndex(range[1]),
+        start: source.getLocFromIndex(range[0])
+      };
+    },
     getText,
     hasComments: node => getCommentRanges(node).length > 0,
     hasTrailingComment: node =>
@@ -336,10 +332,12 @@ function createContext<
               );
 
               const suboptionsArrayWithDefaults: unknown = suboptionsArray.map(
-                (suboptions): object => ({
-                  ...defaultSuboptions,
-                  ...suboptions
-                })
+                (suboptions): object => {
+                  return {
+                    ...defaultSuboptions,
+                    ...suboptions
+                  };
+                }
               );
 
               const isSuboptionsWithShared: is.Guard<Suboptions<S>> =

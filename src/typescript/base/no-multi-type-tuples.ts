@@ -14,10 +14,12 @@ export const noMultiTypeTuples = utils.createRule({
     failExamples: "type T = [string, number];",
     passExamples: "type T = [string, string];"
   },
-  create: (context): RuleListener => ({
-    TSTupleType: node => {
-      if (_.uniq(node.elementTypes.map(context.getText)).length > 1)
-        context.report({ messageId: MessageId.multiTypeTuple, node });
-    }
-  })
+  create: (context): RuleListener => {
+    return {
+      TSTupleType: node => {
+        if (_.uniq(node.elementTypes.map(context.getText)).length > 1)
+          context.report({ messageId: MessageId.multiTypeTuple, node });
+      }
+    };
+  }
 });

@@ -7,7 +7,6 @@ import { is } from "typescript-misc";
 
 /**
  * Creates rule listener.
- *
  * @param callback - Callback.
  * @returns Rule listener.
  */
@@ -76,7 +75,6 @@ export function create(callback: Callback): RuleListener {
 export interface Callback {
   /**
    * Callback.
-   *
    * @param ctx - Context.
    */
   (ctx: Ctx): void;

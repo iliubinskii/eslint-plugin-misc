@@ -26,69 +26,72 @@ export const templateLiteralFormat = utils.createRule({
       \`;
     `
   },
-  create: (context): RuleListener => ({
-    TemplateLiteral: node => {
-      const lines = s.lines(context.getText(node));
+  create: (context): RuleListener => {
+    return {
+      TemplateLiteral: node => {
+        const lines = s.lines(context.getText(node));
 
-      if (lines.length > 1) {
-        const firstLine = a.first(lines);
+        if (lines.length > 1) {
+          const firstLine = a.first(lines);
 
-        const middleLines = lines.slice(1, -1);
+          const middleLines = lines.slice(1, -1);
 
-        const nonEmptyMiddleLines = middleLines.filter(line => line.length);
+          const nonEmptyMiddleLines = middleLines.filter(line => line.length);
 
-        const lastLine = a.last(lines);
+          const lastLine = a.last(lines);
 
-        if (
-          firstLine === "`" &&
-          nonEmptyMiddleLines.length &&
-          lastLine.trimStart() === "`"
-        ) {
-          const firstPadding = fn.pipe(
-            context.getText([0, node.range[0]]),
-            s.lines,
-            a.last,
-            s.leadingSpaces
-          ).length;
+          if (
+            firstLine === "`" &&
+            nonEmptyMiddleLines.length > 0 &&
+            lastLine.trimStart() === "`"
+          ) {
+            const firstPadding = fn.pipe(
+              context.getText([0, node.range[0]]),
+              s.lines,
+              a.last,
+              s.leadingSpaces
+            ).length;
 
-          const middlePadding = Math.min(
-            ...nonEmptyMiddleLines.map(line => s.leadingSpaces(line).length)
-          );
+            const middlePadding = Math.min(
+              ...nonEmptyMiddleLines.map(line => s.leadingSpaces(line).length)
+            );
 
-          const middleDelta = firstPadding - middlePadding + 2;
+            const middleDelta = firstPadding - middlePadding + 2;
 
-          const lastPadding = s.leadingSpaces(lastLine).length;
+            const lastPadding = s.leadingSpaces(lastLine).length;
 
-          const lastDelta = firstPadding - lastPadding;
+            const lastDelta = firstPadding - lastPadding;
 
-          if (middleDelta || lastDelta)
-            context.report({
-              fix: (): RuleFix => ({
-                range: node.range,
-                text: [
-                  firstLine,
-                  ...middleLines.map(line => pad(line, middleDelta)),
-                  pad(lastLine, lastDelta)
-                ].join(context.eol)
-              }),
-              messageId: MessageId.invalidFormat,
-              node
-            });
-        } else context.report({ messageId: MessageId.invalidFormat, node });
+            if (middleDelta || lastDelta)
+              context.report({
+                fix: (): RuleFix => {
+                  return {
+                    range: node.range,
+                    text: [
+                      firstLine,
+                      ...middleLines.map(line => pad(line, middleDelta)),
+                      pad(lastLine, lastDelta)
+                    ].join(context.eol)
+                  };
+                },
+                messageId: MessageId.invalidFormat,
+                node
+              });
+          } else context.report({ messageId: MessageId.invalidFormat, node });
+        }
       }
-    }
-  })
+    };
+  }
 });
 
 /**
  * Pads line.
- *
  * @param line - Line.
  * @param delta - The number of spaces to add/remove.
  * @returns Padded line.
  */
 function pad(line: string, delta: number): string {
-  return line.length
+  return line.length > 0
     ? " ".repeat(s.leadingSpaces(line).length + delta) + line.trimStart()
     : line;
 }

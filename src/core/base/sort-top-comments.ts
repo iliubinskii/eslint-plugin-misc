@@ -32,27 +32,31 @@ export const sortTopComments = utils.createRule({
       // Comment 4
     `
   },
-  create: (context): RuleListener => ({
-    "Program:exit": (node: TSESTree.Program) => {
-      const texts = context.getComments(node);
+  create: (context): RuleListener => {
+    return {
+      "Program:exit": (node: TSESTree.Program) => {
+        const texts = context.getComments(node);
 
-      const got = texts.join("\n");
+        const got = texts.join("\n");
 
-      const expected = a.sort(texts, utils.compare).join("\n");
+        const expected = a.sort(texts, utils.compare).join("\n");
 
-      if (got === expected) {
-        // Valid
-      } else {
-        const ranges = context.getCommentRanges(node);
+        if (got === expected) {
+          // Valid
+        } else {
+          const ranges = context.getCommentRanges(node);
 
-        const range: utils.esRange = [a.first(ranges)[0], a.last(ranges)[1]];
+          const range: utils.esRange = [a.first(ranges)[0], a.last(ranges)[1]];
 
-        context.report({
-          fix: (): RuleFix => ({ range, text: expected }),
-          loc: context.getLoc(range),
-          messageId: MessageId.incorrectSorting
-        });
+          context.report({
+            fix: (): RuleFix => {
+              return { range, text: expected };
+            },
+            loc: context.getLoc(range),
+            messageId: MessageId.incorrectSorting
+          });
+        }
       }
-    }
-  })
+    };
+  }
 });

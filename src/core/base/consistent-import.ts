@@ -10,17 +10,6 @@ import type { TSESTree } from "@typescript-eslint/utils";
 import { is } from "typescript-misc";
 import { minimatch } from "minimatch";
 
-export interface Suboptions {
-  readonly _id: string;
-  readonly altLocalNames: strings;
-  readonly autoImport: boolean;
-  readonly autoImportSource?: string;
-  readonly localName?: string;
-  readonly source: string;
-  readonly sourcePattern?: string;
-  readonly wildcard: boolean;
-}
-
 export enum MessageId {
   autoImport = "autoImport",
   invalidLocalName = "invalidLocalName",
@@ -213,7 +202,7 @@ export const consistentImport = utils.createRule({
       localName: string,
       altLocalNames: strings
     ): string {
-      return identifiers.has(localName) && altLocalNames.length
+      return identifiers.has(localName) && altLocalNames.length > 0
         ? altLocalNames.join(", ")
         : localName;
     }
@@ -261,7 +250,7 @@ export const consistentImport = utils.createRule({
         })
       );
 
-      if (fixes.length)
+      if (fixes.length > 0)
         context.report({
           fix: (): RuleFix => {
             const fix = fixes.join(eol);
@@ -358,6 +347,17 @@ export const consistentImport = utils.createRule({
     }
   }
 });
+
+export interface Suboptions {
+  readonly _id: string;
+  readonly altLocalNames: strings;
+  readonly autoImport: boolean;
+  readonly autoImportSource?: string;
+  readonly localName?: string;
+  readonly source: string;
+  readonly sourcePattern?: string;
+  readonly wildcard: boolean;
+}
 
 interface SuboptionsExtended extends Suboptions {
   readonly localName: string;

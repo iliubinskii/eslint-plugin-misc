@@ -5,11 +5,6 @@ import type {
 } from "@typescript-eslint/utils/dist/ts-eslint";
 import { is, num, s } from "typescript-misc";
 
-export interface Options {
-  readonly maxLineLength: number;
-  readonly maxObjectSize: number;
-}
-
 export enum MessageId {
   preferMultiline = "preferMultiline",
   preferSingleLine = "preferSingleLine"
@@ -67,7 +62,7 @@ export const objectFormat = utils.createRule({
           context.getFullText(property).trim()
         );
 
-        if (texts.length) {
+        if (texts.length > 0) {
           const text = context.getText(node);
 
           const expectMultiline =
@@ -83,10 +78,12 @@ export const objectFormat = utils.createRule({
 
           if (expectMultiline && gotSingleLine)
             context.report({
-              fix: (): RuleFix => ({
-                range: node.range,
-                text: `{${eol}${texts.join(commaEol)}${eol}}`
-              }),
+              fix: (): RuleFix => {
+                return {
+                  range: node.range,
+                  text: `{${eol}${texts.join(commaEol)}${eol}}`
+                };
+              },
               messageId: MessageId.preferMultiline,
               node
             });
@@ -97,10 +94,12 @@ export const objectFormat = utils.createRule({
             predictedLength() <= maxLineLength
           )
             context.report({
-              fix: (): RuleFix => ({
-                range: node.range,
-                text: `{${texts.join(comma)}}`
-              }),
+              fix: (): RuleFix => {
+                return {
+                  range: node.range,
+                  text: `{${texts.join(comma)}}`
+                };
+              },
               messageId: MessageId.preferSingleLine,
               node
             });
@@ -126,3 +125,8 @@ export const objectFormat = utils.createRule({
     };
   }
 });
+
+export interface Options {
+  readonly maxLineLength: number;
+  readonly maxObjectSize: number;
+}

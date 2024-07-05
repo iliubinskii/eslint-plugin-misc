@@ -26,29 +26,31 @@ export const noInferrableTypes = utils.createRule({
       }
     `
   },
-  create: (context): RuleListener => ({
-    VariableDeclarator: node => {
-      const { id, init } = node;
+  create: (context): RuleListener => {
+    return {
+      VariableDeclarator: node => {
+        const { id, init } = node;
 
-      if (
-        id.typeAnnotation &&
-        init &&
-        init.type === AST_NODE_TYPES.TSAsExpression
-      ) {
-        const type1 = id.typeAnnotation.typeAnnotation;
+        if (
+          id.typeAnnotation &&
+          init &&
+          init.type === AST_NODE_TYPES.TSAsExpression
+        ) {
+          const type1 = id.typeAnnotation.typeAnnotation;
 
-        const type2 = init.typeAnnotation;
+          const type2 = init.typeAnnotation;
 
-        const text1 = context.getText(type1);
+          const text1 = context.getText(type1);
 
-        const text2 = context.getText(type2);
+          const text2 = context.getText(type2);
 
-        if (text1 === text2)
-          context.report({
-            messageId: MessageId.triviallyInferrableType,
-            node: type1
-          });
+          if (text1 === text2)
+            context.report({
+              messageId: MessageId.triviallyInferrableType,
+              node: type1
+            });
+        }
       }
-    }
-  })
+    };
+  }
 });

@@ -20,14 +20,6 @@ import type {
 import type { Writable, stringU, strings } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
 
-export interface Options {
-  readonly disableFix: boolean;
-  readonly lint: utils.Selector;
-  readonly plugin: string;
-  readonly rule: string;
-  readonly skip: utils.Selector;
-}
-
 export enum MessageId {
   customMessage = "customMessage"
 }
@@ -144,15 +136,17 @@ export const wrap = utils.createRule({
       },
       {
         "Program:exit": () => {
-          const lintMatcher = lintIds.length
-            ? (report: utils.ReportDescriptor) =>
-                "node" in report && lintIds.includes(nodeId(report.node))
-            : () => true;
+          const lintMatcher =
+            lintIds.length > 0
+              ? (report: utils.ReportDescriptor) =>
+                  "node" in report && lintIds.includes(nodeId(report.node))
+              : () => true;
 
-          const skipMatcher = skipIds.length
-            ? (report: utils.ReportDescriptor) =>
-                "node" in report && skipIds.includes(nodeId(report.node))
-            : () => false;
+          const skipMatcher =
+            skipIds.length > 0
+              ? (report: utils.ReportDescriptor) =>
+                  "node" in report && skipIds.includes(nodeId(report.node))
+              : () => false;
 
           for (const report of reports)
             if (lintMatcher(report) && !skipMatcher(report)) {
@@ -171,7 +165,7 @@ export const wrap = utils.createRule({
                     message ??
                     as.not
                       .empty(rule.meta.messages[messageId])
-                      .replace(
+                      .replaceAll(
                         /\{\{\s*(\w+)\s*\}\}/gu,
                         (_str, match1: string) => {
                           const result = data[match1];
@@ -191,9 +185,16 @@ export const wrap = utils.createRule({
   }
 });
 
+export interface Options {
+  readonly disableFix: boolean;
+  readonly lint: utils.Selector;
+  readonly plugin: string;
+  readonly rule: string;
+  readonly skip: utils.Selector;
+}
+
 /**
  * Generates node ID.
- *
  * @param node - Node.
  * @returns Node ID.
  */

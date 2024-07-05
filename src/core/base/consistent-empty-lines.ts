@@ -8,14 +8,6 @@ import { a, as, evaluate, is, s } from "typescript-misc";
 import type { TSESTree } from "@typescript-eslint/utils";
 import type { Writable } from "typescript-misc";
 
-export interface Suboptions {
-  readonly _id: string;
-  readonly emptyLine: EmptyLine;
-  readonly next?: utils.Selector;
-  readonly prev?: utils.Selector;
-  readonly selector?: utils.Selector;
-}
-
 export enum EmptyLine {
   always = "always",
   any = "any",
@@ -161,17 +153,20 @@ export const consistentEmptyLines = evaluate(() => {
               } else {
                 const spread = evaluate(() => {
                   switch (emptyLine) {
-                    case EmptyLine.always:
+                    case EmptyLine.always: {
                       return true;
+                    }
 
-                    case EmptyLine.commented:
+                    case EmptyLine.commented: {
                       return (
                         context.hasComments(node) ||
                         context.hasComments(prevNode)
                       );
+                    }
 
-                    case EmptyLine.never:
+                    case EmptyLine.never: {
                       return false;
+                    }
                   }
                 });
 
@@ -193,7 +188,9 @@ export const consistentEmptyLines = evaluate(() => {
                   } else
                     context.report({
                       data: { _id },
-                      fix: (): RuleFix => ({ range, text: expected }),
+                      fix: (): RuleFix => {
+                        return { range, text: expected };
+                      },
                       messageId,
                       node
                     });
@@ -207,9 +204,16 @@ export const consistentEmptyLines = evaluate(() => {
   });
 });
 
+export interface Suboptions {
+  readonly _id: string;
+  readonly emptyLine: EmptyLine;
+  readonly next?: utils.Selector;
+  readonly prev?: utils.Selector;
+  readonly selector?: utils.Selector;
+}
+
 /**
  * Compares items.
- *
  * @param item1 - First item.
  * @param item2 - Second item.
  * @returns - Comparison result.

@@ -2,10 +2,6 @@ import * as ruleTemplates from "../../rule-templates";
 import * as utils from "../../utils";
 import { is } from "typescript-misc";
 
-export interface Options {
-  readonly selector: utils.Selector;
-}
-
 export enum MessageId {
   invalidExport = "invalidExport"
 }
@@ -66,3 +62,7 @@ export const preferOnlyExport = utils.createRule({
     );
   }
 });
+
+export interface Options {
+  readonly selector: utils.Selector;
+}
