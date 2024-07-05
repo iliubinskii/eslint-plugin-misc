@@ -69,6 +69,7 @@ const config = {
           "dec",
           "december",
           "declarator",
+          "declarators",
           "decrementor",
           "defs",
           "deletable",

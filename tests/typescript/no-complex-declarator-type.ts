@@ -20,6 +20,7 @@ utils.testRule(
         const x1 = { value: 1 };
         const [x2, x3] = [1, { value: 1 }];
         const { x4, x5: x6 } = { x4: 1, x5: { value: 1 } };
+        export default x1;
       `,
       errors: [
         { line: 1, messageId: MessageId.customMessage },
