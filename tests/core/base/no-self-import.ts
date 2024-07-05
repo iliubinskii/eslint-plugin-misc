@@ -15,6 +15,7 @@ utils.testRule("no-self-import", rule, [
       import "@/file";
       import "@/file.ts";
       import "@/source";
+      import "file";
     `,
     errors: [
       { line: 1, messageId: MessageId.noSelfImport },

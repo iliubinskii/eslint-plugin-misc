@@ -29,6 +29,7 @@ export const noSelfImport = utils.createRule({
       const { node, source } = ctx;
 
       if (
+        /[/\\]/.test(source) &&
         path.dirname(source) === "." &&
         context.stripExtension(path.basename(source)) === basename
       )
