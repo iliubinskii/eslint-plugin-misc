@@ -29,7 +29,7 @@ const config = {
     "plugin:import/recommended",
     "plugin:jest-extended/all",
     "plugin:jsdoc/recommended",
-    "plugin:misc/all",
+    "plugin:misc/recommended",
     "plugin:n/recommended",
     "plugin:no-use-extend-native/recommended",
     "plugin:node/recommended",
@@ -156,20 +156,6 @@ const config = {
         ]
       }
     ],
-    "misc/consistent-filename": "off",
-    "misc/consistent-source-extension": "off",
-    "misc/export-matching-filename-only": "off",
-    "misc/max-identifier-blocks": "off",
-    "misc/no-at-sign-import": "off",
-    "misc/no-internal-modules": "off",
-    "misc/no-negated-conditions": "off",
-    "misc/no-nodejs-modules": "off",
-    "misc/no-relative-parent-import": "off",
-    "misc/no-sibling-import": "off",
-    "misc/no-unnecessary-template-literal": "off",
-    "misc/object-format": "off",
-    "misc/only-export-name": "off",
-    "misc/require-jsdoc": "off",
     "misc/sort-class-members": [
       "warn",
       {
@@ -202,11 +188,6 @@ const config = {
         ]
       }
     ],
-    "misc/typescript/array-callback-return-type": "off",
-    "misc/typescript/no-complex-return-type": "off",
-    "misc/typescript/no-multi-type-tuples": "off",
-    "misc/typescript/prefer-array-type-alias": "off",
-    "misc/typescript/prefer-enum": "off",
     "n/no-missing-import": "off",
     "no-duplicate-imports": "off",
     "no-magic-numbers": ["warn", { ignore: [-1, 0, 0.5, 1, 2, 10, 100] }],
