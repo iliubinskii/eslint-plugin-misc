@@ -43,7 +43,7 @@
     "ncu-check": "ncu --dep=dev,peer,prod",
     "ncu-upgrade": "ncu --dep=dev,peer,prod --upgrade && npm run install-deps",
     "prepare": "husky",
-    "prepare-next-version": "npm run format && run-p lint-no-fix lint-style-no-fix test type-check && run-p build-commonjs build-doc build-es && git add . && git commit -m \"build: Prepare next version\"",
+    "prepare-next-version": "run-p format lint-markdown && run-p lint-no-fix lint-style-no-fix test type-check && run-p build-commonjs build-doc build-es && git add . && git commit -m \"build: Prepare next version\"",
     "test": "cf coverage/lcov-report && jest --coverage",
     "type-check": "tsc --incremental false --noEmit",
     "update": "npm update --no-audit --strict-peer-deps"
