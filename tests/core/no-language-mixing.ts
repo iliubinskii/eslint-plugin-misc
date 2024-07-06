@@ -9,8 +9,8 @@ utils.testRule("no-language-mixing", rule, [
   {
     name: `Test at line ${getCurrentLine().line}`,
     code: `
-      const x1 = "абвxyz";
-      const x2 = "xyzабв";
+      const x1 = "яz";
+      const x2 = "zя";
       const x3 = "абв123xyz";
       const x4 = "xyz123абв";
       const x5 = "xyz";

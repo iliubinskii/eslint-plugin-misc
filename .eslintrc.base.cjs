@@ -1,6 +1,3 @@
-const block =
-  ":matches(BlockStatement, ExportNamedDeclaration, Program, SwitchCase, TSModuleBlock)";
-
 /**
  * @type {import("eslint").Linter.Config }
  */
@@ -15,13 +12,13 @@ const config = {
       "only-warn",
       "sort-annotation",
       "sort-imports-requires",
-      "spellcheck",
       "unused-imports"
     ],
   extends: [
     "eslint:recommended",
     "strict",
     "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@cspell/recommended",
     "plugin:escompat/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:etc/recommended",
@@ -136,22 +133,26 @@ const config = {
           {
             _id: "statements",
             emptyLine: "always",
-            selector: `${block} > :matches(:statement, TSDeclareFunction, TSExportAssignment)`
+            selector:
+              ":matches(BlockStatement, ExportNamedDeclaration, Program, SwitchCase, TSModuleBlock) > :matches(:statement, TSDeclareFunction, TSExportAssignment)"
           },
           {
             _id: "statements.export",
             emptyLine: "never",
-            selector: `${block} > :matches(ExportAllDeclaration, ExportNamedDeclaration[source])`
+            selector:
+              ":matches(BlockStatement, ExportNamedDeclaration, Program, SwitchCase, TSModuleBlock) > :matches(ExportAllDeclaration, ExportNamedDeclaration[source])"
           },
           {
             _id: "statements.expression",
             emptyLine: "any",
-            selector: `${block} > ExpressionStatement`
+            selector:
+              ":matches(BlockStatement, ExportNamedDeclaration, Program, SwitchCase, TSModuleBlock) > ExpressionStatement"
           },
           {
             _id: "statements.import",
             emptyLine: "never",
-            selector: `${block} > ImportDeclaration`
+            selector:
+              ":matches(BlockStatement, ExportNamedDeclaration, Program, SwitchCase, TSModuleBlock) > ImportDeclaration"
           }
         ]
       }
@@ -240,7 +241,6 @@ const config = {
     "sort-annotation/sort-keys": "off",
     "sort-imports-requires/sort-imports": ["warn", { unsafeAutofix: true }],
     "sort-imports-requires/sort-requires": ["warn", { unsafeAutofix: true }],
-    "spellcheck/spell-checker": "warn",
     "unicorn/catch-error-name": ["warn", { name: "err" }],
     "unicorn/consistent-function-scoping": "off",
     "unicorn/filename-case": "off",

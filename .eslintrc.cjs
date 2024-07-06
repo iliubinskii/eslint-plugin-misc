@@ -5,7 +5,7 @@ const config = {
   ignorePatterns: ["!.*", "coverage/**", "dist/**", "es/**", "node_modules/**"],
   env: { es2022: true, jest: true },
   globals: {},
-  extends: ["./.eslintrc.base.cjs", "./.eslintrc.spellcheck.cjs"],
+  extends: "./.eslintrc.base.cjs",
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: { jsx: true },
@@ -14,6 +14,26 @@ const config = {
     sourceType: "module"
   },
   rules: {
+    "@cspell/spellchecker": [
+      "warn",
+      {
+        cspell: {
+          words:
+            // @sorted
+            [
+              "csstools",
+              "escompat",
+              "inexhaustive",
+              "quasis",
+              "smacss",
+              "sonarjs",
+              "suboption",
+              "suboptions",
+              "tses"
+            ]
+        }
+      }
+    ],
     "@typescript-eslint/no-namespace": "off",
     "i18n-text/no-en": "off",
     "import/no-internal-modules": [

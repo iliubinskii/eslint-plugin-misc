@@ -46,7 +46,6 @@
   "include": [
     ".eslintrc.base.cjs",
     ".eslintrc.cjs",
-    ".eslintrc.spellcheck.cjs",
     ".prettierrc.mjs",
     ".stylelintrc.base.mjs",
     ".stylelintrc.mjs",
