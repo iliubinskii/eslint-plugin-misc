@@ -25,7 +25,7 @@ const templates = {
     .trim(),
   index: fs.readFileSync("./assets/docs/templates/index.md").toString(),
   rule: fs.readFileSync("./assets/docs/templates/rule.md").toString()
-};
+} as const;
 
 const documentedRules = o.entries(
   o.sort(

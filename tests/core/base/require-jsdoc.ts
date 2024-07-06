@@ -1,3 +1,5 @@
+/* eslint-disable misc/no-at-sign-internal-import -- Ok */
+
 import { rules, utils } from "@";
 import { InterfaceOption } from "@/core/base/require-jsdoc";
 import getCurrentLine from "get-current-line";
@@ -137,8 +139,8 @@ utils.testRule("require-jsdoc", rule, [
     name: `Test at line ${getCurrentLine().line}`,
     options: [
       {
-        noDefaultSelectors: true,
-        includeSelectors: ["ClassDeclaration"]
+        includeSelectors: ["ClassDeclaration"],
+        noDefaultSelectors: true
       }
     ],
     code: `

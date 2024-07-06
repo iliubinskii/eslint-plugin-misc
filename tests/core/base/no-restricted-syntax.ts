@@ -64,11 +64,11 @@ utils.testRule("no-restricted-syntax", rule, [
     name: `Test at line ${getCurrentLine().line}`,
     options: [
       {
+        ignoreSelector: "Identifier",
         message: "Custom message",
         replacement: "y",
         search: /x/u.source,
-        selector: "Identifier, Literal",
-        ignoreSelector: "Identifier"
+        selector: "Identifier, Literal"
       }
     ],
     code: 'type x = "x";',

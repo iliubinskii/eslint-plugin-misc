@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires -- Ok */
 /* eslint-disable global-require -- Ok */
 /* eslint-disable import/no-dynamic-require -- Ok */
+/* eslint-disable misc/prefer-const-require -- Ok */
 /* eslint-disable security/detect-non-literal-require -- Ok */
 /* eslint-disable unicorn/prefer-module -- Ok */
 

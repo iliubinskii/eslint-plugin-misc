@@ -617,6 +617,7 @@ function checkTypeFlags(type: ts.Type, ...flags: TypeFlagsArray): boolean {
 
     if (is.empty(constraint)) return flags.includes(ts.TypeFlags.Unknown);
 
+    // eslint-disable-next-line misc/no-param-reassign -- Ok
     type = constraint;
   }
 

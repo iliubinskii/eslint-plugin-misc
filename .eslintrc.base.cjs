@@ -1,7 +1,23 @@
+const block =
+  ":matches(BlockStatement, ExportNamedDeclaration, Program, SwitchCase, TSModuleBlock)";
+
 /**
  * @type {import("eslint").Linter.Config }
  */
 const config = {
+  plugins:
+    // @sort
+    [
+      "es",
+      "misc",
+      "no-type-assertion",
+      "no-useless-assign",
+      "only-warn",
+      "sort-annotation",
+      "sort-imports-requires",
+      "spellcheck",
+      "unused-imports"
+    ],
   extends: [
     "eslint:recommended",
     "strict",
@@ -13,6 +29,7 @@ const config = {
     "plugin:import/recommended",
     "plugin:jest-extended/all",
     "plugin:jsdoc/recommended",
+    "plugin:misc/all",
     "plugin:n/recommended",
     "plugin:no-use-extend-native/recommended",
     "plugin:node/recommended",
@@ -25,64 +42,10 @@ const config = {
     "plugin:unicorn/recommended",
     "plugin:prettier/recommended"
   ],
-  overrides: [
-    {
-      files: "*.cjs",
-      rules: {
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-var-requires": "off",
-        "import/no-commonjs": "off"
-      }
-    },
-    {
-      files: "*.mjs",
-      rules: {
-        "@typescript-eslint/explicit-function-return-type": "off"
-      }
-    },
-    {
-      files: "*.d.ts",
-      rules: {
-        "spaced-comment": "off"
-      }
-    },
-    {
-      files: [
-        "*.spec.ts",
-        "*.spec.tsx",
-        "*.test.ts",
-        "*.test.tsx",
-        "**/__tests__/**/*.ts",
-        "**/__tests__/**/*.tsx",
-        "tests/**/*.ts",
-        "tests/**/*.tsx"
-      ],
-      rules: {
-        "i18n-text/no-en": "off",
-        "no-magic-numbers": "off",
-        "node/no-unpublished-import": "off"
-      }
-    }
-  ],
-  plugins:
-    // @sort
-    [
-      "es",
-      "no-type-assertion",
-      "no-useless-assign",
-      "only-warn",
-      "sort-annotation",
-      "sort-imports-requires",
-      "spellcheck",
-      "unused-imports"
-    ],
   rules: {
     "@typescript-eslint/consistent-type-imports": [
       "warn",
-      {
-        disallowTypeAnnotations: false,
-        prefer: "type-imports"
-      }
+      { disallowTypeAnnotations: false, prefer: "type-imports" }
     ],
     "@typescript-eslint/explicit-function-return-type": [
       "warn",
@@ -105,7 +68,8 @@ const config = {
       "warn",
       { allowNumber: true }
     ],
-    "@typescript-eslint/switch-exhaustiveness-check": "warn",
+    "@typescript-eslint/switch-exhaustiveness-check": "off",
+    "array-callback-return": "off",
     "arrow-body-style": [
       "warn",
       "as-needed",
@@ -138,6 +102,111 @@ const config = {
     "init-declarations": "off",
     "jsdoc/require-param-type": "off",
     "jsdoc/require-returns-type": "off",
+    "misc/consistent-empty-lines": [
+      "warn",
+      {
+        rules: [
+          {
+            _id: "arguments",
+            emptyLine: "never",
+            selector: "CallExpression > .arguments"
+          },
+          {
+            _id: "body",
+            emptyLine: "never",
+            selector: "TSInterfaceBody > .body"
+          },
+          {
+            _id: "elements",
+            emptyLine: "never",
+            selector: "ArrayExpression > .elements"
+          },
+          { _id: "enum-members", emptyLine: "never", selector: "TSEnumMember" },
+          {
+            _id: "members",
+            emptyLine: "never",
+            selector: "TSTypeLiteral > .members"
+          },
+          { _id: "params", emptyLine: "never", selector: ".params" },
+          {
+            _id: "properties",
+            emptyLine: "never",
+            selector: ":matches(ObjectExpression, ObjectPattern) > .properties"
+          },
+          {
+            _id: "statements",
+            emptyLine: "always",
+            selector: `${block} > :matches(:statement, TSDeclareFunction, TSExportAssignment)`
+          },
+          {
+            _id: "statements.export",
+            emptyLine: "never",
+            selector: `${block} > :matches(ExportAllDeclaration, ExportNamedDeclaration[source])`
+          },
+          {
+            _id: "statements.expression",
+            emptyLine: "any",
+            selector: `${block} > ExpressionStatement`
+          },
+          {
+            _id: "statements.import",
+            emptyLine: "never",
+            selector: `${block} > ImportDeclaration`
+          }
+        ]
+      }
+    ],
+    "misc/consistent-filename": "off",
+    "misc/consistent-source-extension": "off",
+    "misc/export-matching-filename-only": "off",
+    "misc/max-identifier-blocks": "off",
+    "misc/no-at-sign-import": "off",
+    "misc/no-internal-modules": "off",
+    "misc/no-negated-conditions": "off",
+    "misc/no-nodejs-modules": "off",
+    "misc/no-relative-parent-import": "off",
+    "misc/no-sibling-import": "off",
+    "misc/no-unnecessary-template-literal": "off",
+    "misc/object-format": "off",
+    "misc/only-export-name": "off",
+    "misc/require-jsdoc": "off",
+    "misc/sort-class-members": [
+      "warn",
+      {
+        sortingOrder: [
+          "public-static-field",
+          "public-static-accessor",
+          "public-static-constructor",
+          "public-static-method",
+          "signature",
+          "public-dynamic-field",
+          "public-dynamic-accessor",
+          "public-dynamic-constructor",
+          "public-dynamic-method",
+          "protected-static-field",
+          "protected-static-accessor",
+          "protected-static-constructor",
+          "protected-static-method",
+          "protected-dynamic-field",
+          "protected-dynamic-accessor",
+          "protected-dynamic-constructor",
+          "protected-dynamic-method",
+          "private-static-field",
+          "private-static-accessor",
+          "private-static-constructor",
+          "private-static-method",
+          "private-dynamic-field",
+          "private-dynamic-accessor",
+          "private-dynamic-constructor",
+          "private-dynamic-method"
+        ]
+      }
+    ],
+    "misc/typescript/array-callback-return-type": "off",
+    "misc/typescript/no-complex-return-type": "off",
+    "misc/typescript/no-multi-type-tuples": "off",
+    "misc/typescript/prefer-array-type-alias": "off",
+    "misc/typescript/prefer-enum": "off",
     "n/no-missing-import": "off",
     "no-duplicate-imports": "off",
     "no-magic-numbers": ["warn", { ignore: [-1, 0, 0.5, 1, 2, 10, 100] }],
@@ -185,7 +254,7 @@ const config = {
     ],
     "sort/import-members": "off",
     "sort/imports": "off",
-    "sort/object-properties": ["warn", { caseSensitive: true, natural: true }],
+    "sort/object-properties": "off",
     "sort-annotation/sort": "warn",
     "sort-annotation/sort-keys": "warn",
     "sort-imports-requires/sort-imports": ["warn", { unsafeAutofix: true }],
@@ -205,7 +274,66 @@ const config = {
     "unicorn/prefer-top-level-await": "off",
     "unicorn/prevent-abbreviations": "off",
     "unused-imports/no-unused-imports": "warn"
-  }
+  },
+  overrides: [
+    {
+      files: "*.cjs",
+      rules: {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "import/no-commonjs": "off"
+      }
+    },
+    {
+      files: "*.mjs",
+      rules: { "@typescript-eslint/explicit-function-return-type": "off" }
+    },
+    { files: "*.d.ts", rules: { "spaced-comment": "off" } },
+    {
+      files: [
+        "*.spec.ts",
+        "*.spec.tsx",
+        "*.test.ts",
+        "*.test.tsx",
+        "**/__tests__/**/*.ts",
+        "**/__tests__/**/*.tsx",
+        "./tests/**/*.ts",
+        "./tests/**/*.tsx"
+      ],
+      rules: {
+        "i18n-text/no-en": "off",
+        "no-magic-numbers": "off",
+        "node/no-unpublished-import": "off"
+      }
+    },
+    {
+      files: ["./.eslintrc.*", "./.eslintrc.base.*"],
+      rules: {
+        "misc/sort-keys": [
+          "warn",
+          {
+            overrides: [
+              {
+                _id: "root",
+                customOrder: [
+                  "ignorePatterns",
+                  "env",
+                  "globals",
+                  "plugins",
+                  "extends",
+                  "parser",
+                  "parserOptions",
+                  "rules",
+                  "overrides"
+                ],
+                selector: "VariableDeclarator > ObjectExpression"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 };
 
 module.exports = config;

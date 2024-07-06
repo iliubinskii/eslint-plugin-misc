@@ -127,6 +127,7 @@ export function createRegexpMatcher(
  * @returns Merged listeners.
  */
 export function mergeListeners(...listeners: RuleListeners): RuleListener {
+  // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
   return o.fromEntries(
     o
       .entries(
