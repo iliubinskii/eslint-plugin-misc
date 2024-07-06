@@ -4,7 +4,9 @@ exports.TypeGroup = exports.Fixable = exports.Casing = void 0;
 var Casing;
 (function (Casing) {
     Casing["camelCase"] = "camelCase";
+    // eslint-disable-next-line misc/consistent-enum-members -- Ok
     Casing["kebabCase"] = "kebab-case";
+    // eslint-disable-next-line misc/consistent-enum-members -- Ok
     Casing["pascalCase"] = "PascalCase";
 })(Casing || (exports.Casing = Casing = {}));
 var Fixable;

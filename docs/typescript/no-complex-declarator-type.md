@@ -2,7 +2,7 @@
 
 [ESLint plugin](https://iliubinskii.github.io/eslint-plugin-misc/) / typescript/no-complex-declarator-type
 
-Disallow complex declarator types.
+Requires either 'as const' or type definition complex declarators.
 
 ```ts
 module.exports = {

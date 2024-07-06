@@ -101,7 +101,7 @@ module.exports = {
 - [typescript/define-function-in-one-statement](https://iliubinskii.github.io/eslint-plugin-misc/typescript/define-function-in-one-statement.html) &mdash; Requires that function is defined in one statement.
 - [typescript/exhaustive-switch](https://iliubinskii.github.io/eslint-plugin-misc/typescript/exhaustive-switch.html) &mdash; Checks exhaustiveness of switch statement.
 - [typescript/no-boolean-literal-type](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-boolean-literal-type.html) &mdash; Disallows boolean literal type.
-- [typescript/no-complex-declarator-type](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-complex-declarator-type.html) &mdash; Disallow complex declarator types.
+- [typescript/no-complex-declarator-type](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-complex-declarator-type.html) &mdash; Requires either 'as const' or type definition complex declarators.
 - [typescript/no-complex-return-type](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-complex-return-type.html) &mdash; Disallow complex function return types.
 - [typescript/no-empty-interfaces](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-empty-interfaces.html) &mdash; Disallow empty interfaces.
 - [typescript/no-inferrable-types](https://iliubinskii.github.io/eslint-plugin-misc/typescript/no-inferrable-types.html) &mdash; Reports inferrable types.

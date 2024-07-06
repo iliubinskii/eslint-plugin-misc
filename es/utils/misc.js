@@ -55,6 +55,7 @@ export function createRegexpMatcher(pattern, defVal) {
  * @returns Merged listeners.
  */
 export function mergeListeners(...listeners) {
+    // eslint-disable-next-line misc/typescript/no-unsafe-object-assignment -- Ok
     return o.fromEntries(o
         .entries(_.groupBy(listeners.flatMap(listener => o.entries(listener)), ([name]) => name))
         .map(([name, entries]) => [

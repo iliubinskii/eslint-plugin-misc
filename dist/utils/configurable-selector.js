@@ -12,6 +12,7 @@ const typescript_misc_1 = require("typescript-misc");
  */
 function get(options, defaultSelectors) {
     const { excludeSelectors, includeSelectors, noDefaultSelectors } = options;
+    // eslint-disable-next-line misc/no-param-reassign -- Ok
     defaultSelectors = noDefaultSelectors ? [] : defaultSelectors;
     const selectors = _.difference([...defaultSelectors, ...includeSelectors], excludeSelectors);
     typescript_misc_1.assert.toBeTrue(selectors.length > 0, "Expecting at least one selector");

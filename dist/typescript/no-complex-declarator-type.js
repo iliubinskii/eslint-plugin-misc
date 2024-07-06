@@ -8,7 +8,8 @@ exports.noComplexDeclaratorType = utils.wrapRule({
     rule: base_1.base["no-restricted-syntax"],
     options: [
         {
-            message: "Avoid complex declarator type",
+            ignoreSelector: ["ExportDefaultDeclaration > Identifier"],
+            message: "Either use 'as const' or add type definition to this declarator",
             selector: [
                 "ExportDefaultDeclaration > .declaration",
                 "VariableDeclarator[init.type=ArrayExpression] > Identifier.id[typeAnnotation=undefined]",
@@ -20,7 +21,7 @@ exports.noComplexDeclaratorType = utils.wrapRule({
         }
     ],
     docs: {
-        description: "Disallow complex declarator types.",
+        description: "Requires either 'as const' or type definition complex declarators.",
         failExamples: "const x = { value: 1 };",
         passExamples: `
       const x = { value: 1 } as const;

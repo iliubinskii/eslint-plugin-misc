@@ -431,6 +431,7 @@ function checkTypeFlags(type, ...flags) {
         const constraint = type.getConstraint();
         if (typescript_misc_1.is.empty(constraint))
             return flags.includes(ts.TypeFlags.Unknown);
+        // eslint-disable-next-line misc/no-param-reassign -- Ok
         type = constraint;
     }
     return (flags.includes(type.getFlags()) ||

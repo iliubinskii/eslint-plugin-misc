@@ -29,7 +29,8 @@ exports.noSelfImport = utils.createRule({
         const basename = context.stripExtension(node_path_1.default.basename(context.filename));
         return ruleTemplates.source(ctx => {
             const { node, source } = ctx;
-            if (node_path_1.default.dirname(source) === "." &&
+            if (/[/\\]/.test(source) &&
+                node_path_1.default.dirname(source) === "." &&
                 context.stripExtension(node_path_1.default.basename(source)) === basename)
                 context.report({ messageId: MessageId.noSelfImport, node });
         });

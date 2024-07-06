@@ -16,6 +16,7 @@ export const noLanguageMixing = evaluate(() => {
         ],
         docs: {
             description: "Disallows language mixing.",
+            // eslint-disable-next-line misc/no-language-mixing -- Ok
             failExamples: 'const x = "xyz123абв";',
             passExamples: `
         const x = "xyz";
