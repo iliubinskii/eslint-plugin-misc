@@ -1,12 +1,3 @@
-const prefixes = {
-  createRule:
-    "CallExpression[callee.object.name=utils][callee.property.name=createRule]",
-  testRule:
-    "CallExpression[callee.object.name=utils][callee.property.name=testRule]",
-  wrapRule:
-    "CallExpression[callee.object.name=utils][callee.property.name=wrapRule]"
-};
-
 /**
  * @type {import("eslint").Linter.Config }
  */
@@ -58,7 +49,8 @@ const config = {
                   "docs",
                   "create"
                 ],
-                selector: `${prefixes.createRule} > ObjectExpression`
+                selector:
+                  "CallExpression[callee.object.name=utils][callee.property.name=createRule] > ObjectExpression"
               },
               {
                 _id: "utils.createRule.docs",
@@ -71,12 +63,14 @@ const config = {
                   "failExamples",
                   "passExamples"
                 ],
-                selector: `${prefixes.createRule} > ObjectExpression > Property[key.name=docs] > ObjectExpression`
+                selector:
+                  "CallExpression[callee.object.name=utils][callee.property.name=createRule] > ObjectExpression > Property[key.name=docs] > ObjectExpression"
               },
               {
                 _id: "utils.wrapRule",
                 customOrder: ["rule", "options", "docs"],
-                selector: `${prefixes.wrapRule} > ObjectExpression`
+                selector:
+                  "CallExpression[callee.object.name=utils][callee.property.name=wrapRule] > ObjectExpression"
               }
             ]
           }
@@ -102,12 +96,14 @@ const config = {
                   "output",
                   "errors"
                 ],
-                selector: `${prefixes.testRule} > ArrayExpression > ObjectExpression`
+                selector:
+                  "CallExpression[callee.object.name=utils][callee.property.name=testRule] > ArrayExpression > ObjectExpression"
               },
               {
                 _id: "testRule.errors",
                 customOrder: ["line", "endLine", "messageId"],
-                selector: `${prefixes.testRule} > ArrayExpression > ObjectExpression > Property[key.name=errors] > ArrayExpression > ObjectExpression`
+                selector:
+                  "CallExpression[callee.object.name=utils][callee.property.name=testRule] > ArrayExpression > ObjectExpression > Property[key.name=errors] > ArrayExpression > ObjectExpression"
               }
             ]
           }

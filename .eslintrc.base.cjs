@@ -6,7 +6,7 @@ const block =
  */
 const config = {
   plugins:
-    // @sort
+    // @sorted
     [
       "es",
       "misc",
@@ -236,8 +236,8 @@ const config = {
     "sort/import-members": "off",
     "sort/imports": "off",
     "sort/object-properties": "off",
-    "sort-annotation/sort": "warn",
-    "sort-annotation/sort-keys": "warn",
+    "sort-annotation/sort": "off",
+    "sort-annotation/sort-keys": "off",
     "sort-imports-requires/sort-imports": ["warn", { unsafeAutofix: true }],
     "sort-imports-requires/sort-requires": ["warn", { unsafeAutofix: true }],
     "spellcheck/spell-checker": "warn",

@@ -5,9 +5,7 @@
   "description": "ESLint plugin",
   "keywords": [
     "eslint",
-    "plugin",
-    "rules",
-    "typescript"
+    "plugin"
   ],
   "homepage": "https://github.com/iliubinskii/eslint-plugin-misc",
   "bugs": {
@@ -27,7 +25,6 @@
     "/src"
   ],
   "scripts": {
-    "prepare-next-version": "run-s type-check format lint test build-commonjs build-es build-doc && git add . && git commit -m \"build: Prepare next version\"",
     "build-commonjs": "cf dist && tsc --project tsconfig-build.json",
     "build-doc": "cf docs && tsx utils/build-doc.ts && cpy assets/docs/static/* docs",
     "build-es": "cf es && tsc --project tsconfig-build-es.json",
@@ -41,15 +38,19 @@
     "lint-markdown": "markdownlint *.md",
     "lint-no-fix": "eslint --max-warnings=0 .",
     "lint-profile": "cross-env TIMING=1 eslint --max-warnings=0 .",
+    "lint-style": "stylelint --fix --max-warnings=0 src/**/*.{css,less,postcss,scss}",
+    "lint-style-no-fix": "stylelint --max-warnings=0 src/**/*.{css,less,postcss,scss}",
     "ncu-check": "ncu --dep=dev,peer,prod",
     "ncu-upgrade": "ncu --dep=dev,peer,prod --upgrade && npm run install-deps",
     "prepare": "husky",
+    "prepare-next-version": "npm run format && run-p lint-no-fix lint-style-no-fix test type-check && run-p build-commonjs build-doc build-es && git add . && git commit -m \"build: Prepare next version\"",
     "test": "cf coverage/lcov-report && jest --coverage",
     "type-check": "tsc --incremental false --noEmit",
     "update": "npm update --no-audit --strict-peer-deps"
   },
   "lint-staged": {
     "*.{css,html,json,less,postcss,scss}": "prettier --write",
+    "*.{css,less,postcss,scss}": "stylelint --max-warnings=0",
     "*.{js,jsx,ts,tsx},!dist/**,!es/**": "eslint --max-warnings=0",
     "*.md": "markdownlint"
   },
@@ -74,6 +75,7 @@
     "@types/jest": "^29.5.12",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.14.8",
+    "@types/stylelint": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "babel-jest": "^29.7.0",
     "clear-folder": "^5.0.0",
@@ -138,6 +140,12 @@
     "prettier": "^3.3.2",
     "prettier-plugin-sort-json": "^4.0.0",
     "strip-ansi-cli": "^4.0.0",
+    "stylelint": "^16.5.0",
+    "stylelint-config-property-sort-order-smacss": "^10.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-no-unsupported-browser-features": "^8.0.1",
+    "stylelint-value-no-unknown-custom-properties": "^6.0.1",
     "ts-jest": "^29.1.5",
     "tsx": "^4.11.0",
     "typedoc": "^0.26.2",
