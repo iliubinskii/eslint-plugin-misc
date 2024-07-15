@@ -42,13 +42,11 @@
     "useDefineForClassFields": true,
     "useUnknownInCatchVariables": true
   },
-  "exclude": ["coverage", "dist", "node_modules"],
+  "exclude": ["coverage", "dist", "es", "node_modules"],
   "include": [
     ".eslintrc.base.cjs",
     ".eslintrc.cjs",
     ".prettierrc.mjs",
-    ".stylelintrc.base.mjs",
-    ".stylelintrc.mjs",
     "**/*.cjs",
     "**/*.mjs",
     "**/*.ts",

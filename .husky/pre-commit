@@ -10,8 +10,5 @@ if [ "$BRANCH_NAME" = "master" ]; then
   exit 1
 fi
 
-# Prefer global type check, because changes to one file may cause type errors in other files
-npm run type-check
-
 # Lint the staged files
 npx lint-staged

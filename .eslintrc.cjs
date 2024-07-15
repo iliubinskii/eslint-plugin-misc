@@ -1,10 +1,9 @@
 /**
- * @type {import("eslint").Linter.Config }
+ * @type {import("eslint").Linter.Config}
  */
 const config = {
   ignorePatterns: ["!.*", "coverage/**", "dist/**", "es/**", "node_modules/**"],
   env: { es2022: true, jest: true },
-  globals: {},
   extends: "./.eslintrc.base.cjs",
   parser: "@typescript-eslint/parser",
   parserOptions: {

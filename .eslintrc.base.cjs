@@ -1,5 +1,5 @@
 /**
- * @type {import("eslint").Linter.Config }
+ * @type {import("eslint").Linter.Config}
  */
 const config = {
   plugins:
@@ -59,7 +59,7 @@ const config = {
     ],
     "@typescript-eslint/no-dynamic-delete": "off",
     "@typescript-eslint/no-invalid-void-type": "off",
-    "@typescript-eslint/no-shadow": "warn",
+    "@typescript-eslint/no-shadow": "off",
     "@typescript-eslint/promise-function-async": "warn",
     "@typescript-eslint/restrict-template-expressions": [
       "warn",
@@ -93,7 +93,10 @@ const config = {
     "id-match": "off",
     "import/extensions": "off",
     "import/named": "off",
+    "import/namespace": "off",
+    "import/no-deprecated": "off",
     "import/no-internal-modules": "warn",
+    "import/no-named-as-default-member": "off",
     "import/no-self-import": "warn",
     "import/no-unresolved": "off",
     "init-declarations": "off",
@@ -157,6 +160,10 @@ const config = {
         ]
       }
     ],
+    "misc/no-nodejs-modules": "off",
+    "misc/no-shadow": "warn",
+    "misc/no-unnecessary-template-literal": "off",
+    "misc/require-jsdoc": "off",
     "misc/sort-class-members": [
       "warn",
       {
@@ -189,6 +196,7 @@ const config = {
         ]
       }
     ],
+    "misc/sort-export-specifiers": "off",
     "n/no-missing-import": "off",
     "no-duplicate-imports": "off",
     "no-magic-numbers": ["warn", { ignore: [-1, 0, 0.5, 1, 2, 10, 100] }],
@@ -220,6 +228,7 @@ const config = {
     "security/detect-object-injection": "off",
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-nested-switch": "off",
+    "sonarjs/no-small-switch": "off",
     "sonarjs/prefer-immediate-return": "off",
     "sort/destructuring-properties": [
       "warn",

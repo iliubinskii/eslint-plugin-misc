@@ -1,4 +1,7 @@
-module.exports = {
+/**
+ * @type {Partial<import("@commitlint/types").QualifiedConfig>}
+ */
+const config = {
   extends: ["@commitlint/config-conventional"],
   ignores: [],
   rules: {
@@ -22,3 +25,5 @@ module.exports = {
     ]
   }
 };
+
+module.exports = config;
