@@ -20,13 +20,10 @@ const coreRecommended = {
   "misc/no-at-sign-import": "off",
   "misc/no-internal-modules": "off",
   "misc/no-negated-conditions": "off",
-  "misc/no-nodejs-modules": "off",
   "misc/no-relative-parent-import": "off",
   "misc/no-sibling-import": "off",
-  "misc/no-unnecessary-template-literal": "off",
   "misc/object-format": "off",
-  "misc/only-export-name": "off",
-  "misc/require-jsdoc": "off"
+  "misc/only-export-name": "off"
 } as const;
 
 const typescriptAll = {
