@@ -325,6 +325,22 @@ const config = {
       }
     },
     {
+      files: ["./utils/**/*.ts", "./utils/**/*.tsx"],
+      rules: {
+        "import/no-extraneous-dependencies": [
+          "warn",
+          {
+            bundledDependencies: false,
+            devDependencies: true,
+            includeInternal: false,
+            includeTypes: true,
+            optionalDependencies: false,
+            peerDependencies: true
+          }
+        ]
+      }
+    },
+    {
       files: ["./.eslintrc.*", "./.eslintrc.base.*"],
       rules: {
         "misc/sort-keys": [
