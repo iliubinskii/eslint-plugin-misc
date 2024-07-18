@@ -15,7 +15,7 @@
     "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["DOM", "ES2022"],
+    "lib": ["ES2022"],
     "module": "ES2022",
     "moduleResolution": "Node10",
     "newLine": "lf",
@@ -28,7 +28,7 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "dist",
+    "outDir": "temp",
     "paths": {
       "@": ["./src"],
       "@/*": ["./src/*"]
