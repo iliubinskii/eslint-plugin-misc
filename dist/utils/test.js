@@ -26,7 +26,7 @@ function testRule(name, rule, invalid, valid = []) {
         parser: require.resolve("@typescript-eslint/parser"),
         parserOptions: {
             ecmaFeatures: { jsx: true },
-            ecmaVersion: 2020,
+            ecmaVersion: 2022,
             project: "./tsconfig.json",
             sourceType: "module",
             tsconfigRootDir: `${misc_1.projectRoot}fixtures`

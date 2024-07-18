@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "module": "ES2022",
+    "incremental": false,
+    "module": "ES2015",
     "outDir": "es"
   },
   "extends": "./tsconfig",

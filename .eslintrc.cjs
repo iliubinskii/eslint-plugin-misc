@@ -2,8 +2,17 @@
  * @type {import("eslint").Linter.Config}
  */
 const config = {
-  ignorePatterns: ["!.*", "coverage/**", "dist/**", "es/**", "node_modules/**"],
-  env: { es2022: true, jest: true },
+  ignorePatterns: [
+    "!.*",
+    "/coverage/**",
+    "/dist/**",
+    "/es/**",
+    "/node_modules/**"
+  ],
+  env: {
+    es2022: true,
+    jest: true
+  },
   extends: "./.eslintrc.base.cjs",
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -49,6 +58,10 @@ const config = {
     {
       files: "./src/**",
       rules: {
+        "misc/consistent-optional-props": [
+          "warn",
+          { classes: "optional", interfaces: "optional" }
+        ],
         "misc/sort-keys": [
           "warn",
           {

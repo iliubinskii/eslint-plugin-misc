@@ -1,5 +1,3 @@
-/* eslint-disable misc/no-at-sign-internal-import -- Ok */
-
 import { rules, utils } from "@";
 import { InterfaceOption } from "@/core/base/require-jsdoc";
 import getCurrentLine from "get-current-line";

@@ -1,9 +1,5 @@
 # ESLint plugin
 
-[![Stars](https://img.shields.io/github/stars/iliubinskii/eslint-plugin-misc)](https://github.com/iliubinskii/eslint-plugin-misc)
-[![Downloads](https://img.shields.io/npm/dm/eslint-plugin-misc)](https://www.npmjs.com/package/eslint-plugin-misc)
-[![Dependencies](https://img.shields.io/librariesio/release/npm/eslint-plugin-misc)](https://libraries.io/npm/eslint-plugin-misc)
-
 ## Table of contents
 
 - [Overview](#overview)

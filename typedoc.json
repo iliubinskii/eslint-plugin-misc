@@ -1,7 +1,0 @@
-{
-  "extends": ["project-chore/typedoc/recommended"],
-  "intentionallyNotExported": ["__global.configurable.LocaleName"],
-  "name": "ESLint plugin",
-  "out": "docs",
-  "tsconfig": "tsconfig-typedoc.json"
-}

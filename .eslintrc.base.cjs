@@ -29,7 +29,6 @@ const config = {
     "plugin:misc/recommended",
     "plugin:n/recommended",
     "plugin:no-use-extend-native/recommended",
-    "plugin:node/recommended",
     "plugin:promise/recommended",
     "plugin:regexp/recommended",
     "plugin:security/recommended-legacy",
@@ -95,11 +94,23 @@ const config = {
     "import/named": "off",
     "import/namespace": "off",
     "import/no-deprecated": "off",
+    "import/no-extraneous-dependencies": [
+      "warn",
+      {
+        bundledDependencies: false,
+        devDependencies: false,
+        includeInternal: false,
+        includeTypes: true,
+        optionalDependencies: false,
+        peerDependencies: true
+      }
+    ],
     "import/no-internal-modules": "warn",
     "import/no-named-as-default-member": "off",
     "import/no-self-import": "warn",
     "import/no-unresolved": "off",
     "init-declarations": "off",
+    "jsdoc/require-description-complete-sentence": "warn",
     "jsdoc/require-param-type": "off",
     "jsdoc/require-returns-type": "off",
     "misc/consistent-empty-lines": [
@@ -160,6 +171,10 @@ const config = {
         ]
       }
     ],
+    "misc/consistent-optional-props": [
+      "warn",
+      { classes: "combined", interfaces: "combined" }
+    ],
     "misc/no-nodejs-modules": "off",
     "misc/no-shadow": "warn",
     "misc/no-unnecessary-template-literal": "off",
@@ -197,6 +212,7 @@ const config = {
       }
     ],
     "misc/sort-export-specifiers": "off",
+    "n/no-extraneous-import": "off",
     "n/no-missing-import": "off",
     "no-duplicate-imports": "off",
     "no-magic-numbers": ["warn", { ignore: [-1, 0, 0.5, 1, 2, 10, 100] }],
@@ -209,9 +225,6 @@ const config = {
     "no-unused-vars": "off",
     "no-use-before-define": "off",
     "no-useless-assign/no-useless-assign": "warn",
-    "node/no-missing-import": "off",
-    "node/no-missing-require": "off",
-    "node/no-unsupported-features/es-syntax": "off",
     "prefer-destructuring": "off",
     "prettier/prettier": [
       "warn",
@@ -291,9 +304,24 @@ const config = {
         "./tests/**/*.tsx"
       ],
       rules: {
+        "@typescript-eslint/no-extraneous-class": "off",
         "i18n-text/no-en": "off",
+        "import/no-extraneous-dependencies": [
+          "warn",
+          {
+            bundledDependencies: false,
+            devDependencies: true,
+            includeInternal: false,
+            includeTypes: true,
+            optionalDependencies: false,
+            peerDependencies: true
+          }
+        ],
+        "jsdoc/require-jsdoc": "off",
+        "misc/class-match-filename": "off",
+        "misc/no-at-sign-internal-import": "off",
         "no-magic-numbers": "off",
-        "node/no-unpublished-import": "off"
+        "unicorn/no-null": "off"
       }
     },
     {

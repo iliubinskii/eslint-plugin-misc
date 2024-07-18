@@ -1,4 +1,5 @@
 export { configs } from "./configs";
 export { rules } from "./rules";
-export * as utils from "./utils";
+import * as utils_1 from "./utils";
+export { utils_1 as utils };
 //# sourceMappingURL=index.js.map

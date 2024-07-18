@@ -2,9 +2,10 @@
  * @type {import('lint-staged').Config}
  */
 const config = {
-  "*.{css,html,json,less,postcss,scss}": "prettier --write",
-  "*.{js,jsx,ts,tsx}": [() => "npm run type-check", "eslint --max-warnings=0"],
-  "*.md": "markdownlint"
+  "!({dist,docs,es})/**/*.{cjs,js,mjs,jsx,ts,tsx}": "eslint --max-warnings=0",
+  "!({dist,docs,es})/**/*.{css,html,json,less,postcss,scss}":
+    "prettier --write",
+  "!({dist,docs,es})/**/*.md": "markdownlint"
 };
 
 export default config;

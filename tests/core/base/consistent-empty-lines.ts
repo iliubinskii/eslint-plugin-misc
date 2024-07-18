@@ -1,5 +1,3 @@
-/* eslint-disable misc/no-at-sign-internal-import -- Ok */
-
 import { rules, utils } from "@";
 import { EmptyLine } from "@/core/base/consistent-empty-lines";
 import getCurrentLine from "get-current-line";

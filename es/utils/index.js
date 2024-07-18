@@ -1,5 +1,6 @@
 export { compare } from "./compare";
-export * as configurableSelector from "./configurable-selector";
+import * as configurableSelector_1 from "./configurable-selector";
+export { configurableSelector_1 as configurableSelector };
 export { createRule } from "./create-rule";
 export * from "./misc";
 export { sort } from "./sort";

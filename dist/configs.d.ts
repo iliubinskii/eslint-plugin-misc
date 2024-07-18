@@ -30,13 +30,10 @@ export declare const configs: {
             readonly "misc/no-at-sign-import": "off";
             readonly "misc/no-internal-modules": "off";
             readonly "misc/no-negated-conditions": "off";
-            readonly "misc/no-nodejs-modules": "off";
             readonly "misc/no-relative-parent-import": "off";
             readonly "misc/no-sibling-import": "off";
-            readonly "misc/no-unnecessary-template-literal": "off";
             readonly "misc/object-format": "off";
             readonly "misc/only-export-name": "off";
-            readonly "misc/require-jsdoc": "off";
             readonly "misc/match-filename": "off";
             readonly "misc/no-restricted-syntax": "off";
             readonly "misc/require-syntax": "off";
@@ -63,13 +60,10 @@ export declare const configs: {
             readonly "misc/no-at-sign-import": "off";
             readonly "misc/no-internal-modules": "off";
             readonly "misc/no-negated-conditions": "off";
-            readonly "misc/no-nodejs-modules": "off";
             readonly "misc/no-relative-parent-import": "off";
             readonly "misc/no-sibling-import": "off";
-            readonly "misc/no-unnecessary-template-literal": "off";
             readonly "misc/object-format": "off";
             readonly "misc/only-export-name": "off";
-            readonly "misc/require-jsdoc": "off";
             readonly "misc/match-filename": "off";
             readonly "misc/no-restricted-syntax": "off";
             readonly "misc/require-syntax": "off";

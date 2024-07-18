@@ -1,5 +1,3 @@
-/* eslint-disable misc/no-at-sign-internal-import -- Ok */
-
 import { getProjectConfig } from "@/utils/create-rule";
 
 test.each([

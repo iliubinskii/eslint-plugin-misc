@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "incremental": false,
     "module": "CommonJS",
     "outDir": "dist"
   },
