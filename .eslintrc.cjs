@@ -32,6 +32,7 @@ const config = {
               "csstools",
               "escompat",
               "inexhaustive",
+              "packagejson",
               "quasis",
               "smacss",
               "sonarjs",
