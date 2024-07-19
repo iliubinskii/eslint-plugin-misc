@@ -101,7 +101,7 @@
     "eslint-plugin-jest": "^28",
     "eslint-plugin-jest-extended": "^2",
     "eslint-plugin-jsdoc": "^48",
-    "eslint-plugin-misc": "^3.1.0",
+    "eslint-plugin-misc": "^3.2.0",
     "eslint-plugin-n": "^16",
     "eslint-plugin-no-type-assertion": "^1",
     "eslint-plugin-no-use-extend-native": "^0.5",
