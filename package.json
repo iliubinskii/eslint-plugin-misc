@@ -50,6 +50,7 @@
     "preversion:install": "npm run install-deps",
     "preversion:lint": "run-p lint-no-fix type-check",
     "preversion:test": "npm test",
+    "push-tags": "cross-env GIT_SSH_COMMAND=\"ssh -i ../.ssh/id_rsa\" git push --tags",
     "test": "cf coverage/lcov-report && jest --coverage",
     "type-check": "tsc --incremental false --noEmit",
     "update": "npm update --no-audit --strict-peer-deps",
