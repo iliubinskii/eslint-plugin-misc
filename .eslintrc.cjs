@@ -13,7 +13,7 @@ const config = {
     es2022: true,
     jest: true
   },
-  extends: "./.eslintrc.base.cjs",
+  extends: "union",
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: { jsx: true },
@@ -29,9 +29,10 @@ const config = {
           words:
             // @sorted
             [
+              "cjsx",
               "csstools",
-              "escompat",
               "inexhaustive",
+              "mjsx",
               "packagejson",
               "quasis",
               "smacss",
