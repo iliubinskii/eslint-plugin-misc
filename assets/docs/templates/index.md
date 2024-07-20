@@ -10,14 +10,11 @@
 - [Custom checks](#custom-checks)
 - [Planned rules](#planned-rules)
 
-## <a id="overview"></a>Overview
+## Overview
 
-A collection of ESLint rules for:
+A collection of ESLint rules for JavaScript and TypeScript files.
 
-- JavaScript / TypeScript files
-- Jest test files
-
-## <a id="installation"></a>Installation
+## Installation
 
 ```sh
 npm install --save-dev eslint-plugin-misc
@@ -32,17 +29,18 @@ module.exports = {
 };
 ```
 
-## <a id="configs"></a>Configs
+## Configs
 
 - plugin:misc/all &mdash; All rules.
+- plugin:misc/recommended &mdash; Recommended rules.
 - plugin:misc/core &mdash; Core rules.
 - plugin:misc/typescript &mdash; Rules for typescript files.
 
-## <a id="rules"></a>Rules
+## Rules
 
 %RULES%
 
-## <a id="synonyms"></a>Synonyms
+## Synonyms
 
 You can use the same rule several times by adding synonym:
 
@@ -75,7 +73,7 @@ module.exports = {
 };
 ```
 
-## <a id="custom-checks"></a>Custom checks
+## Custom checks
 
 Many custom checks can be created without writing full-fledged ESLint plugin.
 Use the rules below to create custom checks or adapt existing third-party rules:
@@ -84,7 +82,7 @@ Use the rules below to create custom checks or adapt existing third-party rules:
 
 If you want to apply one rule several times (e.g. restrict several syntaxes), use rule synonyms.
 
-## <a id="planned-rules"></a>Planned rules
+## Planned rules
 
 - boolean-in-boolean-context &mdash; Require strict boolean type in boolean contexts like `x && y` or `!x`.
 - consistent-import-as &mdash; Require that _y_ in `import { x as y }` statement is from allowed list.
