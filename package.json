@@ -60,12 +60,15 @@
     "@types/estree": "^1",
     "@types/minimatch": "^5",
     "@types/natural-compare": "^1",
+    "@typescript-eslint/parser": "^7",
+    "@typescript-eslint/utils": "^7",
     "javascript-stringify": "^2",
     "lodash-commonjs-es": "^1.1.0",
     "minimatch": "^10",
     "natural-compare": "^1",
     "tslib": "^2",
     "tsutils": "^3",
+    "typescript": "^5",
     "typescript-misc": "^1.2.0"
   },
   "devDependencies": {
